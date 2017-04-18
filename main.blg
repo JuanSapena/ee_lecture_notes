@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: abbrv.bst
+Database file #1: ./bibliography.bib
+Warning--I didn't find a database entry for "Taylor1950b"
+Warning--I didn't find a database entry for "Deakin2011"
+Warning--I didn't find a database entry for "Harrison2013"
+Warning--I didn't find a database entry for "Thorp1966"
+Warning--I didn't find a database entry for "Latane1959"
+Warning--I didn't find a database entry for "Sewell2011"
+You've used 35 entries,
+            2118 wiz_defined-function locations,
+            752 strings with 7965 characters,
+and the built_in function-call counts, 9445 in all, are:
+= -- 932
+> -- 321
+< -- 1
++ -- 137
+- -- 96
+* -- 602
+:= -- 1618
+add.period$ -- 105
+call.type$ -- 35
+change.case$ -- 144
+chr.to.int$ -- 0
+cite$ -- 35
+duplicate$ -- 398
+empty$ -- 843
+format.name$ -- 96
+if$ -- 1954
+int.to.chr$ -- 0
+int.to.str$ -- 35
+missing$ -- 50
+newline$ -- 178
+num.names$ -- 70
+pop$ -- 170
+preamble$ -- 1
+purify$ -- 118
+quote$ -- 0
+skip$ -- 240
+stack$ -- 0
+substring$ -- 603
+swap$ -- 36
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 110
+warning$ -- 0
+while$ -- 102
+width$ -- 37
+write$ -- 377
+(There were 6 warnings)

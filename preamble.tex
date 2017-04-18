@@ -1,0 +1,211 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx,placeins}
+\usepackage{epsfig}
+\usepackage{tcolorbox}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{comment}
+\usepackage{amsmath,amsthm}
+\usepackage{accents}
+\usepackage{xspace}
+\definecolor{col3}{rgb}{0,.27,.4375} % lml blue
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=col3]{hyperref}
+\usepackage[nogroupskip,nonumberlist,acronym,toc,section=section]{glossaries}
+%\usepackage{showlabels}
+\usepackage{lmodern}% http://ctan.org/pkg/lm
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\newcommand{\etal}{{\it et~al.}\ }
+\newcommand{\ie}{{\it i.e.}\ }
+\newcommand{\eg}{{\it e.g.}\ }
+\newcommand{\etc}{{\it etc.}\ }
+\newcommand{\cf}{{\it cf.}\ }
+\newcommand{\Ito}{It\^{o}\xspace}
+
+%List of symbols shortcuts
+% For command names that already exist, prepend a "G" (for "Glossary")
+
+\newcommand{\tsing}{{\gls{tsing}}}
+\newcommand{\gest}{{\gls{gest}}}
+\newcommand{\mut}{{\gls{mut}}}
+\newcommand{\sigmat}{{\gls{sigmat}}}
+\newcommand{\var}{{\gls{var}}}
+\newcommand{\PDF}{{\gls{PDF}}}
+\newcommand{\PDFa}{{\gls{PDFa}}\xspace}
+
+%\let\.\undefined
+\let\gm\undefined
+\let\t\undefined
+%\newcommand{\v}{{\gls{a}}}
+\newcommand{\ga}{{\gls{a}}}
+\newcommand{\A}{{\gls{A}}\xspace}
+\newcommand{\Abar}{{\gls{Abar}}}
+\newcommand{\C}{{\gls{C}}} 
+\renewcommand{\d}{{\gls{delta}}}
+\newcommand{\gd}{{\gls{d}}}
+\newcommand{\D}{{\gls{Delta}}}
+\newcommand{\gD}{{\gls{D}}}
+\newcommand{\gdelta}{{\gls{delta}}}% Kronecker, Dirac, difference
+\newcommand{\geta}{{\gls{eta}}}
+\newcommand{\gex}{{\gls{gex}}}
+\newcommand{\gf}{{\gls{f}}}
+\newcommand{\F}{{\gls{F}}}
+\newcommand{\NF}{{\gls{NF}}}
+\newcommand{\g}{{\gls{g}}}
+\newcommand{\G}{{\gls{G}}}
+\newcommand{\gm}{{\gls{gm}}}
+\newcommand{\gt}{{\gls{gt}}}
+\newcommand{\gi}{{\gls{i}}}  % label of realization
+\newcommand{\gj}{{\gls{j}}}	 %label of outcome, lile outcome 1
+\newcommand{\Dt}{{\gls{Dt}}}
+\newcommand{\dt}{{\gls{delta_t}}} %delta t
+\newcommand{\gdt}{{\gd\t}} %dt
+\newcommand{\Dxp}{{\gls{Dxp}}} %Delta x ^+
+\newcommand{\J}{{\gls{J}}} 
+\newcommand{\gk}{{\gls{k}}} 
+\newcommand{\gL}{{\gls{L}}} 
+\newcommand{\m}{{\gls{m}}} 
+\newcommand{\gmu}{{\gls{mu}}} 
+\newcommand{\Nm}{{\gls{Nm}}} 
+\newcommand{\gn}{{\gls{n}}}%n_j is the number of outcomes j observed in an ensemble
+\newcommand{\N}{{\gls{N}}}
+\newcommand{\mN}{{\gls{mN}}} %mathcal N -- normal dist
+\newcommand{\go}{{\gls{o}}}
+\newcommand{\p}{{\gls{p}}}
+\newcommand{\gr}{{\gls{r}}}
+\newcommand{\rex}{{\gls{rex}}}
+\newcommand{\rt}{{\gls{rt}}}
+\newcommand{\gs}{{\gls{s}}} %dummy variable
+\newcommand{\gsigma}{{\gls{sigma}}}
+\newcommand{\t}{{\gls{t}}}
+\newcommand{\tn}{{\gls{t0}}}
+\newcommand{\gS}{{\gls{S}}}
+\newcommand{\T}{{\gls{T}}}
+\newcommand{\gtau}{{\gls{tau}}}
+\newcommand{\gu}{{\gls{u}}} %utility function
+\newcommand{\gv}{{\gls{v}}} %ergodicity mapping
+\newcommand{\gW}{{\gls{W}}}
+\newcommand{\x}{{\gls{x}}}
+\newcommand{\Nx}{{\gls{Nx}}}
+\newcommand{\gxi}{{\gls{xi}}}
+
+% Glossary macros for Chapter 4 (Markets)
+\newcommand{\mur}{{\gls{mur}}}
+\newcommand{\mus}{{\gls{mus}}}
+\newcommand{\sigmas}{{\gls{sigmas}}}
+\newcommand{\mue}{{\gls{mue}}}
+\renewcommand{\l}{{\gls{l}}}
+\newcommand{\lopt}{{\gls{lopt}}}
+\newcommand{\lopts}{{\gls{lopts}}}
+\newcommand{\lm}{{\gls{lm}}}
+\newcommand{\lp}{{\gls{lp}}}
+\newcommand{\lpm}{{\gls{lpm}}}
+\newcommand{\xzero}{{\gls{x0}}}
+\newcommand{\xone}{{\gls{x1}}}
+\newcommand{\xl}{{\gls{xl}}}
+\newcommand{\Sharpe}{{\gls{Sharpe}}}
+\newcommand{\gtm}{{\gls{gtm}}}
+
+%Acronym shortcuts
+\newcommand{\BM}{\gls{BM}\xspace}
+\newcommand{\GBM}{\gls{GBM}\xspace}
+\newcommand{\GDP}{\gls{GDP}\xspace}
+\newcommand{\LHS}{\gls{LHS}\xspace}
+\newcommand{\LML}{\gls{LML}\xspace}
+\newcommand{\RHS}{\gls{RHS}\xspace}
+\newcommand{\SDE}{\gls{SDE}\xspace}
+
+\newcommand{\ave}[1]{\left\langle#1 \right\rangle}
+\newcommand{\tave}[1]{\overline{#1}}
+\newcommand{\latinword}[1]{\textsf{\itshape #1}}
+\newcommand{\person}[1]{{\sc{#1}}}
+%\newcommand{\quote}[1]{{\it ``#1''}}
+
+\newcommand{\elabel}[1]{\label{eq:#1}}
+\newcommand{\eref}[1]{(Eq.~\ref{eq:#1})}
+\newcommand{\Eref}[1]{Equation~(\ref{eq:#1})}
+
+\newcommand{\ceref}[2]{(\ref{eq:#1}#2)}
+
+\newcommand{\tlabel}[1]{\label{tab:#1}}
+\newcommand{\tref}[1]{(Table~\ref{tab:#1})}
+
+\newcommand{\flabel}[1]{\label{fig:#1}}
+\newcommand{\fref}[1]{Fig.~\ref{fig:#1}}
+\newcommand{\Fref}[1]{Figure ~\ref{fig:#1}}
+
+\newcommand{\seclabel}[1]{\label{section:#1}}
+\newcommand{\secref}[1]{Sec.~\ref{section:#1}}
+\newcommand{\Secref}[1]{Section~\ref{section:#1}}
+
+\newcommand{\clabel}[1]{\label{chapter:#1}}
+\newcommand{\cref}[1]{Chap.~\ref{chapter:#1}}
+\newcommand{\Cref}[1]{Chapter~\ref{chapter:#1}}
+
+
+
+\newcommand{\OP}[1]{{\bf @@@OP: #1 @@@}}
+\renewcommand{\AA}[1]{{\bf ===AA: #1 ===}}
+
+\newcommand{\eq}{\hspace{-.15cm}=\hspace{-.15cm}}
+\newcommand{\dist}{\,{\buildrel d \over =}\,}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\prob}[1]{\mathcal{P}\left(#1\right)}
+\newcommand{\DW}{{\Delta W}}
+\newcommand{\Du}{{\Delta u}}
+\newcommand{\dW}{{\delta W}}
+\newcommand{\gbar}{\bar{g}}
+\newcommand{\nn}{\nonumber}
+
+\newcommand{\definition}[1]{\vspace{.2cm} {\bf \underline{Definition} #1} \vspace{.2cm}}
+
+% Example environment
+\definecolor{col1}{rgb}{0.96, 0.94, 0.93} % isabelline
+\newenvironment{example}[1]
+  {\begin{mdframed}[backgroundcolor=col1,linecolor=col1,frametitle={Example: #1}]}
+  {\end{mdframed}}
+
+% History environment
+\definecolor{col1}{rgb}{0.96, 0.94, 0.93} % isabelline
+\newenvironment{history}[1]
+  {\begin{mdframed}[backgroundcolor=col1,linecolor=col1,frametitle={History: #1}]}
+  {\end{mdframed}}
+
+% Thought experiment environment
+\definecolor{col1}{rgb}{0.96, 0.94, 0.93} % isabelline
+\newenvironment{thoughtex}[1]
+  {\begin{mdframed}[backgroundcolor=col1,linecolor=col1,frametitle={Thought experiment: #1}]}
+  {\end{mdframed}}
+  
+% Excursion environment
+\definecolor{col1}{rgb}{0.96, 0.94, 0.93} % isabelline
+\newenvironment{excursion}[1]
+  {\begin{mdframed}[backgroundcolor=col1,linecolor=col1,frametitle={Excursion: #1}]}
+  {\end{mdframed}}
+
+% Key points environment
+\definecolor{col2}{rgb}{1.0, 0.01, 0.24} % american rose
+\newenvironment{keypts}[1]
+  {\begin{mdframed}[nobreak,linecolor=col2,linewidth=2pt,roundcorner=10pt,frametitle={#1}]}
+  {\end{mdframed}}
+
+% Definition environment
+%\definecolor{col3}{rgb}{0,.27,.4375} % lml blue
+\newenvironment{defn}[1]
+  {\begin{samepage}
+  \begin{mdframed}[nobreak,linecolor=col3,linewidth=2pt,roundcorner=10pt,frametitle={{\sc Definition:} #1}]}
+  {\end{mdframed}
+  \end{samepage}}
+  
+% Hypothesis environment
+\definecolor{col4}{rgb}{0.53, 0.66, 0.42} % asparagus
+\newenvironment{hypothesis}[1]
+  {\begin{mdframed}[nobreak,linecolor=col4,linewidth=2pt,roundcorner=10pt,frametitle={#1}]}
+  {\end{mdframed}}
+  
+\newglossary{symbols}{sym}{sbl}{List of Symbols}
+\makenoidxglossaries
+\input{./glossary}

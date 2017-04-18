@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Populations}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Every man for himself}{2}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Log-normal wealth distribution}{2}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Inequality measure from two growth rates}{4}{subsubsection.1.1.2}
+\contentsline {subsection}{\numberline {1.2}Cooperation}{6}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Taxation}{10}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Wealth tax}{11}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Income tax}{14}{subsubsection.1.3.2}

@@ -1,0 +1,813 @@
+\newacronym{BM}{BM}{Brownian Motion}
+\newacronym{GBM}{GBM}{Geometric Brownian motion}
+\newacronym{GDP}{GDP}{Gross domestic product}
+\newacronym{LHS}{LHS}{Left-hand side}
+\newacronym{LML}{LML}{London Mathematical Laboratory}
+\newacronym{PDFa}{PDF}{Probability density function}
+\newacronym{RHS}{RHS}{Right-hand side}
+\newacronym{SDE}{SDE}{Stochastic differential equation}
+
+%==========
+
+\newglossaryentry{gest}{
+ type={symbols}, 
+ name={\ensuremath{g_{\text{est}}}},
+ description={Growth rate estimator for finite time and finite ensemble size},
+ sort={g_est}}
+
+\newglossaryentry{mut}{
+ type={symbols}, 
+ name={\ensuremath{\tilde{\mu}}},
+ description={mu tilde XXX},
+ sort=mu_tilde}
+
+\newglossaryentry{PDF}{
+ type={symbols}, 
+ name={\ensuremath{\mathcal{P}}},
+ description={Probability density function},
+ sort=P}
+
+\newglossaryentry{sigmat}{
+ type={symbols}, 
+ name={\ensuremath{\tilde{\sigma}}},
+ description={sigma tilde XXX},
+ sort=sigma_tilde}
+
+\newglossaryentry{tsing}{
+ type={symbols}, 
+ name={\ensuremath{t_{\text{singular}}}},
+ description={Time to singularity},
+ sort=t_sing}
+
+\newglossaryentry{var}{
+ type={symbols}, 
+ name={\ensuremath{\text{var}}},
+ description={Variance},
+ sort=variance}
+%==========
+
+%Ga
+\newglossaryentry{a}{
+ type={symbols}, 
+ name={\ensuremath{a}},
+ description={A scalar},
+ sort=a}
+
+%GA
+\newglossaryentry{A}{
+ type={symbols}, 
+ name={\ensuremath{A}},
+ description={An observable},
+ sort=A}
+
+%Abar
+\newglossaryentry{Abar}{
+ type={symbols}, 
+ name={\ensuremath{\overline{A}}},
+ description={Time average of observable $A$},
+ sort=A_bar}
+
+%GC
+\newglossaryentry{C}{
+ type={symbols}, 
+ name={\ensuremath{C}},
+ description={Cost to participate in a gamble},
+ sort=C}
+ 
+%Gd
+\newglossaryentry{d}{
+ type={symbols}, 
+ name={\ensuremath{d}},
+ description={Differential operator in Leibnitz notation, infinitesimal },
+ sort=d}
+
+ %Gdelta
+\newglossaryentry{delta}{
+ type={symbols}, 
+ name={\ensuremath{\delta}},
+ description={$\delta$ is most frequently used to express a difference, for instance $\delta x$ is 
+ a difference between two wealths $x$. It can be the Kronecker delta function, a function of two 
+ arguments with properties $\delta(i,j)=1$ if $i=1$ and $\delta(i,j)=0$ otherwise. It can also be 
+ the Dirac delta function of one argument, $\int f(x)\delta(x-x_0)dx=f(x_0)$},
+ sort=delta}
+
+ %delta_t
+\newglossaryentry{delta_t}{
+ type={symbols}, 
+ name={\ensuremath{\delta t}},
+ description={Duration of one round of a gamble},
+ sort=delta}
+
+%\geta
+\newglossaryentry{eta}{
+ type={symbols}, 
+ name={\ensuremath{\eta}},
+ description={Langevin noise with the properties $\ave{\geta}=0$ and $\ave{\geta(\t_1) \geta(\t_2)}=\gdelta(\t_1-\t_2)$},
+ sort=eta}
+
+ %\gex
+\newglossaryentry{gex}{
+ type={symbols}, 
+ name={\ensuremath{g_{\ave{}}}},
+ description={Exponential growth rate of the expectation value},
+ sort=gex}
+
+ %\NF
+\newglossaryentry{NF}{
+ type={symbols}, 
+ name={\ensuremath{\mathcal{F}}},
+ description={Force},
+ sort=F}
+
+ %\gf
+\newglossaryentry{f}{
+ type={symbols}, 
+ name={\ensuremath{{f}}},
+ description={Arbitrary function},
+ sort=f}
+
+ %\Gg
+\newglossaryentry{g}{
+ type={symbols}, 
+ name={\ensuremath{{g}}},
+ description={Growth rate},
+ sort=g}
+
+ %\gm
+\newglossaryentry{gm}{
+ type={symbols}, 
+ name={\ensuremath{{g_\text{m}}}},
+ description={Multiplicative growth rate},
+ sort=gm}
+
+%\gt
+\newglossaryentry{gt}{
+ type={symbols}, 
+% name={\ensuremath{\stackrel{\text{\tiny{time}}}{g}}}, % AA: this is quite clunky
+ name={\ensuremath{\bar{g}}}, % AA: cleaner notation?
+ description={Time-average exponential growth rate},
+ sort=gtime}
+
+%Gi
+\newglossaryentry{i}{
+ type={symbols}, 
+ name={\ensuremath{i}},
+ description={Label for a particular realization of a random variable},
+ sort=i}
+
+%\newcommand{\Gj}{\gls{j}}	 %label of outcome, lile outcome 1
+%Gj
+\newglossaryentry{j}{
+ type={symbols}, 
+ name={\ensuremath{j}},
+ description={Label of a particular outcome},
+ sort=j}
+
+%GD
+\newglossaryentry{D}{
+ type={symbols}, 
+ name={{\ensuremath{D}}},
+ description={Possible payout for a gamble},
+ sort=D}
+
+%D
+\newglossaryentry{Delta}{
+ type={symbols}, 
+ name={{\ensuremath{\Delta}}},
+ description={Difference operator, for instance $\D\gv$ is a difference of two values of \gv, for instance observed at two different times},
+ sort=Delta}
+
+%Dt
+\newglossaryentry{Dt}{
+ type={symbols}, 
+ name={\ensuremath{\Delta t}},
+ description={A time interval},
+ sort=Dt}
+ 
+%delta t
+\newglossaryentry{dt}{
+ type={symbols}, 
+ name={\ensuremath{\delta t}},
+ description={A time interval},
+ sort=dt}
+ 
+ %Dxp
+\newglossaryentry{Dxp}{
+ type={symbols}, 
+ name={\ensuremath{\Delta x^+}},
+ description={Prize to be won in a gamble, possibly after paying a fee},
+ sort=Dx}
+
+%GJ
+\newglossaryentry{J}{
+ type={symbols}, 
+ name={\ensuremath{J}},
+ description={Size of the jackpot},
+ sort=J}
+ 
+%Gk
+\newglossaryentry{k}{
+ type={symbols}, 
+ name={\ensuremath{k}},
+ description={dummy},
+ sort=k}
+
+%Gm
+\newglossaryentry{m}{
+ type={symbols}, 
+ name={\ensuremath{m}},
+ description={Index specifying a particular gamble},
+ sort=m}
+
+%Gmu
+\newglossaryentry{mu}{
+ type={symbols}, 
+ name={\ensuremath{\mu}},
+ description={Drift term in \BM},
+ sort=mu}
+ 
+%Nm
+\newglossaryentry{Nm}{
+ type={symbols}, 
+ name={\ensuremath{\text{m}}}, % beamer doesn't like \latinword
+ description={Mass},
+ sort=m}
+ 
+%Gn
+\newglossaryentry{n}{
+ type={symbols}, 
+ name={{\ensuremath{n}}},
+ description={$n_j$ is the number of times outcome $j$ is observed in an ensemble},
+ sort=n}
+ 
+%GN
+\newglossaryentry{N}{
+ type={symbols}, 
+ name={{\ensuremath{N}}},
+ description={Ensemble size, number of realizations},
+ sort=N}
+ 
+%\mN
+\newglossaryentry{mN}{
+ type={symbols}, 
+ name={\ensuremath{\mathcal{N}}},
+ description={Normal distribution, $\x \sim \mN(\ave{\p},\var(\p))$ means that the variable $\p$ is normally distributed with mean $\ave{\p}$ and variance $\var(\p)$.},
+ sort=N}
+ 
+ %Go
+\newglossaryentry{o}{
+ type={symbols}, 
+ name={\ensuremath{o}},
+ description={Little-o notation},
+ sort=o}
+
+%\Gp
+\newglossaryentry{p}{
+ type={symbols}, 
+ name={\ensuremath{p}},
+ description={Probability, $\p_i$ is the probability of observing event $i$ in a realization of a random variable},
+ sort=p}
+ 
+%Gr
+\newglossaryentry{r}{
+ type={symbols}, 
+ name={\ensuremath{r}},
+ description={Random factor whereby wealth changes in one round of a gamble},
+ sort=r}
+
+%rex
+\newglossaryentry{rex}{
+ type={symbols}, 
+ name={\ensuremath{r_{\ave{}}}},
+ description={Exctation value of growth factor $\gr$},
+ sort=rex}
+
+%rt
+\newglossaryentry{rt}{
+ type={symbols}, 
+ name={\ensuremath{r_{\text{time}}}},
+ description={Average growth factor over a long time},
+ sort=rtime}
+
+%Gs
+\newglossaryentry{s}{
+ type={symbols}, 
+ name={\ensuremath{s}},
+ description={Dummy variable in an integration},
+ sort=s}
+
+%\Gsigma
+\newglossaryentry{sigma}{
+ type={symbols}, 
+ name={\ensuremath{\sigma}},
+ description={Magnitude of noise in a Brownian motion},
+ sort=sigma}
+ 
+%Gt
+\newglossaryentry{t}{
+ type={symbols}, 
+ name={\ensuremath{t}},
+ description={Time},
+ sort=t}
+
+%tn
+\newglossaryentry{t0}{
+ type={symbols}, 
+ name={\ensuremath{t_0}},
+ description={Specific value of time $t$, usually the starting time of a gamble.},
+ sort=t0}
+ 
+%\GS
+\newglossaryentry{S}{
+ type={symbols}, 
+ name={\ensuremath{S}},
+ description={Cost of a ship},
+ sort=S}
+ 
+%GT
+\newglossaryentry{T}{
+ type={symbols}, 
+ name={\ensuremath{T}},
+ description={Number of sequential iterations of a gamble, so that \T \dt is the total duration of a repeated gamble},
+ sort=T}
+ 
+%\Gtau
+\newglossaryentry{tau}{
+ type={symbols}, 
+ name={\ensuremath{\tau}},
+ description={Dummy variable indicating a specific round in a gamble},
+ sort=tau}
+ 
+%\Gu
+\newglossaryentry{u}{
+ type={symbols}, 
+ name={\ensuremath{u}},
+ description={Utility function},
+ sort=u}
+
+%Gv
+\newglossaryentry{v}{
+ type={symbols}, 
+ name={\ensuremath{v}},
+ description={Stationarity mapping function, so that $v(x)$ has stationary increments},
+ sort=v}
+ 
+%GW
+\newglossaryentry{W}{
+ type={symbols}, 
+ name={\ensuremath{W}},
+ description={Wiener process, $\gW(\t)=\int_0^\t dW$ is continuous and $\gW(\t)\sim\mN(0,\gt)$},
+ sort=W}
+ 
+%Gx
+\newglossaryentry{x}{
+ type={symbols}, 
+ name={\ensuremath{x}},
+ description={Wealth},
+ sort=x}
+
+%Nx
+\newglossaryentry{Nx}{
+ type={symbols}, 
+ name={\ensuremath{\text{x}}}, % beamer doesn't like \latinword
+ description={Position},
+ sort=x}
+ 
+%\Gxi
+\newglossaryentry{xi}{
+ type={symbols}, 
+ name={\ensuremath{\xi}},
+ description={A standard normal variable, $\gxi \sim \mN(0,1)$},
+ sort=xi}
+
+
+%%%%%%%---------INSURANCE GLOSSARY BELOW HERE-------------%%%%%%%%
+%%%%%%%----------------------%%%%%%%%
+%%%%%%%----------------------%%%%%%%%
+%%%%%%%----------------------%%%%%%%%
+%%%%%%%----------------------%%%%%%%%
+%%%%%%%----------------------%%%%%%%%
+%%%%%%%----------------------%%%%%%%%
+
+\newglossaryentry{Delta_U}
+{
+ type={symbols}, 
+ name={\ensuremath{\Delta U}},
+ description={Change in utility over one round trip},
+ sort=Delta_U
+}
+
+\newglossaryentry{Delta_W}
+{
+ type={symbols}, 
+ name={\ensuremath{\Delta W}},
+ description={Change in wealth over one round trip},
+ sort=Delta_W
+}
+
+\newglossaryentry{delta_r_own}
+{
+ type={symbols}, 
+ name={\ensuremath{\delta \ave{r}_{\text{own}}}},
+ description={Change in the rate of change of the expectation value of wealth, experienced by the owner when the insurance contract is signed},
+ sort=delta_r_own
+}
+
+\newglossaryentry{Delta_r_own}
+{
+ type={symbols}, 
+ name={\ensuremath{\Delta \ave{r}_{\text{own}}}},
+ description={Change in the rate of change of the expectation value of wealth, experienced by the owner when the insurance contract is signed},
+ sort=delta_r_own
+}
+
+\newglossaryentry{delta_r_ins}
+{
+ type={symbols}, 
+ name={\ensuremath{\delta \ave{r}_{\text{ins}}}},
+ description={Change in the rate of change of the expectation value of wealth, experienced by the insurer when the insurance contract is signed},
+ sort=delta_r_ins
+}
+
+\newglossaryentry{Delta_r_ins}
+{
+ type={symbols}, 
+ name={\ensuremath{\Delta \ave{r}_{\text{ins}}}},
+ description={Change in the rate of change of the expectation value of wealth, experienced by the insurer when the insurance contract is signed},
+ sort=delta_r_ins
+}
+
+\newglossaryentry{r_own_un}
+{
+  type={symbols}, 
+  name={\ensuremath{\ave{r}_{\text{own}}^{\text{un}}}},
+  description={Rate of change of the expectation value of the uninsured owner's wealth},
+  sort=rownun
+}
+
+\newglossaryentry{r_own_in}
+{
+  type={symbols}, 
+  name={\ensuremath{\ave{r}_{\text{own}}^{\text{in}}}},
+  description={Rate of change of the expectation value of the insured owner's wealth},
+  sort=rownin
+}
+
+\newglossaryentry{ru}
+{
+  type={symbols}, 
+  name={\ensuremath{\ave{r_u}}},
+  description={Rate of change of the expectation value of utility},
+  sort=rinun
+}
+
+\newglossaryentry{r_in_un}
+{
+  type={symbols}, 
+  name={\ensuremath{\ave{r}_{\text{ins}}^{\text{un}}}},
+  description={Rate of change of the expectation value of the insurer's wealth without insurance contract},
+  sort=rinun
+}
+
+\newglossaryentry{r_in_in}
+{
+  type={symbols}, 
+  name={\ensuremath{\ave{r}_{\text{ins}}^{\text{in}}}},
+  description={Rate of change of the expectation value of the insurer's wealth with insurance contract},
+  sort=rinin
+}
+
+
+
+
+
+
+\newglossaryentry{Delta_ru_own}
+{
+ type={symbols}, 
+ name={\ensuremath{\Delta \ave{r_u}_{\text{own}}}},
+ description={Change in the rate of change of the expectation value of utility, experienced by the owner when the insurance contract is signed},
+ sort=delta_ru_own
+}
+
+\newglossaryentry{delta_ru_own}
+{
+ type={symbols}, 
+ name={\ensuremath{\delta \ave{r_u}_{\text{own}}}},
+ description={Change in the rate of change of the expectation value of utility, experienced by the owner when the insurance contract is signed},
+ sort=delta_ru_own
+}
+
+\newglossaryentry{delta_ru_ins}
+{
+ type={symbols}, 
+ name={\ensuremath{\delta \ave{r_u}_{\text{ins}}}},
+ description={Change in the rate of change of the expectation value of utility, experienced by the insurer when the insurance contract is signed},
+ sort=delta_ru_ins
+}
+
+\newglossaryentry{Delta_ru_ins}
+{
+ type={symbols}, 
+ name={\ensuremath{\Delta \ave{r_u}_{\text{ins}}}},
+ description={Change in the rate of change of the expectation value of utility, experienced by the insurer when the insurance contract is signed},
+ sort=delta_ru_ins
+}
+
+\newglossaryentry{ru_own_un}
+{
+  type={symbols}, 
+  name={\ensuremath{\ave{r_u}_{\text{own}}^{\text{un}}}},
+  description={Rate of change of the expectation value of the uninsured owner's utility},
+  sort=ruownun
+}
+
+\newglossaryentry{ru_own_in}
+{
+  type={symbols}, 
+  name={\ensuremath{\ave{r_u}_{\text{own}}^{\text{in}}}},
+  description={Rate of change of the expectation value of the insured owner's utility},
+  sort=ruownin
+}
+
+
+\newglossaryentry{ru_in_un}
+{
+  type={symbols}, 
+  name={\ensuremath{\ave{r_u}_{\text{ins}}^{\text{un}}}},
+  description={Rate of change of the expectation value of the insurer's utility without insurance contract},
+  sort=ruinun
+}
+
+\newglossaryentry{ru_in_in}
+{
+  type={symbols}, 
+  name={\ensuremath{\ave{r_u}_{\text{ins}}^{\text{in}}}},
+  description={Rate of change of the expectation value of the insurer's utility with insurance contract},
+  sort=ruinin
+}
+
+
+
+\newglossaryentry{g_time}
+{
+  type={symbols}, 
+  name={\ensuremath{\bar{g}}},
+  description={Time-average growth rate},
+  sort=g_bar
+}
+
+
+\newglossaryentry{delta_g_own}
+{
+ type={symbols}, 
+ name={\ensuremath{\delta \bar{g}_{\text{own}}}},
+ description={Change in the time average (and expectation value) of the dynamic-specific growth rate of wealth (here exponential), experienced by the owner when the insurance contract is signed},
+ sort=delta_g_own
+}
+
+\newglossaryentry{delta_g_ins}
+{
+ type={symbols}, 
+ name={\ensuremath{\delta \bar{g}_{\text{ins}}}},
+ description={Change in the time average (and expectation value) of the dynamic-specific growth rate of wealth (here exponential), experienced by the insurer when the insurance contract is signed},
+ sort=delta_g_ins
+}
+
+\newglossaryentry{Delta_g_own}
+{
+ type={symbols}, 
+ name={\ensuremath{\Delta \bar{g}_{\text{own}}}},
+ description={Change in the time average (and expectation value) of the dynamic-specific growth rate of wealth (here exponential), experienced by the owner when the insurance contract is signed},
+ sort=delta_g_own
+}
+
+\newglossaryentry{Delta_g_ins}
+{
+ type={symbols}, 
+ name={\ensuremath{\Delta \bar{g}_{\text{ins}}}},
+ description={Change in the time average (and expectation value) of the dynamic-specific growth rate of wealth (here exponential), experienced by the insurer when the insurance contract is signed},
+ sort=delta_g_ins
+}
+
+\newglossaryentry{g_own_un}
+{
+  type={symbols}, 
+  name={\ensuremath{\bar{g}_{\text{own}}^{\text{un}}}},
+  description={Time-average growth rate of the uninsured owner's wealth},
+  sort=gownun
+}
+
+\newglossaryentry{g_own_in}
+{
+  type={symbols}, 
+  name={\ensuremath{\bar{g}_{\text{own}}^{\text{in}}}},
+  description={Time-average growth rate of the insured owner's wealth},
+  sort=gownin
+}
+
+
+\newglossaryentry{g_in_un}
+{
+  type={symbols}, 
+  name={\ensuremath{\bar{g}_{\text{ins}}^{\text{un}}}},
+  description={Time-average growth rate of the insurer's wealth without insurance contract},
+  sort=ginun
+}
+
+\newglossaryentry{g_in_in}
+{
+  type={symbols}, 
+  name={\ensuremath{\bar{g}_{\text{ins}}^{\text{in}}}},
+  description={Time-average growth rate of the insurer's wealth with insurance contract},
+  sort=ginin
+}
+
+\newglossaryentry{U}
+{
+  type={symbols}, 
+  name={\ensuremath{U}},
+  description={Utility function},
+  sort=U
+}
+
+\newglossaryentry{U_own}
+{
+  type={symbols}, 
+  name={\ensuremath{U_{\text{own}}}},
+  description={Ship owner's utility function},
+  sort=U
+}
+
+\newglossaryentry{U_ins}
+{
+  type={symbols}, 
+  name={\ensuremath{U_{\text{ins}}}},
+  description={Insurer's utility function},
+  sort=U
+}
+
+\newglossaryentry{W_own}
+{
+  type={symbols}, 
+  name={\ensuremath{W_{\text{own}}}},
+  description={Wealth of the insurance buyer},
+  sort=wown
+}
+
+\newglossaryentry{W_in}
+{
+  type={symbols}, 
+  name={\ensuremath{W_{\text{ins}}}},
+  description={Wealth of the insurer},
+  sort=wins
+}
+
+
+\newglossaryentry{F}
+{
+  type={symbols}, 
+  name={\ensuremath{F}},
+  description={Insurance fee},
+  sort=F
+}
+
+\newglossaryentry{G}
+{
+  type={symbols}, 
+  name={\ensuremath{G}},
+  description={Gain from one round trip of the ship},
+  sort=G
+}
+
+\newglossaryentry{L}
+{
+  type={symbols}, 
+  name={\ensuremath{L}},
+  description={Insured loss},
+  sort=L
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Glossary items for Chapter 4 (Markets) from here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newglossaryentry{mur}
+{
+  type={symbols}, 
+  name={\ensuremath{\mu_\text{r}}},
+  description={Drift of riskless asset},
+  sort=mur
+}
+
+\newglossaryentry{mus}
+{
+  type={symbols}, 
+  name={\ensuremath{\mu_\text{s}}},
+  description={Drift of risky asset},
+  sort=mus
+}
+
+\newglossaryentry{sigmas}
+{
+  type={symbols}, 
+  name={\ensuremath{\sigma_\text{s}}},
+  description={Volatility of risky asset},
+  sort=sigmas
+}
+
+\newglossaryentry{mue}
+{
+  type={symbols}, 
+  name={\ensuremath{\mu_\text{e}}},
+  description={Excess drift},
+  sort=mus
+}
+
+\newglossaryentry{l}
+{
+  type={symbols}, 
+  name={\ensuremath{\ell}},
+  description={Leverage},
+  sort=l
+}
+
+\newglossaryentry{lopt}
+{
+  type={symbols}, 
+  name={\ensuremath{\gls{l}_\text{opt}}},
+  description={Optimal leverage},
+  sort=lopt
+}
+
+\newglossaryentry{lopts}
+{
+  type={symbols}, 
+  name={\ensuremath{\gls{l}_\text{opt,s}}},
+  description={Simulated optimal leverage},
+  sort=lopts
+}
+
+\newglossaryentry{lm}
+{
+  type={symbols}, 
+  name={\ensuremath{\gls{l}^{-}}},
+  description={Smallest leverage for zero time-average growth rate},
+  sort=lm
+}
+
+\newglossaryentry{lp}
+{
+  type={symbols}, 
+  name={\ensuremath{\gls{l}^{+}}},
+  description={Largest leverage for zero time-average growth rate},
+  sort=lp
+}
+
+\newglossaryentry{lpm}
+{
+  type={symbols}, 
+  name={\ensuremath{\gls{l}^{\pm}}},
+  description={Leverages for zero time-average growth rate},
+  sort=lpm
+}
+
+\newglossaryentry{x0}
+{
+  type={symbols}, 
+  name={\ensuremath{\gls{x}_0}},
+  description={Value of an investment in the riskless asset},
+  sort=x0
+}
+
+\newglossaryentry{x1}
+{
+  type={symbols}, 
+  name={\ensuremath{\gls{x}_1}},
+  description={Value of an invstment in the risky asset},
+  sort=x1
+}
+
+\newglossaryentry{xl}
+{
+  type={symbols}, 
+  name={\ensuremath{\gls{x}_{\gls{l}}}},
+  description={Value of an investment in a leveraged portfolio},
+  sort=xl
+}
+
+\newglossaryentry{Sharpe}
+{
+  type={symbols}, 
+  name={\ensuremath{S}},
+  description={Sharpe ratio},
+  sort=Sharpe
+}
+
+\newglossaryentry{gtm}
+{
+  type={symbols}, 
+  name={\ensuremath{\gls{gt}_\text{m}}},
+  description={time-average multiplicative growth rate},
+  sort=gtm
+}
