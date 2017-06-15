@@ -119,7 +119,7 @@ In \fref{1_2} we average over finite ensembles of $\N$
 trajectories, that is, we plot the finite-ensemble average.
 
 \begin{defn}{Finite-ensemble average} The finite-ensemble average of the observable 
-\A is
+$\A$ at a given time $\t$ is
 \be
 \ave{\A(\t)}_{\N}=\frac{1}{\N}\sum_{\gi}^{\N} \A_{\gi}(\t),
 \elabel{f_ens}
@@ -277,7 +277,7 @@ the subscript $\gj$ indexes a possible value of $\x$.
 The fraction $\frac{\gn_\gj}{\N}$ in the limit $\N\to\infty$ is 
 the probability $\p_\gj$, and we find
 \be
-\lim_{\N\to\infty}\ave{\x(\t)}_\N = \sum_\gj \p_\gj \x_\gj(\t)
+\lim_{\N\to\infty}\ave{\x(\t)}_\N = \sum_\gj \p_\gj \x_\gj(\t).
 \ee
 The \LHS is the expectation value by the first definition as a limit, 
 the \RHS is the expectation value by the second definition as a weighted sum. 
@@ -425,15 +425,19 @@ The dynamic is set up such that wealth at time $t$ is
 \x(\t+\Dt)=\x(\t)\prod_{\gtau=1}^\T \gr(\gtau),
 \ee
 which we can split up into two products, one for each possible value of $\gr(\gtau)$, which we call
-$\gr_1$ and $\gr_2$. Let's denote the number of $\gr_1$s by $\gn_1$ and $\gr_2$s by $\gn_2$, 
+$\gr_1$ and $\gr_2$, \ie
+\be
+\gr(\gtau) = \begin{cases}
+\gr_1 &\text{with probability } \p_1 \\
+\gr_2 &\text{with probability } \p_2 = 1-\p_1.
+\end{cases}
+\ee
+Let's denote the number of occurrences of $\gr_1$ by $\gn_1$ and of $\gr_2$ by $\gn_2$, 
 so that
 \be
 \x(\t+\Dt)= \x(\t)\gr_1^{\gn_1} \gr_2^{\gn_2}.
 \ee
-We denote by $\rt$ the factor by which $\x(\t)$ changes per round 
-when the change is computed over a long time. 
-This quantity is found by taking the $\t^{\text{th}}$ root of $\frac{\x(\t+\Dt)}{\x(\t)}$ 
-and considering the long-time limit
+We denote by $\rt$ the effective factor by which $\x(\t)$ is multiplied per round when the change is computed over a long time. This quantity is found by taking the $\t^{\text{th}}$ root of $\frac{\x(\t+\Dt)}{\x(\t)}$ and considering the long-time limit
 \bea
 \rt &=&\lim_{\Dt\to\infty }\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)^{1/\t}\\
  &=& \lim_{\T\to\infty } \gr_1^{\gn_1/\T}\gr_2^{\gn_2/\T}.
@@ -719,7 +723,9 @@ happy to use it here.
 
 The issue is related to a result obtained by \person{von Neumann} and 
 \person{Morgenstern} in their 
-famous but quite unhelpful book \cite{vonNeumannMorgenstern1944}: 
+famous
+%but quite unhelpful
+book \cite{vonNeumannMorgenstern1944}: 
 only differences in utility functions can have physical meaning.
 \end{excursion}
 
@@ -779,7 +785,7 @@ expectation value if the ensemble is large enough. Secondly, expectation values
 are meaningful, even if only a single system exists, if they reflect what happens over time. 
 
 \person{Boltzmann} called a system ``ergodic\footnote{The word ``ergodic'' was coined by \person{Boltzmann}. 
-He initially proposed the word ``monodic'', from Greek $\mu o \nu o$ (unique)+$o\d o \sigma$ (path) suggesting 
+He initially proposed the word ``monodic'', from Greek $\mu o \nu o$ (unique) + $o\d o \varsigma$ (path) suggesting 
 that a single path when followed for a sufficiently long time will explore all there is to explore and reflect what happens 
 in an ensemble. The term ``ergodic'' refers to the specific system \person{Boltzmann} was considering, namely an energy 
 ($\epsilon \rho \gamma o \nu$) shell across which a path is being traced out.}'' if the possible 
@@ -855,16 +861,16 @@ empirical fact and simply stated that people tend to behave as though they value
 money non-linearly. We now know what is actually going on: $\d \x$ is not ergodic, 
 and $\ave{\d \x}$ is of no interest -- it doesn't tell us what happens over time. However,
 $\d \ln \x$ is ergodic, $\ave{\d \ln \x}$ specifies what happens to $\x$ over time, and it
-is the right object to optimize. 
+is the right object to optimize.
 
-When the foundations of economic theory were laid, specifically in \person{Bernoulli}'s 
-seminal paper of 1738 \cite{Bernoulli1738}, the distinction between ergodic and
-non-ergodic observables was unknown. Researchers thought that the expectation value
-of $\d \x$ reflected what happens over time but observed that real people behaved
-according to what the expectation value of $\d \ln \x$ would suggest. The origin of this 
-discrepancy remained mysterious and numerous puzzles and paradoxes in 
-economic theory arose as a result. The paradigm we outline here resolves these puzzles.
-
+% repetition
+%When the foundations of economic theory were laid, specifically in \person{Bernoulli}'s 
+%seminal paper of 1738 \cite{Bernoulli1738}, the distinction between ergodic and
+%non-ergodic observables was unknown. Researchers thought that the expectation value
+%of $\d \x$ reflected what happens over time but observed that real people behaved
+%according to what the expectation value of $\d \ln \x$ would suggest. While the origin of the 
+%discrepancy remained mysterious and numerous puzzles and paradoxes in 
+%economic theory arose as a result. The paradigm we outline here resolves these puzzles.
 
 \subsection{Rates}
 \seclabel{Rates}
@@ -908,7 +914,7 @@ constant force field. Nonetheless \person{Newton} found a useful stable property
 Maybe we can do something similar. We're looking for a function $\gv(\x)$ that satisfies two conditions: 
 it should indicate what happens to $\x$ itself, and its changes should be stationary.
 
-The first condition is that $\gv(\x)$ must tells us 
+The first condition is that $\gv(\x)$ must tell us 
 whether $\x(\t)$ is growing or shrinking -- this just means that $\gv(\x)$ has to 
 be monotonic in $\x$. We know that there is something stationary
 about $\x$ because we were able to write down in ink how $\x$ changes. So we only need 
@@ -943,15 +949,14 @@ $\x$, which we called $\gv$, are stationary and independent in our game. A quant
 for which this is the case performs a random walk.
 Indeed, the blue line for a single system in \fref{1_2} (B) shows 52 steps of a random walk trajectory.
 Random walks come in many forms -- in all of them $\gv$ changes discontinuously by an amount 
-$\d \gv$ drawn from a stationary distribution, at time intervals that are themselves 
-drawn from a stationary distribution.
+$\d \gv$ drawn from a stationary distribution, over time intervals which may be regular or which may be drawn from a stationary distribution themselves.
 
 We are interested only in the simple case where $\gv$ changes at regular intervals, $\dt, 2\dt ...$. For 
 the distribution of increments we only insist on the existence of the variance, meaning we insist that 
 $\var(\d \gv)=\ave{\d \gv^2}-\ave{\d \gv}^2$ be finite. The change in $\gv$ after a long time is then the sum 
 of many stationary independent increments, 
 \be
-\gv(\t+\T\dt)-\gv(\t)=\sum_\gi^\T \d \gv_\gi
+\gv(\t+\T\dt)-\gv(\t)=\sum_\gi^\T \d \gv_\gi.
 \ee
 The Gaussian central limit theorem tells us that such a sum, properly rescaled, will be 
 Gaussian distributed
@@ -966,7 +971,7 @@ Gaussian distributed.
 Let's also ask about the re-scaling that was applied in \eref{CLT}. 
 Scaling properties are very robust, and especially the scaling  
 of random walks for long times will be useful to us. We work with the
-simplest setup: we start at zero, $\gv=0$, and in each time step, we either increase or 
+simplest setup: we start at zero, $\gv(0)=0$, and in each time step, we either increase or 
 decrease $\gv$ by 1, with probability 1/2. 
 We are interested in the variance of the distribution of $\gv$ as $\T$ increases, which we obtain by
 computing the first and second moments of the distribution. The expectation value (the first moment)
@@ -978,7 +983,7 @@ time $\T+1$ as
 \bea
 \ave{\gv(\T+1)^2}&=&\frac{1}{2}\left[\ave{(\gv(\T)+1)^2}+\ave{(\gv(\T)-1)^2}\right]\\
 &=&\frac{1}{2}\left[\ave{\gv(\T)^2+1+2\gv(\T)}+\ave{(\gv(\T)^2+1-2\gv(\T))}\right]\\
-&=&\ave{\gv(\T)^2}+1
+&=&\ave{\gv(\T)^2}+1.
 \eea
 In addition, we know the initial value of $\gv(0)=0$. By induction it follows that the second moment is
 \be
@@ -1100,7 +1105,7 @@ and has variance $\var(\gv(\t))=\t$ (this process is also known as the Wiener pr
 known to be recurrent -- it returns to zero, arbitrarily many times, with probability one in the 
 long-time limit. We would not be mad to guess that the time average of zero-drift \BM,
 \be
-\bar{\gv}=\lim_{\t\to\infty} \frac{1}{\t}\int_0^\t \gd\t' \gv(\t')
+\bar{\gv}=\lim_{\t\to\infty} \frac{1}{\t}\int_0^\t \gd\t' \gv(\t'),
 \ee
 will converge to zero with probability one. But we would be wrong. Yes, the process has no drift, and
 yes it returns to zero infinitely many times, but its time average is not a delta function at zero.
@@ -1181,14 +1186,13 @@ in the beginning but then a massive crash occurred that destroyed morale.''}
 \end{figure}
 
 The basic message of the game from \secref{The_game} is that we may obtain different values for growth rates, depending on
-how we average -- an expectation value is one average, a time average is quite a different thing. The game 
+how we average -- an expectation value is one average, a time average is quite another. The game 
 itself is sometimes called the multiplicative binomial process \cite{Redner1990}, we thank \person{S. Redner} for 
 pointing this out to us. \GBM is the continuous version of the multiplicative binomial process, and it shares the
 basic feature of a difference between the growth rate of the expectation value and time-average growth.
 
 The expectation value is easily computed -- the process is not ergodic, but that does not mean we cannot
-compute its expectation value. We simply take expectations of both sides of
-\eref{GBM_c},
+compute its expectation value. We simply take the expectations values of both sides of \eref{GBM_c} to get
 \bea
 \ave{\gd\x}&=&\ave{\x(\gmu \gd\t+ \gsigma \gd\gW)}\\
 =\gd\ave{\x}&=&\ave{\x} \gmu \gd\t.
@@ -1231,7 +1235,7 @@ time average of $\D \ln \x(\t)$
 \ee
 Letting $\dt$ become infinitesimal the higher-order terms in $\dt$ vanish, and we find
 \be
-\ave{\ln \x(\t+\gd\t) - \ln \x(\t)} =\gmu \gd\t- \frac{1}{2} \gsigma^2 \gd\t
+\ave{\ln \x(\t+\gd\t) - \ln \x(\t)} =\gmu \gd\t- \frac{1}{2} \gsigma^2 \gd\t,
 \ee
 so that the time-average growth rate is
 \be

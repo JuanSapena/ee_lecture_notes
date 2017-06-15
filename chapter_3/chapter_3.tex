@@ -117,7 +117,7 @@ Thus, a broad wealth distribution with heavy tails indicates greater wealth ineq
 \item Under perfect equality everyone would have the same, meaning that the wealth
 distribution would be a Dirac delta function centered at the mean of $x$, that is
 \be
-\PDF_x(x)=\delta(x-\ave{x}_N)
+\PDF_x(x)=\delta(x-\ave{x}_N);
 \ee
 \item
 Maximum inequality would mean that one individual owns everything
@@ -129,16 +129,16 @@ and everyone else owns nothing, that is
 
 \subsubsection{Log-normal wealth distribution}
 \seclabel{Log-normal_wealth}
-GBM is log-normally distributed. If each individual's wealth follows GBM 
+GBM is log-normally distributed. If each individual's wealth follows GBM,
 \be
-dx=x(\mu dt + \sigma dW)
+dx=x(\mu dt + \sigma dW),
 \elabel{GBM}
 \ee
 with solution 
 \be
 x(t) = x_0 \exp\left[\left(\mu-\frac{\sigma^2}{2}\right)t + \sigma W(t)\right],
 \ee
-we will observe a log-normal wealth distribution at each moment in time,
+then we will observe a log-normal wealth distribution at each moment in time:
 \be
 \ln x(t) \sim \mathcal{N}\left(\ln x_0 + \left(\mu - \frac{\sigma^2}{2}\right)t, \sigma^2 t\right).
 \elabel{lognormal}
@@ -626,7 +626,7 @@ dynamic of $x$. From it we can find the dynamic for $f(x)=y$ using \Ito calculus
 \bea
 df &=& \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial t} + \frac{1}{2} \frac{\partial^2 f}{\partial x^2} dx^2\\
 =dy&=& -\mu y dt + \frac{y}{x} dx\\
-&=&y \sigma dW
+&=&y \sigma dW.
 \eea
 
 
