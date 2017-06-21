@@ -437,9 +437,9 @@ so that
 \be
 \x(\t+\Dt)= \x(\t)\gr_1^{\gn_1} \gr_2^{\gn_2}.
 \ee
-We denote by $\rt$ the effective factor by which $\x(\t)$ is multiplied per round when the change is computed over a long time. This quantity is found by taking the $\t^{\text{th}}$ root of $\frac{\x(\t+\Dt)}{\x(\t)}$ and considering the long-time limit
+We denote by $\rt$ the effective factor by which $\x(\t)$ is multiplied per round when the change is computed over a long time. This quantity is found by taking the $\Dt^{\text{th}}$ root of $\frac{\x(\t+\Dt)}{\x(\t)}$ and considering the long-time limit
 \bea
-\rt &=&\lim_{\Dt\to\infty }\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)^{1/\t}\\
+\rt &=&\lim_{\Dt\to\infty }\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)^{1/\Dt}\\
  &=& \lim_{\T\to\infty } \gr_1^{\gn_1/\T}\gr_2^{\gn_2/\T}.
 \eea
 Identifying $\lim_{\T\to\infty} \gn_1/\T$ as the probability 

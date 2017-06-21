@@ -16,7 +16,7 @@ models how people make decisions. In this chapter we will generalise and formali
 the treatment of the coin tossing game to introduce our 
 approach to decision theory. Our central axiom will be that people attempt to maximize
 the rate at which wealth grows when averaged over time. This is a surprisingly powerful idea.
-In many cases it eliminates the need for well established but epistemologically troublesome techniques. 
+In many cases it eliminates the need for well established but epistemologically troublesome techniques, such as utility functions. 
 }
 \newpage
 
@@ -30,7 +30,7 @@ of how real people make decisions. We will not worry too much about the accuracy
 of these reminiscences. Instead we will ``shut up and calculate'' -- we will let the mathematical
 model create its world. Writing down a mathematical model is like laying out the premise for
 a science-fiction novel. We may decide that people can download their consciousness onto a computer, 
-that medicine has advanced to eliminate aging and death -- these are premises we are at liberty to invent.
+that medicine has advanced to eliminate ageing and death -- these are premises we are at liberty to invent.
 Once we have written them down we begin to explore the world that results from those premises.
 A choice of decision criterion implies an endless list of behaviors that will
 be observed. For example, some criteria will lead to cooperation, others will not, some will lead
@@ -125,7 +125,7 @@ in a stock price over one day, is large.
 Suppose now that you have to choose between two options that you've modeled 
 as two gambles (possibly including the null gamble). Which should you choose, 
 and why? This is the gamble problem, the central question of decision theory, and 
-the basis for almost everything in mainstream economics.
+the basis for much of mainstream economics.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Repetition and wealth evolution}
@@ -142,8 +142,7 @@ Considering a single round of a gamble in isolation -- the so-called `one-shot
 game' of game theory -- is relatively uninstructive in this regard. All we know is 
 that one of the possible payouts will be received, leading to the random variable 
 $\x(\t+\dt)=\x(\t)+\gD$. 
-We don't know the tendency the gamble will give to $\x(\t)$ over time, since
-one time step is generally not enough for any tendencies to become apparent. 
+We don't yet know how accepting this gamble will affect how our wealth, $\x(\t)$, grows or decays over time, since one time step isn't enough for this to become apparent. 
 The one-shot game takes one random variable, $\gD$, and turns it trivially into 
 another, $\x(\t)+\gD$. Time has no significance in a 
 one-shot game. An amount $\dt$ elapses, but this could be a single 
@@ -153,7 +152,7 @@ To establish how your wealth evolves, we must imagine that the world does
 not come to a grinding halt after the gamble. Instead we imagine that the gamble
 is repeated over many rounds.\footnote{In fact, to make the 
 problem tractable mathematically, it will be necessary to imagine the gamble 
-will be repeated indefinitely. More on this later.} This does not mean that we actually
+is repeated indefinitely.} This does not mean that we actually
 believe that a real-world situation will repeat itself over and over again, \eg we don't
 believe that we will bet on the horse \textit{Ito} at odds 50/1 many times in a row. Instead, 
 imagining repetition is a methodological device that allows us to extract tendencies
@@ -180,11 +179,13 @@ In the additive case, we have
 \elabel{DW_add}
 \ee
 In other words, under additive repetition, $\d \x$ is a stationary 
-random variable.\footnote{This seemingly mundane corollary stems 
-from our definitions of $\gD$ as a monetary payout and $\d\x$ as an 
-additive change in wealth, expressed in monetary units. It would not 
-hold if, for example, we had defined $\d\x$ to be some other type of 
-change, such as a relative change.} Starting at time, $\tn$, wealth 
+random variable.
+%\footnote{This seemingly mundane corollary stems 
+%from our definitions of $\gD$ as a monetary payout and $\d\x$ as an 
+%additive change in wealth, expressed in monetary units. It would not 
+%hold if, for example, we had defined $\d\x$ to be some other type of 
+%change, such as a relative change.}
+Starting at time, $\tn$, wealth 
 after $\T$ rounds is
 \be
 \x(\tn+\T\dt) = \x(\tn) + \sum_{\gtau=1}^\T \gD(\gtau),
@@ -246,14 +247,14 @@ where $\gr(\gtau)$ is the realisation of the random multiplier in round $\gtau$.
 \begin{example}{Multiplicative repetition}
 The $\$10$ bet on a coin toss is now re-expressed as a bet of a fixed 
 fraction of wealth at the start of each round. Following 
-\eref{R_def}, the random multiplier, $\gr$, has two possible possible outcomes:
+\eref{R_def}, the random multiplier, $\gr$, has two possible outcomes:
 \bea
 \gr_1 = \frac{\$100 - \$10}{\$100} = 0.9, &\quad& \p_1 = 1/2;\\
 \gr_2 = \frac{\$100 + \$10}{\$100} = 1.1, &\quad& \p_2 = 1/2.
 \eea
 The wealth after $\T$ rounds is, therefore,
 \be
-\g(\tn+\T\dt) = \$100\,\,(1.1)^\gk\,(0.9)^{\T-\gk},
+\x(\tn+\T\dt) = \$100\,\,(1.1)^\gk\,(0.9)^{\T-\gk},
 \ee
 where $0\leq \gk \leq \T$ is the number of winning tosses. In this example there is 
 no need to invoke a `no bankruptcy' condition, since our individual can lose no 
@@ -299,7 +300,7 @@ to convey robust information about the underlying process, rather than
 mere happenstance about when it was sampled. 
 
 %Therefore, the increments in any function $\gv(\x)$ will also be stationary. We want $\gv(\x)$ to be increasing in $\x$.
-Under additive repetition, we know from \eref{DW_add} that $\D\x$ is already stationary, so we know immediately that the correct mapping is the identity: $\gv(\x)=\x$.\footnote{In fact, any linear function $\gv(\x)=\alpha\x+\beta$ has stationary increments and is monotonically increasing provided $\alpha>0$. However, there is nothing gained by choosing anything other $\gv(\x)=\x$.} This gives the growth rate for an additive process (denoted by the subscript `$a$'):
+Under additive repetition, we know from \eref{DW_add} that $\D\x$ is already stationary, so we know immediately that the correct mapping is the identity: $\gv(\x)=\x$.\footnote{In fact, any linear function $\gv(\x)=\alpha\x+\beta$ has stationary increments and is monotonically increasing provided $\alpha>0$. However, there is nothing gained by choosing anything other $\gv(\x)=\x$.} This gives the growth rate for an additive process (denoted by the subscript `a'):
 \be
 \g_\text{a}(\t,\Dt) = \frac{\D\x(\t)}{\Dt}.
 \elabel{g_add}
@@ -424,7 +425,7 @@ to be specified. Unlike some treatments of human decision-making, it
 contains no arbitrary or hard-to-measure psychological factors.
 
 Having said all this, while we think that the decision axiom 
-is reasonable, we stress that it is an \textit{axiom}: it 
+is reasonable, we stress that it is an \textit{axiom}, \ie something we assert without empirical justification and which is not deduced from more primitive considerations. It 
 defines a model world where certain types of behaviour will be observed. 
 We feel reminded of reality by this model world, but you may disagree 
 or you may prefer a different model that creates a different model world
@@ -433,7 +434,6 @@ Other decision axioms are
 possible and, indeed, have been proposed. For instance, 
 classical decision theory is defined by the axiom that decision
 makers maximize expected utility. 
-
 
 Our decision rationale can be expressed as a set of instructions.
 We denote quantities relating to the $\m^\text{th}$ available gamble with the 
@@ -445,7 +445,7 @@ per-round period, $\dt^{(\m)}$.
 \item Specify $\gD^{(\m)}$ and $\dt^{(\m)}$ for the gambles offered;
 \item Specify the wealth dynamic, \ie the relationship between $\d\x(\t)$, 
 $\x(\t)$, and $\gD$;
-\item Determine the function, $\gv(\x)$, of the wealth whose increments are 
+\item Find the stationarity transformation, $\gv(\x)$, of the wealth whose increments are 
 stationary random variables under this dynamic;
 \item Determine the time-average growth rates, $\gt^{(\m)}$, either by taking 
 the long-time limits of the growth rates, $\g^{(\m)}(\t,\dt)$, or by invoking the 
@@ -491,7 +491,7 @@ If the repetition is additive, the wealth evolves over $T$ rounds according to:
 \eea
 Here we have assumed that the wealth is free to go negative, \ie that 
 there is no bankrupt state from which the individual can't 
-recover.\footnotemark\ The appropriate utility function is the identity, 
+recover.\footnotemark\ The appropriate stationarity transformation is the identity, 
 $\gv(\x)=\x$, so the growth rates are simply the rates of change of 
 wealth itself. We can express these over the $\T$ rounds as:
 \bea
@@ -504,7 +504,7 @@ is trivially $\gt_\text{a}^{(2)}=\$0$ per unit time. For the coin toss, we calcu
 \gt_\text{a}^{(1)} &=& \lim_{\T\to\infty}\left\{\frac{1}{\T}\sum_{\gtau=1}^\T \frac{\gD^{(1)}(\gtau)}{\dt}\right\}\\
 &=& \ave{\frac{\gD^{(1)}}{\dt}}\\
 &=& \frac{\p^{(1)}_1 \gD^{(1)}_1 + \p^{(1)}_2 \gD^{(1)}_2}{\dt}\\
-&=& \frac{\x(\tn)}{20\dt},
+&=& \frac{0.05\x(\tn)}{\dt},
 \eea
 which is positive (assuming $\x(\tn)>\$0$). Therefore, $\gt_\text{a}^{(1)}>\gt_\text{a}^{(2)}$ 
 and our individual should accept the coin toss gamble under additive dynamics.
@@ -542,7 +542,7 @@ Under multiplicative dynamics, the wealth evolves according to:
 \x^{(1)}(\tn+\T\dt) &=& \x(\tn) \prod_{\gtau=1}^\T \gr^{(1)}(\gtau); \elabel{W1T_mult}\\
 \x^{(2)}(\tn+\T\dt) &=& \x(\tn).\elabel{W2T_mult}
 \eea
-The appropriate utility function is the logarithm, $\gv(\x)=\ln \x$. We have 
+The appropriate stationarity transformation is the logarithm, $\gv(\x)=\ln \x$. We have 
 already discussed why, but one way of seeing this is to take logarithms of 
 \eref{W1T_mult}. This converts the product into a sum of stationary and 
 independent random variables:
@@ -559,7 +559,7 @@ are stationarily distributed. The growth rates, expressed over $\T$ rounds, are:
 per unit time. As in the additive case, we take the $\T\to\infty$ limits. For the null 
 gamble this is trivial: $\gt_\text{m}^{(2)}=0$ per unit time. For the coin toss gamble, we get
 \bea
-\gt_\text{m}^{(1)} = \ave{\frac{\ln \gr^{(1)}}{\dt}} = \frac{\ln0.9}{2\dt},
+\gt_\text{m}^{(1)} = \ave{\frac{\ln \gr^{(1)}}{\dt}} = \frac{\ln\left(\sqrt{0.9}\right)}{\dt},
 \eea
 which is negative. Thus, $\gt_\text{m}^{(1)}<\gt_\text{m}^{(2)}$ under multiplicative 
 dynamics and our individual should decline the coin toss. That this is the opposite 
@@ -736,7 +736,7 @@ with starting wealth, $\x(0)=\$100$, and ticket price, $\F=\$10$.
 Ten trajectories are plotted over 1,000 rounds.\flabel{lottery_add_traj}}
 \end{figure}
 
-This absurd conclusion, which does not accord with human behaviour, 
+This implausible conclusion, which does not accord with human behaviour, 
 exposes the weakness of judging a gamble by its effect on expected 
 wealth. Daniel Bernoulli suggested to resolve the paradox by adopting 
 the expected-utility paradigm. His choice of utility function was the 
@@ -787,7 +787,7 @@ This resolves the paradox, in that it admits the possibility of the player decli
 
 However, while plausible, the framework relies on a utility function, which must be postulated. It can neither be derived from fundamental considerations nor verified empirically.
 
-Turning to our decision algorithm, we will assume that the lottery is repeated multiplicatively. This means, in effect, that the prizes and ticket price are treated as fractions of the player's wealth, such that the effect of each lottery is to multiply the wealth by a random factor,
+Turning to our decision algorithm, we will assume that the lottery is repeated multiplicatively. This means, in effect, that the prizes and ticket price are treated as fractions of the player's wealth, such that the effect of each lottery is to multiply current wealth by a random factor,
 \be
 \gr_\gk = \frac{\x+\$2^{\gk-1}-\F}{\x}, \quad \p_\gk = 2^{-\gk}.
 \ee
@@ -827,12 +827,11 @@ disastrous decay of the player's wealth over time under a realistic dynamic.
 As $\F\to \x+\$1$ from above in \eref{lottery_gbar}, $\gt_\text{m}$ diverges 
 negatively, since the first term in the sum is the logarithm of a quantity approaching 
 zero. This corresponds to a lottery which can make the player bankrupt. The effect 
-is also shown in the inset of \fref{lottery_mult_traj}.
+is also shown in the inset of \fref{gbar_zero}.
 
 Treatments based on multiplicative repetition have appeared sporadically in the 
 literature, starting with Whitworth in 
-1870~\cite[App.~IV]{Whitworth1870}.\footnote{Whitworth skewered the field of 
-utility theory thus: ``The result at which we have arrived is not to be classed with 
+1870~\cite[App.~IV]{Whitworth1870}.\footnote{Whitworth was dismissive of early utility theory: ``The result at which we have arrived is not to be classed with 
 the arbitrary methods which have been again and again propounded to evade the difficulty of the Petersburg problem\ldots. Formulae have often been proposed, which have possessed the one virtue of presenting a finite result\ldots but they have often had no intelligible basis to rest upon, or\ldots sufficient care has not been taken to draw a distinguishing line between the significance of the result obtained, and the different result arrived at when the mathematical expectation is calculated.'' Sadly he chose to place these revolutionary remarks in an appendix of a college probability textbook.} It is related to the famous Kelly Criterion~\cite{Kelly1956}\footnote{Kelly was similarly unimpressed with the mainstream and noted in his treatment of decision theory, which he developed from the perspective of information theory and which is identical to ergodicity economics with multiplicative dynamics, that the utility function is ``too general to shed any light on the specific problems of communication theory.''}, although Kelly did not explicitly treat the St Petersburg game, and tangentially to \Ito's lemma~\cite{Ito1944}. It appears as an exercise in a well-known text on information theory~\cite[Ex.~6.17]{CoverThomas1991}. Mainstream economics has ignored all this. A full and rigorous resolution of the paradox, including the epistemological significance of the shift from ensemble to time averages, was published recently by one of the present authors~\cite{Peters2011b}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
