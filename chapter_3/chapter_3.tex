@@ -400,8 +400,8 @@ would this operation affect the dynamic of the wealth of these two individuals?
 
  Consider a discretized version of \eref{GBM}, such as would be used in a numerical simulation. The non-cooperators grow according to
  \bea
- \D x_i(t) & = & x_i(t) \left[\mu \Delta t + \sigma \sqrt{\Delta t}\,\xi_i\right], \elabel{discrete_nonc_grow} \\
- x_i(t+\D t) & = & x_i(t) + \D x_i(t), \elabel{discrete_nonc_coop}
+ \d x_i(t) & = & x_i(t) \left[\mu \dt + \sigma \sqrt{\dt}\,\xi_i\right], \elabel{discrete_nonc_grow} \\
+ x_i(t+\dt) & = & x_i(t) + \d x_i(t), \elabel{discrete_nonc_coop}
  \eea
  where $\xi_i$ are standard normal random variates, $\xi_i\sim \mathcal{N}(0,1)$.
 
@@ -412,12 +412,12 @@ We imagine that the two previously non-cooperating entities, with resources $x_1
  
  In the discrete-time picture, each time step involves a two-phase process. First there is a growth phase, analogous to \eref{GBM}, in which each cooperator increases its resources by
  \be
- \D x^c_i(t) = x^c_i(t)\left[\mu\D t + \sigma\sqrt{\D t}\,\xi_i\right].
+ \d x^c_i(t) = x^c_i(t)\left[\mu\dt + \sigma\sqrt{\dt}\,\xi_i\right].
  \elabel{discrete_coop_grow}
  \ee
  This is followed by a cooperation phase, replacing \eref{discrete_nonc_coop}, in which resources are pooled and shared equally among the cooperators:
  \be
- x^c_i(t+\D t) = \frac{ x^c_1(t) + \D x^c_1(t) + x^c_2(t) + \D x^c_2(t)}{2}.
+ x^c_i(t+\dt) = \frac{ x^c_1(t) + \d x^c_1(t) + x^c_2(t) + \d x^c_2(t)}{2}.
  \elabel{discrete_coop_coop}
  \ee
  
@@ -430,20 +430,20 @@ We imagine that the two previously non-cooperating entities, with resources $x_1
  \put(0,40){$x^c_2(t)$}
  \put(48,40){\vector(1,0){75}}
  %
- \put(115,145){$x^c_1(t)+\Delta x^c_1(t)$}
+ \put(115,145){$x^c_1(t)+\d x^c_1(t)$}
  \put(200,147){\vector(3,-2){30}}
  \put(138,46){$x^c_2(t)$}
- \put(130,34){$+\Delta x^c_2(t)$}
+ \put(130,34){$+\d x^c_2(t)$}
  \put(173,45){\vector(3,2){50}}
  %
- \put(255,100){$x^c_1(t)+\Delta x^c_1(t)$}
+ \put(255,100){$x^c_1(t)+\d x^c_1(t)$}
  %
- \put(250,85){$+ x^c_2(t)+\Delta x^c_2(t)$}
+ \put(250,85){$+ x^c_2(t)+\d x^c_2(t)$}
  \put(335,75){\vector(3,-2){30}}
  \put(335,117){\vector(3,2){30}}
  %
- \put(385,145){$x^c_1(t+\Delta t)$}
- \put(385,40){$x^c_2(t+\Delta t)$}
+ \put(385,145){$x^c_1(t+\dt)$}
+ \put(385,40){$x^c_2(t+\dt)$}
  %
  \put(448,147){\vector(1,0){25}}
  \put(448,40){\vector(1,0){25}}
@@ -472,8 +472,8 @@ We imagine that the two previously non-cooperating entities, with resources $x_1
  %Analysis
  With this prescription both cooperators and their sum experience the following dynamic:
  \be
- (x_1 \oplus x_2)(t+\Delta t) =
- (x_1 \oplus x_2)(t) \left[1 + \left(\mu \Delta t + \sigma \sqrt{\Delta t} \, \frac{\xi_1 + \xi_2}{2}\right)\right].
+ (x_1 \oplus x_2)(t+\dt) =
+ (x_1 \oplus x_2)(t) \left[1 + \left(\mu \dt + \sigma \sqrt{\dt} \, \frac{\xi_1 + \xi_2}{2}\right)\right].
  \elabel{discrete_cooperate}
  \ee
  For ease of notation we define
@@ -481,7 +481,7 @@ We imagine that the two previously non-cooperating entities, with resources $x_1
  \xi_{1\oplus2}=\frac{\xi_1+\xi_2}{\sqrt{2}},
  \ee
  which is another standard Gaussian, $\xi_{1\oplus2} \sim \mathcal{N}(0,1)$. Letting the time
- increment $\Delta t \to 0$ we recover an equation of the same form as
+ increment $\dt \to 0$ we recover an equation of the same form as
  \eref{GBM} but with a different fluctuation amplitude,
  \begin{equation}
  d(x_1 \oplus x_2) = (x_1 \oplus x_2)\left(\mu dt +\frac{\sigma}{\sqrt{2}} dW_{1\oplus2}\right).

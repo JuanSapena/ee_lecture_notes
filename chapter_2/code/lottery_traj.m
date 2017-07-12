@@ -22,14 +22,14 @@ for i = 2:rounds
 end
 
 figure(1), clf
-plot(t,wa/1000,'LineWidth',3)
-xlabel('time / $\Delta t$')
-ylabel('wealth / $\pounds 000$')
+plot(t,wa,'LineWidth',3)
+xlabel('time / $\delta t$')
+ylabel('wealth / $\pounds$')
 savepdf(gcf,'lottery_add_traj')
 
 figure(2), clf
 plot(t,wm,'LineWidth',3)
 set(gca,'YScale','log')
-xlabel('time / $\Delta t$')
+xlabel('time / $\delta t$')
 ylabel('wealth / $\pounds$')
 savepdf(gcf,'lottery_mult_traj')
