@@ -327,10 +327,12 @@ independently of $\x(\t)$ in each time step), this can be re-written as
 \be
 \ave{\x(\t+\dt)}=\ave{\x(\t)}\ave{\gr},
 \ee
-wherefore we can solve recursively for the wealth after $\T$ rounds, corresponding to a playing time of $\Dt=\T\dt$,
+wherefore we can solve recursively for the wealth after $\T$ rounds, corresponding to a playing time of $\Dt=\T\dt$:
 \be
-\ave{\x(\t+\T\dt)}=\x(\t)\ave{\gr}^\T.
+\ave{\x(\t+\Dt)} = \ave{\x(\t+\T\dt)}=\x(\t)\ave{\gr}^\T.
 \ee
+Hereafter we shall reserve $\dt$ for the time interval in a stochastic process over which a single realisation of the constituent random variable, in this case $\gr$, is generated; and $\Dt$ for a general time interval in which many sequential realisations of the random variable may take place. In simpler words, $\dt$ is the duration of a single round of a gamble, while $\Dt$ is the an amount of time spent gambling.
+
 The expectation value $\ave{\gr}$ is easily found from \eref{law} 
 as $\ave{\gr}=\frac{1}{2}\times 0.6 + \frac{1}{2}\times 1.5=1.05$. Since 
 this number is greater than one, $\ave{\x(\t)}$ grows exponentially in 
@@ -402,12 +404,12 @@ Now count those possibilities that result in player $\gj$ winning,
 call this $n_j$. If $\gD$ is the amount of money in the pot, then 
 we split the pot fairly by giving each player
  $\frac{\gn_\gj}{\N}\times \gD$.
-This is $\ave{\D \x}$, according to \eref{exp_sum} 
+This is $\ave{\gD}$, according to \eref{exp_sum}, 
 because $\frac{\gn_\gj}{\N}=\p_\gj$ is the probability that player $\gj$ wins the
 amount \gD. 
 Later researchers called this amount the ``mathematical expectation''  
 or simply ``expectation value''. But this is really an unfortunate choice 
- -- no player ``expected'' to receive $\ave{\D\x}$. 
+ -- no player ``expected'' to receive $\ave{\gD}$. 
 Instead, each player expected to receive either nothing or $\gD$. 
 \end{history}
 
@@ -420,11 +422,11 @@ is represented in a figure like \fref{1_3}, the smoother the line will be. In th
 the line will be completely smooth, and the average slope will be a deterministic number -- in any
 realization of the process it will come out identical. 
 
-The dynamic is set up such that wealth at time $t$ is
+The dynamic is set up such that wealth at time $t+\Dt$, where $\Dt=\T\dt$ as before, is
 \be
-\x(\t+\Dt)=\x(\t)\prod_{\gtau=1}^\T \gr(\gtau),
+\x(\t+\Dt)=\x(\t)\prod_{\gtau=1}^\T \gr(\t+\gtau\dt).
 \ee
-which we can split up into two products, one for each possible value of $\gr(\gtau)$, which we call
+We can split this into two products, one for each possible value of $\gr(\gtau)$, which we call
 $\gr_1$ and $\gr_2$, \ie
 \be
 \gr(\gtau) = \begin{cases}
@@ -437,9 +439,10 @@ so that
 \be
 \x(\t+\Dt)= \x(\t)\gr_1^{\gn_1} \gr_2^{\gn_2}.
 \ee
-We denote by $\rt$ the effective factor by which $\x(\t)$ is multiplied per round when the change is computed over a long time. This quantity is found by taking the $\Dt^{\text{th}}$ root of $\frac{\x(\t+\Dt)}{\x(\t)}$ and considering the long-time limit
+% There was confusion here between per-round and per-unit-time wealth multipier. I've changed everything to be consistent with per round (i.e. \T^th root of product as opposed to \Dt^th root) since this is more consistent with the text.
+We denote by $\rt$ the effective factor by which $\x(\t)$ is multiplied per round when the change is computed over a long time, \ie $\x(\t+\Dt) \sim\x(\t)(\rt)^\T$ as $\Dt\to\infty$. This quantity is found by taking the $\T^{\text{th}}$ root of $\frac{\x(\t+\Dt)}{\x(\t)}$ and considering its long-time limit:
 \bea
-\rt &=&\lim_{\Dt\to\infty }\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)^{1/\Dt}\\
+\rt &=&\lim_{\Dt\to\infty }\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)^{1/T}\\
  &=& \lim_{\T\to\infty } \gr_1^{\gn_1/\T}\gr_2^{\gn_2/\T}.
 \eea
 Identifying $\lim_{\T\to\infty} \gn_1/\T$ as the probability 
@@ -533,7 +536,7 @@ goes up, on average'' is clearly meaningless and should be countered with the qu
 
 $\rex$ and $\rt$ are two different properties of the game. $\rex$ is 
 the large-ensemble limit, $\rt$ is the long-time limit, of wealth growth it induces. The Victorian 
-mathematician William Allen Whitworth was aware that often $\rt$ is the relevant property 
+mathematician William Allen Whitworth postulated $\rt$ as the relevant property 
 for an individual deciding whether to take part in a repeated gamble. 
 He used this knowledge to write an appendix  entitled ``The disadvantage 
 of gambling'' to the 1870 edition of his book ``Choice and Chance'' 
@@ -560,9 +563,7 @@ hoped to show mathematically that gambling may not be a good idea even if
 the odds are favourable, and was a 
 proponent of the notion that commerce should and does
 consist of mutually beneficial interactions rather than one winner and one loser. 
-In the end his voice was not heard in the economics
-or mathematics communities. He quit mathematics to become a priest at All Saints Church
-in London's Margaret Street, only a 22 minute stroll away from the London 
+In the end his voice was not heard in the economics community. His main career was a priest at All Saints Church in London's Margaret Street, only a 22 minute stroll away from the London 
 Mathematical Laboratory, according to Google.
 %
 %$\rex$ and $\rt$ are two different properties of the game. $\rex$ is 
@@ -622,12 +623,12 @@ aspects of multiplicative growth we have illustrated is the multiplicative (expo
 observed over finite time $\Dt$, in a finite ensemble
 of $\N$ realisations
 \be
-\gm(\ave{\x}_\N, \Dt)=\frac{\gdelta \ln \ave{\x}_\N}{\Dt}.
+\gm(\ave{\x(\t)}_\N, \Dt)=\frac{\D \ln \ave{\x}_\N}{\Dt},
 \elabel{gest}
 \ee
-For $\N, \Dt$ finite this is a random variable. The relevant scalars arise as two different limits
+where the $\D$ in the numerator corresponds to the change over the $\Dt$ in the denominator. For $\N$ and $\Dt$ finite this is a random variable. The relevant scalars arise as two different limits
 of the same stochastic object. The exponential growth rate of the expectation value 
-(that's also $\frac{1}{\dt} \ln \rex$) is
+(that's also $\frac{1}{\dt} \ln \ave{\gr}$) is
 \be
 \gex=\lim_{\N\to\infty}\gm,
 \ee
@@ -641,7 +642,7 @@ We can also write \eref{gest} as a sum of the logarithmic differences in  the
 $\T$ individual rounds of the gamble that make up the time interval 
 $\Dt=\T \dt$
 \be
-\gm(\ave{\x}_\N, \Dt)=\frac{1}{\gdelta \T}  \sum_{\gtau=1}^{\T} \D\ln \ave{\x}_\N(\gtau).
+\gm(\ave{\x(\t)}_\N, \Dt)=\frac{1}{\T\dt}  \sum_{\gtau=1}^{\T} \D\ln \ave{\x(\t+\gtau\dt)}_\N.
 \ee
 %For a single trajectory, $\N=1$, \eref{gt} becomes
 %\bea
@@ -652,15 +653,15 @@ This leads us to a technical definition of the time average.
 
 \begin{defn}{Finite-time average}
 If the observable $\A$ only changes at $\T=\Dt/\dt$ discrete times 
-$\dt, 2\dt$ {\it etc.}, then the 
+$\t+\dt$, $\t+2\dt$, {\it etc.}, then the 
 ``finite-time average'' is
 \be
-\Abar_{\Dt}=\frac{1}{\T}\sum_{\gtau=1}^{\T}\A(\gtau \dt).
+\Abar_{\Dt}=\frac{1}{\T\dt}\sum_{\gtau=1}^{\T}\A(t+\gtau \dt).
 \elabel{t_ave_f_disc}
 \ee
 If it changes continuously the finite-time average is
 \be
-\Abar_{\Dt}=\frac{1}{\Dt}\int_0^{\Dt} \A(\gs)\gd\gs.
+\Abar_{\Dt}=\frac{1}{\Dt}\int_{\t}^{\t+\Dt} \A(\gs)\gd\gs.
 \elabel{t_ave_f}
 \ee
 \end{defn}
@@ -799,10 +800,11 @@ time average interchangeably in our game, we would say ``$\x$ is not ergodic.''
 
 \begin{defn}{Ergodic property}
 In these notes, an observable $\A$ is called ergodic if its 
-expectation value is constant in time, $\frac{\gd\ave{\A}}{\gd\t}=0$, 
+expectation value is constant in time
+%, $\frac{\gd\ave{\A}}{\gd\t}=0$, 
 and its time average converges to this value with probability one
 \be
-\lim_{\Dt \to\infty}\frac{1}{\Dt } \int_0^{\Dt} \A(\gs) \gd\gs =\lim_{\N\to\infty} \frac{1}{\N}\sum_\gi^\N \A_\gi .
+\lim_{\Dt \to\infty}\frac{1}{\Dt } \int_{\t}^{\t+\Dt} \A(\gs) \gd\gs =\lim_{\N\to\infty} \frac{1}{\N}\sum_\gi^\N \A_\gi .
 \elabel{def_ergodic}
 \ee
 \end{defn}
@@ -823,11 +825,11 @@ is subtle: an ergodic observable may or may not tells us what we're interested i
 It may be ergodic but not indicate what happens to $\x$. For example, 
 the multiplicative factor $\gr(\t)$ is an 
 ergodic observable that reflects what happens to the expectation value of $\x$, 
-whereas changes in the logarithm of wealth, $\D \ln \x = \ln \gr$, are also ergodic 
+whereas per-round changes in the logarithm of wealth, $\d \ln \x = \ln \gr$, are also ergodic 
 and reflect what happens to $\x$ over time.
 
 \vspace{.3cm}
-\underline{Proposition:} $\gr(\t)$ and $\D \ln \x$  are ergodic.
+\underline{Proposition:} $\gr(\t)$ and $\d \ln \x$  are ergodic.
 
 \begin{proof}
 
@@ -836,17 +838,16 @@ According to \eref{ens} and \eref{f_ens}, the expectation value of $r(t)$ is
 \ave{\gr}=\lim_{\N\to\infty} \frac{1}{\N} \sum_\gi^\N \gr_\gi,
 \elabel{e_r}
 \ee
-and according to \eref{t_ave_f_disc}, the time average of $\gr(\t)$ is
+and, according to \eref{t_ave_f_disc}, the time average of $\gr(\t)$ is
 \be
-\tave{\gr}=\lim_{\T\to\infty} \frac{1}{\T} \sum_\gtau^\T \gr_\gtau.
+\tave{\gr}=\lim_{\T\to\infty} \frac{1}{\T} \sum_\gtau^\T \gr_\gtau,
 \elabel{t_r}
 \ee
-The only difference between the two expressions is the label we have chosen
+where we have written $\gr_\gtau = \gr(\t+\gtau\dt)$ to make clear the equivalence between the two expressions. The only difference between the two expressions is the label we have chosen
 for the dummy variable ($\gi$ in \eref{e_r} and $\gtau$ in \eref{t_r}). Clearly, the 
-expressions yield the same value. $\gr(\t)$ is
-stationary and takes independent identically distributed values.
+expressions yield the same value. $\gr(\t)$ stationary and takes independent identically distributed values.
 
-The same argument holds for $\D \ln \x$.
+The same argument holds for $\d \ln \x$.
 \end{proof}
 
 Whether we consider \eref{t_r} an average over 
@@ -876,7 +877,7 @@ is the right object to optimize.
 \seclabel{Rates}
 The ergodic observable $\d \ln \x$, identified in the previous section, is basically a rate.
 If we divide it by the duration of the time step we obtain exactly the exponential 
-growth rate of $\x$, namely $\frac{1}{\dt}\d \ln \x$. Finding good rates of change 
+growth rate of $\x$, namely $\frac{\d \ln \x}{\dt}$. Finding good rates of change 
 will be important, wherefore we now discuss the notion of a rate of change and 
 the notion of stationarity. 
 To do this properly let's think about the basic task of science. This may be described as the 
@@ -918,15 +919,15 @@ The first condition is that $\gv(\x)$ must tell us
 whether $\x(\t)$ is growing or shrinking -- this just means that $\gv(\x)$ has to 
 be monotonic in $\x$. We know that there is something stationary
 about $\x$ because we were able to write down in ink how $\x$ changes. So we only need 
-to find the monotonic function of $\x$ that inherits the stationarity of the ink in \eref{law}.
+to find the monotonic function of $\x$ whose additive changes inherit the stationarity of the ink in \eref{law}.
 The game is defined by a set of factors of increase in $\x(\t)$, \eref{gamble}. Therefore, the fractional change in $\x$, namely
-$\frac{\x(\t+\dt)}{\x(\t)}$, has a stationary distribution. Which function responds additively to a multiplicative change in its argument? 
+$\gr(\t) = \frac{\x(\t+\dt)}{\x(\t)}$, has a stationary distribution. Which function responds additively to a multiplicative change in its argument? 
 The answer is the logarithm, \ie
 only the logarithm satisfies
 \be
-\gv[\x(\t+\dt)]-\gv[\x(\t)]=\gv \left[\frac{\x(\t+\dt)}{\x(\t)}\right]
+\gv[\x(\t+\dt)]-\gv[\x(\t)]=\gv \left(\frac{\x(\t+\dt)}{\x(\t)}\right)
 \ee
-and we conclude that for our game $\gv(\x)=\ln(\x)$.
+and we conclude that for our game $\gv(\x)=\ln\x$.
 For multiplicative dynamics, \ie if $\frac{\x(\t+\dt)}{\x(\t)}$ is stationary, the expectation 
 value of the rate of change of the logarithm of $\x(\t)$ determines whether the game is long-term profitable 
 for an individual.
@@ -934,10 +935,10 @@ for an individual.
 More generally, when evaluating a gamble that is represented as a stochastic process 
 \begin{enumerate}
 \item
-Find a monotonically increasing function $\gv[\x(\t)]$ such that $\frac{\D \gv[\x(\t)]}{\dt}$ 
+Find a monotonically increasing function $\gv[\x(\t)]$ such that $\frac{\d \gv[\x(\t)]}{\dt}$ 
 are independent instances of a stationary random variable.
 \item
-Compute the expectation value of $\frac{\D \gv[\x(\t)]}{\dt}$. If this is positive then $\x(\t)$
+Compute the expectation value of $\frac{\d \gv[\x(\t)]}{\dt}$. If this is positive then $\x(\t)$
 grows in the long run, if it is negative then $\x(\t)$ decays.
 \end{enumerate}
 
@@ -951,7 +952,7 @@ Indeed, the blue line for a single system in \fref{1_2} (B) shows 52 steps of a 
 Random walks come in many forms -- in all of them $\gv$ changes discontinuously by an amount 
 $\d \gv$ drawn from a stationary distribution, over time intervals which may be regular or which may be drawn from a stationary distribution themselves.
 
-We are interested only in the simple case where $\gv$ changes at regular intervals, $\dt, 2\dt ...$. For 
+We are interested only in the simple case where $\gv$ changes at regular intervals, $\dt, 2\dt, \dots$. For 
 the distribution of increments we only insist on the existence of the variance, meaning we insist that 
 $\var(\d \gv)=\ave{\d \gv^2}-\ave{\d \gv}^2$ be finite. The change in $\gv$ after a long time is then the sum 
 of many stationary independent increments, 
@@ -1158,7 +1159,7 @@ Again, it is informative to write \GBM as a stochastic differential equation.
 \ee
 Trajectories for \GBM can be simulated using the discretized form
 \be
-\D \x=\x(\gmu \dt+ \gsigma \sqrt{\dt} \gxi_\t),
+\d \x=\x(\gmu \dt+ \gsigma \sqrt{\dt} \gxi_\t),
 \elabel{GBM_d}
 \ee
 where $\gxi_\t \sim \mN(0,1)$ are instances of a standard normal variable. In such simulations
@@ -1210,7 +1211,7 @@ As we know, this growth rate is different from the growth rate that materializes
 Computing the time-average growth rate is only slightly more complicated. 
 We will follow this plan: consider the discrete process \eref{GBM_d} and compute the changes in the logarithm of $\x$, 
 then we will let
-$\dt$ become infinitesimal and arrive at the result for the continuous process. We know $\D \ln(\x(\t))$
+$\dt$ become infinitesimal and arrive at the result for the continuous process. We know $\d \ln(\x(\t))$
 to be ergodic, wherefore we will proceed to take its expectation value to compute the time average 
 of the exponential growth rate of the process. 
 
@@ -1228,8 +1229,8 @@ Expanding to second order,
 \gxi_\t^2\right)+\go(\dt^2),
 \ee
 using ``little-o notation'' to denote terms that are of order $\dt^2$ or smaller. Finally, because
-$\D \ln \x(\t)$ is ergodic, by taking the expectation value of this equation we find the
-time average of $\D \ln \x(\t)$
+$\d \ln \x(\t)$ is ergodic, by taking the expectation value of this equation we find the
+time average of $\d \ln \x(\t)$
 \be
 \ave{\ln \x(\t+\dt) - \ln \x(\t)} =\gmu \dt- \frac{1}{2} \left(\gmu^2\dt^2+\gsigma^2\dt \right)+o(\dt^2).
 \ee
