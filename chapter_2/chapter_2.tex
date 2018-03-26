@@ -161,8 +161,8 @@ the idea that individuals live in time and that their decisions have consequence
 which unfold over time.
 
 Crucially, {\it the mode of repetition is not specified in the gamble itself.} It is a 
-second component of the model, which must be specified separately. We shall 
-focus on two modes: \textit{additive} and \textit{multiplicative} repetition.
+second component of the model, which must be specified separately. Initially we shall 
+focus on two modes: \textit{additive} and \textit{multiplicative} repetition. Other dynamics will be considered later on, in \secref{general_dynamics}.
 
 \begin{defn}{Additive repetition}
 If a gamble is repeated additively then  
@@ -226,7 +226,7 @@ expressed instead as a random wealth multiplier,
 \gr \equiv \frac{\x(\tn)+\gD}{\x(\tn)}.
 \elabel{R_def}
 \ee
-The gamble is repeated by applying the same multiplier at all subsequent rounds:
+The gamble is repeated by applying another realisation of the same multiplier at all subsequent rounds:
 \be
 \x(\t+\dt) = \gr\x(\t).
 \ee
@@ -621,7 +621,7 @@ been known to be a flawed model of human decision-making since at least
 The conventionally offered reason for this predictive failure is that the value to an 
 individual of a possible change in wealth depends on how much wealth he already 
 has and his psychological attitude to taking risks. In other words, people do not 
-treat equal amounts of money equally. This makes intuitive sense: an extra 
+treat equal amounts of extra money equally. This makes intuitive sense: an extra 
 $\$10$ is much less significant to a rich man than to a pauper for whom it 
 represents a full belly; an inveterate gambler has a different attitude to risking 
 $\$100$ on the spin of a roulette wheel than a prudent saver, their wealths 
@@ -653,18 +653,25 @@ maximands\footnote{The quantities to be maximised.} of our growth-optimal decisi
 theory, \eref{g_bar_gen}, and the expected-utility paradigm, \eref{euh}. Our decision theory
 contains a mapping which transforms wealth into a variable, $\gv$, whose increments are 
 stationary random variables. This mapping depends on the wealth dynamic which 
-describes how the gamble is repeated. The second contains a function which transforms 
+describes how the gamble is repeated. The expected-utility paradigm contains a function which transforms 
 wealth into usefulness. This is determined by the idiosyncratic risk preferences of 
 the individual. If we identify the stationarity transformation of the former with the 
 utility transformation of the latter, then the expressions are the same.
 
-In other words, the expected utility hypothesis of classical decision theory is consistent 
-with time-average growth rate optimisation for a particular choice of utility function. 
-While it can be made to replicate the results of our decision axiom, it is a poorly 
-constrained model for doing so, since it admits any number of alternative utility 
-functions which do not replicate those results. For multiplicative dynamics, the 
-necessary choice is the logarithm. That this is the most widely used utility function 
-in both theory and practice might be a psychological fluke; or it might indicate that 
+But we caution against the conceptual world of expected utility theory. It uses expectation
+values, where they are inappropriate (because decisions of an individual are considered, 
+not of many parallel systems), and it corrects for this error by introducing a non-linear 
+mapping of wealth (the utility function) whose specific form cannot be pinned down 
+convincingly. Finally, because of this conceptual weakness, utility theory is poorly defined. 
+The very first paper on the topic contains two contradictory definitions of expected utility 
+theory \cite{Bernoulli1738}, and over the centuries several others have been added.
+
+Nonetheless, the expected utility hypothesis of classical decision theory as 
+presented above is consistent with growth rate optimisation for a particular 
+choice of utility function. 
+Of course, with a different utility function it will not replicate our results. 
+For multiplicative dynamics, the necessary choice is the logarithm. That this is the most 
+widely used utility function in both theory and practice is a psychological fluke in the classic mindset; from our perspective it indicates that 
 our brains have evolved to produce growth-optimal decisions in a world governed 
 by multiplicative dynamics, \ie where resources can be deployed to make more of 
 themselves.
@@ -674,6 +681,18 @@ paradigm. In our framework this corresponds to good decisions under additive
 repetition, which we claim is generally a poor model of how wealth evolves.\footnote{It 
 would correspond, for example, to the interest payments in your bank account being 
 independent of your balance!} It fails, therefore, because it corresponds to an unrealistic dynamic. 
+
+\subsection{General dynamics}
+\seclabel{general_dynamics}
+Before we come to example applications of decision theory, it is time to discuss 
+dynamics that are neither additive nor multiplicative and their relation to general
+utility functions. 
+
+Of course, that makes things a lot more general, and we have to be careful to keep
+the scope meaningful. Here's what we do: we restrict ourselves to dynamics of wealth
+that are expressed as an \Ito process, which you may remember from \eref{Ito_process} in \secref{Ito}. 
+ 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The St Petersburg paradox}
