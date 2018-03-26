@@ -688,10 +688,25 @@ Before we come to example applications of decision theory, it is time to discuss
 dynamics that are neither additive nor multiplicative and their relation to general
 utility functions. 
 
-Of course, that makes things a lot more general, and we have to be careful to keep
-the scope meaningful. Here's what we do: we restrict ourselves to dynamics of wealth
-that are expressed as an \Ito process, which you may remember from \eref{Ito_process} in \secref{Ito}. 
+What are we trying to achieve with this? First of all, where the time perspective has come
+up in history, \eg \cite{Whitworth1870,Kelly1954}, it was always in the context of multiplicative 
+dynamics corresponding to logarithmic utility, as we saw in the previous section. One 
+persistent criticism has been: what if my utility function is not logarithmic?
+
+Of course, that makes things a lot more general, and we have to be careful not to 
+let the scope balloon into meaninglessness. We also have to pick a setup where the 
+mathematics is nice and simple and won't lead to pages of equations.
+Here's what we do: we restrict ourselves to 
+dynamics of wealth that are expressed as an \Ito process, which you may remember from 
+\eref{Ito_process} in \secref{Ito}. 
  
+In other words, wealth will follow 
+\be
+d\x = a(\x,\t) d\t + b(\x,\t) \dW
+\ee
+for general functions $a(\x,\t)$ and $b(\x,\t)$. In this setup additive dynamics are implemented with $a$ and $b$ as constants (Brownian motion), and multiplicative dynamics with $a$ and $b$ proportional to $\x$ (geometric Brownian motion).
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
