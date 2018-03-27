@@ -688,25 +688,96 @@ Before we come to example applications of decision theory, it is time to discuss
 dynamics that are neither additive nor multiplicative and their relation to general
 utility functions. 
 
+\subsubsection{Why discuss general dynamics?}
 What are we trying to achieve with this? First of all, where the time perspective has come
 up in history, \eg \cite{Whitworth1870,Kelly1954}, it was always in the context of multiplicative 
-dynamics corresponding to logarithmic utility, as we saw in the previous section. One 
-persistent criticism has been: what if my utility function is not logarithmic?
+dynamics, which, as we saw in the previous section, corresponds to logarithmic utility. One 
+persistent criticism from people trained to think in terms of utility has been: what if my utility 
+function is not logarithmic? In other words, the time perspective has seemed overly restrictive 
+to many people.
 
-Of course, that makes things a lot more general, and we have to be careful not to 
-let the scope balloon into meaninglessness. We also have to pick a setup where the 
-mathematics is nice and simple and won't lead to pages of equations.
+As a matter of epistemology, we want to be somewhat restrictive. Imagine the opposite: a 
+model that can produce absolutely any behavior. Because it can produce anything, it cannot 
+say ``the reason this happens and not that is ...'' But that's exactly the type of statement we 
+need in order to make sense of the world -- why do some structures exist and not others? 
+Consider a specific case of a universal model: the alphabet, including punctuation. That's all 
+the building blocks you need to tell any story you want, true or false, interesting or not. The 
+alphabet is a useful thing, but it's not a good scientific model because it's not restrictive 
+enough. Most sentences allowed by the alphabet are gibberish. Like ``flowerbamdoodle 
+zap.''
+
+Having said this, it is true that we can also err on the other end of the spectrum and have a 
+model that's too restrictive. Imagine, instead of having the alphabet plus punctuation at your disposal you were only allowed to use sentences of five words, 
+beginning with ``heteroglot.'' That would make it difficult to write an insightful account of the 
+lifecycle of newts, for example.
+
+But to return to the topic at hand, one reason for generalizing the dynamics is to answer to 
+the criticism of utility-theory users who dislike the restriction to logarithmic utility functions.
+
+The second reason for generalizing at this point is that we feel there are important aspects of 
+decision-making that cannot be understood with multiplicative dynamics. Here is an example. 
+Under multiplicative dynamics risk aversion is growth optimal. That means your wealth will 
+grow faster over time if you make decisions that are more cautious than decisions you would 
+make to optimize the expectation value of your wealth. But we know that in reality there are 
+plenty of situations where risk seeking (the opposite of risk aversion) is the sensible thing to 
+do. 
+
+It's worth discussing this because it shows an important epistemological difference between 
+utility theory and time optimization. There's a big difference between the following two life 
+situations. 1) my income is much more than what I need to live. I'm sure you know the 
+problem: at the end of each month, having paid the rent for my flat share, bought all the 
+books I was curious about and all the surfwax I needed, I'm left with \$50,000 of my \$52,000 
+monthly paycheck. I'll put that aside for a rainy day, stick it into bitcoin or buy some Enron 
+shares. Having done this for several years, most of my \$50,000,0000 wealth is just riding the 
+stock market. 
+2) you won't know about this, but here's another scenario. I don't have \$50,000 to put aside 
+at the end of each month. Actually, a week after payday, everything has been spent, and the 
+remaining 3 weeks have to be bridged. I help you move those boxes, and you make lunch. 
+Every couple of months I get a new credit card to max out, until they're onto me and cut me 
+off. That's followed by a few years of handing over everything I earn to my creditors, and 
+after that I declare bankruptcy to start another cycle. I have no wealth riding anything.
+
+In situation 1) my wealth is roughly a multiplicative process and income is negligible. Not so 
+in situation 2), where my income is so low that I save nothing, I can't pay my health 
+insurance, can't buy a car to get a job in the next town, can't pay for university. I'm stuck at 
+the bottom. But I know if even only \$1,000,000 fell into my lap my life would change 
+dramatically. Not because I would have all the money I need but because my wealth would 
+enter a different dynamical regime. 
+
+In situation 1) I can relax. I'm happy with the status quo, and I don't need to do anything drastic to change it. In situation 2) that's not true. The status quo is terrible, it's perfectly sensible, for example, to play the lottery and hope for a big win, even if the expected return is negative. 
+
+Let's analyse this situation from the perspective of utility theory, and then from the dynamic perspective. Utility theory would see me in situation 1) and conclude that my utility function is concave. My actions are optimal with respect to my utility function. Where that function comes from is unknown, nature vs. nurture. Similarly, in situation 2) my actions are optimal with respect to my utility function, which is convex -- I'm just the type of person who likes to take risks. A trained economist may also conclude that I'm a little stupid because I accept gambles with negative expected return.
+
+From the dynamic perspective, the story is different. I'm required to supply a reasonable model of wealth dynamics. This will show that under situation 1) the growth-optimal thing to do is avoid big changes, just keep riding the stock market. In situation 2) the wealth dynamic reveals that I'm stuck at the bottom, and that the growth-optimal thing is to do whatever it takes to create change. It can't get much worse, so let's rock the boat. We will see an explicit mathematical example of this further down. 
+
+Notice that the utility analysis focuses on the psychology of the decision maker. The dynamic perspective focuses on the situation of the decision maker.
+
+\subsubsection{The setup}
+
+With dynamics generalized beyond additive and multiplicative we have to be careful not to 
+let the scope of our treatment balloon into meaninglessness. We also have to pick a setup 
+where the mathematics is nice and simple and won't lead to pages of endless equations.
 Here's what we do: we restrict ourselves to 
 dynamics of wealth that are expressed as an \Ito process, which you may remember from 
-\eref{Ito_process} in \secref{Ito}. 
- 
-In other words, wealth will follow 
+\eref{Ito_process} in \secref{Ito}. We will further restrict ourselves to coefficient functions  $a(\x)$ and $b(\x)$ without explicit $\t$ dependence, meaning wealth will follow 
 \be
-d\x = a(\x,\t) d\t + b(\x,\t) \dW
+d\x = a(\x) d\t + b(\x) \dW.
 \ee
-for general functions $a(\x,\t)$ and $b(\x,\t)$. In this setup additive dynamics are implemented with $a$ and $b$ as constants (Brownian motion), and multiplicative dynamics with $a$ and $b$ proportional to $\x$ (geometric Brownian motion).
+We can still choose additive dynamics, namely by setting $a$ and $b$ as constants 
+(Brownian motion). We can also choose multiplicative dynamics with $a$ and $b$ 
+proportional to $\x$ (geometric Brownian motion).
 
+We are interested in wealth -- more is better. We can position ourselves, make one choice or another, and then let time act. Choosing between two repeated gambles is thus a choice between two sequences of wealths, let's call them $\x(\t)$ and $\x^*(\t)$. If life were very simple we could just look at both of them at some moment in the future, $\t^*$ say, and choose the bigger one. But that's generally not possible because of noise -- both  $\x(\t^*)$ and $\x^*(\t^*)$ will be random numbers, and we don't know which one is bigger. 
 
+So what do we do? Well, we just let time go to infinity, which should wash out any fluctuations and then choose the bigger one. So we consider
+\bea
+\lim_{\t\to\infty} \x(\t)\\
+\text{and}\nonumber \\
+\lim_{\t\to\infty} \x^*(\t).
+\eea
+But that's no good either because neither of these limits may exist. That's mathematics speak for ``they could both be infinite.'' In that case we can't compare because there's no obvious way to assign the ``greater than'' relationship between $\infty$ and $\infty$.
+
+Ok, try again, it must be possible to make this work. What if we consider
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
