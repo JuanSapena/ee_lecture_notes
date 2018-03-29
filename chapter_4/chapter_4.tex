@@ -9,6 +9,11 @@ Firstly, we set up a simple portfolio selection problem in a market of two asset
 
 Secondly, we consider what this objectively defined optimal leverage might mean for financial markets themselves. If all the participants in a market aim for the same optimal leverage, does this constrain the prices and price fluctuations that emerge from their trading? We argue that it does, we quantify how, and we confirm our prediction using data collected from the American stock markets over almost sixty years.
 }
+
+\begin{keypts}{Warning -- data problem}
+The S\&P500 data we show do not account for dividends, and we suspect that this affects our results significantly. We're working to fix this issue in the next update of the notes.
+\end{keypts}
+
 \newpage
 
 
@@ -192,7 +197,7 @@ Aside from being insensitive to leverage, the Sharpe ratio, $\Sharpe=\mue/\sigma
 
 The optimal leverage, $\lopt=\mue/\sigmas^2$, which differs from the Sharpe ratio by a factor of $1/\sigmas$, is a dimensionless quantity. Therefore, its numerical value does not depend on choice of units and has the potential to carry fundamental information about the system.\footnote{See Barenblatt's modern classic on scaling~\cite{Barenblatt2003}.} We could view $\lopt$ as the fundamental measure of a portfolio's quality, similarly to how $\Sharpe$ is viewed in the classical picture. A portfolio with a high optimal leverage must represent a good investment opportunity to justify such a large commitment of the investor's funds.
 
-However, the significance of $\lopt$ runs deeper than this. The portfolio to which $\lopt$ refers is that which optimally allocates money between the risky and riskless assets in our model market. Therefore, it tells us much about conditions in that market and, by extension, in the wider model economy of which we might imagine it is a part. A high $\lopt$ indicates an economic environment in which investors are incentivised to take risks. A low or negative $\lopt$ indicates the converse. This raises a tantalising
+However, the significance of $\lopt$ runs deeper than this. The portfolio to which $\lopt$ refers is that which optimally allocates money between the risky and riskless assets in our model market. Therefore, it tells us much about conditions in that market and, by extension, in the wider model economy. A high $\lopt$ indicates an economic environment in which investors are incentivised to take risks. A low or negative $\lopt$ indicates the converse. This raises a tantalising
 \begin{keypts}{Question:}
 Are there any special numerical values of $\lopt$ which describe different market regimes, or to which markets are attracted?
 \end{keypts}

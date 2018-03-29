@@ -690,7 +690,7 @@ utility functions.
 
 \subsubsection{Why discuss general dynamics?}
 What are we trying to achieve with this? First of all, where the time perspective has come
-up in history, \eg \cite{Whitworth1870,Kelly1954}, it was always in the context of multiplicative 
+up in history, \eg \cite{Whitworth1870,Kelly1956}, it was always in the context of multiplicative 
 dynamics, which, as we saw in the previous section, corresponds to logarithmic utility. One 
 persistent criticism from people trained to think in terms of utility has been: what if my utility 
 function is not logarithmic? In other words, the time perspective has seemed overly restrictive 
@@ -765,10 +765,11 @@ with respect to my utility function. It's just that that happens to be convex --
 who likes to take risks, again someone will bring up psychology and neuro-imaging. Someone 
 trained to think in terms of expectation values may also conclude that I'm a bit stupid because I 
 accept gambles with negative expected return. Perhaps he (usually it's a he) will perceive the 
-arrow of causality could go the other way: the reason I'm so poor is that I make such terrible 
+arrow of causality as follows: the reason I'm so poor is that I make such terrible 
 financial decisions (that is, of course, a possibility).
 
-The utility perspective tends to focus our attention on the situation of the decision maker, whereas the dynamic perspective focuses it on the psychology of the decision maker. 
+The utility perspective tends to draw our attention on the psychology of the decision maker, 
+whereas the dynamic perspective focuses on the situation of the decision maker. 
 
 \subsubsection{Technical setup}
 
@@ -801,32 +802,32 @@ under the chosen process than under the alternative process
 large $\t$ such that the probability of the chosen $\x(\t)$ being greater
 than $\x^*(\t)$ is arbitrarily close to one,
 \be
-\forall \eps, \x^*(\t) \quad \exists \Dt \quad \text{s.t.} \quad \prob(\Dx > \Dx^*) > 1 - \epsilon,
+\forall \eps, \x^{*}(\t) \quad \exists \Dt \quad \text{s.t.} \quad \prob{\D\x > \D\x^*} > 1 - \epsilon,
 \elabel{max_Dx}
 \ee
 where $0<\eps<1$ specifies how certain we want to be. To keep notation simple we've used
 \bea
-\Dx \equiv \x(\t_0 + \Dt) - \x(\t_0);\\
-\Dx^* \equiv \x^*(\t_0 + \Dt) - \x^*(\t_0).
+\D\x \equiv \x(\t_0 + \Dt) - \x(\t_0);\\
+\D\x^* \equiv \x^*(\t_0 + \Dt) - \x^*(\t_0).
 \elabel{Dx}
 \eea
 
 %Similar to, but not same as, infinite time limit
 
-The criterion is necessarily probabilistic because the quantities $\Dx$ and 
-$\Dx^*$ are random variables and it's possible for either of them to exceed 
+The criterion is necessarily probabilistic because the quantities $\D\x$ and 
+$\D\x^*$ are random variables and it's possible for either of them to exceed 
 the other for any finite $\Dt$. Only in the limit $\Dt \to \infty$ does
 the randomness vanish from the system.
 
 Conceptually this criterion is tantamount to maximising 
-$\lim_{\Dt\to\infty}\{\Dx\}$ or, equivalently, $\lim_{\Dt\to\infty}\{\Dx/\Dt\}$. 
+$\lim_{\Dt\to\infty}\{\D\x\}$ or, equivalently, $\lim_{\Dt\to\infty}\{\D\x/\Dt\}$. 
 However, neither limit is guaranteed to exist. For example, consider a 
 choice between two geometric Brownian motions,
 \bea
 dx &=& x(\mu dt + \sigma dW),\\
 dx^* &=& x^*(\mu^* dt + \sigma^* dW).
 \eea
-Assuming that both grow over time, meaning $\mu > \sigma^2/2$ and $\mu^* > {\sigma^*}^2/2$, the quantities $\Dx/\Dt$ and $\Dx^*/\Dt$ both diverge in the limit $\Dt\to\infty$. The growth is exponential, so linear additive changes will diverge over time. A 
+Assuming that both grow over time, meaning $\mu > \sigma^2/2$ and $\mu^* > {\sigma^*}^2/2$, the quantities $\D\x/\Dt$ and $\D\x^*/\Dt$ both diverge in the limit $\Dt\to\infty$. The growth is exponential, so linear additive changes will diverge over time. A 
 criterion requiring the larger rate of wealth change to be selected fails to yield a decision: comparing $\infty$ to $\infty$ is not meaningful.
 
 %Introduce utility function
@@ -837,12 +838,12 @@ But here's an idea. For the moment we're only interested in which wealth will be
 \Du^* &\equiv& u(x^*(t_0+\Dt)) - u(x^*(t_0)).
 \elabel{Du}
 \eea
-The monotonicity of $u(x)$ means that the events $\Dx>\Dx^*$ and 
+The monotonicity of $u(x)$ means that the events $\D\x>\D\x^*$ and 
 $\Du>\Du^*$ are the same. Taking $\Dt>0$ allows this event to be 
 expressed as $\Du/\Dt>\Du^*/\Dt$, whence the decision criterion in 
 \eref{max_Dx} becomes
 \be
-\forall \eps, x^*(t) \quad \exists \Dt \quad \text{s.t.} \quad \prob\left(\frac{\Du}{\Dt} > \frac{\Du^*}{\Dt}\right) > 1 - \epsilon.
+\forall \eps, \x^*(\t) \quad \exists \Dt \quad \text{s.t.} \quad \prob{\frac{\Du}{\Dt} > \frac{\Du^*}{\Dt}} > 1 - \epsilon.
 \elabel{max_Du}
 \ee
 
@@ -954,12 +955,12 @@ chosen such that \eref{bm_u} does not apply for any choice of $u(x)$.
 In this case we cannot interpret expected utility theory dynamically,
 and such processes are likely to be pathological. 
 
-This gives our central result: 
-\begin{framed}
+This gives our central result.
+\begin{keypts}{Equivalency criterion}
 For expected utility theory to be equivalent to 
-optimisation over time, utility must follow an additive stochastic process 
-with stationary increments.
-\end{framed}
+optimisation over time, utility must follow a stochastic process 
+with stationary (additive) increments.
+\end{keypts}
 
 %Invertibility of utility function --> obtain wealth process
 This is a fascinating general connection. If the physical reason 
@@ -989,12 +990,12 @@ dx = \underbrace{\left(\frac{\partial x}{\partial t}+a_u \frac{\partial x}{\part
 \end{equation}
 
 We have thus shown that 
-\begin{theorem}
+\begin{keypts}{Invertible utility functions have dynamic interpretations}
 For any invertible utility function $u(x)$ a class of corresponding
 wealth processes $dx$ can be obtained such that the (linear) rate of
 change in the expectation value of net changes in utility is the
 time-average growth rate of wealth.
-\end{theorem}
+\end{keypts}
 As a consequence, optimizing expected changes in such utility functions 
 is equivalent to optimizing the time-average growth, in the sense 
 of \secref{Technical}, under the
@@ -1021,19 +1022,18 @@ anything about human psychology and indeed predicts that the
 same behavior will be observed in any growth-optimizing entities that
 need not be human.
 
-\underline{\bf Examples}
-
 \Eref{dx}, creates pairs of utility functions $u(x)$ and dynamics
 $dx$. In discrete time, two such pairs were investigated in \cite{PetersGell-Mann2016},
 namely cases $1.$ and $2.$ below.
-\subsubsection{Linear utility}
-\seclabel{linear}
+
+\begin{example}{1 Linear utility}
 The trivial linear utility function corresponds to additive wealth dynamics (Brownian motion),
 \be
 u(x)=x \hspace{.4cm} \leftrightarrow \hspace{.4cm} dx=a_u dt + b_u dW.\hspace{1.3cm}
 \ee
+\end{example}
 
-\underline{1 Logarithmic utility} 
+\begin{example}{2 Logarithmic utility} 
 Introduced by Bernoulli in 1738 \cite{Bernoulli1738}, the logarithmic utility function is in wide use and corresponds to multiplicative wealth dynamics (geometric Brownian motion),
 \be
 u(x)=\ln(x) \hspace{.4cm} \leftrightarrow \hspace{.4cm} dx=x\left[\left(a_u +\frac{1}{2} b_u^2\right) dt+b_u dW\right].
@@ -1041,8 +1041,9 @@ u(x)=\ln(x) \hspace{.4cm} \leftrightarrow \hspace{.4cm} dx=x\left[\left(a_u +\fr
 In practice the most useful case will be multiplicative wealth dynamics. 
 But to demonstrate the generality 
 of the procedure, we carry it out for a different special case that is historically important.
+\end{example}
 
-\underline{2 Square-root (Cramer) utility}
+\begin{example}{3 Square-root (Cramer) utility}
 The first utility function ever to be suggested was the square-root 
 function $u(x)=x^{1/2}$, by Cramer in a 1728
 letter to Daniel Bernoulli, partially reproduced in
@@ -1079,6 +1080,9 @@ development of decision theory, and indeed of probability theory
 itself are far-from equilibrium processes. Methods to study such
 processes were only developed in the 20th century and constitute 
 much of the work currently carried out in statistical mechanics.
+\end{example}
+
+
 
 \subsubsection{Utility function from a dynamic}
 \seclabel{Utility_function}
@@ -1162,9 +1166,12 @@ condition is satisfied by the dynamic in \eref{test_dyn}.
 A typical trajectory of \eref{test_dyn} is shown in \fref{test_dyn}.
 
 \begin{figure}[h!]
-\begin{picture}(200,200)(0,0)
-  \put(-30,0){\includegraphics[width=0.5\textwidth]{./trajectories.pdf}}
-\end{picture}
+\centering
+%\begin{picture}(200,300)(0,0)
+%  \put(0,0){
+\includegraphics[width=\textwidth]{./chapter_2/figs/trajectories.pdf}
+%}
+%\end{picture}
 \caption{\small Typical trajectories of the wealth
 trajectory $x(t)$ described by \eref{test_dyn}, with parameter values $a_u=1/2$ and $b_u=1$,  and the corresponding Brownian motion $u(t)$. Note that the fluctuations in $x(t)$ become smaller for larger wealth. }
 \flabel{test_dyn}

@@ -22,6 +22,11 @@ J.-P. Bouchaud and M.~M\'ezard.
 \newblock Wealth condensation in a simple model of economy.
 \newblock {\em Physica A}, 282(4):536--545, 2000.
 
+\bibitem{Breiman1968}
+L.~Breiman.
+\newblock {\em Probability}.
+\newblock {Addison-Wesley Publishing Company}, 1968.
+
 \bibitem{Burkhardt2007}
 T.~W. Burkhardt.
 \newblock The random acceleration process in bounded geometries.
@@ -32,6 +37,11 @@ T.~W. Burkhardt.
 T.~M. Cover and J.~A. Thomas.
 \newblock {\em Elements of {I}nformation {T}heory}.
 \newblock John Wiley \& Sons, 1991.
+
+\bibitem{CoxIngersollRoss1985}
+J.~C. Cox, J.~E. Ingersoll, and S.~A. Ross.
+\newblock An intertemporal general equilibrium model of asset prices.
+\newblock {\em Econometrica}, 53(2):363--384, 1985.
 
 \bibitem{Deakin2011}
 M.~A.~B. Deakin.
@@ -64,6 +74,12 @@ R.~P. Feynman.
 J.~M. Harrison.
 \newblock {\em Brownian motion of performance and control}.
 \newblock Cambridge University Press, 2013.
+
+\bibitem{Hinrichsen2000}
+H.~Hinrichsen.
+\newblock Non-equilibrium critical phenomena and phase transitions into
+  absorbing states.
+\newblock {\em Adv. Phys.}, 49(7):815--958, 2000.
 
 \bibitem{Hull2006}
 J.~C. Hull.
@@ -115,6 +131,11 @@ H.~M. Markowitz.
 H.~M. Markowitz.
 \newblock {\em Portfolio Selection}.
 \newblock Blackwell Publishers Inc., second edition, 1991.
+
+\bibitem{MarroDickman1999}
+J.~Marro and R.~Dickman.
+\newblock {\em Nonequilibrium Phase Transitions in Lattice Models.}
+\newblock Cambridge University Press, 1999.
 
 \bibitem{MehraPrescott1985}
 R.~Mehra and E.~C. Prescott.
