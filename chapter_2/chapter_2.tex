@@ -707,52 +707,70 @@ enough. Most sentences allowed by the alphabet are gibberish. Like ``flowerbamdo
 zap.''
 
 Having said this, it is true that we can also err on the other end of the spectrum and have a 
-model that's too restrictive. Imagine, instead of having the alphabet plus punctuation at your disposal you were only allowed to use sentences of five words, 
+model that's too restrictive. Imagine, instead of having the alphabet plus punctuation at your 
+disposal you were only allowed to use sentences of five words, 
 beginning with ``heteroglot.'' That would make it difficult to write an insightful account of the 
 lifecycle of newts, for example.
 
 But to return to the topic at hand, one reason for generalizing the dynamics is to answer to 
-the criticism of utility-theory users who dislike the restriction to logarithmic utility functions.
+the criticism of utility-theory users who dislike the restriction, as they would phrase it, to logarithmic utility functions.
 
 The second reason for generalizing at this point is that we feel there are important aspects of 
 decision-making that cannot be understood with multiplicative dynamics. Here is an example. 
 Under multiplicative dynamics risk aversion is growth optimal. That means your wealth will 
 grow faster over time if you make decisions that are more cautious than decisions you would 
 make to optimize the expectation value of your wealth. But we know that in reality there are 
-plenty of situations where risk seeking (the opposite of risk aversion) is the sensible thing to 
-do. 
+many situations where risk seeking (the opposite of risk aversion) will make your wealth grow faster. 
 
 It's worth discussing this because it shows an important epistemological difference between 
 utility theory and time optimization. There's a big difference between the following two life 
-situations. 1) my income is much more than what I need to live. I'm sure you know the 
+situations. 
+\begin{enumerate}
+\item My earned income is much more than what I need to live. I'm sure you know the 
 problem: at the end of each month, having paid the rent for my flat share, bought all the 
 books I was curious about and all the surfwax I needed, I'm left with \$50,000 of my \$52,000 
 monthly paycheck. I'll put that aside for a rainy day, stick it into bitcoin or buy some Enron 
 shares. Having done this for several years, most of my \$50,000,0000 wealth is just riding the 
 stock market. 
-2) you won't know about this, but here's another scenario. I don't have \$50,000 to put aside 
+\item You won't know about this, but here's another scenario: I don't have \$50,000 to put aside 
 at the end of each month. Actually, a week after payday, everything has been spent, and the 
 remaining 3 weeks have to be bridged. I help you move those boxes, and you make lunch. 
 Every couple of months I get a new credit card to max out, until they're onto me and cut me 
 off. That's followed by a few years of handing over everything I earn to my creditors, and 
 after that I declare bankruptcy to start another cycle. I have no wealth riding anything.
+\end{enumerate}
 
-In situation 1) my wealth is roughly a multiplicative process and income is negligible. Not so 
-in situation 2), where my income is so low that I save nothing, I can't pay my health 
-insurance, can't buy a car to get a job in the next town, can't pay for university. I'm stuck at 
-the bottom. But I know if even only \$1,000,000 fell into my lap my life would change 
-dramatically. Not because I would have all the money I need but because my wealth would 
-enter a different dynamical regime. 
+We will turn these descriptions into mathematics later on, but for now let's analyse them from the dynamic perspective, and then from the perspective of utility theory to bring out the conceptual differences.
 
-In situation 1) I can relax. I'm happy with the status quo, and I don't need to do anything drastic to change it. In situation 2) that's not true. The status quo is terrible, it's perfectly sensible, for example, to play the lottery and hope for a big win, even if the expected return is negative. 
+\underline{\bf Dynamic perspective:}\\
+From these situations, I can clearly see that there's a difference between the dynamics my wealth 
+will follow. In situation 1) my wealth is roughly a multiplicative process. Earned income is 
+negligible, and investment income dominates. Not so in situation 2), where earned income is the 
+only income I have. It's so low that I have no savings, I can't pay my health insurance, can't buy a 
+car to get a job in the next town, can't pay for university. I'm stuck at the bottom. 
 
-Let's analyse this situation from the perspective of utility theory, and then from the dynamic perspective. Utility theory would see me in situation 1) and conclude that my utility function is concave. My actions are optimal with respect to my utility function. Where that function comes from is unknown, nature vs. nurture. Similarly, in situation 2) my actions are optimal with respect to my utility function, which is convex -- I'm just the type of person who likes to take risks. A trained economist may also conclude that I'm a little stupid because I accept gambles with negative expected return.
+In situation 1) I can relax. I'm happy with the status quo, and there's no reason for me to change it. 
+I should be change-averse, which is called risk-averse in the literature. In situation 2) the 
+status quo is terrible, and I should be change-seeking, or risk-seeking if you prefer that word.
+It's growth optimal -- rational, according to our rationality model -- to play the lottery and hope for a big win, even if the expected return is negative. In situation 2, if as 
+little as just \$1,000,000 fell into my lap, my life would change dramatically. Not because I would 
+have all the money I need but because my wealth would enter a different dynamical regime. 
 
-From the dynamic perspective, the story is different. I'm required to supply a reasonable model of wealth dynamics. This will show that under situation 1) the growth-optimal thing to do is avoid big changes, just keep riding the stock market. In situation 2) the wealth dynamic reveals that I'm stuck at the bottom, and that the growth-optimal thing is to do whatever it takes to create change. It can't get much worse, so let's rock the boat. We will see an explicit mathematical example of this further down. 
+\underline{\bf Utility perspective:}\\
+Utility theory would see me in situation 1) and conclude that my utility function 
+is concave. My actions are optimal with respect to my utility function. Where that function 
+comes from is unknown, people will discuss nature vs. nurture, psychology, and brain architecture, 
+something like that. In situation 2) my actions are also optimal 
+with respect to my utility function. It's just that that happens to be convex -- I'm the type of person 
+who likes to take risks, again someone will bring up psychology and neuro-imaging. Someone 
+trained to think in terms of expectation values may also conclude that I'm a bit stupid because I 
+accept gambles with negative expected return. Perhaps he (usually it's a he) will perceive the 
+arrow of causality could go the other way: the reason I'm so poor is that I make such terrible 
+financial decisions (that is, of course, a possibility).
 
-Notice that the utility analysis focuses on the psychology of the decision maker. The dynamic perspective focuses on the situation of the decision maker.
+The utility perspective tends to focus our attention on the situation of the decision maker, whereas the dynamic perspective focuses it on the psychology of the decision maker. 
 
-\subsubsection{The setup}
+\subsubsection{Technical setup}
 
 With dynamics generalized beyond additive and multiplicative we have to be careful not to 
 let the scope of our treatment balloon into meaninglessness. We also have to pick a setup 
@@ -767,17 +785,430 @@ We can still choose additive dynamics, namely by setting $a$ and $b$ as constant
 (Brownian motion). We can also choose multiplicative dynamics with $a$ and $b$ 
 proportional to $\x$ (geometric Brownian motion).
 
-We are interested in wealth -- more is better. We can position ourselves, make one choice or another, and then let time act. Choosing between two repeated gambles is thus a choice between two sequences of wealths, let's call them $\x(\t)$ and $\x^*(\t)$. If life were very simple we could just look at both of them at some moment in the future, $\t^*$ say, and choose the bigger one. But that's generally not possible because of noise -- both  $\x(\t^*)$ and $\x^*(\t^*)$ will be random numbers, and we don't know which one is bigger. 
+We are interested in wealth -- more is better. We can position ourselves, make one choice or 
+another, and then let time act. Choosing between two repeated gambles is thus a choice between 
+two sequences of wealths, let's call them $\x(\t)$ and $\x^*(\t)$. If life were very simple we could 
+just look at both of them at some moment in the future, $\t^*$ say, and choose the bigger one. But 
+that's generally not possible because of noise -- both  $\x(\t^*)$ and $\x^*(\t^*)$ will be random 
+numbers, and we don't know which one is bigger. 
 
-So what do we do? Well, we just let time go to infinity, which should wash out any fluctuations and then choose the bigger one. So we consider
+So what do we do? Let's build this up systematically, starting from a probabilistic statement, and let time help us get rid of the randomness later. 
+At each decision time, $\t_0$, we want to maximise 
+subsequent changes in wealth by selecting $\x(\t)$ so that
+if we wait long enough wealth will be greater
+under the chosen process than under the alternative process
+{\it with certainty}. Mathematically speaking, there exists a sufficiently 
+large $\t$ such that the probability of the chosen $\x(\t)$ being greater
+than $\x^*(\t)$ is arbitrarily close to one,
+\be
+\forall \eps, \x^*(\t) \quad \exists \Dt \quad \text{s.t.} \quad \prob(\Dx > \Dx^*) > 1 - \epsilon,
+\elabel{max_Dx}
+\ee
+where $0<\eps<1$ specifies how certain we want to be. To keep notation simple we've used
 \bea
-\lim_{\t\to\infty} \x(\t)\\
-\text{and}\nonumber \\
-\lim_{\t\to\infty} \x^*(\t).
+\Dx \equiv \x(\t_0 + \Dt) - \x(\t_0);\\
+\Dx^* \equiv \x^*(\t_0 + \Dt) - \x^*(\t_0).
+\elabel{Dx}
 \eea
-But that's no good either because neither of these limits may exist. That's mathematics speak for ``they could both be infinite.'' In that case we can't compare because there's no obvious way to assign the ``greater than'' relationship between $\infty$ and $\infty$.
 
-Ok, try again, it must be possible to make this work. What if we consider
+%Similar to, but not same as, infinite time limit
+
+The criterion is necessarily probabilistic because the quantities $\Dx$ and 
+$\Dx^*$ are random variables and it's possible for either of them to exceed 
+the other for any finite $\Dt$. Only in the limit $\Dt \to \infty$ does
+the randomness vanish from the system.
+
+Conceptually this criterion is tantamount to maximising 
+$\lim_{\Dt\to\infty}\{\Dx\}$ or, equivalently, $\lim_{\Dt\to\infty}\{\Dx/\Dt\}$. 
+However, neither limit is guaranteed to exist. For example, consider a 
+choice between two geometric Brownian motions,
+\bea
+dx &=& x(\mu dt + \sigma dW),\\
+dx^* &=& x^*(\mu^* dt + \sigma^* dW).
+\eea
+Assuming that both grow over time, meaning $\mu > \sigma^2/2$ and $\mu^* > {\sigma^*}^2/2$, the quantities $\Dx/\Dt$ and $\Dx^*/\Dt$ both diverge in the limit $\Dt\to\infty$. The growth is exponential, so linear additive changes will diverge over time. A 
+criterion requiring the larger rate of wealth change to be selected fails to yield a decision: comparing $\infty$ to $\infty$ is not meaningful.
+
+%Introduce utility function
+
+But here's an idea. For the moment we're only interested in which wealth will be larger ($\x$ or $\x^*$); we don't care by how much. That means we don't have to consider $\x$ itself, but any monotonically increasing function of $\x$, let's call it $u(x)$, will also do. Why? Monotonicity means that the events $\x>\x^*$ and $u(\x)>u(\x^*)$ are identical -- whenever one of the inequalities is satisfied, the other is too. So a monotonically increasing function of $\x$ works as an indicator and can help us out of that infinity-fix we just found ourselves in. We define:
+\bea
+\Du &\equiv& u(x(t_0+\Dt)) - u(x(t_0));\\
+\Du^* &\equiv& u(x^*(t_0+\Dt)) - u(x^*(t_0)).
+\elabel{Du}
+\eea
+The monotonicity of $u(x)$ means that the events $\Dx>\Dx^*$ and 
+$\Du>\Du^*$ are the same. Taking $\Dt>0$ allows this event to be 
+expressed as $\Du/\Dt>\Du^*/\Dt$, whence the decision criterion in 
+\eref{max_Dx} becomes
+\be
+\forall \eps, x^*(t) \quad \exists \Dt \quad \text{s.t.} \quad \prob\left(\frac{\Du}{\Dt} > \frac{\Du^*}{\Dt}\right) > 1 - \epsilon.
+\elabel{max_Du}
+\ee
+
+%Note that this suggests a time-average growth rate, but not yet shown that limit exists 
+Our decision criterion has been recast to focus on the rate of change
+\be
+r \equiv \frac{\Du}{\Dt},
+\ee
+As before, it is conceptually similar to maximising
+\be
+\bar{r} \equiv \lim_{\Dt\to\infty}  \left\{ \frac{\Du}{\Dt} \right\} =  \lim_{\Dt\to\infty} \{r\}.
+\elabel{barr}
+\ee
+If $x(t)$ satisfies certain conditions, to be discussed below, then the function 
+$u(x)$ can be chosen such that this limit exists. We shall see that $\bar{r}$ is then the 
+appropriately defined time-average growth rate of $\x$. This is quite a powerful
+bit of mathematics: by insisting on the existence of the limit, we
+force ourselves to choose $u(\x)$ in a certain way. That certain way guarantees that
+the correct form of growth rate is used. For example, if $\x(\t)$ is Brownian motion, $u(\x)$
+will be linear, and if it's geometric Brownian motion, $u(\x)$ will be logarithmic. 
+This has nothing to do with psychology and behavior, it's simply imposed on us by the dynamics and our wish to compare long-term performances in a mathematically meaningful way.
+For 
+the moment we leave our criterion in the probabilistic form of \eref{max_Du}
+but to continue the discussion we assume that the limit \eref{barr} exists.
+
+%Introduce expected utility hypothesis, play mathematical game
+The general relationship between expected utility theory and ergodicity economics
+may be dawning on you. Perhaps 
+\eref{barr} is the same as the rate of change of the expectation value of $\Du$
+\be
+\frac{\ave{\Du}}{\Dt} = \ave{r}.
+\elabel{aver}
+\ee
+We could then make the identification of $u(\x)$ being the utility function, 
+noting that our criterion is equivalent to maximizing the rate of change in
+expected utility.
+We note $\Du$ and hence $r$ are random variables but $\ave{r}$ is not. 
+Taking the long-time limit is one way of removing randomness from the problem, 
+and taking the expectation value is another. The expectation value is simply
+another limit: it's an average over $N$ realizations of the random number 
+$\Du$, in the limit $N\to\infty$. The effect of removing randomness is that the 
+process $\x(\t)$ is collapsed into the scalar $\Du$, and consistent transitive 
+decisions are possible by ranking the relevant scalars.
+In general, maximising $\ave{r}$ does not yield the same decisions as 
+the criterion espoused in \eref{max_Du}. This is only the case for a particular
+function $u(\x)$ whose shape depends on the process $\x(\t)$. Our aim is to 
+find these pairs of processes and functions. When using such $u(\x)$ as the utility 
+function, expected utility theory will be consistent with 
+optimisation over time. It is then possible to interpret
+observed behavior that is found to be consistent with expected utility theory 
+using the utility function $u(x)$ in purely dynamical terms: such behavior 
+will lead to the fastest possible wealth growth over time.
+
+%Equivalence condition requires utility to follow an additive process
+We ask what sort of dynamic $u$ must follow so that $\bar{r}=\ave{r}$ or, 
+put another way, so that $r$ is an ergodic observable, 
+in the sense that its time and ensemble averages are the same \cite[p.~32]{KloedenPlaten1992}.
+
+We start by expressing the change in utility, $\Du$, as a sum over $M$ equal time intervals,
+\bea
+\Du & \equiv & u(t_0+\Dt) - u(t_0) \\
+& = & \sum_{m=1}^M \left[ u(t_0+m\dt) - u(t_0+(m-1)\dt) \right] \\
+& = & \sum_{m=1}^M \du_m(t),
+\eea
+where $\dt\equiv\Dt/M$ and $\du_m(t)\equiv u(t_0+m\dt) - u(t_0+(m-1)\dt)$. From \eref{barr} we have
+\begin{align}
+\bar{r} & = & \lim_{\Dt\to\infty} \left\{ \frac{1}{\Dt} \sum_{m=1}^M \du_m \right\} \elabel{barrSum}
+\\
+& = & \lim_{M\to\infty} \left\{ \frac{1}{M} \sum_{m=1}^M \frac{\du_m}{\dt} \right\} \elabel{barrSum2},
+\end{align}
+keeping $\dt$ fixed. From \eref{aver} we obtain
+\be
+\ave{r} = \lim_{N\to\infty} \left\{ \frac{1}{N} \sum_{n=1}^N \frac{\Du_n}{\Dt} \right\}
+\elabel{averSum}
+\ee
+where each $\Du_n$ is drawn independently from the distribution of $\Du$.
+
+We now compare the two expressions \eref{barrSum2} and \eref{averSum}. 
+Clearly the value of $\bar{r}$ in \eref{barrSum2} cannot depend on the way 
+in which the diverging time period is partitioned, so the length of interval $\dt$ 
+must be arbitrary and can be set to the value of $\Dt$ in \eref{averSum}, for
+consistency we then call $\du_m(t)=\Du_m(t)$. 
+Expressions \eref{barrSum2} and \eref{averSum} are equivalent 
+if the successive additive increments, 
+$\Du_m(t)$, are distributed identically to the $\Du_n$ in \eref{averSum}, 
+which requires only that they are stationary and independent.
+
+%In general, this must be a Levy process
+%Confine attention to Ito processes --> Brownian motion with drift
+Thus we have a condition on $u(t)$ which suffices to make $\bar{r}=\ave{r}$, 
+namely that it be a stochastic process whose additive increments are 
+stationary and independent. This means that $u(t)$ is, in general, a L\'evy process. 
+If we restrict our attention to processes with 
+continuous paths, according to a theorem stated in \cite[p.~2]{Harrison2013} and 
+proved in \cite[Chapter~12]{Breiman1968}, $u(t)$ must be a Brownian motion with drift,
+\be
+du = a_u dt + b_u dW,
+\elabel{bm_u}
+\ee
+where $dW$ is the infinitesimal increment of the Wiener process.
+
+By arguing backwards we can address concerns regarding the
+existence of $\bar{r}$. If $u$ follows the dynamics specified by 
+\eref{bm_u}, then it is straightforward to show that the limit 
+$\bar{r}$ always exists and takes the value $a$. Consequently the 
+decision criterion \eref{max_Du} is equivalent to the optimisation 
+of $\bar{r}$, the time-average growth rate. The process $x(t)$ may be
+chosen such that \eref{bm_u} does not apply for any choice of $u(x)$. 
+In this case we cannot interpret expected utility theory dynamically,
+and such processes are likely to be pathological. 
+
+This gives our central result: 
+\begin{framed}
+For expected utility theory to be equivalent to 
+optimisation over time, utility must follow an additive stochastic process 
+with stationary increments.
+\end{framed}
+
+%Invertibility of utility function --> obtain wealth process
+This is a fascinating general connection. If the physical reason 
+why we observe non-linear utility functions is the non-linear effect of fluctuations
+over time, then a given utility function encodes a corresponding 
+stochastic wealth process. Provided that a utility function 
+$u(\x)$ is invertible, \ie provided that its inverse, $\x(u)$, exists, 
+a simple application of It\^o calculus to \eref{bm_u} yields directly the 
+stochastic differential equation obeyed by the wealth, $\x$. Thus every invertible utility 
+function encodes a unique dynamic in wealth which arises from a 
+Brownian motion in utility. This is explored further below.
+
+
+\subsubsection{Dynamic from a utility function}
+We now illustrate the relationship between utility functions and
+wealth dynamics. For the reasons discussed above we assume that
+utility follows a Brownian motion with drift. 
+
+If $u(x)$ can be inverted to $x(u)=u^{-1}(u)$, and $x(u)$ is twice differentiable,
+then it is possible to find the dynamic that corresponds to the utility function
+$u(x)$.  \Eref{bm_u} is an \Ito process. \Ito's lemma tells us that $dx$
+will be another \Ito process, and \Ito's formula specifies how to find $dx$
+in terms of the relevant partial derivatives
+\begin{equation}
+dx = \underbrace{\left(\frac{\partial x}{\partial t}+a_u \frac{\partial x}{\partial u} + \frac{1}{2}b_u^2\frac{\partial^2 x}{\partial u^2}\right)}_{a_x(x)}dt + \underbrace{b_u \frac{\partial x}{\partial u}}_{b_x(x)} dW
+\elabel{dx}
+\end{equation}
+
+We have thus shown that 
+\begin{theorem}
+For any invertible utility function $u(x)$ a class of corresponding
+wealth processes $dx$ can be obtained such that the (linear) rate of
+change in the expectation value of net changes in utility is the
+time-average growth rate of wealth.
+\end{theorem}
+As a consequence, optimizing expected changes in such utility functions 
+is equivalent to optimizing the time-average growth, in the sense 
+of \secref{Technical}, under the
+corresponding wealth process. 
+
+The origin of optimizing expected utility can
+be understood as follows: in the 18th century, the distinction between
+ergodic and non-ergodic processes was unknown, and all stochastic
+processes were treated by computing expectation values. Since
+the expectation value of the wealth process is an irrelevant 
+mathematical object to an individual whose wealth is modelled by
+a non-ergodic process the available methods
+failed. The formalism was saved by introducing a non-linear mapping of
+wealth, namely the utility function. The (failed) expectation value criterion
+was interpreted as theoretically optimal, and the non-linear utility functions
+were interpreted as a psychologically motivated pattern of human behavior. 
+Conceptually,  this is wrong.
+
+Optimization of time-average growth
+recognizes the non-ergodicity of the situation  and computes the
+appropriate object from the outset -- a procedure whose building blocks
+were developed beginning in the late 19th century. It does not assume 
+anything about human psychology and indeed predicts that the 
+same behavior will be observed in any growth-optimizing entities that
+need not be human.
+
+\underline{\bf Examples}
+
+\Eref{dx}, creates pairs of utility functions $u(x)$ and dynamics
+$dx$. In discrete time, two such pairs were investigated in \cite{PetersGell-Mann2016},
+namely cases $1.$ and $2.$ below.
+\subsubsection{Linear utility}
+\seclabel{linear}
+The trivial linear utility function corresponds to additive wealth dynamics (Brownian motion),
+\be
+u(x)=x \hspace{.4cm} \leftrightarrow \hspace{.4cm} dx=a_u dt + b_u dW.\hspace{1.3cm}
+\ee
+
+\underline{1 Logarithmic utility} 
+Introduced by Bernoulli in 1738 \cite{Bernoulli1738}, the logarithmic utility function is in wide use and corresponds to multiplicative wealth dynamics (geometric Brownian motion),
+\be
+u(x)=\ln(x) \hspace{.4cm} \leftrightarrow \hspace{.4cm} dx=x\left[\left(a_u +\frac{1}{2} b_u^2\right) dt+b_u dW\right].
+\ee
+In practice the most useful case will be multiplicative wealth dynamics. 
+But to demonstrate the generality 
+of the procedure, we carry it out for a different special case that is historically important.
+
+\underline{2 Square-root (Cramer) utility}
+The first utility function ever to be suggested was the square-root 
+function $u(x)=x^{1/2}$, by Cramer in a 1728
+letter to Daniel Bernoulli, partially reproduced in
+\cite{Bernoulli1738}. This function is invertible, namely $x(u)=u^2$,
+so that \eref{dx} applies. We note that the square root, in a specific
+sense, sits between the linear function and the logarithm:
+$\lim_{x\to\infty}\frac{x^{1/2}}{x}=0$ and 
+$\lim_{x\to\infty}\frac{\ln(x)}{x^{1/2}}=0$. Since linear utility 
+produces additive dynamics and logarithmic utility produces 
+multiplicative dynamics, we expect square-root utility to 
+produce something in between or some mix.
+Substituting for $x(u)$ in \eref{dx} and carrying out the
+differentiations we find
+\be
+u(x)=x^{1/2} \hspace{.3cm} \leftrightarrow \hspace{.3cm} dx =\left(2a_u x^{1/2} + b_u^2 \right)dt + 2 b_u x^{1/2} dW.
+\elabel{dx_2}
+\ee
+
+The drift term contains a multiplicative element (by which we mean an 
+element with $x$-dependence) and an additive element. We see that the 
+square-root utility function that lies between
+the logarithm and the linear function indeed represents a dynamic that
+is partly additive and partly multiplicative.
+
+\eref{dx_2} is reminiscent of the Cox-Ingersoll-Ross model 
+\cite{CoxIngersollRoss1985}
+in financial mathematics, especially if $a_u<0$. Similar dynamics, \ie with a noise 
+amplitude that is proportional to $\sqrt{x}$, are also studied in the
+context of absorbing-state phase transitions in statistical physics
+\cite{MarroDickman1999,Hinrichsen2000}. That a
+300-year-old letter is related to recent work in statistical
+mechanics is not surprising: the problems that motivated the
+development of decision theory, and indeed of probability theory
+itself are far-from equilibrium processes. Methods to study such
+processes were only developed in the 20th century and constitute 
+much of the work currently carried out in statistical mechanics.
+
+\subsubsection{Utility function from a dynamic}
+\seclabel{Utility_function}
+We now ask under what circumstances the procedure in
+\eref{dx} can be inverted. When can a utility function be found for a
+given dynamic? In other words, what conditions does the dynamic $dx$
+have to satisfy so that optimization over time can be represented by
+optimization of expected net changes in utility $u(x)$?
+
+We ask whether a given dynamic can be mapped into a utility whose
+increments are described by Brownian motion, \eref{bm_u}.
+
+The dynamic is an arbitrary \Ito process
+\begin{equation}
+dx=a_x(x) dt +b_x(x) dW,
+\elabel{dx_1}
+\end{equation}
+where $a_x(x)$ and $b_x(x)$ are arbitrary functions of $x$. For 
+this dynamic to translate into a Brownian motion for the utility, 
+$u(x)$ must satisfy the equivalent of \eref{dx} with the special
+requirement that the coefficients $a_u$ and $b_u$ in \eref{bm_u} be constants, namely
+\begin{equation}
+du = \underbrace{\left(a_x(x) \frac{\partial u}{\partial x} + \frac{1}{2}b_x^2(x)\frac{\partial^2 u}{\partial x^2}\right)}_{a_u}dt + \underbrace{b_x(x) \frac{\partial u}{\partial x}}_{b_u} dW.
+\elabel{du_2}
+\end{equation}
+Explicitly, we arrive at two equations for the coefficients
+\begin{equation}
+a_u=a_x(x) u' + \frac{1}{2} b_x^2(x) u''
+\elabel{A}
+\end{equation}
+and
+\begin{equation}
+b_u=b_x(x) u'.
+\elabel{b_u}
+\end{equation}
+Differentiating \eref{b_u}, it follows that 
+\begin{equation}
+u''(x)=-\frac{b_ub_x'(x)}{b_x^2(x)}.
+\end{equation}
+Substituting in \eref{A} for $u'$ and $u''$ and solving for $a_x(x)$ we
+find the drift term as a function of the noise term,
+\begin{equation}
+a_x(x) =\frac{a_u}{b_u}b_x(x)+ \frac{1}{2}b_x(x)b_x'(x).
+\elabel{consistency}
+\end{equation}
+In other words, knowledge of only the dynamic
+is sufficient to determine whether a corresponding utility function exists.
+We do not need to construct the utility function explicitly to know whether a pair 
+of drift term and noise term is consistent or not. 
+
+Having determined for some dynamic that a consistent utility function 
+exists, we can construct it by substituting for $b_x(x)$ in \eref{A}. 
+This yields  a differential equation for $u$
+\begin{equation}
+a_u=a_x(x) u' + \frac{b_u^2}{2u'^2}  u''
+\end{equation}
+or
+\begin{equation}
+0=-a_u u'^2+ a_x(x) u'^3 + \frac{b_u^2}{2}  u''.
+\elabel{diff_eq_u}
+\end{equation}
+
+Overall, then the triplet noise term, drift term, utility function is
+interdependent. Given a noise term we can find consistent drift terms,
+and given a drift term we find a consistency condition (differential
+equation) for the utility function.
+
+\underline{\bf Example:}\\
+Given a dynamic, it is possible to check whether this dynamic can be mapped into
+a utility function, and the utility function itself can be found. We consider the following
+example
+\begin{equation}
+dx=\left(\frac{a_u}{b_u}e^{-x}-\frac{1}{2}e^{-2x}\right)dt+e^{-x}dW.
+\elabel{test_dyn}
+\end{equation}
+We note that $a_x(x)=\frac{a_u}{b_u}e^{-x}-\frac{1}{2}e^{-2x}$ and $b_x(x)=e^{-x}$.
+\Eref{consistency} imposes conditions on the drift term $a_x(x)$ in terms of the 
+noise term $b_x(x)$. Substituting in \eref{consistency} reveals that the consistency 
+condition is satisfied by the dynamic in \eref{test_dyn}.
+
+A typical trajectory of \eref{test_dyn} is shown in \fref{test_dyn}.
+
+\begin{figure}[h!]
+\begin{picture}(200,200)(0,0)
+  \put(-30,0){\includegraphics[width=0.5\textwidth]{./trajectories.pdf}}
+\end{picture}
+\caption{\small Typical trajectories of the wealth
+trajectory $x(t)$ described by \eref{test_dyn}, with parameter values $a_u=1/2$ and $b_u=1$,  and the corresponding Brownian motion $u(t)$. Note that the fluctuations in $x(t)$ become smaller for larger wealth. }
+\flabel{test_dyn}
+\end{figure}
+\FloatBarrier
+
+Because \eref{test_dyn} is internally consistent, it is possible to derive the corresponding utility function.
+\Eref{b_u} is a first-order ordinary differential equation for $u(x)$
+\begin{align}
+u'(x)=\frac{b_u}{b_x(x)},
+\elabel{diff_eq_u}
+\end{align}
+which can be integrated to
+\begin{align}
+u(x)=\int_0^x d\tilde{x} \frac{b_u}{b_x(\tilde{x})}+C,
+\end{align}
+with $C$ an arbitrary constant of integration. This constant corresponds to the 
+fact that only changes in utility are meaningful, as was pointed out by von 
+Neumann and Morgenstern \cite{vonNeumannMorgenstern1944} -- this robust feature
+is visible whether one thinks in dynamic terms and time averages or in terms of consistent
+measure-theoretic concepts and expectation values.
+
+Substituting for $b_x(x)$ from \eref{test_dyn}, \eref{diff_eq_u} becomes
+\begin{equation}
+u'(x)=b_u e^x,
+\end{equation}
+which is easily integrated to
+\begin{equation}
+u(x)=b_u e^x +C,
+\elabel{test_dyn_u}
+\end{equation}
+plotted in \fref{test_dyn_u}. This expoential utility function is monotonic and therefore invertible, which is 
+reflected in the fact that the consistency condition is satisfied. 
+The utility function is convex. From the 
+perspective of expected-utility theory an individual behaving optimally according to 
+this function would be labelled ``risk-seeking.'' 
+The dynamical perspective corresponds to a qualitatively different interpretation: 
+Under the dynamic \eref{test_dyn} the ``risk-seeking'' individual behaves optimally, 
+in the sense that his wealth will grow faster than that of a risk-averse individual.
+The dynamic \eref{test_dyn} has the feature that fluctuations in wealth become smaller
+as wealth grows. High wealth is therefore sticky -- an individual will quickly fluctuate out of 
+low wealth and into higher wealth. It will then tend to stay there. 
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
