@@ -17,6 +17,11 @@ D.~Bernoulli.
   (1954).
 \newblock {\em Econometrica}, 22(1):23--36, 1738.
 
+\bibitem{Black1986}
+F.~Black.
+\newblock Noise.
+\newblock {\em The Journal of Finance}, 41(3):528--543, 1986.
+
 \bibitem{BouchaudMezard2000}
 J.-P. Bouchaud and M.~M\'ezard.
 \newblock Wealth condensation in a simple model of economy.
@@ -64,6 +69,11 @@ A.~Einstein.
   geforderte {B}ewegung von in ruhenden {F}l{\"u}ssigkeiten suspendierten
   {T}eilchen.
 \newblock {\em Ann. Phys.}, IV(17):549--560, 1905.
+
+\bibitem{Fernandez2009}
+P.~Fern\'{a}ndez.
+\newblock The equity premium in 150 textbooks.
+\newblock Working paper, IESE Business School, University of Navarra, 2009.
 
 \bibitem{Feynman1963}
 R.~P. Feynman.
@@ -117,6 +127,12 @@ H.~A. Latan\'{e}.
 \newblock Rational decision-making in portfolio management.
 \newblock {\em J. Fin.}, 14(3):429--430, 1959.
 
+\bibitem{LeRoy2016}
+S.~F. LeRoy.
+\newblock excess volatility tests.
+\newblock In S.~N. Durlauf and L.~E. Blume, editors, {\em {The New Palgrave
+  Dictionary of Economics}}, pages 78--80. Springer, 2016.
+
 \bibitem{Markowitz1952}
 H.~Markowitz.
 \newblock Portfolio selection.
@@ -167,6 +183,11 @@ O.~Peters.
 O.~Peters.
 \newblock The time resolution of the {St} {Petersburg} paradox.
 \newblock {\em Phil. Trans. R. Soc. A}, 369(1956):4913--4931, December 2011.
+
+\bibitem{PetersAdamou2011}
+O.~Peters and A.~Adamou.
+\newblock Stochastic market efficiency.
+\newblock {\em arXiv preprint arXiv:1101.4548}, 2011.
 
 \bibitem{PetersAdamou2013}
 O.~Peters and A.~Adamou.
