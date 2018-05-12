@@ -255,13 +255,76 @@ Furthermore, there are additional reasons why we would favour the strong form of
 On sufficiently long time scales, $\lopt=1$ is a strong attractor for the stochastic properties of real markets. Deviations from this attractor over shorter time scales are likely to be confined to the range $0\leq\lopt\leq1$.
 \end{keypts}
 
-\subsection{Real markets -- stochastic market efficiency in action\seclabel{real}}
-In \secref{applications} we will think through the consequences of this mindboggling hypothesis. But before we do that, let's see if it actually works in practice. For this purpose we need some data -- something resembling a riskless asset and something resembling a risky asset. Of course we can argue about the data -- which precise data set should be used, what biases it will introduce and so on -- until the cows come home. But let's just set those worries aside for the moment and try something.
 
-We test the stochastic efficiency hypothesis in real markets by backtesting leveraged investments. The simplest thing to check is this: take two time series, one of the returns of a very stable, low-volatility, asset, like bank deposits, and the other of the returns of a more volatile asset, like shares. The try out all possible fixed-leverage investment strategies and see which one does best. The leverage where that happens is a real-world estimate of $\lopt$.
+
+\subsection{Applications of stochastic market efficiency\seclabel{applications}}
+
+\subsubsection{A theory of noise -- the silliness of price discovery\seclabel{a_theory}}
+As well as providing estimates of the uncertainties in measurements of $\lopt$, the analysis of section~\ref{ShorterTime} sheds light on the existence and nature of ``noise'' in financial markets \cite{Black1986}. According to leverage efficiency, prices of risky assets must fluctuate if an excess drift exists, $\mue>0$, simply because the market would otherwise become unstable. Furthermore, leverage efficiency tells us the fluctuation amplitude required to avoid instability: $(\sigmas)^2=\mue$. But, if price fluctuations are necessary for stability, then the intellectual basis for price efficiency -- that changes in price are driven by the arrival of new economic information --  cannot be the whole truth. At least some component of observed fluctuations must be driven by the leverage feedbacks described in section~\ref{Stochastic}, which enforce leverage efficiency and which have little to do with information arrival.
+
+\cite{Black1986} differentiated between information-based and other types of price fluctuation, referring to the latter as ``noise'' and regarding it as a symptom of inaccurate information and market {\it in}-efficiency. However, the strong empirical confirmation in \fref{loglog} of the relation in \eref{variance} over a very wide range of time scales -- from weeks to decades -- suggests that real prices have fluctuation amplitudes close to the levels required for leverage stability. Their fluctuations are, therefore, consistent with and predicted by leverage efficiency. Prices ``discovered'' at ever higher trading frequencies will always show more ups and downs, as seen in \fref{loglog}, but this noise is self-generated, imposed by the requirement of leverage stability. That stability is the genesis of volatility constitutes a theory of noise requiring no appeal to the arrival of unspecified information, accurate or not.
+
+
+\subsubsection{Solution of the equity premium puzzle\seclabel{solution}}
+The term ``equity premium'' has been used to describe the ``premium'' I receive for holding ``equity'' -- meaning the extra growth rate my wealth experiences, compared to riskless interest rates, if I invest it in shares, or some other risky asset. We denote this with the symbol $\pim$ (for premium). Of course the difference between the time-average growth rates of the risky asset ($\lm=1$) and the riskless asset ($\lm=0$) can be measured. It is
+\bea
+\pim &\equiv& \gtm(1) - \gtm(0)\\
+&=& \mue-\frac{(\sigmas)^2}{2}.
+\elabel{epdef}
+\eea
+If we take the S\&P500 total return index (which properly includes dividends) as an example for a risky asset and overnight federal funds as a riskless asset, then the equity premium comes out as about 6.7\% p.a. over the last 30 years (1988--2018). Of course one can argue which assets should be used and what interest rates make sense -- the S\&P500 suffers from survivorship bias -- only successful companies are included. It's not really an asset at all -- its composition keeps changing, and for (good) reasons we won't go into, it weights share prices with the free float, \ie the part of a company's market capitalisation that is freely traded in the market, not held by insiders. In other words it's full of arbitrariness. And why overnight money? That certainly biases the equity premium to a higher value. Why not 10-year bonds, which would give a lower equity premium? This can change the value one measures for $\pim$ by quite a bit. Some authors have even claimed there is no equity premium at all. But it's generally believed that there is one, and that it's somewhere between 2\%~p.a. and 8\%~p.a.
+
+What value would we expect the equity premium to take in a real market. Substituting \eref{lopt} into \eref{hypothesis} yields $(\sigmas)^2 = \mue$ as an attractor. It follows from \eref{epdef} that the equity premium is attracted to
+\be
+\pim = \frac{\mue}{2}.
+\elabel{epval}
+\ee
+Again, for the S\&P500 compared to federal overnight funds, $\mue=8.4\%$~p.a., and half of that is $\pim=4.2\%$~p.a., which is within the ballpark of reported equity premia. In other words, our framework predicts the equity premium correctly.
+ 
+Puzzles usually arrise because we look at things from the wrong angle, with a mental model that doesn't reflect reality. The equity premium puzzle is no exception. The researchers who first studied the equity premium had a model in mind whereby equity prices are set based on the consumption preferences of the population \cite{MehraPrescott1985}. 
+We won't go into these models in detail because they're the wrong angle. But the story is this: consumption-based asset pricing models come to the conclusion that no one should ever hold cash. In these models only people who are pathologically terrified of losing money would hold cash, and such people just don't exist. But if you assume that they don't exist, then the models would predict a very different equity premium. So something is not working.
+\cite{LeRoy2016} summarized the current state of the debate as follows: ``Most analysts believe that no single convincing explanation has been provided for the volatility of equity prices. The conclusion that appears to follow from the equity premium and price volatility puzzles is that, for whatever reason, prices of financial assets do not behave as the theory of consumption-based asset pricing predicts.''
+
+The equity premium puzzle is an interesting case study of economic science in operation.  The literature on the puzzle is large and often takes a psychological and individual-specific perspective. For instance, a more risk-averse individual will demand a higher equity premium. Models of human behaviour enter both into the definition of the equity premium -- which lacks consensus \cite{Fernandez2009} -- and into its analysis. The problem is treated in wordy essays, and it's also treated using impenetrably complicated formal models. From our perspective this is all over-complicated and a result of science incrementally going down a rabbit hole of analysis, failing for 35 years to retrace its steps and try a different angle.
+
+The framework we have developed here takes a psychologically na\"{i}ve perspective, , without reference to human behaviour or consumption.
+It is analytically embarassingly simple. Only our one insight was needed: performance over time is not performance of the ensemble. 
+We regard the correct prediction of the equity premium by the leverage efficiency hypothesis as the long-sought resolution of the equity premium and price volatility puzzles. It is worth noting that the experts disagree with us: the equity premium puzzle, in their minds, is the fact that observed equity premia cannot be explained with consumption-based asset pricing models. In our view, of course, that simply means it's time to throw out consumption-based asset price models, whereas clinging on to them can be summarized in the cartoon in \fref{cartoon}.
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth,angle=90]{./chapter_4/figs/cartoon.pdf}
+\caption{The equity premium puzzle.\flabel{cartoon}}
+\end{figure}
+
+
+\subsubsection{Central-bank interest rates\seclabel{central-bank}}
+Our observations are also relevant to the issue of setting a central bank's lending rate. The rate setter would view the total drift $\mus$ of an appropriate asset or index as given, and the risk-free drift $\mur$ as the central bank's rate. If the aim is to achieve full investment in productive activity without fuelling an asset bubble, then this rate should be set so that $\lopt=1$. Since $\lopt=\mus/(\sigmas)^2$ and $\mue=\mur-\mus$, this is achieved by setting 
+\be
+\mur=\mus-(\sigmas)^2.
+\ee
+Using the estimated values for $\mus$ and $\sigmas$ of section~\ref{TheEntire}, the optimal interest rate comes out as 8.4\% {\it p.a.}, suggesting that interest rates over the analysed period have been in a region (lower than this value) where they can inflate leverage bubbles, though the effect is mitigated by trading costs. The task of the central banker can be seen as the task of estimating $\mur$ and $\sigmas$ in the relevant way. This will involve choices about data and timescales which are far from trivial. For instance, in our data analyses at any given time there is an estimate for $\mus$ and one for $\sigmas$ for each possible length of lookback window. Operational matters aside, stability with respect to leverage is an important consideration for any central bank. Leverage efficiency provides a simple quantitative basis for a rate setting protocol and may frame qualitative discussions about interest rates in a useful way.
+
+
+\subsubsection{Fraud detection\seclabel{fraud}}
+We will see in the next section that stochastic market efficiency is real. Prices of real traded assets more or less obey the constraints dictated by systemic stability. Of course, over short time scales fluctuations will be large, there are all manner of difficult-to-model effects in real trading environments. These include transaction costs and other operational costs. Still -- a realistic asset should more or less satisfy stochastic market efficiency.
+
+But what if it doesn't? What if there is an asset that consistently, and at low volatility outperforms cash? First of all, we now know that such behavior is a challenge to systemic stability. For example, the UK government has passed measure after measure to support UK house prices. This is popular with the voters -- it's sold as ``helping the young on the housing ladder,'' but longer-term it inflates a bubble and creates systemic instability. For example, the government's actions have artificially suppressed the volatility of London houses. Consequently, these have become such leverageable investments that they suck in investment money from the entire planet. The result is streets and streets of empty luxury villas belonging to billionaires who own them for the sake of the stochastic properties of their prices -- not for the sake of living there.
+
+This can be considered a type of fraud, and it will eventually destabilize something -- perhaps house prices will crash, perhaps the monetary system will break. But something will happen.
+
+Ponzi schemes are another type of fraud. Below we will test the Madoff ponzi scheme and ask: was it too good to be true from the perspective of leverage efficiency? We will ask the same question about bitcoin: is it too good to be true from this perspective?
+
+
+\subsection{Real markets -- stochastic market efficiency in action\seclabel{real}}
+In \secref{applications} we went through some earth-shattering consequences of leverage efficiency. Of course we wouldn't have done that if there wasn't strong evidence of this organizing principle actually working in practice. Let's get some data and try it out. 
+
+We test the stochastic efficiency hypothesis in real markets, quite na\"ively, by backtesting leveraged investments. The simplest thing to check is this: take two time series, one of the returns of a very stable, low-volatility, asset, like bank deposits, and the other of the returns of a more volatile asset, like shares. The try out all possible fixed-leverage investment strategies and see which one does best. The leverage where that happens is a real-world estimate of $\lopt$.
+
+Of course we can argue about the data until the cows come home -- which precise data set should be used, what biases it will introduce and so on. But let's just set those worries aside for the moment and just try something.
+
 
 \subsubsection{Backtests of constant-leverage investments}
-An investment of constant leverage over a given time period, or window, is simulated as follows. At the start of the first day we assume an initial net investment, or equity, of $\xl(\tn;\l)=\$1$. This comprises stock holdings of $\$\l$ in the risky asset and bank deposits of $\$(1-\l)$. At the end of the day the values of these holdings and deposits are updated according to the historical risky returns, $\rs(\tn)$, and interest rates, $\rr(\tn)$. 
+An investment of constant leverage over a given time period, or window, is simulated as follows. At the start of the first day we assume an initial net investment of $\xl(\tn;\l)=\$1$, consisting of $\$\l$ in the risky asset and  $\$(1-\l)$ in bank deposits. At the end of the day the values of these holdings and deposits are updated according to the historical risky returns, $\rs(\tn)$, and interest rates, $\rr(\tn)$. 
 
 The portfolio is then rebalanced, \ie the holdings in the risky asset are adjusted\footnote{On non-trading days the return of the market is zero, while deposits continue to accrue interest. This leads to an unrealistic but negligible rebalancing on those days.} so that their ratio to the equity remains $\l$. The overall effect is the following protocol 
 \be
@@ -394,61 +457,6 @@ We can also plot the simulated optimal leverages for investment windows with fix
 \end{figure}
 From the strong fluctuations over short time scales emerges attractive behaviour consistent with our refined hypothesis. The effects of the stickiness of the points $\lopt=0$ and $\lopt=1$ in the complex model are clearly visible. In particular, over the last decade or so optimal leverage for the 20- and 40-year windows remained close to unity.
 
-
-\subsection{Applications of stochastic market efficiency\seclabel{applications}}
-\subsubsection{Solution of the equity premium puzzle\seclabel{solution}}
-The term ``equity premium'' has been used to describe the ``premium'' I receive for holding ``equity'' -- meaning the extra growth rate my wealth experiences, compared to riskless interest rates, if I invest it in shares, or some other risky asset. We denote this with the symbol $\pim$ (for premium). Of course the difference between the time-average growth rates of the risky asset ($\lm=1$) and the riskless asset ($\lm=0$) can be measured. It is
-\bea
-\pim &\equiv& \gtm(1) - \gtm(0)\\
-&=& \mue-\frac{(\sigmas)^2}{2}.
-\elabel{epdef}
-\eea
-If we take the S\&P500 total return index (which properly includes dividends) as an example for a risky asset and overnight federal funds as a riskless asset, then the equity premium comes out as about 6.7\% p.a. over the last 30 years (1988--2018). Of course one can argue which assets should be used and what interest rates make sense -- the S\&P500 suffers from survivorship bias -- only successful companies are included. It's not really an asset at all -- its composition keeps changing, and for (good) reasons we won't go into, it weights share prices with the free float, \ie the part of a company's market capitalisation that is freely traded in the market, not held by insiders. In other words it's full of arbitrariness. And why overnight money? That certainly biases the equity premium to a higher value. Why not 10-year bonds, which would give a lower equity premium? This can change the value one measures for $\pim$ by quite a bit. Some authors have even claimed there is no equity premium at all. But it's generally believed that there is one, and that it's somewhere between 2\%~p.a. and 8\%~p.a.
-
-What value would we expect the equity premium to take in a real market. Substituting \eref{lopt} into \eref{hypothesis} yields $(\sigmas)^2 = \mue$ as an attractor. It follows from \eref{epdef} that the equity premium is attracted to
-\be
-\pim = \frac{\mue}{2}.
-\elabel{epval}
-\ee
-Again, for the S\&P500 compared to federal overnight funds, $\mue=8.4\%$~p.a., and half of that is $\pim=4.2\%$~p.a., which is within the ballpark of reported equity premia. In other words, our framework predicts the equity premium correctly.
- 
-Puzzles usually arrise because we look at things from the wrong angle, with a mental model that doesn't reflect reality. The equity premium puzzle is no exception. The researchers who first studied the equity premium had a model in mind whereby equity prices are set based on the consumption preferences of the population \cite{MehraPrescott1985}. 
-We won't go into these models in detail because they're the wrong angle. But the story is this: consumption-based asset pricing models come to the conclusion that no one should ever hold cash. In these models only people who are pathologically terrified of losing money would hold cash, and such people just don't exist. But if you assume that they don't exist, then the models would predict a very different equity premium. So something is not working.
-\cite{LeRoy2016} summarized the current state of the debate as follows: ``Most analysts believe that no single convincing explanation has been provided for the volatility of equity prices. The conclusion that appears to follow from the equity premium and price volatility puzzles is that, for whatever reason, prices of financial assets do not behave as the theory of consumption-based asset pricing predicts.''
-
-The equity premium puzzle is an interesting case study of economic science in operation.  The literature on the puzzle is large and often takes a psychological and individual-specific perspective. For instance, a more risk-averse individual will demand a higher equity premium. Models of human behaviour enter both into the definition of the equity premium -- which lacks consensus \cite{Fernandez2009} -- and into its analysis. The problem is treated in wordy essays, and it's also treated using impenetrably complicated formal models. From our perspective this is all over-complicated and a result of science incrementally going down a rabbit hole of analysis, failing for 35 years to retrace its steps and try a different angle.
-
-The framework we have developed here takes a psychologically na\"{i}ve perspective, , without reference to human behaviour or consumption.
-It is analytically embarassingly simple. Only our one insight was needed: performance over time is not performance of the ensemble. 
-We regard the correct prediction of the equity premium by the leverage efficiency hypothesis as the long-sought resolution of the equity premium and price volatility puzzles. It is worth noting that the experts disagree with us: the equity premium puzzle, in their minds, is the fact that observed equity premia cannot be explained with consumption-based asset pricing models. In our view, of course, that simply means it's time to throw out consumption-based asset price models, whereas clinging on to them can be summarized in the cartoon in \fref{cartoon}.
-\begin{figure}
-\centering
-\includegraphics[width=.8\textwidth,angle=90]{./chapter_4/figs/cartoon.pdf}
-\caption{The equity premium puzzle.\flabel{cartoon}}
-\end{figure}
-
-
-\subsubsection{Central-bank interest rates\seclabel{central-bank}}
-Our observations are also relevant to the issue of setting a central bank's lending rate. The rate setter would view the total drift $\mus$ of an appropriate asset or index as given, and the risk-free drift $\mur$ as the central bank's rate. If the aim is to achieve full investment in productive activity without fuelling an asset bubble, then this rate should be set so that $\lopt=1$. Since $\lopt=\mus/(\sigmas)^2$ and $\mue=\mur-\mus$, this is achieved by setting 
-\be
-\mur=\mus-(\sigmas)^2.
-\ee
-Using the estimated values for $\mus$ and $\sigmas$ of section~\ref{TheEntire}, the optimal interest rate comes out as 8.4\% {\it p.a.}, suggesting that interest rates over the analysed period have been in a region (lower than this value) where they can inflate leverage bubbles, though the effect is mitigated by trading costs. The task of the central banker can be seen as the task of estimating $\mur$ and $\sigmas$ in the relevant way. This will involve choices about data and timescales which are far from trivial. For instance, in our data analyses at any given time there is an estimate for $\mus$ and one for $\sigmas$ for each possible length of lookback window. Operational matters aside, stability with respect to leverage is an important consideration for any central bank. Leverage efficiency provides a simple quantitative basis for a rate setting protocol and may frame qualitative discussions about interest rates in a useful way.
-
-
-\subsubsection{A theory of noise -- the silliness of price discovery\seclabel{a_theory}}
-As well as providing estimates of the uncertainties in measurements of $\lopt$, the analysis of section~\ref{ShorterTime} sheds light on the existence and nature of ``noise'' in financial markets \cite{Black1986}. According to leverage efficiency, prices of risky assets must fluctuate if an excess drift exists, $\mue>0$, simply because the market would otherwise become unstable. Furthermore, leverage efficiency tells us the fluctuation amplitude required to avoid instability: $(\sigmas)^2=\mue$. But, if price fluctuations are necessary for stability, then the intellectual basis for price efficiency -- that changes in price are driven by the arrival of new economic information --  cannot be the whole truth. At least some component of observed fluctuations must be driven by the leverage feedbacks described in section~\ref{Stochastic}, which enforce leverage efficiency and which have little to do with information arrival.
-
-\cite{Black1986} differentiated between information-based and other types of price fluctuation, referring to the latter as ``noise'' and regarding it as a symptom of inaccurate information and market {\it in}-efficiency. However, the strong empirical confirmation in \fref{loglog} of the relation in \eref{variance} over a very wide range of time scales -- from weeks to decades -- suggests that real prices have fluctuation amplitudes close to the levels required for leverage stability. Their fluctuations are, therefore, consistent with and predicted by leverage efficiency. Prices ``discovered'' at ever higher trading frequencies will always show more ups and downs, as seen in \fref{loglog}, but this noise is self-generated, imposed by the requirement of leverage stability. That stability is the genesis of volatility constitutes a theory of noise requiring no appeal to the arrival of unspecified information, accurate or not.
-
-\subsubsection{Fraud detection\seclabel{fraud}}
-We will see in the next section that stochastic market efficiency is real. Prices of real traded assets more or less obey the constraints dictated by systemic stability. Of course, over short time scales fluctuations will be large, there are all manner of difficult-to-model effects in real trading environments. These include transaction costs and other operational costs. Still -- a realistic asset should more or less satisfy stochastic market efficiency.
-
-But what if it doesn't? What if there is an asset that consistently, and at low volatility outperforms cash? First of all, we now know that such behavior is a challenge to systemic stability. For example, the UK government has passed measure after measure to support UK house prices. This is popular with the voters -- it's sold as ``helping the young on the housing ladder,'' but longer-term it inflates a bubble and creates systemic instability. For example, the government's actions have artificially suppressed the volatility of London houses. Consequently, these have become such leverageable investments that they suck in investment money from the entire planet. The result is streets and streets of empty luxury villas belonging to billionnaires who own them for the sake of the stochastic properties of their prices -- not for the sake of living there.
-
-This can be considered a type of fraud, and it will eventually destabilize something -- perhaps house prices will crash, perhaps the monetary system will break. But something will happen.
-
-Ponzi schemes are another type of fraud. Below we will test the Madoff ponzi scheme and ask: was it too good to be true from the perspective of leverage efficiency? We will ask the same question about bitcoin: is it too good to be true from this perspective?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
