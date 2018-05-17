@@ -14,11 +14,11 @@ from datetime import datetime
 #data_ID="BTC-USD"
 #data_ID="STR-USD"
 #data_ID="SP5-FED"
-data_ID="STR-FED"
+#data_ID="STR-FED"
 #data_ID="BTC-FED"
       
-input_dir="./../../../../LML/Leverage_Efficiency/data/"
-returns_1=pd.read_pickle(input_dir+data_ID+"-1.pkl")
+input_dir="./../../../../Leverage_Efficiency/data/"
+returns_1=pd.read_pickle(input_dir+"STR-FED"+"-1.pkl")
 returns_2=pd.read_pickle(input_dir+"BTC-FED"+"-1.pkl")
 returns_3=pd.read_pickle(input_dir+"DAX-BND"+"-1.pkl")
 final_equity_1=np.cumprod(returns_1)[-1:].T
@@ -30,9 +30,18 @@ equity_3=np.cumprod(returns_3)
 
 ####final equity vs. leverage#####
 fig, ax1=plt.subplots()
-plt.axvline(x=1,linestyle=':',color='red',linewidth=1.5)
-#plt.axvline(x=1+2*1.0403393028,linestyle=':',color='pink',linewidth=1.5)
-#plt.axvline(x=1-2*1.0403393028,linestyle=':',color='pink',linewidth=1.5)
+plt.axvline(x=1,linestyle=':',color='black',linewidth=1.5)
+ax1.fill_betweenx([.01,100],1+2*0.30842954802502226, 1-2*0.30842954802502226,color=(1,0,0,0.3))
+ax1.fill_betweenx([.01,100],1+2*0.30842954802502226, 1+2*0.8032556605751192,color=(1,1,0,0.2))
+ax1.fill_betweenx([.01,100],1+2*0.30842954802502226, 1-2*0.8032556605751192,color=(1,1,0,0.2))
+ax1.fill_betweenx([.01,100],1+2*0.8032556605751192, 1+2*1.0268671774681666,color=(0,0,1,0.2))
+ax1.fill_betweenx([.01,100],1-2*0.8032556605751192, 1-2*1.0268671774681666,color=(0,0,1,0.2))
+plt.axvline(x=1+2*0.30842954802502226,linestyle=':',color='red',linewidth=.5)
+plt.axvline(x=1-2*0.30842954802502226,linestyle=':',color='red',linewidth=.5)
+plt.axvline(x=1+2*1.0268671774681666,linestyle=':',color='blue',linewidth=.5)
+plt.axvline(x=1-2*1.0268671774681666,linestyle=':',color='blue',linewidth=.5)
+plt.axvline(x=1+2*0.8032556605751192,linestyle=':',color='orange',linewidth=.5)
+plt.axvline(x=1-2*0.8032556605751192,linestyle=':',color='orange',linewidth=.5)
 plt.axhline(y=0,linestyle=':',color='grey',linewidth=.5)
 ax1.plot(final_equity_1, label='S&P500TR',linewidth=2,color='blue')
 ax1.plot(final_equity_3, label='DAX',linewidth=2,color='orange')

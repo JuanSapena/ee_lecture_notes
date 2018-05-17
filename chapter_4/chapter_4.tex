@@ -336,7 +336,7 @@ It is analytically embarassingly simple. Only our one insight was needed: perfor
 We regard the correct prediction of the equity premium by the leverage efficiency hypothesis as the long-sought resolution of the equity premium and price volatility puzzles. It is worth noting that the experts disagree with us: the equity premium puzzle, in their minds, is the fact that observed equity premia cannot be explained with consumption-based asset pricing models. In our view, of course, that simply means it's time to throw out consumption-based asset price models, whereas clinging on to them can be summarized in the cartoon in \fref{cartoon}.
 \begin{figure}
 \centering
-\includegraphics[width=.7\textwidth,angle=90]{./chapter_4/figs/cartoon.pdf}
+\includegraphics[width=.6\textwidth,angle=90]{./chapter_4/figs/cartoon.pdf}
 \caption{The equity premium puzzle.\flabel{cartoon}}
 \end{figure}
 
@@ -369,7 +369,7 @@ Of course we can argue about the data until the cows come home -- which precise 
 
 \subsubsection{Backtests of constant-leverage investments}
 
-An investment of constant leverage is backtested using two time series, $\rs(\t)$ (risky returns) and $\rr(\t)$ (returns on bank deposits) as follows.
+An investment of constant leverage is backtested using two time series, $\rs(\t)$ (risky returns) and $\rr(\t)$ (returns on bank deposits) as illustrated in \fref{rebalance}.
 \begin{enumerate}
 \item We start with equity of $\xl(\tn;\l)=\$1$, consisting of $\$\l$ in the risky asset and  $\$(1-\l)$ in bank deposits. 
 \item Each day the values of these holdings are updated according to the historical returns, so that 
@@ -381,6 +381,12 @@ In this step, we can introduce fees for borrowing cash (needed for $\l>1$), and 
 \item The portfolio is then rebalanced, \ie some risky holdings are ``bought'' or ``sold''  (swapped for cash) so that the ratio between risky holdings and equity remains $\l$.\\ 
 In this step transaction costs can be introduced.\footnote{On non-trading days the return of the market is zero, while deposits continue to accrue interest. This leads to an unrealistic but negligible rebalancing on those days.}
 \end{enumerate}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{./chapter_4/figs/rebalance.pdf}
+\caption{Investment in a risky (blue) and riskless (red) asset. Leverage starts at $\l=0.7$, meaning 70\% is invested in the risky asset, and 30\% in the riskless. The investment then experiences the relative returns of the market. In this case the riskless goes up a little, and the risky asset goes up more. Consequently, the leverage changes. To maintain a constent leverage, some risky asset has to be sold in return for some riskless, a step known as re-balancing.
+\flabel{rebalance}}
+\end{figure}
 In the simplest instance, the overall effect is the following protocol 
 \be
 \xl(\t+\Dt;\l) = \underbrace{\rs(\t) \l \xl(\t;\l) }_{\text{new risky holdings}} + \underbrace{ \rr(\t)(1-\l) \xl(\t;\l)}_{\text{new bank deposits}},
@@ -404,6 +410,7 @@ If at any time the equity falls below zero, the investment is declared bankrupt 
 \flabel{STR_final_equity}}
 \end{figure}
 
+\FloatBarrier 
 \subsubsection{Data sets}
 We want to compare the true performance of one asset to that of another, and therefore it's important to find time series that really resemble changes in equity over time that an investment would have experienced. A stock market index would be nice because it will give a broad overall impression. It won't depend too much on the specific fortunes of any given company.
 
@@ -425,7 +432,7 @@ For all assets, we will overestimate real optimal leverage in the most straight-
 We could try to correct for this bias, and we have done that in \cite{PetersAdamou2011}. The necessary assumptions make the results more realistic but also more dependent on subjective guesses, so we'll just stick to the simplest case here and note that it will produce an over-estimate of $\lopt$.
 
 \subsubsection{Full time series}
-\Fref{STR_final_equity} shows leverage-return curves for the \SPT. The optimal leverage is a little greater than 1, but still within 2 standard errors from the prediction. Without further ado, let's add to this figure the same curves for the DAX and Bitcoin, this time on logarithmic vertical scales to see a bit more structure, \fref{STR_final_all}.  
+\Fref{STR_final_equity} shows the leverage-return curve for the \SPT. The optimal leverage is a little greater than 1, but still within 2 standard errors from the prediction. Without further ado, let's add to this figure the same curves for the DAX and Bitcoin, this time on logarithmic vertical scales to see a bit more structure, \fref{STR_final_all}.  
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{./chapter_4/figs/all_final_equity.pdf}
@@ -433,7 +440,17 @@ We could try to correct for this bias, and we have done that in \cite{PetersAdam
 \flabel{STR_final_all}}
 \end{figure}
 
-We add the data for Madoff's fund in a separate figure because the scales are so vastly different, \fref{STR_final_all_MAD}. This is instructive, first because it suggests that leverage-return curves can help detect investments that are too good to be true, and secondly because it shows just how different the results could have been. If it weren't for leverage efficiency -- a principle that clearly doesn't apply to made-up Madoff returns -- optimal leverage for the \SPT, for example, could be miles away from our prediction.
+The overall impression that emerges is this: leverage efficiency is reasonably satisfied for these assets. The shaded areas in \fref{STR_final_all} show the predicted ranges, 2 statistical standard errors to the left and right from $\lopt=1$, and all observed maxima of the curves are within these bands. We also see a convincing bias: all estimates are greater than 1, as expected given the bias in the estimate that we mentioned earlier.
+
+From a scientific point of view it's not very interesting to show lots of cases where a theory gives good predictions. We want to know the limits of the theory. When does it not apply? Where does it break down? To be honest, before we looked at the data we thought that bitcoin might be an example of an asset that doesn't obey leverage efficiency. But it looks unspectacular -- just as predicted. We didn't have a specific reason to suspect that the theory wouldn't apply to bitcoin, it just seemed like an extreme case that might not work for some reason. 
+
+But let's see what happens where the theory really doesn't apply. In \fref{STR_final_all_MAD} we add to the curves of \fref{STR_final_all} the return-vs.-leverage curve for Bernie Madoff's fund. This is instructive because it shows just how different the results could have been. If it weren't for leverage efficiency optimal leverage for the \SPT, for example, could be miles away from our prediction. We have to show the Madoff data in a separate figure 
+because the scales are so different that the differences between Bitcoin, \SPT, and the DAX become very small, and we thought they may be of interest.
+Apart from showing the limits of our theory, the Madoff data suggest that leverage-return curves can help detect investments that are too good to be true, \ie fraud. 
+
+Of course, Madoff could have chosen the invented returns of his fund in a way that's consistent with leverage efficiency, just to show the victims of his fraud something realistic. But apparently he didn't bother to do that, and people believed that he'd really found a way to print money.
+
+That's good for us -- showing that a theory fails to predict things it shouldn't be able to predict is important. A theory about asset price fluctuations that applies even to ficitious prices like Madoff's would be suspicious -- it would probably not say much about prices at all but just be a statement that's generally true about a much broader class of phenomena. 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{./chapter_4/figs/all_MAD_final_equity.pdf}
@@ -442,7 +459,9 @@ The maxima for the real assets cluster near the predicted value $\lopt=1$. Madof
 \flabel{STR_final_all_MAD}}
 \end{figure}
 
-
+\subsubsection{Shorter time scales}
+In \secref{Prediction_accuracy} we derived an expression, \eref{variance}, for the variance of optimal leverage that we expect to observe in a finite time series, and we used this to arrive at a statistical error estimate, a scale on which to judge whether leverage efficiency holds or not.
+But we can use \eref{variance} as a prediction in itself: is the sample variance of $\lopt$, measured in many windows of size $\Dt$ well described by \eref{variance}? While we can't make the time series longer than they are, we can make the shorter and collect statistics over non-overlapping windows. \Fref{loglog} shows the result.
 %\fref{g_l_linear} shows the simulated multiplicative return as a function of leverage for an investment over the entire time series.
 %\begin{figure}
 %\centering
@@ -458,74 +477,77 @@ The maxima for the real assets cluster near the predicted value $\lopt=1$. Madof
 %$\lopt=0.97$ for simulations 1 (which we will refer to as the simple case), 2, and 3. $\lopt=1.00$ for the most realistic simulation, 4 (the complex case). These results appear to lend great support to the stochastic market efficiency hypothesis. Based on simple thought experiments motivated by the theories developed in these lectures, we predicted that $\lopt$ in a real market should be close to unity. 58 years of real market data confirm this prediction. We discuss below the statistical significance of these results.
 %
 %The kinks\footnote{A non-technical term for discontinuities in the derivative.} in the return-leverage curve can be accompanied by a change in sign of the derivative. When this happens, the kink is a global maximum and $\lopt$ is fixed at that leverage, either 0 or 1. This makes these special leverages sticky, in that $\lopt$ can get trapped there.\footnote{Although typically only when the $\lopt$ of simulation 1 is already in or very close to the range, $0\leq\lopt\leq1$.}. This stickiness will tend to promote the likelihood of the hypothesis being confirmed. However, simulation 1 shows that $\lopt\approx1$ even when these effects are neglected.
-
-\textbf{Parameter estimation}\\
-\fref{g_l_logarithmic} shows the simulated growth rate as a function of leverage for the simple case (simulation 1) over the entire time series.
+%
+%\textbf{Parameter estimation}\\
+%\fref{g_l_logarithmic} shows the simulated growth rate as a function of leverage for the simple case (simulation 1) over the entire time series.
+%\begin{figure}
+%\centering
+%\includegraphics[width=\textwidth]{./chapter_4/figs/sme_fig2.pdf}
+%\caption{Computed time-average growth rates closely follow a parabola as a function of leverage.\flabel{g_l_logarithmic}}
+%\end{figure}
+%This is the logarithm of the simulated return of \fref{g_l_linear} divided by the window length. Since the window is long, we might expect to approximate the time-average growth rate, $\gtm(\l)$, which we know from \eref{g_l_quadratic} is a parabola in the original \GBM model. The black dashed line is a fitted parabola, whose parameters can be taken as meaningful definitions of the effective values of $\mur$, $\mue$, and $\sigmas$ for the S\&P500 for the entire time series.\footnote{We say effective because, although we think of these parameters as being time-varying in the relaxed model, their values from the parabolic fit are those of the original constant-parameter model which produce an almost identical outcome for $\gtm(\l)$ as the real data.} A least-squares fit estimates these parameters as $\mur=5.2\%$ \textit{pa}, $\mue=2.4\%$ \textit{pa}, and $\sigmas=16\%$ \textit{p$\sqrt{\mathit{a}}$}.
+%
+%The deviation from parabolic form for high and low leverages in \fref{g_l_logarithmic} is due to extremely large fluctuations in the index, which are much less rare than would be observed in a true \GBM. These result in large losses and, indeed, bankruptcy for highly leveraged portfolios. That real returns distributions are observed to have fatter tails than those predicted by \GBM is an oft-made criticism of classical theory. In this study it is not especially relevant: indeed, the existence of rogue fluctuations strengthens the stochastic efficiency hypothesis, in that it penalises high leverage strategies.
+%
+%\textbf{Finite time scales}\\
+%In the real world, of course, we can never truly observe the time-average growth rate of a leveraged investment since this would require an infinite observation time. Instead we observe the finite-time growth rate over a window of length $\Dt$. This is a random variable whose distribution broadens as $\Dt\to0$
+%
+%Likewise, we never truly observe $\lopt$ either, since this is the leverage that maximises a time average-growth rate. Instead we observe simulated optimal leverages which maximise finite-time growth rates. We can guess that these will show larger fluctuations from the underlying $\lopt$ as the simulation window gets shorter, because short periods containing a sequence of almost all positive or negative stock price movements will result in very high (possibly infinite) positive or negative simulated optimal leverages.
+%
+%More formally, let's denote by $\loptc(\Dt)$ the simulated optimal leverage which maximises the finite-time growth rate, $\gm(\xl,\Dt)$. As $\Dt\to0$, $\gm(\xl,\Dt)$ becomes a worse estimator of the time-average growth rate, $\gtm(\l)$, because its distribution becomes broader. Thus $\loptc(\Dt)$ becomes a similarly worse estimator of $\lopt$. 
+%
+%This is important because a single observation of $\loptc(\Dt)$ consistent with our hypothesis (such as the one we just made for $\Dt\approx58$ years) is only significant if the uncertainty in $\loptc(\Dt)$ is of the same order of magnitude as $\loptc(\Dt)$ itself. For example, if we knew that $\loptc(\Dt)$ had a distribution that could place it between, say, -10 and 10 with reasonable probability, then we couldn't read much from a single observation either inside or outside the attractive range of our hypothesis. If, on the other hand, most of the distribution's mass were inside the range, then an observation outside would be strong evidence that the hypothesis is flawed, and so an observation inside is significant.
+%
+%We can quantify these ideas in the original model by discarding the $\Dt\to\infty$ limit in \eref{g_l_noisy}. This gives
+%\be
+%\gm(\xl,\Dt) = \mur+\l\mue-\frac{\l^2\sigmas^2}{2}+\frac{\l\sigmas \gW(\Dt)}{\Dt},
+%\elabel{g_l_finite}
+%\ee
+%which is maximised at
+%\be
+%\loptc(\Dt) = \lopt + \frac{\gW(\Dt)}{\sigmas\Dt}.
+%\elabel{lopt_finite}
+%\ee
+%This is normally distributed with mean $\lopt$ and standard deviation
+%\be
+%\text{stdev}[\loptc(\Dt)] = \frac{1}{\sigmas\sqrt{\Dt}}.
+%\elabel{lopt_sd}
+%\ee
+%Using the computed volatility of $16\%$ per square root of one year, this standard deviation is approximately 0.83. This means that the uncertainty in $\loptc(\Dt)$ is about the same size as the hypothesised value of $\lopt$, and so the single observation we made is a significant corroboration of the hypothesis.
+%
+%We can also test the validity of the relationship in \eref{lopt_finite} by simulating investments of different window lengths in the market data and compiling histograms of the resulting $\loptc(\Dt)$. \fref{loglog} shows, on double-logarithmic scales, the standard deviation of $\loptc(\Dt)$ as a function of $\Dt$ for the simple simulation.
 \begin{figure}
-\centering
-\includegraphics[width=\textwidth]{./chapter_4/figs/sme_fig2.pdf}
-\caption{Computed time-average growth rates closely follow a parabola as a function of leverage.\flabel{g_l_logarithmic}}
+\includegraphics[width=\textwidth]{./chapter_4/figs/STR-FED_lopt_var.pdf}
+\caption{The red dots show the standard deviation of samples of $\loptc(\Dt)$ as a function of window length measured in days. The blue dashed line shows the prediction of \eref{variance} using the estimate of $\sigmas$ obtained by fitting a parabola to the \SPT curve in \fref{STR_final_all}.\flabel{loglog}}
 \end{figure}
-This is the logarithm of the simulated return of \fref{g_l_linear} divided by the window length. Since the window is long, we might expect to approximate the time-average growth rate, $\gtm(\l)$, which we know from \eref{g_l_quadratic} is a parabola in the original \GBM model. The black dashed line is a fitted parabola, whose parameters can be taken as meaningful definitions of the effective values of $\mur$, $\mue$, and $\sigmas$ for the S\&P500 for the entire time series.\footnote{We say effective because, although we think of these parameters as being time-varying in the relaxed model, their values from the parabolic fit are those of the original constant-parameter model which produce an almost identical outcome for $\gtm(\l)$ as the real data.} A least-squares fit estimates these parameters as $\mur=5.2\%$ \textit{pa}, $\mue=2.4\%$ \textit{pa}, and $\sigmas=16\%$ \textit{p$\sqrt{\mathit{a}}$}.
 
-The deviation from parabolic form for high and low leverages in \fref{g_l_logarithmic} is due to extremely large fluctuations in the index, which are much less rare than would be observed in a true \GBM. These result in large losses and, indeed, bankruptcy for highly leveraged portfolios. That real returns distributions are observed to have fatter tails than those predicted by \GBM is an oft-made criticism of classical theory. In this study it is not especially relevant: indeed, the existence of rogue fluctuations strengthens the stochastic efficiency hypothesis, in that it penalises high leverage strategies.
+Good agreement is found with the model-specific prediction. The structure we have identified -- leverage efficiency -- operates on all time scales from weeks to decades. This broad range of applicability supports our theory of noise in \secref{a_theory}: it is a requirement of stability that asset prices fluctuate, and the shorter the time scales the less significant any economic information becomes. Thinking of price changes as a reflection of the arrival of new information is simply the wrong starting point. Artificially suppressing fluctuations destabilizes the financial system -- observations of assets whose prices don't flucutate sufficiently indicate bubbles being inflated.
 
-\textbf{Finite time scales}\\
-In the real world, of course, we can never truly observe the time-average growth rate of a leveraged investment since this would require an infinite observation time. Instead we observe the finite-time growth rate over a window of length $\Dt$. This is a random variable whose distribution broadens as $\Dt\to0$
-
-Likewise, we never truly observe $\lopt$ either, since this is the leverage that maximises a time average-growth rate. Instead we observe simulated optimal leverages which maximise finite-time growth rates. We can guess that these will show larger fluctuations from the underlying $\lopt$ as the simulation window gets shorter, because short periods containing a sequence of almost all positive or negative stock price movements will result in very high (possibly infinite) positive or negative simulated optimal leverages.
-
-More formally, let's denote by $\loptc(\Dt)$ the simulated optimal leverage which maximises the finite-time growth rate, $\gm(\xl,\Dt)$. As $\Dt\to0$, $\gm(\xl,\Dt)$ becomes a worse estimator of the time-average growth rate, $\gtm(\l)$, because its distribution becomes broader. Thus $\loptc(\Dt)$ becomes a similarly worse estimator of $\lopt$. 
-
-This is important because a single observation of $\loptc(\Dt)$ consistent with our hypothesis (such as the one we just made for $\Dt\approx58$ years) is only significant if the uncertainty in $\loptc(\Dt)$ is of the same order of magnitude as $\loptc(\Dt)$ itself. For example, if we knew that $\loptc(\Dt)$ had a distribution that could place it between, say, -10 and 10 with reasonable probability, then we couldn't read much from a single observation either inside or outside the attractive range of our hypothesis. If, on the other hand, most of the distribution's mass were inside the range, then an observation outside would be strong evidence that the hypothesis is flawed, and so an observation inside is significant.
-
-We can quantify these ideas in the original model by discarding the $\Dt\to\infty$ limit in \eref{g_l_noisy}. This gives
-\be
-\gm(\xl,\Dt) = \mur+\l\mue-\frac{\l^2\sigmas^2}{2}+\frac{\l\sigmas \gW(\Dt)}{\Dt},
-\elabel{g_l_finite}
-\ee
-which is maximised at
-\be
-\loptc(\Dt) = \lopt + \frac{\gW(\Dt)}{\sigmas\Dt}.
-\elabel{lopt_finite}
-\ee
-This is normally distributed with mean $\lopt$ and standard deviation
-\be
-\text{stdev}[\loptc(\Dt)] = \frac{1}{\sigmas\sqrt{\Dt}}.
-\elabel{lopt_sd}
-\ee
-Using the computed volatility of $16\%$ per square root of one year, this standard deviation is approximately 0.83. This means that the uncertainty in $\loptc(\Dt)$ is about the same size as the hypothesised value of $\lopt$, and so the single observation we made is a significant corroboration of the hypothesis.
-
-We can also test the validity of the relationship in \eref{lopt_finite} by simulating investments of different window lengths in the market data and compiling histograms of the resulting $\loptc(\Dt)$. \fref{loglog} shows, on double-logarithmic scales, the standard deviation of $\loptc(\Dt)$ as a function of $\Dt$ for the simple simulation.
-\begin{figure}
-\includegraphics[width=\textwidth]{./chapter_4/figs/sme_fig3.pdf}
-\caption{The red dots show the standard deviation of samples of $\loptc(\Dt)$ as a function of window length for the simple simulation. The black line shows the prediction of \eref{lopt_finite} using the estimate of $\sigmas$ from the parabolic fit in \fref{g_l_logarithmic}.\flabel{loglog}}
-\end{figure}
-Good agreement is found with the model-specific prediction.\footnote{For shorter time scales, the standard deviation is slightly higher than predicted. We suspect this is due to discretisation effects: for investments over a small number of days, very high optimal leverages can be observed when the window contains predominantly positive or negative index movements. These would no longer be optimal if fluctuations and rebalancing were simulated on smaller time scales, \ie intra-day. For longer time scales, the standard deviation drops below the prediction. This is because for window lengths approaching the entire period under study, the number of independent windows in the sample is small, and so the standard deviation of the sample is depressed.}
-
-\fref{l_opt_expanding} shows the simulated $\loptc(\Dt)$ for the investment window starting on $4^\text{th}$ August 1955 and ending on the date on the horizontal axis.
-\begin{figure}
-\includegraphics[width=\textwidth]{./chapter_4/figs/sme_fig4.pdf}
-\caption{Daily simulated optimal leverages for an expanding window with start date $4^\text{th}$ August 1955 and end date on the horizontal axis. Both simple (red line) and complex (blue line) simulations are shown. The broken magenta lines show the one- and two-standard deviation envelopes about $\lopt=1$, based on \eref{lopt_sd} and the estimate of $\sigmas$ from the parabolic fit in \fref{g_l_logarithmic}.\flabel{l_opt_expanding}}
-\end{figure}
-The reduction in fluctuations with increasing window length are broadly consistent with \eref{lopt_sd} and support the hypothesis that $\lopt$ -- as estimated by $\loptc(\Dt)$ -- is attracted to the range $0\leq\lopt\leq1$ and, over long time scales, to $\lopt=1$ in particular.
-
-We can also plot the simulated optimal leverages for investment windows with fixed lengths and moving start date. We do this for the simple and complex simulations in \fref{l_opt_expanding}, with window lengths ranging from 5 to 40 years.
-\begin{figure}
-\includegraphics[width=1.\textwidth]{./chapter_4/figs/sme_fig5a.pdf}
-\includegraphics[width=1.\textwidth]{./chapter_4/figs/sme_fig5b.pdf}
-\caption{\newline
-(a) In the simple simulation, observed optimal leverage fluctuates strongly on short time scales but appears to converge to $\loptc(\Dt)=1$ on long time scales. This constitutes the central result of the study.
-\newline
-(b) In the complex simulation, the kinks in \fref{g_l_linear} ensure that $\loptc(\Dt)=0,1$ are often found exactly. The 40-year simulation supports the strong stochastic efficiency hypothesis, that real markets are attracted to $\lopt=1$, with a dip to $\lopt=0$ only during the financial crisis of 2008. \flabel{l_opt_fixed}}
-\end{figure}
-From the strong fluctuations over short time scales emerges attractive behaviour consistent with our refined hypothesis. The effects of the stickiness of the points $\lopt=0$ and $\lopt=1$ in the complex model are clearly visible. In particular, over the last decade or so optimal leverage for the 20- and 40-year windows remained close to unity.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\footnote{For shorter time scales, the standard deviation is slightly higher than predicted. We suspect this is due to discretisation effects: for investments over a small number of days, very high optimal leverages can be observed when the window contains predominantly positive or negative index movements. These would no longer be optimal if fluctuations and rebalancing were simulated on smaller time scales, \ie intra-day. For longer time scales, the standard deviation drops below the prediction. This is because for window lengths approaching the entire period under study, the number of independent windows in the sample is small, and so the standard deviation of the sample is depressed.}
+%
+%\fref{l_opt_expanding} shows the simulated $\loptc(\Dt)$ for the investment window starting on $4^\text{th}$ August 1955 and ending on the date on the horizontal axis.
+%\begin{figure}
+%\includegraphics[width=\textwidth]{./chapter_4/figs/sme_fig4.pdf}
+%\caption{Daily simulated optimal leverages for an expanding window with start date $4^\text{th}$ August 1955 and end date on the horizontal axis. Both simple (red line) and complex (blue line) simulations are shown. The broken magenta lines show the one- and two-standard deviation envelopes about $\lopt=1$, based on \eref{lopt_sd} and the estimate of $\sigmas$ from the parabolic fit in \fref{g_l_logarithmic}.\flabel{l_opt_expanding}}
+%\end{figure}
+%The reduction in fluctuations with increasing window length are broadly consistent with \eref{lopt_sd} and support the hypothesis that $\lopt$ -- as estimated by $\loptc(\Dt)$ -- is attracted to the range $0\leq\lopt\leq1$ and, over long time scales, to $\lopt=1$ in particular.
+%
+%We can also plot the simulated optimal leverages for investment windows with fixed lengths and moving start date. We do this for the simple and complex simulations in \fref{l_opt_expanding}, with window lengths ranging from 5 to 40 years.
+%\begin{figure}
+%\includegraphics[width=1.\textwidth]{./chapter_4/figs/sme_fig5a.pdf}
+%\includegraphics[width=1.\textwidth]{./chapter_4/figs/sme_fig5b.pdf}
+%\caption{\newline
+%(a) In the simple simulation, observed optimal leverage fluctuates strongly on short time scales but appears to converge to $\loptc(\Dt)=1$ on long time scales. This constitutes the central result of the study.
+%\newline
+%(b) In the complex simulation, the kinks in \fref{g_l_linear} ensure that $\loptc(\Dt)=0,1$ are often found exactly. The 40-year simulation supports the strong stochastic efficiency hypothesis, that real markets are attracted to $\lopt=1$, with a dip to $\lopt=0$ only during the financial crisis of 2008. \flabel{l_opt_fixed}}
+%\end{figure}
+%From the strong fluctuations over short time scales emerges attractive behaviour consistent with our refined hypothesis. The effects of the stickiness of the points $\lopt=0$ and $\lopt=1$ in the complex model are clearly visible. In particular, over the last decade or so optimal leverage for the 20- and 40-year windows remained close to unity.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Discussion}
-The primary aim of this final lecture was to demonstrate that the mathematical formalism we have developed to conceptualise randomness in economics, which started with a simple model of wealth evolution by repetition of a gamble, is very powerful. It does more than simply create a rigorous and plausible foundation for economic theory. In particular, because the framework is epistemologically sound, we can make testable predictions -- such as the stochastic market efficiency hypothesis -- which we can corroborate empirically using real economic data. We could not have guessed from our simple coin-tossing game that we would end up making a prediction about the fluctuations of the American stock market over more than half a century. What other surprising predictions can we make in this formalism? That, dear reader, is a question for you.
+The primary aim of this final lecture was to demonstrate that the mathematical formalism we have developed to conceptualise randomness in economics, which started with a simple model of wealth evolution by repetition of a gamble, is very powerful. It does more than simply create a rigorous and plausible foundation for economic theory. In particular, because the framework is epistemologically sound, we can make testable predictions -- such as the stochastic market efficiency hypothesis -- which we can corroborate empirically using real economic data. We could not have guessed from our simple coin-tossing game that we would end up making a prediction about the fluctuations of the American stock market or those of bitcoin. What other surprising predictions can we make in this formalism? That, dear reader, is a question for you.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
