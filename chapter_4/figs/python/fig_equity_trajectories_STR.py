@@ -12,7 +12,7 @@ import pandas as pd
 from datetime import datetime
       
 input_dir="./../../../../Leverage_Efficiency/data/"
-returns=pd.read_pickle(input_dir+"STR-FED-1.pkl")
+returns=pd.read_pickle(input_dir+"STR-FET-1.pkl")
 equity=np.cumprod(returns)
 final_equity=equity[-1:].T
 
@@ -22,8 +22,8 @@ fig=plt.figure()
 Delta_t=returns.index[-1] - returns.index[0]
 years=Delta_t.days/365.25
 #ax=(np.log(final_equity.iloc[:,0].astype(float))/years).plot()
-ax=equity.iloc[:,219].plot(label='l='+str(round(int(equity.columns[219]))),color='brown')
-equity.iloc[:,244].plot(label='l='+str(int(round(equity.columns[244],1))),color='red')
+ax=equity.iloc[:,219].plot(label='l='+str(int(round(equity.columns[219]))),color='brown')
+equity.iloc[:,244].plot(label='l='+str(int(round(equity.columns[244]))),color='red')
 equity.iloc[:,270].plot(label='l='+str(int(round(equity.columns[270]))),color='green')
 equity.iloc[:,295].plot(label='l='+str(int(round(equity.columns[295]))),color='magenta')
 equity.iloc[:,321].plot(label='l='+str(int(round(equity.columns[321]))),color='orange')
@@ -53,12 +53,12 @@ ax.annotate('l=3',
 
 ax.annotate('l=4',
             xy=(equity.index[-1],equity.iloc[-1,321]), xycoords='data',
-            xytext=(40, 0), textcoords='offset points',
+            xytext=(40, 5), textcoords='offset points',
             arrowprops=dict(color='orange',arrowstyle="->"))
 
 ax.annotate('l=5',
             xy=(equity.index[-1],equity.iloc[-1,346]), xycoords='data',
-            xytext=(40, 10), textcoords='offset points',
+            xytext=(40, -5), textcoords='offset points',
             arrowprops=dict(color='purple',arrowstyle="->"))
 
 
@@ -75,5 +75,5 @@ plt.axhline(y=1,linestyle=':',color='black',linewidth=.5)
 #plt.axvline(x=1.68045,linestyle='--',color='grey',linewidth=1)
 #plt.legend(loc=1, bbox_to_anchor=(.75,.85))
 #ax.legend_.remove()
-plt.savefig("../STR-FED-1_equity.pdf", bbox_inches='tight')
+plt.savefig("../STR-FET-1_equity.pdf", bbox_inches='tight')
 plt.show()

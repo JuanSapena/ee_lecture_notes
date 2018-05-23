@@ -14,15 +14,15 @@ from datetime import datetime
 #data_ID="BTC-USD"
 #data_ID="STR-USD"
 #data_ID="SP5-FED"
-data_ID="STR-FED"
+data_ID="STR-FET"
 #data_ID="BTC-FED"
       
 input_dir="./../../../../Leverage_Efficiency/data/"
 #input_dir="./../../../../LML/Leverage_Efficiency/data/"
 returns_1=pd.read_pickle(input_dir+data_ID+"-1.pkl")
-returns_2=pd.read_pickle(input_dir+"BTC-FED"+"-1.pkl")
-returns_3=pd.read_pickle(input_dir+"DAX-BND"+"-1.pkl")
-returns_4=pd.read_pickle(input_dir+"MAD-FEM"+"-1.pkl")
+returns_2=pd.read_pickle(input_dir+"BTC-FET"+"-1.pkl")
+returns_3=pd.read_pickle(input_dir+"DAX-BNT"+"-1.pkl")
+returns_4=pd.read_pickle(input_dir+"MAD-FTM"+"-1.pkl")
 final_equity_1=np.cumprod(returns_1)[-1:].T
 final_equity_2=np.cumprod(returns_2)[-1:].T
 final_equity_3=np.cumprod(returns_3)[-1:].T
@@ -47,7 +47,7 @@ ax1.plot(final_equity_2, label='Bitcoin',linewidth=2,color='red')
 ax1.set_yscale('log')
 #ax2.set_yscale('log')
 ax1.set_xlim([-35,105])
-ax1.set_ylim([1e-25,1e29])
+ax1.set_ylim([1e-23,1e20])
 #ax2.set_ylim([0.1**5,10**7])
 #plt.xlim([final_equity_1.index.min(),final_equity_1.index.max()])
 #plt.ylim([-1.5,2.2])

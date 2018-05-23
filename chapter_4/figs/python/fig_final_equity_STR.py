@@ -14,7 +14,7 @@ from datetime import datetime
 #data_ID="BTC-USD"
 #data_ID="STR-USD"
 #data_ID="SP5-FED"
-data_ID="STR-FED"
+data_ID="STR-FET"
 #data_ID="BTC-FED"
       
 input_dir="./../../../../Leverage_Efficiency/data/"
@@ -46,17 +46,17 @@ plt.axhline(y=0,linestyle=':',color='grey',linewidth=.5)
 
 ax.annotate('l=0',
             xy=(0,final_equity_1.iloc[219]), xycoords='data',
-            xytext=(-40, 0), textcoords='offset points',
+            xytext=(-60, 0), textcoords='offset points',
             arrowprops=dict(color='brown',arrowstyle="->"))
 
 ax.annotate('l=1',
             xy=(1,final_equity_1.iloc[244]), xycoords='data',
-            xytext=(40, 0), textcoords='offset points',
+            xytext=(-60, 0), textcoords='offset points',
             arrowprops=dict(color='red',arrowstyle="->"))
 
 ax.annotate('l=2',
             xy=(2,final_equity_1.iloc[270]), xycoords='data',
-            xytext=(30, -20), textcoords='offset points',
+            xytext=(-60, -30), textcoords='offset points',
             arrowprops=dict(color='green',arrowstyle="->"))
 
 ax.annotate('l=3',
@@ -66,12 +66,12 @@ ax.annotate('l=3',
 
 ax.annotate('l=4',
             xy=(4,final_equity_1.iloc[321]), xycoords='data',
-            xytext=(40, 0), textcoords='offset points',
+            xytext=(40, 20), textcoords='offset points',
             arrowprops=dict(color='orange',arrowstyle="->"))
 
 ax.annotate('l=5',
             xy=(5,final_equity_1.iloc[346]), xycoords='data',
-            xytext=(-50, 0), textcoords='offset points',
+            xytext=(0, 30), textcoords='offset points',
             arrowprops=dict(color='purple',arrowstyle="->"))
 
 
