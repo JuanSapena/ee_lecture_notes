@@ -22,42 +22,42 @@
 \contentsline {subsubsection}{\numberline {2.7.3}Dynamic from a utility function}{50}{subsubsection.2.7.3}
 \contentsline {subsubsection}{\numberline {2.7.4}Utility function from a dynamic}{52}{subsubsection.2.7.4}
 \contentsline {subsection}{\numberline {2.8}The St Petersburg paradox}{54}{subsection.2.8}
-\contentsline {subsection}{\numberline {2.9}The insurance puzzle}{60}{subsection.2.9}
-\contentsline {subsubsection}{\numberline {2.9.1}Solution in the time paradigm}{64}{subsubsection.2.9.1}
-\contentsline {subsubsection}{\numberline {2.9.2}The classical solution of the insurance puzzle}{65}{subsubsection.2.9.2}
-\contentsline {section}{\numberline {3}Populations}{67}{section.3}
-\contentsline {subsection}{\numberline {3.1}Every man for himself}{68}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Log-normal wealth distribution}{68}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Inequality measure from two growth rates}{70}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}Cooperation}{72}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Taxation}{76}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Wealth tax}{77}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Income tax}{80}{subsubsection.3.3.2}
-\contentsline {section}{\numberline {4}Markets}{83}{section.4}
-\contentsline {subsection}{\numberline {4.1}Optimal leverage}{84}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}A model market}{84}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Leverage}{85}{subsubsection.4.1.2}
-\contentsline {subsubsection}{\numberline {4.1.3}Portfolio theory}{85}{subsubsection.4.1.3}
-\contentsline {subsubsection}{\numberline {4.1.4}Sharpe ratio}{89}{subsubsection.4.1.4}
-\contentsline {subsubsection}{\numberline {4.1.5}Expected return}{89}{subsubsection.4.1.5}
-\contentsline {subsubsection}{\numberline {4.1.6}Growth rate maximisation}{90}{subsubsection.4.1.6}
-\contentsline {subsection}{\numberline {4.2}Stochastic market efficiency}{92}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}A fundamental measure}{92}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}Relaxing the model}{92}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}Efficiency}{93}{subsubsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.4}Stability}{94}{subsubsection.4.2.4}
-\contentsline {subsubsection}{\numberline {4.2.5}Prediction accuracy}{96}{subsubsection.4.2.5}
-\contentsline {subsection}{\numberline {4.3}Applications of stochastic market efficiency}{96}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}A theory of noise -- the silliness of price discovery}{97}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Solution of the equity premium puzzle}{97}{subsubsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3}Central-bank interest rates}{99}{subsubsection.4.3.3}
-\contentsline {subsubsection}{\numberline {4.3.4}Fraud detection}{100}{subsubsection.4.3.4}
-\contentsline {subsection}{\numberline {4.4}Real markets -- stochastic market efficiency in action}{100}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Backtests of constant-leverage investments}{100}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}Data sets}{103}{subsubsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.3}Full time series}{104}{subsubsection.4.4.3}
-\contentsline {subsubsection}{\numberline {4.4.4}Shorter time scales}{105}{subsubsection.4.4.4}
-\contentsline {subsection}{\numberline {4.5}Discussion}{105}{subsection.4.5}
-\contentsline {section}{Acronyms}{107}{section*.2}
-\contentsline {section}{List of Symbols}{108}{section*.4}
-\contentsline {section}{References}{110}{section*.5}
+\contentsline {subsection}{\numberline {2.9}The insurance puzzle}{61}{subsection.2.9}
+\contentsline {subsubsection}{\numberline {2.9.1}Solution in the time paradigm}{65}{subsubsection.2.9.1}
+\contentsline {subsubsection}{\numberline {2.9.2}The classical solution of the insurance puzzle}{66}{subsubsection.2.9.2}
+\contentsline {section}{\numberline {3}Populations}{68}{section.3}
+\contentsline {subsection}{\numberline {3.1}Every man for himself}{69}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Log-normal wealth distribution}{69}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Inequality measure from two growth rates}{71}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Cooperation}{73}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Taxation}{77}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Wealth tax}{78}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Income tax}{81}{subsubsection.3.3.2}
+\contentsline {section}{\numberline {4}Markets}{84}{section.4}
+\contentsline {subsection}{\numberline {4.1}Optimal leverage}{85}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}A model market}{85}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Leverage}{86}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Portfolio theory}{86}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}Sharpe ratio}{90}{subsubsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.5}Expected return}{90}{subsubsection.4.1.5}
+\contentsline {subsubsection}{\numberline {4.1.6}Growth rate maximisation}{91}{subsubsection.4.1.6}
+\contentsline {subsection}{\numberline {4.2}Stochastic market efficiency}{93}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}A fundamental measure}{93}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Relaxing the model}{93}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Efficiency}{94}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Stability}{95}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}Prediction accuracy}{97}{subsubsection.4.2.5}
+\contentsline {subsection}{\numberline {4.3}Applications of stochastic market efficiency}{97}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}A theory of noise -- the silliness of price discovery}{98}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Solution of the equity premium puzzle}{98}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Central-bank interest rates}{100}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Fraud detection}{101}{subsubsection.4.3.4}
+\contentsline {subsection}{\numberline {4.4}Real markets -- stochastic market efficiency in action}{101}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Backtests of constant-leverage investments}{101}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Data sets}{104}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Full time series}{105}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Shorter time scales}{106}{subsubsection.4.4.4}
+\contentsline {subsection}{\numberline {4.5}Discussion}{106}{subsection.4.5}
+\contentsline {section}{Acronyms}{108}{section*.2}
+\contentsline {section}{List of Symbols}{109}{section*.4}
+\contentsline {section}{References}{111}{section*.5}

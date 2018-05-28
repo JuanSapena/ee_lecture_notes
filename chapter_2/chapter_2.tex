@@ -775,16 +775,17 @@ whereas the dynamic perspective focuses on the situation of the decision maker.
 
 With dynamics generalized beyond additive and multiplicative we have to be careful not to 
 let the scope of our treatment balloon into meaninglessness. We also have to pick a setup 
-where the mathematics is nice and simple and won't lead to pages of endless equations.
+where the mathematics won't lead to pages of equations without actually adding much.
 Here's what we do: we restrict ourselves to 
-dynamics of wealth that are expressed as an \Ito process, which you may remember from 
-\eref{Ito_process} in \secref{Ito}. We will further restrict ourselves to coefficient functions  $a(\x)$ and $b(\x)$ without explicit $\t$ dependence, meaning wealth will follow 
+wealth dynamics that are expressed as an \Ito process, which you may remember from 
+\eref{Ito_process} in \secref{Ito}. We will further restrict ourselves to coefficient functions  
+$a(\x)$ and $b(\x)$ without explicit $\t$ dependence, meaning wealth will follow 
 \be
-d\x = a(\x) d\t + b(\x) \dW.
+\gd\x = a(\x) \gd\t + b(\x) \gd\gW.
 \ee
-We can still choose additive dynamics, namely by setting $a$ and $b$ as constants 
-(Brownian motion). We can also choose multiplicative dynamics with $a$ and $b$ 
-proportional to $\x$ (geometric Brownian motion).
+We can still choose additive dynamics, namely by setting $a=\gmu$ and $b=\gsigma$ as constants 
+(Brownian motion, \eref{BM_dx}). We can also choose multiplicative dynamics, with $a=\gmu\x$ and $b=\gsigma\x$ 
+(geometric Brownian motion, \eref{GBM_c}).
 
 We are interested in wealth -- more is better. We can position ourselves, make one choice or 
 another, and then let time act. Choosing between two repeated gambles is thus a choice between 
@@ -807,8 +808,8 @@ than $\x^*(\t)$ is arbitrarily close to one,
 \ee
 where $0<\eps<1$ specifies how certain we want to be. To keep notation simple we've used
 \bea
-\D\x \equiv \x(\t_0 + \Dt) - \x(\t_0);\\
-\D\x^* \equiv \x^*(\t_0 + \Dt) - \x^*(\t_0).
+\D\x \equiv \x(\tn + \Dt) - \x(\tn);\\
+\D\x^* \equiv \x^*(\tn + \Dt) - \x^*(\tn).
 \elabel{Dx}
 \eea
 
@@ -824,21 +825,23 @@ $\lim_{\Dt\to\infty}\{\D\x\}$ or, equivalently, $\lim_{\Dt\to\infty}\{\D\x/\Dt\}
 However, neither limit is guaranteed to exist. For example, consider a 
 choice between two geometric Brownian motions,
 \bea
-dx &=& x(\mu dt + \sigma dW),\\
-dx^* &=& x^*(\mu^* dt + \sigma^* dW).
+\gd\x &=& \x(\gmu \gd\gt + \gsigma \gd\gW),\\
+\gd\x^* &=& \x^*(\gmu^* \gd\gt + \gsigma^* \gd\gW).
 \eea
-Assuming that both grow over time, meaning $\mu > \sigma^2/2$ and $\mu^* > {\sigma^*}^2/2$, the quantities $\D\x/\Dt$ and $\D\x^*/\Dt$ both diverge in the limit $\Dt\to\infty$. The growth is exponential, so linear additive changes will diverge over time. A 
+Assuming that both grow over time, meaning $\gmu > \gsigma^2/2$ and $\gmu^* > {\gsigma^*}^2/2$, the quantities $\D\x/\Dt$ and $\D\x^*/\Dt$ both diverge in the limit $\Dt\to\infty$. The growth is exponential, so linear additive changes will diverge over time. A 
 criterion requiring the larger rate of wealth change to be selected fails to yield a decision: comparing $\infty$ to $\infty$ is not meaningful.
 
 %Introduce utility function
 
-But here's an idea. For the moment we're only interested in which wealth will be larger ($\x$ or $\x^*$); we don't care by how much. That means we don't have to consider $\x$ itself, but any monotonically increasing function of $\x$, let's call it $u(x)$, will also do. Why? Monotonicity means that the events $\x>\x^*$ and $u(\x)>u(\x^*)$ are identical -- whenever one of the inequalities is satisfied, the other is too. So a monotonically increasing function of $\x$ works as an indicator and can help us out of that infinity-fix we just found ourselves in. We define:
+But here's an idea. 
+For the moment we're only interested in which wealth will be larger ($\x$ or $\x^*$); we don't care by how much. 
+That means we don't have to consider $\x$ itself, but any monotonically increasing function of $\x$, let's call it $\gu(\x)$, will also do. Why? Monotonicity means that the events $\x>\x^*$ and $\gu(\x)>\gu(\x^*)$ are identical -- whenever one of the inequalities is satisfied, the other is too. So a monotonically increasing function of $\x$ works as an indicator and can help us out of that infinity-fix we just found ourselves in. We define:
 \bea
-\Du &\equiv& u(x(t_0+\Dt)) - u(x(t_0));\\
-\Du^* &\equiv& u(x^*(t_0+\Dt)) - u(x^*(t_0)).
+\Du &\equiv& \gu(\x(\tn+\Dt)) - \gu(\x(\tn));\\
+\Du^* &\equiv& \gu(\x^*(\tn+\Dt)) - \gu(\x^*(\tn)).
 \elabel{Du}
 \eea
-The monotonicity of $u(x)$ means that the events $\D\x>\D\x^*$ and 
+The monotonicity of $\gu(\x)$ means that the events $\D\x>\D\x^*$ and 
 $\Du>\Du^*$ are the same. Taking $\Dt>0$ allows this event to be 
 expressed as $\Du/\Dt>\Du^*/\Dt$, whence the decision criterion in 
 \eref{max_Dx} becomes
@@ -850,23 +853,24 @@ expressed as $\Du/\Dt>\Du^*/\Dt$, whence the decision criterion in
 %Note that this suggests a time-average growth rate, but not yet shown that limit exists 
 Our decision criterion has been recast to focus on the rate of change
 \be
-r \equiv \frac{\Du}{\Dt},
+\gad(\gu) \equiv \frac{\Du}{\Dt},
 \ee
 As before, it is conceptually similar to maximising
 \be
-\bar{r} \equiv \lim_{\Dt\to\infty}  \left\{ \frac{\Du}{\Dt} \right\} =  \lim_{\Dt\to\infty} \{r\}.
+\gat \equiv \lim_{\Dt\to\infty}  \left\{ \frac{\Du(\x)}{\Dt} \right\} =  \lim_{\Dt\to\infty} \{\gad(\gu)\}.
 \elabel{barr}
 \ee
-If $x(t)$ satisfies certain conditions, to be discussed below, then the function 
-$u(x)$ can be chosen such that this limit exists. We shall see that $\bar{r}$ is then the 
-appropriately defined time-average growth rate of $\x$. This is quite a powerful
+If $\x(\t)$ satisfies certain conditions, to be discussed below, then the function 
+$\gu(\x)$ can be chosen such that this limit exists. We shall see that $\gat(\gu(\x))$ is then the 
+appropriately defined time-average growth rate of $\x$. 
+%This is worth saying again: if $\gu(\x)$ is chosen appropriately, then the rate of change of $\gu$, namely $\frac{\D\gu(\x)}{\Dt}$ is the growth rate of $\x$ (though generally not the rate of change of $\x$) that is appropriate to the dynamics of $\x$ by which we mean $\frac{\D\gu(\x)}{\Dt}$ is an ergodic observable such that its long-time limit can be replaced by the rate of change of the expectation value of $\ave{\gu(\x)}$.
+This is quite a powerful
 bit of mathematics: by insisting on the existence of the limit, we
-force ourselves to choose $u(\x)$ in a certain way. That certain way guarantees that
-the correct form of growth rate is used. For example, if $\x(\t)$ is Brownian motion, $u(\x)$
-will be linear, and if it's geometric Brownian motion, $u(\x)$ will be logarithmic. 
+force ourselves to choose $\gu(\x)$ in a certain way. That certain way guarantees that
+the correct form of growth rate is used. For example, if $\x(\t)$ is Brownian motion, $\gu(\x)$
+will be linear, and if it's geometric Brownian motion, $\gu(\x)$ will be logarithmic. 
 This has nothing to do with psychology and behavior, it's simply imposed on us by the dynamics and our wish to compare long-term performances in a mathematically meaningful way.
-For 
-the moment we leave our criterion in the probabilistic form of \eref{max_Du}
+For the moment we leave our criterion in the probabilistic form of \eref{max_Du}
 but to continue the discussion we assume that the limit \eref{barr} exists.
 
 %Introduce expected utility hypothesis, play mathematical game
@@ -874,84 +878,84 @@ The general relationship between expected utility theory and ergodicity economic
 may be dawning on you. Perhaps 
 \eref{barr} is the same as the rate of change of the expectation value of $\Du$
 \be
-\frac{\ave{\Du}}{\Dt} = \ave{r}.
+\gat(\gu)=\frac{\ave{\Du}}{\Dt}.
 \elabel{aver}
 \ee
-We could then make the identification of $u(\x)$ being the utility function, 
+We could then make the identification of $\gu(\x)$ being the utility function, 
 noting that our criterion is equivalent to maximizing the rate of change in
 expected utility.
-We note $\Du$ and hence $r$ are random variables but $\ave{r}$ is not. 
-Taking the long-time limit is one way of removing randomness from the problem, 
-and taking the expectation value is another. The expectation value is simply
-another limit: it's an average over $N$ realizations of the random number 
-$\Du$, in the limit $N\to\infty$. The effect of removing randomness is that the 
+We note $\Du$ and hence $\gad(\gu)$ are random variables but $\ave{\Du}$ and $\gat(\gu)$ are not. 
+Taking the expectation value is one way of removing randomness from the problem, 
+and taking the long-time limit is another. As we saw in \secref{The_game}, \eref{ens}, the expectation value is simply
+a different limit: it's an average over $\N$ realizations of the random number 
+$\Du$, in the limit $\N\to\infty$. The effect of removing randomness is that the 
 process $\x(\t)$ is collapsed into the scalar $\Du$, and consistent transitive 
 decisions are possible by ranking the relevant scalars.
-In general, maximising $\ave{r}$ does not yield the same decisions as 
+In general, maximising $\gat$ does not yield the same decisions as 
 the criterion espoused in \eref{max_Du}. This is only the case for a particular
-function $u(\x)$ whose shape depends on the process $\x(\t)$. Our aim is to 
-find these pairs of processes and functions. When using such $u(\x)$ as the utility 
+function $\gu(\x)$ whose shape depends on the process $\x(\t)$, \ie on its dynamics. Our aim is to 
+find these pairs of processes and functions. When using such $\gu(\x)$ as the utility 
 function, expected utility theory will be consistent with 
 optimisation over time. It is then possible to interpret
 observed behavior that is found to be consistent with expected utility theory 
-using the utility function $u(x)$ in purely dynamical terms: such behavior 
+using the utility function $\gu(\x)$ in purely dynamical terms: such behavior 
 will lead to the fastest possible wealth growth over time.
 
 %Equivalence condition requires utility to follow an additive process
-We ask what sort of dynamic $u$ must follow so that $\bar{r}=\ave{r}$ or, 
-put another way, so that $r$ is an ergodic observable, 
+We ask what sort of dynamic $\gu$ must follow so that $\gat{\gu}=\ave{\gad(\gu)}$ or, 
+put another way, so that $\gad(\gu)$ is an ergodic observable, 
 in the sense that its time and ensemble averages are the same \cite[p.~32]{KloedenPlaten1992}.
 
 We start by expressing the change in utility, $\Du$, as a sum over $M$ equal time intervals,
 \bea
-\Du & \equiv & u(t_0+\Dt) - u(t_0) \\
-& = & \sum_{m=1}^M \left[ u(t_0+m\dt) - u(t_0+(m-1)\dt) \right] \\
-& = & \sum_{m=1}^M \du_m(t),
+\Du & \equiv & \gu(\tn+\Dt) - \gu(\tn) \\
+& = & \sum_{m=1}^M \left[ \gu(\tn+m\dt) - \gu(\tn+(m-1)\dt) \right] \\
+& = & \sum_{m=1}^M \du_m(\t),
 \eea
-where $\dt\equiv\Dt/M$ and $\du_m(t)\equiv u(t_0+m\dt) - u(t_0+(m-1)\dt)$. From \eref{barr} we have
+where $\dt\equiv\Dt/M$ and $\du_m(\t)\equiv \gu(\tn+m\dt) - \gu(\tn+(m-1)\dt)$. From \eref{barr} we have
 \begin{align}
-\bar{r} & = & \lim_{\Dt\to\infty} \left\{ \frac{1}{\Dt} \sum_{m=1}^M \du_m \right\} \elabel{barrSum}
+\gat & = & \lim_{\Dt\to\infty} \left\{ \frac{1}{\Dt} \sum_{m=1}^M \du_m \right\} \elabel{barrSum}
 \\
 & = & \lim_{M\to\infty} \left\{ \frac{1}{M} \sum_{m=1}^M \frac{\du_m}{\dt} \right\} \elabel{barrSum2},
 \end{align}
 keeping $\dt$ fixed. From \eref{aver} we obtain
 \be
-\ave{r} = \lim_{N\to\infty} \left\{ \frac{1}{N} \sum_{n=1}^N \frac{\Du_n}{\Dt} \right\}
+\ave{\gad} = \lim_{\N\to\infty} \left\{ \frac{1}{\N} \sum_{n=1}^\N \frac{\Du_n}{\Dt} \right\}
 \elabel{averSum}
 \ee
 where each $\Du_n$ is drawn independently from the distribution of $\Du$.
 
 We now compare the two expressions \eref{barrSum2} and \eref{averSum}. 
-Clearly the value of $\bar{r}$ in \eref{barrSum2} cannot depend on the way 
+Clearly the value of $\gat$ in \eref{barrSum2} cannot depend on the way 
 in which the diverging time period is partitioned, so the length of interval $\dt$ 
 must be arbitrary and can be set to the value of $\Dt$ in \eref{averSum}, for
-consistency we then call $\du_m(t)=\Du_m(t)$. 
+consistency we then call $\du_m(\t)=\Du_m(\t)$. 
 Expressions \eref{barrSum2} and \eref{averSum} are equivalent 
 if the successive additive increments, 
-$\Du_m(t)$, are distributed identically to the $\Du_n$ in \eref{averSum}, 
+$\Du_m(\t)$, are distributed identically to the $\Du_n$ in \eref{averSum}, 
 which requires only that they are stationary and independent.
 
 %In general, this must be a Levy process
 %Confine attention to Ito processes --> Brownian motion with drift
-Thus we have a condition on $u(t)$ which suffices to make $\bar{r}=\ave{r}$, 
+Thus we have a condition on $\gu(\t)$ which suffices to make $\gat=\ave{\gad}$, 
 namely that it be a stochastic process whose additive increments are 
-stationary and independent. This means that $u(t)$ is, in general, a L\'evy process. 
+stationary and independent. This means that $\gu(\t)$ is, in general, a L\'evy process. 
 If we restrict our attention to processes with 
 continuous paths, according to a theorem stated in \cite[p.~2]{Harrison2013} and 
-proved in \cite[Chapter~12]{Breiman1968}, $u(t)$ must be a Brownian motion with drift,
+proved in \cite[Chapter~12]{Breiman1968}, $\gu(\t)$ must be a Brownian motion with drift,
 \be
-du = a_u dt + b_u dW,
+\gd\gu = a_u \gd\t + b_u \gd\gW,
 \elabel{bm_u}
 \ee
-where $dW$ is the infinitesimal increment of the Wiener process.
+where $\gd\gW$ is the infinitesimal increment of the Wiener process.
 
 By arguing backwards we can address concerns regarding the
-existence of $\bar{r}$. If $u$ follows the dynamics specified by 
+existence of $\gat$. If $\gu$ follows the dynamics specified by 
 \eref{bm_u}, then it is straightforward to show that the limit 
-$\bar{r}$ always exists and takes the value $a$. Consequently the 
+$\gat$ always exists and takes the value $a_u$. Consequently the 
 decision criterion \eref{max_Du} is equivalent to the optimisation 
-of $\bar{r}$, the time-average growth rate. The process $x(t)$ may be
-chosen such that \eref{bm_u} does not apply for any choice of $u(x)$. 
+of $\gat$, the time-average growth rate. The process $\x(\t)$ may be
+chosen such that \eref{bm_u} does not apply for any choice of $\gu(\x)$. 
 In this case we cannot interpret expected utility theory dynamically,
 and such processes are likely to be pathological. 
 
@@ -959,7 +963,7 @@ This gives our central result.
 \begin{keypts}{Equivalency criterion}
 For expected utility theory to be equivalent to 
 optimisation over time, utility must follow a stochastic process 
-with stationary (additive) increments.
+with ergodic additive increments.
 \end{keypts}
 
 %Invertibility of utility function --> obtain wealth process
@@ -967,12 +971,16 @@ This is a fascinating general connection. If the physical reason
 why we observe non-linear utility functions is the non-linear effect of fluctuations
 over time, then a given utility function encodes a corresponding 
 stochastic wealth process. Provided that a utility function 
-$u(\x)$ is invertible, \ie provided that its inverse, $\x(u)$, exists, 
+$\gu(\x)$ is invertible, \ie provided that its inverse, $\x(\gu)$, exists, 
 a simple application of It\^o calculus to \eref{bm_u} yields directly the 
 stochastic differential equation obeyed by the wealth, $\x$. Thus every invertible utility 
 function encodes a unique dynamic in wealth which arises from a 
 Brownian motion in utility. This is explored further below.
 
+Curiously, a celebrated but erroneous paper by Karl Menger \cite{Menger1934} 
+``proved'' that all utility functions must be bounded (the proof is simply wrong). Boundedness makes utility functions non-invertible and
+precludes the developments we present here. Influential economists lauded Menger's paper, including Paul Samuelson \cite[p.~49]{Samuelson1977} who called it ``a modern classic that [...] stands above all criticism.'' This is one reason why mainstream economics
+has failed to use the optimization of wealth growth over time to understand human behavior -- a criterion we consider extremely simple and natural. A  discussion of Menger's precise errors can be found in \cite[p.~7]{PetersGell-Mann2016}.
 
 \subsubsection{Dynamic from a utility function}
 We now illustrate the relationship between utility functions and

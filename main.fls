@@ -269,6 +269,8 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/supertabular/supertabular.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/supertabular/supertabular.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/showlabels/showlabels.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/showlabels/showlabels.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/lmodern.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/lmodern.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/datetime/datetime.sty
@@ -351,6 +353,11 @@ INPUT ./chapter_1/chapter_1.tex
 INPUT ./chapter_1/chapter_1.tex
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/rm-lmri10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmtt.fd
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmtt.fd
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/rm-lmtt9.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT ./chapter_1/figs/fig1_1.pdf
 INPUT ./chapter_1/figs/fig1_1.pdf
 INPUT ./chapter_1/figs/fig1_1.pdf
@@ -401,7 +408,6 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/rm-lmri8.tfm
 INPUT ./chapter_2/figs/trajectories.pdf
 INPUT ./chapter_2/figs/trajectories.pdf
 INPUT ./chapter_2/figs/trajectories.pdf
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/lmmi9.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/lmsy9.tfm
 INPUT ./chapter_2/figs/lottery_add_traj.pdf
@@ -413,8 +419,6 @@ INPUT ./chapter_2/figs/gbar_zero.png
 INPUT ./chapter_2/figs/lottery_mult_traj.pdf
 INPUT ./chapter_2/figs/lottery_mult_traj.pdf
 INPUT ./chapter_2/figs/lottery_mult_traj.pdf
-INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmtt.fd
-INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmtt.fd
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/rm-lmtt8.tfm
 INPUT ./chapter_2/figs/ins_lin_cropped.pdf
 INPUT ./chapter_2/figs/ins_lin_cropped.pdf
@@ -457,12 +461,12 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/rm-lmri7.tfm
 INPUT ./chapter_4/figs/cartoon.pdf
 INPUT ./chapter_4/figs/cartoon.pdf
 INPUT ./chapter_4/figs/cartoon.pdf
-INPUT ./chapter_4/figs/STR-FED-1_equity.pdf
-INPUT ./chapter_4/figs/STR-FED-1_equity.pdf
-INPUT ./chapter_4/figs/STR-FED-1_equity.pdf
-INPUT ./chapter_4/figs/STR-FED_final_equity.pdf
-INPUT ./chapter_4/figs/STR-FED_final_equity.pdf
-INPUT ./chapter_4/figs/STR-FED_final_equity.pdf
+INPUT ./chapter_4/figs/STR-FET-1_equity.pdf
+INPUT ./chapter_4/figs/STR-FET-1_equity.pdf
+INPUT ./chapter_4/figs/STR-FET-1_equity.pdf
+INPUT ./chapter_4/figs/STR-FET_final_equity.pdf
+INPUT ./chapter_4/figs/STR-FET_final_equity.pdf
+INPUT ./chapter_4/figs/STR-FET_final_equity.pdf
 INPUT ./chapter_4/figs/all_final_equity.pdf
 INPUT ./chapter_4/figs/all_final_equity.pdf
 INPUT ./chapter_4/figs/all_final_equity.pdf
@@ -485,6 +489,7 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
@@ -513,3 +518,4 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtt8.pfb
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtt9.pfb
