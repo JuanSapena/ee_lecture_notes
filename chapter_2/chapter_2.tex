@@ -984,37 +984,38 @@ has failed to use the optimization of wealth growth over time to understand huma
 
 \subsubsection{Dynamic from a utility function}
 We now illustrate the relationship between utility functions and
-wealth dynamics. For the reasons discussed above we assume that
+wealth dynamics with a few concrete examples. For the reasons discussed above we assume that
 utility follows a Brownian motion with drift. 
 
-If $u(x)$ can be inverted to $x(u)=u^{-1}(u)$, and $x(u)$ is twice differentiable,
+If $\gu(\x)$ can be inverted to $\x(\gu)=\gu^{-1}(\gu)$, and $\x(\gu)$ is twice differentiable,
 then it is possible to find the dynamic that corresponds to the utility function
-$u(x)$.  \Eref{bm_u} is an \Ito process. \Ito's lemma tells us that $dx$
-will be another \Ito process, and \Ito's formula specifies how to find $dx$
+$\gu(\x)$.  \Eref{bm_u} is an \Ito process. \Ito's lemma tells us that $\gd\x$
+will be another \Ito process, and \Ito's formula specifies how to find $
+\gd\x$
 in terms of the relevant partial derivatives
 \begin{equation}
-dx = \underbrace{\left(\frac{\partial x}{\partial t}+a_u \frac{\partial x}{\partial u} + \frac{1}{2}b_u^2\frac{\partial^2 x}{\partial u^2}\right)}_{a_x(x)}dt + \underbrace{b_u \frac{\partial x}{\partial u}}_{b_x(x)} dW
+\gd\x = \underbrace{\left(\frac{\partial \x}{\partial \t}+a_u \frac{\partial \x}{\partial \gu} + \frac{1}{2}b_u^2\frac{\partial^2 \x}{\partial \gu^2}\right)}_{a_x(\x)}\gd\t + \underbrace{b_u \frac{\partial \x}{\partial \gu}}_{b_x(\x)} \gd\gW
 \elabel{dx}
 \end{equation}
 
 We have thus shown that 
 \begin{keypts}{Invertible utility functions have dynamic interpretations}
-For any invertible utility function $u(x)$ a class of corresponding
-wealth processes $dx$ can be obtained such that the (linear) rate of
-change in the expectation value of net changes in utility is the
-time-average growth rate of wealth.
+For any invertible utility function $\gu(\x)$ a class of corresponding
+wealth processes $\gd\x$ can be obtained such that the rate of
+change (\ie the additive growth rate) in the expectation value of net changes 
+in utility is the time-average growth rate of wealth.
 \end{keypts}
 As a consequence, optimizing expected changes in such utility functions 
-is equivalent to optimizing the time-average growth, in the sense 
-of \secref{Technical}, under the
+is equivalent to optimizing the time-average growth under the
 corresponding wealth process. 
 
 The origin of optimizing expected utility can
-be understood as follows: in the 18th century, the distinction between
+be understood as follows: in the 18th century, when utility theory was introduced, 
+the difference between
 ergodic and non-ergodic processes was unknown, and all stochastic
 processes were treated by computing expectation values. Since
 the expectation value of the wealth process is an irrelevant 
-mathematical object to an individual whose wealth is modelled by
+mathematical object to an individual whose wealth is well modelled by
 a non-ergodic process the available methods
 failed. The formalism was saved by introducing a non-linear mapping of
 wealth, namely the utility function. The (failed) expectation value criterion
@@ -1030,21 +1031,22 @@ anything about human psychology and indeed predicts that the
 same behavior will be observed in any growth-optimizing entities that
 need not be human.
 
-\Eref{dx}, creates pairs of utility functions $u(x)$ and dynamics
-$dx$. In discrete time, two such pairs were investigated in \cite{PetersGell-Mann2016},
+\Eref{dx}, creates pairs of utility functions $\gu(\x)$ and dynamics
+$\gd\x$. In discrete time, two such pairs were investigated in \cite{PetersGell-Mann2016},
 namely cases $1.$ and $2.$ below.
 
 \begin{example}{1 Linear utility}
 The trivial linear utility function corresponds to additive wealth dynamics (Brownian motion),
 \be
-u(x)=x \hspace{.4cm} \leftrightarrow \hspace{.4cm} dx=a_u dt + b_u dW.\hspace{1.3cm}
+\gu(\x)=\x \hspace{.4cm} \leftrightarrow \hspace{.4cm} \gd\x=a_u \gd\t + b_u \gd\gW,\hspace{1.3cm}
 \ee
+as is easily verified by substituting $\x(\gu)=\gu$ in \eref{dx}.
 \end{example}
 
 \begin{example}{2 Logarithmic utility} 
 Introduced by Bernoulli in 1738 \cite{Bernoulli1738}, the logarithmic utility function is in wide use and corresponds to multiplicative wealth dynamics (geometric Brownian motion),
 \be
-u(x)=\ln(x) \hspace{.4cm} \leftrightarrow \hspace{.4cm} dx=x\left[\left(a_u +\frac{1}{2} b_u^2\right) dt+b_u dW\right].
+\gu(\x)=\ln(\x) \hspace{.4cm} \leftrightarrow \hspace{.4cm} \gd\x=\x\left[\left(a_u +\frac{1}{2} b_u^2\right) \gd\t+b_u \gd\gW\right].
 \ee
 In practice the most useful case will be multiplicative wealth dynamics. 
 But to demonstrate the generality 
@@ -1053,25 +1055,25 @@ of the procedure, we carry it out for a different special case that is historica
 
 \begin{example}{3 Square-root (Cramer) utility}
 The first utility function ever to be suggested was the square-root 
-function $u(x)=x^{1/2}$, by Cramer in a 1728
+function $\gu(\x)=\x^{1/2}$, by Cramer in a 1728
 letter to Daniel Bernoulli, partially reproduced in
-\cite{Bernoulli1738}. This function is invertible, namely $x(u)=u^2$,
+\cite{Bernoulli1738}. This function is invertible, namely $\x(\gu)=\gu^2$,
 so that \eref{dx} applies. We note that the square root, in a specific
 sense, sits between the linear function and the logarithm:
-$\lim_{x\to\infty}\frac{x^{1/2}}{x}=0$ and 
-$\lim_{x\to\infty}\frac{\ln(x)}{x^{1/2}}=0$. Since linear utility 
+$\lim_{\x\to\infty}\frac{\x^{1/2}}{\x}=0$ and 
+$\lim_{\x\to\infty}\frac{\ln(\x)}{\x^{1/2}}=0$. Since linear utility 
 produces additive dynamics and logarithmic utility produces 
 multiplicative dynamics, we expect square-root utility to 
 produce something in between or some mix.
-Substituting for $x(u)$ in \eref{dx} and carrying out the
-differentiations we find
+Substituting for $\x(\gu)$ in \eref{dx} and carrying out the
+differentiations in \eref{dx} we find
 \be
-u(x)=x^{1/2} \hspace{.3cm} \leftrightarrow \hspace{.3cm} dx =\left(2a_u x^{1/2} + b_u^2 \right)dt + 2 b_u x^{1/2} dW.
+\gu(\x)=\x^{1/2} \hspace{.3cm} \leftrightarrow \hspace{.3cm} dx =\left(2a_u \x^{1/2} + b_u^2 \right)\gd\t + 2 b_u \x^{1/2} \gd\gW.
 \elabel{dx_2}
 \ee
 
 The drift term contains a multiplicative element (by which we mean an 
-element with $x$-dependence) and an additive element. We see that the 
+element with $\x$-dependence) and an additive element. We see that the 
 square-root utility function that lies between
 the logarithm and the linear function indeed represents a dynamic that
 is partly additive and partly multiplicative.
@@ -1079,7 +1081,7 @@ is partly additive and partly multiplicative.
 \eref{dx_2} is reminiscent of the Cox-Ingersoll-Ross model 
 \cite{CoxIngersollRoss1985}
 in financial mathematics, especially if $a_u<0$. Similar dynamics, \ie with a noise 
-amplitude that is proportional to $\sqrt{x}$, are also studied in the
+amplitude that is proportional to $\sqrt{\x}$, are also studied in the
 context of absorbing-state phase transitions in statistical physics
 \cite{MarroDickman1999,Hinrichsen2000}. That a
 300-year-old letter is related to recent work in statistical
@@ -1096,44 +1098,46 @@ much of the work currently carried out in statistical mechanics.
 \seclabel{Utility_function}
 We now ask under what circumstances the procedure in
 \eref{dx} can be inverted. When can a utility function be found for a
-given dynamic? In other words, what conditions does the dynamic $dx$
+given dynamic? In other words, what conditions does the dynamic $\gd\x$
 have to satisfy so that optimization over time can be represented by
-optimization of expected net changes in utility $u(x)$?
+optimization of expected net changes in utility $\gu(\x)$?
 
 We ask whether a given dynamic can be mapped into a utility whose
 increments are described by Brownian motion, \eref{bm_u}.
 
 The dynamic is an arbitrary \Ito process
 \begin{equation}
-dx=a_x(x) dt +b_x(x) dW,
+\gd\x=a_x(\x) \gd\t +b_x(\x) \gd\gW,
 \elabel{dx_1}
 \end{equation}
-where $a_x(x)$ and $b_x(x)$ are arbitrary functions of $x$. For 
+where $a_x(\x)$ and $b_x(\x)$ are arbitrary functions of $\x$. For 
 this dynamic to translate into a Brownian motion for the utility, 
-$u(x)$ must satisfy the equivalent of \eref{dx} with the special
+$\gu(\x)$ must satisfy the equivalent of \eref{dx} with the special
 requirement that the coefficients $a_u$ and $b_u$ in \eref{bm_u} be constants, namely
 \begin{equation}
-du = \underbrace{\left(a_x(x) \frac{\partial u}{\partial x} + \frac{1}{2}b_x^2(x)\frac{\partial^2 u}{\partial x^2}\right)}_{a_u}dt + \underbrace{b_x(x) \frac{\partial u}{\partial x}}_{b_u} dW.
+\gd\gu = \underbrace{\left(a_x(\x) \frac{\partial \gu}{\partial \x} + \frac{1}{2}b_x^2(\x)\frac{\partial^2 \gu}{\partial \x^2}\right)}_{a_u}\gd\t + \underbrace{b_x(\x) \frac{\partial \gu}{\partial \x}}_{b_u} \gd\gW.
 \elabel{du_2}
 \end{equation}
-Explicitly, we arrive at two equations for the coefficients
+To avoid clutter, let's use 
+Lagrange notation, namely a dash  -- $'$ -- to denote a derivative. 
+Explicitly, we arrive at two equations for the coefficients  
 \begin{equation}
-a_u=a_x(x) u' + \frac{1}{2} b_x^2(x) u''
+a_u=a_x(\x) \gu' + \frac{1}{2} b_x^2(\x) \gu''
 \elabel{A}
 \end{equation}
 and
 \begin{equation}
-b_u=b_x(x) u'.
+b_u=b_x(\x) \gu'.
 \elabel{b_u}
 \end{equation}
 Differentiating \eref{b_u}, it follows that 
 \begin{equation}
-u''(x)=-\frac{b_ub_x'(x)}{b_x^2(x)}.
+\gu''(\x)=-\frac{b_u b_x'(\x)}{b_x^2(\x)}.
 \end{equation}
-Substituting in \eref{A} for $u'$ and $u''$ and solving for $a_x(x)$ we
+Substituting in \eref{A} for $\gu'$ and $\gu''$ and solving for $a_x(\x)$ we
 find the drift term as a function of the noise term,
 \begin{equation}
-a_x(x) =\frac{a_u}{b_u}b_x(x)+ \frac{1}{2}b_x(x)b_x'(x).
+a_x(\x) =\frac{a_u}{b_u}b_x(\x)+ \frac{1}{2}b_x(\x)b_x'(\x).
 \elabel{consistency}
 \end{equation}
 In other words, knowledge of only the dynamic
@@ -1142,10 +1146,10 @@ We do not need to construct the utility function explicitly to know whether a pa
 of drift term and noise term is consistent or not. 
 
 Having determined for some dynamic that a consistent utility function 
-exists, we can construct it by substituting for $b_x(x)$ in \eref{A}. 
-This yields  a differential equation for $u$
+exists, we can construct it by substituting for $b_x(\x)$ in \eref{A}. 
+This yields  a differential equation for $\gu$
 \begin{equation}
-a_u=a_x(x) u' + \frac{b_u^2}{2u'^2}  u''
+a_u=a_x(\x) \gu' + \frac{b_u^2}{2\gu'^2}  \gu''
 \end{equation}
 or
 \begin{equation}
@@ -1156,76 +1160,83 @@ or
 Overall, then the triplet noise term, drift term, utility function is
 interdependent. Given a noise term we can find consistent drift terms,
 and given a drift term we find a consistency condition (differential
-equation) for the utility function.
+equation) for the utility function. These arguments may seem a little
+esoteric when first encountered, using bits and pieces from different 
+fields of mathematics. But they constitute the actual physical story behind the
+fascinating history of decision theory. Again, we illustrate the procedure with an example.
 
-\underline{\bf Example:}\\
-Given a dynamic, it is possible to check whether this dynamic can be mapped into
-a utility function, and the utility function itself can be found. We consider the following
-example
-\begin{equation}
-dx=\left(\frac{a_u}{b_u}e^{-x}-\frac{1}{2}e^{-2x}\right)dt+e^{-x}dW.
-\elabel{test_dyn}
-\end{equation}
-We note that $a_x(x)=\frac{a_u}{b_u}e^{-x}-\frac{1}{2}e^{-2x}$ and $b_x(x)=e^{-x}$.
-\Eref{consistency} imposes conditions on the drift term $a_x(x)$ in terms of the 
-noise term $b_x(x)$. Substituting in \eref{consistency} reveals that the consistency 
-condition is satisfied by the dynamic in \eref{test_dyn}.
-
-A typical trajectory of \eref{test_dyn} is shown in \fref{test_dyn}.
-
-\begin{figure}[h!]
+\begin{figure}
 \centering
 %\begin{picture}(200,300)(0,0)
 %  \put(0,0){
 \includegraphics[width=\textwidth]{./chapter_2/figs/trajectories.pdf}
 %}
 %\end{picture}
-\caption{\small Typical trajectories of the wealth
-trajectory $x(t)$ described by \eref{test_dyn}, with parameter values $a_u=1/2$ and $b_u=1$,  and the corresponding Brownian motion $u(t)$. Note that the fluctuations in $x(t)$ become smaller for larger wealth. }
+\caption{\small Typical trajectory $\x(\t)$ of the wealth
+dynamic \eref{test_dyn}, with parameter values $a_u=1/2$ and $b_u=1$,  and the corresponding Brownian motion $\gu(\t)$. Note that the fluctuations in $\x(\t)$ become smaller for larger wealth. }
 \flabel{test_dyn}
 \end{figure}
-\FloatBarrier
+
+\begin{example}{A curious-looking dynamic}
+Given a dynamic, it is possible to check whether it can be mapped into
+a utility function, and the utility function itself can be found. We consider the wealth dynamic
+\begin{equation}
+\gd\x=\left(\frac{a_u}{b_u}e^{-\x}-\frac{1}{2}e^{-2\x}\right)\gd\t+e^{-\x}\gd\gW.
+\elabel{test_dyn}
+\end{equation}
+We note that $a_x(\x)=\frac{a_u}{b_u}e^{-\x}-\frac{1}{2}e^{-2\x}$ and $b_x(\x)=e^{-\x}$.
+\Eref{consistency} imposes conditions on the drift term $a_x(\x)$ in terms of the 
+noise term $b_x(\x)$. Substituting in \eref{consistency} reveals that the consistency 
+condition is satisfied by the dynamic in \eref{test_dyn}.
+A typical trajectory of \eref{test_dyn} is shown in \fref{test_dyn}.
 
 Because \eref{test_dyn} is internally consistent, it is possible to derive the corresponding utility function.
-\Eref{b_u} is a first-order ordinary differential equation for $u(x)$
+\Eref{b_u} is a first-order ordinary differential equation for $\gu(\x)$
 \begin{align}
-u'(x)=\frac{b_u}{b_x(x)},
+\gu'(\x)=\frac{b_u}{b_x(\x)},
 \elabel{diff_eq_u}
 \end{align}
 which can be integrated to
 \begin{align}
-u(x)=\int_0^x d\tilde{x} \frac{b_u}{b_x(\tilde{x})}+C,
+\gu(\x)=\int_0^\x \gd\tilde{\x} \frac{b_u}{b_x(\tilde{\x})}+C,
 \end{align}
-with $C$ an arbitrary constant of integration. This constant corresponds to the 
-fact that only changes in utility are meaningful, as was pointed out by von 
+with $C$ an arbitrary constant of integration. This constant, incidentally, implies that 
+only {\it changes} in utility are meaningful, as was pointed out by von 
 Neumann and Morgenstern \cite{vonNeumannMorgenstern1944} -- this robust feature
 is visible whether one thinks in dynamic terms and time averages or in terms of consistent
 measure-theoretic concepts and expectation values.
 
-Substituting for $b_x(x)$ from \eref{test_dyn}, \eref{diff_eq_u} becomes
+Substituting for $b_x(\x)$ from \eref{test_dyn}, \eref{diff_eq_u} becomes
 \begin{equation}
-u'(x)=b_u e^x,
+\gu'(\x)=b_u e^\x,
 \end{equation}
 which is easily integrated to
 \begin{equation}
-u(x)=b_u e^x +C,
+\gu(\x)=b_u e^\x +C,
 \elabel{test_dyn_u}
 \end{equation}
-plotted in \fref{test_dyn_u}. This expoential utility function is monotonic and therefore invertible, which is 
-reflected in the fact that the consistency condition is satisfied. 
+plotted in \fref{u_of_x}. This exponential utility function is monotonic and therefore invertible -- we knew that because the consistency condition is satisfied. 
 The utility function is convex. From the 
 perspective of expected-utility theory an individual behaving optimally according to 
 this function would be labelled ``risk-seeking.'' 
 The dynamical perspective corresponds to a qualitatively different interpretation: 
 Under the dynamic \eref{test_dyn} the ``risk-seeking'' individual behaves optimally, 
-in the sense that his wealth will grow faster than that of a risk-averse individual.
+in the sense that his wealth will grow faster than that of a risk-averse individual. What's optimal is determined by the dynamic, not by the individual. Of course the individual may choose whether to behave optimally. 
 The dynamic \eref{test_dyn} has the feature that fluctuations in wealth become smaller
 as wealth grows. High wealth is therefore sticky -- an individual will quickly fluctuate out of 
 low wealth and into higher wealth. It will then tend to stay there. 
+\end{example}
 
-
-
-
+\begin{figure}
+\centering
+\begin{picture}(200,80)(0,0)
+ \put(-80,0){\includegraphics[width=.47\textwidth]{./chapter_2/figs/u_of_x.pdf}}
+ \put(110,0){\includegraphics[width=.47\textwidth]{./chapter_2/figs/x_of_u.pdf}}
+\end{picture}
+\caption{\small Exponential utility $\gu(\x)$, \eref{test_dyn_u} with $b_u=1$ and $C=1$, is monotonic and unbounded and therefore invertible.
+Left panel: $\gu(\x)$. Right panel: inverse $\x(\gu)$.}
+\flabel{u_of_x}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The St Petersburg paradox}
 The problem known today as the St Petersburg paradox was suggested by Nicolaus 

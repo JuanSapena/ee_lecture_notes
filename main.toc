@@ -21,10 +21,10 @@
 \contentsline {subsubsection}{\numberline {2.7.2}Technical setup}{46}{subsubsection.2.7.2}
 \contentsline {subsubsection}{\numberline {2.7.3}Dynamic from a utility function}{50}{subsubsection.2.7.3}
 \contentsline {subsubsection}{\numberline {2.7.4}Utility function from a dynamic}{52}{subsubsection.2.7.4}
-\contentsline {subsection}{\numberline {2.8}The St Petersburg paradox}{54}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.8}The St Petersburg paradox}{55}{subsection.2.8}
 \contentsline {subsection}{\numberline {2.9}The insurance puzzle}{61}{subsection.2.9}
 \contentsline {subsubsection}{\numberline {2.9.1}Solution in the time paradigm}{65}{subsubsection.2.9.1}
-\contentsline {subsubsection}{\numberline {2.9.2}The classical solution of the insurance puzzle}{66}{subsubsection.2.9.2}
+\contentsline {subsubsection}{\numberline {2.9.2}The classical solution of the insurance puzzle}{67}{subsubsection.2.9.2}
 \contentsline {section}{\numberline {3}Populations}{68}{section.3}
 \contentsline {subsection}{\numberline {3.1}Every man for himself}{69}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Log-normal wealth distribution}{69}{subsubsection.3.1.1}
