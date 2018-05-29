@@ -89,7 +89,7 @@ original setup).
 
 \begin{figure}[h!]
 \begin{picture}(200,190)(0,0)
-    \put(0,-85){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/fig1_1.pdf}}
+    \put(0,0){\includegraphics[width=\textwidth]{./chapter_1/figs/x_of_t_lin_1.pdf}}
 \end{picture}
 \caption{Wealth $\x(\t)$ resulting from a computer simulation of our game, repeated 52 times.}
 \flabel{1_1}
@@ -128,11 +128,11 @@ where $\gi$ indexes a particular realization of $\A$ and $\N$ is the
 number of realizations included in the average.
 \end{defn}
 \begin{figure}[h!]
-\begin{picture}(200,250)(0,0)
+\begin{picture}(200,200)(0,0)
   \put(-50,30){(A)}
-    \put(-100,-30){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/fig1_2a.pdf}}
+    \put(-100,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/x_of_t_lin.pdf}}
   \put(230,30){(B)}  
-  \put(180,-30){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/fig1_2b.pdf}}
+  \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/x_of_t_log.pdf}}
 \end{picture}
 \caption{Partial ensemble averages $\ave{\x(\t)}_{\N}$ for ensemble sizes $\N=1, 
 10^2, 
@@ -163,11 +163,11 @@ short-time fluctuations will be diminished. Eventually the noise will be removed
 just by the passage of time.
 
 \begin{figure}[h!]
-\begin{picture}(200,250)(0,0)
+\begin{picture}(200,200)(0,0)
   \put(-50,30){(A)}
-    \put(-100,-30){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/fig1_3a.pdf}}
+    \put(-100,0){\includegraphics[width=0.75\textwidth]{./chapter_1/figs/x_of_t_lin_20_year.pdf}}
   \put(230,30){(B)}  
-  \put(180,-30){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/fig1_3b.pdf}}
+  \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/x_of_t_log_20_year.pdf}}
 \end{picture}
 \caption{Single trajectory over 1,040 time units, corresponding to 20 years 
 in our 
@@ -347,11 +347,11 @@ analytical result for the infinite ensemble to the numerical results
 of \fref{1_2} for finite ensembles.
 
 \begin{figure}[h!]
-\begin{picture}(200,250)(0,0)
+\begin{picture}(200,200)(0,0)
   \put(-50,30){(A)}
-    \put(-100,-30){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/cf_exp_lin.pdf}}
+    \put(-100,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/x_of_t_lin_exp.pdf}}
   \put(230,30){(B)}  
-  \put(180,-30){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/cf_exp_log.pdf}}
+  \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/x_of_t_log_exp.pdf}}
 \end{picture}
 \caption{Expectation value (thick light blue line) finite-ensemble averages.
  (A) linear scales, (B) logarithmic scales.}
@@ -459,11 +459,11 @@ will decay in the long run at a rate of $(\gr_1 \gr_2)^{1/2}$ per round.
 \Fref{1_4} (B) compares the trajectory generated in \fref{1_3} to a trajectory decaying exactly 
 at rate $\rt$ and places it next to the average over a million systems.
 \begin{figure}[h!]
-\begin{picture}(200,250)(0,0)
+\begin{picture}(200,200)(0,0)
   \put(-50,20){(A)}
-    \put(-100,-50){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/fig1_4a.pdf}}
+    \put(-100,0){\includegraphics[width=0.77\textwidth]{./chapter_1/figs/x_of_t_N1M.pdf}}
   \put(230,20){(B)}  
-  \put(180,-50){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/fig1_4b.pdf}}
+  \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/x_of_t_log_10000.pdf}}
 \end{picture}
 \caption{(A) Finite-ensemble average for $N=10^6$ and 52 time steps, the light blue line is 
 the expectation value.\protect\footnotemark
@@ -1119,8 +1119,8 @@ trajectory of the time average is shown in \fref{1_6}. In the literature the pro
 $\frac{1}{\t}\int_0^\t \gd\t' \gv(\t')$ is known as the ``random acceleration process'' \cite{Burkhardt2007}.
 
 \begin{figure}[h!]
-\begin{picture}(200,210)(0,0)
-    \put(-0,-80){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/fig1_5.pdf}}
+\begin{picture}(200,200)(0,0)
+    \put(0,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/BM_time_ave.pdf}}
 \end{picture}
 \caption{Trajectory of the finite-time average of a zero-drift \BM. The time average 
 does not converge to some value with probability one, but is instead distributed according to 
@@ -1173,11 +1173,10 @@ it has thin tails, and choosing a sufficiently small value of $\dt$ makes these 
 On logarithmic vertical scales, \GBM looks like \BM, and we've already seen some examples. 
 But it is useful to look at a trajectory of \GBM on linear scales to develop an intuition for this important process.
 \begin{figure}[h!]
-\begin{picture}(200,210)(0,0)
-    \put(-0,-80){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/fig1_6.pdf}}
+\begin{picture}(200,230)(0,0)
+    \put(0,-5){\includegraphics[width=\textwidth]{./chapter_1/figs/GBM_trajectory.pdf}}
 \end{picture}
-\caption{Trajectory of a \GBM. The trajectory seems to know about its history -- for instance, unlike for \BM, it is difficult to 
-recover
+\caption{Trajectory of a \GBM. What happens to the trajectory tomorrow depends strongly on where it is today -- for instance, unlike for \BM, it is difficult to recover
 from a low value of $\x$, and trajectories are likely to get stuck near zero. Occasional excursions are characterised
 by large fluctuations. Parameters are $\gmu=0.05$ per time unit and $\gsigma=\sqrt{2 \gmu}$, corresponding to zero 
 growth rate in the long run. It would be easy to invent a story to go with this (completely random) trajectory --

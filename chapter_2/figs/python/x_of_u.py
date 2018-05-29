@@ -15,7 +15,9 @@ C=1
 x=np.arange(-1.,2.,.01)
 
 plt.plot(b_u*np.exp(x)+C,x,linestyle='-',color='blue')
-plt.xlabel('$u$')
-plt.ylabel('$x(u)$')
+plt.rc('xtick',labelsize=16)
+plt.rc('ytick',labelsize=16)
+plt.xlabel('$u$',fontsize=16)
+plt.ylabel('$x(u)$',fontsize=16)
 plt.savefig("./../x_of_u.pdf", bbox_inches='tight')
 plt.show()
