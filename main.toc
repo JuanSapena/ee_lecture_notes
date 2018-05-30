@@ -16,15 +16,17 @@
 \contentsline {subsection}{\numberline {2.4}Growth rates}{36}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}The decision axiom}{38}{subsection.2.5}
 \contentsline {subsection}{\numberline {2.6}The expected-wealth and expected-utility paradigms}{42}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}General dynamics}{44}{subsection.2.7}
-\contentsline {subsubsection}{\numberline {2.7.1}Why discuss general dynamics?}{44}{subsubsection.2.7.1}
-\contentsline {subsubsection}{\numberline {2.7.2}Technical setup}{46}{subsubsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7}General dynamics}{45}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}Why discuss general dynamics?}{45}{subsubsection.2.7.1}
+\contentsline {paragraph}{\bf Dynamic perspective:}{46}{section*.2}
+\contentsline {paragraph}{\bf Utility perspective:}{46}{section*.3}
+\contentsline {subsubsection}{\numberline {2.7.2}Technical setup}{47}{subsubsection.2.7.2}
 \contentsline {subsubsection}{\numberline {2.7.3}Dynamic from a utility function}{50}{subsubsection.2.7.3}
 \contentsline {subsubsection}{\numberline {2.7.4}Utility function from a dynamic}{52}{subsubsection.2.7.4}
 \contentsline {subsection}{\numberline {2.8}The St Petersburg paradox}{55}{subsection.2.8}
 \contentsline {subsection}{\numberline {2.9}The insurance puzzle}{61}{subsection.2.9}
 \contentsline {subsubsection}{\numberline {2.9.1}Solution in the time paradigm}{65}{subsubsection.2.9.1}
-\contentsline {subsubsection}{\numberline {2.9.2}The classical solution of the insurance puzzle}{67}{subsubsection.2.9.2}
+\contentsline {subsubsection}{\numberline {2.9.2}The classical solution of the insurance puzzle}{66}{subsubsection.2.9.2}
 \contentsline {section}{\numberline {3}Populations}{68}{section.3}
 \contentsline {subsection}{\numberline {3.1}Every man for himself}{69}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Log-normal wealth distribution}{69}{subsubsection.3.1.1}
@@ -58,6 +60,6 @@
 \contentsline {subsubsection}{\numberline {4.4.3}Full time series}{105}{subsubsection.4.4.3}
 \contentsline {subsubsection}{\numberline {4.4.4}Shorter time scales}{106}{subsubsection.4.4.4}
 \contentsline {subsection}{\numberline {4.5}Discussion}{106}{subsection.4.5}
-\contentsline {section}{Acronyms}{108}{section*.2}
-\contentsline {section}{List of Symbols}{109}{section*.4}
-\contentsline {section}{References}{111}{section*.5}
+\contentsline {section}{Acronyms}{108}{section*.4}
+\contentsline {section}{List of Symbols}{109}{section*.6}
+\contentsline {section}{References}{111}{section*.7}
