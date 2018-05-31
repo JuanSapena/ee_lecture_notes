@@ -377,6 +377,8 @@ INPUT ./chapter_1/figs/x_of_t_lin_20_year.pdf
 INPUT ./chapter_1/figs/x_of_t_log_20_year.pdf
 INPUT ./chapter_1/figs/x_of_t_log_20_year.pdf
 INPUT ./chapter_1/figs/x_of_t_log_20_year.pdf
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omslmr.fd
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omslmr.fd
 INPUT ./chapter_1/figs/x_of_t_lin_exp.pdf
 INPUT ./chapter_1/figs/x_of_t_lin_exp.pdf
 INPUT ./chapter_1/figs/x_of_t_lin_exp.pdf
@@ -397,8 +399,6 @@ INPUT /usr/local/texlive/2014/texmf-dist/fonts/tfm/public/lm/rm-lmri7.tfm
 INPUT ./chapter_1/figs/BM_time_ave.pdf
 INPUT ./chapter_1/figs/BM_time_ave.pdf
 INPUT ./chapter_1/figs/BM_time_ave.pdf
-INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omslmr.fd
-INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/lm/omslmr.fd
 INPUT ./chapter_1/figs/GBM_trajectory.pdf
 INPUT ./chapter_1/figs/GBM_trajectory.pdf
 INPUT ./chapter_1/figs/GBM_trajectory.pdf

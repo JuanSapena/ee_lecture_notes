@@ -66,9 +66,9 @@ $\gr_i\in \{0.6, 1.5\}$ occurring with probability 1/2,
 \end{cases}
 \elabel{law}
 \ee
-and multiply current wealth by that factor, 
+and multiply current wealth by that factor, so that
 \be
-\x(\t+\dt)=\gr(\t)\x(\t).
+\x(\t)=\gr(\t)\x(\t-\delta \t).
 \elabel{gamble}
 \ee
 
@@ -154,8 +154,7 @@ Of course it doesn't, otherwise we wouldn't be belabouring this point.
 in a row as would correspond to the real-world situation of repeating the game once a week for the rest of your life. 
 Instead we played the game many times in parallel, which corresponds to a different setup.
 
-We therefore try a different analysis. \Fref{1_3} shows another simulation of your wealth, 
-but this time we don't show an average over many trajectories but a simulation of a single trajectory
+We therefore try a different analysis. \Fref{1_3} shows another simulation of your wealth. This time we don't show an average over many trajectories but a simulation of a single trajectory
 over a long time. Noise is removed also in this case but in a different way: to capture visually what 
 happens over a long time we have to zoom out -- more time has to be represented by 
 the same amount of space on the page. In the process of this zooming-out, small 
@@ -182,7 +181,7 @@ Jumping ahead a little, we reveal that this is indeed the case. If it seems coun
 because our intuition is built on so-called ``ergodic processes'', whereas $\x$ is non-ergodic. We will say
 more about this in \secref{Ergodic_observables}.
 Several important messages can be derived from the observation that an individual trajectory grows 
-more slowly over time than an average of a large ensemble. 
+more slowly (or decays faster) over time than an average of a large ensemble. 
 
 \begin{enumerate}
 \item
@@ -210,6 +209,35 @@ average of $\x$ over infinitely many trials, a quantity known as the expectation
 The expectation value is usually introduced as the sum of all possible values, 
 weighted by their probabilities. We will define it as a limit instead, and then
 show that this limit is identical to the familiar expression.
+
+\begin{excursion}{Random variables}
+We assume that you are somewhat familiar with the concept of a random variable, and we 
+will avoid a lengthy technical discussion. Instead, we highly recommend reading the 2-page discussion in van Kampen's excellent book \cite[p.~2]{vanKampen1992}, some of whose key points we reproduce here.
+
+A random variable is an object $X$ defined by
+\begin{itemize}
+\item
+a set of possible values
+\item
+a probability distribution over this set.
+\end{itemize}
+That's it. The set may be discrete, like $\{4, 7.8, 29\}$, or it may be continuous, like the real line or the positive reals. The \PDFa is a non-negative function of the set
+\be
+\PDF(x)\geq 0.
+\ee
+It is normalized, so that the integral over the entire set is one,
+\be
+\int \PDF(x)dx =1.
+\ee
+Note the standard use of capital and small letters: $X$ is the random variable and $x$ is a value it may take.
+The probability (a number between 0 and 1) that $x$ is between $a$ and $b$ is
+\be
+\int_a^b \PDF(x)dx.
+\ee
+When the set of possible values is discrete, we will write $p_i$ to mean the probability of the $i^{\text{th}}$ value in the set, $x_i$. We could also express this as an integral of the \PDFa over a neighborhood of $x_i$ that includes no other possible values.
+
+Of course we can define the distribution of a random variable to depend on all kinds of things -- the day of the week, or the country we find ourselves in. Sometimes it will be useful to consider distributions of random numbers that depend on time. By default we will assume that the distributions of random numbers are time-independent, but to be sure we will often make this explicit.
+\end{excursion}
 
 \begin{defn}{Expectation value i}
 The expectation value of a quantity $\x$
@@ -279,8 +307,8 @@ the probability $\p_\gj$, and we find
 \be
 \lim_{\N\to\infty}\ave{\x(\t)}_\N = \sum_\gj \p_\gj \x_\gj(\t).
 \ee
-The \LHS is the expectation value by the first definition as a limit, 
-the \RHS is the expectation value by the second definition as a weighted sum. 
+The \LHS is the expectation value by its first definition as a limit, 
+the \RHS is the expectation value by its second definition as a weighted sum. 
 This shows that the two definitions are indeed equivalent. 
 \end{proof}
 We will
@@ -331,7 +359,22 @@ wherefore we can solve recursively for the wealth after $\T$ rounds, correspondi
 \be
 \ave{\x(\t+\Dt)} = \ave{\x(\t+\T\dt)}=\x(\t)\ave{\gr}^\T.
 \ee
-Hereafter we shall reserve $\dt$ for the time interval in a stochastic process over which a single realisation of the constituent random variable, in this case $\gr$, is generated; and $\Dt$ for a general time interval in which many sequential realisations of the random variable may take place. In simpler words, $\dt$ is the duration of a single round of a gamble, while $\Dt$ is the an amount of time spent gambling.
+$\dt$ is the duration of a single round of a gamble, while $\Dt$ is the amount of time spent gambling.
+\begin{excursion}{Stochastic processes}
+Once again, we recommend van Kampen \cite[p.~52]{vanKampen1992} for an exceedingly simple definition -- this time of a stochastic process. 
+Imagine we've defined a random variable, $X$. Any function $Y(X)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, which is interpreted as time, so we write
+\be
+Y_X(\t)=f(X,\t).
+\elabel{st_pr}
+\ee
+This may not be how you think of a stochastic process. When we simulate stochastic processes, we often start with some value and modify it in some way in each step of a for-loop. In each step of the for-loop we would generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $x$ of the random variable $X$ only once and insert that into \eref{st_pr}. The value $x$ specifies a simple function of time
+\be
+Y_x(\t)=f(x,\t)
+\ee
+meaning that all the randomness is contained in $x$. Once $x$ is specified, $Y_x(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. As an example you can think of drawing  at random a single uniformally distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which could be interpreted as a stochastic process, if $\t$ specifies the decimal place of the relevant digit.
+
+We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $Y_X(\t^*)$. That's again a random variable.
+\end{excursion}
 
 The expectation value $\ave{\gr}$ is easily found from \eref{law} 
 as $\ave{\gr}=\frac{1}{2}\times 0.6 + \frac{1}{2}\times 1.5=1.05$. Since 
@@ -348,10 +391,10 @@ of \fref{1_2} for finite ensembles.
 
 \begin{figure}[h!]
 \begin{picture}(200,200)(0,0)
-  \put(-50,30){(A)}
     \put(-100,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/x_of_t_lin_exp.pdf}}
-  \put(230,30){(B)}  
   \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/x_of_t_log_exp.pdf}}
+  \put(35,160){(A)}
+  \put(315,160){(B)}  
 \end{picture}
 \caption{Expectation value (thick light blue line) finite-ensemble averages.
  (A) linear scales, (B) logarithmic scales.}
@@ -395,13 +438,13 @@ All of these solutions were proposed \cite{Devlin2008}.
 The question is fundamentally moral, and there is no 
 mathematical answer. But \person{Blaise Pascal}, now famous for 
 addressing theological questions using expectation values, put the 
-problem to Fermat, and over the course of a few months' 
+problem to Pierre de Fermat, and over the course of a few months' 
 correspondence (the two never met in person) \person{Fermat} and 
 \person{Pascal} agreed that fairness is achieved as follows: 
 Imagine all (equally likely) possible outcomes of the third round 
 of throws of the dice, call the number of all possibilities $\N$. 
 Now count those possibilities that result in player $\gj$ winning, 
-call this $n_j$. If $\gD$ is the amount of money in the pot, then 
+call this $\gn_\gj$. If $\gD$ is the amount of money in the pot, then 
 we split the pot fairly by giving each player
  $\frac{\gn_\gj}{\N}\times \gD$.
 This is $\ave{\gD}$, according to \eref{exp_sum}, 
@@ -460,10 +503,10 @@ will decay in the long run at a rate of $(\gr_1 \gr_2)^{1/2}$ per round.
 at rate $\rt$ and places it next to the average over a million systems.
 \begin{figure}[h!]
 \begin{picture}(200,200)(0,0)
-  \put(-50,20){(A)}
     \put(-100,0){\includegraphics[width=0.77\textwidth]{./chapter_1/figs/x_of_t_N1M.pdf}}
-  \put(230,20){(B)}  
   \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/x_of_t_log_10000.pdf}}
+  \put(-30,120){(A)}
+  \put(250,120){(B)}  
 \end{picture}
 \caption{(A) Finite-ensemble average for $N=10^6$ and 52 time steps, the light blue line is 
 the expectation value.\protect\footnotemark
@@ -563,7 +606,7 @@ hoped to show mathematically that gambling may not be a good idea even if
 the odds are favourable, and was a 
 proponent of the notion that commerce should and does
 consist of mutually beneficial interactions rather than one winner and one loser. 
-In the end his voice was not heard in the economics community. His main career was a priest at All Saints Church in London's Margaret Street, only a 22 minute stroll away from the London 
+In the end his voice was not heard in the economics community. His main career was as a priest at All Saints Church in London's Margaret Street, only a 22 minute stroll away from the London 
 Mathematical Laboratory, according to Google.
 %
 %$\rex$ and $\rt$ are two different properties of the game. $\rex$ is 
@@ -652,17 +695,16 @@ $\Dt=\T \dt$
 This leads us to a technical definition of the time average.
 
 \begin{defn}{Finite-time average}
-If the observable $\A$ only changes at $\T=\Dt/\dt$ discrete times 
-$\t+\dt$, $\t+2\dt$, {\it etc.}, then the 
-``finite-time average'' is
-\be
-\Abar_{\Dt}=\frac{1}{\T\dt}\sum_{\gtau=1}^{\T}\A(t+\gtau \dt).
-\elabel{t_ave_f_disc}
-\ee
-If it changes continuously the finite-time average is
+The ``finite-time average'' of the observable $\A(\t)$ is
 \be
 \Abar_{\Dt}=\frac{1}{\Dt}\int_{\t}^{\t+\Dt} \A(\gs)\gd\gs.
 \elabel{t_ave_f}
+\ee
+If $\A$ only changes at $\T=\Dt/\dt$ discrete times 
+$\t+\dt$, $\t+2\dt$, {\it etc.}, then this can be written as 
+\be
+\Abar_{\Dt}=\frac{1}{\T\dt}\sum_{\gtau=1}^{\T}\A(\t+\gtau \dt).
+\elabel{t_ave_f_disc}
 \ee
 \end{defn}
 
@@ -786,7 +828,7 @@ expectation value if the ensemble is large enough. Secondly, expectation values
 are meaningful, even if only a single system exists, if they reflect what happens over time. 
 
 \person{Boltzmann} called a system ``ergodic\footnote{The word ``ergodic'' was coined by \person{Boltzmann}. 
-He initially proposed the word ``monodic'', from Greek $\mu o \nu o$ (unique) + $o\d o \varsigma$ (path) suggesting 
+He initially proposed the word ``monodic'', from Greek $\mu o \nu o$ (unique) + $o\delta o \varsigma$ (path) suggesting 
 that a single path when followed for a sufficiently long time will explore all there is to explore and reflect what happens 
 in an ensemble. The term ``ergodic'' refers to the specific system \person{Boltzmann} was considering, namely an energy 
 ($\epsilon \rho \gamma o \nu$) shell across which a path is being traced out.}'' if the possible 
@@ -845,7 +887,7 @@ and, according to \eref{t_ave_f_disc}, the time average of $\gr(\t)$ is
 \ee
 where we have written $\gr_\gtau = \gr(\t+\gtau\dt)$ to make clear the equivalence between the two expressions. The only difference between the two expressions is the label we have chosen
 for the dummy variable ($\gi$ in \eref{e_r} and $\gtau$ in \eref{t_r}). Clearly, the 
-expressions yield the same value. $\gr(\t)$ stationary and takes independent identically distributed values.
+expressions yield the same value. $\gr(\t)$ takes independent identically distributed values.
 
 The same argument holds for $\d \ln \x$.
 \end{proof}
@@ -875,14 +917,15 @@ is the right object to optimize.
 
 \subsection{Rates}
 \seclabel{Rates}
+This section is a preview of an in-depth discussion of growth rates in \secref{decision}.
 The ergodic observable $\d \ln \x$, identified in the previous section, is basically a rate.
-If we divide it by the duration of the time step we obtain exactly the exponential 
-growth rate of $\x$, namely $\frac{\d \ln \x}{\dt}$. Finding good rates of change 
-will be important, wherefore we now discuss the notion of a rate of change and 
-the notion of stationarity. 
+Dividing it by the duration of the gamble, we obtain exactly the exponential 
+growth rate of $\x$, namely $\frac{\d \ln \x}{\dt}$. Finding good growth rates 
+will be important, wherefore we now discuss the notion of a rate and 
+the notion of time independence. 
 To do this properly let's think about the basic task of science. This may be described as the 
 search for stable structure. Science attempts to build models of the world 
-whose applicability does not vary over time. This does not mean that the world does not change, 
+whose applicability does not vary over time. This doesn't mean that the world doesn't change, 
 but the way in which the models describe change does not change. The model identifies
 something stable. This is implied by the fact that we can write 
 equations (or English sentences) in ink on paper, with the equation (or sentence) remaining 
@@ -913,15 +956,17 @@ random variable for each $\t$ because it is proportional to $\x(\t)$. But not to
 in \person{Newton}'s case changes in the position are not stable either, even in a 
 constant force field. Nonetheless \person{Newton} found a useful stable property. 
 Maybe we can do something similar. We're looking for a function $\gv(\x)$ that satisfies two conditions: 
-it should indicate what happens to $\x$ itself, and its changes should be stationary.
+it should indicate what happens to $\x$ itself, and its random changes should be instances of a time-independent random variable.
 
 The first condition is that $\gv(\x)$ must tell us 
 whether $\x(\t)$ is growing or shrinking -- this just means that $\gv(\x)$ has to 
-be monotonic in $\x$. We know that there is something stationary
+be monotonic in $\x$. We know that there is something time-independent
 about $\x$ because we were able to write down in ink how $\x$ changes. So we only need 
-to find the monotonic function of $\x$ whose additive changes inherit the stationarity of the ink in \eref{law}.
-The game is defined by a set of factors of increase in $\x(\t)$, \eref{gamble}. Therefore, the fractional change in $\x$, namely
-$\gr(\t) = \frac{\x(\t+\dt)}{\x(\t)}$, has a stationary distribution. Which function responds additively to a multiplicative change in its argument? 
+to find the monotonic function of $\x$ whose additive changes inherit the time-independence 
+of the ink in \eref{law}. The game is defined by a set of factors of change in $\x(\t)$, \eref{gamble}. 
+Therefore, the fractional change in $\x$, namely
+$\gr(\t) = \frac{\x(\t+\dt)}{\x(\t)}$, comes from a time-independent distribution. Which 
+function responds additively to a multiplicative change in its argument? 
 The answer is the logarithm, \ie
 only the logarithm satisfies
 \be
@@ -942,20 +987,21 @@ Compute the expectation value of $\frac{\d \gv[\x(\t)]}{\dt}$. If this is positi
 grows in the long run, if it is negative then $\x(\t)$ decays.
 \end{enumerate}
 
+This is discussed in detail in \secref{decision}.
 
 \subsection{Brownian motion}
 \seclabel{Brownian_motion}
 In the previous section we established that the discrete increments of the logarithm of 
-$\x$, which we called $\gv$, are stationary and independent in our game. A quantity 
+$\x$, which we called $\gv$, are instances of a time-independent random variable in our game. A quantity 
 for which this is the case performs a random walk.
 Indeed, the blue line for a single system in \fref{1_2} (B) shows 52 steps of a random walk trajectory.
 Random walks come in many forms -- in all of them $\gv$ changes discontinuously by an amount 
-$\d \gv$ drawn from a stationary distribution, over time intervals which may be regular or which may be drawn from a stationary distribution themselves.
+$\d \gv$ drawn from a time-independent distribution, over time intervals which may be regular or which may be drawn from a time-independent distribution themselves.
 
 We are interested only in the simple case where $\gv$ changes at regular intervals, $\dt, 2\dt, \dots$. For 
 the distribution of increments we only insist on the existence of the variance, meaning we insist that 
 $\var(\d \gv)=\ave{\d \gv^2}-\ave{\d \gv}^2$ be finite. The change in $\gv$ after a long time is then the sum 
-of many stationary independent increments, 
+of many independent instances of increments, 
 \be
 \gv(\t+\T\dt)-\gv(\t)=\sum_\gi^\T \d \gv_\gi.
 \ee
@@ -1060,7 +1106,7 @@ It can be written as a stochastic differential equation
 \ee
 where $\gd\gW$ is a Wiener increment. The Wiener increment can be defined by its distribution and correlator, 
 \bea
-\gd\gW &\sim& \mathcal{\N}(0,\sqrt{\gd\t})\\
+\gd\gW &\sim& \mathcal{\N}(0,\gd\t)\\
 \ave{\gd\gW(\t) \gd\gW(\t')}&=&\gd\t~ \gdelta(\t,\t'),
 \eea
 where $\gdelta(\t,\t')$ is the Kronecker delta -- zero if its two arguments differ ($\t\neq \t'$), and one if 
@@ -1068,15 +1114,15 @@ they are identical ($\t=\t'$).\footnote{Physicists often write $\gd\gW=\geta \gd
 $\ave{\geta(\t) \geta(\t')}=\gdelta(\t-\t')$, in which case $\gdelta(\t-\t')$ is the Dirac 
 delta function, defined by the integral $\int_{-\infty}^{\infty} \gf(\t) \gdelta(\t-\t') \gd\t=\gf(\t')$. Because of its singular
 nature ($\eta(t)$ does not exist (``is infinite''), only its integral exists) it can be difficult to develop
-an intuition for this object, and we prefer the $dW$ notation.}
+an intuition for this object, and we prefer the $dW$ notation.} The notation $\sim \mathcal{N}(0, \gd\t)$ is short-hand for ``is Gaussian distributed, with mean $0$ and variance $\gd\t$.''
 In simulations \BM paths can be constructed from a discretized version of \eref{BM_dx}
 \be
 \gv(\t+\dt)=\gv(\t)+ \gmu \dt + \gsigma \sqrt{\dt} \gxi_\t,
 \ee
 where $\gxi_\t$ are instances of a standard normal distribution.
 
-\BM itself is not stationary, which makes it non-ergodic according to our definition. This is easily seen
-by comparing time average and expectation value
+\BM itself is not a time-independent random variable -- it is a non-ergodic stochastic process. This is easily seen
+by comparing expectation value and time average
 \be
 \ave{\gv}_\N \sim \gmu \t+\mN(0, \t/\N)
 \ee
@@ -1087,15 +1133,14 @@ by comparing time average and expectation value
 \ee
 
 The expectation value, \ie the limit $\N\to\infty$ of \eref{ens}, converges to $\gmu \t$ with probability 
-one, so it's not stationary, it depends on time, and it's unclear what to compare it to. Its 
-limit $\t\to\infty$ does not exist. 
+one, so it depends on time, and it's unclear how to compare that to a time average (which cannot depend on time). Its limit $\t\to\infty$ does not exist. 
 
 The time average, the limit $\t\to\infty $ of \eref{tim} diverges unless $\gmu=0$, but even with 
 $\gmu=0$ the limit is a random variable with diverging variance -- something whose density 
 is zero everywhere. In no meaningful sense do the two expressions converge to the same 
 scalar in the relevant limits.
 
-Clearly, \BM, whose increments are independent and stationary, is not ergodic. That doesn't make it
+Clearly, \BM, whose increments are independent instances of a time-independent random variable, is not ergodic. That doesn't make it
 unmanageable or unpredictable -- we know the distribution of \BM at any moment in time. But the non-ergodicity
 has surprising consequences of which we mention one now. We already mentioned
 that if we plot a Brownian trajectory on a piece of paper it will turn into a straight line for long enough
@@ -1115,7 +1160,7 @@ It is, instead normally distributed with infinite variance according to the foll
 \bar{\gv}\sim \lim_{\t\to\infty} \mN(0,\t/3).
 \ee
 Averaging over time, in this case, does not remove the randomness. A sample 
-trajectory of the time average is shown in \fref{1_6}. In the literature the process 
+trajectory of the finte-time average is shown in \fref{1_6}. In the literature the process 
 $\frac{1}{\t}\int_0^\t \gd\t' \gv(\t')$ is known as the ``random acceleration process'' \cite{Burkhardt2007}.
 
 \begin{figure}[h!]
@@ -1149,6 +1194,7 @@ It implies, for instance, that
 \item the most likely value of $\x$ (the mode) does not coincide with the 
 expectation value of $\x$. 
 \end{itemize}
+These and other properties of the log-normal distribution will be discussed in detail in \secref{populations}.
 The log-normal distribution is not symmetric, unlike the Gaussian 
 distribution. 
 
@@ -1164,7 +1210,7 @@ Trajectories for \GBM can be simulated using the discretized form
 \ee
 where $\gxi_\t \sim \mN(0,1)$ are instances of a standard normal variable. In such simulations
 we must pay attention that the discretization does not lead to negative values of $\x$. This 
-happens if the expression in brackets is smaller than $-1$ (in which case $\x$ changes negatively by more than itself).
+happens if the expression in brackets in \eref{GBM_d} is smaller than $-1$ (in which case $\x$ changes negatively by more than itself).
 To avoid negative values we must have $\gmu \dt + \gsigma \sqrt{\dt} \gxi_\t>-1$, or 
 $\gxi_\t <\frac{1+\gmu\dt}{\gsigma \sqrt{\dt}}$. As $\dt$ becomes large it becomes more likely for
 $\gxi_\t$ to exceed this value, in which case the simulation fails. But $\gxi_\t$ is Gaussian distributed, meaning
@@ -1199,7 +1245,7 @@ compute its expectation value. We simply take the expectations values of both si
 \eea
 This differential equation has the solution 
 \be
-\ave{\x(\t)}=\x_0\exp(\gmu \t),
+\ave{\x(\t)}=\x(\tn)\exp(\gmu \t),
 \ee
 which determines the growth rate of the expectation value as 
 \be
@@ -1211,7 +1257,7 @@ Computing the time-average growth rate is only slightly more complicated.
 We will follow this plan: consider the discrete process \eref{GBM_d} and compute the changes in the logarithm of $\x$, 
 then we will let
 $\dt$ become infinitesimal and arrive at the result for the continuous process. We know $\d \ln(\x(\t))$
-to be ergodic, wherefore we will proceed to take its expectation value to compute the time average 
+to be ergodic and reflective of performance over time, wherefore we will proceed to take its expectation value to compute the time average 
 of the exponential growth rate of the process. 
 
 The change in the logarithm of $\x$ in a time interval $\dt$ is
@@ -1296,10 +1342,10 @@ Yet the depth of this insight remained unprobed.
 
 \Eref{time_g}, which agrees with \Ito calculus, may be surprising.
 Consider the case of no noise $\gd\x=\x \gmu \gd\t$. Here we can identify $\gmu=\frac{1}{\x}\frac{\gd\x}{\gd\t}$ 
-as the infinitesimal increment in the logarithm, $\frac{\gd \ln(\x)}{\gd\t}$, using the chain rule of calculus. 
+as the infinitesimal increment in the logarithm, $\frac{\gd \ln(\x)}{\gd\t}$, using the chain rule of ordinary calculus. 
 A na\"ive application of the chain rule to \eref{GBM_c} would therefore also yield $\frac{\gd \ave{\ln(\x)}}{\gd\x}=\gmu$, 
 but the fluctuations in \GBM have a non-linear effect, and it turns out that the usual chain rule does not apply. \Ito
-calculus is a modified chain rule, \eref{Ito} which leads to the difference $-\frac{\gsigma^2}{2}$ between the 
+calculus is a modified chain rule, \eref{Ito}, which leads to the difference $-\frac{\gsigma^2}{2}$ between the 
 expectation-value growth rate and the time-average
 growth rate. 
 

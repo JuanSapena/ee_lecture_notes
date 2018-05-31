@@ -3,47 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: ./../LML_bibliography/bibliography.bib
-Warning--I didn't find a database entry for "Campbell2018"
-Warning--I didn't find a database entry for "Markopolos2005"
-You've used 50 entries,
+You've used 53 entries,
             2118 wiz_defined-function locations,
-            845 strings with 9822 characters,
-and the built_in function-call counts, 13536 in all, are:
-= -- 1344
-> -- 457
+            857 strings with 10149 characters,
+and the built_in function-call counts, 14178 in all, are:
+= -- 1402
+> -- 478
 < -- 2
-+ -- 195
-- -- 136
-* -- 848
-:= -- 2320
-add.period$ -- 151
-call.type$ -- 50
-change.case$ -- 206
++ -- 205
+- -- 142
+* -- 872
+:= -- 2431
+add.period$ -- 160
+call.type$ -- 53
+change.case$ -- 216
 chr.to.int$ -- 0
-cite$ -- 50
-duplicate$ -- 571
-empty$ -- 1205
-format.name$ -- 136
-if$ -- 2810
+cite$ -- 53
+duplicate$ -- 602
+empty$ -- 1271
+format.name$ -- 142
+if$ -- 2948
 int.to.chr$ -- 0
-int.to.str$ -- 50
-missing$ -- 67
-newline$ -- 253
-num.names$ -- 102
-pop$ -- 237
+int.to.str$ -- 53
+missing$ -- 71
+newline$ -- 268
+num.names$ -- 108
+pop$ -- 261
 preamble$ -- 1
-purify$ -- 167
+purify$ -- 176
 quote$ -- 0
-skip$ -- 348
+skip$ -- 367
 stack$ -- 0
-substring$ -- 872
-swap$ -- 56
+substring$ -- 888
+swap$ -- 59
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 170
 warning$ -- 0
-while$ -- 148
-width$ -- 52
-write$ -- 538
-(There were 2 warnings)
+while$ -- 154
+width$ -- 55
+write$ -- 568

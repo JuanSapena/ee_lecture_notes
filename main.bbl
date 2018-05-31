@@ -33,6 +33,11 @@ T.~W. Burkhardt.
 \newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
   2007(07):P07004, 2007.
 
+\bibitem{Campbell2017}
+J.~Y. Campbell.
+\newblock {\em Financial decisions and markets, A course in asset pricing}.
+\newblock {Princeton University Press}, 2017.
+
 \bibitem{CoverThomas1991}
 T.~M. Cover and J.~A. Thomas.
 \newblock {\em Elements of {I}nformation {T}heory}.
@@ -127,6 +132,11 @@ S.~F. LeRoy.
 \newblock excess volatility tests.
 \newblock In S.~N. Durlauf and L.~E. Blume, editors, {\em {The New Palgrave
   Dictionary of Economics}}, pages 78--80. Springer, 2016.
+
+\bibitem{Markopolos2005}
+H.~M. Markopolos.
+\newblock The world's largest hedge fund is a fraud.
+\newblock Filed with the Securities and Exchang Commission, November 2005.
 
 \bibitem{Markowitz1952}
 H.~Markowitz.
@@ -251,6 +261,11 @@ H.~Theil.
 E.~O. Thorp.
 \newblock {\em Beat the dealer}.
 \newblock {Knopf Doubleday} Publishing Group, 1966.
+
+\bibitem{vanKampen1992}
+N.~G. van Kampen.
+\newblock {\em Stochastic Processes in Physics and Chemistry}.
+\newblock Elsevier (Amsterdam), 1992.
 
 \bibitem{vonNeumannMorgenstern1944}
 J.~{von Neumann} and O.~Morgenstern.
