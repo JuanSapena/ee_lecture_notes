@@ -27,11 +27,6 @@ J.-P. Bouchaud and M.~M\'ezard.
 \newblock Wealth condensation in a simple model of economy.
 \newblock {\em Physica A}, 282(4):536--545, 2000.
 
-\bibitem{Breiman1968}
-L.~Breiman.
-\newblock {\em Probability}.
-\newblock {Addison-Wesley Publishing Company}, 1968.
-
 \bibitem{Burkhardt2007}
 T.~W. Burkhardt.
 \newblock The random acceleration process in bounded geometries.
@@ -133,11 +128,6 @@ S.~F. LeRoy.
 \newblock In S.~N. Durlauf and L.~E. Blume, editors, {\em {The New Palgrave
   Dictionary of Economics}}, pages 78--80. Springer, 2016.
 
-\bibitem{Markopolos2005}
-H.~M. Markopolos.
-\newblock The world's largest hedge fund is a fraud.
-\newblock Filed with the Securities and Exchang Commission, November 2005.
-
 \bibitem{Markowitz1952}
 H.~Markowitz.
 \newblock Portfolio selection.
@@ -173,6 +163,11 @@ P.~R. Montmort.
 \newblock {\em Essay d'analyse sur les jeux de hazard}.
 \newblock Jacque Quillau, Paris. Reprinted by the American Mathematical
   Society, 2006, 2 edition, 1713.
+
+\bibitem{Morowitz1992}
+H.~Morowitz.
+\newblock {\em Beginnings of cellular life}.
+\newblock Yale University Press, 1992.
 
 \bibitem{Newman2005}
 M.~E.~J. Newman.

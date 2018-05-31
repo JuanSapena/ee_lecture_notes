@@ -35,7 +35,7 @@ Once we have written them down we begin to explore the world that results from t
 A choice of decision criterion implies an endless list of behaviors that will
 be observed. For example, some criteria will lead to cooperation, others will not, some will lead
 to the existence of insurance contracts, others will not \etc We will explore the worlds created by the different
-models. Once we have done so we invite you to judge which model may be more useful
+models. Once we have done so we invite you to judge which model you find most useful
 for your understanding of the world. Of course, having spent many years thinking about these
 issues we have come to our own conclusions, and we will put them forward because we believe them to be helpful.
 
@@ -76,7 +76,7 @@ with the following payouts and probabilities:
 \gD_1 = -\$ 10, &\quad& \p_1 = 1/2;\\
 \gD_2 = +\$ 10, &\quad& \p_2 = 1/2.
 \eea
-The duration would be $\dt=2$ seconds.
+The duration would be the time between two coin tosses. If you participate in coin tosses once a week it would be $\dt=1$ week.
 \end{example}
 
 \begin{example}{Playing the lottery}
@@ -267,7 +267,10 @@ difference does it make whether our individual imagined this to be a bet of a
 fixed size or of a fixed fraction of his wealth? However, the consequences of 
 this choice between imagined situations are enormous. As we saw in the 
 previous lecture, additive and multiplicative dynamics differ as starkly as the 
-linear and exponential functions. It matters, therefore, that we consider 
+linear and exponential functions, and there is evidence that people adjust their behavior
+to the type of repetition they face. 
+%CPH
+It matters, therefore, that we consider 
 carefully the economic situation we wish to model in order to choose the 
 most realistic mode of repetition. For example, fluctuations in the price of a 
 stock tend to be proportional to the price, \cf \eref{DW_mult_short}, so 
@@ -280,56 +283,54 @@ your wealth to grow the fastest'' is generally good advice. To be able to
 follow this advice we will think again about growth rates.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Growth rates}
+\subsection{Growth rates\seclabel{Growth_rates}}
 In the previous lecture we introduced the concept of a growth rate, $\g$, which 
 is the rate of change of a monotonically increasing function of wealth, $\gv(\x(\t))$:
 \be
 \g(\t,\Dt) \equiv \frac{\D \gv(\x(\t))}{\Dt}.
 \elabel{g_def}
 \ee
-The function, $\gv$, is chosen such that the increment, $\D \gv(\x(\t))$, over 
+The function, $\gv$, is chosen such that the increments, $\D \gv(\x(\t))$, over 
 the period $\Dt$,\footnote{Note that we use a general time period, $\Dt$, here 
-and not the period of the gamble, $\dt$.} is a stationary random variable 
-whose distribution does not depend on when the period starts. The growth 
-rate is, therefore, also stationary. Indeed, we consider it a function of $\t$ only 
+and not the period of the gamble, $\dt$.} are independent instances of a random variable. The growth rate is, therefore, ergodic\footnote{The increments don't necessarily need to be independent, and examples can be constructed where they are drawn from different distributions at different times, but in our case we have indepence and a fixed distribution, and that's a sufficient condition for the growth rate to be ergodic}. We consider $\g$ a function of $\t$ only 
 inasmuch as this labels a particular realisation of the randomness at a particular point in time.
 
-Stationarity -- the statistical irrelevance of the time of measurement -- is 
+The statistical irrelevance of the time of measurement is 
 important because we want the distribution of the random growth rate 
 to convey robust information about the underlying process, rather than 
 mere happenstance about when it was sampled. 
 
 %Therefore, the increments in any function $\gv(\x)$ will also be stationary. We want $\gv(\x)$ to be increasing in $\x$.
-Under additive repetition, we know from \eref{DW_add} that $\D\x$ is already stationary, so we know immediately that the correct mapping is the identity: $\gv(\x)=\x$.\footnote{In fact, any linear function $\gv(\x)=\alpha\x+\beta$ has stationary increments and is monotonically increasing provided $\alpha>0$. However, there is nothing gained by choosing anything other $\gv(\x)=\x$.} This gives the growth rate for an additive process (denoted by the subscript `a'):
+Under additive repetition, we know from \eref{DW_add} that $\D\x$ is already ergodic, so we know immediately that the correct mapping is the identity: $\gv(\x)=\x$.\footnote{In fact, any linear function $\gv(\x)=\alpha\x+\beta$ has stationary increments and is monotonically increasing provided $\alpha>0$. However, there is nothing gained by choosing anything other $\gv(\x)=\x$.} The ergodic growth rate for an additive process (denoted by the subscript `a') is therefore:
 \be
-\g_\text{a}(\t,\Dt) = \frac{\D\x(\t)}{\Dt}.
+\gad(\t,\Dt) = \frac{\D\x(\t)}{\Dt}.
 \elabel{g_add}
 \ee
 
-For a multiplicative dynamic, however, using $\d\x$ in the numerator 
+For a multiplicative dynamic, however, using $\D\x$ in the numerator 
 of the rate will not do, as we know from \eref{DW_mult_short} that 
 changes in $\x(\t)$ depend on $\x(\t)$. Instead we must find the 
-mapping $\gv(\x)$ whose increment has a stationary distribution. 
-The correct mapping is the logarithm, since the increment over a single round is
+mapping $\gv(\x)$ whose increments are independent instances of a random variable. 
+The correct mapping now is the logarithm, since the increment over a single round is
 \bea
 \d\ln \x(\t) &=& \ln \x(\t+\d\t) - \ln \x(\t)\\
 &=& \ln \gr\x(\t) - \ln \x(\t)\\
 &=& \ln \gr,
 \eea
 where \eref{R_def} has been used in the second line. This inherits its 
-stationarity from $\gr$. Thus the appropriate growth rate for a multiplicative 
+ergodicity from $\gr$. Thus the appropriate growth rate for a multiplicative 
 process (denoted by the subscript `m') over an arbitrary time period is
 \be
 \gm(\t,\Dt) = \frac{\D\ln \x(\t)}{\Dt}.
 \elabel{g_mult}
 \ee
 
-The distribution of the stationary random variable 
-$\g(\t,\Dt)$ depends on $\Dt$. Subject to certain conditions on $\D \gv(\x(\t))$, 
+The distribution of the random variable 
+$\g(\t,\Dt)$ does not depend on $\t$ but it does depend on $\Dt$. Subject to certain conditions on $\D \gv(\x(\t))$, 
 the distribution of $\g(\t,\Dt)$ narrows as $\Dt$ increases, converging to a 
-finite number in the limit $\Dt\to\infty$. In other words, as the effect of the 
-gamble manifests itself over an increasingly long time, the noise is eliminated 
-to reveal a growth rate reflecting the gamble's underlying tendency.
+scalar (just a number, no longer a random variable) in the limit $\Dt\to\infty$. 
+In other words, as the effect of the gamble manifests itself over an increasingly 
+long time, the noise is eliminated to reveal a growth rate reflecting the gamble's underlying tendency.
 
 We define this time-average growth rate, $\gt$, as
 \be
@@ -387,7 +388,7 @@ much harder to formulate for higher-dimensional objects, such as the
 two distributions shown in \fref{dec_dist}.
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{./chapter_2/figs/dec_dist.pdf}
+\includegraphics[width=\textwidth]{./chapter_2/figs/two_dists.pdf}
 \caption{Two possible probability density functions for the per-round 
 multiplier, $\gr$, defined in \eref{R_def}. The distribution denoted by 
 the blue line has a higher mean and a higher variance than the one 
@@ -435,6 +436,8 @@ possible and, indeed, have been proposed. For instance,
 classical decision theory is defined by the axiom that decision
 makers maximize expected utility. 
 
+%Copenhagen experiment? Little excursion?
+
 Our decision rationale can be expressed as a set of instructions.
 We denote quantities relating to the $\m^\text{th}$ available gamble with the 
 superscript $(\m)$. Each gamble is specified by its random payout, $\gD^{(\m)}$, and 
@@ -445,11 +448,11 @@ per-round period, $\dt^{(\m)}$.
 \item Specify $\gD^{(\m)}$ and $\dt^{(\m)}$ for the gambles offered;
 \item Specify the wealth dynamic, \ie the relationship between $\d\x(\t)$, 
 $\x(\t)$, and $\gD$;
-\item Find the stationarity transformation, $\gv(\x)$, of the wealth whose increments are 
-stationary random variables under this dynamic;
+\item Find the ergodicity transformation, $\gv(\x)$, of the wealth whose increments are 
+instances of a (time-independent) random variable under this dynamic;
 \item Determine the time-average growth rates, $\gt^{(\m)}$, either by taking 
-the long-time limits of the growth rates, $\g^{(\m)}(\t,\dt)$, or by invoking the 
-ergodic property to take their ensemble averages;
+the long-time limit of the growth rates, $\g^{(\m)}(\t,\dt)$, or by invoking the 
+ergodic property and taking their ensemble averages;
 \item Choose the gamble, $\m$, with the largest time-average growth rate.
 \end{enumerate}
 \end{keypts}
@@ -484,29 +487,29 @@ to choose between the coin toss and the null gamble,
 Both the additive and multiplicative versions of the repeated gamble are analysed.
 
 \begin{example}{Additive coin toss game}
-If the repetition is additive, the wealth evolves over $T$ rounds according to:
+If the repetition is additive, wealth will evolve over $T$ rounds according to:
 \bea
 \x^{(1)}(t_0+\T\dt) &=& \x(\tn) + \sum_{\gtau=1}^\T \gD^{(1)}(\gtau); \\
 \x^{(2)}(t_0+\T\dt) &=& \x(\tn).
 \eea
-Here we have assumed that the wealth is free to go negative, \ie that 
+Here we have assumed that wealth is free to go negative, \ie that 
 there is no bankrupt state from which the individual can't 
-recover.\footnotemark\ The appropriate stationarity transformation is the identity, 
+recover.\footnotemark\ The ergodicity transformation is the identity, 
 $\gv(\x)=\x$, so the growth rates are simply the rates of change of 
 wealth itself. We can express these over the $\T$ rounds as:
 \bea
-\g_\text{a}^{(1)}(\t) = \frac{\x^{(1)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\gD^{(1)}(\gtau)}{\dt}; \elabel{g1_add}\\
-\g_\text{a}^{(2)}(\t) = \frac{\x^{(2)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \$ 0
+\gad^{(1)}(\t) = \frac{\x^{(1)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\gD^{(1)}(\gtau)}{\dt}; \elabel{g1_add}\\
+\gad^{(2)}(\t) = \frac{\x^{(2)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \$ 0
 \eea
 per unit time. The long-time limit of the growth rate for the null gamble 
-is trivially $\gt_\text{a}^{(2)}=\$0$ per unit time. For the coin toss, we calculate it as
+is trivially $\gad^{(2)}=\$0$ per unit time. For the coin toss, we calculate it as
 \bea
-\gt_\text{a}^{(1)} &=& \lim_{\T\to\infty}\left\{\frac{1}{\T}\sum_{\gtau=1}^\T \frac{\gD^{(1)}(\gtau)}{\dt}\right\}\\
+\overline{\gad}^{(1)} &=& \lim_{\T\to\infty}\left\{\frac{1}{\T}\sum_{\gtau=1}^\T \frac{\gD^{(1)}(\gtau)}{\dt}\right\}\\
 &=& \ave{\frac{\gD^{(1)}}{\dt}}\\
 &=& \frac{\p^{(1)}_1 \gD^{(1)}_1 + \p^{(1)}_2 \gD^{(1)}_2}{\dt}\\
 &=& \frac{0.05\x(\tn)}{\dt},
 \eea
-which is positive (assuming $\x(\tn)>\$0$). Therefore, $\gt_\text{a}^{(1)}>\gt_\text{a}^{(2)}$ 
+which is positive (assuming $\x(\tn)>\$0$). Therefore, $\overline{\gad}^{(1)}>\overline{\gad}^{(2)}$ 
 and our individual should accept the coin toss gamble under additive dynamics.
 \end{example}
 \footnotetext{We could model this realistic feature by an absorbing boundary on $\x(\t)$, if we were so minded.}
@@ -542,26 +545,25 @@ Under multiplicative dynamics, the wealth evolves according to:
 \x^{(1)}(\tn+\T\dt) &=& \x(\tn) \prod_{\gtau=1}^\T \gr^{(1)}(\gtau); \elabel{W1T_mult}\\
 \x^{(2)}(\tn+\T\dt) &=& \x(\tn).\elabel{W2T_mult}
 \eea
-The appropriate stationarity transformation is the logarithm, $\gv(\x)=\ln \x$. We have 
+The ergodicity transformation is the logarithm, $\gv(\x)=\ln \x$. We have 
 already discussed why, but one way of seeing this is to take logarithms of 
-\eref{W1T_mult}. This converts the product into a sum of stationary and 
-independent random variables:
+\eref{W1T_mult}. This converts the product into a sum of independent instances of a random variable:
 \bea
 \ln \x^{(1)}(\tn+\T\dt) &=& \ln \x(\tn) + \sum_{\gtau=1}^\T \ln \gr^{(1)}(\gtau); \elabel{lnW1T_mult}\\
 \ln \x^{(2)}(\tn+\T\dt) &=& \ln \x(\tn).\elabel{lnW2T_mult}
 \eea
 Therefore, $\ln \x$ is the desired quantity whose increments 
-are stationarily distributed. The growth rates, expressed over $\T$ rounds, are:
+inherit their ergodicity from $\gD$. The growth rates, expressed over $\T$ rounds, are:
 \bea
-\g_\text{m}^{(1)}(\t) = \frac{\ln \x^{(1)}(\t+\T\dt) - \ln \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\ln \gr^{(1)}(\gtau)}{\dt};\\
-\g_\text{m}^{(2)}(\t) = \frac{\ln \x^{(2)}(\t+T\dt) - \ln \x(\tn)}{\T\dt} &=& 0
+\gm^{(1)}(\t) = \frac{\ln \x^{(1)}(\t+\T\dt) - \ln \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\ln \gr^{(1)}(\gtau)}{\dt};\\
+\gm^{(2)}(\t) = \frac{\ln \x^{(2)}(\t+T\dt) - \ln \x(\tn)}{\T\dt} &=& 0
 \eea
 per unit time. As in the additive case, we take the $\T\to\infty$ limits. For the null 
 gamble this is trivial: $\gt_\text{m}^{(2)}=0$ per unit time. For the coin toss gamble, we get
 \bea
 \gt_\text{m}^{(1)} = \ave{\frac{\ln \gr^{(1)}}{\dt}} = \frac{\ln\left(\sqrt{0.9}\right)}{\dt},
 \eea
-which is negative. Thus, $\gt_\text{m}^{(1)}<\gt_\text{m}^{(2)}$ under multiplicative 
+which is negative. Thus, $\overline{\gm}^{(1)}<\overline{\gm}^{(2)}$ under multiplicative 
 dynamics and our individual should decline the coin toss. That this is the opposite 
 of his decision under additive repetition highlights the importance of specifying a 
 dynamic that corresponds well to what is happening in reality.
@@ -577,7 +579,7 @@ where
 \ee
 is the equivalent per-round multiplier after $\T$ rounds and 
 $0\leq \gk\leq \T$ is the number of winning rounds. $\gr_\T$ 
-is a random variable but it converges to an almost sure quantity in the long time limit,
+is a random variable but it converges almost surely to a scalar in the long time limit,
 \be
 \gr_\infty^{(1)} \equiv \lim_{\T\to\infty}\{\gr_\T^{(1)}\} = (0.6)^{1/2}(1.5)^{1/2} = \sqrt{0.9},
 \ee
@@ -640,7 +642,7 @@ This is the axiom of utility theory. It leads to an alternative decision algorit
 \begin{enumerate}
 \item Specify $\gD^{(\m)}$ and $\dt^{(\m)}$ for the gambles offered;
 \item Specify the individual's idiosyncratic utility function, $\gu(\x)$, which maps his wealth to his utility;
-\item Determine the rate of change of his expected utility, \eg over a single round of the gamble,
+\item Determine the rate of change of his expected utility over a single round of the gamble (no dynamic is specified so it's unclear how a gamble would be repeated),
 \be
 \ave{\gr_\gu}^{(\m)}=\ave{\frac{\gu\left(\x+\gD^{(\m)}\right)-\gu(\x)}{\dt^{(\m)}}};
 \ee
@@ -652,10 +654,10 @@ Despite their conceptually different foundations, we note the similarities betwe
 maximands\footnote{The quantities to be maximised.} of our growth-optimal decision 
 theory, \eref{g_bar_gen}, and the expected-utility paradigm, \eref{euh}. Our decision theory
 contains a mapping which transforms wealth into a variable, $\gv$, whose increments are 
-stationary random variables. This mapping depends on the wealth dynamic which 
+instances of a time-independent random variable. This mapping depends on the wealth dynamic which 
 describes how the gamble is repeated. The expected-utility paradigm contains a function which transforms 
 wealth into usefulness. This is determined by the idiosyncratic risk preferences of 
-the individual. If we identify the stationarity transformation of the former with the 
+the individual. If we identify the ergodicity transformation of the former with the 
 utility transformation of the latter, then the expressions are the same.
 
 But we caution against the conceptual world of expected utility theory. It uses expectation
@@ -666,21 +668,22 @@ convincingly. Finally, because of this conceptual weakness, utility theory is po
 The very first paper on the topic contains two contradictory definitions of expected utility 
 theory \cite{Bernoulli1738}, and over the centuries several others have been added.
 
-Nonetheless, the expected utility hypothesis of classical decision theory as 
-presented above is consistent with growth rate optimisation for a particular 
-choice of utility function. 
-Of course, with a different utility function it will not replicate our results. 
-For multiplicative dynamics, the necessary choice is the logarithm. That this is the most 
+Nonetheless, with a few assumptions, expected utility theory as we've
+presented it above is consistent with growth rate optimisation, provided a suitable pair of dynamic and utility function is used. 
+For multiplicative dynamics, the necessary utility function is the logarithm. That this is the most 
 widely used utility function in both theory and practice is a psychological fluke in the classic mindset; from our perspective it indicates that 
 our brains have evolved to produce growth-optimal decisions in a world governed 
-by multiplicative dynamics, \ie where resources can be deployed to make more of 
-themselves.
+by multiplicative dynamics, \ie where entities produce more of 
+themselves. Incidentally, a common definition of life is ``that which produces more of itself,'' or as Harold Morowitz put it \cite[p.~5]{Morowitz1992} ``Living systems self-replicate, that is, they give rise to organisms like themselves.'' From our perspective, the prevalence of logarithmic utility reflects our evolution in an environment of living things.
 
 Thus we can offer a different reason for the predictive failure of the expected-wealth 
 paradigm. In our framework this corresponds to good decisions under additive 
 repetition, which we claim is generally a poor model of how wealth evolves.\footnote{It 
 would correspond, for example, to the interest payments in your bank account being 
 independent of your balance!} It fails, therefore, because it corresponds to an unrealistic dynamic. 
+
+It's worth being explicit about how our theory differs from expected utility theory. 
+In our model what's stable about human behavior is this: humans optimize wealth over time. Utility theory says humans optimize utility across the ensemble. Given a dynamic, our paradigm predicts human behavior that can be mapped to a predicted utility function. Utility theory believes that behavior, specifically risk preferences, is an idiosyncratic thing: it does not depend on the dynamics but on the individual. This difference (behavior is determined by dynamics vs. behavior is determined by indiosyncrasy) means that in principle we can find out which theory is right. We can change dynamic and see if people change behavior. That would invalidate expected utility theory. We can also take several people and expose them to the same dynamic -- the extent to which they display utility functions that are incompatible with the dynamic would invalidate our theory, insofar as it is interpreted to predict human behavior. Our theory provides the optimal behavioral protocol, in terms of long-term wealth growth, but of course real humans will only optimize long-term wealth growth to a certain degree. Nevertheless, we are happy to report that a Danish group of experimentalists has recently carried out experiments where subjects were exposed to different wealth dynamics, to see whether the utility functions implied by their behavior changed as predicted by our theory. At the time of writing, we're still waiting for the results.
 
 \subsection{General dynamics}
 \seclabel{general_dynamics}
@@ -698,7 +701,7 @@ to many people.
 
 As a matter of epistemology, we want to be somewhat restrictive. Imagine the opposite: a 
 model that can produce absolutely any behavior. Because it can produce anything, it cannot 
-say ``the reason this happens and not that is ...'' But that's exactly the type of statement we 
+say ``the reason this happens and not that is X.'' But that's exactly the type of statement we 
 need in order to make sense of the world -- why do some structures exist and not others? 
 Consider a specific case of a universal model: the alphabet, including punctuation. That's all 
 the building blocks you need to tell any story you want, true or false, interesting or not. The 
@@ -734,7 +737,7 @@ shares. Having done this for several years, most of my \$50,000,0000 wealth is j
 stock market. 
 \item You won't know about this, but here's another scenario: I don't have \$50,000 to put aside 
 at the end of each month. Actually, a week after payday, everything has been spent, and the 
-remaining 3 weeks have to be bridged. I help you move those boxes, and you make lunch. 
+remaining 3 weeks have to be bridged. I help you move those boxes, and in return you make lunch. 
 Every couple of months I get a new credit card to max out, until they're onto me and cut me 
 off. That's followed by a few years of handing over everything I earn to my creditors, and 
 after that I declare bankruptcy to start another cycle. I have no wealth riding anything.
@@ -742,7 +745,7 @@ after that I declare bankruptcy to start another cycle. I have no wealth riding 
 
 We will turn these descriptions into mathematics later on, but for now let's analyse them from the dynamic perspective, and then from the perspective of utility theory to bring out the conceptual differences.
 
-\underline{\bf Dynamic perspective:}\\
+\paragraph{\bf Dynamic perspective:}
 From these situations, I can clearly see that there's a difference between the dynamics my wealth 
 will follow. In situation 1) my wealth is roughly a multiplicative process. Earned income is 
 negligible, and investment income dominates. Not so in situation 2), where earned income is the 
@@ -756,7 +759,7 @@ It's growth optimal -- rational, according to our rationality model -- to play t
 little as just \$1,000,000 fell into my lap, my life would change dramatically. Not because I would 
 have all the money I need but because my wealth would enter a different dynamical regime. 
 
-\underline{\bf Utility perspective:}\\
+\paragraph{\bf Utility perspective:}
 Utility theory would see me in situation 1) and conclude that my utility function 
 is concave. My actions are optimal with respect to my utility function. Where that function 
 comes from is unknown, people will discuss nature vs. nurture, psychology, and brain architecture, 
@@ -766,7 +769,7 @@ who likes to take risks, again someone will bring up psychology and neuro-imagin
 trained to think in terms of expectation values may also conclude that I'm a bit stupid because I 
 accept gambles with negative expected return. Perhaps he (usually it's a he) will perceive the 
 arrow of causality as follows: the reason I'm so poor is that I make such terrible 
-financial decisions (that is, of course, a possibility).
+financial decisions (which is, of course, a possibility).
 
 The utility perspective tends to draw our attention on the psychology of the decision maker, 
 whereas the dynamic perspective focuses on the situation of the decision maker. 
@@ -789,13 +792,13 @@ We can still choose additive dynamics, namely by setting $a=\gmu$ and $b=\gsigma
 
 We are interested in wealth -- more is better. We can position ourselves, make one choice or 
 another, and then let time act. Choosing between two repeated gambles is thus a choice between 
-two sequences of wealths, let's call them $\x(\t)$ and $\x^*(\t)$. If life were very simple we could 
+two random sequences of wealths, let's call them $\x(\t)$ and $\x^*(\t)$. If life were very simple we could 
 just look at both of them at some moment in the future, $\t^*$ say, and choose the bigger one. But 
-that's generally not possible because of noise -- both  $\x(\t^*)$ and $\x^*(\t^*)$ will be random 
-numbers, and we don't know which one is bigger. 
+that's generally not possible because of noise -- both  $\x(\t^*)$ and $\x^*(\t^*)$ are random 
+variables, and we don't know which realizations we will encounter. 
 
 So what do we do? Let's build this up systematically, starting from a probabilistic statement, and let time help us get rid of the randomness later. 
-At each decision time, $\t_0$, we want to maximise 
+At each decision time, $\tn$, we want to maximise 
 subsequent changes in wealth by selecting $\x(\t)$ so that
 if we wait long enough wealth will be greater
 under the chosen process than under the alternative process
@@ -825,28 +828,28 @@ $\lim_{\Dt\to\infty}\{\D\x\}$ or, equivalently, $\lim_{\Dt\to\infty}\{\D\x/\Dt\}
 However, neither limit is guaranteed to exist. For example, consider a 
 choice between two geometric Brownian motions,
 \bea
-\gd\x &=& \x(\gmu \gd\gt + \gsigma \gd\gW),\\
-\gd\x^* &=& \x^*(\gmu^* \gd\gt + \gsigma^* \gd\gW).
+\gd\x &=& \x(\gmu \gd\t + \gsigma \gd\gW),\\
+\gd\x^* &=& \x^*(\gmu^* \gd\t + \gsigma^* \gd\gW).
 \eea
 Assuming that both grow over time, meaning $\gmu > \gsigma^2/2$ and $\gmu^* > {\gsigma^*}^2/2$, the quantities $\D\x/\Dt$ and $\D\x^*/\Dt$ both diverge in the limit $\Dt\to\infty$. The growth is exponential, so linear additive changes will diverge over time. A 
 criterion requiring the larger rate of wealth change to be selected fails to yield a decision: comparing $\infty$ to $\infty$ is not meaningful.
 
 %Introduce utility function
 
-But here's an idea. 
+But what about that idea of transforming wealth? 
 For the moment we're only interested in which wealth will be larger ($\x$ or $\x^*$); we don't care by how much. 
-That means we don't have to consider $\x$ itself, but any monotonically increasing function of $\x$, let's call it $\gu(\x)$, will also do. Why? Monotonicity means that the events $\x>\x^*$ and $\gu(\x)>\gu(\x^*)$ are identical -- whenever one of the inequalities is satisfied, the other is too. So a monotonically increasing function of $\x$ works as an indicator and can help us out of that infinity-fix we just found ourselves in. We define:
+That means we don't have to consider $\x$ itself, but any monotonically increasing function of $\x$ will also do. Let's again call that $\gv(\x)$. Why do we keep coming back to monotonic functions? Well, monotonicity means that the events $\x>\x^*$ and $\gv(\x)>\gv(\x^*)$ are identical -- whenever one of the inequalities is satisfied, the other is too. So a monotonically increasing function of $\x$ works as an indicator and can help us out of that infinity-fix we just found ourselves in. We define:
 \bea
-\Du &\equiv& \gu(\x(\tn+\Dt)) - \gu(\x(\tn));\\
-\Du^* &\equiv& \gu(\x^*(\tn+\Dt)) - \gu(\x^*(\tn)).
+\Dv &\equiv& \gv(\x(\tn+\Dt)) - \gv(\x(\tn));\\
+\Dv^* &\equiv& \gv(\x^*(\tn+\Dt)) - \gv(\x^*(\tn)).
 \elabel{Du}
 \eea
-The monotonicity of $\gu(\x)$ means that the events $\D\x>\D\x^*$ and 
-$\Du>\Du^*$ are the same. Taking $\Dt>0$ allows this event to be 
-expressed as $\Du/\Dt>\Du^*/\Dt$, whence the decision criterion in 
+The monotonicity of $\gv(\x)$ means that the events $\D\x>\D\x^*$ and 
+$\Dv>\Dv^*$ are the same. Taking $\Dt>0$ allows this event to be 
+expressed as $\Dv/\Dt>\Dv^*/\Dt$, whence the decision criterion in 
 \eref{max_Dx} becomes
 \be
-\forall \eps, \x^*(\t) \quad \exists \Dt \quad \text{s.t.} \quad \prob{\frac{\Du}{\Dt} > \frac{\Du^*}{\Dt}} > 1 - \epsilon.
+\forall \eps, \x^*(\t) \quad \exists \Dt \quad \text{s.t.} \quad \prob{\frac{\Dv}{\Dt} > \frac{\Dv^*}{\Dt}} > 1 - \epsilon.
 \elabel{max_Du}
 \ee
 
@@ -857,102 +860,96 @@ Our decision criterion has been recast to focus on the rate of change
 \ee
 As before, it is conceptually similar to maximising
 \be
-\gat \equiv \lim_{\Dt\to\infty}  \left\{ \frac{\Du(\x)}{\Dt} \right\} =  \lim_{\Dt\to\infty} \{\gad(\gu)\}.
+\gat \equiv \lim_{\Dt\to\infty}  \left\{ \frac{\Dv(\x)}{\Dt} \right\} =  \lim_{\Dt\to\infty} \{\gad(\gv)\}.
 \elabel{barr}
 \ee
 If $\x(\t)$ satisfies certain conditions, to be discussed below, then the function 
-$\gu(\x)$ can be chosen such that this limit exists. We shall see that $\gat(\gu(\x))$ is then the 
+$\gv(\x)$ can be chosen such that this limit exists. We shall see that $\gat(\gv(\x))$ is then the 
 appropriately defined time-average growth rate of $\x$. 
 %This is worth saying again: if $\gu(\x)$ is chosen appropriately, then the rate of change of $\gu$, namely $\frac{\D\gu(\x)}{\Dt}$ is the growth rate of $\x$ (though generally not the rate of change of $\x$) that is appropriate to the dynamics of $\x$ by which we mean $\frac{\D\gu(\x)}{\Dt}$ is an ergodic observable such that its long-time limit can be replaced by the rate of change of the expectation value of $\ave{\gu(\x)}$.
 This is quite a powerful
 bit of mathematics: by insisting on the existence of the limit, we
-force ourselves to choose $\gu(\x)$ in a certain way. That certain way guarantees that
-the correct form of growth rate is used. For example, if $\x(\t)$ is Brownian motion, $\gu(\x)$
-will be linear, and if it's geometric Brownian motion, $\gu(\x)$ will be logarithmic. 
+force ourselves to choose $\gv(\x)$ in a certain way. That certain way guarantees that
+the correct form of growth rate is used. For example, if $\x(\t)$ is Brownian motion, $\gv(\x)$
+will be linear, and if it's geometric Brownian motion, $\gv(\x)$ will be logarithmic. 
 This has nothing to do with psychology and behavior, it's simply imposed on us by the dynamics and our wish to compare long-term performances in a mathematically meaningful way.
 For the moment we leave our criterion in the probabilistic form of \eref{max_Du}
 but to continue the discussion we assume that the limit \eref{barr} exists.
 
 %Introduce expected utility hypothesis, play mathematical game
-The general relationship between expected utility theory and ergodicity economics
-may be dawning on you. Perhaps 
-\eref{barr} is the same as the rate of change of the expectation value of $\Du$
+Let's connect this back to the general relationship between expected utility theory and ergodicity economics. Perhaps 
+\eref{barr} is the same as the rate of change of the expectation value of $\Dv$
 \be
-\gat(\gu)=\frac{\ave{\Du}}{\Dt}.
+\gat(\gv)=\frac{\ave{\Dv}}{\Dt}.
 \elabel{aver}
 \ee
-We could then make the identification of $\gu(\x)$ being the utility function, 
+We could then make the identification of $\gv(\x)$ being the utility function $\gu(\x)$, 
 noting that our criterion is equivalent to maximizing the rate of change in
 expected utility.
-We note $\Du$ and hence $\gad(\gu)$ are random variables but $\ave{\Du}$ and $\gat(\gu)$ are not. 
+We note $\Dv$ and hence $\gad(\gv)$ are random variables but $\ave{\Dv}$ and $\gat(\gv)$ are not. 
 Taking the expectation value is one way of removing randomness from the problem, 
 and taking the long-time limit is another. As we saw in \secref{The_game}, \eref{ens}, the expectation value is simply
 a different limit: it's an average over $\N$ realizations of the random number 
-$\Du$, in the limit $\N\to\infty$. The effect of removing randomness is that the 
-process $\x(\t)$ is collapsed into the scalar $\Du$, and consistent transitive 
+$\Dv$, in the limit $\N\to\infty$. The effect of removing randomness is that the 
+process $\x(\t)$ is collapsed into the scalar $\ave{\Dv}$, and consistent transitive 
 decisions are possible by ranking the relevant scalars.
-In general, maximising $\gat$ does not yield the same decisions as 
+In general, maximising $\gat(\gv)$ does not yield the same decisions as 
 the criterion espoused in \eref{max_Du}. This is only the case for a particular
-function $\gu(\x)$ whose shape depends on the process $\x(\t)$, \ie on its dynamics. Our aim is to 
-find these pairs of processes and functions. When using such $\gu(\x)$ as the utility 
+function $\gv(\x)$ whose shape depends on the process $\x(\t)$, \ie on the dynamics. Our aim is to 
+find these pairs of processes and functions. When using such $\gv(\x)$ as the utility 
 function, expected utility theory will be consistent with 
-optimisation over time. It is then possible to interpret
-observed behavior that is found to be consistent with expected utility theory 
-using the utility function $\gu(\x)$ in purely dynamical terms: such behavior 
-will lead to the fastest possible wealth growth over time.
+optimisation over time, so long as no one changes the dynamics. It is then possible to interpret
+behavior consistent with expected utility theory with utility function $\gu(\x)$ in purely dynamical terms: such behavior will lead to the fastest possible wealth growth over time.
 
 %Equivalence condition requires utility to follow an additive process
-We ask what sort of dynamic $\gu$ must follow so that $\gat{\gu}=\ave{\gad(\gu)}$ or, 
-put another way, so that $\gad(\gu)$ is an ergodic observable, 
+We ask what sort of dynamic $\gv$ must follow so that $\gat({\gv})=\ave{\gad(\gv)}$ or, 
+put another way, so that $\gad(\gv)$ is an ergodic observable, 
 in the sense that its time and ensemble averages are the same \cite[p.~32]{KloedenPlaten1992}.
 
-We start by expressing the change in utility, $\Du$, as a sum over $M$ equal time intervals,
+We start by expressing the change $\Dv$ as a sum over $M$ equal time intervals,
 \bea
-\Du & \equiv & \gu(\tn+\Dt) - \gu(\tn) \\
-& = & \sum_{m=1}^M \left[ \gu(\tn+m\dt) - \gu(\tn+(m-1)\dt) \right] \\
-& = & \sum_{m=1}^M \du_m(\t),
+\Dv & \equiv & \gv(\tn+\Dt) - \gv(\tn) \\
+& = & \sum_{m=1}^M \left[ \gv(\tn+m\dt) - \gv(\tn+(m-1)\dt) \right] \\
+& = & \sum_{m=1}^M \d\gv_m(\t),
 \eea
-where $\dt\equiv\Dt/M$ and $\du_m(\t)\equiv \gu(\tn+m\dt) - \gu(\tn+(m-1)\dt)$. From \eref{barr} we have
+where $\dt\equiv\Dt/M$ and $\d\gv_m(\t)\equiv \gv(\tn+m\dt) - \gv(\tn+(m-1)\dt)$. From \eref{barr} we have
 \begin{align}
-\gat & = & \lim_{\Dt\to\infty} \left\{ \frac{1}{\Dt} \sum_{m=1}^M \du_m \right\} \elabel{barrSum}
+\gat & = & \lim_{\Dt\to\infty} \left\{ \frac{1}{\Dt} \sum_{m=1}^M \d\gv_m \right\} \elabel{barrSum}
 \\
-& = & \lim_{M\to\infty} \left\{ \frac{1}{M} \sum_{m=1}^M \frac{\du_m}{\dt} \right\} \elabel{barrSum2},
+& = & \lim_{M\to\infty} \left\{ \frac{1}{M} \sum_{m=1}^M \frac{\d\gu_m}{\dt} \right\} \elabel{barrSum2},
 \end{align}
 keeping $\dt$ fixed. From \eref{aver} we obtain
 \be
-\ave{\gad} = \lim_{\N\to\infty} \left\{ \frac{1}{\N} \sum_{n=1}^\N \frac{\Du_n}{\Dt} \right\}
+\ave{\gad} = \lim_{\N\to\infty} \left\{ \frac{1}{\N} \sum_{n=1}^\N \frac{\Dv_n}{\Dt} \right\}
 \elabel{averSum}
 \ee
-where each $\Du_n$ is drawn independently from the distribution of $\Du$.
+where each $\Dv_n$ is drawn independently from the distribution of $\Dv$.
 
 We now compare the two expressions \eref{barrSum2} and \eref{averSum}. 
 Clearly the value of $\gat$ in \eref{barrSum2} cannot depend on the way 
 in which the diverging time period is partitioned, so the length of interval $\dt$ 
 must be arbitrary and can be set to the value of $\Dt$ in \eref{averSum}, for
-consistency we then call $\du_m(\t)=\Du_m(\t)$. 
+consistency we then call $\d\gv_m(\t)=\Dv_m(\t)$. 
 Expressions \eref{barrSum2} and \eref{averSum} are equivalent 
 if the successive additive increments, 
-$\Du_m(\t)$, are distributed identically to the $\Du_n$ in \eref{averSum}, 
-which requires only that they are stationary and independent.
+$\Dv_m(\t)$, are distributed identically to the $\Dv_n$ in \eref{averSum}, 
+which requires only that they are independent realizations of a time-independent random variable.
 
 %In general, this must be a Levy process
 %Confine attention to Ito processes --> Brownian motion with drift
-Thus we have a condition on $\gu(\t)$ which suffices to make $\gat=\ave{\gad}$, 
-namely that it be a stochastic process whose additive increments are 
-stationary and independent. This means that $\gu(\t)$ is, in general, a L\'evy process. 
+Thus we have a condition on $\gv(\t)$ which suffices to make $\gat=\ave{\gad}$, 
+namely that it be a stochastic process whose additive increments are independent realizations of a time-independent random variable. This means that $\gv(\t)$ is, in general, a L\'evy process. 
 If we restrict our attention to processes with 
-continuous paths, according to a theorem stated in \cite[p.~2]{Harrison2013} and 
-proved in \cite[Chapter~12]{Breiman1968}, $\gu(\t)$ must be a Brownian motion with drift,
+continuous paths, then $\gv(\t)$ must be a Brownian motion with drift, as we learned in \secref{Brownian_motion}. We write this as
 \be
-\gd\gu = a_u \gd\t + b_u \gd\gW,
+\gd\gv = a_v \gd\t + b_v \gd\gW.
 \elabel{bm_u}
 \ee
-where $\gd\gW$ is the infinitesimal increment of the Wiener process.
 
 By arguing backwards we can address concerns regarding the
-existence of $\gat$. If $\gu$ follows the dynamics specified by 
+existence of $\gat$. If $\gv$ follows the dynamics specified by 
 \eref{bm_u}, then it is straightforward to show that the limit 
-$\gat$ always exists and takes the value $a_u$. Consequently the 
+$\gat$ always exists and takes the value $a_v$. Consequently the 
 decision criterion \eref{max_Du} is equivalent to the optimisation 
 of $\gat$, the time-average growth rate. The process $\x(\t)$ may be
 chosen such that \eref{bm_u} does not apply for any choice of $\gu(\x)$. 
@@ -967,24 +964,21 @@ with ergodic additive increments.
 \end{keypts}
 
 %Invertibility of utility function --> obtain wealth process
-This is a fascinating general connection. If the physical reason 
-why we observe non-linear utility functions is the non-linear effect of fluctuations
-over time, then a given utility function encodes a corresponding 
-stochastic wealth process. Provided that a utility function 
-$\gu(\x)$ is invertible, \ie provided that its inverse, $\x(\gu)$, exists, 
+This is a fascinating general connection. Provided that  
+$\gv(\x)$ is invertible, \ie provided that its inverse, $\x(\gv)$, exists, 
 a simple application of It\^o calculus to \eref{bm_u} yields directly the 
-stochastic differential equation obeyed by the wealth, $\x$. Thus every invertible utility 
-function encodes a unique dynamic in wealth which arises from a 
-Brownian motion in utility. This is explored further below.
+stochastic differential equation obeyed by the wealth, $\x$. 
 
-Curiously, a celebrated but erroneous paper by Karl Menger \cite{Menger1934} 
+Translating into utility language, every invertible utility 
+function is actually an encoding of a unique wealth dynamic which arises as utility performs a 
+Brownian motion. Curiously, a celebrated but erroneous paper by Karl Menger \cite{Menger1934} 
 ``proved'' that all utility functions must be bounded (the proof is simply wrong). Boundedness makes utility functions non-invertible and
 precludes the developments we present here. Influential economists lauded Menger's paper, including Paul Samuelson \cite[p.~49]{Samuelson1977} who called it ``a modern classic that [...] stands above all criticism.'' This is one reason why mainstream economics
-has failed to use the optimization of wealth growth over time to understand human behavior -- a criterion we consider extremely simple and natural. A  discussion of Menger's precise errors can be found in \cite[p.~7]{PetersGell-Mann2016}.
+has failed to use the optimization of wealth growth over time to understand human behavior -- a criterion we consider extremely simple and natural. A  discussion of Menger's precise errors can be found in \cite[p.~7]{PetersGell-Mann2016}. Although mainstream economics still considers boundedness of utility to be formally required, it is such an awkward restriction that John Campbell noted recently \cite{Campbell2018} that ``this requirement is routinely ignored.''
 
 \subsubsection{Dynamic from a utility function}
-We now illustrate the relationship between utility functions and
-wealth dynamics with a few concrete examples. For the reasons discussed above we assume that
+We now use the identification of $\gv=\gu$ to illustrate the relationship between utility functions and
+wealth dynamics. For the reasons discussed above we assume that
 utility follows a Brownian motion with drift. 
 
 If $\gu(\x)$ can be inverted to $\x(\gu)=\gu^{-1}(\gu)$, and $\x(\gu)$ is twice differentiable,
@@ -1032,28 +1026,26 @@ same behavior will be observed in any growth-optimizing entities that
 need not be human.
 
 \Eref{dx}, creates pairs of utility functions $\gu(\x)$ and dynamics
-$\gd\x$. In discrete time, two such pairs were investigated in \cite{PetersGell-Mann2016},
-namely cases $1.$ and $2.$ below.
+$\gd\x$. In \secref{Growth_rates} we saw in a discrete setting that the ergodicity mapping for 
+additive wealth dynamics is the identity function, and for multiplicative dynamics it is the logarithm. Interpreting utility functions as ergodicity mappings, we can summarize this in continuous time as follows.
 
-\begin{example}{1 Linear utility}
-The trivial linear utility function corresponds to additive wealth dynamics (Brownian motion),
+\begin{itemize}
+\item
+The linear utility function corresponds to additive wealth dynamics (Brownian motion),
 \be
 \gu(\x)=\x \hspace{.4cm} \leftrightarrow \hspace{.4cm} \gd\x=a_u \gd\t + b_u \gd\gW,\hspace{1.3cm}
 \ee
 as is easily verified by substituting $\x(\gu)=\gu$ in \eref{dx}.
-\end{example}
-
-\begin{example}{2 Logarithmic utility} 
-Introduced by Bernoulli in 1738 \cite{Bernoulli1738}, the logarithmic utility function is in wide use and corresponds to multiplicative wealth dynamics (geometric Brownian motion),
+\item
+The logarithmic utility function corresponds to multiplicative wealth dynamics (geometric Brownian motion),
 \be
 \gu(\x)=\ln(\x) \hspace{.4cm} \leftrightarrow \hspace{.4cm} \gd\x=\x\left[\left(a_u +\frac{1}{2} b_u^2\right) \gd\t+b_u \gd\gW\right].
 \ee
-In practice the most useful case will be multiplicative wealth dynamics. 
-But to demonstrate the generality 
-of the procedure, we carry it out for a different special case that is historically important.
-\end{example}
+\end{itemize}
+To demonstrate the generality of our procedure, we carry it out for another 
+special case that is historically important.
 
-\begin{example}{3 Square-root (Cramer) utility}
+\begin{example}{Square-root (Cramer) utility}
 The first utility function ever to be suggested was the square-root 
 function $\gu(\x)=\x^{1/2}$, by Cramer in a 1728
 letter to Daniel Bernoulli, partially reproduced in
@@ -1100,7 +1092,8 @@ We now ask under what circumstances the procedure in
 \eref{dx} can be inverted. When can a utility function be found for a
 given dynamic? In other words, what conditions does the dynamic $\gd\x$
 have to satisfy so that optimization over time can be represented by
-optimization of expected net changes in utility $\gu(\x)$?
+optimization of expected net changes in utility $\gu(\x)$, or: when does 
+an ergodicity mapping, $\gv(\x)$, exist?
 
 We ask whether a given dynamic can be mapped into a utility whose
 increments are described by Brownian motion, \eref{bm_u}.
