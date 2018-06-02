@@ -402,6 +402,7 @@ of \fref{1_2} for finite ensembles.
 \end{figure}
 \FloatBarrier
 
+
 %But we caution against this. We have correctly computed
 %the expectation value, first numerically and then analytically.
 We stress that the expectation value is just some mathematical
@@ -850,6 +851,44 @@ and its time average converges to this value with probability one
 \elabel{def_ergodic}
 \ee
 \end{defn}
+
+In terms of random variables, $X$, and stochastic processes, $Y_X(t)$, the ergodic property can be
+visualized as in \fref{ergodic_grid}. Averaging a stochastic process over time or over the ensemble
+are completely different operations, and only under very rare circumstances (namely under ergodicity) can the two operations be interchanged.
+\begin{figure}[h!]
+\begin{picture}(200,220)(0,0)
+  \put(-5,-20){\includegraphics[width=\textwidth]{./chapter_1/figs/ergodic_grid.pdf}}
+  \put(10,195){$Y_{x_1}(\t)$}
+  \put(10,155){$Y_{x_2}(\t)$}
+  \linethickness{.5mm}
+  \put(140,212){$\t^*$}  
+  \put(160,195){$Y_{x_1}(\t)$}
+  \put(160,209){\vector(-1,-1){15}}
+  \put(10,115){$Y_{x_3}(\t)$}
+  \put(10,75){$Y_{x_4}(\t)$}
+  \put(10,35){$Y_{x_5}(\t)$}
+\end{picture}
+\caption{Time runs from left to right in this figure, and realizations run from top to bottom.
+Averaging over time means averaging along one trajectory from left to right; averaging over the ensemble
+means averaging at a fixed time across different trajectories from top to bottom.}
+\flabel{ergodic_grid}
+\end{figure}
+\FloatBarrier
+
+%\psset{unit=1pt}
+%\begin{pspicture}(0,0)(200,220)
+%  \put(-5,-20){\includegraphics[width=\textwidth]{./chapter_1/figs/ergodic_grid.pdf}}
+%    \put(10,195){$Y_{x_1}(\t)$}
+%  \put(10,155){$Y_{x_2}(\t)$}
+%  \linethickness{.5mm}
+%  \put(40,155){\vector(1,0){300}}
+%  \put(40,155){\includegraphics[width=\textwidth]{./chapter_1/figs/arrow1.pdf}}
+% \put(140,212){$\t^*$}  
+% \put(140,210){\vector(0,-1){200}}
+%  \put(10,115){$Y_{x_3}(\t)$}
+%  \put(10,75){$Y_{x_4}(\t)$}
+%  \put(10,35){$Y_{x_5}(\t)$}
+%\end{pspicture}
 
 We stress that in a given setup, some observables may have this property even
 if others do not. Language therefore must be used carefully. Saying our game is non-ergodic

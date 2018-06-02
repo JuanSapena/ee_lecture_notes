@@ -396,6 +396,9 @@ INPUT ./chapter_1/figs/all_saints.pdf
 INPUT ./chapter_1/figs/all_saints.pdf
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/tfm/public/lm/rm-lmri7.tfm
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/tfm/public/lm/rm-lmri7.tfm
+INPUT ./chapter_1/figs/ergodic_grid.pdf
+INPUT ./chapter_1/figs/ergodic_grid.pdf
+INPUT ./chapter_1/figs/ergodic_grid.pdf
 INPUT ./chapter_1/figs/BM_time_ave.pdf
 INPUT ./chapter_1/figs/BM_time_ave.pdf
 INPUT ./chapter_1/figs/BM_time_ave.pdf
