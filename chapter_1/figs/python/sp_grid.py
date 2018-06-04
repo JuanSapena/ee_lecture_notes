@@ -37,28 +37,28 @@ ax.annotate('',\
             xy=(105,15), xycoords='data',\
             xytext=(-300, 0), textcoords='offset points',\
             arrowprops=dict(color='green',arrowstyle="->",linewidth=2))
-ax.annotate(r' $\hspace{17.2}$ ',\
-            xy=(110,-21), xycoords='data',\
-            xytext=(-290, 0), textcoords='offset points',\
-            size=15,\
-            bbox=dict(boxstyle='round,pad=0.2', fc='green', alpha=0.3))
-ax.annotate('',\
-            xy=(108,-19.5), xycoords='data',\
-            xytext=(-21, 0), textcoords='offset points',\
-            arrowprops=dict(color='green',arrowstyle="->",linewidth=2))
+#ax.annotate(r' $\hspace{17.2}$ ',\
+#            xy=(110,-21), xycoords='data',\
+#            xytext=(-290, 0), textcoords='offset points',\
+#            size=15,\
+#            bbox=dict(boxstyle='round,pad=0.2', fc='green', alpha=0.3))
+#ax.annotate('',\
+#            xy=(108,-19.5), xycoords='data',\
+#            xytext=(-21, 0), textcoords='offset points',\
+#            arrowprops=dict(color='green',arrowstyle="->",linewidth=2))
 ax.annotate('',\
             xy=(-15,-50), xycoords='data',\
             xytext=(0, 160), textcoords='offset points',\
             arrowprops=dict(color='red',arrowstyle="->",linewidth=2))
-ax.annotate('',\
-            xy=(45,-53), xycoords='data',\
-            xytext=(0, 20), textcoords='offset points',\
-            arrowprops=dict(color='red',arrowstyle="->",linewidth=2,linestyle='-'))
-ax.annotate(r' $\hspace{37}$ ',\
-            xy=(45,-55), xycoords='data',\
-            xytext=(-2, 170), textcoords='offset points',\
-            size=4,\
-            bbox=dict(boxstyle='round,pad=0.2', fc='red', alpha=0.3),rotation=90)
+#ax.annotate('',\
+#            xy=(45,-53), xycoords='data',\
+#            xytext=(0, 20), textcoords='offset points',\
+#            arrowprops=dict(color='red',arrowstyle="->",linewidth=2,linestyle='-'))
+#ax.annotate(r' $\hspace{37}$ ',\
+#            xy=(45,-55), xycoords='data',\
+#            xytext=(-2, 170), textcoords='offset points',\
+#            size=4,\
+#            bbox=dict(boxstyle='round,pad=0.2', fc='red', alpha=0.3),rotation=90)
 plt.plot(range(0,T+1),x.iloc[1,:],linestyle='-',color='blue')
 plt.plot(range(0,T+1),x.iloc[2,:]-10,linestyle='-',color='blue')
 plt.plot(range(0,T+1),x.iloc[3,:]-20,linestyle='-',color='blue')
@@ -68,5 +68,5 @@ plt.plot(range(0,T+1),x.iloc[0,:]-40,linestyle='-',color='blue')
 #plt.rc('ytick',labelsize=16)
 plt.xlabel('r$t$',fontsize=16)
 #plt.ylabel('$u(x)$',fontsize=16)
-plt.savefig("./../ergodic_grid.pdf", bbox_inches='tight')
+plt.savefig("./../sp_grid.pdf", bbox_inches='tight')
 #plt.show()

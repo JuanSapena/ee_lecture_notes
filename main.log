@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.19)  2 JUN 2018 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.23)  3 JUN 2018 10:02
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
-(./preamble.tex (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./preamble.tex (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -23,77 +23,77 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 96.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/placeins/placeins.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/epsfig.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 \epsfxsize=\dimen105
 \epsfysize=\dimen106
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2014/05/18 version 3.04 text color boxes
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2016/04/27 version 3.91 text color boxes
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
 \pgfutil@everybye=\toks15
 \pgfutil@tempdima=\dimen107
 \pgfutil@tempdimb=\dimen108
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
 sts.tex))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box26
-(/usr/local/texlive/2014/texmf-dist/tex/latex/ms/everyshi.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
 ))
-Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks16
 \pgfkeys@temptoks=\toks17
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
 ode.tex
 \pgfkeys@tmptoks=\toks18
 ))
@@ -115,51 +115,51 @@ ode.tex
 \t@pgf@tokb=\toks20
 \t@pgf@tokc=\toks21
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
 ef
-File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
 df.def
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count92
 \pgfsyssoftpath@bigbuffer@items=\count93
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-)) (/usr/local/texlive/2014/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+)) (/usr/local/texlive/2016/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen117
 \pgfmath@count=\count94
 \pgfmath@box=\box27
@@ -167,28 +167,28 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 \pgfmath@stack@operand=\toks23
 \pgfmath@stack@operation=\toks24
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
 tex
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
 .code.tex)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
 nometric.code.tex)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
 m.code.tex)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
 rison.code.tex)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
 code.tex)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
 .code.tex)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
 code.tex)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count95
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen118
@@ -206,149 +206,146 @@ File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@zx=\dimen130
 \pgf@zy=\dimen131
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
 ruct.code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 \pgf@path@lastx=\dimen132
 \pgf@path@lasty=\dimen133
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
 .code.tex
-File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
 \pgf@shorten@end@additional=\dimen134
 \pgf@shorten@start@additional=\dimen135
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
-File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box28
 \pgf@hbox=\box29
 \pgf@layerbox@main=\box30
 \pgf@picture@serial@count=\count96
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
-File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
 \pgflinewidth=\dimen136
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
 ations.code.tex
-File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
 \pgf@pt@x=\dimen137
 \pgf@pt@y=\dimen138
 \pgf@pt@temp=\dimen139
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
 e.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
 ode.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
 ssing.code.tex
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
 de.tex
-File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 \pgfarrowsep=\dimen140
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
 e.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen141
 \pgf@sys@shading@range@num=\count97
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
 code.tex
-File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
 \pgfexternal@startupbox=\box31
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
 de.tex
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
 ncy.code.tex
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
 code.tex
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
-File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
 \pgfnodeparttextbox=\box32
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
-File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -0-65.sty
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen142
 \pgf@nodesepend=\dimen143
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -1-18.sty
-Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
-)) (/usr/local/texlive/2014/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks25
 \verbatim@line=\toks26
 \verbatim@in@stream=\read2
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/environ/environ.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 \@envbody=\toks27
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/etex-pkg/etex.sty
-Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count98
-)
-\etb@tempcnta=\count99
+(/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count98
 )
 \tcb@titlebox=\box33
 \tcb@upperbox=\box34
 \tcb@lowerbox=\box35
 \tcb@phantombox=\box36
-\c@tcbbreakpart=\count100
-\c@tcblayer=\count101
+\c@tcbbreakpart=\count99
+\c@tcblayer=\count100
+\tcolorbox@number=\count101
 \tcb@temp=\box37
 \tcb@temp=\box38
 \tcb@temp=\box39
 \tcb@temp=\box40
 \tcb@out=\write4
+\tcb@record@out=\write5
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/mdframed/mdframed.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
 Package etexcmds Info: Could not find \expanded.
@@ -356,42 +353,39 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-(/usr/local/texlive/2014/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2014/05/20 v4814 L3 programming layer (loader) 
+(/usr/local/texlive/2016/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2016/05/18 v6512 L3 programming layer (loader) 
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2014/05/20 v4814 L3 programming layer (code) 
-L3 Module: l3bootstrap 2014/05/16 v4782 L3 Bootstrap code
-L3 Module: l3names 2014/05/04 v4728 L3 Namespace for primitives
-L3 Module: l3basics 2014/05/04 v4728 L3 Basic definitions
-L3 Module: l3expan 2014/04/30 v4712 L3 Argument expansion
-L3 Module: l3tl 2014/05/04 v4728 L3 Token lists
-L3 Module: l3seq 2014/04/30 v4712 L3 Sequences and stacks
-L3 Module: l3int 2014/05/16 v4776 L3 Integers
+(/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2016/05/18 v6512 L3 programming layer (code)
+L3 Module: l3bootstrap 2016/02/12 v6412 L3 Bootstrap code
+L3 Module: l3names 2016/03/11 v6433 L3 Namespace for primitives
+L3 Module: l3basics 2015/11/22 v6315 L3 Basic definitions
+L3 Module: l3expan 2015/09/10 v5983 L3 Argument expansion
+L3 Module: l3tl 2016/03/26 v6465 L3 Token lists
+L3 Module: l3str 2016/03/24 v6441 L3 Strings
+L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
+L3 Module: l3int 2016/03/24 v6441 L3 Integers
 \c_max_int=\count102
 \l_tmpa_int=\count103
 \l_tmpb_int=\count104
 \g_tmpa_int=\count105
 \g_tmpb_int=\count106
-L3 Module: l3quark 2014/05/04 v4728 L3 Quarks
-L3 Module: l3prg 2014/05/04 v4728 L3 Control structures
+L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
+L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
 \g__prg_map_int=\count107
-L3 Module: l3clist 2014/05/04 v4728 L3 Comma separated lists
-L3 Module: l3token 2014/05/04 v4728 L3 Experimental token manipulation
-L3 Module: l3prop 2014/04/30 v4712 L3 Property lists
-L3 Module: l3msg 2014/05/04 v4728 L3 Messages
-L3 Module: l3file 2014/05/05 v4737 L3 File and I/O operations
+L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
+L3 Module: l3token 2016/04/03 v6470 L3 Experimental token manipulation
+L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
+L3 Module: l3msg 2016/03/26 v6464 L3 Messages
+L3 Module: l3file 2016/03/25 v6458 L3 File and I/O operations
 \l_iow_line_count_int=\count108
 \l__iow_target_count_int=\count109
 \l__iow_current_line_int=\count110
 \l__iow_current_word_int=\count111
 \l__iow_current_indentation_int=\count112
-L3 Module: l3skip 2014/05/05 v4738 L3 Dimensions and skips
+L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \c_zero_dim=\dimen144
 \c_max_dim=\dimen145
 \l_tmpa_dim=\dimen146
@@ -410,10 +404,10 @@ L3 Module: l3skip 2014/05/05 v4738 L3 Dimensions and skips
 \l_tmpb_muskip=\muskip13
 \g_tmpa_muskip=\muskip14
 \g_tmpb_muskip=\muskip15
-L3 Module: l3keys 2014/05/08 v4753 L3 Key-value interfaces
+L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
 \g__keyval_level_int=\count113
 \l_keys_choice_int=\count114
-L3 Module: l3fp 2014/04/30 v4712 L3 Floating points
+L3 Module: l3fp 2016/03/26 v6465 L3 Floating points
 \c__fp_leading_shift_int=\count115
 \c__fp_middle_shift_int=\count116
 \c__fp_trailing_shift_int=\count117
@@ -423,13 +417,13 @@ L3 Module: l3fp 2014/04/30 v4712 L3 Floating points
 \c__fp_Bigg_leading_shift_int=\count121
 \c__fp_Bigg_middle_shift_int=\count122
 \c__fp_Bigg_trailing_shift_int=\count123
-L3 Module: l3box 2014/05/04 v4728 L3 Experimental boxes
+L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
 \c_empty_box=\box41
 \l_tmpa_box=\box42
 \l_tmpb_box=\box43
 \g_tmpa_box=\box44
 \g_tmpb_box=\box45
-L3 Module: l3coffins 2014/05/04 v4728 L3 Coffin code layer
+L3 Module: l3coffins 2016/05/17 v6508 L3 Coffin code layer
 \l__coffin_internal_box=\box46
 \l__coffin_internal_dim=\dimen150
 \l__coffin_offset_x_dim=\dimen151
@@ -449,11 +443,9 @@ L3 Module: l3coffins 2014/05/04 v4728 L3 Coffin code layer
 \l__coffin_display_offset_dim=\dimen157
 \l__coffin_display_x_dim=\dimen158
 \l__coffin_display_y_dim=\dimen159
-L3 Module: l3color 2014/04/30 v4712 L3 Experimental color support
-L3 Module: l3luatex 2014/04/30 v4712 L3 Experimental LuaTeX-specific functions
-\g__cctab_allocate_int=\count124
-\g__cctab_stack_int=\count125
-L3 Module: l3candidates 2014/05/04 v4734 L3 Experimental additions to l3kernel
+L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
+L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
+L3 Module: l3candidates 2016/05/13 v6484 L3 Experimental additions to l3kernel
 \l__box_top_dim=\dimen160
 \l__box_bottom_dim=\dimen161
 \l__box_left_dim=\dimen162
@@ -470,49 +462,59 @@ L3 Module: l3candidates 2014/05/04 v4734 L3 Experimental additions to l3kernel
 \l__coffin_top_corner_dim=\dimen172
 \l__coffin_scaled_total_height_dim=\dimen173
 \l__coffin_scaled_width_dim=\dimen174
+L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2016/03/26 v6465 L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count124
+\l__driver_tmp_box=\box56
 ))
-Package: xparse 2014/05/05 v4740 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count126
-\l__xparse_m_args_int=\count127
-\l__xparse_mandatory_args_int=\count128
-\l__xparse_processor_int=\count129
-\l__xparse_v_nesting_int=\count130
+Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count125
+\l__xparse_m_args_int=\count126
+\l__xparse_mandatory_args_int=\count127
+\l__xparse_processor_int=\count128
+\l__xparse_v_nesting_int=\count129
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
-Package: zref-abspage 2012/04/04 v2.24 Module abspage for zref (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+Package: zref-abspage 2016/05/16 v2.25 Module abspage for zref (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/zref-base.sty
-Package: zref-base 2012/04/04 v2.24 Module base for zref (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/zref-base.sty
+Package: zref-base 2016/05/16 v2.25 Module base for zref (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
 Package zref Info: New property: page on input line 761.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/atbegshi.sty
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
 )
-\c@abspage=\count131
+\c@abspage=\count130
 Package zref Info: New property: abspage on input line 62.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/needspace/needspace.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip49
-\c@mdf@globalstyle@cnt=\count132
+\c@mdf@globalstyle@cnt=\count131
 \mdf@skipabove@length=\skip50
 \mdf@skipbelow@length=\skip51
 \mdf@leftmargin@length=\skip52
@@ -553,29 +555,29 @@ Package: needspace 2010/09/12 v1.3d reserve vertical space
 \mdf@subsubtitleinneraboveskip@length=\skip87
 \mdf@subsubtitleinnerbelowskip@length=\skip88
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
-) (/usr/local/texlive/2014/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen175
 \pgffor@skip=\dimen176
 \pgffor@stack=\toks28
 \pgffor@toks=\toks29
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
-Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
-File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
-\pgf@plot@mark@count=\count133
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count132
 \pgfplotmarksize=\dimen177
 )
 \tikz@lastx=\dimen178
@@ -584,36 +586,36 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \tikz@lastysaved=\dimen181
 \tikzleveldistance=\dimen182
 \tikzsiblingdistance=\dimen183
-\tikz@figbox=\box56
-\tikz@figbox@bg=\box57
-\tikz@tempbox=\box58
-\tikz@tempbox@bg=\box59
-\tikztreelevel=\count134
-\tikznumberofchildren=\count135
-\tikznumberofcurrentchild=\count136
-\tikz@fig@count=\count137
+\tikz@figbox=\box57
+\tikz@figbox@bg=\box58
+\tikz@tempbox=\box59
+\tikz@tempbox@bg=\box60
+\tikztreelevel=\count133
+\tikznumberofchildren=\count134
+\tikznumberofcurrentchild=\count135
+\tikz@fig@count=\count136
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count138
-\pgfmatrixcurrentcolumn=\count139
-\pgf@matrix@numberofcolumns=\count140
+\pgfmatrixcurrentrow=\count137
+\pgfmatrixcurrentcolumn=\count138
+\pgf@matrix@numberofcolumns=\count139
 )
-\tikz@expandcount=\count141
+\tikz@expandcount=\count140
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/mdframed/md-frame-1.mdf
+(/usr/local/texlive/2016/texmf-dist/tex/latex/mdframed/md-frame-1.mdf
 File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 )
-\mdf@frametitlebox=\box60
-\mdf@footnotebox=\box61
-\mdf@splitbox@one=\box62
-\mdf@splitbox@two=\box63
-\mdf@splitbox@save=\box64
+\mdf@frametitlebox=\box61
+\mdf@footnotebox=\box62
+\mdf@splitbox@one=\box63
+\mdf@splitbox@two=\box64
+\mdf@splitbox@save=\box65
 \mdfsplitboxwidth=\skip89
 \mdfsplitboxtotalwidth=\skip90
 \mdfsplitboxheight=\skip91
@@ -641,7 +643,7 @@ File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 \mdf@horizontalspaceofbox=\skip113
 \mdfsubtitleheight=\skip114
 \mdfsubsubtitleheight=\skip115
-\c@mdfcountframes=\count142
+\c@mdfcountframes=\count141
 
 ****** mdframed patching \endmdf@trivlist
 
@@ -650,69 +652,67 @@ File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \newmdtheoremenv with arg. spec. 'O{} m o m o ' on
-. line 601.
+. Defining command \newmdtheoremenv with sig. 'O{} m o m o ' on line 601.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \mdtheorem with arg. spec. ' O{} m o m o ' on line
-. 701.
+. Defining command \mdtheorem with sig. ' O{} m o m o ' on line 701.
 .................................................
-\mdf@envdepth=\count143
-\c@mdf@env@i=\count144
-\c@mdf@env@ii=\count145
-\c@mdf@zref@counter=\count146
+\mdf@envdepth=\count142
+\c@mdf@env@i=\count143
+\c@mdf@env@ii=\count144
+\c@mdf@zref@counter=\count145
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/comment/comment.sty
-\CommentStream=\write5
+(/usr/local/texlive/2016/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write6
 
 Excluding comment 'comment')
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2013/01/14 v2.14 AMS math features
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip116
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks30
 \ex@=\dimen184
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen185
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count147
-LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count148
-\leftroot@=\count149
-LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count150
-\DOTSCASE@=\count151
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box65
-\strutbox@=\box66
+\inf@bad=\count146
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count147
+\leftroot@=\count148
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count149
+\DOTSCASE@=\count150
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box66
+\strutbox@=\box67
 \big@size=\dimen186
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count152
-\c@MaxMatrixCols=\count153
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count151
+\c@MaxMatrixCols=\count152
 \dotsspace@=\muskip16
-\c@parentequation=\count154
-\dspbrk@lvl=\count155
+\c@parentequation=\count153
+\dspbrk@lvl=\count154
 \tag@help=\toks31
-\row@=\count156
-\column@=\count157
-\maxfields@=\count158
+\row@=\count155
+\column@=\count156
+\maxfields@=\count157
 \andhelp@=\toks32
 \eqnshift@=\dimen187
 \alignsep@=\dimen188
@@ -724,11 +724,11 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip117
 \multlinetaggap=\skip118
 \mathdisplay@stack=\toks34
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2004/08/06 v2.20
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
 \thm@style=\toks35
 \thm@bodyfont=\toks36
 \thm@headfont=\toks37
@@ -739,215 +739,217 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip121
 \dth@everypar=\toks40
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/bezos/accents.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/bezos/accents.sty
 Package: accents 2006/05/12 v1.3 Math Accent Tools
 \cc@skew=\dimen193
 \cc@wd=\dimen194
-\cc@code=\count159
-\cc@group=\count160
-\cc@skewchar=\count161
+\cc@code=\count158
+\cc@group=\count159
+\cc@skewchar=\count160
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/xspace.sty
-Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/05/05 v6.83n Hypertext links for LaTeX
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package hobsub Info: Skipping package `ifluatex' (already loaded).
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package hobsub Info: Skipping package `etexcmds' (already loaded).
 Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
 Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
 Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
-Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
-Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
 Package hobsub Info: Skipping package `atbegshi' (already loaded).
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \@linkdim=\dimen195
-\Hy@linkcounter=\count162
-\Hy@pagecounter=\count163
+\Hy@linkcounter=\count161
+\Hy@pagecounter=\count162
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count164
+\Hy@SavedSpaceFactor=\count163
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
-Package hyperref Info: Hyper figures OFF on input line 4443.
-Package hyperref Info: Link nesting OFF on input line 4448.
-Package hyperref Info: Hyper index ON on input line 4451.
-Package hyperref Info: Plain pages OFF on input line 4458.
-Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4322.
+Package hyperref Info: Hyper figures OFF on input line 4446.
+Package hyperref Info: Link nesting OFF on input line 4451.
+Package hyperref Info: Hyper index ON on input line 4454.
+Package hyperref Info: Plain pages OFF on input line 4461.
+Package hyperref Info: Backreferencing OFF on input line 4466.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count165
+Package hyperref Info: Bookmarks ON on input line 4691.
+\c@Hy@tempcnt=\count164
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5041.
+LaTeX Info: Redefining \url on input line 5044.
 \XeTeXLinkMargin=\dimen196
-\Fld@menulength=\count166
+\Fld@menulength=\count165
 \Field@Width=\dimen197
 \Fld@charsize=\dimen198
-Package hyperref Info: Hyper figures OFF on input line 6295.
-Package hyperref Info: Link nesting OFF on input line 6300.
-Package hyperref Info: Hyper index ON on input line 6303.
-Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring ON on input line 6313.
-Package hyperref Info: Link coloring with OCG OFF on input line 6320.
-Package hyperref Info: PDF/A mode OFF on input line 6325.
-LaTeX Info: Redefining \ref on input line 6365.
-LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count167
-\c@Item=\count168
-\c@Hfootnote=\count169
+Package hyperref Info: Hyper figures OFF on input line 6298.
+Package hyperref Info: Link nesting OFF on input line 6303.
+Package hyperref Info: Hyper index ON on input line 6306.
+Package hyperref Info: backreferencing OFF on input line 6313.
+Package hyperref Info: Link coloring ON on input line 6316.
+Package hyperref Info: Link coloring with OCG OFF on input line 6323.
+Package hyperref Info: PDF/A mode OFF on input line 6328.
+LaTeX Info: Redefining \ref on input line 6368.
+LaTeX Info: Redefining \pageref on input line 6372.
+\Hy@abspage=\count166
+\c@Item=\count167
+\c@Hfootnote=\count168
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\HyAnn@Count=\count170
-\Fld@listcount=\count171
-\c@bookmark@seq@number=\count172
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
+\HyAnn@Count=\count169
+\Fld@listcount=\count170
+\c@bookmark@seq@number=\count171
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip122
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/glossaries/base/glossaries.sty
-Package: glossaries 2014/04/04 v4.07 (NLCT)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2016/04/30 v4.23 (NLCT)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/05/09 v2.6d package option processing (HA)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2016/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2016/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks41
 \XKV@tempa@toks=\toks42
-\XKV@depth=\count173
-File: xkeyval.tex 2014/05/09 v2.6d key=value parser (HA)
+)
+\XKV@depth=\count172
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/glossaries/base/mfirstuc.sty
-Package: mfirstuc 2013/11/04 v1.08 (NLCT)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+Package: mfirstuc 2015/12/17 v2.02 (NLCT)
 \@glsmfirst=\toks43
 \@glsmrest=\toks44
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/textcase/textcase.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/xfor/xfor.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/xfor/xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/datatool/datatool-base.sty
-Package: datatool-base 2013/09/06 v2.18 (NLCT)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/datatool/datatool-base.sty
+Package: datatool-base 2016/01/18 v2.25 (NLCT)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/substr/substr.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count174
+\c@su@anzahl=\count173
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/datatool/datatool-fp.sty
-Package: datatool-fp 2013/08/29 v2.17 (NLCT)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/datatool/datatool-fp.sty
+Package: datatool-fp 2016/01/18 v2.25 (NLCT)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp.sty
 Package: fp 1995/04/02
 
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/defpattern.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count175
+\actioncount=\count174
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-basic.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count176
-\FP@xia=\count177
-\FP@xib=\count178
-\FP@xfa=\count179
-\FP@xfb=\count180
-\FP@rega=\count181
-\FP@regb=\count182
-\FP@regs=\count183
-\FP@times=\count184
+\FP@xs=\count175
+\FP@xia=\count176
+\FP@xib=\count177
+\FP@xfa=\count178
+\FP@xfb=\count179
+\FP@rega=\count180
+\FP@regb=\count181
+\FP@regs=\count182
+\FP@times=\count183
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-addons.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-snap.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-snap.sty
 Package: fp-snap 1995/04/05
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-exp.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-exp.sty
 Package: fp-exp 1995/04/03
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-trigo.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-trigo.sty
 Package: fp-trigo 1995/04/14
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-pas.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-pas.sty
 Package: fp-pas 1994/08/29
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-random.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count185
+\FPseed=\count184
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-eqn.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-upn.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-upn.sty
 Package: fp-upn 1996/10/21
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-eval.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks45
-\@dtl@tmpcount=\count186
+\@dtl@tmpcount=\count185
 \dtl@tmplength=\skip123
-\dtl@sortresult=\count187
-\@dtl@numgrpsepcount=\count188
-\@dtl@datatype=\count189
-\dtl@codeA=\count190
-\dtl@codeB=\count191
-\@dtl@foreach@level=\count192
+\dtl@sortresult=\count186
+\@dtl@numgrpsepcount=\count187
+\@dtl@datatype=\count188
+\dtl@codeA=\count189
+\dtl@codeB=\count190
+\@dtl@foreach@level=\count191
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/glossaries/base/glossaries-compat
+(/usr/local/texlive/2016/texmf-dist/tex/latex/glossaries/base/glossaries-compat
 ible-307.sty
-Package: glossaries-compatible-307 2013/11/14 v4.0 (NLCT)
+Package: glossaries-compatible-307 2016/04/30 v4.23 (NLCT)
 )
-\gls@level=\count193
+\gls@level=\count192
 \@gls@tmpb=\toks46
 \gls@tmplen=\skip124
 \glskeylisttok=\toks47
@@ -955,73 +957,72 @@ Package: glossaries-compatible-307 2013/11/14 v4.0 (NLCT)
 \glsshorttok=\toks49
 \glslongtok=\toks50
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/glossaries/styles/glossary-hypern
+(/usr/local/texlive/2016/texmf-dist/tex/latex/glossaries/styles/glossary-hypern
 av.sty
-Package: glossary-hypernav 2013/11/14 v4.0 (NLCT)
+Package: glossary-hypernav 2016/04/30 v4.23 (NLCT)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/glossaries/styles/glossary-list.s
+(/usr/local/texlive/2016/texmf-dist/tex/latex/glossaries/styles/glossary-list.s
 ty
-Package: glossary-list 2013/11/14 v4.0 (NLCT)
+Package: glossary-list 2016/04/30 v4.23 (NLCT)
 \glslistdottedwidth=\skip125
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/glossaries/styles/glossary-long.s
+(/usr/local/texlive/2016/texmf-dist/tex/latex/glossaries/styles/glossary-long.s
 ty
-Package: glossary-long 2013/11/14 v4.0 (NLCT)
- (/usr/local/texlive/2014/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+Package: glossary-long 2016/04/30 v4.23 (NLCT)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip126
 \LTright=\skip127
 \LTpre=\skip128
 \LTpost=\skip129
-\LTchunksize=\count194
+\LTchunksize=\count193
 \LTcapwidth=\dimen199
-\LT@head=\box67
-\LT@firsthead=\box68
-\LT@foot=\box69
-\LT@lastfoot=\box70
-\LT@cols=\count195
-\LT@rows=\count196
-\c@LT@tables=\count197
-\c@LT@chunks=\count198
+\LT@head=\box68
+\LT@firsthead=\box69
+\LT@foot=\box70
+\LT@lastfoot=\box71
+\LT@cols=\count194
+\LT@rows=\count195
+\c@LT@tables=\count196
+\c@LT@chunks=\count197
 \LT@p@ftn=\toks51
 )
 \glsdescwidth=\skip130
 \glspagelistwidth=\skip131
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/glossaries/styles/glossary-super.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/glossaries/styles/glossary-super.
 sty
-Package: glossary-super 2013/11/14 v4.0 (NLCT)
- (/usr/local/texlive/2014/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: glossary-super 2016/04/30 v4.23 (NLCT)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
-\c@tracingst=\count199
-\ST@wd=\dimen200
+\c@tracingst=\count198
+\ST@wd=\dimen256
 \ST@rightskip=\skip132
 \ST@leftskip=\skip133
 \ST@parfillskip=\skip134
-\ST@pageleft=\dimen201
-Normal \dimen register pool exhausted, switching to extended pool.
-\ST@headht=\dimen256
-\ST@tailht=\dimen257
-\ST@pagesofar=\dimen258
-\ST@pboxht=\dimen259
-\ST@lineht=\dimen260
-\ST@stretchht=\dimen261
-\ST@prevht=\dimen262
-\ST@toadd=\dimen263
-\ST@dimen=\dimen264
-\ST@pbox=\box71
+\ST@pageleft=\dimen257
+\ST@headht=\dimen258
+\ST@tailht=\dimen259
+\ST@pagesofar=\dimen260
+\ST@pboxht=\dimen261
+\ST@lineht=\dimen262
+\ST@stretchht=\dimen263
+\ST@prevht=\dimen264
+\ST@toadd=\dimen265
+\ST@dimen=\dimen266
+\ST@pbox=\box72
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/glossaries/styles/glossary-tree.s
+(/usr/local/texlive/2016/texmf-dist/tex/latex/glossaries/styles/glossary-tree.s
 ty
-Package: glossary-tree 2014/03/06 v4.04 (NLCT)
+Package: glossary-tree 2016/04/30 v4.23 (NLCT)
 \glstreeindent=\skip135
-)) (/usr/local/texlive/2014/texmf-dist/tex/latex/showlabels/showlabels.sty
-Package: showlabels 2013/12/06 v1.6.6
+)) (/usr/local/texlive/2016/texmf-dist/tex/latex/showlabels/showlabels.sty
+Package: showlabels 2015/12/08 v1.7
 
-Package: `showlabels' v1.6.6 <2013/12/06>
+Package: `showlabels' v1.7 <2015/12/08>
 with amsmath equation tags
-\SL@labelposition=\count200
-) (/usr/local/texlive/2014/texmf-dist/tex/latex/lm/lmodern.sty
+\SL@labelposition=\count199
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -1056,53 +1057,52 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/datetime/datetime.sty
-Package: datetime 2013/09/10 v2.59 Date Time Package
+(/usr/local/texlive/2016/texmf-dist/tex/latex/datetime/datetime.sty
+Package: datetime 2015/03/20 v2.60 Date Time Package
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fmtcount/fmtcount.sty
-Package: fmtcount 2013/08/17 v2.03
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+Package: fmtcount 2015/05/05 v3.01
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fmtcount/fcprefix.sty
 Package: fcprefix 2012/09/28
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fmtcount/fcnumparser.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fmtcount/fcnumparser.sty
 Package: fcnumparser 2012/09/28
-\fc@digit@counter=\count201
+\fc@digit@counter=\count266
 ))
-Normal \count register pool exhausted, switching to extended pool.
-\c@padzeroesN=\count277
-\fc@tmpcatcode=\count278
-\@DT@modctr=\count279
-\@ordinalctr=\count280
-\@orgargctr=\count281
-\@strctr=\count282
-\@tmpstrctr=\count283
-\@DT@loopN=\count284
-\@DT@X=\count285
+\c@padzeroesN=\count267
+\fc@tmpcatcode=\count268
+\@DT@modctr=\count269
+\@ordinalctr=\count270
+\@orgargctr=\count271
+\@strctr=\count272
+\@tmpstrctr=\count273
+\@DT@loopN=\count274
+\@DT@X=\count275
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/fmtcount/fc-english.def
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2013/08/17
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/datetime/datetime-defaults.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/datetime/datetime-defaults.sty
 Package: datetime-defaults 2013/09/10
 )
-\@day=\count286
-\@month=\count287
-\@year=\count288
-\c@HOUR=\count289
-\c@HOURXII=\count290
-\c@MINUTE=\count291
-\c@TOHOUR=\count292
-\c@TOMINUTE=\count293
-\c@SECOND=\count294
-\currenthour=\count295
-\currentminute=\count296
-\currentsecond=\count297
+\@day=\count276
+\@month=\count277
+\@year=\count278
+\c@HOUR=\count279
+\c@HOURXII=\count280
+\c@MINUTE=\count281
+\c@TOHOUR=\count282
+\c@TOMINUTE=\count283
+\c@SECOND=\count284
+\currenthour=\count285
+\currentminute=\count286
+\currentsecond=\count287
 Package datetime Info: No datetime.cfg file found, using default settings on in
 put line 308.
-\@dtctr=\count298
-\dayofyear=\count299
-\dayofweek=\count300
+\@dtctr=\count288
+\dayofyear=\count289
+\dayofweek=\count290
 LaTeX Info: Redefining \today on input line 736.
 \dt@a=\toks52
 \dt@b=\toks53
@@ -1126,72 +1126,72 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 2.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/lm/ot1lmr.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count301
-\scratchdimen=\dimen265
-\scratchbox=\box72
-\nofMPsegments=\count302
-\nofMParguments=\count303
+\scratchcounter=\count291
+\scratchdimen=\dimen267
+\scratchbox=\box73
+\nofMPsegments=\count292
+\nofMParguments=\count293
 \everyMPshowfont=\toks54
-\MPscratchCnt=\count304
-\MPscratchDim=\dimen266
-\MPnumerator=\count305
-\makeMPintoPDFobject=\count306
+\MPscratchCnt=\count294
+\MPscratchDim=\dimen268
+\MPnumerator=\count295
+\makeMPintoPDFobject=\count296
 \everyMPtoPDFconversion=\toks55
-) (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box73
+\AtBeginShipoutBox=\box74
 Package hyperref Info: Link coloring ON on input line 2.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count307
+\c@section@level=\count297
 )
 LaTeX Info: Redefining \ref on input line 2.
 LaTeX Info: Redefining \pageref on input line 2.
 LaTeX Info: Redefining \nameref on input line 2.
 
 (./main.out) (./main.out)
-\@outlinefile=\write6
-\openout6 = `main.out'.
+\@outlinefile=\write7
+\openout7 = `main.out'.
 
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 15.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/lm/omllmm.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 15.
 
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/lm/omslmsy.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 15.
 
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/lm/omxlmex.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1201,7 +1201,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 15.
 
-<./lml_LOGO_whiteBG-eps-converted-to.pdf, id=260, 142.5325pt x 48.18pt>
+<./lml_LOGO_whiteBG-eps-converted-to.pdf, id=55, 142.5325pt x 48.18pt>
 File: ./lml_LOGO_whiteBG-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./lml_LOGO_whiteBG-eps-converted-to.pdf>
@@ -1210,7 +1210,7 @@ line 15.
 (pdftex.def)             Requested size: 103.50105pt x 34.98582pt.
  [1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./lml_L
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./lml_L
 OGO_whiteBG-eps-converted-to.pdf>] (./main.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 2.
@@ -1218,15 +1218,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 2.
- [2])
-\tf@toc=\write7
-\openout7 = `main.toc'.
+)
+\tf@toc=\write8
+\openout8 = `main.toc'.
 
- [3] (./chapter_1/chapter_1.tex [4]
+ [2] (./chapter_1/chapter_1.tex [3]
 LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 19.
 
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/lm/ot1lmtt.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmtt on input line 19.
@@ -1238,7 +1238,7 @@ LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 19.
 
-<./chapter_1/figs/x_of_t_lin_1.pdf, id=371, 381.4846pt x 266.68005pt>
+<./chapter_1/figs/x_of_t_lin_1.pdf, id=110, 381.4846pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_lin_1.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_lin_1.pdf>
@@ -1249,14 +1249,14 @@ Package pdftex.def Info: ./chapter_1/figs/x_of_t_lin_1.pdf used on input line 9
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5]
+[4]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 121.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 129.
- <./chapter_1/figs/x_of_t_lin.pdf, id=412, 397.45052pt x 266.68005pt>
+ <./chapter_1/figs/x_of_t_lin.pdf, id=151, 397.45052pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_lin.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_lin.pdf>
@@ -1264,7 +1264,7 @@ Package pdftex.def Info: ./chapter_1/figs/x_of_t_lin.pdf used on input line 133
 .
 (pdftex.def)             Requested size: 276.00105pt x 185.19357pt.
 
-<./chapter_1/figs/x_of_t_log.pdf, id=413, 393.16888pt x 266.68005pt>
+<./chapter_1/figs/x_of_t_log.pdf, id=152, 393.16888pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_log.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_log.pdf>
@@ -1280,8 +1280,8 @@ le sizes $[] =
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <./chapter_1/figs/x_of_t_lin_1.pdf>]
-<./chapter_1/figs/x_of_t_lin_20_year.pdf, id=458, 381.4846pt x 266.68005pt>
+[5 <./chapter_1/figs/x_of_t_lin_1.pdf>]
+<./chapter_1/figs/x_of_t_lin_20_year.pdf, id=198, 381.4846pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_lin_20_year.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_lin_20_year.pdf>
@@ -1289,7 +1289,7 @@ Package pdftex.def Info: ./chapter_1/figs/x_of_t_lin_20_year.pdf used on input
 line 167.
 (pdftex.def)             Requested size: 258.75pt x 180.88835pt.
 
-<./chapter_1/figs/x_of_t_log_20_year.pdf, id=459, 403.20639pt x 266.68005pt>
+<./chapter_1/figs/x_of_t_log_20_year.pdf, id=199, 403.20639pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_log_20_year.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_log_20_year.pdf>
@@ -1300,11 +1300,11 @@ line 169.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <./chapter_1/figs/x_of_t_lin.pdf> <./chapter_1/figs/x_of_t_log.pdf
+[6 <./chapter_1/figs/x_of_t_lin.pdf> <./chapter_1/figs/x_of_t_log.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_1/figs/x_of_t_log.
 pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [8 <./chapter_1/figs/x_of_t_lin_20_year.pdf> <./chapter_1/figs/x_of_t_log_20
+>] [7 <./chapter_1/figs/x_of_t_lin_20_year.pdf> <./chapter_1/figs/x_of_t_log_20
 _year.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_1/figs/x_of_t_log_
@@ -1314,9 +1314,13 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_1/figs/x_of_t_log_
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 213.
+
+
+LaTeX Warning: Citation `vanKampen1992' on page 8 undefined on input line 215.
+
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 220.
 
- (/usr/local/texlive/2014/texmf-dist/tex/latex/lm/omslmr.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
@@ -1330,22 +1334,26 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 249.
- [9]
+ [8]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 257.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 271.
- [10]
+ [9]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 363.
+
+
+LaTeX Warning: Citation `vanKampen1992' on page 10 undefined on input line 364.
+
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 377.
-
-[11] <./chapter_1/figs/x_of_t_lin_exp.pdf, id=763, 397.45052pt x 266.68005pt>
+[10] <./chapter_1/figs/x_of_t_lin_exp.pdf, id=500, 397.45052pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_lin_exp.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_lin_exp.pdf>
@@ -1353,7 +1361,7 @@ Package pdftex.def Info: ./chapter_1/figs/x_of_t_lin_exp.pdf used on input line
  394.
 (pdftex.def)             Requested size: 276.00105pt x 185.19357pt.
 
-<./chapter_1/figs/x_of_t_log_exp.pdf, id=764, 393.16888pt x 266.68005pt>
+<./chapter_1/figs/x_of_t_log_exp.pdf, id=501, 393.16888pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_log_exp.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_log_exp.pdf>
@@ -1363,16 +1371,19 @@ Package pdftex.def Info: ./chapter_1/figs/x_of_t_log_exp.pdf used on input line
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 416.
+
+
+LaTeX Warning: Citation `Devlin2008' on page 11 undefined on input line 438.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 458.
- [12 <./chapter_1/figs/x_of_t_lin_exp.pdf> <./chapter_1/figs/x_of_t_log_exp.pdf
-
+[11 <./chapter_1/figs/x_of_t_lin_exp.pdf> <./chapter_1/figs/x_of_t_log_exp.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_1/figs/x_of_t_log_
 exp.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
 e
->] [13] <./chapter_1/figs/x_of_t_N1M.pdf, id=982, 393.16888pt x 266.68005pt>
+>] [12] <./chapter_1/figs/x_of_t_N1M.pdf, id=715, 393.16888pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_N1M.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_N1M.pdf>
@@ -1380,20 +1391,28 @@ Package pdftex.def Info: ./chapter_1/figs/x_of_t_N1M.pdf used on input line 507
 .
 (pdftex.def)             Requested size: 265.65147pt x 180.18845pt.
 
-<./chapter_1/figs/x_of_t_log_10000.pdf, id=983, 408.22514pt x 266.68005pt>
+<./chapter_1/figs/x_of_t_log_10000.pdf, id=716, 408.22514pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_log_10000.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_log_10000.pdf>
 Package pdftex.def Info: ./chapter_1/figs/x_of_t_log_10000.pdf used on input li
 ne 508.
 (pdftex.def)             Requested size: 276.00105pt x 180.30238pt.
+
+
+LaTeX Warning: Citation `PetersKlein2013' on page 13 undefined on input line 52
+9.
+
+
+LaTeX Warning: Citation `Derrida1980' on page 13 undefined on input line 529.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 532.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 570.
- [14 <./chapter_1/figs/x_of_t_N1M.pdf> <./chapter_1/figs/x_of_t_log_10000.pdf
+[13 <./chapter_1/figs/x_of_t_N1M.pdf> <./chapter_1/figs/x_of_t_log_10000.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_1/figs/x_of_t_log_
 10000.pdf): PDF inclusion: multiple pdfs with page group included in a single p
@@ -1402,20 +1421,28 @@ age
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 579.
+
+
+LaTeX Warning: Citation `Whitworth1870' on page 14 undefined on input line 587.
+
+
+
+LaTeX Warning: Citation `Ito1944' on page 14 undefined on input line 601.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 654.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
 (mdframed)              on input line 654.
- [15] <./chapter_1/figs/all_saints.pdf, id=1134, 845.1575pt x 597.23125pt>
+[14] <./chapter_1/figs/all_saints.pdf, id=862, 845.1575pt x 597.23125pt>
 File: ./chapter_1/figs/all_saints.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/all_saints.pdf>
 Package pdftex.def Info: ./chapter_1/figs/all_saints.pdf used on input line 657
 .
 (pdftex.def)             Requested size: 396.7479pt x 280.37065pt.
- [16 <./chapter_1/figs/all_saints.pdf>]
+ [15 <./chapter_1/figs/all_saints.pdf>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 698.
@@ -1428,21 +1455,43 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 719.
+
+
+LaTeX Warning: Citation `PetersKlein2013' on page 16 undefined on input line 72
+4.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 727.
+
+LaTeX Warning: Citation `Barenblatt2003' on page 16 undefined on input line 737
+.
+
+
+LaTeX Warning: Citation `Taylor1950b' on page 16 undefined on input line 742.
+
+
+LaTeX Warning: Citation `Deakin2011' on page 16 undefined on input line 742.
+
+
+LaTeX Warning: Citation `vonNeumannMorgenstern1944' on page 16 undefined on inp
+ut line 772.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 774.
-
-[17] [18]
+[16] [17]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 801.
+
+
+LaTeX Warning: Citation `Einstein1905' on page 18 undefined on input line 818.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 839.
- [19]
+[18]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 844.
@@ -1450,560 +1499,198 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 853.
 
-<./chapter_1/figs/ergodic_grid.pdf, id=1320, 382.22174pt x 272.81235pt>
+
+LaTeX Warning: Reference `section:' on page 19 undefined on input line 854.
+
+<./chapter_1/figs/ergodic_grid.pdf, id=1043, 382.22174pt x 272.81235pt>
 File: ./chapter_1/figs/ergodic_grid.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/ergodic_grid.pdf>
 Package pdftex.def Info: ./chapter_1/figs/ergodic_grid.pdf used on input line 8
-60.
-(pdftex.def)             Requested size: 345.0pt x 246.24481pt.
- [20 <./chapter_1/figs/ergodic_grid.pdf>]
+61.
+(pdftex.def)             Requested size: 413.99895pt x 295.49461pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19]
+
+LaTeX Warning: Citation `Bernoulli1738' on page 20 undefined on input line 930.
+
+
+[20 <./chapter_1/figs/ergodic_grid.pdf>]
 
 LaTeX Warning: Reference `section:decision' on page 21 undefined on input line 
-959.
+951.
 
-[21] [22]
+[21]
 
-LaTeX Warning: Reference `section:decision' on page 23 undefined on input line 
-1029.
+LaTeX Warning: Reference `section:decision' on page 22 undefined on input line 
+1021.
 
-[23] [24]
+[22]
+
+LaTeX Warning: Citation `Feynman1963' on page 23 undefined on input line 1058.
+
+[23]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1120.
+(mdframed)              on input line 1112.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1123.
+(mdframed)              on input line 1115.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1127.
+(mdframed)              on input line 1119.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1130.
- [25]
-Overfull \hbox (11.2216pt too wide) in paragraph at lines 1182--1192
+(mdframed)              on input line 1122.
+
+
+LaTeX Warning: Citation `Harrison2013' on page 24 undefined on input line 1124.
+
+
+[24]
+Overfull \hbox (11.2216pt too wide) in paragraph at lines 1174--1184
 []\OT1/lmr/m/n/10 Clearly, [][][]BM[][], whose in-cre-ments are in-de-pen-dent 
 in-stances of a time-independent
  []
 
-<./chapter_1/figs/BM_time_ave.pdf, id=1855, 387.86783pt x 266.68005pt>
+
+LaTeX Warning: Citation `Burkhardt2007' on page 25 undefined on input line 1195
+.
+
+<./chapter_1/figs/BM_time_ave.pdf, id=1587, 387.86783pt x 266.68005pt>
 File: ./chapter_1/figs/BM_time_ave.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/BM_time_ave.pdf>
-Package pdftex.def Info: ./chapter_1/figs/BM_time_ave.pdf used on input line 12
-07.
+Package pdftex.def Info: ./chapter_1/figs/BM_time_ave.pdf used on input line 11
+99.
 (pdftex.def)             Requested size: 276.00105pt x 189.7755pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[26]
+[25]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1220.
+(mdframed)              on input line 1212.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1223.
+(mdframed)              on input line 1215.
 
 
-LaTeX Warning: Reference `section:populations' on page 27 undefined on input li
-ne 1236.
+LaTeX Warning: Reference `section:populations' on page 26 undefined on input li
+ne 1228.
 
-[27 <./chapter_1/figs/BM_time_ave.pdf>]
-<./chapter_1/figs/GBM_trajectory.pdf, id=1984, 381.4846pt x 266.68005pt>
+[26 <./chapter_1/figs/BM_time_ave.pdf>]
+<./chapter_1/figs/GBM_trajectory.pdf, id=1719, 381.4846pt x 266.68005pt>
 File: ./chapter_1/figs/GBM_trajectory.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/GBM_trajectory.pdf>
 Package pdftex.def Info: ./chapter_1/figs/GBM_trajectory.pdf used on input line
- 1262.
+ 1254.
 (pdftex.def)             Requested size: 345.0pt x 241.18175pt.
- [28 <./chapter_1/figs/GBM_trajectory.pdf>] [29] [30]) (./chapter_2/chapter_2.t
-ex [31] [32]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 56.
 
-Overfull \hbox (5.42882pt too wide) in paragraph at lines 60--66
-\OT1/lmr/m/n/10 mon-e-tary val-ues, $\OMS/lmsy/m/n/10 f[][]\OML/lmm/m/it/10 ; [
-] ; [][]\OMS/lmsy/m/n/10 g$\OT1/lmr/m/n/10 , as-so-ci-ated with prob-a-bil-i-ti
-es, $\OMS/lmsy/m/n/10 f[][]\OML/lmm/m/it/10 ; [] ; [][]\OMS/lmsy/m/n/10 g$\OT1/
-lmr/m/n/10 ,
- []
 
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 66.
-[33]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 72.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 80.
-Package mdframed Info: Not enough space on this page on input line 80.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 82.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 92.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 94.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 105.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 107.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 113.
- [34]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 167.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 197.
- [35]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 200.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 214.
- [36]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 247.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 262.
- [37] [38]
-<./chapter_2/figs/two_dists.pdf, id=2738, 395.53711pt x 272.02817pt>
-File: ./chapter_2/figs/two_dists.pdf Graphic file (type pdf)
+LaTeX Warning: Citation `Redner1990' on page 27 undefined on input line 1267.
 
-<use ./chapter_2/figs/two_dists.pdf>
-Package pdftex.def Info: ./chapter_2/figs/two_dists.pdf used on input line 391.
+[27 <./chapter_1/figs/GBM_trajectory.pdf>] [28]
 
-(pdftex.def)             Requested size: 345.0pt x 237.27275pt.
- [39] [40 <./chapter_2/figs/two_dists.pdf>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 446.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 458.
-[41]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 489.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 514.
- [42]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 533.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 592.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 592.
- [43] [44]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 641.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 651.
- [45] [46] [47] [48] [49] [50] [51]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 960.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 964.
- [52]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 996.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1001.
- [53]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1048.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1085.
- [54]
-<./chapter_2/figs/trajectories.pdf, id=3750, 417.5412pt x 266.97804pt>
-File: ./chapter_2/figs/trajectories.pdf Graphic file (type pdf)
+LaTeX Warning: Citation `Hull2006' on page 29 undefined on input line 1358.
 
-<use ./chapter_2/figs/trajectories.pdf>
-Package pdftex.def Info: ./chapter_2/figs/trajectories.pdf used on input line 1
-164.
-(pdftex.def)             Requested size: 345.0pt x 220.59772pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1168.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1172.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1220.
- [55]
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 1220.
- [56 <./chapter_2/figs/trajectories.pdf>] <./chapter_2/figs/u_of_x.pdf, id=3919
-, 391.3496pt x 278.34865pt>
-File: ./chapter_2/figs/u_of_x.pdf Graphic file (type pdf)
 
-<use ./chapter_2/figs/u_of_x.pdf>
-Package pdftex.def Info: ./chapter_2/figs/u_of_x.pdf used on input line 1225.
-(pdftex.def)             Requested size: 162.15042pt x 115.3299pt.
+LaTeX Warning: Citation `Harrison2013' on page 29 undefined on input line 1360.
 
-<./chapter_2/figs/x_of_u.pdf, id=3920, 404.8061pt x 278.34865pt>
-File: ./chapter_2/figs/x_of_u.pdf Graphic file (type pdf)
 
-<use ./chapter_2/figs/x_of_u.pdf>
-Package pdftex.def Info: ./chapter_2/figs/x_of_u.pdf used on input line 1226.
-(pdftex.def)             Requested size: 162.15042pt x 111.49463pt.
- [57 <./chapter_2/figs/u_of_x.pdf> <./chapter_2/figs/x_of_u.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_2/figs/x_of_u.pdf)
-: PDF inclusion: multiple pdfs with page group included in a single page
->]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1250.
+LaTeX Warning: Reference `section:Taxation' on page 29 undefined on input line 
+1363.
 
-Overfull \hbox (7.34679pt too wide) in paragraph at lines 1282--1284
-\OT1/lmr/m/n/10 This di-verges for any fi-nite ticket price. Un-der the expecte
-d-wealth paradigm,
- []
 
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1284.
-<./chapter_2/figs/lottery_add_traj.pdf, id=4020, 422.57875pt x 316.18124pt>
-File: ./chapter_2/figs/lottery_add_traj.pdf Graphic file (type pdf)
+LaTeX Warning: Citation `Kelly1956' on page 29 undefined on input line 1371.
 
-<use ./chapter_2/figs/lottery_add_traj.pdf>
-Package pdftex.def Info: ./chapter_2/figs/lottery_add_traj.pdf used on input li
-ne 1287.
-(pdftex.def)             Requested size: 345.0pt x 258.14134pt.
- [58] [59 <./chapter_2/figs/lottery_add_traj.pdf>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1315.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1328.
 
-<./chapter_2/figs/gbar_zero.png, id=4093, 559.33969pt x 421.575pt>
-File: ./chapter_2/figs/gbar_zero.png Graphic file (type png)
+LaTeX Warning: Citation `Thorp1966' on page 29 undefined on input line 1371.
 
-<use ./chapter_2/figs/gbar_zero.png>
-Package pdftex.def Info: ./chapter_2/figs/gbar_zero.png used on input line 1333
-.
-(pdftex.def)             Requested size: 345.0pt x 260.03578pt.
- [60] [61 <./chapter_2/figs/gbar_zero.png>] <./chapter_2/figs/lottery_mult_traj
-.pdf, id=4155, 421.575pt x 316.18124pt>
-File: ./chapter_2/figs/lottery_mult_traj.pdf Graphic file (type pdf)
 
-<use ./chapter_2/figs/lottery_mult_traj.pdf>
-Package pdftex.def Info: ./chapter_2/figs/lottery_mult_traj.pdf used on input l
-ine 1367.
-(pdftex.def)             Requested size: 345.0pt x 258.75406pt.
- [62] [63 <./chapter_2/figs/lottery_mult_traj.pdf>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1426.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1438.
- [64]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1476.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1522.
- [65] [66]
-<./chapter_2/figs/ins_lin_cropped.pdf, id=4320, 516.93124pt x 399.4925pt>
-File: ./chapter_2/figs/ins_lin_cropped.pdf Graphic file (type pdf)
+LaTeX Warning: Citation `CoverThomas1991' on page 29 undefined on input line 13
+71.
 
-<use ./chapter_2/figs/ins_lin_cropped.pdf>
-Package pdftex.def Info: ./chapter_2/figs/ins_lin_cropped.pdf used on input lin
-e 1545.
-(pdftex.def)             Requested size: 345.0pt x 266.62839pt.
- [67 <./chapter_2/figs/ins_lin_cropped.pdf>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1563.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1616.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 1616.
- [68]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1620.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1622.
-
-<./chapter_2/figs/ins_log_cropped.pdf, id=4391, 505.89pt x 402.50375pt>
-File: ./chapter_2/figs/ins_log_cropped.pdf Graphic file (type pdf)
-
-<use ./chapter_2/figs/ins_log_cropped.pdf>
-Package pdftex.def Info: ./chapter_2/figs/ins_log_cropped.pdf used on input lin
-e 1626.
-(pdftex.def)             Requested size: 345.0pt x 274.49734pt.
-) (./chapter_3/chapter_3.tex [69 <./chapter_2/figs/ins_log_cropped.pdf>] [70] [
-71] [72] [73] [74] [75] [76]
-<./chapter_3/figs/blobs.pdf, id=4510, 596.66095pt x 262.50914pt>
-File: ./chapter_3/figs/blobs.pdf Graphic file (type pdf)
-
-<use ./chapter_3/figs/blobs.pdf>
-Package pdftex.def Info: ./chapter_3/figs/blobs.pdf used on input line 427.
-(pdftex.def)             Requested size: 470.0pt x 206.78311pt.
- [77 <./chapter_3/figs/blobs.pdf>]
-<./chapter_3/figs/cooperate.pdf, id=4548, 614.295pt x 794.97pt>
-File: ./chapter_3/figs/cooperate.pdf Graphic file (type pdf)
-
-<use ./chapter_3/figs/cooperate.pdf>
-Package pdftex.def Info: ./chapter_3/figs/cooperate.pdf used on input line 521.
-
-(pdftex.def)             Requested size: 440.0pt x 569.41818pt.
- [78] [79 <./chapter_3/figs/cooperate.pdf>] [80] [81] [82]
-<./chapter_3/figs/var_wealth.pdf, id=4615, 505.89pt x 361.35pt>
-File: ./chapter_3/figs/var_wealth.pdf Graphic file (type pdf)
-
-<use ./chapter_3/figs/var_wealth.pdf>
-Package pdftex.def Info: ./chapter_3/figs/var_wealth.pdf used on input line 725
-.
-(pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
-
-<./chapter_3/figs/hist_wealth.pdf, id=4620, 505.89pt x 361.35pt>
-File: ./chapter_3/figs/hist_wealth.pdf Graphic file (type pdf)
-
-<use ./chapter_3/figs/hist_wealth.pdf>
-Package pdftex.def Info: ./chapter_3/figs/hist_wealth.pdf used on input line 73
-7.
-(pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
- [83 <./chapter_3/figs/var_wealth.pdf>]
-[84 <./chapter_3/figs/hist_wealth.pdf>]
-<./chapter_3/figs/var_income.pdf, id=4654, 505.89pt x 361.35pt>
-File: ./chapter_3/figs/var_income.pdf Graphic file (type pdf)
-
-<use ./chapter_3/figs/var_income.pdf>
-Package pdftex.def Info: ./chapter_3/figs/var_income.pdf used on input line 810
-.
-(pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
-
-<./chapter_3/figs/hist_income.pdf, id=4663, 505.89pt x 361.35pt>
-File: ./chapter_3/figs/hist_income.pdf Graphic file (type pdf)
-
-<use ./chapter_3/figs/hist_income.pdf>
-Package pdftex.def Info: ./chapter_3/figs/hist_income.pdf used on input line 82
-7.
-(pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
- [85] [86 <./chapter_3/figs/var_income.pdf> <./chapter_3/figs/hist_income.pdf>]
-) (./chapter_4/chapter_4.tex [87]
-[88] <./chapter_4/figs/rebalance.pdf, id=4881, 357.53577pt x 239.73564pt>
-File: ./chapter_4/figs/rebalance.pdf Graphic file (type pdf)
-
-<use ./chapter_4/figs/rebalance.pdf>
-Package pdftex.def Info: ./chapter_4/figs/rebalance.pdf used on input line 87.
-(pdftex.def)             Requested size: 345.0pt x 231.33246pt.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 95.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 97.
- [89] [90 <./chapter_4/figs/rebalance.pdf>] <./chapter_4/figs/markowitz.pdf, id
-=4969, 421.575pt x 316.18124pt>
-File: ./chapter_4/figs/markowitz.pdf Graphic file (type pdf)
-
-<use ./chapter_4/figs/markowitz.pdf>
-Package pdftex.def Info: ./chapter_4/figs/markowitz.pdf used on input line 120.
-
-(pdftex.def)             Requested size: 345.0pt x 258.75406pt.
- [91] [92 <./chapter_4/figs/markowitz.pdf>] [93]
-<./chapter_4/figs/markowitz_peters.png, id=5146, 904.1278pt x 563.85657pt>
-File: ./chapter_4/figs/markowitz_peters.png Graphic file (type png)
-
-<use ./chapter_4/figs/markowitz_peters.png>
-Package pdftex.def Info: ./chapter_4/figs/markowitz_peters.png used on input li
-ne 187.
-(pdftex.def)             Requested size: 345.0pt x 215.1539pt.
- [94] [95 <./chapter_4/figs/markowitz_peters.png>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 208.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 210.
- [96]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 228.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 232.
- [97]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 236.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 243.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 252.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 258.
- [98]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 262.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 264.
- [99] [100] [101]
-<./chapter_4/figs/cartoon.pdf, id=5466, 597.50786pt x 845.04686pt>
-File: ./chapter_4/figs/cartoon.pdf Graphic file (type pdf)
-
-<use ./chapter_4/figs/cartoon.pdf>
-Package pdftex.def Info: ./chapter_4/figs/cartoon.pdf used on input line 361.
-(pdftex.def)             Requested size: 207.0021pt x 292.75356pt.
- [102] [103 <./chapter_4/figs/cartoon.pdf>]
-[104]
-Underfull \hbox (badness 10000) in paragraph at lines 399--401
-
- []
-
-<./chapter_4/figs/STR-FET-1_equity.pdf, id=5609, 448.13988pt x 253.2549pt>
-File: ./chapter_4/figs/STR-FET-1_equity.pdf Graphic file (type pdf)
-
-<use ./chapter_4/figs/STR-FET-1_equity.pdf>
-Package pdftex.def Info: ./chapter_4/figs/STR-FET-1_equity.pdf used on input li
-ne 413.
-(pdftex.def)             Requested size: 377.77542pt x 213.49393pt.
-
-<./chapter_4/figs/STR-FET_final_equity.pdf, id=5610, 387.53848pt x 266.68005pt>
-File: ./chapter_4/figs/STR-FET_final_equity.pdf Graphic file (type pdf)
-<use ./chapter_4/figs/STR-FET_final_equity.pdf>
-Package pdftex.def Info: ./chapter_4/figs/STR-FET_final_equity.pdf used on inpu
-t line 414.
-(pdftex.def)             Requested size: 327.74895pt x 225.53973pt.
- [105] [106 <./chapter_4/figs/STR-FET-1_equity.pdf> <./chapter_4/figs/STR-FET_f
-inal_equity.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_4/figs/STR-FET_fin
-al_equity.pdf): PDF inclusion: multiple pdfs with page group included in a sing
-le page
->] [107]
-<./chapter_4/figs/all_final_equity.pdf, id=5748, 440.18831pt x 267.6446pt>
-File: ./chapter_4/figs/all_final_equity.pdf Graphic file (type pdf)
-
-<use ./chapter_4/figs/all_final_equity.pdf>
-Package pdftex.def Info: ./chapter_4/figs/all_final_equity.pdf used on input li
-ne 455.
-(pdftex.def)             Requested size: 345.0pt x 209.77884pt.
- [108 <./chapter_4/figs/all_final_equity.pdf>]
-<./chapter_4/figs/all_MAD_final_equity.pdf, id=5822, 402.87703pt x 266.68005pt>
-File: ./chapter_4/figs/all_MAD_final_equity.pdf Graphic file (type pdf)
-<use ./chapter_4/figs/all_MAD_final_equity.pdf>
-Package pdftex.def Info: ./chapter_4/figs/all_MAD_final_equity.pdf used on inpu
-t line 473.
-(pdftex.def)             Requested size: 345.0pt x 228.36783pt.
-
-<./chapter_4/figs/STR-FED_lopt_var.pdf, id=5839, 398.86203pt x 268.9777pt>
-File: ./chapter_4/figs/STR-FED_lopt_var.pdf Graphic file (type pdf)
-
-<use ./chapter_4/figs/STR-FED_lopt_var.pdf>
-Package pdftex.def Info: ./chapter_4/figs/STR-FED_lopt_var.pdf used on input li
-ne 537.
-(pdftex.def)             Requested size: 345.0pt x 232.6625pt.
- [109] [110 <./chapter_4/figs/all_MAD_final_equity.pdf>])
+[29])
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
 . Rerun may be required (or you may have forgotten to use commands like \gls). 
 on input line 25.
 
-[111 <./chapter_4/figs/STR-FED_lopt_var.pdf>] [112] [113] (./main.bbl [114]
-[115] [116]) [117]
+[30] [31]
+No file main.bbl.
+[32]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 31.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 31.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CFB3ADD216EA0CB9975963031350DB8A;4693.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: D8E9E60AAFE2745D6742077D87A1116E;812
+(rerunfilecheck)             After:  D380DE5C8C1BC1C1AD7F167746AD32D5;906.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 32483 strings out of 493117
- 596474 string characters out of 6135433
- 957703 words of memory out of 5000000
- 34710 multiletter control sequences out of 15000+600000
- 74412 words of font info for 52 fonts, out of 8000000 for 9000
+ 33911 strings out of 493014
+ 632627 string characters out of 6133351
+ 805108 words of memory out of 5000000
+ 36743 multiletter control sequences out of 15000+600000
+ 67941 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,15n,78p,10432b,1015s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2014
-/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2014/texmf-dis
-t/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2014/texmf-dist/fonts/en
-c/dvips/lm/lm-rmsc.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/l
-m-mathex.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/latx
-font/line10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx1
-0.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2014/texmf-dis
-t/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
-pe1/public/lm/lmmi5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
-lm/lmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmmi7.pf
-b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/
-type1/public/lm/lmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
-c/lm/lmr5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr6.pf
-b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2014/texmf-dis
-t/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
-pe1/public/lm/lmri7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
-lm/lmri8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmsy10.p
-fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (117 pages, 6218299 bytes).
+ 56i,11n,78p,10432b,1018s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
+texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
+16/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2016/texmf-d
+ist/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/local/texlive/2016/texmf-dist/fonts/en
+c/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm
+/lm-rmtt.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/latx
+font/line10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx1
+0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/public/lm/lmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+lm/lmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi6.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/lm/lmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr6.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
+ype1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/lm/lmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy7.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (32 pages, 3172245 bytes).
 PDF statistics:
- 6270 PDF objects out of 7423 (max. 8388607)
- 5322 compressed objects within 54 object streams
- 649 named destinations out of 1000 (max. 500000)
- 707 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2204 PDF objects out of 2487 (max. 8388607)
+ 1818 compressed objects within 19 object streams
+ 177 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 

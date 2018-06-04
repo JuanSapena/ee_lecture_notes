@@ -847,48 +847,40 @@ expectation value is constant in time
 %, $\frac{\gd\ave{\A}}{\gd\t}=0$, 
 and its time average converges to this value with probability one
 \be
-\lim_{\Dt \to\infty}\frac{1}{\Dt } \int_{\t}^{\t+\Dt} \A(\gs) \gd\gs =\lim_{\N\to\infty} \frac{1}{\N}\sum_\gi^\N \A_\gi .
+\lim_{\Dt \to\infty}\frac{1}{\Dt } \int_{\t}^{\t+\Dt} \A(\gs) \gd\gs =\lim_{\N\to\infty} \frac{1}{\N}\sum_\gi^\N \A_\gi(\t) .
 \elabel{def_ergodic}
 \ee
 \end{defn}
+The \RHS of \eref{def_ergodic} is evaluated at time $\t$, and unlike the \LHS could be a function of time. For now, we will restrict ourselves to a setup where that is not the case, \ie where the ergodic property holds at all times. In \secref{} we will discuss transient behavior, where the distribution of $\A$ is time dependent, and the expectation value only converges to the time-average in the $\t\to\infty$ limit.
 
 In terms of random variables, $X$, and stochastic processes, $Y_X(t)$, the ergodic property can be
 visualized as in \fref{ergodic_grid}. Averaging a stochastic process over time or over the ensemble
 are completely different operations, and only under very rare circumstances (namely under ergodicity) can the two operations be interchanged.
 \begin{figure}[h!]
-\begin{picture}(200,220)(0,0)
-  \put(-5,-20){\includegraphics[width=\textwidth]{./chapter_1/figs/ergodic_grid.pdf}}
-  \put(10,195){$Y_{x_1}(\t)$}
-  \put(10,155){$Y_{x_2}(\t)$}
-  \linethickness{.5mm}
-  \put(140,212){$\t^*$}  
-  \put(160,195){$Y_{x_1}(\t)$}
-  \put(160,209){\vector(-1,-1){15}}
-  \put(10,115){$Y_{x_3}(\t)$}
-  \put(10,75){$Y_{x_4}(\t)$}
-  \put(10,35){$Y_{x_5}(\t)$}
+\begin{picture}(200,250)(0,0)
+  \put(-40,-30){\includegraphics[width=1.2\textwidth]{./chapter_1/figs/ergodic_grid.pdf}}
+  \put(13,190){$Y_{x_1}(\t)$}
+  \put(13,159){$Y_{x_2}(\t)$}
+  \put(13,128){$Y_{x_3}(\t)$}
+  \put(13,97){$Y_{x_4}(\t)$}
+  \put(13,66){$Y_{x_5}(\t)$}
+  \put(-25,22){realization}  
+  \put(-25,12){(universe) $\gi$}  
+  \put(162,220){$\t=\t^*$}  
+  \put(344,235){Time $\t$}  
+  \put(188,207){$Y_{x_1}(\t^*)$}
+  \put(187,208){\vector(-1,-1){15}}
+  \put(-27,125){$\gi=3$}
+  \put(362,127){$\overline{Y}_{x_3}=$}
+  \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} Y_{x_3}(\gs)\gd \gs$}
+  \put(100,10){$\ave{Y_X(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N Y_{x_i}(\t^*)$}  
 \end{picture}
 \caption{Time runs from left to right in this figure, and realizations run from top to bottom.
 Averaging over time means averaging along one trajectory from left to right; averaging over the ensemble
 means averaging at a fixed time across different trajectories from top to bottom.}
 \flabel{ergodic_grid}
 \end{figure}
-\FloatBarrier
-
-%\psset{unit=1pt}
-%\begin{pspicture}(0,0)(200,220)
-%  \put(-5,-20){\includegraphics[width=\textwidth]{./chapter_1/figs/ergodic_grid.pdf}}
-%    \put(10,195){$Y_{x_1}(\t)$}
-%  \put(10,155){$Y_{x_2}(\t)$}
-%  \linethickness{.5mm}
-%  \put(40,155){\vector(1,0){300}}
-%  \put(40,155){\includegraphics[width=\textwidth]{./chapter_1/figs/arrow1.pdf}}
-% \put(140,212){$\t^*$}  
-% \put(140,210){\vector(0,-1){200}}
-%  \put(10,115){$Y_{x_3}(\t)$}
-%  \put(10,75){$Y_{x_4}(\t)$}
-%  \put(10,35){$Y_{x_5}(\t)$}
-%\end{pspicture}
+%\FloatBarrier
 
 We stress that in a given setup, some observables may have this property even
 if others do not. Language therefore must be used carefully. Saying our game is non-ergodic
