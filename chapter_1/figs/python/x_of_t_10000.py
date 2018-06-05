@@ -15,10 +15,10 @@ import pickle
 data_dir='./../../../../../../Dropbox/LML_research/ee_data'
 
 T = 10000
-N_ensemble=1
+#N_ensemble=1
 
-ensemble = pd.DataFrame(index=np.arange(0,N_ensemble),columns=np.arange(0,T))
-ensemble.iloc[:,0]=np.ones(N_ensemble)
+#ensemble = pd.DataFrame(index=np.arange(0,N_ensemble),columns=np.arange(0,T))
+#ensemble.iloc[:,0]=np.ones(N_ensemble)
 #
 # T multiplicative repetitions
 #for t in range(1, T):
@@ -36,6 +36,7 @@ plt.semilogy(x, ensemble.iloc[0,:], 'b-', label='$N=1$')
 #plt.plot(x, np.mean(ensemble.iloc[0:100,:]), 'g-', label='$N=100$')
 #plt.plot(x, np.mean(ensemble.iloc[0:10000,:]), 'r-', label='$N=10,000$')
 #plt.plot(x, np.mean(ensemble), 'k-', label='$N=1,000,000$')
+plt.xlim((0,max(ensemble.columns)))
 plt.legend()
 plt.xlabel('$t$')
 plt.ylabel('$x(t)$')

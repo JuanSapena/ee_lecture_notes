@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: abbrv.bst
+Database file #1: ./../LML_bibliography/bibliography.bib
+Warning--I didn't find a database entry for "Campbell2017"
+You've used 52 entries,
+            2118 wiz_defined-function locations,
+            853 strings with 10043 characters,
+and the built_in function-call counts, 13963 in all, are:
+= -- 1383
+> -- 471
+< -- 2
++ -- 202
+- -- 140
+* -- 864
+:= -- 2393
+add.period$ -- 157
+call.type$ -- 52
+change.case$ -- 213
+chr.to.int$ -- 0
+cite$ -- 52
+duplicate$ -- 590
+empty$ -- 1249
+format.name$ -- 140
+if$ -- 2902
+int.to.chr$ -- 0
+int.to.str$ -- 52
+missing$ -- 69
+newline$ -- 263
+num.names$ -- 106
+pop$ -- 253
+preamble$ -- 1
+purify$ -- 173
+quote$ -- 0
+skip$ -- 361
+stack$ -- 0
+substring$ -- 883
+swap$ -- 58
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 168
+warning$ -- 0
+while$ -- 152
+width$ -- 54
+write$ -- 558
+(There was 1 warning)

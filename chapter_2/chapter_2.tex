@@ -775,7 +775,7 @@ The utility perspective tends to draw our attention on the psychology of the dec
 whereas the dynamic perspective focuses on the situation of the decision maker. 
 
 \subsubsection{Technical setup}
-
+\seclabel{Technical}
 With dynamics generalized beyond additive and multiplicative we have to be careful not to 
 let the scope of our treatment balloon into meaninglessness. We also have to pick a setup 
 where the mathematics won't lead to pages of equations without actually adding much.
@@ -1254,8 +1254,8 @@ if it lands heads, the player wins the prize and the lottery ends; if it lands
 tails, the prize is doubled and the process is repeated. Therefore, the 
 player wins $\$2$, $\$4$, $\$8$ if the first head lands 
 on the second, third, fourth toss, and so on. The player must buy a ticket, 
-at price $\F$, to enter the lottery. The question usually posed is what is 
-the largest $\F$ they are willing to pay.
+at price $\F$, to enter the lottery. The question usually posed is: what is 
+the largest $\F$ the player is willing to pay?
 
 The lottery can be translated neatly into our gamble formalism:
 \be
@@ -1284,7 +1284,9 @@ This diverges for any finite ticket price. Under the expected-wealth paradigm, t
 \end{example}
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{./chapter_2/figs/lottery_add_traj.pdf}
+\begin{picture}(200,230)(0,0)
+\put(-75,0){\includegraphics[width=\textwidth]{./chapter_2/figs/lottery_add_traj.pdf}}
+\end{picture}
 \caption{Wealth trajectories for the additively repeated St Petersburg lottery, 
 with starting wealth, $\x(0)=\$100$, and ticket price, $\F=\$10$. 
 Ten trajectories are plotted over 1,000 rounds.\flabel{lottery_add_traj}}
@@ -1296,19 +1298,18 @@ wealth. Daniel Bernoulli suggested to resolve the paradox by adopting
 the expected-utility paradigm. His choice of utility function was the 
 logarithm, $\gu(\x)=\ln \x$, which, as we now know, produces a decision 
 rule equivalent to growth-rate optimisation under multiplicative repetition. 
-This correspondence was not appreciated by Bernoulli: indeed $18^\text{th}$-century mathematics did not possessed the concepts and 
+This correspondence was not appreciated by Bernoulli: indeed $18^\text{th}$-century mathematics did not possesse the concepts and 
 language required to distinguish between averages over time and across 
-systems, even though it had the basic arithmetic tools. In any case, the 
-correspondence relies on the choice of a particular utility function, and vanishes the moment something other than the logarithm is chosen. We also have
-to interpret expected utility theory a little differently from how it is usually presented -- for instance we have to assume that expected changes in utility really mean expected rates of changes, with a specific gamble duration, \ie we have to introduce the concept of time into utility theory quite differently from that's usually done (which we won't discuss here).
+systems, even though it had the basic arithmetic tools. 
+%In any case, the 
+%correspondence relies on the choice of a particular utility function, and vanishes the moment something other than the logarithm is chosen. We also have
+%to interpret expected utility theory a little differently from how it is usually presented -- for instance we have to assume that expected changes in utility really mean expected rates of changes, with a specific gamble duration, \ie we have to introduce the concept of time into utility theory quite differently from that's usually done (which we won't discuss here).
 
 Unfortunately, Bernoulli made a mathematical error in the implementation 
-of his own paradigm. This was corrected by Laplace in 
-1814~\cite{Laplace1814} and then de-corrected by Menger in 
-1934~\cite{Menger1934}, who introduced a further error which led to the 
-famous but unjustifiable claim that utility functions must be bounded. We 
-will leave this most chequered part of the paradox's history alone -- details, 
-including a rebuttal of Menger's analysis, can be found 
+of his own paradigm -- accidentally he proposed two mutually inconsistent versions of utility theory in the paper that established the paradigm. Initially, the error had little impact, and it was corrected by Laplace in 
+1814~\cite{Laplace1814}. But Laplace didn't openly say he'd corrected an error, he just work with what he thought Bernoulli had meant. This politeness had awful consequences. In
+1934 Menger~\cite{Menger1934}, keen to get the story right, went back to the original text by Bernoulli. He didn't notice the error but rather got confused by it which led him to introduce a further error. Based on this car crash of scientific communication, Menger derived the infamous (wrong) claim we encountered in \secref{Technical}: utility functions must be bounded, with disastrous consequences for the budding neoclassical formalism. We 
+will leave this most chequered part of the paradox's history alone -- details can be found 
 in~\cite{PetersGell-Mann2016}. Instead we will focus on what's usually 
 presumed Bernoulli meant to write.
 
@@ -1336,9 +1337,9 @@ logarithmic utility is zero. The inset shows the expected change in utility as a
 function of $\x$ for $\F=\$2$. Adapted from~\cite{Peters2011b}.\flabel{gbar_zero}}
 \end{figure}
 
-This resolves the paradox, in that it admits the possibility of the player declining to buy a ticket when his expected change in utility is less than that of the null gamble, \ie zero. Bernoulli argued for this resolution framework in plausible terms, which we have already discussed: the usefulness of a monetary gain depends on how much money you already have. He also argued specifically for the logarithm in plausible terms: the gain in usefulness should be proportional to the fractional gain it represents, $\gd \gu = \d\x/\x$. He did not connect this to the idea of repetition over time. If he had, he might have been less willing to accept Cramer's square-root utility function as an alternative.\footnote{Although there exists a dynamic for which $\gu=\sqrt{\x}$ gives the appropriate stationarity mapping, it is rather more esoteric than the multiplicative repetition with which most of humanity is familiar.}
+The utility paradigm is a model that resolves the paradox, in the sense that creates a world where players may decline to buy a ticket. Bernoulli argued for this resolution framework in plausible terms: the usefulness of a monetary gain depends on how much money you already have. He also argued specifically for the logarithm in plausible terms: the gain in usefulness should be proportional to the fractional gain it represents, $\gd \gu = \d\x/\x$. Yet, the framework has left many unsatisfied: why does usefulness have this functional form? We provide this deeper reason by connecting the problem to dynamics and time, unlike Bernoulli. Had Bernoulli made the connection, he might have been less willing to accept Cramer's square-root utility function as an alternative, which, as we've seen, corresponds to a rather less intuitive dynamic.
 
-However, while plausible, the framework relies on a utility function, which must be postulated. It can neither be derived from fundamental considerations nor verified empirically.
+%However, while plausible, the framework relies on a utility function, which must be postulated. It can neither be derived from fundamental considerations nor verified empirically.
 
 Turning to our decision algorithm, we will assume that the lottery is repeated multiplicatively. This means, in effect, that the prizes and ticket price are treated as fractions of the player's wealth, such that the effect of each lottery is to multiply current wealth by a random factor,
 \be
@@ -1350,8 +1351,8 @@ The time-average (exponential) growth rate is
 \gt_\text{m} = \frac{1}{\dt} \lim_{\T\to\infty} \left\{ \frac{1}{\T}  \sum_{\gtau=1}^\T \ln \gr(\gtau) \right\} = \frac{1}{\dt}  \sum_{\gk=1}^\infty 2^{-\gk} \ln \gr_\gk, \elabel{lottery_gbar}
 \ee
 which is identical to the expression for the rate of change of expected log-utility, 
-\eref{lottery_ex_util}. This is, as we've discussed, because $\gt_\text{m}$ is 
-the ergodic growth rate for multiplicative dynamics. The result is the same, but 
+\eref{lottery_ex_util}. This is, as we've discussed, because $\gv(\x)=\ln(\x)$ 
+is the appropriate ergodicity mapping for multiplicative dynamics. The result is the same, but 
 the interpretation is different: we have assumed less, only that our player is 
 interested in the growth rate of his wealth and that he gauges this by imagining 
 the outcome of an indefinite sequence of repeated lotteries.

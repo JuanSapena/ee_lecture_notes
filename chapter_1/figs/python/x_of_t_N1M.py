@@ -14,7 +14,7 @@ import pickle
 
 data_dir='./../../../../../../Dropbox/LML_research/ee_data'
 
-T = 52
+T = 52+1
 N_ensemble=1
 
 #ensemble = pd.DataFrame(index=np.arange(0,N_ensemble),columns=np.arange(0,T))
@@ -27,7 +27,7 @@ N_ensemble=1
 #    old=ensemble.iloc[0,t-1]
 #    new=Decimal(old)*Decimal(np.random.choice([0.6, 1.5]))
 #    ensemble.iloc[0,t]=new 
-#ensemble.to_pickle(data_dir+"coin_10000.pkl")
+#ensemble.to_pickle(data_dir+"coin_ensemble.pkl")
 ensemble=pd.read_pickle(data_dir+"coin_ensemble.pkl")
 
 x = np.arange(T)
@@ -36,10 +36,10 @@ plt.semilogy(x, np.mean(ensemble), 'b-', label='$N=1,000,000$')
 #plt.plot(x, np.mean(ensemble.iloc[0:100,:]), 'g-', label='$N=100$')
 #plt.plot(x, np.mean(ensemble.iloc[0:10000,:]), 'r-', label='$N=10,000$')
 #plt.plot(x, np.mean(ensemble), 'k-', label='$N=1,000,000$')
+plt.xlim([0,T-1])
 plt.legend()
 plt.xlabel('$t$')
 plt.ylabel(r'$\langle x(t) \rangle $')
-
 
 plt.savefig("./../x_of_t_N1M.pdf", bbox_inches='tight')
 plt.show()

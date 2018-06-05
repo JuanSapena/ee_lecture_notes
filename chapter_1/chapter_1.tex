@@ -362,18 +362,41 @@ wherefore we can solve recursively for the wealth after $\T$ rounds, correspondi
 $\dt$ is the duration of a single round of a gamble, while $\Dt$ is the amount of time spent gambling.
 \begin{excursion}{Stochastic processes}
 Once again, we recommend van Kampen \cite[p.~52]{vanKampen1992} for an exceedingly simple definition -- this time of a stochastic process. 
-Imagine we've defined a random variable, $X$. Any function $Y(X)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, which is interpreted as time, so we write
+Imagine we've defined a random variable, $X$. Any function $Y(X)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, a simple scalar parameter, a number, which is interpreted as time, so we write
 \be
 Y_X(\t)=f(X,\t).
 \elabel{st_pr}
 \ee
-This may not be how you think of a stochastic process. When we simulate stochastic processes, we often start with some value and modify it in some way in each step of a for-loop. In each step of the for-loop we would generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $x$ of the random variable $X$ only once and insert that into \eref{st_pr}. The value $x$ specifies a simple function of time
+This may not be how you think of a stochastic process, so let's illustrate this with a picture.
+
+%\begin{figure}[h!]
+\begin{picture}(200,220)(20,30)
+  \put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_1/figs/sp_grid.pdf}}
+  \put(13,190){$Y_{x_1}(\t)$}
+  \put(13,159){$Y_{x_2}(\t)$}
+  \put(13,128){$Y_{x_3}(\t)$}
+  \put(13,97){$Y_{x_4}(\t)$}
+  \put(13,66){$Y_{x_5}(\t)$}
+  \put(-20,180){\rotatebox{-90}{realization (universe) $\gi$}}  
+%  \put(-25,12){(universe)}  
+%  \put(122,220){specific moment in time $\t=\t^*$}  
+  \put(200,235){Time $\t$}  
+  \put(188,207){$Y_{x_1}(\t^*)$}
+  \put(187,208){\vector(-1,-1){15}}
+%  \put(-27,125){$\gi=3$}
+%  \put(362,127){$\overline{Y}_{x_3}=$}
+%  \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} Y_{x_3}(\gs)\gd \gs$}
+%  \put(100,10){$\ave{Y_X(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N Y_{x_i}(\t^*)$}  
+\label{sp_grid}
+\end{picture}\\
+%\end{figure}
+When we simulate stochastic processes, we often start with some value and modify it iteratively in each step of a for-loop. In each step of the for-loop we would generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $x$ of the random variable $X$ only once and insert that into \eref{st_pr}. The value $x$ specifies a simple function of time
 \be
 Y_x(\t)=f(x,\t)
 \ee
 meaning that all the randomness is contained in $x$. Once $x$ is specified, $Y_x(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. As an example you can think of drawing  at random a single uniformally distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which could be interpreted as a stochastic process, if $\t$ specifies the decimal place of the relevant digit.
 
-We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $Y_X(\t^*)$. That's again a random variable.
+We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $Y_X(\t^*)$. That's again a random variable, and instance of which may be $Y_{x_1}(\t^*)$.
 \end{excursion}
 
 The expectation value $\ave{\gr}$ is easily found from \eref{law} 
@@ -857,7 +880,7 @@ In terms of random variables, $X$, and stochastic processes, $Y_X(t)$, the ergod
 visualized as in \fref{ergodic_grid}. Averaging a stochastic process over time or over the ensemble
 are completely different operations, and only under very rare circumstances (namely under ergodicity) can the two operations be interchanged.
 \begin{figure}[h!]
-\begin{picture}(200,250)(0,0)
+\begin{picture}(200,260)(0,0)
   \put(-40,-30){\includegraphics[width=1.2\textwidth]{./chapter_1/figs/ergodic_grid.pdf}}
   \put(13,190){$Y_{x_1}(\t)$}
   \put(13,159){$Y_{x_2}(\t)$}
@@ -875,8 +898,8 @@ are completely different operations, and only under very rare circumstances (nam
   \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} Y_{x_3}(\gs)\gd \gs$}
   \put(100,10){$\ave{Y_X(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N Y_{x_i}(\t^*)$}  
 \end{picture}
-\caption{Time runs from left to right in this figure, and realizations run from top to bottom.
-Averaging over time means averaging along one trajectory from left to right; averaging over the ensemble
+\caption{Extending the figure on p.~\pageref{sp_grid}, averaging over time means averaging 
+along one trajectory from left to right; averaging over the ensemble
 means averaging at a fixed time across different trajectories from top to bottom.}
 \flabel{ergodic_grid}
 \end{figure}
@@ -1196,12 +1219,12 @@ $\frac{1}{\t}\int_0^\t \gd\t' \gv(\t')$ is known as the ``random acceleration pr
 
 \begin{figure}[h!]
 \begin{picture}(200,200)(0,0)
-    \put(0,0){\includegraphics[width=0.8\textwidth]{./chapter_1/figs/BM_time_ave.pdf}}
+    \put(0,0){\includegraphics[width=\textwidth]{./chapter_1/figs/BM_time_ave.pdf}}
 \end{picture}
-\caption{Trajectory of the finite-time average of a zero-drift \BM. The time average 
-does not converge to some value with probability one, but is instead distributed according to 
-$\mN(0,\t/3)$ for all times. It is the result of integrating a \BM; integration is a smoothing
-operation, and as a consequence the trajectories are smoother than \BM (unlike a 
+\caption{Trajectory of the finite-time average of a zero-drift \BM. The process is not ergodic: the time average 
+does not converge to a number, but is instead distributed according to 
+$\mN(0,\t/3)$ for all times, while the expectation value is zero. It is the result of integrating a \BM; 
+integration is a smoothing operation, and as a consequence the trajectories are smoother than \BM (unlike a 
 \BM trajectory, they are differentiable).}
 \flabel{1_6}
 \end{figure}
