@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.6)  7 JUN 2018 21:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.6)  8 JUN 2018 16:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1140,7 +1140,56 @@ LaTeX Info: Redefining \today on input line 736.
 \dt@a=\toks52
 \dt@b=\toks53
 )
-(./glossary.tex)) (./main.aux
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarysnakes.code.tex
+File: tikzlibrarysnakes.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.7)
+
+
+Package pgf Warning: Snakes have been superseded by decorations. Please use the
+ decoration libraries instead of the snakes library on input line 14.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex
+\pgfdecoratedcompleteddistance=\dimen267
+\pgfdecoratedremainingdistance=\dimen268
+\pgfdecoratedinputsegmentcompleteddistance=\dimen269
+\pgfdecoratedinputsegmentremainingdistance=\dimen270
+\pgf@decorate@distancetomove=\dimen271
+\pgf@decorate@repeatstate=\count352
+\pgfdecorationsegmentamplitude=\dimen272
+\pgfdecorationsegmentlength=\dimen273
+)
+\tikz@lib@dec@box=\box72
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.shapes.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.shapes.code.tex)))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.1a (rcs-revision 1.2)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibrarypattern
+s.code.tex
+File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
+)) (./glossary.tex)) (./main.aux
+
+LaTeX Warning: Label `eq:GBM' multiply defined.
+
+
+LaTeX Warning: Label `eq:rescaled' multiply defined.
+
 
 LaTeX Warning: Label `eq:GBM' multiply defined.
 
@@ -1167,16 +1216,16 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count352
-\scratchdimen=\dimen267
-\scratchbox=\box72
-\nofMPsegments=\count353
-\nofMParguments=\count354
+\scratchcounter=\count353
+\scratchdimen=\dimen274
+\scratchbox=\box73
+\nofMPsegments=\count354
+\nofMParguments=\count355
 \everyMPshowfont=\toks54
-\MPscratchCnt=\count355
-\MPscratchDim=\dimen268
-\MPnumerator=\count356
-\makeMPintoPDFobject=\count357
+\MPscratchCnt=\count356
+\MPscratchDim=\dimen275
+\MPnumerator=\count357
+\makeMPintoPDFobject=\count358
 \everyMPtoPDFconversion=\toks55
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1196,7 +1245,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box73
+\AtBeginShipoutBox=\box74
 Package hyperref Info: Link coloring ON on input line 2.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1205,7 +1254,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count358
+\c@section@level=\count359
 )
 LaTeX Info: Redefining \ref on input line 2.
 LaTeX Info: Redefining \pageref on input line 2.
@@ -1242,7 +1291,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 15.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 15.
-<./lml_LOGO_whiteBG-eps-converted-to.pdf, id=79, 142.5325pt x 48.18pt>
+<./lml_LOGO_whiteBG-eps-converted-to.pdf, id=147, 142.5325pt x 48.18pt>
 File: ./lml_LOGO_whiteBG-eps-converted-to.pdf Graphic file (type pdf)
 <use ./lml_LOGO_whiteBG-eps-converted-to.pdf>
 Package pdftex.def Info: ./lml_LOGO_whiteBG-eps-converted-to.pdf  used on input
@@ -1287,7 +1336,7 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 117.
  [4] [5] [6]
 [7] [8] [9] [10]
-<./chapter_3/figs/trajectories.pdf, id=258, 391.2678pt x 267.6446pt>
+<./chapter_3/figs/trajectories.pdf, id=345, 391.2678pt x 267.6446pt>
 File: ./chapter_3/figs/trajectories.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/trajectories.pdf>
 Package pdftex.def Info: ./chapter_3/figs/trajectories.pdf  used on input line 
@@ -1299,7 +1348,7 @@ Overfull \hbox (41.85481pt too wide) in paragraph at lines 479--486
  []
 
 [11 <./chapter_3/figs/trajectories.pdf>] [12] [13] [14]
-<./chapter_3/figs/PEA.pdf, id=400, 404.92374pt x 266.68005pt>
+<./chapter_3/figs/PEA.pdf, id=487, 404.92374pt x 266.68005pt>
 File: ./chapter_3/figs/PEA.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/PEA.pdf>
 Package pdftex.def Info: ./chapter_3/figs/PEA.pdf  used on input line 686.
@@ -1310,47 +1359,372 @@ Overfull \hbox (56.81488pt too wide) in paragraph at lines 686--695
  []
 
 [15] [16 <./chapter_3/figs/PEA.pdf>] [17] [18]
-<./chapter_3/figs/blobs.pdf, id=516, 596.66095pt x 262.50914pt>
+<./chapter_3/figs/blobs.pdf, id=602, 596.66095pt x 262.50914pt>
 File: ./chapter_3/figs/blobs.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/blobs.pdf>
 Package pdftex.def Info: ./chapter_3/figs/blobs.pdf  used on input line 800.
 (pdftex.def)             Requested size: 470.0pt x 206.78311pt.
  [19 <./chapter_3/figs/blobs.pdf>]
-<./chapter_3/figs/cooperate.pdf, id=555, 614.295pt x 794.97pt>
+<./chapter_3/figs/cooperate.pdf, id=642, 614.295pt x 794.97pt>
 File: ./chapter_3/figs/cooperate.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/cooperate.pdf>
 Package pdftex.def Info: ./chapter_3/figs/cooperate.pdf  used on input line 894
 .
 (pdftex.def)             Requested size: 440.0pt x 569.41818pt.
- [20] [21 <./chapter_3/figs/cooperate.pdf>] [22] [23]
-<./chapter_3/figs/var_wealth.pdf, id=609, 505.89pt x 361.35pt>
+ [20] [21 <./chapter_3/figs/cooperate.pdf>] [22] [23] [24]
+Overfull \hbox (5.1641pt too wide) in paragraph at lines 1037--1038
+[]\OT1/lmr/m/n/10 ``At birth, in-di-vid-u-als are en-dowed with a, pos-si-bly i
+ndividual-specific,
+ []
+
+
+LaTeX Warning: Reference `section:earnings' on page 25 undefined on input line 
+1084.
+
+[25] [26]
+
+LaTeX Warning: Reference `section:analysis' on page 27 undefined on input line 
+1136.
+
+
+LaTeX Warning: Reference `section:earnings' on page 27 undefined on input line 
+1136.
+
+[27]
+Package epstopdf Info: Source file: <./chapter_3/figs/dists.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 238306 bytes
+(epstopdf)             Output file: <./chapter_3/figs/dists-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2018-06-08 16:06:57
+(epstopdf)                    size: 82477 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/dists-eps
+-converted-to.pdf ./chapter_3/figs/dists.eps>
+(epstopdf)             \includegraphics on input line 1143.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/dists-eps-converted-to.pdf, id=783, 461.725pt x 456.70625pt>
+File: ./chapter_3/figs/dists-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapter_3/figs/dists-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/dists-eps-converted-to.pdf  used on i
+nput line 1143.
+(pdftex.def)             Requested size: 345.0pt x 341.25356pt.
+ [28 <./chapter_3/figs/dists-eps-converted-to.pdf>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 1169.
+Package epstopdf Info: Source file: <./chapter_3/figs/trajectories.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 60715 bytes
+(epstopdf)             Output file: <./chapter_3/figs/trajectories-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2018-06-08 16:10:32
+(epstopdf)                    size: 17564 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/trajector
+ies-eps-converted-to.pdf ./chapter_3/figs/trajectories.eps>
+(epstopdf)             \includegraphics on input line 1189.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/trajectories-eps-converted-to.pdf, id=812, 464.73625pt x 409.
+53pt>
+File: ./chapter_3/figs/trajectories-eps-converted-to.pdf Graphic file (type pdf
+)
+<use ./chapter_3/figs/trajectories-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/trajectories-eps-converted-to.pdf  us
+ed on input line 1189.
+(pdftex.def)             Requested size: 209.87396pt x 184.9429pt.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 119
+7.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (85.43726pt too wide) in paragraph at lines 1203--1204
+ [][] 
+ []
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 1210.
+
+[29 <./chapter_3/figs/trajectories-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapter_3/figs/data.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 44390 bytes
+(epstopdf)             Output file: <./chapter_3/figs/data-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2018-06-08 16:10:33
+(epstopdf)                    size: 11294 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/data-eps-
+converted-to.pdf ./chapter_3/figs/data.eps>
+(epstopdf)             \includegraphics on input line 1227.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/data-eps-converted-to.pdf, id=837, 449.68pt x 469.755pt>
+File: ./chapter_3/figs/data-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapter_3/figs/data-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/data-eps-converted-to.pdf  used on in
+put line 1227.
+(pdftex.def)             Requested size: 345.0pt x 360.41508pt.
+ [30] [31 <./chapter_3/figs/data-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `section:data' on page 32 undefined on input line 1265
+.
+
+Package epstopdf Info: Source file: <./chapter_3/figs/tau_top1.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 75826 bytes
+(epstopdf)             Output file: <./chapter_3/figs/tau_top1-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2018-06-08 16:11:40
+(epstopdf)                    size: 17746 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/tau_top1-
+eps-converted-to.pdf ./chapter_3/figs/tau_top1.eps>
+(epstopdf)             \includegraphics on input line 1289.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/tau_top1-eps-converted-to.pdf, id=894, 461.725pt x 459.7175pt
+>
+File: ./chapter_3/figs/tau_top1-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapter_3/figs/tau_top1-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/tau_top1-eps-converted-to.pdf  used o
+n input line 1289.
+(pdftex.def)             Requested size: 345.0pt x 343.50357pt.
+[32]
+Package epstopdf Info: Source file: <./chapter_3/figs/tau_top1_top0i1_datasets.
+eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 44755 bytes
+(epstopdf)             Output file: <./chapter_3/figs/tau_top1_top0i1_datasets-
+eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-08 16:14:17
+(epstopdf)                    size: 11325 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/tau_top1_
+top0i1_datasets-eps-converted-to.pdf ./chapter_3/figs/tau_top1_top0i1_datasets.
+eps>
+(epstopdf)             \includegraphics on input line 1311.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/tau_top1_top0i1_datasets-eps-converted-to.pdf, id=908, 461.72
+5pt x 470.75874pt>
+File: ./chapter_3/figs/tau_top1_top0i1_datasets-eps-converted-to.pdf Graphic fi
+le (type pdf)
+<use ./chapter_3/figs/tau_top1_top0i1_datasets-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/tau_top1_top0i1_datasets-eps-converte
+d-to.pdf  used on input line 1311.
+(pdftex.def)             Requested size: 345.0pt x 351.75366pt.
+ [33 <./chapter_3/figs/tau_top1-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapter_3/figs/convergence.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 1018267 bytes
+(epstopdf)             Output file: <./chapter_3/figs/convergence-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2018-06-08 16:14:18
+(epstopdf)                    size: 307133 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/convergen
+ce-eps-converted-to.pdf ./chapter_3/figs/convergence.eps>
+(epstopdf)             \includegraphics on input line 1322.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/convergence-eps-converted-to.pdf, id=936, 503.8825pt x 480.79
+625pt>
+File: ./chapter_3/figs/convergence-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./chapter_3/figs/convergence-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/convergence-eps-converted-to.pdf  use
+d on input line 1322.
+(pdftex.def)             Requested size: 345.0pt x 329.1967pt.
+ [34 <./chapter_3/figs/tau_top1_top0i1_datasets-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapter_3/figs/variance_convergence.eps>
+
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 39226 bytes
+(epstopdf)             Output file: <./chapter_3/figs/variance_convergence-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2018-06-08 16:14:18
+(epstopdf)                    size: 11062 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/variance_
+convergence-eps-converted-to.pdf ./chapter_3/figs/variance_convergence.eps>
+(epstopdf)             \includegraphics on input line 1331.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/variance_convergence-eps-converted-to.pdf, id=953, 461.725pt 
+x 245.91875pt>
+File: ./chapter_3/figs/variance_convergence-eps-converted-to.pdf Graphic file (
+type pdf)
+<use ./chapter_3/figs/variance_convergence-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/variance_convergence-eps-converted-to
+.pdf  used on input line 1331.
+(pdftex.def)             Requested size: 345.0pt x 183.7519pt.
+ [35 <./chapter_3/figs/convergence-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapter_3/figs/tau_eqm_top1.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 66984 bytes
+(epstopdf)             Output file: <./chapter_3/figs/tau_eqm_top1-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2018-06-08 16:15:26
+(epstopdf)                    size: 16812 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/tau_eqm_t
+op1-eps-converted-to.pdf ./chapter_3/figs/tau_eqm_top1.eps>
+(epstopdf)             \includegraphics on input line 1346.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/tau_eqm_top1-eps-converted-to.pdf, id=983, 467.7475pt x 459.7
+175pt>
+File: ./chapter_3/figs/tau_eqm_top1-eps-converted-to.pdf Graphic file (type pdf
+)
+<use ./chapter_3/figs/tau_eqm_top1-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/tau_eqm_top1-eps-converted-to.pdf  us
+ed on input line 1346.
+(pdftex.def)             Requested size: 345.0pt x 339.09132pt.
+ [36 <./chapter_3/figs/variance_convergence-eps-converted-to.pdf>] [37 <./chapt
+er_3/figs/tau_eqm_top1-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapter_3/figs/tau_with_earnings.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 114510 bytes
+(epstopdf)             Output file: <./chapter_3/figs/tau_with_earnings-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2018-06-08 16:15:26
+(epstopdf)                    size: 26037 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/tau_with_
+earnings-eps-converted-to.pdf ./chapter_3/figs/tau_with_earnings.eps>
+(epstopdf)             \includegraphics on input line 1377.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/tau_with_earnings-eps-converted-to.pdf, id=1042, 494.84875pt 
+x 423.5825pt>
+File: ./chapter_3/figs/tau_with_earnings-eps-converted-to.pdf Graphic file (typ
+e pdf)
+<use ./chapter_3/figs/tau_with_earnings-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/tau_with_earnings-eps-converted-to.pd
+f  used on input line 1377.
+(pdftex.def)             Requested size: 345.0pt x 295.31647pt.
+
+
+LaTeX Warning: Reference `section:model_behavior' on page 38 undefined on input
+ line 1386.
+
+[38]
+Package epstopdf Info: Source file: <./chapter_3/figs/earnings_to_wealth.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 24966 bytes
+(epstopdf)             Output file: <./chapter_3/figs/earnings_to_wealth-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2018-06-08 16:15:27
+(epstopdf)                    size: 6469 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/earnings_
+to_wealth-eps-converted-to.pdf ./chapter_3/figs/earnings_to_wealth.eps>
+(epstopdf)             \includegraphics on input line 1390.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/earnings_to_wealth-eps-converted-to.pdf, id=1058, 469.755pt x
+ 245.91875pt>
+File: ./chapter_3/figs/earnings_to_wealth-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+<use ./chapter_3/figs/earnings_to_wealth-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/earnings_to_wealth-eps-converted-to.p
+df  used on input line 1390.
+(pdftex.def)             Requested size: 345.0pt x 180.60738pt.
+ [39 <./chapter_3/figs/tau_with_earnings-eps-converted-to.pdf>] [40 <./chapter_
+3/figs/earnings_to_wealth-eps-converted-to.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1416.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1416.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1416.
+
+[41]
+Overfull \hbox (1.41702pt too wide) in paragraph at lines 1457--1459
+\OT1/lmr/m/n/10 In essence, the inequality-increasing ef-fects of mul-ti-plica-
+tive growth drive wealths
+ []
+
+[42] [43
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1500.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sigma' on input line 1500.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1500.
+
+Package epstopdf Info: Source file: <./chapter_3/figs/DOW.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 26232 bytes
+(epstopdf)             Output file: <./chapter_3/figs/DOW-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2018-06-08 16:15:27
+(epstopdf)                    size: 6845 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/DOW-eps-c
+onverted-to.pdf ./chapter_3/figs/DOW.eps>
+(epstopdf)             \includegraphics on input line 1506.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/DOW-eps-converted-to.pdf, id=1136, 458.71375pt x 245.91875pt>
+
+File: ./chapter_3/figs/DOW-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapter_3/figs/DOW-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/DOW-eps-converted-to.pdf  used on inp
+ut line 1506.
+(pdftex.def)             Requested size: 345.0pt x 184.96393pt.
+
+LaTeX Warning: Reference `section:analysis' on page 44 undefined on input line 
+1511.
+
+Package epstopdf Info: Source file: <./chapter_3/figs/sigma_fixed_notfixed_1_0i
+1.eps>
+(epstopdf)                    date: 2018-06-07 21:19:43
+(epstopdf)                    size: 52333 bytes
+(epstopdf)             Output file: <./chapter_3/figs/sigma_fixed_notfixed_1_0i
+1-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-08 16:15:27
+(epstopdf)                    size: 13657 bytes
+(epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/sigma_fix
+ed_notfixed_1_0i1-eps-converted-to.pdf ./chapter_3/figs/sigma_fixed_notfixed_1_
+0i1.eps>
+(epstopdf)             \includegraphics on input line 1515.
+Package epstopdf Info: Output file is already uptodate.
+<./chapter_3/figs/sigma_fixed_notfixed_1_0i1-eps-converted-to.pdf, id=1140, 461
+.725pt x 470.75874pt>
+File: ./chapter_3/figs/sigma_fixed_notfixed_1_0i1-eps-converted-to.pdf Graphic 
+file (type pdf)
+<use ./chapter_3/figs/sigma_fixed_notfixed_1_0i1-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapter_3/figs/sigma_fixed_notfixed_1_0i1-eps-conver
+ted-to.pdf  used on input line 1515.
+(pdftex.def)             Requested size: 345.0pt x 351.75366pt.
+[44
+
+ <./chapter_3/figs/DOW-eps-converted-to.pdf>] [45 <./chapter_3/figs/sigma_fixed
+_notfixed_1_0i1-eps-converted-to.pdf>] [46
+
+] [47] [48]
+<./chapter_3/figs/var_wealth.pdf, id=1216, 505.89pt x 361.35pt>
 File: ./chapter_3/figs/var_wealth.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/var_wealth.pdf>
-Package pdftex.def Info: ./chapter_3/figs/var_wealth.pdf  used on input line 10
-98.
+Package pdftex.def Info: ./chapter_3/figs/var_wealth.pdf  used on input line 17
+28.
 (pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
-<./chapter_3/figs/hist_wealth.pdf, id=614, 505.89pt x 361.35pt>
+<./chapter_3/figs/hist_wealth.pdf, id=1221, 505.89pt x 361.35pt>
 File: ./chapter_3/figs/hist_wealth.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/hist_wealth.pdf>
 Package pdftex.def Info: ./chapter_3/figs/hist_wealth.pdf  used on input line 1
-110.
+740.
 (pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
- [24] [25 <./chapter_3/figs/var_wealth.pdf>] [26 <./chapter_3/figs/hist_wealth.
+ [49] [50 <./chapter_3/figs/var_wealth.pdf>] [51 <./chapter_3/figs/hist_wealth.
 pdf>]
-<./chapter_3/figs/var_income.pdf, id=662, 505.89pt x 361.35pt>
+<./chapter_3/figs/var_income.pdf, id=1269, 505.89pt x 361.35pt>
 File: ./chapter_3/figs/var_income.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/var_income.pdf>
-Package pdftex.def Info: ./chapter_3/figs/var_income.pdf  used on input line 11
-83.
+Package pdftex.def Info: ./chapter_3/figs/var_income.pdf  used on input line 18
+13.
 (pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
-<./chapter_3/figs/hist_income.pdf, id=671, 505.89pt x 361.35pt>
+<./chapter_3/figs/hist_income.pdf, id=1278, 505.89pt x 361.35pt>
 File: ./chapter_3/figs/hist_income.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/hist_income.pdf>
 Package pdftex.def Info: ./chapter_3/figs/hist_income.pdf  used on input line 1
-200.
+830.
 (pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
- [27 <./chapter_3/figs/var_income.pdf>] [28 <./chapter_3/figs/hist_income.pdf>]
-)
+ [52 <./chapter_3/figs/var_income.pdf>])
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
 . Rerun may be required (or you may have forgotten to use commands like \gls) o
@@ -1362,35 +1736,47 @@ m}]. Rerun may be required (or you may have forgotten to use commands like \gls
 ) on input line 25.
 
 Using TeX to sort glossary entries---this may take a while
-(./main.bbl [29]) [30]
+[53 <./chapter_3/figs/hist_income.pdf>] (./main.bbl
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 49.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmr.fd
+File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 49.
+ [54] [55] [56])
+[57]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 31.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 31.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D5736DD10A9163FAF2CC19C15FBFDBFA;1353.
+(rerunfilecheck)             Checksum: C4920F73F626D8D8414ABBDBC4FC1B7A;2751.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 35106 strings out of 492649
- 661250 string characters out of 6129623
- 778650 words of memory out of 5000000
- 38289 multiletter control sequences out of 15000+600000
- 580438 words of font info for 52 fonts, out of 8000000 for 9000
+ 36300 strings out of 492649
+ 698472 string characters out of 6129623
+ 807181 words of memory out of 5000000
+ 39289 multiletter control sequences out of 15000+600000
+ 584128 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,15n,73p,10432b,453s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
-18/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2018/texmf-d
-ist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018/texmf-dist/fonts/
-enc/dvips/lm/lm-rmtt.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public
+ 58i,15n,76p,10432b,720s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/loca
+l/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018
+/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018/texmf-dis
+t/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018/texmf-dist/fonts/en
+c/dvips/lm/lm-mathex.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/line10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
 lic/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmb
@@ -1398,19 +1784,27 @@ x12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></u
 sr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
-e1/public/lm/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/l
-m/lmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local
-/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2018/texmf-di
+t/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/l
+m/lmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi9.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
+pe1/public/lm/lmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/l
+m/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr8.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2018/texmf-di
 st/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
-ype1/public/lm/lmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
-/lm/lmtt9.pfb>
-Output written on main.pdf (30 pages, 778548 bytes).
+ype1/public/lm/lmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
+/lm/lmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy8.p
+fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (57 pages, 1484062 bytes).
 PDF statistics:
- 836 PDF objects out of 1000 (max. 8388607)
- 692 compressed objects within 7 object streams
- 172 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1520 PDF objects out of 1728 (max. 8388607)
+ 1277 compressed objects within 13 object streams
+ 310 named destinations out of 1000 (max. 500000)
+ 406 words of extra memory for PDF output out of 10000 (max. 10000000)
 

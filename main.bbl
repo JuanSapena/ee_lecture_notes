@@ -5,16 +5,60 @@ A.~Adamou and O.~Peters.
 \newblock Dynamics of inequality.
 \newblock {\em Significance}, 13(3):32--35, 2016.
 
+\bibitem{atkinson1969timescale}
+A.~B. Atkinson.
+\newblock The timescale of economic models: How long is the long run?
+\newblock {\em The Review of Economic Studies}, 36(2):137--152, 1969.
+
 \bibitem{BenderOrszag1978}
 C.~M. Bender and S.~A. Orszag.
 \newblock {\em Advanced Mathematical Methods for Scientists and Engineers}.
 \newblock Springer, New York, 1978.
+
+\bibitem{benhabib2017earnings}
+J.~Benhabib, A.~Bisin, and M.~Luo.
+\newblock Earnings inequality and other determinants of wealth inequality.
+\newblock {\em American Economic Review}, 107(5):593--597, 2017.
+
+\bibitem{BenhabibBisinZhu2011}
+J.~Benhabib, A.~Bisin, and S.~Zhu.
+\newblock The distribution of wealth and fiscal policy in economies with
+  finitely lived agents.
+\newblock {\em Econometrica}, 79(1):123--157, 2011.
+
+\bibitem{berman2017}
+Y.~Berman.
+\newblock Understanding the mechanical relationship between inequality and
+  intergenerational mobility.
+\newblock Available at: \url{http://papers.ssrn.com/abstract=2796563}, 2017.
+
+\bibitem{BermanBen-JacobShapira2016}
+Y.~Berman, E.~Ben-Jacob, and Y.~Shapira.
+\newblock The dynamics of wealth inequality and the effect of income
+  distribution.
+\newblock {\em PloS one}, 11(6):e0199999, 2016.
 
 \bibitem{BermanPetersAdamou2017}
 Y.~Berman, O.~Peters, and A.~Adamou.
 \newblock An empirical test of the ergodic hypothesis: Wealth distributions in
   the {United States}.
 \newblock January 2017.
+
+\bibitem{berman2017revisiting}
+Y.~Berman and Y.~Shapira.
+\newblock Revisiting r~\textgreater~g---the asymptotic dynamics of wealth
+  inequality.
+\newblock {\em Physica A: Statistical Mechanics and its Applications},
+  467:562--572, 2017.
+
+\bibitem{bewley1977permanent}
+T.~Bewley.
+\newblock The permanent income hypothesis: A theoretical formulation.
+\newblock {\em Journal of Economic Theory}, 16(2):252--292, 1977.
+
+\bibitem{Bouchaud2015b}
+J.-P. Bouchaud.
+\newblock Note on mean-field wealth models and the random energy model.
 
 \bibitem{Bouchaud2015}
 J.-P. Bouchaud.
@@ -26,6 +70,42 @@ J.-P. Bouchaud and M.~M\'ezard.
 \newblock Wealth condensation in a simple model of economy.
 \newblock {\em Physica A}, 282(4):536--545, 2000.
 
+\bibitem{bricker2016measuring2}
+J.~Bricker, A.~Henriques, J.~Krimmel, and J.~Sabelhaus.
+\newblock Measuring income and wealth at the top using administrative and
+  survey data.
+\newblock {\em Brookings Papers on Economic Activity}, pages 261--331, 2016.
+
+\bibitem{brzezinski2014wealth}
+M.~Brzezinski.
+\newblock Do wealth distributions follow power laws? evidence from ‘rich
+  lists’.
+\newblock {\em Physica A: Statistical Mechanics and its Applications},
+  406:155--162, 2014.
+
+\bibitem{Corak2013}
+M.~Corak.
+\newblock Income inequality, equality of opportunity, and intergenerational
+  mobility.
+\newblock {\em The Journal of Economic Perspectives}, 27(3):79--102, 2013.
+
+\bibitem{cowell2014piketty}
+F.~A. Cowell.
+\newblock Piketty in the long run.
+\newblock {\em The British Journal of Sociology}, 65(4):708--720, 2014.
+
+\bibitem{de2015quantitative}
+M.~De~Nardi.
+\newblock Quantitative models of wealth inequality: A survey.
+\newblock 2015.
+\newblock {W}orking {P}aper 21106, NBER.
+
+\bibitem{de2015piketty}
+M.~De~Nardi, G.~Fella, and F.~Yang.
+\newblock Piketty's book and macro models of wealth inequality.
+\newblock 2015.
+\newblock {W}orking {P}aper 21730, NBER.
+
 \bibitem{Derrida1980}
 B.~Derrida.
 \newblock Random-energy model: Limit of a family of disordered models.
@@ -36,16 +116,112 @@ B.~Derrida.
 \newblock Random-energy model: An exactly solvable model of disordered systems.
 \newblock {\em Phys. Rev. B}, 24:2613--2626, September 1981.
 
+\bibitem{DragulescuYakovenko2001}
+A.~Dr\u{a}gulescu and V.~M. Yakovenko.
+\newblock Exponential and power-law probability distributions of wealth and
+  income in the united kingdom and the united states.
+\newblock {\em Physica A: Statistical Mechanics and its Applications},
+  299(1):213--221, 2001.
+
+\bibitem{gabaix2009power}
+X.~Gabaix.
+\newblock Power laws in economics and finance.
+\newblock {\em Annual Review of Economics}, 1(1):255--294, 2009.
+
+\bibitem{gabaix2015dynamics}
+X.~Gabaix, J.-M. Lasry, P.-L. Lions, and B.~Moll.
+\newblock The dynamics of inequality.
+\newblock {\em Econometrica: Journal of the Econometric Society},
+  84(6):2071--2111, 2016.
+
+\bibitem{hubmer2016historical}
+J.~Hubmer, P.~Krusell, and A.~A. Smith~Jr.
+\newblock The historical evolution of the wealth distribution: A
+  quantitative-theoretic investigation.
+\newblock 2016.
+\newblock {W}orking {P}aper 23011, NBER.
+
+\bibitem{jones2015pareto}
+C.~I. Jones.
+\newblock Pareto and piketty: The macroeconomics of top income and wealth
+  inequality.
+\newblock {\em The Journal of Economic Perspectives}, 29(1):29--46, 2015.
+
+\bibitem{kaymak2016evolution}
+B.~Kaymak and M.~Poschke.
+\newblock The evolution of wealth inequality over half a century: The role of
+  taxes, transfers and technology.
+\newblock {\em Journal of Monetary Economics}, 77:1--25, 2016.
+
+\bibitem{klass2006forbes}
+O.~S. Klass, O.~Biham, M.~Levy, O.~Malcai, and S.~Solomon.
+\newblock The forbes 400 and the pareto wealth distribution.
+\newblock {\em Economics Letters}, 90(2):290--295, 2006.
+
 \bibitem{KloedenPlaten1992}
 P.~E. Kloeden and E.~Platen.
 \newblock {\em Numerical solution of stochastic differential equations},
   volume~23.
 \newblock Springer Science \& Business Media, 1992.
 
+\bibitem{kopczuk2015we}
+W.~Kopczuk.
+\newblock What do we know about the evolution of top wealth shares in the
+  united states?
+\newblock {\em The Journal of Economic Perspectives}, 29(1):47--66, 2015.
+
+\bibitem{kopczuk2004top}
+W.~Kopczuk and E.~Saez.
+\newblock Top wealth shares in the united states, 1916--2000: Evidence from
+  estate tax returns.
+\newblock {\em National Tax Journal}, 57(2):445--487, 2004.
+
+\bibitem{LiuETAL2013}
+K.~Liu, N.~Lubbers, W.~Klein, J.~Tobochnik, B.~Boghosian, and H.~Gould.
+\newblock The effect of growth on equality in models of the economy.
+\newblock {\em ar{X}iv}, 2013.
+
+\bibitem{LiuSerota2016}
+Z.~Liu and R.~A. Serota.
+\newblock Correlation and relaxation times for a stochastic process with a
+  fat-tailed steady-state distribution.
+\newblock {\em Physica A: Statistical Mechanics and its Applications},
+  474:301--311, 2017.
+
+\bibitem{meade1964efficiency}
+J.~E. Meade.
+\newblock {\em Efficiency, Equality and The Ownership of Property}.
+\newblock Allen \& Unwin, London, UK, 1964.
+
+\bibitem{MehraPrescott1985}
+R.~Mehra and E.~C. Prescott.
+\newblock The equity premium puzzle.
+\newblock {\em J. Monetary Econ.}, 15:145--161, 1985.
+
+\bibitem{NelderMead1965}
+J.~A. Nelder and R.~Mead.
+\newblock A simplex method for function minimization.
+\newblock {\em The computer journal}, 7(4):308--313, 1965.
+
 \bibitem{Newman2005}
 M.~E.~J. Newman.
 \newblock Power laws, {P}areto distributions and {Z}ipf's law.
 \newblock {\em Contemp. Phys.}, 46(5):323--351, 2005.
+
+\bibitem{Pareto1897}
+V.~Pareto.
+\newblock {\em Cours d'\'{e}conomie Politique}.
+\newblock F.\ Rouge, Lausanne, Switzerland, 1897.
+
+\bibitem{Peters2011a}
+O.~Peters.
+\newblock Optimal leverage from non-ergodicity.
+\newblock {\em Quant. Fin.}, 11(11):1593--1602, November 2011.
+
+\bibitem{Peters2011b}
+O.~Peters.
+\newblock The time resolution of the {St} {Petersburg} paradox.
+\newblock {\em Phil. Trans. R. Soc. A}, 369(1956):4913--4931, December 2011.
 
 \bibitem{PetersAdamou2013}
 O.~Peters and A.~Adamou.
@@ -67,19 +243,98 @@ O.~Peters and W.~Klein.
 \newblock Ergodicity breaking in geometric {B}rownian motion.
 \newblock {\em Phys. Rev. Lett.}, 110(10):100603, March 2013.
 
+\bibitem{Piketty2014}
+T.~Piketty.
+\newblock {\em Capital in the twenty-first century}.
+\newblock Harvard University Press, 2014.
+
+\bibitem{piketty2013theory}
+T.~Piketty and E.~Saez.
+\newblock A theory of optimal inheritance taxation.
+\newblock {\em Econometrica: Journal of the Econometric Society},
+  81(5):1851--1886, 2013.
+
+\bibitem{PikettyZucman2014}
+T.~Piketty and G.~Zucman.
+\newblock Capital is back: Wealth-income ratios in rich countries, 1700-2010.
+\newblock {\em The Quarterly Journal of Economics}, 129(3):1255--1310, 2014.
+
+\bibitem{pinkovskiy2009parametric}
+M.~Pinkovskiy and X.~Sala{-}\lowercase{i}{-}Martin.
+\newblock Parametric estimations of the world distribution of income.
+\newblock 2009.
+\newblock {W}orking {P}aper 15433, NBER.
+
+\bibitem{Quandl2016}
+Quandl.
+\newblock {D}ow {J}ones {I}ndustrial {A}verage.
+\newblock
+  \url{http://www.quandl.com/data/BCB/UDJIAD1-Dow-Jones-Industrial-Average},
+  2016.
+\newblock Accessed: 04/19/2016.
+
 \bibitem{Redner1990}
 S.~Redner.
 \newblock Random multiplicative processes: An elementary tutorial.
 \newblock {\em Am. J. Phys.}, 58(3):267--273, March 1990.
+
+\bibitem{Rios20162013}
+J.-V. Rios-Rull and M.~Kuhn.
+\newblock {2013 Update on the U.S. Earnings, Income, and Wealth Distributional
+  Facts: A View from Macroeconomics}.
+\newblock {\em Quarterly Review}, (April):1--75, 2016.
+
+\bibitem{SaezZucman2014}
+E.~Saez and G.~Zucman.
+\newblock Wealth inequality in the united states since 1913: Evidence from
+  capitalized income tax data.
+\newblock Technical report, National bureau of economic research, 2014.
+
+\bibitem{Samuelson1968}
+P.~Samuelson.
+\newblock What classical and neoclassical monetary theory really was.
+\newblock {\em Canad. J. Econ.}, 1(1):1--15, February 1968.
 
 \bibitem{Sen1997}
 A.~Sen.
 \newblock {\em On Economic Inequality}.
 \newblock Oxford: Clarendon Press, 1997.
 
+\bibitem{stiglitz1969distribution}
+J.~E. Stiglitz.
+\newblock Distribution of income and wealth among individuals.
+\newblock {\em Econometrica: Journal of the Econometric Society},
+  37(3):382--397, 1969.
+
+\bibitem{WID2017}
+{The World Wealth and Income Database}.
+\newblock Usa top $10\%$ and $1\%$ and bottom $50\%$ wealth shares, 1913--2014.
+\newblock \url{http://wid.world/data/}, 2016.
+\newblock Accessed: 12/26/2016.
+
 \bibitem{Theil1967}
 H.~Theil.
 \newblock {\em Economics and information theory}.
 \newblock North-Holland Publishing Company, 1967.
+
+\bibitem{UhlenbeckOrnstein1930}
+G.~E. Uhlenbeck and L.~S. Ornstein.
+\newblock On the theory of the brownian motion.
+\newblock {\em Physical Review}, 36(5):823--841, Sep 1930.
+
+\bibitem{Vasicek1977}
+O.~Vasicek.
+\newblock An equilibrium characterization of the term structure.
+\newblock {\em Journal of Financial Economics}, 5(2):177--188, 1977.
+
+\bibitem{vermeulen2017fat}
+P.~Vermeulen.
+\newblock How fat is the top tail of the wealth distribution?
+\newblock {\em Review of Income and Wealth}, 2017.
+
+\bibitem{wolff2014household}
+E.~N. Wolff.
+\newblock Household wealth trends in the united states, 1983--2010.
+\newblock {\em Oxford Review of Economic Policy}, 30(1):21--43, 2014.
 
 \end{thebibliography}
