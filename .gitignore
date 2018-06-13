@@ -2,3 +2,15 @@
 .DS_Store
 main.pdf
 main.pdf
+main.aux
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+main.pdf
+*.gz
+*.toc
+*.log

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
@@ -47,3 +48,59 @@ while$ -- 150
 width$ -- 53
 write$ -- 548
 (There were 2 warnings)
+=======
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: abbrv.bst
+Database file #1: ./../LML_bibliography/bibliography.bib
+Warning--empty journal in BermanPetersAdamou2017
+Warning--empty note in Bouchaud2015b
+Warning--empty journal in de2015quantitative
+Warning--empty journal in de2015piketty
+Warning--empty journal in hubmer2016historical
+Warning--empty journal in pinkovskiy2009parametric
+Warning--there's a number but no volume in Rios20162013
+You've used 61 entries,
+            2118 wiz_defined-function locations,
+            890 strings with 12617 characters,
+and the built_in function-call counts, 17788 in all, are:
+= -- 1801
+> -- 698
+< -- 2
++ -- 295
+- -- 218
+* -- 1223
+:= -- 3049
+add.period$ -- 188
+call.type$ -- 61
+change.case$ -- 286
+chr.to.int$ -- 0
+cite$ -- 68
+duplicate$ -- 656
+empty$ -- 1447
+format.name$ -- 218
+if$ -- 3615
+int.to.chr$ -- 0
+int.to.str$ -- 61
+missing$ -- 63
+newline$ -- 313
+num.names$ -- 122
+pop$ -- 252
+preamble$ -- 1
+purify$ -- 231
+quote$ -- 0
+skip$ -- 442
+stack$ -- 0
+substring$ -- 1257
+swap$ -- 63
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 230
+warning$ -- 7
+while$ -- 197
+width$ -- 63
+write$ -- 659
+(There were 7 warnings)
+>>>>>>> chapter_3
