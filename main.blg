@@ -1,56 +1,5 @@
-<<<<<<< HEAD
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: main.aux
-The style file: abbrv.bst
-Database file #1: ./../LML_bibliography/bibliography.bib
-Warning--I didn't find a database entry for "Campbell2017"
-Warning--I didn't find a database entry for "Markopolos2005"
-You've used 51 entries,
-            2118 wiz_defined-function locations,
-            850 strings with 9935 characters,
-and the built_in function-call counts, 13751 in all, are:
-= -- 1363
-> -- 464
-< -- 2
-+ -- 198
-- -- 138
-* -- 856
-:= -- 2358
-add.period$ -- 154
-call.type$ -- 51
-change.case$ -- 209
-chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 583
-empty$ -- 1227
-format.name$ -- 138
-if$ -- 2856
-int.to.chr$ -- 0
-int.to.str$ -- 51
-missing$ -- 69
-newline$ -- 258
-num.names$ -- 104
-pop$ -- 245
-preamble$ -- 1
-purify$ -- 170
-quote$ -- 0
-skip$ -- 354
-stack$ -- 0
-substring$ -- 877
-swap$ -- 57
-text.length$ -- 2
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 164
-warning$ -- 0
-while$ -- 150
-width$ -- 53
-write$ -- 548
-(There were 2 warnings)
-=======
-This is BibTeX, Version 0.99d (TeX Live 2018)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: ./../LML_bibliography/bibliography.bib
@@ -61,46 +10,45 @@ Warning--empty journal in de2015piketty
 Warning--empty journal in hubmer2016historical
 Warning--empty journal in pinkovskiy2009parametric
 Warning--there's a number but no volume in Rios20162013
-You've used 61 entries,
+You've used 100 entries,
             2118 wiz_defined-function locations,
-            890 strings with 12617 characters,
-and the built_in function-call counts, 17788 in all, are:
-= -- 1801
-> -- 698
-< -- 2
-+ -- 295
-- -- 218
-* -- 1223
-:= -- 3049
-add.period$ -- 188
-call.type$ -- 61
-change.case$ -- 286
+            1134 strings with 17274 characters,
+and the built_in function-call counts, 27975 in all, are:
+= -- 2806
+> -- 1036
+< -- 3
++ -- 442
+- -- 318
+* -- 1821
+:= -- 4799
+add.period$ -- 306
+call.type$ -- 100
+change.case$ -- 443
 chr.to.int$ -- 0
-cite$ -- 68
-duplicate$ -- 656
-empty$ -- 1447
-format.name$ -- 218
-if$ -- 3615
+cite$ -- 107
+duplicate$ -- 1101
+empty$ -- 2372
+format.name$ -- 318
+if$ -- 5745
 int.to.chr$ -- 0
-int.to.str$ -- 61
-missing$ -- 63
-newline$ -- 313
-num.names$ -- 122
-pop$ -- 252
+int.to.str$ -- 100
+missing$ -- 116
+newline$ -- 508
+num.names$ -- 202
+pop$ -- 453
 preamble$ -- 1
-purify$ -- 231
+purify$ -- 358
 quote$ -- 0
-skip$ -- 442
+skip$ -- 707
 stack$ -- 0
-substring$ -- 1257
-swap$ -- 63
-text.length$ -- 2
+substring$ -- 1859
+swap$ -- 107
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 230
+type$ -- 352
 warning$ -- 7
-while$ -- 197
-width$ -- 63
-write$ -- 659
+while$ -- 307
+width$ -- 103
+write$ -- 1075
 (There were 7 warnings)
->>>>>>> chapter_3
