@@ -1,4 +1,4 @@
-\begin{thebibliography}{100}
+\begin{thebibliography}{10}
 
 \bibitem{AdamouPeters2016}
 A.~Adamou and O.~Peters.
@@ -19,11 +19,6 @@ G.~I. Barenblatt.
 C.~M. Bender and S.~A. Orszag.
 \newblock {\em Advanced Mathematical Methods for Scientists and Engineers}.
 \newblock Springer, New York, 1978.
-
-\bibitem{benhabib2017earnings}
-J.~Benhabib, A.~Bisin, and M.~Luo.
-\newblock Earnings inequality and other determinants of wealth inequality.
-\newblock {\em American Economic Review}, 107(5):593--597, 2017.
 
 \bibitem{BenhabibBisinZhu2011}
 J.~Benhabib, A.~Bisin, and S.~Zhu.
@@ -73,10 +68,6 @@ F.~Black.
 \newblock Noise.
 \newblock {\em The Journal of Finance}, 41(3):528--543, 1986.
 
-\bibitem{Bouchaud2015b}
-J.-P. Bouchaud.
-\newblock Note on mean-field wealth models and the random energy model.
-
 \bibitem{Bouchaud2015}
 J.-P. Bouchaud.
 \newblock On growth-optimal tax rates and the issue of wealth inequalities.
@@ -95,8 +86,8 @@ J.~Bricker, A.~Henriques, J.~Krimmel, and J.~Sabelhaus.
 
 \bibitem{brzezinski2014wealth}
 M.~Brzezinski.
-\newblock Do wealth distributions follow power laws? evidence from ‘rich
-  lists’.
+\newblock Do wealth distributions follow power laws? evidence from `rich
+  lists'.
 \newblock {\em Physica A: Statistical Mechanics and its Applications},
   406:155--162, 2014.
 
@@ -209,13 +200,6 @@ H.~Hinrichsen.
 \newblock Non-equilibrium critical phenomena and phase transitions into
   absorbing states.
 \newblock {\em Adv. Phys.}, 49(7):815--958, 2000.
-
-\bibitem{hubmer2016historical}
-J.~Hubmer, P.~Krusell, and A.~A. Smith~Jr.
-\newblock The historical evolution of the wealth distribution: A
-  quantitative-theoretic investigation.
-\newblock 2016.
-\newblock {W}orking {P}aper 23011, NBER.
 
 \bibitem{Hull2006}
 J.~C. Hull.
@@ -422,12 +406,6 @@ T.~Piketty and G.~Zucman.
 \newblock Capital is back: Wealth-income ratios in rich countries, 1700-2010.
 \newblock {\em The Quarterly Journal of Economics}, 129(3):1255--1310, 2014.
 
-\bibitem{pinkovskiy2009parametric}
-M.~Pinkovskiy and X.~Sala{-}\lowercase{i}{-}Martin.
-\newblock Parametric estimations of the world distribution of income.
-\newblock 2009.
-\newblock {W}orking {P}aper 15433, NBER.
-
 \bibitem{Quandl2016}
 Quandl.
 \newblock {D}ow {J}ones {I}ndustrial {A}verage.
@@ -540,7 +518,7 @@ W.~A. Whitworth.
 
 \bibitem{wolff2014household}
 E.~N. Wolff.
-\newblock Household wealth trends in the united states, 1983--2010.
+\newblock {Household Wealth Trends in the United States}, 1983--2010.
 \newblock {\em Oxford Review of Economic Policy}, 30(1):21--43, 2014.
 
 \end{thebibliography}

@@ -118,13 +118,13 @@ So let's try this in our case and see if we can make sense of the game.
 In \fref{1_2} we average over finite ensembles of $\N$ 
 trajectories, that is, we plot the finite-ensemble average.
 
-\begin{defn}{Finite-ensemble average} The finite-ensemble average of the observable 
-$\A$ at a given time $\t$ is
+\begin{defn}{Finite-ensemble average} The finite-ensemble average of the quantity 
+$z$ at a given time $\t$ is
 \be
-\ave{\A(\t)}_{\N}=\frac{1}{\N}\sum_{\gi}^{\N} \A_{\gi}(\t),
+\ave{\z(\t)}_{\N}=\frac{1}{\N}\sum_{\gi}^{\N} \z_{\gi}(\t),
 \elabel{f_ens}
 \ee 
-where $\gi$ indexes a particular realization of $\A$ and $\N$ is the
+where $\gi$ indexes a particular realization of $\z(\t)$ and $\N$ is the
 number of realizations included in the average.
 \end{defn}
 \begin{figure}[h!]
@@ -205,7 +205,7 @@ expectation value, and the second is closely related to the object called the ti
 
 \subsubsection{Expectation value}
 In this section we validate \fref{1_2} by computing analytically the
-average of $\x$ over infinitely many trials, a quantity known as the expectation value.
+average of $\x(\t)$ over infinitely many realizations, a quantity known as the expectation value.
 The expectation value is usually introduced as the sum of all possible values, 
 weighted by their probabilities. We will define it as a limit instead, and then
 show that this limit is identical to the familiar expression.
@@ -214,60 +214,61 @@ show that this limit is identical to the familiar expression.
 We assume that you are somewhat familiar with the concept of a random variable, and we 
 will avoid a lengthy technical discussion. Instead, we highly recommend reading the 2-page discussion in van Kampen's excellent book \cite[p.~2]{vanKampen1992}, some of whose key points we reproduce here.
 
-A random variable is an object $X$ defined by
+A random variable is an object $\Z$ defined by
 \begin{itemize}
 \item
 a set of possible values
 \item
 a probability distribution over this set.
 \end{itemize}
-That's it. The set may be discrete, like $\{4, 7.8, 29\}$, or it may be continuous, like the real line or the positive reals. The \PDFa is a non-negative function of the set
+That's it. The set may be discrete, like $\{4, 7.8, 29\}$ or the integers, $\mathbb{Z}$; or it may be continuous, like the interval $(3,12)$, or the positive reals, $\mathbb{R}^+$. The \PDFa is a non-negative function of the set,
 \be
-\PDF(x)\geq 0.
+\PDF_{\Z}(\z)\geq 0.
 \ee
-It is normalized, so that the integral over the entire set is one,
+Note the (common) use of capital and small letters: $\PDF_{\Z}(\z)$ is the \PDFa
+of the random variable $\Z$ (capital) at value $\z$ (small).
+The \PDFa is normalized, so that the integral over the entire set is one,
 \be
-\int \PDF(x)dx =1.
+\int \PDF_{\Z}(\z)d\z =1.
 \ee
-Note the standard use of capital and small letters: $X$ is the random variable and $x$ is a value it may take.
-The probability (a number between 0 and 1) that $x$ is between $a$ and $b$ is
+The probability (a number between 0 and 1) that $\z$ is between $a$ and $b$ is
 \be
-\int_a^b \PDF(x)dx.
+\int_a^b \PDF_{\Z}(\z)d\z.
 \ee
-When the set of possible values is discrete, we will write $p_i$ to mean the probability of the $i^{\text{th}}$ value in the set, $x_i$. We could also express this as an integral of the \PDFa over a neighborhood of $x_i$ that includes no other possible values.
+When the set of possible values is discrete, we will write $p_i$ to mean the probability of the $\gj^{\text{th}}$ value in the set, $\z_{\gi}$. We could also express this as an integral of the \PDFa over a neighborhood of $\z_{\gj}$ that includes no other possible values.
 
-Of course we can define the distribution of a random variable to depend on all kinds of things -- the day of the week, or the country we find ourselves in. Sometimes it will be useful to consider distributions of random numbers that depend on time. By default we will assume that the distributions of random numbers are time-independent, but to be sure we will often make this explicit.
+A possible value $\z$, randomly selected in accordance with $\PDF_{\Z}(\z)$, is called an ``instance'' or ``realization'' of the random variable $\Z$.
+
+Of course we can define the distribution of a random variable to depend on all kinds of things -- the day of the week, or the country we find ourselves in. Sometimes it will be useful to consider distributions of random numbers that depend on time, like in the case of wealth $\x(\t)$. By default we will assume that the distributions of random variables are time-independent, but to avoid confusion we will often make time dependence or independence explicit.
 \end{excursion}
 
 \begin{defn}{Expectation value i}
-The expectation value of a quantity $\x$
+The expectation value of a quantity $\z$
 is the large-ensemble limit of the finite-ensemble average \eref{f_ens},
 \be
-\ave{\x}=\lim_{\N\to\infty}\ave{\x}_{\N}.
+\ave{\z}=\lim_{\N\to\infty}\ave{\z}_{\N}.
 \elabel{ens}
 \ee
 \end{defn}
 
-This implies that in our first analysis of the problem -- by averaging
-over $\N$ trajectories -- we were approximately using the expectation
-value as a gauge of the desirability of the game. We will now prove that 
+This implies that in our first analysis of the game -- by averaging
+over $\N$ trajectories -- we were approximately using the (time-dependent)
+expectation value of a time-dependent random variable as a gauge of the desirability of the game. We will now prove that 
 letting $\N\to\infty$ is indeed the same as working with the more
 familiar definition of the expectation value.
 
 \begin{defn}{Expectation value ii}
-The expectation value of a quantity $\x$ 
-that can take discrete values $\x_\gj$ is the sum of all 
+The expectation value of a quantity $\z$ 
+that can take discrete values $\z_\gj$ is the sum of all 
 possible values weighted by their probabilities $\p_\gj$
 \be
-\ave{\x}=\sum_\gj \p_\gj \x_\gj.
+\ave{\z}=\sum_\gj \p_\gj \z_\gj.
 \elabel{exp_sum}
 \ee 
-If $\x$ is continuous, the expectation value is the integral
+If $\z$ is continuous, the expectation value is the integral
 \be
-\ave{\x}=\int_{-\infty}^{+\infty} \gs \PDF_\x(\gs) \gd\gs,
+\ave{\z}=\int_{-\infty}^{+\infty} \gs \PDF_{\Z}(\z) \gd\z.
 \ee 
-where $\PDF_\x(\gs)$ is the \PDFa
-of the random variable $\x$ at value $\gs$.
 \end{defn}
 
 %All possible distinct trajectories $x(t)$ are equally likely in our game.
@@ -293,19 +294,19 @@ of the random variable $\x$ at value $\gs$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 We now show that the two definitions of the expectation value are equivalent.
 \begin{proof}
-Consider the number of times the value $\x_\gj$ is observed at time 
-$\t$ in an ensemble of $\N$ trajectories. Call this $\gn_\gj$. 
+Consider the number of times the value $\z_\gj$ is observed in an ensemble 
+of $\N$ instances. Call this number $\gn_\gj$. 
 The finite-ensemble average can then be re-written as
 \bea
-\ave{\x(\t)}_\N&=&\frac{1}{\N}\sum_\gi  \x_\gi(\t)\\
-&=&\sum_\gj \frac{\gn_\gj}{\N} \x_\gj(\t),
+\ave{\z}_\N&=&\frac{1}{\N}\sum_\gi  \z_\gi\\
+&=&\sum_\gj \frac{\gn_\gj}{\N} \z_\gj,
 \eea
-where the subscript $\gi$ indexes a particular realization of $\x$, and
-the subscript $\gj$ indexes a possible value of $\x$.
+where the subscript $\gi$ indexes a particular instance of $\z$, and
+the subscript $\gj$ indexes a possible value of $\z$.
 The fraction $\frac{\gn_\gj}{\N}$ in the limit $\N\to\infty$ is 
 the probability $\p_\gj$, and we find
 \be
-\lim_{\N\to\infty}\ave{\x(\t)}_\N = \sum_\gj \p_\gj \x_\gj(\t).
+\lim_{\N\to\infty}\ave{\z}_\N = \sum_\gj \p_\gj \z_\gj.
 \ee
 The \LHS is the expectation value by its first definition as a limit, 
 the \RHS is the expectation value by its second definition as a weighted sum. 
@@ -342,10 +343,50 @@ carefully using the term ``finite-ensemble average'' for finite $\N$.
 %and because the expectation value can be obtained by averaging
 %over all ensemble members it is also called the ensemble average. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{excursion}{Stochastic processes}
+Once again, we recommend van Kampen \cite[p.~52]{vanKampen1992} for a simple definition -- this time of stochastic processes. 
+Imagine we've defined a random variable, $\Z$. Any function $\Y(\Z)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, a simple scalar parameter, a number, which is interpreted as time, so we write
+\be
+\Y_{\Z}(\t)=f(\Z,\t).
+\elabel{st_pr}
+\ee
+This may not be how you think of a stochastic process, so let's illustrate this with a picture.
 
-We pretended to be mathematically clueless when carrying out the simulations,
+%\begin{figure}[h!]
+\begin{picture}(200,220)(20,30)
+  \put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_1/figs/sp_grid.pdf}}
+  \put(13,190){$Y_{z_1}(\t)$}
+  \put(13,159){$Y_{z_2}(\t)$}
+  \put(13,128){$Y_{z_3}(\t)$}
+  \put(13,97){$Y_{z_4}(\t)$}
+  \put(13,66){$Y_{z_5}(\t)$}
+  \put(-20,180){\rotatebox{-90}{realization (universe) $\gi$}}  
+%  \put(-25,12){(universe)}  
+%  \put(122,220){specific moment in time $\t=\t^*$}  
+  \put(200,235){Time $\t$}  
+  \put(188,207){$Y_{z_1}(\t^*)$}
+  \put(187,208){\vector(-1,-1){15}}
+%  \put(-27,125){$\gi=3$}
+%  \put(362,127){$\overline{Y}_{x_3}=$}
+%  \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} Y_{x_3}(\gs)\gd \gs$}
+%  \put(100,10){$\ave{Y_X(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N Y_{x_i}(\t^*)$}  
+\label{sp_grid}
+\end{picture}\\
+%\end{figure}
+When we simulate stochastic processes, we often start with some value and modify it iteratively in each step of a for-loop. In each step of the for-loop we would generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $\z$ of the random variable $\Z$ only once and insert that into \eref{st_pr}. The value $\z$ specifies a simple function of time
+\be
+\Y_{\z}(\t)=f(\z,\t)
+\ee
+meaning that all the randomness is contained in $\z$. Once $\z$ is specified, $\Y_{\z}(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. As an example you can think of drawing  at random a single uniformly distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which could be interpreted as a stochastic process, if $\t$ specifies the decimal place of the relevant digit.
+
+We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $\Y_{\Z}(\t^*)$. That's again a random variable, an instance of which may be $\Y_{\z_1}(\t^*)$.
+
+We will suppress the random variable $\Z$ in our notation, and just write $\x(\t)$ for the stochastic wealth process (instead of writing $\x(\Z,\t)$).
+\end{excursion}
+
+We pretended to be mathematically clueless when we ran the simulations,
 with the purpose to gain a deeper conceptual understanding of the expectation 
-value. We now compute the expectation value exactly instead of 
+value. We now compute exactly the expectation value of the stochastic process $\x(\t)$, instead of 
 approximating it numerically. Consider the expectation value of \eref{gamble}  
 \be
 \ave{\x(\t+\dt)}=\ave{\x(\t)\gr(\t)}. 
@@ -360,44 +401,6 @@ wherefore we can solve recursively for the wealth after $\T$ rounds, correspondi
 \ave{\x(\t+\Dt)} = \ave{\x(\t+\T\dt)}=\x(\t)\ave{\gr}^\T.
 \ee
 $\dt$ is the duration of a single round of a gamble, while $\Dt$ is the amount of time spent gambling.
-\begin{excursion}{Stochastic processes}
-Once again, we recommend van Kampen \cite[p.~52]{vanKampen1992} for an exceedingly simple definition -- this time of a stochastic process. 
-Imagine we've defined a random variable, $X$. Any function $Y(X)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, a simple scalar parameter, a number, which is interpreted as time, so we write
-\be
-Y_X(\t)=f(X,\t).
-\elabel{st_pr}
-\ee
-This may not be how you think of a stochastic process, so let's illustrate this with a picture.
-
-%\begin{figure}[h!]
-\begin{picture}(200,220)(20,30)
-  \put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_1/figs/sp_grid.pdf}}
-  \put(13,190){$Y_{x_1}(\t)$}
-  \put(13,159){$Y_{x_2}(\t)$}
-  \put(13,128){$Y_{x_3}(\t)$}
-  \put(13,97){$Y_{x_4}(\t)$}
-  \put(13,66){$Y_{x_5}(\t)$}
-  \put(-20,180){\rotatebox{-90}{realization (universe) $\gi$}}  
-%  \put(-25,12){(universe)}  
-%  \put(122,220){specific moment in time $\t=\t^*$}  
-  \put(200,235){Time $\t$}  
-  \put(188,207){$Y_{x_1}(\t^*)$}
-  \put(187,208){\vector(-1,-1){15}}
-%  \put(-27,125){$\gi=3$}
-%  \put(362,127){$\overline{Y}_{x_3}=$}
-%  \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} Y_{x_3}(\gs)\gd \gs$}
-%  \put(100,10){$\ave{Y_X(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N Y_{x_i}(\t^*)$}  
-\label{sp_grid}
-\end{picture}\\
-%\end{figure}
-When we simulate stochastic processes, we often start with some value and modify it iteratively in each step of a for-loop. In each step of the for-loop we would generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $x$ of the random variable $X$ only once and insert that into \eref{st_pr}. The value $x$ specifies a simple function of time
-\be
-Y_x(\t)=f(x,\t)
-\ee
-meaning that all the randomness is contained in $x$. Once $x$ is specified, $Y_x(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. As an example you can think of drawing  at random a single uniformally distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which could be interpreted as a stochastic process, if $\t$ specifies the decimal place of the relevant digit.
-
-We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $Y_X(\t^*)$. That's again a random variable, and instance of which may be $Y_{x_1}(\t^*)$.
-\end{excursion}
 
 The expectation value $\ave{\gr}$ is easily found from \eref{law} 
 as $\ave{\gr}=\frac{1}{2}\times 0.6 + \frac{1}{2}\times 1.5=1.05$. Since 

@@ -3,7 +3,7 @@
 \contentsline {subsubsection}{\numberline {1.1.1}Averaging over many trials}{6}{subsubsection.1.1.1}
 \contentsline {subsubsection}{\numberline {1.1.2}Averaging over time}{7}{subsubsection.1.1.2}
 \contentsline {subsubsection}{\numberline {1.1.3}Expectation value}{9}{subsubsection.1.1.3}
-\contentsline {subsubsection}{\numberline {1.1.4}Time average}{14}{subsubsection.1.1.4}
+\contentsline {subsubsection}{\numberline {1.1.4}Time average}{13}{subsubsection.1.1.4}
 \contentsline {subsubsection}{\numberline {1.1.5}Ergodic observables}{19}{subsubsection.1.1.5}
 \contentsline {subsection}{\numberline {1.2}Rates}{22}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Brownian motion}{24}{subsection.1.3}
@@ -32,61 +32,53 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Log-normal wealth distribution}{72}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}Inequality measure from two growth rates}{74}{subsubsection.3.1.2}
 \contentsline {subsection}{\numberline {3.2}Sums of lognormals and the random energy model}{76}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Introduction -- why study GBM?}{76}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Non-ergodicity of GBM}{77}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}PEAs in GBM -- a sketch}{78}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Our previous work on PEAs}{79}{subsubsection.3.2.4}
-\contentsline {subsubsection}{\numberline {3.2.5}Mapping to the random energy model}{81}{subsubsection.3.2.5}
-\contentsline {subsubsection}{\numberline {3.2.6}Another route via It\^{o}\xspace calculus}{85}{subsubsection.3.2.6}
-\contentsline {subsubsection}{\numberline {3.2.7}Discussion}{86}{subsubsection.3.2.7}
-\contentsline {subsection}{\numberline {3.3}Cooperation}{86}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Reallocation}{90}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Introduction}{90}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Model}{92}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Model positioning and definition}{93}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Model behaviour}{95}{subsubsection.3.4.4}
-\contentsline {paragraph}{Positive $\tau $}{95}{section*.4}
-\contentsline {paragraph}{Negative $\tau $}{96}{section*.5}
-\contentsline {section}{\numberline {4}Data}{97}{section.4}
-\contentsline {subsubsection}{\numberline {4.0.1}Wealth share data}{97}{subsubsection.4.0.1}
-\contentsline {subsubsection}{\numberline {4.0.2}Wealth Growth Rate}{98}{subsubsection.4.0.2}
-\contentsline {subsubsection}{\numberline {4.0.3}Volatility}{99}{subsubsection.4.0.3}
-\contentsline {subsubsection}{\numberline {4.0.4}Empirical Analysis}{100}{subsubsection.4.0.4}
-\contentsline {subsubsection}{\numberline {4.0.5}Convergence times}{102}{subsubsection.4.0.5}
-\contentsline {subsubsection}{\numberline {4.0.6}The effect of earnings}{104}{subsubsection.4.0.6}
-\contentsline {subsubsection}{\numberline {4.0.7}Conclusions}{107}{subsubsection.4.0.7}
-\contentsline {subsubsection}{\numberline {4.0.8}The derivation of self-averaging time $t_c$}{109}{subsubsection.4.0.8}
-\contentsline {subsubsection}{\numberline {4.0.9}The derivation of the stationary distribution}{111}{subsubsection.4.0.9}
-\contentsline {subsubsection}{\numberline {4.0.10}The effect of fixed versus time-varying $\sigma $}{112}{subsubsection.4.0.10}
-\contentsline {subsubsection}{\numberline {4.0.11}The derivation of the variance convergence time}{114}{subsubsection.4.0.11}
-\contentsline {subsection}{\numberline {4.1}Taxation}{115}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Wealth tax}{116}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Income tax}{119}{subsubsection.4.1.2}
-\contentsline {section}{\numberline {5}Markets}{122}{section.5}
-\contentsline {subsection}{\numberline {5.1}Optimal leverage}{123}{subsection.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}A model market}{123}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}Leverage}{124}{subsubsection.5.1.2}
-\contentsline {subsubsection}{\numberline {5.1.3}Portfolio theory}{124}{subsubsection.5.1.3}
-\contentsline {subsubsection}{\numberline {5.1.4}Sharpe ratio}{127}{subsubsection.5.1.4}
-\contentsline {subsubsection}{\numberline {5.1.5}Expected return}{127}{subsubsection.5.1.5}
-\contentsline {subsubsection}{\numberline {5.1.6}Growth rate maximisation}{128}{subsubsection.5.1.6}
-\contentsline {subsection}{\numberline {5.2}Stochastic market efficiency}{130}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}A fundamental measure}{130}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Relaxing the model}{130}{subsubsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.3}Efficiency}{131}{subsubsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.4}Stability}{132}{subsubsection.5.2.4}
-\contentsline {subsubsection}{\numberline {5.2.5}Prediction accuracy}{134}{subsubsection.5.2.5}
-\contentsline {subsection}{\numberline {5.3}Applications of stochastic market efficiency}{134}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}A theory of noise -- the silliness of price discovery}{135}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Solution of the equity premium puzzle}{135}{subsubsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}Central-bank interest rates}{137}{subsubsection.5.3.3}
-\contentsline {subsubsection}{\numberline {5.3.4}Fraud detection}{138}{subsubsection.5.3.4}
-\contentsline {subsection}{\numberline {5.4}Real markets -- stochastic market efficiency in action}{138}{subsection.5.4}
-\contentsline {subsubsection}{\numberline {5.4.1}Backtests of constant-leverage investments}{139}{subsubsection.5.4.1}
-\contentsline {subsubsection}{\numberline {5.4.2}Data sets}{141}{subsubsection.5.4.2}
-\contentsline {subsubsection}{\numberline {5.4.3}Full time series}{142}{subsubsection.5.4.3}
-\contentsline {subsubsection}{\numberline {5.4.4}Shorter time scales}{143}{subsubsection.5.4.4}
-\contentsline {subsection}{\numberline {5.5}Discussion}{145}{subsection.5.5}
-\contentsline {section}{Acronyms}{145}{section*.6}
-\contentsline {section}{List of Symbols}{145}{section*.8}
-\contentsline {section}{References}{148}{section*.9}
+\contentsline {subsubsection}{\numberline {3.2.1}PEAs in GBM -- a sketch}{76}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Mapping to the random energy model}{79}{subsubsection.3.2.2}
+\contentsline {section}{\numberline {4}Interactions}{83}{section.4}
+\contentsline {subsection}{\numberline {4.1}Cooperation}{84}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Taxation}{88}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Wealth tax}{88}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Income tax}{92}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Reallocation}{93}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Introduction}{93}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Model}{96}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Model behaviour}{98}{subsubsection.4.3.3}
+\contentsline {paragraph}{Positive $\tau $}{98}{section*.4}
+\contentsline {paragraph}{Negative $\tau $}{98}{section*.5}
+\contentsline {subsubsection}{\numberline {4.3.4}Data}{100}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Wealth share data}{100}{subsubsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.6}Wealth Growth Rate}{101}{subsubsection.4.3.6}
+\contentsline {subsubsection}{\numberline {4.3.7}Volatility}{101}{subsubsection.4.3.7}
+\contentsline {subsubsection}{\numberline {4.3.8}Empirical Analysis}{103}{subsubsection.4.3.8}
+\contentsline {subsubsection}{\numberline {4.3.9}Convergence times}{104}{subsubsection.4.3.9}
+\contentsline {subsubsection}{\numberline {4.3.10}Conclusions}{107}{subsubsection.4.3.10}
+\contentsline {subsubsection}{\numberline {4.3.11}The derivation of the stationary distribution}{109}{subsubsection.4.3.11}
+\contentsline {subsubsection}{\numberline {4.3.12}The derivation of the variance convergence time}{110}{subsubsection.4.3.12}
+\contentsline {section}{\numberline {5}Markets}{112}{section.5}
+\contentsline {subsection}{\numberline {5.1}Optimal leverage}{113}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}A model market}{113}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Leverage}{114}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.3}Portfolio theory}{114}{subsubsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.4}Sharpe ratio}{117}{subsubsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.5}Expected return}{117}{subsubsection.5.1.5}
+\contentsline {subsubsection}{\numberline {5.1.6}Growth rate maximisation}{118}{subsubsection.5.1.6}
+\contentsline {subsection}{\numberline {5.2}Stochastic market efficiency}{120}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}A fundamental measure}{120}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Relaxing the model}{120}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Efficiency}{121}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Stability}{122}{subsubsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.5}Prediction accuracy}{124}{subsubsection.5.2.5}
+\contentsline {subsection}{\numberline {5.3}Applications of stochastic market efficiency}{124}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}A theory of noise -- the silliness of price discovery}{125}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Solution of the equity premium puzzle}{125}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Central-bank interest rates}{127}{subsubsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.4}Fraud detection}{128}{subsubsection.5.3.4}
+\contentsline {subsection}{\numberline {5.4}Real markets -- stochastic market efficiency in action}{128}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Backtests of constant-leverage investments}{129}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Data sets}{131}{subsubsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.3}Full time series}{132}{subsubsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.4}Shorter time scales}{133}{subsubsection.5.4.4}
+\contentsline {subsection}{\numberline {5.5}Discussion}{135}{subsection.5.5}
+\contentsline {section}{Acronyms}{135}{section*.6}
+\contentsline {section}{List of Symbols}{135}{section*.8}
+\contentsline {section}{References}{138}{section*.9}
