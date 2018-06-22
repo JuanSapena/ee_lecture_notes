@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.23)  22 JUN 2018 10:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.23)  22 JUN 2018 17:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1403,7 +1403,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 346.
 
-<./chapter_1/figs/sp_grid.pdf, id=788, 382.22174pt x 272.81235pt>
+<./chapter_1/figs/sp_grid.pdf, id=789, 382.22174pt x 272.81235pt>
 File: ./chapter_1/figs/sp_grid.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/sp_grid.pdf>
@@ -1411,66 +1411,69 @@ Package pdftex.def Info: ./chapter_1/figs/sp_grid.pdf used on input line 357.
 (pdftex.def)             Requested size: 389.03902pt x 277.67793pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 385.
+(mdframed)              on input line 387.
  [10]
-Package mdframed Info: Not enough space on this page on input line 385.
+Package mdframed Info: Not enough space on this page on input line 387.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 385.
+(mdframed)              on input line 387.
  [11 <./chapter_1/figs/sp_grid.pdf>]
-<./chapter_1/figs/x_of_t_lin_exp.pdf, id=905, 387.86783pt x 266.97804pt>
+
+LaTeX Warning: Reference `section:ergodic_observables' on page 12 undefined on 
+input line 397.
+
+<./chapter_1/figs/x_of_t_lin_exp.pdf, id=910, 387.86783pt x 266.97804pt>
 File: ./chapter_1/figs/x_of_t_lin_exp.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_lin_exp.pdf>
 Package pdftex.def Info: ./chapter_1/figs/x_of_t_lin_exp.pdf used on input line
- 420.
+ 423.
 (pdftex.def)             Requested size: 276.00105pt x 189.98755pt.
 
-<./chapter_1/figs/x_of_t_log_exp.pdf, id=906, 393.16888pt x 266.68005pt>
+<./chapter_1/figs/x_of_t_log_exp.pdf, id=911, 393.16888pt x 266.68005pt>
 File: ./chapter_1/figs/x_of_t_log_exp.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/x_of_t_log_exp.pdf>
 Package pdftex.def Info: ./chapter_1/figs/x_of_t_log_exp.pdf used on input line
- 421.
+ 424.
 (pdftex.def)             Requested size: 276.00105pt x 187.2119pt.
- [12 <./chapter_1/figs/x_of_t_lin_exp.pdf> <./chapter_1/figs/x_of_t_log_exp.pdf
-
-
-pdfTeX warning: pdflatex (file ./chapter_1/figs/x_of_t_log_exp.pdf): PDF inclus
-ion: multiple pdfs with page group included in a single page
->]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 442.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 484.
- [13] <./chapter_1/figs/x_of_t_N1M.pdf, id=1121, 393.16888pt x 266.68005pt>
-File: ./chapter_1/figs/x_of_t_N1M.pdf Graphic file (type pdf)
-
-<use ./chapter_1/figs/x_of_t_N1M.pdf>
-Package pdftex.def Info: ./chapter_1/figs/x_of_t_N1M.pdf used on input line 533
-.
-(pdftex.def)             Requested size: 265.65147pt x 180.18845pt.
-
-<./chapter_1/figs/x_of_t_log_10000.pdf, id=1122, 420.70367pt x 266.68005pt>
-File: ./chapter_1/figs/x_of_t_log_10000.pdf Graphic file (type pdf)
-
-<use ./chapter_1/figs/x_of_t_log_10000.pdf>
-Package pdftex.def Info: ./chapter_1/figs/x_of_t_log_10000.pdf used on input li
-ne 534.
-(pdftex.def)             Requested size: 276.00105pt x 174.95952pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14]
+[12]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 558.
+(mdframed)              on input line 445.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 596.
+(mdframed)              on input line 487.
+ [13 <./chapter_1/figs/x_of_t_lin_exp.pdf> <./chapter_1/figs/x_of_t_log_exp.pdf
+
+
+pdfTeX warning: pdflatex (file ./chapter_1/figs/x_of_t_log_exp.pdf): PDF inclus
+ion: multiple pdfs with page group included in a single page
+>] [14] <./chapter_1/figs/x_of_t_N1M.pdf, id=1142, 393.16888pt x 266.68005pt>
+File: ./chapter_1/figs/x_of_t_N1M.pdf Graphic file (type pdf)
+
+<use ./chapter_1/figs/x_of_t_N1M.pdf>
+Package pdftex.def Info: ./chapter_1/figs/x_of_t_N1M.pdf used on input line 536
+.
+(pdftex.def)             Requested size: 265.65147pt x 180.18845pt.
+
+<./chapter_1/figs/x_of_t_log_10000.pdf, id=1143, 420.70367pt x 266.68005pt>
+File: ./chapter_1/figs/x_of_t_log_10000.pdf Graphic file (type pdf)
+
+<use ./chapter_1/figs/x_of_t_log_10000.pdf>
+Package pdftex.def Info: ./chapter_1/figs/x_of_t_log_10000.pdf used on input li
+ne 537.
+(pdftex.def)             Requested size: 276.00105pt x 174.95952pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 561.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 599.
  [15 <./chapter_1/figs/x_of_t_N1M.pdf> <./chapter_1/figs/x_of_t_log_10000.pdf
 
 pdfTeX warning: pdflatex (file ./chapter_1/figs/x_of_t_log_10000.pdf): PDF incl
@@ -1478,99 +1481,107 @@ usion: multiple pdfs with page group included in a single page
 >]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 605.
+(mdframed)              on input line 608.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 680.
+(mdframed)              on input line 683.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 680.
- [16] <./chapter_1/figs/all_saints.pdf, id=1285, 845.1575pt x 597.23125pt>
+(mdframed)              on input line 683.
+ [16] <./chapter_1/figs/all_saints.pdf, id=1293, 845.1575pt x 597.23125pt>
 File: ./chapter_1/figs/all_saints.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/all_saints.pdf>
-Package pdftex.def Info: ./chapter_1/figs/all_saints.pdf used on input line 683
+Package pdftex.def Info: ./chapter_1/figs/all_saints.pdf used on input line 686
 .
 (pdftex.def)             Requested size: 396.7479pt x 280.37065pt.
  [17 <./chapter_1/figs/all_saints.pdf>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 724.
+(mdframed)              on input line 727.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 736.
+(mdframed)              on input line 739.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 738.
+(mdframed)              on input line 741.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 745.
+(mdframed)              on input line 748.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 753.
+(mdframed)              on input line 756.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 800.
+(mdframed)              on input line 803.
 
 [18] [19]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 827.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 865.
+(mdframed)              on input line 830.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 870.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 870.
+ [20]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 879.
+(mdframed)              on input line 875.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 884.
 
 
-LaTeX Warning: Reference `section:' on page 20 undefined on input line 880.
+LaTeX Warning: Reference `section:' on page 21 undefined on input line 885.
 
-[20] <./chapter_1/figs/ergodic_grid.pdf, id=1478, 382.22174pt x 272.81235pt>
+<./chapter_1/figs/ergodic_grid.pdf, id=1490, 382.22174pt x 272.81235pt>
 File: ./chapter_1/figs/ergodic_grid.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/ergodic_grid.pdf>
 Package pdftex.def Info: ./chapter_1/figs/ergodic_grid.pdf used on input line 8
-87.
+92.
 (pdftex.def)             Requested size: 413.99895pt x 295.49461pt.
- [21 <./chapter_1/figs/ergodic_grid.pdf>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[21]
 
 LaTeX Warning: Reference `section:decision' on page 22 undefined on input line 
-977.
+982.
 
-[22] [23]
+[22 <./chapter_1/figs/ergodic_grid.pdf>] [23]
 
 LaTeX Warning: Reference `section:decision' on page 24 undefined on input line 
-1047.
+1052.
 
 [24] [25]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1138.
+(mdframed)              on input line 1143.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1141.
+(mdframed)              on input line 1146.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1145.
+(mdframed)              on input line 1150.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1148.
+(mdframed)              on input line 1153.
  [26]
-Overfull \hbox (11.2216pt too wide) in paragraph at lines 1200--1210
+Overfull \hbox (11.2216pt too wide) in paragraph at lines 1205--1215
 []\OT1/lmr/m/n/10 Clearly, [][][]BM[][], whose in-cre-ments are in-de-pen-dent 
 in-stances of a time-independent
  []
 
-<./chapter_1/figs/BM_time_ave.pdf, id=2034, 408.75278pt x 266.68005pt>
+<./chapter_1/figs/BM_time_ave.pdf, id=2069, 408.75278pt x 266.68005pt>
 File: ./chapter_1/figs/BM_time_ave.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/BM_time_ave.pdf>
 Package pdftex.def Info: ./chapter_1/figs/BM_time_ave.pdf used on input line 12
-25.
+30.
 (pdftex.def)             Requested size: 345.0pt x 225.08398pt.
 
 
@@ -1579,22 +1590,22 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1238.
+(mdframed)              on input line 1243.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1241.
+(mdframed)              on input line 1246.
 
 
 LaTeX Warning: Reference `section:populations' on page 28 undefined on input li
-ne 1254.
+ne 1259.
 
 [28 <./chapter_1/figs/BM_time_ave.pdf>]
-<./chapter_1/figs/GBM_trajectory.pdf, id=2162, 394.26591pt x 266.68005pt>
+<./chapter_1/figs/GBM_trajectory.pdf, id=2197, 394.26591pt x 266.68005pt>
 File: ./chapter_1/figs/GBM_trajectory.pdf Graphic file (type pdf)
 
 <use ./chapter_1/figs/GBM_trajectory.pdf>
 Package pdftex.def Info: ./chapter_1/figs/GBM_trajectory.pdf used on input line
- 1280.
+ 1285.
 (pdftex.def)             Requested size: 345.0pt x 233.3648pt.
  [29 <./chapter_1/figs/GBM_trajectory.pdf>] [30] [31]) (./chapter_2/chapter_2.t
 ex [32] [33]
@@ -1660,7 +1671,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 262.
  [38] [39]
-<./chapter_2/figs/two_dists.pdf, id=2915, 395.53711pt x 272.02817pt>
+<./chapter_2/figs/two_dists.pdf, id=2951, 395.53711pt x 272.02817pt>
 File: ./chapter_2/figs/two_dists.pdf Graphic file (type pdf)
 
 <use ./chapter_2/figs/two_dists.pdf>
@@ -1720,7 +1731,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 1085.
  [55]
-<./chapter_2/figs/trajectories.pdf, id=3928, 417.5412pt x 266.97804pt>
+<./chapter_2/figs/trajectories.pdf, id=3964, 417.5412pt x 266.97804pt>
 File: ./chapter_2/figs/trajectories.pdf Graphic file (type pdf)
 
 <use ./chapter_2/figs/trajectories.pdf>
@@ -1739,7 +1750,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
 (mdframed)              on input line 1220.
- [57 <./chapter_2/figs/trajectories.pdf>] <./chapter_2/figs/u_of_x.pdf, id=4096
+ [57 <./chapter_2/figs/trajectories.pdf>] <./chapter_2/figs/u_of_x.pdf, id=4132
 , 391.3496pt x 278.34865pt>
 File: ./chapter_2/figs/u_of_x.pdf Graphic file (type pdf)
 
@@ -1747,7 +1758,7 @@ File: ./chapter_2/figs/u_of_x.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./chapter_2/figs/u_of_x.pdf used on input line 1225.
 (pdftex.def)             Requested size: 162.15042pt x 115.3299pt.
 
-<./chapter_2/figs/x_of_u.pdf, id=4097, 404.8061pt x 278.34865pt>
+<./chapter_2/figs/x_of_u.pdf, id=4133, 404.8061pt x 278.34865pt>
 File: ./chapter_2/figs/x_of_u.pdf Graphic file (type pdf)
 
 <use ./chapter_2/figs/x_of_u.pdf>
@@ -1770,7 +1781,7 @@ d-wealth paradigm,
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1284.
-<./chapter_2/figs/lottery_add_traj.pdf, id=4198, 422.57875pt x 316.18124pt>
+<./chapter_2/figs/lottery_add_traj.pdf, id=4233, 422.57875pt x 316.18124pt>
 File: ./chapter_2/figs/lottery_add_traj.pdf Graphic file (type pdf)
 
 <use ./chapter_2/figs/lottery_add_traj.pdf>
@@ -1787,7 +1798,7 @@ Package mdframed Info: mdframed detected package amsthm
  [60 <./chapter_2/figs/lottery_add_traj.pdf>]
 Package mdframed Info: Not enough space on this page on input line 1329.
 
-<./chapter_2/figs/gbar_zero.png, id=4273, 559.33969pt x 421.575pt>
+<./chapter_2/figs/gbar_zero.png, id=4308, 559.33969pt x 421.575pt>
 File: ./chapter_2/figs/gbar_zero.png Graphic file (type png)
 
 <use ./chapter_2/figs/gbar_zero.png>
@@ -1795,7 +1806,7 @@ Package pdftex.def Info: ./chapter_2/figs/gbar_zero.png used on input line 1334
 .
 (pdftex.def)             Requested size: 345.0pt x 260.03578pt.
  [61 <./chapter_2/figs/gbar_zero.png>]
-<./chapter_2/figs/lottery_mult_traj.pdf, id=4328, 421.575pt x 316.18124pt>
+<./chapter_2/figs/lottery_mult_traj.pdf, id=4363, 421.575pt x 316.18124pt>
 File: ./chapter_2/figs/lottery_mult_traj.pdf Graphic file (type pdf)
 
 <use ./chapter_2/figs/lottery_mult_traj.pdf>
@@ -1817,7 +1828,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 1523.
  [65] [66]
-<./chapter_2/figs/ins_lin_cropped.pdf, id=4493, 516.93124pt x 399.4925pt>
+<./chapter_2/figs/ins_lin_cropped.pdf, id=4528, 516.93124pt x 399.4925pt>
 File: ./chapter_2/figs/ins_lin_cropped.pdf Graphic file (type pdf)
 
 <use ./chapter_2/figs/ins_lin_cropped.pdf>
@@ -1842,7 +1853,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 1623.
 
-<./chapter_2/figs/ins_log_cropped.pdf, id=4563, 505.89pt x 402.50375pt>
+<./chapter_2/figs/ins_log_cropped.pdf, id=4599, 505.89pt x 402.50375pt>
 File: ./chapter_2/figs/ins_log_cropped.pdf Graphic file (type pdf)
 
 <use ./chapter_2/figs/ins_log_cropped.pdf>
@@ -1868,7 +1879,7 @@ LaTeX Warning: Reference `eq:mean_x' on page 77 undefined on input line 337.
 
 LaTeX Warning: Reference `eq:var_x' on page 77 undefined on input line 337.
 
-<./chapter_3/figs/trajectories.pdf, id=4677, 391.2678pt x 267.6446pt>
+<./chapter_3/figs/trajectories.pdf, id=4713, 391.2678pt x 267.6446pt>
 File: ./chapter_3/figs/trajectories.pdf Graphic file (type pdf)
 
 <use ./chapter_3/figs/trajectories.pdf>
@@ -1890,7 +1901,7 @@ LaTeX Warning: Reference `eq:gest_4' on page 79 undefined on input line 418.
 
 LaTeX Warning: Reference `eq:gest_4' on page 79 undefined on input line 441.
 
-[79] [80] <./chapter_3/figs/PEA.pdf, id=4797, 404.92374pt x 266.68005pt>
+[79] [80] <./chapter_3/figs/PEA.pdf, id=4832, 404.92374pt x 266.68005pt>
 File: ./chapter_3/figs/PEA.pdf Graphic file (type pdf)
 
 <use ./chapter_3/figs/PEA.pdf>
@@ -1908,14 +1919,14 @@ LaTeX Warning: Reference `eq:Ito_sums' on page 81 undefined on input line 570.
 LaTeX Warning: Reference `eq:Ito_sums' on page 81 undefined on input line 570.
 
 [81] [82 <./chapter_3/figs/PEA.pdf>] [83]
-<./chapter_3/figs/blobs.pdf, id=4891, 596.66095pt x 262.50914pt>
+<./chapter_3/figs/blobs.pdf, id=4926, 596.66095pt x 262.50914pt>
 File: ./chapter_3/figs/blobs.pdf Graphic file (type pdf)
 
 <use ./chapter_3/figs/blobs.pdf>
 Package pdftex.def Info: ./chapter_3/figs/blobs.pdf used on input line 686.
 (pdftex.def)             Requested size: 470.0pt x 206.78311pt.
  [84] [85 <./chapter_3/figs/blobs.pdf>]
-<./chapter_3/figs/cooperate.pdf, id=4938, 614.295pt x 794.97pt>
+<./chapter_3/figs/cooperate.pdf, id=4973, 614.295pt x 794.97pt>
 File: ./chapter_3/figs/cooperate.pdf Graphic file (type pdf)
 
 <use ./chapter_3/figs/cooperate.pdf>
@@ -1923,7 +1934,7 @@ Package pdftex.def Info: ./chapter_3/figs/cooperate.pdf used on input line 780.
 
 (pdftex.def)             Requested size: 440.0pt x 569.41818pt.
  [86] [87 <./chapter_3/figs/cooperate.pdf>] [88] [89] <./chapter_3/figs/var_wea
-lth.pdf, id=4996, 505.89pt x 361.35pt>
+lth.pdf, id=5031, 505.89pt x 361.35pt>
 File: ./chapter_3/figs/var_wealth.pdf Graphic file (type pdf)
 
 <use ./chapter_3/figs/var_wealth.pdf>
@@ -1931,7 +1942,7 @@ Package pdftex.def Info: ./chapter_3/figs/var_wealth.pdf used on input line 982
 .
 (pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
 
-<./chapter_3/figs/hist_wealth.pdf, id=5001, 505.89pt x 361.35pt>
+<./chapter_3/figs/hist_wealth.pdf, id=5036, 505.89pt x 361.35pt>
 File: ./chapter_3/figs/hist_wealth.pdf Graphic file (type pdf)
 
 <use ./chapter_3/figs/hist_wealth.pdf>
@@ -1940,7 +1951,7 @@ Package pdftex.def Info: ./chapter_3/figs/hist_wealth.pdf used on input line 99
 (pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
  [90] [91 <./chapter_3/figs/var_wealth.pdf> <./chapter_3/figs/hist_wealth.pdf>]
 
-<./chapter_3/figs/var_income.pdf, id=5038, 505.89pt x 361.35pt>
+<./chapter_3/figs/var_income.pdf, id=5073, 505.89pt x 361.35pt>
 File: ./chapter_3/figs/var_income.pdf Graphic file (type pdf)
 
 <use ./chapter_3/figs/var_income.pdf>
@@ -1948,7 +1959,7 @@ Package pdftex.def Info: ./chapter_3/figs/var_income.pdf used on input line 106
 7.
 (pdftex.def)             Requested size: 276.00105pt x 197.14412pt.
 
-<./chapter_3/figs/hist_income.pdf, id=5047, 505.89pt x 361.35pt>
+<./chapter_3/figs/hist_income.pdf, id=5082, 505.89pt x 361.35pt>
 File: ./chapter_3/figs/hist_income.pdf Graphic file (type pdf)
 
 <use ./chapter_3/figs/hist_income.pdf>
@@ -1985,7 +1996,7 @@ f>
 (epstopdf)             \includegraphics on input line 1208.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_3/figs/dists-eps-converted-to.pdf, id=5158, 461.725pt x 456.70625pt>
+<./chapter_3/figs/dists-eps-converted-to.pdf, id=5193, 461.725pt x 456.70625pt>
 File: ./chapter_3/figs/dists-eps-converted-to.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/dists-eps-converted-to.pdf>
 Package pdftex.def Info: ./chapter_3/figs/dists-eps-converted-to.pdf used on in
@@ -2004,7 +2015,7 @@ ies-eps-converted-to.pdf ./chapter_3/figs/trajectories.eps>
 (epstopdf)             \includegraphics on input line 1254.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_3/figs/trajectories-eps-converted-to.pdf, id=5189, 464.73625pt x 409
+<./chapter_3/figs/trajectories-eps-converted-to.pdf, id=5224, 464.73625pt x 409
 .53pt>
 File: ./chapter_3/figs/trajectories-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2036,7 +2047,7 @@ converted-to.pdf ./chapter_3/figs/data.eps>
 (epstopdf)             \includegraphics on input line 1292.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_3/figs/data-eps-converted-to.pdf, id=5231, 449.68pt x 469.755pt>
+<./chapter_3/figs/data-eps-converted-to.pdf, id=5267, 449.68pt x 469.755pt>
 File: ./chapter_3/figs/data-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./chapter_3/figs/data-eps-converted-to.pdf>
@@ -2065,7 +2076,7 @@ eps-converted-to.pdf ./chapter_3/figs/tau_top1.eps>
 (epstopdf)             \includegraphics on input line 1338.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_3/figs/tau_top1-eps-converted-to.pdf, id=5283, 461.725pt x 459.7175p
+<./chapter_3/figs/tau_top1-eps-converted-to.pdf, id=5318, 461.725pt x 459.7175p
 t>
 File: ./chapter_3/figs/tau_top1-eps-converted-to.pdf Graphic file (type pdf)
  <use ./chapter_3/figs/tau_top1-eps-converted-to.pdf>
@@ -2087,7 +2098,7 @@ eps>
 (epstopdf)             \includegraphics on input line 1353.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_3/figs/tau_top1_top0i1_datasets-eps-converted-to.pdf, id=5298, 461.7
+<./chapter_3/figs/tau_top1_top0i1_datasets-eps-converted-to.pdf, id=5333, 461.7
 25pt x 470.75874pt>
 File: ./chapter_3/figs/tau_top1_top0i1_datasets-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -2109,7 +2120,7 @@ ce-eps-converted-to.pdf ./chapter_3/figs/convergence.eps>
 (epstopdf)             \includegraphics on input line 1363.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_3/figs/convergence-eps-converted-to.pdf, id=5325, 503.8825pt x 480.7
+<./chapter_3/figs/convergence-eps-converted-to.pdf, id=5360, 503.8825pt x 480.7
 9625pt>
 File: ./chapter_3/figs/convergence-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -2130,7 +2141,7 @@ convergence-eps-converted-to.pdf ./chapter_3/figs/variance_convergence.eps>
 (epstopdf)             \includegraphics on input line 1372.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_3/figs/variance_convergence-eps-converted-to.pdf, id=5329, 461.725pt
+<./chapter_3/figs/variance_convergence-eps-converted-to.pdf, id=5364, 461.725pt
  x 245.91875pt>
 File: ./chapter_3/figs/variance_convergence-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -2152,7 +2163,7 @@ op1-eps-converted-to.pdf ./chapter_3/figs/tau_eqm_top1.eps>
 (epstopdf)             \includegraphics on input line 1383.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_3/figs/tau_eqm_top1-eps-converted-to.pdf, id=5347, 467.7475pt x 459.
+<./chapter_3/figs/tau_eqm_top1-eps-converted-to.pdf, id=5383, 467.7475pt x 459.
 7175pt>
 File: ./chapter_3/figs/tau_eqm_top1-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2164,7 +2175,7 @@ d on input line 1383.
 gs/variance_convergence-eps-converted-to.pdf>] [108 <./chapter_3/figs/tau_eqm_t
 op1-eps-converted-to.pdf>] [109] [110]) (./chapter_4/chapter_4.tex [111] [112] 
 [113]
-<./chapter_4/figs/rebalance.pdf, id=5652, 357.53577pt x 239.73564pt>
+<./chapter_4/figs/rebalance.pdf, id=5688, 357.53577pt x 239.73564pt>
 File: ./chapter_4/figs/rebalance.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/rebalance.pdf>
@@ -2177,7 +2188,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 98.
  [114] [115 <./chapter_4/figs/rebalance.pdf>] <./chapter_4/figs/markowitz.pdf, 
-id=5744, 421.575pt x 316.18124pt>
+id=5779, 421.575pt x 316.18124pt>
 File: ./chapter_4/figs/markowitz.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/markowitz.pdf>
@@ -2186,7 +2197,7 @@ Package pdftex.def Info: ./chapter_4/figs/markowitz.pdf used on input line 121.
 (pdftex.def)             Requested size: 345.0pt x 258.75406pt.
  [116 <./chapter_4/figs/markowitz.pdf>]
 [117] [118]
-<./chapter_4/figs/markowitz_peters.png, id=5928, 904.1278pt x 563.85657pt>
+<./chapter_4/figs/markowitz_peters.png, id=5964, 904.1278pt x 563.85657pt>
 File: ./chapter_4/figs/markowitz_peters.png Graphic file (type png)
 
 <use ./chapter_4/figs/markowitz_peters.png>
@@ -2228,7 +2239,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 269.
  [123] [124] [125]
-<./chapter_4/figs/cartoon.pdf, id=6228, 597.50786pt x 845.04686pt>
+<./chapter_4/figs/cartoon.pdf, id=6263, 597.50786pt x 845.04686pt>
 File: ./chapter_4/figs/cartoon.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/cartoon.pdf>
@@ -2240,7 +2251,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 404--406
 
  []
 
-<./chapter_4/figs/STR-FET-1_equity.pdf, id=6371, 448.13988pt x 253.2549pt>
+<./chapter_4/figs/STR-FET-1_equity.pdf, id=6406, 448.13988pt x 253.2549pt>
 File: ./chapter_4/figs/STR-FET-1_equity.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/STR-FET-1_equity.pdf>
@@ -2248,7 +2259,7 @@ Package pdftex.def Info: ./chapter_4/figs/STR-FET-1_equity.pdf used on input li
 ne 418.
 (pdftex.def)             Requested size: 377.77542pt x 213.49393pt.
 
-<./chapter_4/figs/STR-FET_final_equity.pdf, id=6372, 387.53848pt x 266.68005pt>
+<./chapter_4/figs/STR-FET_final_equity.pdf, id=6407, 387.53848pt x 266.68005pt>
 File: ./chapter_4/figs/STR-FET_final_equity.pdf Graphic file (type pdf)
 <use ./chapter_4/figs/STR-FET_final_equity.pdf>
 Package pdftex.def Info: ./chapter_4/figs/STR-FET_final_equity.pdf used on inpu
@@ -2260,7 +2271,7 @@ inal_equity.pdf
 pdfTeX warning: pdflatex (file ./chapter_4/figs/STR-FET_final_equity.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
 >] [131]
-<./chapter_4/figs/all_final_equity.pdf, id=6512, 440.18831pt x 267.6446pt>
+<./chapter_4/figs/all_final_equity.pdf, id=6548, 440.18831pt x 267.6446pt>
 File: ./chapter_4/figs/all_final_equity.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/all_final_equity.pdf>
@@ -2268,14 +2279,14 @@ Package pdftex.def Info: ./chapter_4/figs/all_final_equity.pdf used on input li
 ne 460.
 (pdftex.def)             Requested size: 345.0pt x 209.77884pt.
  [132 <./chapter_4/figs/all_final_equity.pdf>]
-<./chapter_4/figs/all_MAD_final_equity.pdf, id=6590, 402.87703pt x 266.68005pt>
+<./chapter_4/figs/all_MAD_final_equity.pdf, id=6625, 402.87703pt x 266.68005pt>
 File: ./chapter_4/figs/all_MAD_final_equity.pdf Graphic file (type pdf)
 <use ./chapter_4/figs/all_MAD_final_equity.pdf>
 Package pdftex.def Info: ./chapter_4/figs/all_MAD_final_equity.pdf used on inpu
 t line 479.
 (pdftex.def)             Requested size: 345.0pt x 228.36783pt.
 
-<./chapter_4/figs/STR-FED_lopt_var.pdf, id=6607, 398.86203pt x 268.9777pt>
+<./chapter_4/figs/STR-FED_lopt_var.pdf, id=6642, 398.86203pt x 268.9777pt>
 File: ./chapter_4/figs/STR-FED_lopt_var.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/STR-FED_lopt_var.pdf>
@@ -2319,10 +2330,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 36418 strings out of 493014
- 688270 string characters out of 6133351
- 1036605 words of memory out of 5000000
- 38520 multiletter control sequences out of 15000+600000
+ 36452 strings out of 493014
+ 688793 string characters out of 6133351
+ 1040764 words of memory out of 5000000
+ 38554 multiletter control sequences out of 15000+600000
  83274 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,78p,10432b,1016s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2362,10 +2373,10 @@ lic/lm/lmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt
 10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (143 pages, 6982807 bytes).
+Output written on main.pdf (143 pages, 6986440 bytes).
 PDF statistics:
- 7093 PDF objects out of 7423 (max. 8388607)
- 5997 compressed objects within 60 object streams
+ 7131 PDF objects out of 7423 (max. 8388607)
+ 6034 compressed objects within 61 object streams
  790 named destinations out of 1000 (max. 500000)
  906 words of extra memory for PDF output out of 10000 (max. 10000000)
 
