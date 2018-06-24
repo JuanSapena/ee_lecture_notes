@@ -545,18 +545,18 @@ line decays exponentially with the time-average decay factor $\rt$ in each time 
 \flabel{1_4}
 \end{figure}
 \FloatBarrier
-\footnotetext{In \fref{1_4} (A) 
-a slight discrepancy between the expectation value and the $\N=10^6$ 
-finite-ensemble average is visible, especially for later times. This is not coincidence --
-in the long run, also the finite-ensemble average for $10^6$ systems will decay
-at the time-average growth rate. A simple proof for this for the continuous process 
-is in \cite{PetersKlein2013}.
-Moreover, much is known about the distribution for $\ave{\x(\t)}_\N$ for 
-any $\N$ and $\t$ (because
-it happens to be mathematically identical to the partition function of the random 
-energy model, introduced and solved by \person{Derrida} \cite{Derrida1980}. We thank 
-\person{J.-P. Bouchaud} for pointing this out to us).}
-\FloatBarrier
+%\footnotetext{In \fref{1_4} (A) 
+%a slight discrepancy between the expectation value and the $\N=10^6$ 
+%finite-ensemble average is visible, especially for later times. This is not coincidence --
+%in the long run, also the finite-ensemble average for $10^6$ systems will decay
+%at the time-average growth rate. A simple proof for this for the continuous process 
+%is in \cite{PetersKlein2013}.
+%Moreover, much is known about the distribution for $\ave{\x(\t)}_\N$ for 
+%any $\N$ and $\t$ (because
+%it happens to be mathematically identical to the partition function of the random 
+%energy model, introduced and solved by \person{Derrida} \cite{Derrida1980}. We thank 
+%\person{J.-P. Bouchaud} for pointing this out to us).}
+%\FloatBarrier
 
 \begin{excursion}{Scalars}
 
@@ -876,7 +876,8 @@ time average interchangeably in our game, we would say ``$\x$ is not ergodic.''
 In these notes, an observable $\A$ is called ergodic if its 
 expectation value is constant in time
 %, $\frac{\gd\ave{\A}}{\gd\t}=0$, 
-and its time average converges to this value with probability one
+and its time average converges to this value with probability one\footnote{Some researchers would call $\A$ ``mean ergodic'' and require further observables derived from it to be (mean) ergodic in order to call $\A$ ``wide-sense ergodic.'' This extra nomenclature is not necessary for our work, but we leave a footnote here to avoid confusion.}
+
 \be
 \lim_{\Dt \to\infty}\frac{1}{\Dt } \int_{\t}^{\t+\Dt} \A(\gs) \gd\gs =\lim_{\N\to\infty} \frac{1}{\N}\sum_\gi^\N \A_\gi(\t) .
 \elabel{def_ergodic}
@@ -913,12 +914,12 @@ means averaging at a fixed time across different trajectories from top to bottom
 \end{figure}
 %\FloatBarrier
 
-We stress that in a given setup, some observables may have this property even
+We stress that in a given setup, some observables may have the ergodic property even
 if others do not. Language therefore must be used carefully. Saying our game is non-ergodic
 really means that some key observables of interest, most notably wealth $\x$, are
 not ergodic. Wealth $\x(\t)$, defined by \eref{law}, is clearly not ergodic -- with $\A=\x$ the \LHS of \eref{def_ergodic} 
 is zero, and the \RHS is not constant in time but grows. The expectation value $\ave{\x}(\t)$
-is simply not informative about the temporal behavior of $\x(\t)$.
+is simply doesn't give us the relevant information about the temporal behavior of $\x(\t)$.
  
 This does not mean that no ergodic observables exist that are related
 to $\x$. Such observables do exist, and
@@ -976,6 +977,8 @@ is the right object to optimize.
 %according to what the expectation value of $\d \ln \x$ would suggest. While the origin of the 
 %discrepancy remained mysterious and numerous puzzles and paradoxes in 
 %economic theory arose as a result. The paradigm we outline here resolves these puzzles.
+
+Ergodicity is related to stationarity but they are not the same concept. As an illustration, consider the following process: $\gf(\t)=\z_{\gi}$, where $\z_{\gi}$ is an instance of a random variable $\Z$. To be explicit, this means a realization of the stochastic process $\gf(\t)$ is generated as follows: we generate the random instance $\z_{\gi}$ once, and then fix $\gf(\t)$ at that value for all time. The distribution of $\gf(\t)$ is independent of $\t$ and in that sense $\gf(\t)$ is stationary. Averaging over the ensemble, we obtain $\ave{\gf(\t)}=\ave{\z}$, whereas averaging over time in the $\gi^{\text{th}}$ trajectory gives $\overline{\gf}=\z_{\gi}$. Thus the process is stationary but not ergodic.
 
 \subsection{Rates}
 \seclabel{Rates}
@@ -1131,7 +1134,7 @@ scale the width of an individual step so as to maintain the random-walk scaling 
 $|\d\gv|=\sqrt{\dt}$. In the limit $\dt\to0$, this implies that $\frac{\d\gv}{\dt}$ diverges, so \BM trajectories 
 are infinitely jagged, or -- in mathematical terms -- they are not differentiable. However, the way in
 which they become non-differentiable, though the $\sqrt{\dt}$ factor, leaves the 
-trajectories just continuous (this isn't the case for $|\d\gv|=\dt^\alpha$, where $\alpha$ is less than 0.5. 
+trajectories just continuous (this isn't the case for $|\d\gv|=\dt^\alpha$, where $\alpha$ is less than 0.5). 
 Continuity of $\gv$ 
 means that it is possible to make the difference $|\gv(\t)-\gv(\t+\epsilon)|$ arbitrarily small by choosing
 $\epsilon$ sufficiently small. This would not be possible if there was a jump in $\gv(\t)$, so continuity 
@@ -1175,7 +1178,7 @@ where $\gdelta(\t,\t')$ is the Kronecker delta -- zero if its two arguments diff
 they are identical ($\t=\t'$).\footnote{Physicists often write $\gd\gW=\geta \gd\t$, where $\ave{\geta}=0$ and 
 $\ave{\geta(\t) \geta(\t')}=\gdelta(\t-\t')$, in which case $\gdelta(\t-\t')$ is the Dirac 
 delta function, defined by the integral $\int_{-\infty}^{\infty} \gf(\t) \gdelta(\t-\t') \gd\t=\gf(\t')$. Because of its singular
-nature ($\eta(t)$ does not exist (``is infinite''), only its integral exists) it can be difficult to develop
+nature ($\geta(t)$ does not exist (``is infinite''), only its integral exists) it can be difficult to develop
 an intuition for this object, and we prefer the $dW$ notation.} The notation $\sim \mathcal{N}(0, \gd\t)$ is short-hand for ``is Gaussian distributed, with mean $0$ and variance $\gd\t$.''
 In simulations \BM paths can be constructed from a discretized version of \eref{BM_dx}
 \be
@@ -1256,7 +1259,7 @@ It implies, for instance, that
 \item the most likely value of $\x$ (the mode) does not coincide with the 
 expectation value of $\x$. 
 \end{itemize}
-These and other properties of the log-normal distribution will be discussed in detail in \secref{populations}.
+These and other properties of the log-normal distribution will be discussed in detail in \secref{Log-normal_wealth}.
 The log-normal distribution is not symmetric, unlike the Gaussian 
 distribution. 
 

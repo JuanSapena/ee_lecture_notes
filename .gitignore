@@ -15,3 +15,7 @@ main.pdf
 *.toc
 *.log
 *.gz
+main.aux
+main.fdb_latexmk
+main.log
+main.synctex.gz
