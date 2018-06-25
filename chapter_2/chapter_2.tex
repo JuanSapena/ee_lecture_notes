@@ -84,11 +84,11 @@ We can also imagine a gamble akin to a lottery, where we pay an amount,
 $\F$, for a ticket which will win the jackpot, $\J$, with probability, $\p$. The corresponding 
 payouts and probabilities are:
 \bea
-\gD_1 = -\F,  &\quad& \p_1 = 1-\p;\\
-\gD_2 = \J-\F, &\quad& \p_2 = \p.
+\q_1 = -\F,  &\quad& \p_1 = 1-\p;\\
+\q_2 = \J-\F, &\quad& \p_2 = \p.
 \eea
-Note that we deduct the ticket price, $\F$, in the payout $\gD_2$.
-The duration would be $\dt=1$ week.
+Note that we deduct the ticket price, $\F$, in the payout $\q_2$.
+The duration may be $\dt=1$ week.
 \end{example}
 
 \begin{example}{Betting at fixed odds}
@@ -98,15 +98,15 @@ in Paris at odds of 50/1 (the best available odds on 20th September 2015).
 \textit{Ito} will win the race with unknown probability, $\p$. If we bet $\F$, 
 then this is modelled by payouts and probabilities:
 \bea
-\gD_1 = -\F,  &\quad& \p_1 = 1-\p;\\
-\gD_2 = 50\F, &\quad& \p_2 = \p.
+\q_1 = -\F,  &\quad& \p_1 = 1-\p;\\
+\q_2 = 50\F, &\quad& \p_2 = \p.
 \eea
-The duration would be something like $\dt=30$ minutes.
+The duration may be something like $\dt=30$ minutes.
 \end{example}
 
 \begin{example}{The null gamble}
 It is useful to introduce the null gamble, in which a payout of zero is received 
-with certainty: $\gD_1=\$0$, $\p_1=1$. This represents the `no bet' or `do nothing' option.
+with certainty: $\q_1=\$0$, $\p_1=1$. This represents the `no bet' or `do nothing' option.
 The duration, $\dt$, has to be chosen appropriately. The meaning of the
 duration will become clearer later on -- often it is the time between two successive rounds
 of a gamble.
@@ -116,8 +116,8 @@ The gamble is a simple but versatile mathematical model of an uncertain future.
 It can be used to model not only traditional wagers, such as sports bets and 
 lotteries, but also a wide range of economic activities, such as stock market 
 investments, insurance contracts, derivatives, and so on. The gamble we have 
-presented is discrete, in that the payout, $\gD$, is a random variable with a 
-countable (and, we usually assume, small) number of possible outcomes. 
+presented is discrete, in that the payout, $\Q$, is a random variable with a 
+countable (and, we usually assume, small) number of possible values. 
 The extension to continuous random variables is natural and used frequently 
 to model real-world scenarios where the number of possible outcomes, \eg the change 
 in a stock price over one day, is large.
@@ -140,11 +140,11 @@ choose to play. Precisely {\it how} it is affected remains to be specified.
 
 Considering a single round of a gamble in isolation -- the so-called `one-shot 
 game' of game theory -- is relatively uninstructive in this regard. All we know is 
-that one of the possible payouts will be received, leading to the random variable 
-$\x(\t+\dt)=\x(\t)+\gD$. 
+that one of the possible payouts will be received, leading to the random value 
+$\x(\t+\dt)=\x(\t)+\q$. 
 We don't yet know how accepting this gamble will affect how our wealth, $\x(\t)$, grows or decays over time, since one time step isn't enough for this to become apparent. 
-The one-shot game takes one random variable, $\gD$, and turns it trivially into 
-another, $\x(\t)+\gD$. Time has no significance in a 
+The one-shot game takes one random value, $\q$, and turns it trivially into 
+another, $\x(\t)+\q$. Time has no significance in a 
 one-shot game. An amount $\dt$ elapses, but this could be a single 
 heartbeat or the lifetime of the universe, for all the difference it makes to the analysis.
 
@@ -166,7 +166,7 @@ focus on two modes: \textit{additive} and \textit{multiplicative} repetition. Ot
 
 \begin{defn}{Additive repetition}
 If a gamble is repeated additively then  
-the random payout, $\gD$, is simply added to $\x(\t)$ 
+a newly generated realization of the random payout, $\q$, is added to $\x(\t)$ 
 at each round. We define the change in wealth occurring 
 over a single round as
 \be
@@ -175,7 +175,7 @@ over a single round as
 \ee
 In the additive case, we have
 \be
-\d\x(\t) = \gD.
+\d\x(\t) = \q.
 \elabel{DW_add}
 \ee
 In other words, under additive repetition, $\d \x$ is a stationary 
@@ -188,10 +188,10 @@ random variable.
 Starting at time, $\tn$, wealth 
 after $\T$ rounds is
 \be
-\x(\tn+\T\dt) = \x(\tn) + \sum_{\gtau=1}^\T \gD(\gtau),
+\x(\tn+\T\dt) = \x(\tn) + \sum_{\gtau=1}^\T \q(\gtau),
 \elabel{Wt_add}
 \ee
-where $\gD(\gtau)$ is the realisation of the random variable in round $\gtau$. 
+where $\q(\gtau)$ is the realisation of the random variable in round $\gtau$. 
 This is an evolution equation for wealth following a noisy additive dynamic. 
 Note that $\x(\tn+\T\dt)$ is itself a random variable.
 \end{defn}
@@ -220,24 +220,25 @@ starting wealth ($\$ 100$). Under multiplicative repetition, each
 successive bet is for the same fraction of wealth which, 
 in general, will be a different monetary amount.
 
-The formalism is as follows. The payout, $\gD$, in the first round is 
+The formalism is as follows. The payout, $\q_{\gj}$, in the first round is 
 expressed instead as a random wealth multiplier,
 \be
-\gr \equiv \frac{\x(\tn)+\gD}{\x(\tn)}.
+\gr_{\gj} \equiv \frac{\x(\tn)+\q_{\gj}}{\x(\tn)}.
 \elabel{R_def}
 \ee
-The gamble is repeated by applying another realisation of the same multiplier at all subsequent rounds:
+The multiplier is another random variable -- it also (trivially) defines a stochastic process that is a new instance of the random variable at each point in time, $\gr(\t)$. The gamble is repeated by applying another instance of the same multiplier at all subsequent rounds:
 \be
 \x(\t+\dt) = \gr\x(\t).
 \ee
-From \eref{R_def} we see that $\gr$ is a stationary random variable, 
-since it depends only on $\gD$, which is stationary, and the starting 
-wealth, $\x(\tn)$, which is fixed. However, successive changes in wealth,
+From \eref{R_def} we see that $\gr(\t)$ is a sequence of instances 
+of a random variable with time-independent distribution, 
+since it depends only on $\Q$, which is time-independent, and the starting 
+wealth, $\x(\tn)$, which is fixed. However, distributions of successive changes in wealth,
 \be
 \d \x(\t) = (\gr-1)\x(\t),
 \elabel{DW_mult_short}
 \ee
-are not stationary, as they depend on $\t$ through $\x(\t)$. The wealth 
+are not time-independent, as they depend on $\t$ through $\x(\t)$. The wealth 
 after $\T$ rounds of the gamble is
 \be
 \x(\tn+\T\dt) = \x(\tn)\prod_{\gtau=1}^\T \gr(\gtau),
@@ -313,9 +314,9 @@ changes in $\x(\t)$ depend on $\x(\t)$. Instead we must find the
 mapping $\gv(\x)$ whose increments are independent instances of a random variable. 
 The correct mapping now is the logarithm, since the increment over a single round is
 \bea
-\d\ln \x(\t) &=& \ln \x(\t+\d\t) - \ln \x(\t)\\
-&=& \ln \gr\x(\t) - \ln \x(\t)\\
-&=& \ln \gr,
+\d\ln \x(\t) &=& \ln \x(\t) - \ln \x(\t-\d\t)\\
+&=& \ln \gr(\t)\x(\t-\d\t) - \ln \x(\t-\d\t)\\
+&=& \ln \gr(\t),
 \eea
 where \eref{R_def} has been used in the second line. This inherits its 
 ergodicity from $\gr$. Thus the appropriate growth rate for a multiplicative 
@@ -375,7 +376,7 @@ growth rate.
 
 Let's take a step back and remark more generally on what we have done so far. We 
 started with a high-dimensional mathematical object, namely the 
-probability distribution of the payout, $\gD$, of the gamble. To this we 
+probability distribution of the payout, $\Q$, of the gamble. To this we 
 added two model components: the time period, $\dt$, over which the 
 gamble unfolds; and a dynamic, in essence a set of instructions, specifying 
 how the repeated gamble causes your wealth to evolve. We 
@@ -440,14 +441,14 @@ makers maximize expected utility.
 
 Our decision rationale can be expressed as a set of instructions.
 We denote quantities relating to the $\m^\text{th}$ available gamble with the 
-superscript $(\m)$. Each gamble is specified by its random payout, $\gD^{(\m)}$, and 
+superscript $(\m)$. Each gamble is specified by its random payout, $\Q^{(\m)}$, and 
 per-round period, $\dt^{(\m)}$. 
 
 \begin{keypts}{Growth-optimal decision algorithm}
 \begin{enumerate}
-\item Specify $\gD^{(\m)}$ and $\dt^{(\m)}$ for the gambles offered;
+\item Specify $\Q^{(\m)}$ and $\dt^{(\m)}$ for the gambles offered;
 \item Specify the wealth dynamic, \ie the relationship between $\d\x(\t)$, 
-$\x(\t)$, and $\gD$;
+$\x(\t)$, and $\q$;
 \item Find the ergodicity transformation, $\gv(\x)$, of the wealth whose increments are 
 instances of a (time-independent) random variable under this dynamic;
 \item Determine the time-average growth rates, $\gt^{(\m)}$, either by taking 
@@ -470,10 +471,10 @@ game of the previous lecture. $\x(\tn)>\$ 0$ is the starting
 wealth and $\dt$ is the time between rounds for each of the 
 gambles offered. We recall that the coin toss gamble is specified by the random payout:
 \bea
-\gD^{(1)}_1 = -0.4\x(\tn), &\quad& \p^{(1)}_1 = 1/2; \\
-\gD^{(1)}_2 = 0.5\x(\tn), &\quad& \p^{(1)}_2 = 1/2.
+\q^{(1)}_1 = -0.4\x(\tn), &\quad& \p^{(1)}_1 = 1/2; \\
+\q^{(1)}_2 = 0.5\x(\tn), &\quad& \p^{(1)}_2 = 1/2.
 \eea
-Note that, in our setup, the payouts $\gD^{(\m)}_\gi$ are always fixed 
+Note that, in our setup, the payouts $\Q^{(\m)}_\gi$ are always fixed 
 monetary amounts. Here they are expressed as fractions of $\x(\tn)$, 
 which is itself a fixed monetary wealth.\footnote{Even though this 
 formulation might appear to encode a multiplicative dynamic (largely 
@@ -482,14 +483,14 @@ arranged things so that formally it does not. Indeed, it encodes no
 dynamic at all: that is specified separately.} We shall ask our individual 
 to choose between the coin toss and the null gamble,
 \be
-\gD^{(2)}_1 = \$0, \quad \p^{(2)}_1 = 1.
+\q^{(2)}_1 = \$0, \quad \p^{(2)}_1 = 1.
 \ee
 Both the additive and multiplicative versions of the repeated gamble are analysed.
 
 \begin{example}{Additive coin toss game}
 If the repetition is additive, wealth will evolve over $T$ rounds according to:
 \bea
-\x^{(1)}(t_0+\T\dt) &=& \x(\tn) + \sum_{\gtau=1}^\T \gD^{(1)}(\gtau); \\
+\x^{(1)}(t_0+\T\dt) &=& \x(\tn) + \sum_{\gtau=1}^\T \q^{(1)}(\gtau); \\
 \x^{(2)}(t_0+\T\dt) &=& \x(\tn).
 \eea
 Here we have assumed that wealth is free to go negative, \ie that 
@@ -498,15 +499,15 @@ recover.\footnotemark\ The ergodicity transformation is the identity,
 $\gv(\x)=\x$, so the growth rates are simply the rates of change of 
 wealth itself. We can express these over the $\T$ rounds as:
 \bea
-\gad^{(1)}(\t) = \frac{\x^{(1)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\gD^{(1)}(\gtau)}{\dt}; \elabel{g1_add}\\
+\gad^{(1)}(\t) = \frac{\x^{(1)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\q^{(1)}(\gtau)}{\dt}; \elabel{g1_add}\\
 \gad^{(2)}(\t) = \frac{\x^{(2)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \$ 0
 \eea
 per unit time. The long-time limit of the growth rate for the null gamble 
 is trivially $\gad^{(2)}=\$0$ per unit time. For the coin toss, we calculate it as
 \bea
-\overline{\gad}^{(1)} &=& \lim_{\T\to\infty}\left\{\frac{1}{\T}\sum_{\gtau=1}^\T \frac{\gD^{(1)}(\gtau)}{\dt}\right\}\\
-&=& \ave{\frac{\gD^{(1)}}{\dt}}\\
-&=& \frac{\p^{(1)}_1 \gD^{(1)}_1 + \p^{(1)}_2 \gD^{(1)}_2}{\dt}\\
+\overline{\gad}^{(1)} &=& \lim_{\T\to\infty}\left\{\frac{1}{\T}\sum_{\gtau=1}^\T \frac{\q^{(1)}(\gtau)}{\dt}\right\}\\
+&=& \ave{\frac{\q^{(1)}}{\dt}}\\
+&=& \frac{\p^{(1)}_1 \q^{(1)}_1 + \p^{(1)}_2 \q^{(1)}_2}{\dt}\\
 &=& \frac{0.05\x(\tn)}{\dt},
 \eea
 which is positive (assuming $\x(\tn)>\$0$). Therefore, $\overline{\gad}^{(1)}>\overline{\gad}^{(2)}$ 
@@ -515,30 +516,30 @@ and our individual should accept the coin toss gamble under additive dynamics.
 \footnotetext{We could model this realistic feature by an absorbing boundary on $\x(\t)$, if we were so minded.}
 
 We see from this example that the decision rule under additive repetition is to 
-maximise $\ave{\gD/\dt}$.\footnote{Too frequently in presentations of decision 
+maximise $\ave{\q/\dt}$.\footnote{Too frequently in presentations of decision 
 theory, it is assumed implicitly that $\dt$ is the same for all available gambles 
 and the decision algorithm is presented as the maximisation of the expected 
-payout, $\ave{\gD}$. While this is equivalent if all the $\dt^{(\m)}$ are identical, it 
+payout, $\ave{\q}$. While this is equivalent if all the $\dt^{(\m)}$ are identical, it 
 is not if they aren't. Moreover, the assumption is usually left unstated. This is 
 unhelpful in that it masks the important role of time in the analysis and, in 
 particular, the fact that our individual is maximising a \textit{rate}.} This is the 
 rate of change of the expected wealth, which, as we know from \eref{g_bar_a}, 
 happens to coincide under this dynamic with the time-average growth rate. We 
-will see later that humans tend not to act to maximise $\ave{\gD/\dt}$ in reality. 
+will see later that humans tend not to act to maximise $\ave{\q/\dt}$ in reality. 
 This may not be a great shock: additive repetition without bankruptcy isn't 
 going to win many prizes for the most realistic model of wealth evolution.
 
 Let's try multiplicative repetition instead.
 
 \begin{example}{Multiplicative coin toss game}
-The payout, $\gD^{(1)}$, is re-expressed as a per-round multiplier,
+The payout, $\Q^{(1)}$, is re-expressed as a per-round multiplier,
 \be
-\gr^{(1)} = \frac{\x(\tn)+\gD^{(1)}}{\x(\tn)},
+\gr^{(1)} = \frac{\x(\tn)+\q^{(1)}}{\x(\tn)},
 \ee
 which takes the values:
 \bea
-\gr^{(1)}_1 = \frac{\x(\tn)+\gD^{(1)}_1}{\x(\tn)} = 0.6, &\quad& \p^{(1)}_1 = 1/2; \\
-\gr^{(1)}_2 = \frac{\x(\tn)+\gD^{(1)}_2}{\x(\tn)} = 1.5, &\quad& \p^{(1)}_2 = 1/2.
+\gr^{(1)}_1 = \frac{\x(\tn)+\q^{(1)}_1}{\x(\tn)} = 0.6, &\quad& \p^{(1)}_1 = 1/2; \\
+\gr^{(1)}_2 = \frac{\x(\tn)+\q^{(1)}_2}{\x(\tn)} = 1.5, &\quad& \p^{(1)}_2 = 1/2.
 \eea
 Under multiplicative dynamics, the wealth evolves according to:
 \bea
@@ -553,7 +554,7 @@ already discussed why, but one way of seeing this is to take logarithms of
 \ln \x^{(2)}(\tn+\T\dt) &=& \ln \x(\tn).\elabel{lnW2T_mult}
 \eea
 Therefore, $\ln \x$ is the desired quantity whose increments 
-inherit their ergodicity from $\gD$. The growth rates, expressed over $\T$ rounds, are:
+inherit their ergodicity from $\q$. The growth rates, expressed over $\T$ rounds, are:
 \bea
 \gm^{(1)}(\t) = \frac{\ln \x^{(1)}(\t+\T\dt) - \ln \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\ln \gr^{(1)}(\gtau)}{\dt};\\
 \gm^{(2)}(\t) = \frac{\ln \x^{(2)}(\t+T\dt) - \ln \x(\tn)}{\T\dt} &=& 0
@@ -593,7 +594,7 @@ The two approaches are, of course, linked, in that
 
 Here we see that our decision rule boils down to maximising
 \be
-\ave{\frac{\ln \gr}{\dt}} = \ave{\frac{\ln(\x(\tn)+\gD)-\ln \x(\tn)}{\dt}}.
+\ave{\frac{\ln \gr}{\dt}} = \ave{\frac{\ln(\x(\tn)+\q)-\ln \x(\tn)}{\dt}}.
 \ee
 This coincides with the time-average growth rate in \eref{g_bar_m}.
 
@@ -601,7 +602,7 @@ This coincides with the time-average growth rate in \eref{g_bar_m}.
 \subsection{The expected-wealth and expected-utility paradigms}
 Our decision rule under additive repetition of the gamble is to maximise
 \be
-\ave{\frac{\d\x}{\dt}} = \ave{\frac{\gD}{\dt}},
+\ave{\frac{\d\x}{\dt}} = \ave{\frac{\q}{\dt}},
 \elabel{ex_crit}
 \ee
 \ie the rate of change of the expectation value of wealth. This was, in fact, the first 
@@ -640,11 +641,11 @@ is maximised in a decision between gambles.
 This is the axiom of utility theory. It leads to an alternative decision algorithm, which we summarise here:
 \begin{keypts}{Expected-utility decision algorithm}
 \begin{enumerate}
-\item Specify $\gD^{(\m)}$ and $\dt^{(\m)}$ for the gambles offered;
+\item Specify $\Q^{(\m)}$ and $\dt^{(\m)}$ for the gambles offered;
 \item Specify the individual's idiosyncratic utility function, $\gu(\x)$, which maps his wealth to his utility;
 \item Determine the rate of change of his expected utility over a single round of the gamble (no dynamic is specified so it's unclear how a gamble would be repeated),
 \be
-\ave{\gr_\gu}^{(\m)}=\ave{\frac{\gu\left(\x+\gD^{(\m)}\right)-\gu(\x)}{\dt^{(\m)}}};
+\ave{\gr_\gu}^{(\m)}=\ave{\frac{\gu\left(\x+\q^{(\m)}\right)-\gu(\x)}{\dt^{(\m)}}};
 \ee
 \item Choose the gamble, $\m$, with the largest $\ave{\gr_\gu}^{(\m)}$.
 \end{enumerate}
@@ -1259,10 +1260,10 @@ the largest $\F$ the player is willing to pay?
 
 The lottery can be translated neatly into our gamble formalism:
 \be
-\gD_\gk = \$ 2^{\gk-1} - \F, \quad \p_\gk = 2^{-\gk},
+\q_\gj = \$ 2^{\gj-1} - \F, \quad \p_\gj = 2^{-\gj},
 \elabel{lottery_def}
 \ee
-for $\gk\in\{1,2,3,\ldots\}$, \ie the set of positive integers. The vast majority 
+for $\gj\in\{1,2,3,\ldots\}$, \ie the set of positive integers. The vast majority 
 of observed payouts are small, but occasionally an extremely large payout 
 (corresponding to a very long unbroken sequence of tails in the classical 
 description) occurs. This is shown in the example trajectories in 
@@ -1276,9 +1277,9 @@ takes a fixed amount of time, $\dt$, to play.
 
 The rate of change of expected wealth is
 \bea
-\frac{\ave{\d\x}}{\dt} & = & \frac{1}{\dt} \sum_{\gk=1}^\infty \p_\gk \gD_\gk \\
-&=& \frac{1}{\dt} \left( \$ \sum_{\gk=1}^\infty 2^{-\gk}\,2^{\gk-1} - \sum_{\gk=1}^\infty 2^{-\gk} \F \right) \\
-&=& \frac{1}{\dt} \left( \$ \sum_{\gk=1}^\infty \frac{1}{2} - \F \right). \elabel{lottery_ex_wealth}
+\frac{\ave{\d\x}}{\dt} & = & \frac{1}{\dt} \sum_{\gj=1}^\infty \p_\gj \q_\gj \\
+&=& \frac{1}{\dt} \left( \$ \sum_{\gj=1}^\infty 2^{-\gj}\,2^{\gj-1} - \sum_{\gj=1}^\infty 2^{-\gj} \F \right) \\
+&=& \frac{1}{\dt} \left( \$ \sum_{\gj=1}^\infty \frac{1}{2} - \F \right). \elabel{lottery_ex_wealth}
 \eea
 This diverges for any finite ticket price. Under the expected-wealth paradigm, this means that the lottery is favourable at any price.
 \end{example}
@@ -1316,8 +1317,8 @@ presumed Bernoulli meant to write.
 \begin{example}{Resolution by logarithmic utility}
 Instead of \eref{lottery_ex_wealth}, we calculate the rate of change of expected logarithmic utility,
 \bea
-\frac{\ave{\d\ln \x}}{\dt} & = & \frac{1}{\dt} \sum_{\gk=1}^\infty \p_\gk \left[\ln(\x+\gD_\gk)-\ln \x\right] \\
-&=& \frac{1}{\dt} \sum_{\gk=1}^\infty 2^{-\gk} \ln\left(\frac{\x+\$2^{\gk-1}-\F}{\x}\right), \elabel{lottery_ex_util}
+\frac{\ave{\d\ln \x}}{\dt} & = & \frac{1}{\dt} \sum_{\gj=1}^\infty \p_\gj \left[\ln(\x+\q_\gj)-\ln \x\right] \\
+&=& \frac{1}{\dt} \sum_{\gj=1}^\infty 2^{-\gj} \ln\left(\frac{\x+\$2^{\gj-1}-\F}{\x}\right), \elabel{lottery_ex_util}
 \eea
 where $\x$ is the ticket buyer's wealth.
 
@@ -1327,8 +1328,8 @@ test.\footnotemark\ It may be positive or negative, depending on the values
 of $\F$ and $\x$. \fref{gbar_zero} shows the locus of points in the $(\x,\F)$-plane 
 for which the sum is zero.
 \end{example}
-\footnotetext{The ratio of the $(\gk+1)^\text{th}$ term to the $\gk^\text{th}$ term 
-in the sum tends to $1/2$ as $\gk\to\infty$.}
+\footnotetext{The ratio of the $(\gj+1)^\text{th}$ term to the $\gj^\text{th}$ term 
+in the sum tends to $1/2$ as $\gj\to\infty$.}
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{./chapter_2/figs/gbar_zero.png}
@@ -1337,18 +1338,18 @@ logarithmic utility is zero. The inset shows the expected change in utility as a
 function of $\x$ for $\F=\$2$. Adapted from~\cite{Peters2011b}.\flabel{gbar_zero}}
 \end{figure}
 
-The utility paradigm is a model that resolves the paradox, in the sense that creates a world where players may decline to buy a ticket. Bernoulli argued for this resolution framework in plausible terms: the usefulness of a monetary gain depends on how much money you already have. He also argued specifically for the logarithm in plausible terms: the gain in usefulness should be proportional to the fractional gain it represents, $\gd \gu = \d\x/\x$. Yet, the framework has left many unsatisfied: why does usefulness have this functional form? We provide this deeper reason by connecting the problem to dynamics and time, unlike Bernoulli. Had Bernoulli made the connection, he might have been less willing to accept Cramer's square-root utility function as an alternative, which, as we've seen, corresponds to a rather less intuitive dynamic.
+The utility paradigm is a model that resolves the paradox, in the sense that creates a world where players may decline to buy a ticket. Bernoulli argued for this resolution framework in plausible terms: the usefulness of a monetary gain depends on how much money you already have. He also argued specifically for the logarithm in plausible terms: the gain in usefulness should be proportional to the fractional gain it represents, $\d \gu = \d\x/\x$. Yet, the framework has left many unsatisfied: why does usefulness have this functional form? We provide this deeper reason by connecting the problem to dynamics and time, unlike Bernoulli. Had Bernoulli made the connection, he might have been less willing to accept Cramer's square-root utility function as an alternative, which, as we've seen, corresponds to a rather less intuitive dynamic.
 
 %However, while plausible, the framework relies on a utility function, which must be postulated. It can neither be derived from fundamental considerations nor verified empirically.
 
 Turning to our decision algorithm, we will assume that the lottery is repeated multiplicatively. This means, in effect, that the prizes and ticket price are treated as fractions of the player's wealth, such that the effect of each lottery is to multiply current wealth by a random factor,
 \be
-\gr_\gk = \frac{\x+\$2^{\gk-1}-\F}{\x}, \quad \p_\gk = 2^{-\gk}.
+\gr_\gj = \frac{\x+\$2^{\gj-1}-\F}{\x}, \quad \p_\gj= 2^{-\gj}.
 \ee
 This follows precisely our earlier treatment of a gamble with multiplicative dynamics, and we can apply our results directly. 
 The time-average (exponential) growth rate is
 \be
-\gt_\text{m} = \frac{1}{\dt} \lim_{\T\to\infty} \left\{ \frac{1}{\T}  \sum_{\gtau=1}^\T \ln \gr(\gtau) \right\} = \frac{1}{\dt}  \sum_{\gk=1}^\infty 2^{-\gk} \ln \gr_\gk, \elabel{lottery_gbar}
+\gt_\text{m} = \frac{1}{\dt} \lim_{\T\to\infty} \left\{ \frac{1}{\T}  \sum_{\gtau=1}^\T \ln \gr(\gtau) \right\} = \frac{1}{\dt}  \sum_{\gj=1}^\infty 2^{-\gj} \ln \gr_\gj, \elabel{lottery_gbar}
 \ee
 which is identical to the expression for the rate of change of expected log-utility, 
 \eref{lottery_ex_util}. This is, as we've discussed, because $\gv(\x)=\ln(\x)$ 
@@ -1444,12 +1445,12 @@ two gambles.
 
 Sending the ship uninsured corresponds to gamble o1
 \bea
-\gD_1^{(\text{o1})} = \G, &\quad& \p_1^{(\text{o1})} = 1-p;\\
-\gD_2^{(\text{o1})} = -\C, &\quad& \p_2^{(\text{o1})} = p.
+\q_1^{(\text{o1})} = \G, &\quad& \p_1^{(\text{o1})} = 1-p;\\
+\q_2^{(\text{o1})} = -\C, &\quad& \p_2^{(\text{o1})} = p.
 \eea
 Sending the ship fully insured corresponds to gamble o2
 \bea
-\gD_1^{(\text{o2})} = \G-\F &\quad& \p_1^{(\text{o2})} = 1.
+\q_1^{(\text{o2})} = \G-\F &\quad& \p_1^{(\text{o2})} = 1.
 \eea
 This is a trivial ``gamble'' because all risk has been 
 transferred to the insurer. 
@@ -1462,13 +1463,13 @@ a choice between two gambles
 
 Not insuring the ship corresponds to gamble i1, which is the null gamble
 \bea
-\gD_1^{(\text{i1})} = 0 &\quad& \p_1^{(\text{i1})} = 1.
+\q_1^{(\text{i1})} = 0 &\quad& \p_1^{(\text{i1})} = 1.
 \eea
 
 Insuring the ship corresponds to gamble i2
 \bea
-\gD_1^{(\text{i2})} = +\F, &\quad& \p_1^{(\text{i2})} = 1-p;\\
-\gD_2^{(\text{i2})} = -\gL+\F, &\quad& \p_2^{(\text{i2})} = p.
+\q_1^{(\text{i2})} = +\F, &\quad& \p_1^{(\text{i2})} = 1-p;\\
+\q_2^{(\text{i2})} = -\gL+\F, &\quad& \p_2^{(\text{i2})} = p.
 \eea
 \end{definition}
 
@@ -1482,7 +1483,7 @@ Under this paradigm the owner collapses gamble o1 into the scalar
 
 \bea
 \gt_a^{(\text{o1})} &=& \frac{\ave{\d\x}}{\dt}\\
-&=&\frac{\ave{\gD^{(\text{o1})}}}{\dt}\\
+&=&\frac{\ave{\q^{(\text{o1})}}}{\dt}\\
 &=&\frac{(1-p) \G + p (-\C) }{\dt}\\
 &=&\$ 2,300\text{ per month,}
 \eea
@@ -1490,7 +1491,7 @@ Under this paradigm the owner collapses gamble o1 into the scalar
 and gamble o2 into the scalar
 
 \bea
-\gt_a^{\text{o2}} &=&\frac{\ave{\gD^{(\text{o2})}}}{\dt}\\
+\gt_a^{\text{o2}} &=&\frac{\ave{\q^{(\text{o2})}}}{\dt}\\
 &=&\frac{(\G-\F) }{\dt}\\
 &=&\$2,200 \text{ per month.}
 \eea

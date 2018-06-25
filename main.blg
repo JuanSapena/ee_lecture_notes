@@ -3,97 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: ./../LML_bibliography/bibliography.bib
-<<<<<<< HEAD
-Warning--empty journal in BermanPetersAdamou2017
-Warning--empty journal in de2015quantitative
-Warning--empty journal in de2015piketty
-Warning--there's a number but no volume in Rios20162013
-You've used 96 entries,
+You've used 55 entries,
             2118 wiz_defined-function locations,
-            1116 strings with 16632 characters,
-and the built_in function-call counts, 26914 in all, are:
-= -- 2703
-> -- 980
-< -- 3
-+ -- 419
-- -- 300
-* -- 1753
-:= -- 4604
-add.period$ -- 293
-call.type$ -- 96
-change.case$ -- 422
-chr.to.int$ -- 0
-cite$ -- 100
-duplicate$ -- 1064
-empty$ -- 2300
-format.name$ -- 300
-if$ -- 5539
-int.to.chr$ -- 0
-int.to.str$ -- 96
-missing$ -- 113
-newline$ -- 487
-num.names$ -- 194
-pop$ -- 432
-preamble$ -- 1
-purify$ -- 341
-quote$ -- 0
-skip$ -- 682
-stack$ -- 0
-substring$ -- 1813
-swap$ -- 106
-text.length$ -- 3
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 336
-warning$ -- 4
-while$ -- 297
-width$ -- 98
-write$ -- 1035
-(There were 4 warnings)
-=======
-Warning--empty journal in de2015quantitative
-Warning--empty journal in de2015piketty
-Warning--there's a number but no volume in Rios20162013
-You've used 84 entries,
-            2118 wiz_defined-function locations,
-            1040 strings with 15217 characters,
-and the built_in function-call counts, 23660 in all, are:
-= -- 2367
-> -- 871
+            871 strings with 10333 characters,
+and the built_in function-call counts, 14807 in all, are:
+= -- 1469
+> -- 498
 < -- 2
-+ -- 372
-- -- 268
-* -- 1551
-:= -- 4043
-add.period$ -- 256
-call.type$ -- 84
-change.case$ -- 368
++ -- 214
+- -- 148
+* -- 919
+:= -- 2535
+add.period$ -- 166
+call.type$ -- 55
+change.case$ -- 225
 chr.to.int$ -- 0
-cite$ -- 87
-duplicate$ -- 934
-empty$ -- 2024
-format.name$ -- 268
-if$ -- 4867
+cite$ -- 55
+duplicate$ -- 624
+empty$ -- 1324
+format.name$ -- 148
+if$ -- 3076
 int.to.chr$ -- 0
-int.to.str$ -- 84
-missing$ -- 104
-newline$ -- 427
-num.names$ -- 168
-pop$ -- 385
+int.to.str$ -- 55
+missing$ -- 73
+newline$ -- 278
+num.names$ -- 112
+pop$ -- 266
 preamble$ -- 1
-purify$ -- 302
+purify$ -- 183
 quote$ -- 0
-skip$ -- 592
+skip$ -- 382
 stack$ -- 0
-substring$ -- 1601
-swap$ -- 90
+substring$ -- 949
+swap$ -- 61
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 288
-warning$ -- 3
-while$ -- 259
-width$ -- 86
-write$ -- 906
-(There were 3 warnings)
->>>>>>> chapter_3
+type$ -- 178
+warning$ -- 0
+while$ -- 162
+width$ -- 57
+write$ -- 590

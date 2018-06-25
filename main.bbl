@@ -10,45 +10,10 @@ J.~Aitchison and J.~A.~C. Brown.
 \newblock {\em The lognormal distribution}.
 \newblock Cambridge University Press, 1957.
 
-\bibitem{atkinson1969timescale}
-A.~B. Atkinson.
-\newblock The timescale of economic models: How long is the long run?
-\newblock {\em The Review of Economic Studies}, 36(2):137--152, 1969.
-
 \bibitem{Barenblatt2003}
 G.~I. Barenblatt.
 \newblock {\em Scaling}.
 \newblock Cambridge University Press, 2003.
-
-\bibitem{BenderOrszag1978}
-C.~M. Bender and S.~A. Orszag.
-\newblock {\em Advanced Mathematical Methods for Scientists and Engineers}.
-\newblock Springer, New York, 1978.
-
-\bibitem{BenhabibBisinZhu2011}
-J.~Benhabib, A.~Bisin, and S.~Zhu.
-\newblock The distribution of wealth and fiscal policy in economies with
-  finitely lived agents.
-\newblock {\em Econometrica}, 79(1):123--157, 2011.
-
-\bibitem{berman2017}
-Y.~Berman.
-\newblock Understanding the mechanical relationship between inequality and
-  intergenerational mobility.
-\newblock Available at: \url{http://papers.ssrn.com/abstract=2796563}, 2017.
-
-\bibitem{BermanBen-JacobShapira2016}
-Y.~Berman, E.~Ben-Jacob, and Y.~Shapira.
-\newblock The dynamics of wealth inequality and the effect of income
-  distribution.
-\newblock {\em PloS one}, 11(6):e0199999, 2016.
-
-\bibitem{berman2017revisiting}
-Y.~Berman and Y.~Shapira.
-\newblock Revisiting r~\textgreater~g---the asymptotic dynamics of wealth
-  inequality.
-\newblock {\em Physica A: Statistical Mechanics and its Applications},
-  467:562--572, 2017.
 
 \bibitem{Bernoulli1738}
 D.~Bernoulli.
@@ -57,41 +22,15 @@ D.~Bernoulli.
   (1954).
 \newblock {\em Econometrica}, 22(1):23--36, 1738.
 
-\bibitem{bewley1977permanent}
-T.~Bewley.
-\newblock The permanent income hypothesis: A theoretical formulation.
-\newblock {\em Journal of Economic Theory}, 16(2):252--292, 1977.
-
-<<<<<<< HEAD
 \bibitem{Black1986}
 F.~Black.
 \newblock Noise.
 \newblock {\em The Journal of Finance}, 41(3):528--543, 1986.
 
-=======
->>>>>>> chapter_3
-\bibitem{Bouchaud2015}
-J.-P. Bouchaud.
-\newblock On growth-optimal tax rates and the issue of wealth inequalities.
-\newblock {\em http://arXiv.org/abs/1508.00275}, August 2015.
-
 \bibitem{BouchaudMezard2000}
 J.-P. Bouchaud and M.~M\'ezard.
 \newblock Wealth condensation in a simple model of economy.
 \newblock {\em Physica A}, 282(4):536--545, 2000.
-
-\bibitem{bricker2016measuring2}
-J.~Bricker, A.~Henriques, J.~Krimmel, and J.~Sabelhaus.
-\newblock Measuring income and wealth at the top using administrative and
-  survey data.
-\newblock {\em Brookings Papers on Economic Activity}, pages 261--331, 2016.
-
-\bibitem{brzezinski2014wealth}
-M.~Brzezinski.
-\newblock Do wealth distributions follow power laws? evidence from `rich
-  lists'.
-\newblock {\em Physica A: Statistical Mechanics and its Applications},
-  406:155--162, 2014.
 
 \bibitem{Burkhardt2007}
 T.~W. Burkhardt.
@@ -104,38 +43,15 @@ J.~Y. Campbell.
 \newblock {\em Financial decisions and markets, A course in asset pricing}.
 \newblock {Princeton University Press}, 2017.
 
-\bibitem{Corak2013}
-M.~Corak.
-\newblock Income inequality, equality of opportunity, and intergenerational
-  mobility.
-\newblock {\em The Journal of Economic Perspectives}, 27(3):79--102, 2013.
-
 \bibitem{CoverThomas1991}
 T.~M. Cover and J.~A. Thomas.
 \newblock {\em Elements of {I}nformation {T}heory}.
 \newblock John Wiley \& Sons, 1991.
 
-\bibitem{cowell2014piketty}
-F.~A. Cowell.
-\newblock Piketty in the long run.
-\newblock {\em The British Journal of Sociology}, 65(4):708--720, 2014.
-
 \bibitem{CoxIngersollRoss1985}
 J.~C. Cox, J.~E. Ingersoll, and S.~A. Ross.
 \newblock An intertemporal general equilibrium model of asset prices.
 \newblock {\em Econometrica}, 53(2):363--384, 1985.
-
-\bibitem{de2015quantitative}
-M.~De~Nardi.
-\newblock Quantitative models of wealth inequality: A survey.
-\newblock 2015.
-\newblock {W}orking {P}aper 21106, NBER.
-
-\bibitem{de2015piketty}
-M.~De~Nardi, G.~Fella, and F.~Yang.
-\newblock Piketty's book and macro models of wealth inequality.
-\newblock 2015.
-\newblock {W}orking {P}aper 21730, NBER.
 
 \bibitem{Deakin2011}
 M.~A.~B. Deakin.
@@ -157,13 +73,6 @@ K.~Devlin.
 \newblock {\em The unfinished game}.
 \newblock Basic Books, 2008.
 
-\bibitem{DragulescuYakovenko2001}
-A.~Dr\u{a}gulescu and V.~M. Yakovenko.
-\newblock Exponential and power-law probability distributions of wealth and
-  income in the united kingdom and the united states.
-\newblock {\em Physica A: Statistical Mechanics and its Applications},
-  299(1):213--221, 2001.
-
 \bibitem{Einstein1905}
 A.~Einstein.
 \newblock {\"U}ber die von der molekularkinetischen {T}heorie der {W}{\"a}rme
@@ -171,29 +80,15 @@ A.~Einstein.
   {T}eilchen.
 \newblock {\em Ann. Phys.}, IV(17):549--560, 1905.
 
-<<<<<<< HEAD
 \bibitem{Fernandez2009}
 P.~Fern\'{a}ndez.
 \newblock The equity premium in 150 textbooks.
 \newblock Working paper, IESE Business School, University of Navarra, 2009.
 
-=======
->>>>>>> chapter_3
 \bibitem{Feynman1963}
 R.~P. Feynman.
 \newblock {\em The Feynman lectures on physics}.
 \newblock Addison-Wesley, 1963.
-
-\bibitem{gabaix2009power}
-X.~Gabaix.
-\newblock Power laws in economics and finance.
-\newblock {\em Annual Review of Economics}, 1(1):255--294, 2009.
-
-\bibitem{gabaix2015dynamics}
-X.~Gabaix, J.-M. Lasry, P.-L. Lions, and B.~Moll.
-\newblock The dynamics of inequality.
-\newblock {\em Econometrica: Journal of the Econometric Society},
-  84(6):2071--2111, 2016.
 
 \bibitem{Harrison2013}
 J.~M. Harrison.
@@ -216,32 +111,15 @@ K.~It\^o.
 \newblock Stochastic integral.
 \newblock {\em Proc. Imperial Acad. Tokyo}, 20:519--524, 1944.
 
-\bibitem{jones2015pareto}
-C.~I. Jones.
-\newblock Pareto and piketty: The macroeconomics of top income and wealth
-  inequality.
-\newblock {\em The Journal of Economic Perspectives}, 29(1):29--46, 2015.
-
 \bibitem{KaasETAL2008}
 R.~Kaas, M.~Goovaerts, J.~Dhaene, and M.~Denuit.
 \newblock {\em Modern Actuarial Risk Theory}.
 \newblock Springer, 2 edition, 2008.
 
-\bibitem{kaymak2016evolution}
-B.~Kaymak and M.~Poschke.
-\newblock The evolution of wealth inequality over half a century: The role of
-  taxes, transfers and technology.
-\newblock {\em Journal of Monetary Economics}, 77:1--25, 2016.
-
 \bibitem{Kelly1956}
 J.~L. {Kelly~Jr.}
 \newblock A new interpretation of information rate.
 \newblock {\em Bell Sys. Tech. J.}, 35(4):917--926, July 1956.
-
-\bibitem{klass2006forbes}
-O.~S. Klass, O.~Biham, M.~Levy, O.~Malcai, and S.~Solomon.
-\newblock The forbes 400 and the pareto wealth distribution.
-\newblock {\em Economics Letters}, 90(2):290--295, 2006.
 
 \bibitem{KloedenPlaten1992}
 P.~E. Kloeden and E.~Platen.
@@ -249,24 +127,11 @@ P.~E. Kloeden and E.~Platen.
   volume~23.
 \newblock Springer Science \& Business Media, 1992.
 
-\bibitem{kopczuk2015we}
-W.~Kopczuk.
-\newblock What do we know about the evolution of top wealth shares in the
-  united states?
-\newblock {\em The Journal of Economic Perspectives}, 29(1):47--66, 2015.
-
-\bibitem{kopczuk2004top}
-W.~Kopczuk and E.~Saez.
-\newblock Top wealth shares in the united states, 1916--2000: Evidence from
-  estate tax returns.
-\newblock {\em National Tax Journal}, 57(2):445--487, 2004.
-
 \bibitem{Laplace1814}
 P.~S. {Laplace}.
 \newblock {\em Th\'{e}orie analytique des probabilit\'{e}s}.
 \newblock Paris, Ve. Courcier, 2 edition, 1814.
 
-<<<<<<< HEAD
 \bibitem{Latane1959}
 H.~A. Latan\'{e}.
 \newblock Rational decision-making in portfolio management.
@@ -278,21 +143,6 @@ S.~F. LeRoy.
 \newblock In S.~N. Durlauf and L.~E. Blume, editors, {\em {The New Palgrave
   Dictionary of Economics}}, pages 78--80. Springer, 2016.
 
-=======
->>>>>>> chapter_3
-\bibitem{LiuETAL2013}
-K.~Liu, N.~Lubbers, W.~Klein, J.~Tobochnik, B.~Boghosian, and H.~Gould.
-\newblock The effect of growth on equality in models of the economy.
-\newblock {\em ar{X}iv}, 2013.
-
-\bibitem{LiuSerota2016}
-Z.~Liu and R.~A. Serota.
-\newblock Correlation and relaxation times for a stochastic process with a
-  fat-tailed steady-state distribution.
-\newblock {\em Physica A: Statistical Mechanics and its Applications},
-  474:301--311, 2017.
-
-<<<<<<< HEAD
 \bibitem{Markopolos2005}
 H.~M. Markopolos.
 \newblock The world's largest hedge fund is a fraud.
@@ -313,17 +163,10 @@ H.~M. Markowitz.
 \newblock {\em Portfolio Selection}.
 \newblock Blackwell Publishers Inc., second edition, 1991.
 
-=======
->>>>>>> chapter_3
 \bibitem{MarroDickman1999}
 J.~Marro and R.~Dickman.
 \newblock {\em Nonequilibrium Phase Transitions in Lattice Models.}
 \newblock Cambridge University Press, 1999.
-
-\bibitem{meade1964efficiency}
-J.~E. Meade.
-\newblock {\em Efficiency, Equality and The Ownership of Property}.
-\newblock Allen \& Unwin, London, UK, 1964.
 
 \bibitem{MehraPrescott1985}
 R.~Mehra and E.~C. Prescott.
@@ -346,20 +189,10 @@ H.~Morowitz.
 \newblock {\em Beginnings of cellular life}.
 \newblock Yale University Press, 1992.
 
-\bibitem{NelderMead1965}
-J.~A. Nelder and R.~Mead.
-\newblock A simplex method for function minimization.
-\newblock {\em The computer journal}, 7(4):308--313, 1965.
-
 \bibitem{Newman2005}
 M.~E.~J. Newman.
 \newblock Power laws, {P}areto distributions and {Z}ipf's law.
 \newblock {\em Contemp. Phys.}, 46(5):323--351, 2005.
-
-\bibitem{Pareto1897}
-V.~Pareto.
-\newblock {\em Cours d'\'{e}conomie Politique}.
-\newblock F.\ Rouge, Lausanne, Switzerland, 1897.
 
 \bibitem{Peters2011a}
 O.~Peters.
@@ -386,11 +219,6 @@ O.~Peters and A.~Adamou.
 \newblock Rational insurance with linear utility and perfect informatio\ n.
 \newblock {\em ar{X}iv:1507.04655}, July 2015.
 
-\bibitem{PetersAdamou2015b}
-O.~Peters and A.~Adamou.
-\newblock Rational insurance with linear utility and perfect informatio\ n.
-\newblock {\em ar{X}iv:1507.04655}, July 2015.
-
 \bibitem{PetersGell-Mann2016}
 O.~Peters and M.~Gell-Mann.
 \newblock Evaluating gambles using dynamics.
@@ -401,51 +229,10 @@ O.~Peters and W.~Klein.
 \newblock Ergodicity breaking in geometric {B}rownian motion.
 \newblock {\em Phys. Rev. Lett.}, 110(10):100603, March 2013.
 
-\bibitem{Piketty2014}
-T.~Piketty.
-\newblock {\em Capital in the twenty-first century}.
-\newblock Harvard University Press, 2014.
-
-\bibitem{piketty2013theory}
-T.~Piketty and E.~Saez.
-\newblock A theory of optimal inheritance taxation.
-\newblock {\em Econometrica: Journal of the Econometric Society},
-  81(5):1851--1886, 2013.
-
-\bibitem{PikettyZucman2014}
-T.~Piketty and G.~Zucman.
-\newblock Capital is back: Wealth-income ratios in rich countries, 1700-2010.
-\newblock {\em The Quarterly Journal of Economics}, 129(3):1255--1310, 2014.
-
-\bibitem{Quandl2016}
-Quandl.
-\newblock {D}ow {J}ones {I}ndustrial {A}verage.
-\newblock
-  \url{http://www.quandl.com/data/BCB/UDJIAD1-Dow-Jones-Industrial-Average},
-  2016.
-\newblock Accessed: 04/19/2016.
-
 \bibitem{Redner1990}
 S.~Redner.
 \newblock Random multiplicative processes: An elementary tutorial.
 \newblock {\em Am. J. Phys.}, 58(3):267--273, March 1990.
-
-\bibitem{Rios20162013}
-J.-V. Rios-Rull and M.~Kuhn.
-\newblock {2013 Update on the U.S. Earnings, Income, and Wealth Distributional
-  Facts: A View from Macroeconomics}.
-\newblock {\em Quarterly Review}, (April):1--75, 2016.
-
-\bibitem{SaezZucman2014}
-E.~Saez and G.~Zucman.
-\newblock Wealth inequality in the united states since 1913: Evidence from
-  capitalized income tax data.
-\newblock Technical report, National bureau of economic research, 2014.
-
-\bibitem{Samuelson1968}
-P.~Samuelson.
-\newblock What classical and neoclassical monetary theory really was.
-\newblock {\em Canad. J. Econ.}, 1(1):1--15, February 1968.
 
 \bibitem{Samuelson1977}
 P.~Samuelson.
@@ -469,23 +256,11 @@ W.~F. Sharpe.
 \newblock Mutual fund performance.
 \newblock {\em J. Business}, 39(1):119--138, 1966.
 
-\bibitem{stiglitz1969distribution}
-J.~E. Stiglitz.
-\newblock Distribution of income and wealth among individuals.
-\newblock {\em Econometrica: Journal of the Econometric Society},
-  37(3):382--397, 1969.
-
 \bibitem{Taylor1950b}
 G.~Taylor.
 \newblock The formation of a blast wave by a very intense explosion. {II.} the
   atomic explosion of 1945.
 \newblock {\em Proc. R. Soc. A}, 201:175--186, 1950.
-
-\bibitem{WID2017}
-{The World Wealth and Income Database}.
-\newblock Usa top $10\%$ and $1\%$ and bottom $50\%$ wealth shares, 1913--2014.
-\newblock \url{http://wid.world/data/}, 2016.
-\newblock Accessed: 12/26/2016.
 
 \bibitem{Theil1967}
 H.~Theil.
@@ -497,25 +272,10 @@ E.~O. Thorp.
 \newblock {\em Beat the dealer}.
 \newblock {Knopf Doubleday} Publishing Group, 1966.
 
-\bibitem{UhlenbeckOrnstein1930}
-G.~E. Uhlenbeck and L.~S. Ornstein.
-\newblock On the theory of the brownian motion.
-\newblock {\em Physical Review}, 36(5):823--841, Sep 1930.
-
 \bibitem{vanKampen1992}
 N.~G. van Kampen.
 \newblock {\em Stochastic Processes in Physics and Chemistry}.
 \newblock Elsevier (Amsterdam), 1992.
-
-\bibitem{Vasicek1977}
-O.~Vasicek.
-\newblock An equilibrium characterization of the term structure.
-\newblock {\em Journal of Financial Economics}, 5(2):177--188, 1977.
-
-\bibitem{vermeulen2017fat}
-P.~Vermeulen.
-\newblock How fat is the top tail of the wealth distribution?
-\newblock {\em Review of Income and Wealth}, 2017.
 
 \bibitem{vonNeumannMorgenstern1944}
 J.~{von Neumann} and O.~Morgenstern.
@@ -526,10 +286,5 @@ J.~{von Neumann} and O.~Morgenstern.
 W.~A. Whitworth.
 \newblock {\em Choice and chance}.
 \newblock Deighton Bell, 2 edition, 1870.
-
-\bibitem{wolff2014household}
-E.~N. Wolff.
-\newblock {Household Wealth Trends in the United States}, 1983--2010.
-\newblock {\em Oxford Review of Economic Policy}, 30(1):21--43, 2014.
 
 \end{thebibliography}
