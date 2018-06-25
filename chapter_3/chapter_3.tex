@@ -397,18 +397,15 @@ $S\to\infty$ limit,
 \ave{\gest(t,N)} = \frac{1}{t}\ave{\ln(\ave{x(t)}_N)} = f(N,t),
 \elabel{gest_3}
 \ee
-where, as in \secref{sketch}, $\ave{\cdot}$ without subscript refers to the average over all possible samples, \ie $\lim_{S\to\infty}\ave{\cdot}_{S}$. The last two terms in \eref{gest_4} suggest an exponential relationship between ensemble size and time. The final term is a tricky stochastic object on which the properties of the expectation value in \eref{gest_3} will hinge. This term will be the focus of our attention: the sum of exponentials of normal random variates or, equivalently, log-normal variates.
+where, as previously, $\ave{\cdot}$ without subscript refers to the average over all possible samples, \ie $\lim_{S\to\infty}\ave{\cdot}_{S}$. The last two terms in \eref{gest_4} suggest an exponential relationship between ensemble size and time. The final term is a tricky stochastic object on which the properties of the expectation value in \eref{gest_3} will hinge. This term will be the focus of our attention: the sum of exponentials of normal random variates or, equivalently, log-normal variates.
 
 \subsubsection{The random energy model}
 Since the publication of \cite{PetersKlein2013} we have learned, thanks to discussions with J.-P.~Bouchaud, 
-that the key object in \eref{gest_4} -- the sum of exponentials of normal random variates -- has been of
-interest to the mathematical physics community since the 1980s. 
+that the key object in \eref{gest_4} -- the sum log-normal random variates -- has been of
+interest to the mathematical physics community since the 1980s. The reason for this is Derrida's random energy model \cite{Derrida1980,Derrida1981}.
 
-The reason for this is Derrida's random energy model \cite{Derrida1980,Derrida1981}. It is defined as follows. 
-Imagine a system whose energy levels are $2^K=N$ random numbers $\xi_i$ (corresponding to $K=\ln N/\ln 2$ spins). This is
-a very simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated
-that we ``give up'' and just model its energy levels as realizations of a random variable. (We denote the number 
-of spins by $K$ and the number of resulting energy levels by $N$, whereas Derrida uses $N$ for the number of spins).
+It is defined as follows. Imagine a system whose energy levels are $2^K=N$ normally-distributed random numbers, $\xi_i$ (corresponding to $K$ spins). This is a very simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated that we ``give up'' and simply model its energy levels as realisations of a random variable. (We denote the number 
+of spins by $K$ and the number of resulting energy levels by $N$, while Derrida uses $N$ for the number of spins). In this model
 The partition function is then
 \be
 Z=\sum_{i=1}^N \exp\left(\beta J\sqrt{\frac{K}{2}}\xi_i\right),
@@ -517,14 +514,11 @@ long-time regime is relevant.
 here, based on \cite{Derrida1980}, and numerical results using the same parameter 
 values as in \cite{PetersKlein2013}, namely $\mu=0.05, \sigma=\sqrt{0.2}, N=256$ and $S=10^5$.
 
-
 Notice that $\ave{\gest}$ is not the (local)
 time derivative $\frac{\partial}{\partial t}\ave{\ln(\ave{x}_N)}$, but a time-average growth rate, $\ave{\frac{1}{t}\ln\left( \frac{\ave{x(t)}_N}{\ave{x(0)}_N}\right)}$. 
 In \cite{PetersKlein2013} we used a notation that we've stopped using since then because it
 caused confusion -- $\ave{g}$ there denotes the growth rate of the expectation value, which 
 is not the expectation value of the growth rate. 
-
-
 
 It is remarkable that the expectation value $\ave{\gest(N,t)}$ so closely reflects the
 median, $q_{0.5}$, of $\ave{x}_N$, in the sense that
@@ -556,47 +550,6 @@ over a super-ensemble of $S=10,000$ samples of $\gest$ estimated in sub-ensemble
 \end{figure}
 \FloatBarrier
 
-%\subsubsection{Another route via \Ito calculus}
-%Another way to find the expectation value of PEA growth rates, \eref{gest_3}, 
-%is to compute $\ave{d\ln \ave{x}_N}$ using \Ito calculus. We compute this directly, without 
-%invoking the random energy model. To apply \Ito calculus, 
-%we will need the first two partial derivatives of $d\ln\ave{x}_N$ with respect to $x_i$.
-%\be
-%\frac{\partial \ln \ave{x}_N}{\partial x_i}=\frac{1}{N\ave{x}_N}
-%\ee
-%and
-%\be
-%\frac{\partial^2 \ln \ave{x}_N}{\partial x_i^2}=-\frac{1}{N^2\ave{x}_N^2}
-%\ee
-%Now, Taylor-expanding $d \ln \ave{x}_N$ we find
-%\bea
-%d \ln \ave{x}_N&=&\sum_i \frac{\partial \ln \ave{x}_N}{\partial x_i} dx_i+\frac{1}{2}\sum_i \sum_j \frac{\partial^2 \ln \ave{x}_N}{\partial x_i \partial x_j} dx_i dx_j+ \ldots\\
-%&\approx&\frac{1}{N\ave{x}_N} \sum_i dx_i-\frac{1}{2N^2\ave{x}_N^2}\sum_i \sum_j dx_i dx_j.
-%\eea
-%The double-sum can be split into `diagonal' ($i=j$) terms and cross-terms as
-%\be
-%\frac{1}{N\ave{x}_N}\sum_i x_i(\mu dt + \sigma dW_i) -\frac{1}{2N^2\ave{x}_N^2 }\left(\sum_i  dx_i^2 + \sum_{j}\sum_{i \neq j}dx_i dx_j\right)\hspace{.6cm}
-%\ee
-%Parts of the cross-terms are negligible because they are of order $dt^2$ and the rest vanishes when taking the expectation value, 
-%as we see by writing out one cross term
-%\be
-%dx_i dx_j=x_i x_j (\mu^2 dt^2+\mu\sigma dt dW_i+\mu \sigma dt dW_j + \sigma^2 dW_i dW_j).
-%\ee
-%We therefore drop these terms now, as we take the expectation value, using the Wiener identity $\ave{dW_i^2}=dt$ for the final term
-%\bea
-%\ave{d \ln \ave{x}_N}&=&\ave{\mu dt -\frac{1}{2N^2\ave{x}_N^2}\sum_i x_i^2 (\mu^2 dt^2 + \sigma^2 dt)} \\
-%&=&\mu dt   -\ave{\frac{1}{2} \sigma^2 \frac{\ave{x^2}_N}{N\ave{x}_N^2}} dt + O(dt^2).
-%\eea
-%Discarding terms of higher-than-first order in $dt$ and re-writing the last term as a fraction of sums, we thus have 
-%\bea
-%\frac{\ave{d \ln \ave{x}_N}}{dt}&=&\mu -\frac{1}{2} \sigma^2  \ave{\frac{\frac{1}{N}\sum_i x_i^2}{N\left(\frac{1}{N}\sum_i x_i\right)^2}}  \\
-%&=&\mu -\frac{1}{2} \sigma^2  \ave{\frac{\sum_i x_i^2}{\left(\sum_i x_i\right)^2}} \elabel{Ito_sums}
-%\eea
-%This expression has the correct behaviour: for short times, all $x_i$ are essentially identical, 
-%and the second term is $-\frac{1}{2}\sigma^2 \frac{1}{N}$, which is negligible if $N$ is large. So, for short times
-%we see expectation-value behaviour. For long times, the largest $x_i$ will dominate both the numerator and the denominator, and we have
-%$-\frac{1}{2}\sigma^2$: the full \Ito correction is felt for long times.
-%
 %\subsubsection{Discussion}
 %The \Ito result is exact. A Monte-Carlo estimate of \eref{Ito_sums} (which is easy to obtain) is 
 %shown in \fref{1} (yellow line). This agrees well with numerical observations.
