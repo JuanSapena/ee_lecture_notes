@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1529967904 "main.aux" "main.bbl" "main" 1529967913
+["bibtex main"] 1529968719 "main.aux" "main.bbl" "main" 1529968727
   "./../LML_bibliography/bibliography.bib" 1529603401 227551 26c416b937daaf61e9b5ccc75a678abe ""
   "/usr/local/texlive/2016/texmf-dist/bibtex/bst/base/abbrv.bst" 1292289607 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "main.aux" 1529967911 325003 f98d52a8d5626d126896cf86ad44f8dc ""
+  "main.aux" 1529968726 325084 f506991f238488692fb42cb9c8e06518 ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1529967904 "main.tex" "main.pdf" "main" 1529967913
+["pdflatex"] 1529968719 "main.tex" "main.pdf" "main" 1529968727
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -273,7 +273,7 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1471985225 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1471985295 3873397 88ff02ea4a4b3462cdda41c6e92214ee ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "chapter_1/chapter_1.tex" 1529956582 81029 d6ed4c8fb128d04af1db5245a256d2cd ""
+  "chapter_1/chapter_1.tex" 1529968707 81019 ad7e67fce739d27273411f34c15ae711 ""
   "chapter_1/figs/BM_time_ave.pdf" 1528357177 13073 02bae43f837efe3dc5c1535accd83a2d ""
   "chapter_1/figs/GBM_trajectory.pdf" 1528357177 19538 a8ce5c61cf3061acfc334410e262fa08 ""
   "chapter_1/figs/all_saints.pdf" 1492672276 2437974 2d75e531bfeee0aaff070cebd62d5e56 ""
@@ -313,15 +313,15 @@
   "chapter_4/figs/rebalance.pdf" 1527157961 8915 7165982402c8c9dcdd4810d694724cb0 ""
   "glossary.tex" 1529956540 21453 184760b034ec4411d312ded5af753881 ""
   "lml_LOGO_whiteBG-eps-converted-to.pdf" 1492672276 29436 645a9ff58b4b05cf88845b55ee4e8e9f ""
-  "main.aux" 1529967911 325003 f98d52a8d5626d126896cf86ad44f8dc ""
-  "main.bbl" 1529967904 8705 3a6e804f73d8ff224b8a6bb63458f567 "bibtex main"
-  "main.out" 1529967912 4947 5a487956f9f9a79637c2650da95c309c ""
+  "main.aux" 1529968726 325084 f506991f238488692fb42cb9c8e06518 ""
+  "main.bbl" 1529968719 8705 3a6e804f73d8ff224b8a6bb63458f567 "bibtex main"
+  "main.out" 1529968726 4947 5a487956f9f9a79637c2650da95c309c ""
   "main.tex" 1529967880 612 e7fe3271f2ae1e2621daa0f912ccf5c0 ""
-  "main.toc" 1529967912 6141 a1a4cfae8cb7b1fa7183ed94a21396f7 ""
+  "main.toc" 1529968726 6141 a5d811ade94e5ff22aa314ffa08c34c8 ""
   "preamble.tex" 1529956115 7821 b63afd5d93b877cee05c29a191985cec ""
   (generated)
-  "main.pdf"
-  "main.aux"
   "main.toc"
   "main.log"
+  "main.aux"
+  "main.pdf"
   "main.out"
