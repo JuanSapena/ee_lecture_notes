@@ -3,52 +3,48 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: ./../LML_bibliography/bibliography.bib
-Warning--empty journal in BermanPetersAdamou2017
-Warning--empty note in Bouchaud2015b
 Warning--empty journal in de2015quantitative
 Warning--empty journal in de2015piketty
-Warning--empty journal in hubmer2016historical
-Warning--empty journal in pinkovskiy2009parametric
 Warning--there's a number but no volume in Rios20162013
-You've used 61 entries,
+You've used 84 entries,
             2118 wiz_defined-function locations,
-            890 strings with 12617 characters,
-and the built_in function-call counts, 17788 in all, are:
-= -- 1801
-> -- 698
+            1040 strings with 15217 characters,
+and the built_in function-call counts, 23660 in all, are:
+= -- 2367
+> -- 871
 < -- 2
-+ -- 295
-- -- 218
-* -- 1223
-:= -- 3049
-add.period$ -- 188
-call.type$ -- 61
-change.case$ -- 286
++ -- 372
+- -- 268
+* -- 1551
+:= -- 4043
+add.period$ -- 256
+call.type$ -- 84
+change.case$ -- 368
 chr.to.int$ -- 0
-cite$ -- 68
-duplicate$ -- 656
-empty$ -- 1447
-format.name$ -- 218
-if$ -- 3615
+cite$ -- 87
+duplicate$ -- 934
+empty$ -- 2024
+format.name$ -- 268
+if$ -- 4867
 int.to.chr$ -- 0
-int.to.str$ -- 61
-missing$ -- 63
-newline$ -- 313
-num.names$ -- 122
-pop$ -- 252
+int.to.str$ -- 84
+missing$ -- 104
+newline$ -- 427
+num.names$ -- 168
+pop$ -- 385
 preamble$ -- 1
-purify$ -- 231
+purify$ -- 302
 quote$ -- 0
-skip$ -- 442
+skip$ -- 592
 stack$ -- 0
-substring$ -- 1257
-swap$ -- 63
+substring$ -- 1601
+swap$ -- 90
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 230
-warning$ -- 7
-while$ -- 197
-width$ -- 63
-write$ -- 659
-(There were 7 warnings)
+type$ -- 288
+warning$ -- 3
+while$ -- 259
+width$ -- 86
+write$ -- 906
+(There were 3 warnings)
