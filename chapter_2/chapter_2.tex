@@ -54,15 +54,15 @@ namely situations where we face a decision whose consequences will be purely
 financial and are somewhat uncertain when we make the decision. A real-world example would be buying a lottery ticket. We define the gamble mathematically as follows.
 
 \begin{defn}{Gamble}
-A gamble is a pair of a random variable, $\gD$, and a duration,  $\dt$. 
+A gamble is a pair of a random variable, $\Q$, and a duration,  $\dt$. 
 \vspace{.2cm}
 
-$\gD$ is called the payout and takes one of $\K$ (mutually exclusive) possible monetary 
+$\Q$ is called the payout and takes one of $\K$ (mutually exclusive) possible monetary 
 values, 
-$\{\gD_1,\ldots,\gD_{\K}\}$, associated with probabilities, $\{\p_1,\ldots,\p_{\K}\}$, where 
+$\{\q_1,\ldots,\q_{\K}\}$, associated with probabilities, $\{\p_1,\ldots,\p_{\K}\}$, where 
 $\sum_{\gj=1}^\K \p_\gj = 1$. 
 Payouts can be positive, associated with a monetary gain, or negative, 
-associated with a loss. We order them such that $\gD_1<\ldots<\gD_\K$.
+associated with a loss. We order them such that $\q_1<\ldots<\q_\K$.
 \end{defn}
 
 Everything we need to know about the gamble is contained in the 
@@ -73,14 +73,14 @@ We relate it to reality through a few examples:
 Imagine betting $\$ 10$ on the toss of a fair coin. We would model this 
 with the following payouts and probabilities:
 \bea
-\gD_1 = -\$ 10, &\quad& \p_1 = 1/2;\\
-\gD_2 = +\$ 10, &\quad& \p_2 = 1/2.
+\q_1 = -\$ 10, &\quad& \p_1 = 1/2;\\
+\q_2 = +\$ 10, &\quad& \p_2 = 1/2.
 \eea
 The duration would be the time between two coin tosses. If you participate in coin tosses once a week it would be $\dt=1$ week.
 \end{example}
 
 \begin{example}{Playing the lottery}
-We can also imagine a gamble akin to a lottery, where our individual pays an amount, 
+We can also imagine a gamble akin to a lottery, where we pay an amount, 
 $\F$, for a ticket which will win the jackpot, $\J$, with probability, $\p$. The corresponding 
 payouts and probabilities are:
 \bea

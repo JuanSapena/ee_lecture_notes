@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1529951488 "main.aux" "main.bbl" "main" 1529955432
+["bibtex main"] 1529956140 "main.aux" "main.bbl" "main" 1529956149
   "./../LML_bibliography/bibliography.bib" 1529603401 227551 26c416b937daaf61e9b5ccc75a678abe ""
   "/usr/local/texlive/2016/texmf-dist/bibtex/bst/base/abbrv.bst" 1292289607 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "main.aux" 1529955431 345235 8727b06b784b14ba2c05a2cd0fb73b9c ""
+  "main.aux" 1529956147 345867 04e2eb3b97d816757c136cc18c2de377 ""
   (generated)
-  "main.blg"
   "main.bbl"
-["pdflatex"] 1529955424 "main.tex" "main.pdf" "main" 1529955432
+  "main.blg"
+["pdflatex"] 1529956141 "main.tex" "main.pdf" "main" 1529956149
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -297,7 +297,7 @@
   "chapter_1/figs/x_of_t_log_10000.pdf" 1528357177 55866 9634128c72d2269464abc94da187da06 ""
   "chapter_1/figs/x_of_t_log_20_year.pdf" 1528357177 16117 93351c17dc14d8b539773206dfc79924 ""
   "chapter_1/figs/x_of_t_log_exp.pdf" 1528357177 14990 2e32d5c9dd622247e8542424fb611dd3 ""
-  "chapter_2/chapter_2.tex" 1529949286 101598 db6370d66697b115454afbafa6b32c54 ""
+  "chapter_2/chapter_2.tex" 1529955896 101594 db9b23831cd1a15a0d1abed647b8fcfb ""
   "chapter_2/figs/gbar_zero.png" 1492672276 32909 ab0c09424d3a396beeacc70783ab45af ""
   "chapter_2/figs/ins_lin_cropped.pdf" 1492672276 4742 23435e532de28fb11f6577aa648cde0c ""
   "chapter_2/figs/ins_log_cropped.pdf" 1492672276 6818 29edce8ca2f05241ddd578a3feab54f9 ""
@@ -334,17 +334,17 @@
   "chapter_4/figs/markowitz.pdf" 1492672276 8801 4d07a4212f44eb92ddc562d498b0b6bf ""
   "chapter_4/figs/markowitz_peters.png" 1492672276 143851 daa6987d17a808e3e39fc7975e237b78 ""
   "chapter_4/figs/rebalance.pdf" 1527157961 8915 7165982402c8c9dcdd4810d694724cb0 ""
-  "glossary.tex" 1529955418 21446 5684755e3bf0e00c1bbbe1b084aad8de ""
+  "glossary.tex" 1529956075 21457 e1aa5fcdbb144270840ed99c442a9e9d ""
   "lml_LOGO_whiteBG-eps-converted-to.pdf" 1492672276 29436 645a9ff58b4b05cf88845b55ee4e8e9f ""
-  "main.aux" 1529955431 345235 8727b06b784b14ba2c05a2cd0fb73b9c ""
-  "main.bbl" 1529951488 16752 1af9cfa53019909f0b678c7df20eea06 "bibtex main"
-  "main.out" 1529955432 6020 96c6488d502ac97aab206251a8e47647 ""
+  "main.aux" 1529956147 345867 04e2eb3b97d816757c136cc18c2de377 ""
+  "main.bbl" 1529956141 16752 1af9cfa53019909f0b678c7df20eea06 "bibtex main"
+  "main.out" 1529956148 6020 96c6488d502ac97aab206251a8e47647 ""
   "main.tex" 1529923481 612 e7fe3271f2ae1e2621daa0f912ccf5c0 ""
-  "main.toc" 1529955432 7589 dbef7de79b294983deb9fca5374db111 ""
-  "preamble.tex" 1529955394 7821 b63afd5d93b877cee05c29a191985cec ""
+  "main.toc" 1529956148 7589 d7a4c889c223927029721a424543bcf6 ""
+  "preamble.tex" 1529956115 7821 b63afd5d93b877cee05c29a191985cec ""
   (generated)
-  "main.aux"
   "main.pdf"
-  "main.toc"
   "main.log"
+  "main.toc"
   "main.out"
+  "main.aux"
