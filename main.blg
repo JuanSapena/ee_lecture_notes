@@ -3,6 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: ./../LML_bibliography/bibliography.bib
+<<<<<<< HEAD
 Warning--empty journal in BermanPetersAdamou2017
 Warning--empty journal in de2015quantitative
 Warning--empty journal in de2015piketty
@@ -49,3 +50,50 @@ while$ -- 297
 width$ -- 98
 write$ -- 1035
 (There were 4 warnings)
+=======
+Warning--empty journal in de2015quantitative
+Warning--empty journal in de2015piketty
+Warning--there's a number but no volume in Rios20162013
+You've used 84 entries,
+            2118 wiz_defined-function locations,
+            1040 strings with 15217 characters,
+and the built_in function-call counts, 23660 in all, are:
+= -- 2367
+> -- 871
+< -- 2
++ -- 372
+- -- 268
+* -- 1551
+:= -- 4043
+add.period$ -- 256
+call.type$ -- 84
+change.case$ -- 368
+chr.to.int$ -- 0
+cite$ -- 87
+duplicate$ -- 934
+empty$ -- 2024
+format.name$ -- 268
+if$ -- 4867
+int.to.chr$ -- 0
+int.to.str$ -- 84
+missing$ -- 104
+newline$ -- 427
+num.names$ -- 168
+pop$ -- 385
+preamble$ -- 1
+purify$ -- 302
+quote$ -- 0
+skip$ -- 592
+stack$ -- 0
+substring$ -- 1601
+swap$ -- 90
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 288
+warning$ -- 3
+while$ -- 259
+width$ -- 86
+write$ -- 906
+(There were 3 warnings)
+>>>>>>> chapter_3

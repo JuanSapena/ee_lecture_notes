@@ -5,6 +5,11 @@ A.~Adamou and O.~Peters.
 \newblock Dynamics of inequality.
 \newblock {\em Significance}, 13(3):32--35, 2016.
 
+\bibitem{AitchisonBrown1957}
+J.~Aitchison and J.~A.~C. Brown.
+\newblock {\em The lognormal distribution}.
+\newblock Cambridge University Press, 1957.
+
 \bibitem{atkinson1969timescale}
 A.~B. Atkinson.
 \newblock The timescale of economic models: How long is the long run?
@@ -38,12 +43,6 @@ Y.~Berman, E.~Ben-Jacob, and Y.~Shapira.
   distribution.
 \newblock {\em PloS one}, 11(6):e0199999, 2016.
 
-\bibitem{BermanPetersAdamou2017}
-Y.~Berman, O.~Peters, and A.~Adamou.
-\newblock An empirical test of the ergodic hypothesis: Wealth distributions in
-  the {United States}.
-\newblock January 2017.
-
 \bibitem{berman2017revisiting}
 Y.~Berman and Y.~Shapira.
 \newblock Revisiting r~\textgreater~g---the asymptotic dynamics of wealth
@@ -63,11 +62,14 @@ T.~Bewley.
 \newblock The permanent income hypothesis: A theoretical formulation.
 \newblock {\em Journal of Economic Theory}, 16(2):252--292, 1977.
 
+<<<<<<< HEAD
 \bibitem{Black1986}
 F.~Black.
 \newblock Noise.
 \newblock {\em The Journal of Finance}, 41(3):528--543, 1986.
 
+=======
+>>>>>>> chapter_3
 \bibitem{Bouchaud2015}
 J.-P. Bouchaud.
 \newblock On growth-optimal tax rates and the issue of wealth inequalities.
@@ -169,11 +171,14 @@ A.~Einstein.
   {T}eilchen.
 \newblock {\em Ann. Phys.}, IV(17):549--560, 1905.
 
+<<<<<<< HEAD
 \bibitem{Fernandez2009}
 P.~Fern\'{a}ndez.
 \newblock The equity premium in 150 textbooks.
 \newblock Working paper, IESE Business School, University of Navarra, 2009.
 
+=======
+>>>>>>> chapter_3
 \bibitem{Feynman1963}
 R.~P. Feynman.
 \newblock {\em The Feynman lectures on physics}.
@@ -261,6 +266,7 @@ P.~S. {Laplace}.
 \newblock {\em Th\'{e}orie analytique des probabilit\'{e}s}.
 \newblock Paris, Ve. Courcier, 2 edition, 1814.
 
+<<<<<<< HEAD
 \bibitem{Latane1959}
 H.~A. Latan\'{e}.
 \newblock Rational decision-making in portfolio management.
@@ -272,6 +278,8 @@ S.~F. LeRoy.
 \newblock In S.~N. Durlauf and L.~E. Blume, editors, {\em {The New Palgrave
   Dictionary of Economics}}, pages 78--80. Springer, 2016.
 
+=======
+>>>>>>> chapter_3
 \bibitem{LiuETAL2013}
 K.~Liu, N.~Lubbers, W.~Klein, J.~Tobochnik, B.~Boghosian, and H.~Gould.
 \newblock The effect of growth on equality in models of the economy.
@@ -284,6 +292,7 @@ Z.~Liu and R.~A. Serota.
 \newblock {\em Physica A: Statistical Mechanics and its Applications},
   474:301--311, 2017.
 
+<<<<<<< HEAD
 \bibitem{Markopolos2005}
 H.~M. Markopolos.
 \newblock The world's largest hedge fund is a fraud.
@@ -304,6 +313,8 @@ H.~M. Markowitz.
 \newblock {\em Portfolio Selection}.
 \newblock Blackwell Publishers Inc., second edition, 1991.
 
+=======
+>>>>>>> chapter_3
 \bibitem{MarroDickman1999}
 J.~Marro and R.~Dickman.
 \newblock {\em Nonequilibrium Phase Transitions in Lattice Models.}
@@ -370,10 +381,10 @@ O.~Peters and A.~Adamou.
 \newblock Stochastic market efficiency.
 \newblock {\em SFI working paper 13-06-022}, 2013.
 
-\bibitem{PetersAdamou2015a}
+\bibitem{PetersAdamou2015b}
 O.~Peters and A.~Adamou.
-\newblock The evolutionary advantage of cooperation.
-\newblock {\em ar{X}iv:1506.03414}, June 2015.
+\newblock Rational insurance with linear utility and perfect informatio\ n.
+\newblock {\em ar{X}iv:1507.04655}, July 2015.
 
 \bibitem{PetersAdamou2015b}
 O.~Peters and A.~Adamou.
