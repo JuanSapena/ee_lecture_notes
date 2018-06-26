@@ -5,15 +5,15 @@
 \contentsline {subsubsection}{\numberline {1.1.3}Reallocating GBM}{5}{subsubsection.1.1.3}
 \contentsline {subsubsection}{\numberline {1.1.4}Model behaviour}{7}{subsubsection.1.1.4}
 \contentsline {paragraph}{Positive $\tau $}{7}{section*.2}
-\contentsline {paragraph}{Negative $\tau $}{8}{section*.3}
-\contentsline {subsubsection}{\numberline {1.1.5}The derivation of the stationary distribution}{8}{subsubsection.1.1.5}
+\contentsline {paragraph}{Negative $\tau $}{7}{section*.3}
+\contentsline {subsubsection}{\numberline {1.1.5}The derivation of the stationary distribution}{9}{subsubsection.1.1.5}
 \contentsline {subsubsection}{\numberline {1.1.6}The derivation of the variance convergence time}{10}{subsubsection.1.1.6}
-\contentsline {subsubsection}{\numberline {1.1.7}United States wealth data}{12}{subsubsection.1.1.7}
-\contentsline {paragraph}{Wealth share data}{12}{section*.4}
-\contentsline {paragraph}{Wealth Growth Rate}{14}{section*.5}
-\contentsline {paragraph}{Volatility}{14}{section*.6}
-\contentsline {paragraph}{Empirical Analysis}{14}{section*.7}
-\contentsline {paragraph}{Convergence times}{17}{section*.8}
-\contentsline {paragraph}{Conclusions}{18}{section*.9}
+\contentsline {subsubsection}{\numberline {1.1.7}United States wealth data}{11}{subsubsection.1.1.7}
+\contentsline {paragraph}{Wealth share data}{11}{section*.4}
+\contentsline {paragraph}{Wealth Growth Rate}{12}{section*.5}
+\contentsline {paragraph}{Volatility}{12}{section*.6}
+\contentsline {paragraph}{Empirical Analysis}{13}{section*.7}
+\contentsline {paragraph}{Convergence times}{15}{section*.8}
+\contentsline {paragraph}{Conclusions}{17}{section*.9}
 \contentsline {section}{List of Symbols}{20}{section*.10}
 \contentsline {section}{References}{20}{section*.11}

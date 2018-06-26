@@ -1071,7 +1071,7 @@ Economics is often concerned with growth and a growing quantity cannot be ergodi
 Studies of wealth distributions also employ this strategy. Individual wealth is modelled as a growing quantity. Dividing by the population average transforms this to a rescaled wealth, as in \secref{rescaled}, which is hypothesised to be ergodic. For example, \cite[p.~130]{BenhabibBisinZhu2011} ``impose assumptions \dots that guarantee the existence and uniqueness of a limit stationary distribution.'' The idea is to take advantage of the simplicity with which the stable distribution can be analysed, \eg to predict the effects of policies encoded in model parameters.
 
 % What is the problem? What are we going to do?
-There is, however, an elephant in the room. To our knowledge, the validity of the ergodic hypothesis for rescaled wealth has never been tested empirically. It's certainly invalid for the GBM model world we studied previously because we saw in \secref{rescaled} that the lognormal distribution for rescaled wealth broadens indefinitely. However, this doesn't seem very surprising: most reasonable people would consider our model world -- containing a population of individuals whose wealths multiply noisily and who never interact -- rather unrealistic! The model we are about to present will not only extend our understanding from this simple model world to one containing interactions, but also it will allows us to test the validity of the hypothesis. This is because it has regimes, \ie combinations of parameters, for which rescaled wealth is and isn't ergodic. This contrasts with models typically used by economists, which have the ergodic hypothesis ``baked in.'' 
+There is, however, an elephant in the room. To our knowledge, the validity of the ergodic hypothesis for rescaled wealth has never been tested empirically. It's certainly invalid for the GBM model world we studied previously because, as we saw in \secref{rescaled}, rescaled wealth has an ever-broadening lognormal distribution. That doesn't seem to say much, as most reasonable people would consider our model world -- containing a population of individuals whose wealths multiply noisily and who never interact -- somewhat unrealistic! The model we are about to present will not only extend our understanding from this simple model world to one containing interactions, but also will allows us to test the hypothesis. This is because it has regimes, \ie combinations of parameters, for which rescaled wealth is and isn't ergodic. This contrasts with models typically used by economists, which have the ergodic hypothesis ``baked in.''
 
 % Convergence time
 If it is reasonable to assume a stable distribution exists, we must also consider how long convergence to would take after a change of parameters. It's no use if convergence in the model takes millennia, if we are using it to estimate the effect of a new tax policy over the next election cycle. Therefore, treating a stable model distribution as representative of the empirical wealth distribution implies an assumption of fast convergence.  As the late Tony Atkinson pointed out, that ``the speed of convergence makes a great deal of difference to the way in which we think about the model'' \cite{atkinson1969timescale}. We will also use our model to discuss this point. Without further ado, let us introduce it.
@@ -1099,54 +1099,33 @@ If it is reasonable to assume a stable distribution exists, we must also conside
 
 \subsubsection{Reallocating GBM}
 \seclabel{RGBM_model}
-
-Our model is called Reallocating Geometric Brownian Motion (RGBM). To GBM we add a simple reallocation mechanism. applies a flat wealth tax rate and every individual, irrespective of his 
-wealth, receives the same benefit from the collected tax, in absolute terms. This mimicks the
-actions of a central agency that collects each year from everyone 1\% of his wealth and pays 
-1-$N^\text{th}$ of the total collected amount to each individual. A similar model will be 
-used for income tax, see \eref{isde} in \secref{Income_tax}. 
-
-Of course this isn't how taxation works in reality -- wealth taxes are usually only collected in 
-the form of inheritance tax and sometimes property or land tax; often progressive rates are 
-applied, and how tax takings are actually redistributed is very unclear. 
-Who benefits from government activity? Infrastructure is built, benefits payments made, 
-healthcare and education provided, a legal system is maintained of courts that can 
-enforce contracts and enable corporate structures, police and an army may provide security. 
-Individuals will benefit from these different aspects to very different degrees. Our model 
-ignores this and lets everyone benefit equally.
-
-We call our model Reallocating Geometric Brownian Motion (RGBM). Individual wealth undergoes random multiplicative growth, modelled as Geometric Brownian Motion (GBM), and is reallocated among individuals by a simple pooling and sharing mechanism. Thus everyone's wealth is coupled to the total wealth in the economy. We view RGBM as a null model
-of an exponentially growing economy with social structure. It is intended to capture only the most general features of the dynamics of wealth.
-
-% AA20170120 - expanded to link regimes to reallocation direction
-RGBM has both ergodic and non-ergodic regimes, characterised by the sign of the reallocation rate parameter. Reallocation from richer to poorer produces an ergodic regime, in which wealths are positive, distributed with a Pareto tail, and confined around their mean value. Reallocation from poorer to richer produces a non-ergodic regime, in which the population splits into two classes, characterised by positive and negative wealths which diverge away from the mean. If the reallocation rate is zero, RGBM reduces to GBM, in which individual wealths grow independently and no social structure is represented.
-
-Wealth evolves multiplicatively under GBM. There are no additive changes akin to labor income and consumption. This is unproblematic for large wealths, where additive changes are dwarfed by capital gains. For small wealths, however, wages and consumption are significant. Indeed, empirical distributions exhibit different regularities for low and high wealths~\cite{DragulescuYakovenko2001}. There are other multiplicative effects at play. For instance, investing in one's health, housing, and education may be closer to a multiplicative investment than to wealth-depleting consumption. Nonetheless, we leave a red flag here to indicate that our model's realism is questionable for small wealths. We treat additive earnings explicitly in \secref{earnings} and find that including them in a less parsimonious model of wealth accumulation does not alter fundamentally our conclusions.
-
-% AA moved this down one para to improve flow
-We note that $t$ in our framework denotes time, rather than the age of an agent. As~\cite{meade1964efficiency} puts it, our agents ``do not marry or have children or die or even grow old'' (p.~41). Therefore, the individual in our setup is best imagined as a household or a family, \ie some long-lasting unit into which personal events are subsumed.
-
-Finally, we add to the system a term that is absent from many other models in the literature. This term represents redistributive social structure. We imagine, as the simplest social interaction, that each individual pays a fixed proportion of its wealth, $x_i \tau dt$, into a central pot (``contributes to society'') and gets back an equal share of the pot, $\ave{x}_N\tau dt$, (``benefits from society''):
+% model
+Our model, called Reallocating Geometric Brownian Motion (RGBM), is a system of $N$ individuals whose wealths, $x_i(t)$, evolve according to the stochastic differential equation,
 \be
-dx_i=x_i \left[(\mu-\tau)dt+\sigma dW_i\left(t\right)\right]+ \ave{x}_N\tau dt.
+dx_i=x_i \left[(\mu-\tau)dt+\sigma dW_i\left(t\right)\right]+ tau\ave{x}_N\ dt,
 \elabel{rgbm}
 \ee
+for all $i=1\dots N$. In effect, we have added to the GBM model a simple reallocation mechanism. Over a time step, $dt$, each individual pays a fixed proportion of its wealth, $\tau x_i dt$, into a central pot (``contributes to society'') and gets back an equal share of the pot, $\tau\ave{x}_N dt$, (``benefits from society''). We can think of this as applying a wealth tax, say of $1\%$ per year, to everyone's wealth and then redistributing the tax revenues equally. Note that the reallocation parameter, $\tau$, is, like $\mu$, a rate with dimensions per unit time. Note also that when $\tau=0$, we recover our old friend, GBM, in which individuals grow their wealths without interacting.
 
-A more complex model would treat the economy as a system of agents that interact with each other through a network of relationships. These relationships include trade in goods and services, employment, paying taxes, using centrally-organised infrastructure (roads, schools, a legal system, social security, scientific research, and so on), insurance schemes, wealth transfers through inheritance and gifts, and everything else that constitutes an economic network. It would be a hopeless task to produce an exhaustive list of all these interactions, let alone include them as model components. Instead we introduce a single parameter -- the reallocation rate, $\tau$ -- to represent their net effect. If $\tau$ is positive, the direction of net reallocation is from richer to poorer; if negative, it is from poorer to richer.
+% reallocation is a net effect
+RGBM is our null model of an exponentially growing economy with social structure. It is intended to capture only the most general features of the dynamics of wealth. A more complex model would treat the economy as a system of agents that interact with each other through a network of relationships. These relationships include trade in goods and services, employment, taxation, welfare payments, using public infrastructure (roads, schools, a legal system, social security, scientific research, and so on), insurance, wealth transfers through inheritance and gifts, and everything else that constitutes an economic network. It would be a hopeless task to list exhaustively all these interactions, let alone model them explicitly. Instead we introduce a single parameter -- the reallocation rate, $\tau$ -- to represent their net effect. If $\tau$ is positive, the direction of net reallocation is from richer to poorer. If negative, it is from poorer to richer.
 
-Fitting $\tau$ to data will allow us to answer questions such as:
+% regimes
+We will see shortly that RGBM has both ergodic and non-ergodic regimes, characterised to a good approximation by the sign of $\tau$. $\tau>0$ produces an ergodic regime, in which wealths are positive, distributed with a Pareto tail, and confined around their mean value. $\tau<0$ produces a non-ergodic regime, in which the population splits into two classes, characterised by positive and negative wealths which diverge away from the mean.
+
+% health warnings
+We offer a couple of health warnings. In RGBM, like in GBM, there are no additive changes akin to labour income and consumption. This is unproblematic for large wealths, where additive changes are dwarfed by capital gains. For small wealths, however, wages and consumption are significant and empirical distributions look rather different for low and high wealths~\cite{DragulescuYakovenko2001}. We modelled earnings explicitly in \cite{BermanPetersAdamou2017} and found this didn't generate insights different from RGBM when fit to real wealth data. We note also, as \cite[p.~41]{meade1964efficiency} put it, that our agents ``do not marry or have children or die or even grow old.'' Therefore, the individual in our setup is best imagined as a household or a family, \ie some long-lasting unit into which personal events are subsumed.
+
+% next steps
+Having specified the model, we will use insights from \secref{finite_populations} to understand how rescaled wealth is distributed in the ergodic and non-ergodic regimes. Then we will show briefly our results from fitting the model to historical wealth data from the United States. The full technical details of this fitting exercise are beyond the scope of these notes -- if you are interested, you can find ``chapter and verse'' in \cite{BermanPetersAdamou2017}. Fitting $\tau$ to data will allow us to answer the important questions:
 \bi
 \item
-what is the
-%coarse-grained [AA removed: do economists know what this means?]
-net reallocating effect of socio-economic structure on the wealth distribution?
+What is the net reallocating effect of socio-economic structure on the wealth distribution?
 \item
-are observations consistent with the ergodic hypothesis that the rescaled wealth distribution converges to a stationary distribution?
+Are observations consistent with the ergodic hypothesis that the rescaled wealth distribution converges to a stable distribution?
 \item
-if so, how long does it take, after a change in conditions, for the rescaled wealth distribution to reach the stationary distribution?
+If so, how long does it take, after a change in conditions, for the rescaled wealth distribution to reach the stable distribution?
 \ei
-
-To be clear, we do not want to separate different processes that affect the wealth distribution, as would be useful if we wanted to understand the effect of a specific process, say income tax, on economic inequality. We aim for the opposite -- a model that summarises in as few parameters as possible everything that affects the wealth distribution, crucially without assuming ergodicity. For example, if effects of death and inheritance were separated out explicitly with additional parameters, rather than being included in $\tau$, the fitted $\tau$ values would no longer tell us if the system as a whole is in an ergodic regime.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

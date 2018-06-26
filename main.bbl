@@ -22,23 +22,11 @@ Y.~Berman.
   intergenerational mobility.
 \newblock Available at: \url{http://papers.ssrn.com/abstract=2796563}, 2017.
 
-\bibitem{BermanBen-JacobShapira2016}
-Y.~Berman, E.~Ben-Jacob, and Y.~Shapira.
-\newblock The dynamics of wealth inequality and the effect of income
-  distribution.
-\newblock {\em PloS one}, 11(6):e0199999, 2016.
-
-\bibitem{berman2017revisiting}
-Y.~Berman and Y.~Shapira.
-\newblock Revisiting r~\textgreater~g---the asymptotic dynamics of wealth
-  inequality.
-\newblock {\em Physica A: Statistical Mechanics and its Applications},
-  467:562--572, 2017.
-
-\bibitem{bewley1977permanent}
-T.~Bewley.
-\newblock The permanent income hypothesis: A theoretical formulation.
-\newblock {\em Journal of Economic Theory}, 16(2):252--292, 1977.
+\bibitem{BermanPetersAdamou2017}
+Y.~Berman, O.~Peters, and A.~Adamou.
+\newblock An empirical test of the ergodic hypothesis: Wealth distributions in
+  the {United States}.
+\newblock January 2017.
 
 \bibitem{Bouchaud2015}
 J.-P. Bouchaud.
@@ -69,23 +57,6 @@ M.~Corak.
   mobility.
 \newblock {\em The Journal of Economic Perspectives}, 27(3):79--102, 2013.
 
-\bibitem{cowell2014piketty}
-F.~A. Cowell.
-\newblock Piketty in the long run.
-\newblock {\em The British Journal of Sociology}, 65(4):708--720, 2014.
-
-\bibitem{de2015quantitative}
-M.~De~Nardi.
-\newblock Quantitative models of wealth inequality: A survey.
-\newblock 2015.
-\newblock {W}orking {P}aper 21106, NBER.
-
-\bibitem{de2015piketty}
-M.~De~Nardi, G.~Fella, and F.~Yang.
-\newblock Piketty's book and macro models of wealth inequality.
-\newblock 2015.
-\newblock {W}orking {P}aper 21730, NBER.
-
 \bibitem{DragulescuYakovenko2001}
 A.~Dr\u{a}gulescu and V.~M. Yakovenko.
 \newblock Exponential and power-law probability distributions of wealth and
@@ -97,24 +68,6 @@ A.~Dr\u{a}gulescu and V.~M. Yakovenko.
 X.~Gabaix.
 \newblock Power laws in economics and finance.
 \newblock {\em Annual Review of Economics}, 1(1):255--294, 2009.
-
-\bibitem{gabaix2015dynamics}
-X.~Gabaix, J.-M. Lasry, P.-L. Lions, and B.~Moll.
-\newblock The dynamics of inequality.
-\newblock {\em Econometrica: Journal of the Econometric Society},
-  84(6):2071--2111, 2016.
-
-\bibitem{jones2015pareto}
-C.~I. Jones.
-\newblock Pareto and piketty: The macroeconomics of top income and wealth
-  inequality.
-\newblock {\em The Journal of Economic Perspectives}, 29(1):29--46, 2015.
-
-\bibitem{kaymak2016evolution}
-B.~Kaymak and M.~Poschke.
-\newblock The evolution of wealth inequality over half a century: The role of
-  taxes, transfers and technology.
-\newblock {\em Journal of Monetary Economics}, 77:1--25, 2016.
 
 \bibitem{klass2006forbes}
 O.~S. Klass, O.~Biham, M.~Levy, O.~Malcai, and S.~Solomon.
@@ -160,21 +113,10 @@ V.~Pareto.
 \newblock {\em Cours d'\'{e}conomie Politique}.
 \newblock F.\ Rouge, Lausanne, Switzerland, 1897.
 
-\bibitem{PetersGell-Mann2016}
-O.~Peters and M.~Gell-Mann.
-\newblock Evaluating gambles using dynamics.
-\newblock {\em Chaos}, 26:23103, February 2016.
-
 \bibitem{Piketty2014}
 T.~Piketty.
 \newblock {\em Capital in the twenty-first century}.
 \newblock Harvard University Press, 2014.
-
-\bibitem{piketty2013theory}
-T.~Piketty and E.~Saez.
-\newblock A theory of optimal inheritance taxation.
-\newblock {\em Econometrica: Journal of the Econometric Society},
-  81(5):1851--1886, 2013.
 
 \bibitem{PikettyZucman2014}
 T.~Piketty and G.~Zucman.
@@ -205,12 +147,6 @@ E.~Saez and G.~Zucman.
 P.~Samuelson.
 \newblock What classical and neoclassical monetary theory really was.
 \newblock {\em Canad. J. Econ.}, 1(1):1--15, February 1968.
-
-\bibitem{stiglitz1969distribution}
-J.~E. Stiglitz.
-\newblock Distribution of income and wealth among individuals.
-\newblock {\em Econometrica: Journal of the Econometric Society},
-  37(3):382--397, 1969.
 
 \bibitem{WID2017}
 {The World Wealth and Income Database}.
