@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.23)  25 JUN 2018 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.23)  26 JUN 2018 11:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1893,7 +1893,7 @@ LaTeX Warning: Reference `eq:Ito_sums' on page 84 undefined on input line 548.
 
 [84] [85 <./chapter_3/figs/PEA.pdf>] Excluding 'comment' comment.)
 (./chapter_4/chapter_4.tex [86] [87]
-<./chapter_4/figs/rebalance.pdf, id=5109, 357.53577pt x 239.73564pt>
+<./chapter_4/figs/rebalance.pdf, id=5115, 357.53577pt x 239.73564pt>
 File: ./chapter_4/figs/rebalance.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/rebalance.pdf>
@@ -1906,7 +1906,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 98.
  [88] [89 <./chapter_4/figs/rebalance.pdf>] <./chapter_4/figs/markowitz.pdf, id
-=5200, 421.575pt x 316.18124pt>
+=5206, 421.575pt x 316.18124pt>
 File: ./chapter_4/figs/markowitz.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/markowitz.pdf>
@@ -1915,7 +1915,7 @@ Package pdftex.def Info: ./chapter_4/figs/markowitz.pdf used on input line 121.
 (pdftex.def)             Requested size: 345.0pt x 258.75406pt.
  [90 <./chapter_4/figs/markowitz.pdf>]
 [91] [92]
-<./chapter_4/figs/markowitz_peters.png, id=5385, 904.1278pt x 563.85657pt>
+<./chapter_4/figs/markowitz_peters.png, id=5391, 904.1278pt x 563.85657pt>
 File: ./chapter_4/figs/markowitz_peters.png Graphic file (type png)
 
 <use ./chapter_4/figs/markowitz_peters.png>
@@ -1957,7 +1957,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 269.
  [97] [98] [99]
-<./chapter_4/figs/cartoon.pdf, id=5688, 597.50786pt x 845.04686pt>
+<./chapter_4/figs/cartoon.pdf, id=5694, 597.50786pt x 845.04686pt>
 File: ./chapter_4/figs/cartoon.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/cartoon.pdf>
@@ -1969,7 +1969,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 404--406
 
  []
 
-<./chapter_4/figs/STR-FET-1_equity.pdf, id=5830, 448.13988pt x 253.2549pt>
+<./chapter_4/figs/STR-FET-1_equity.pdf, id=5836, 448.13988pt x 253.2549pt>
 File: ./chapter_4/figs/STR-FET-1_equity.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/STR-FET-1_equity.pdf>
@@ -1977,7 +1977,7 @@ Package pdftex.def Info: ./chapter_4/figs/STR-FET-1_equity.pdf used on input li
 ne 418.
 (pdftex.def)             Requested size: 377.77542pt x 213.49393pt.
 
-<./chapter_4/figs/STR-FET_final_equity.pdf, id=5831, 387.53848pt x 266.68005pt>
+<./chapter_4/figs/STR-FET_final_equity.pdf, id=5837, 387.53848pt x 266.68005pt>
 File: ./chapter_4/figs/STR-FET_final_equity.pdf Graphic file (type pdf)
 <use ./chapter_4/figs/STR-FET_final_equity.pdf>
 Package pdftex.def Info: ./chapter_4/figs/STR-FET_final_equity.pdf used on inpu
@@ -1989,7 +1989,7 @@ inal_equity.pdf
 pdfTeX warning: pdflatex (file ./chapter_4/figs/STR-FET_final_equity.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
 >] [105]
-<./chapter_4/figs/all_final_equity.pdf, id=5972, 440.18831pt x 267.6446pt>
+<./chapter_4/figs/all_final_equity.pdf, id=5978, 440.18831pt x 267.6446pt>
 File: ./chapter_4/figs/all_final_equity.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/all_final_equity.pdf>
@@ -1997,14 +1997,14 @@ Package pdftex.def Info: ./chapter_4/figs/all_final_equity.pdf used on input li
 ne 460.
 (pdftex.def)             Requested size: 345.0pt x 209.77884pt.
  [106 <./chapter_4/figs/all_final_equity.pdf>]
-<./chapter_4/figs/all_MAD_final_equity.pdf, id=6050, 402.87703pt x 266.68005pt>
+<./chapter_4/figs/all_MAD_final_equity.pdf, id=6056, 402.87703pt x 266.68005pt>
 File: ./chapter_4/figs/all_MAD_final_equity.pdf Graphic file (type pdf)
 <use ./chapter_4/figs/all_MAD_final_equity.pdf>
 Package pdftex.def Info: ./chapter_4/figs/all_MAD_final_equity.pdf used on inpu
 t line 479.
 (pdftex.def)             Requested size: 345.0pt x 228.36783pt.
 
-<./chapter_4/figs/STR-FED_lopt_var.pdf, id=6067, 398.86203pt x 268.9777pt>
+<./chapter_4/figs/STR-FED_lopt_var.pdf, id=6073, 398.86203pt x 268.9777pt>
 File: ./chapter_4/figs/STR-FED_lopt_var.pdf Graphic file (type pdf)
 
 <use ./chapter_4/figs/STR-FED_lopt_var.pdf>
@@ -2040,7 +2040,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  36165 strings out of 493014
  682053 string characters out of 6133351
- 1018382 words of memory out of 5000000
+ 1018818 words of memory out of 5000000
  38426 multiletter control sequences out of 15000+600000
  77300 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2081,10 +2081,10 @@ l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2
 ist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
 ype1/public/lm/lmtt9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (115 pages, 6177464 bytes).
+Output written on main.pdf (115 pages, 6176262 bytes).
 PDF statistics:
- 6512 PDF objects out of 7423 (max. 8388607)
- 5506 compressed objects within 56 object streams
+ 6519 PDF objects out of 7423 (max. 8388607)
+ 5513 compressed objects within 56 object streams
  654 named destinations out of 1000 (max. 500000)
  716 words of extra memory for PDF output out of 10000 (max. 10000000)
 

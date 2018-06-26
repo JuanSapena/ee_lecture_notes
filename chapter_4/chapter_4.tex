@@ -66,11 +66,11 @@ You would be forgiven for thinking that prudence dictates $0\leq\l\leq1$, \ie th
 
 Each investment in our portfolio experiences the same relative fluctuations as the asset in which it has been made. The overall change in the portfolio's value is, therefore,
 \be
-d\xl = (1-\l)\xl \frac{d\xzero}{\xzero} + \l \xl \frac{d\xone}{\xone}.
+\gd\xl = (1-\l)\xl \frac{\gd\xzero}{\xzero} + \l \xl \frac{\gd\xone}{\xone}.
 \ee
 Substituting in \eref{sde_0} and \eref{sde_1} gives the \SDE for a leveraged investment in the risky asset,
 \be
-d\xl = \xl [ (\mur + \l\mue) d\t + \l\sigmas d\gW ],
+\gd\xl = \xl [ (\mur + \l\mue) \gd\t + \l\sigmas \gd\gW ],
 \elabel{sde_l}
 \ee
 with solution,
@@ -267,7 +267,7 @@ This thought experiment suggests that we could observe markets with $0\leq\lopt\
 \begin{keypts}{Hypothesis: stochastic market efficiency for general asset pairs}
 On sufficiently long time scales, the range $0\leq\lopt\leq1$ is an attractor for the stochastic properties of pairs of risky assets. 
 \end{keypts}
-\OP{Not sure we should leave this in without data analysis. Kind of a big point.}
+%\OP{Not sure we should leave this in without data analysis. Kind of a big point.}
 
 Whether in our original setup real markets spend significant time in a phase with $\lopt<1$ is difficult to tell. Realistic optimal leverage depends significantly on such things as trading costs, access to credit and risky assets in lending programs, infrastructure and technology. All of these factors differ among market participants. They suggest that measuring optimal leverage in the simplest way -- using market prices only and assuming zero trading costs -- will produce an over-estimate, compared to the value experienced by real market participants who incur realistic costs.
 
