@@ -11,21 +11,15 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Sums of lognormals}{10}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2}The random energy model}{14}{subsubsection.1.2.2}
 \contentsline {section}{\numberline {2}Interactions}{18}{section.2}
-\contentsline {subsection}{\numberline {2.1}Reallocation}{19}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Introduction}{19}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}The ergodic hypothesis in economics}{19}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Reallocating GBM}{20}{subsubsection.2.1.3}
-\contentsline {subsubsection}{\numberline {2.1.4}Model behaviour}{22}{subsubsection.2.1.4}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Positive $\tau $}}\mathsurround \z@ $\relax }{22}{section*.2}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Negative $\tau $}}\mathsurround \z@ $\relax }{24}{section*.3}
-\contentsline {subsubsection}{\numberline {2.1.5}Derivation of the stable distribution}{24}{subsubsection.2.1.5}
-\contentsline {subsubsection}{\numberline {2.1.6}Moments and convergence times}{27}{subsubsection.2.1.6}
-\contentsline {subsubsection}{\numberline {2.1.7}United States wealth data}{28}{subsubsection.2.1.7}
-\contentsline {paragraph}{Wealth share data}{28}{section*.4}
-\contentsline {paragraph}{Wealth Growth Rate}{30}{section*.5}
-\contentsline {paragraph}{Volatility}{30}{section*.6}
-\contentsline {paragraph}{Empirical Analysis}{30}{section*.7}
-\contentsline {paragraph}{Convergence times}{31}{section*.8}
-\contentsline {paragraph}{Conclusions}{34}{section*.9}
-\contentsline {section}{List of Symbols}{37}{section*.10}
-\contentsline {section}{References}{37}{section*.11}
+\contentsline {subsection}{\numberline {2.1}Cooperation}{19}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Reallocation}{23}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Introduction}{23}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}The ergodic hypothesis in economics}{23}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Reallocating GBM}{24}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Model behaviour}{26}{subsubsection.2.2.4}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Positive $\tau $}}\mathsurround \z@ $\relax }{26}{section*.2}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Negative $\tau $}}\mathsurround \z@ $\relax }{28}{section*.3}
+\contentsline {subsubsection}{\numberline {2.2.5}Derivation of the stable distribution}{28}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.6}Moments and convergence times}{30}{subsubsection.2.2.6}
+\contentsline {section}{List of Symbols}{31}{section*.4}
+\contentsline {section}{References}{32}{section*.5}
