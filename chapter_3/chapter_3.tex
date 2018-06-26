@@ -1,5 +1,5 @@
 \newpage
-\begin{comment}
+%\begin{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% NEW CHAPTER
@@ -246,7 +246,21 @@ average wealth, irrespective of whether I measure wealth in Kazakhstani Tenge
 or in Swiss Francs. For a large population, \eref{J_dyn} may be expressed in 
 terms of $y$ as $\frac{dJ}{dt}=-\frac{d\ave{\ln y}}{dt}$.
 
-\AA{Insert result for lognormal distribution of rescaled wealth under self-averaging conditions $\ave{x(t)}_N\sim\ave{x(t)}.}
+\AA{Insert result for lognormal distribution of rescaled wealth under self-averaging conditions $\ave{x(t)}_N\sim\ave{x(t)}$.}
+
+To make the model more tractable we consider the case $N \to \infty$, which replaces the finite-ensemble 
+average by the expectation value, $\ave{x}_N \to \ave{x}$. The finite ensemble size has important effects but 
+we will not discuss them here. $\ave{x(t)}=\exp(\mu t)$, just as for GBM without taxation, \eref{exp_x}. 
+We are again interested in rescaled wealth, $y=\frac{x}{\ave{x}}=x e^{-\mu t}$ (\eref{rescaled}), whose dynamic we derive using the chain rule
+\bea
+dy &=& \frac{\partial y}{\partial t}\,dt + \frac{\partial y}{\partial x}\,dx + \frac{1}{2} \frac{\partial^2 y}{\partial x^2} \,dx^2 \\
+&=& -\mu y\,dt + \frac{1}{x}\,dx \elabel{ysde} \\
+&=& y\sigma dW.
+\eea
+The first moment of $y$ is trivially $1$,
+\be
+\ave{y}=\ave{\frac{x}{\ave{x}}}=1.
+\ee
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -255,7 +269,6 @@ terms of $y$ as $\frac{dJ}{dt}=-\frac{d\ave{\ln y}}{dt}$.
 So far we have confined our analysis to GBM, where wealths follow the dynamic specific by \elabel{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible.
 
 \AA{Insert discussion of $v$-normal distributions and growth rates here.}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -295,9 +308,9 @@ Collecting terms in powers of $\ln x$ we find
 \ee
 with local slope, \ie apparent exponent,
 \be
-\frac{d\ln \PDF(x)}{d \ln x}= - \frac{\ln x}{\sigma^2 t}  + \frac{\mu}{\sigma^2} - \frac{3}{2}.
+\frac{d\ln \PDF(x)}{d \ln x} = - \frac{\ln x}{\sigma^2 t}  + \frac{\mu}{\sigma^2} - \frac{3}{2}.
 \ee
-Near $\ave{x}$, $\ln x \sim \mu t$ so that the first two terms cancel approximately. Here the distribution will resemble a power-law with exponent $-3/2$ when plotted on doubly logarithmic scales. This is consistent with exponents between $-1.6$ and $-1.2$ measured from wealth data. (The distribution will also look like a power-law where the first term is much smaller than the others, \eg where $\ln x \ll \sigma^2 t$.) We don't believe that such empirically observed power laws are merely a manifestation of this mathematical feature. Important real-world  mechanisms that broaden real wealth distributions, \ie concentrate wealth, are missing from the null model. However, it is interesting that the trivial model of GBM reproduces so many qualitative features of empirical observations. 
+Near $\ave{x}$, $\ln x \sim \mu t$ so that the first two terms cancel approximately. Here the distribution will resemble a power-law with exponent $-3/2$ when plotted on doubly logarithmic scales. (The distribution will also look like a power-law where the first term is much smaller than the others, \eg where $\ln x \ll \sigma^2 t$.) We don't believe that such empirically observed power laws are merely a manifestation of this mathematical feature. Important real-world  mechanisms that broaden real wealth distributions, \ie concentrate wealth, are missing from the null model. However, it is interesting that the trivial model of GBM reproduces so many qualitative features of empirical observations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -566,7 +579,7 @@ over a super-ensemble of $S=10,000$ samples of $\gest$ estimated in sub-ensemble
 
 \newpage
 
-\end{comment}
+%\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% NEW CHAPTER
@@ -1131,29 +1144,49 @@ If so, how long does it take, after a change in conditions, for the rescaled wea
 
 \subsubsection{Model behaviour}
 \seclabel{RGBM_behaviour}
-\Eref{rgbm} is our model for the evolution of wealth with social structure and the basis for the empirical study that follows. It is instructive to write it as
+It is instructive to write \eref{rgbm} as
 \be
 dx_i=\underbrace{x_i \left[\mu dt+\sigma dW_i\left(t\right)\right]}_{\text{Growth}} \;\; \underbrace{ - \;\; \tau (x_i-\ave{x}_N) dt}_{\text{Reallocation}}.
 \elabel{rgbm_ou}
 \ee
-This can be thought of as GBM with a mean-reverting term like that of~\cite{UhlenbeckOrnstein1930} in physics and~\cite{Vasicek1977} in finance. This representation exposes the importance of the sign of $\tau$. We discuss the two regimes in turn.
+This resembles GBM with a mean-reverting term like that of~\cite{UhlenbeckOrnstein1930} in physics and~\cite{Vasicek1977} in finance. It exposes the importance of the sign of $\tau$. We discuss the two regimes in turn.
 
-\paragraph{Positive $\tau$}
+\paragraph{\underline{Positive $\tau$}}
+\mbox{}
 
-For $\tau>0$, wealth, $x_i$, reverts to the population average, $\ave{x}_N$. The large-sample approximation, $\ave{x\left(t\right)}_N \propto e^{\mu t}$, is valid\footnote{Strictly speaking, the large-sample approximation and resulting rescaled-wealth process, \Eref{rgbm_ou_re}, hold only for $\tau>\tau_c$. However, $\tau_c \approx 0$ for realistic model parameters and fits to data do not allow us to distinguish it from zero. Nonetheless, the derivation of $\tau_c$ is instructive, see Appendix \ref{app:tauc}.} and yields a simple differential equation for the rescaled wealth,
+For $\tau>0$, individual wealth, $x_i(t)$, reverts to the sample mean, $\ave{x(t)}_N$. We explored some of the properties of sample mean in \secref{finite_populations} for wealths undergoing GBM. In particular, we saw that a short-time (or large-sample or low-volatility) self-averaging regime exists,
 \be
-dy_i=y_i \sigma dW_i\left(t\right)- \tau (y_i-1) dt,
+t < t_c \equiv \frac{2\ln N}{\sigma^2},
+\elabel{t_c}
+\ee
+where the sample mean is approximated well by the ensemble average,
+\be
+\ave{x(t)}_N \sim \ave{x(t)} = \exp(\mu t).
+\ee
+(The final equality assumes, as previously, that $x_i(0)=1$ for all $i$.) It turns out that the same self-averaging approximation can be made for wealths undergoing RGBM, \eref{rgbm}, when the reallocation rate, $\tau$, is above some critical threshold:
+\be
+\tau > \tau_c \equiv \frac{\sigma^2}{2\ln N}.
+\elabel{tau_c}
+\ee
+Showing this is technically difficult \cite{Bouchaud2015b} and we will confine ourselves to sketching the key ideas in \secref{RGBM_stable} below. It won't have escaped your attention that $\tau_c={t_c}^{-1}$ and, indeed, you will shortly have an intuition for why. 
+
+Fitting the model to data yields parameter values for which $\tau_c$ is extremely small. For example, typical parameters for US wealth data are $N=10^8$ and $\sigma=0.2\text{ year}^{-1/2}$, giving $\tau_c = 0.1\%\text{ year}^{-1}$ (or $t_c\ = 900\text{ years}$). Accounting for the uncertainty in the fitted parameters makes this statistically indistinguishable from $\tau_c=0$.
+
+This means we can safely make the self-averaging approximation for the entire positive $\tau$ regime. That's great news, because it means we can rescale wealth by the ensemble average, $\ave{x(t)}=\exp(\mu t)$, as we did in \secref{rescaled} for GBM, and not have to worry about pesky finite $N$ effects. Following the same procedure as there gives us a simple SDE in the rescaled wealth, $y_i(t) = x_i(t)\exp(-\mu t)$:
+\be
+dy_i=y_i \sigma dW_i\left(t\right)- \tau (y_i-1) dt.
 \elabel{rgbm_ou_re}
 \ee
-in which the common growth rate, $\mu$, has been scaled out. The distribution of $y_i\left(t\right)$ can found by solving the corresponding Fokker-Planck equation (also known as the Kolmogorov forward equation). A stationary distribution exists with a Pareto tail, see Appendix \ref{app:stat}. It is known as the inverse gamma distribution and has probability density function,
+Note that the common growth rate, $\mu$, has been scaled out as it was in \secref{rescaled}.
+
+The distribution of $y_i\left(t\right)$ can found by solving the corresponding Fokker-Planck equation, which we will do in \secref{RGBM_stable}. For now, we will just quote the result: a stable distribution exists with a power-law tail, to which the distribution of rescaled wealth converges over time. The distribution has a name -- the Inverse Gamma Distribution -- and a probability density function:
 \be
-\mathcal{P}\left(y\right) = \frac{\left(\zeta-1\right)^\zeta}{\Gamma\left(\zeta\right)} e^{-\frac{\zeta-1}{y}} y^{-\left(1+\zeta\right)},
+\mathcal{P}\left(y\right) = \frac{\left(\zeta-1\right)^\zeta}{\Gamma\left(\zeta\right)} e^{-\frac{\zeta-1}{y}} y^{-\left(1+\zeta\right)}.
 \elabel{disti}
 \ee
-where $\zeta=1+\left(2\tau/\sigma^2\right)$ is the Pareto tail index, $\Gamma\left(\cdot\right)$ is the gamma function, and the index $i$ has been dropped. Example forms of the stationary distribution are shown in \Fref{dist}. The usual stylised facts are recovered: the larger $\sigma$ (more randomness in the returns) and the smaller $\tau$ (less social cohesion), the smaller the tail index and the fatter the tail of the distribution. Moreover, the fitted $\tau$ values we obtain in \secref{analysis} give typical $\zeta$ values between 1 and 2 for the different datasets analyzed, consistent with observed tail indices between 1.2 to 1.6~\cite{klass2006forbes,gabaix2009power,brzezinski2014wealth,vermeulen2017fat}. Thus, not only does RGBM predict a realistic functional form for the distribution of rescaled wealth, but also it admits fitted parameters which match observed tail thicknesses. The inability to do the latter is a known shortcoming in models of earnings-based wealth accumulation, see \secref{earnings}.
-%corresponding to reallocation rates of $0.005$--$0.01 \text{ year}^{-1}$ in RGBM.
+$\zeta=1+2\tau/\sigma^2$ is the Pareto tail index (corresponding to $\alpha-1$ in \secref{power_law}) and $\Gamma\left(\cdot\right)$ is the gamma function.
 
-\Eref{rgbm_ou_re} and extensions of it have received much attention in statistical mechanics and econophysics~\cite{BouchaudMezard2000,Bouchaud2015}. As a combination of GBM and an Ornstein-Uhlenbeck process, it is a simple and analytically tractable stochastic process.~\cite{LiuSerota2016} provide an overview of the literature and known results.
+Example forms of the stationary distribution are shown in \Fref{dist}. The usual stylised facts are recovered: the larger $\sigma$ (more randomness in the returns) and the smaller $\tau$ (less social cohesion), the smaller the tail index $\zeta$ and the fatter the tail of the distribution. Fitted $\tau$ values give typical $\zeta$ values between 1 and 2 for the different datasets analysed, consistent with observed tail indices between 1.2 to 1.6 (see \cite{BermanPetersAdamou2017} for details). Not only does RGBM predict a realistic functional form for the distribution of rescaled wealth, but also it admits fitted parameter values which match observed tails. The inability to do this is a known weakness of earnings-based models (again, see \cite{BermanPetersAdamou2017} for discussion).
 
 \begin{figure}[!htb]
 \centering
@@ -1162,12 +1195,15 @@ where $\zeta=1+\left(2\tau/\sigma^2\right)$ is the Pareto tail index, $\Gamma\le
 \flabel{dist}
 \end{figure}
 
-\paragraph{Negative $\tau$}
+For positive reallocation, \eref{rgbm_ou_re} and extensions of it have received much attention in statistical mechanics and econophysics \cite{BouchaudMezard2000,Bouchaud2015}. As a combination of GBM and a mean-reverting process it is a simple and analytically tractable stochastic process. \cite{LiuSerota2016} provide an overview of the literature and known results.
+
+\paragraph{\underline{Negative $\tau$}}
+\mbox{}
 
 For $\tau<0$ the model exhibits mean repulsion rather than reversion. The ergodic hypothesis is invalid and no stationary wealth distribution exists. The population splits into those above the mean and those below the mean. Whereas in RGBM with non-negative $\tau$ it is impossible for wealth to become negative, negative $\tau$ leads to negative wealth. No longer is total economic wealth a limit to the wealth of the richest individual because the poorest develop large negative wealth. The wealth of the rich in the population increases exponentially away from the mean, and the wealth of the poor becomes negative and exponentially large in magnitude, see \Fref{regimes}. Qualitatively, this echoes the findings that the rich are experiencing higher growth rates of their wealth than the poor~\cite{Piketty2014,wolff2014household} and that the cumulative wealth of the poorest 50 percent of the American population was negative during 2008--2013~\cite{Rios20162013,WID2017}.
 
 % AA comment on social mobility
-Such splitting of the population is a common feature of non-ergodic processes. If rescaled wealth were an ergodic process, then individuals would, over long enough time, experience all parts of its distribution. People would spend 99 percent of their time as ``the 99 percent'' and 1 percent of their time as ``the 1 percent''. The social mobility that is, therefore, implicit in models that assume ergodicity might not exist in reality if that assumption is invalid. That inequality and immobility have been linked~\cite{Corak2013,LiuETAL2013,berman2017} may be unsurprising when both are viewed as consequences of non-ergodic wealth or income.
+Such splitting of the population is a common feature of non-ergodic processes. If rescaled wealth were an ergodic process, then individuals would, over long enough time, experience all parts of its distribution. People would spend 99 percent of their time as ``the 99 percent'' and 1 percent of their time as ``the 1 percent''. Therefore, the social mobility implicit in models that assume ergodicity might not exist in reality if that assumption is invalid. That inequality and immobility have been linked~\cite{Corak2013,LiuETAL2013,berman2017} may be unsurprising if both are viewed as consequences of non-ergodic wealth or income.
 
 \begin{figure}[!htb]
 \centering
@@ -1224,7 +1260,54 @@ Such splitting of the population is a common feature of non-ergodic processes. I
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{The derivation of the stationary distribution}\label{app:stat}
+\subsubsection{Derivation of the stable distribution}
+\seclabel{RGBM_stable}
+
+In transforming the differential equation for wealth, $x$, into a differential equation for rescaled wealth, $y$, we use the approximation $\ave{x\left(t\right)}_N=\ave{x\left(0\right)}_N e^{\mu t}$. In other words we assume that the population-average wealth grows like the expectation value of wealth. 
+
+It is known that this approximation is invalid for long times~\cite{PetersKlein2013}. Specifically, over long times $\ave{x\left(t\right)}_N$ grows at the exponential rate $\mu-\sigma^2/2$, whereas the expectation value, $\ave{x\left(t\right)}$, grows at the exponential rate $\mu$.
+
+This raises the question for how long our approximation is valid. 
+The answer depends on the sample size $N$, as it must because the expectation value is just the $N\to\infty$ limit of the population average.
+To assess whether the fluctuations in $\ave{x\left(t\right)}_N$ are important, we compare the variance of $\ave{x\left(t\right)}_N$ to the expectation value squared (equivalent to comparing the standard deviation to the expectation value). 
+If the variance is smaller than the expectation value squared, then the approximation is acceptable. 
+If this is not the case, then we cannot use this approximation.
+
+The calculations that use the approximation relate to properties of the stationary distribution. This exists for $\tau$ above some positive threshold, \ie with sufficiently strong reallocation. The coupling of wealth trajectories through reallocation lengthens the timescale over which the population average resembles the expected wealth. Therefore, we are on safe ground if we can show that the timescale on which the approximation is valid when $\tau=0$ is longer than practically relevant timescales. This is a sufficient condition for the approximation to be valid when $\tau>0$.
+
+This means we work with a population of $N$ independent GBMs, which makes the computation of the variance easy. GBM is log-normally distributed,
+\be
+\ln\left[x\left(t\right)\right]\sim \ln\mathcal{N}\ln\left(x\left(0\right)+\left[\mu-\frac{\sigma^2}{2}\right] t, \sigma^2 t\right).
+\ee
+From this, it follows that the expectation value of a single trajectory grows as
+\be
+\ave{x\left(t\right)}=x\left(0\right)e^{\mu t},
+\ee
+and the variance grows as
+\be
+V\left[x\left(t\right)\right]=x\left(0\right)^2 e^{2\mu t}\left[e^{\sigma^2 t}-1\right].
+\ee
+
+Because the wealth trajectories are independent, the variance of an average over $N$ trajectories is one-$N^{\text{th}}$ of the variance for the individual trajectory.  
+We are now in a position to compare standard deviation and average as follows
+\be
+\frac{V\left[\ave{x\left(t\right)}_N\right]}{\ave{\ave{x\left(t\right)}_N}^2} = \frac{e^{\sigma^2 t}-1}{N}\,.
+\ee
+So long as this is less than one, $\ave{x\left(t\right)}$ is a good approximation for $\ave{x\left(t\right)}_N$. Rearranging and taking $N\gg1$ gives an upper bound on the time for which this approximation holds:
+\be
+t < t_c \equiv \frac{\ln N}{\sigma^2}.
+\ee
+
+For typical parameter values in our model, $N=10^8$ and $\sigma=0.16\, \text{year}^{-1/2}$, we find $t_c\approx 700$ years. It turns out that, strictly speaking, the minimum value of $\tau$ required for the stationary distribution to exist is not zero but proportional to the inverse of this timescale~\cite{Bouchaud2015b}, \ie 
+\be
+\tau > \tau_c \equiv \frac{\sigma^2}{2\ln N}.
+\elabel{tauc}
+\ee
+In essence, the inequality-increasing effects of multiplicative growth drive wealths apart on the timescale $t_c$, whereas the inequality-reducing effects of reallocation drive wealths back together on the timescale $1/\tau$. Thus, $\tau_c$ marks the point at which reallocation overcomes the forces that drive wealths apart, leading to a stationary distribution of rescaled wealth. In our case $\tau_c\approx 0.0007 \text{ year}^{-1}$, which is in practice indistinguishable from zero.
+
+The timescale $t_c$ was derived assuming that everyone starts out equally, which is not generally the case. If the initial distribution of wealth is very unequal, then the variance of $\ave{x}_N$ will be dominated by the fluctuations experienced by the wealthiest individuals, and the approximation $\ave{x}_N\approx \ave{x\left(0\right)}_N e^{\mu t}$ becomes invalid more quickly. We confirmed numerically that the effect is negligible for our study: our results are indistiguishable whether we simulate $dx$ (which requires an estimate for $\mu$), or $dy$ (where $\mu$ does not appear but the above-mentioned approximation is made).
+
+%%%
 
 We start again with the SDE for the rescaled wealth, 
 \be
@@ -1260,7 +1343,8 @@ with the gamma function $\Gamma\left(\zeta\right) = \int_0^\infty x^{\zeta-1} e^
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{The derivation of the variance convergence time}\label{app:var_conv}
+\subsubsection{Moments and convergence times}
+\label{RGBM_moments}
 
 Our key finding is that under currently prevailing economic conditions it is not safe to assume the existence of stationary wealth distributions in models of wealth dynamics. 
 Nevertheless, we present some results for the regime of our model where a stationary distribution exists.
@@ -1331,7 +1415,7 @@ For instance~\cite{LiuSerota2016} also compute the third cumulant.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{United States wealth data}
-\seclabel{US_data}
+\seclabel{RGBM_data}
 
 \paragraph{Wealth share data}
 

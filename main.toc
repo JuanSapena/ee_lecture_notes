@@ -1,19 +1,31 @@
-\contentsline {section}{\numberline {1}Interactions}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Reallocation}{4}{subsection.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1}Introduction}{4}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.2}The ergodic hypothesis in economics}{4}{subsubsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.3}Reallocating GBM}{5}{subsubsection.1.1.3}
-\contentsline {subsubsection}{\numberline {1.1.4}Model behaviour}{7}{subsubsection.1.1.4}
-\contentsline {paragraph}{Positive $\tau $}{7}{section*.2}
-\contentsline {paragraph}{Negative $\tau $}{7}{section*.3}
-\contentsline {subsubsection}{\numberline {1.1.5}The derivation of the stationary distribution}{9}{subsubsection.1.1.5}
-\contentsline {subsubsection}{\numberline {1.1.6}The derivation of the variance convergence time}{10}{subsubsection.1.1.6}
-\contentsline {subsubsection}{\numberline {1.1.7}United States wealth data}{11}{subsubsection.1.1.7}
-\contentsline {paragraph}{Wealth share data}{11}{section*.4}
-\contentsline {paragraph}{Wealth Growth Rate}{12}{section*.5}
-\contentsline {paragraph}{Volatility}{12}{section*.6}
-\contentsline {paragraph}{Empirical Analysis}{13}{section*.7}
-\contentsline {paragraph}{Convergence times}{15}{section*.8}
-\contentsline {paragraph}{Conclusions}{17}{section*.9}
-\contentsline {section}{List of Symbols}{20}{section*.10}
-\contentsline {section}{References}{20}{section*.11}
+\contentsline {section}{\numberline {1}Populations}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Every man for himself}{4}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Log-normal distribution}{4}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Two growth rates}{5}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Measuring inequality}{6}{subsubsection.1.1.3}
+\contentsline {subsubsection}{\numberline {1.1.4}Wealth condensation}{7}{subsubsection.1.1.4}
+\contentsline {subsubsection}{\numberline {1.1.5}Rescaled wealth}{8}{subsubsection.1.1.5}
+\contentsline {subsubsection}{\numberline {1.1.6}$v$-normal distributions and Jensen's inequality}{9}{subsubsection.1.1.6}
+\contentsline {subsubsection}{\numberline {1.1.7}Power law resemblance}{9}{subsubsection.1.1.7}
+\contentsline {subsection}{\numberline {1.2}Finite populations}{10}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Sums of lognormals}{10}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}The random energy model}{14}{subsubsection.1.2.2}
+\contentsline {section}{\numberline {2}Interactions}{18}{section.2}
+\contentsline {subsection}{\numberline {2.1}Reallocation}{19}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Introduction}{19}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}The ergodic hypothesis in economics}{19}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Reallocating GBM}{20}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Model behaviour}{22}{subsubsection.2.1.4}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Positive $\tau $}}\mathsurround \z@ $\relax }{22}{section*.2}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Negative $\tau $}}\mathsurround \z@ $\relax }{24}{section*.3}
+\contentsline {subsubsection}{\numberline {2.1.5}Derivation of the stable distribution}{24}{subsubsection.2.1.5}
+\contentsline {subsubsection}{\numberline {2.1.6}Moments and convergence times}{27}{subsubsection.2.1.6}
+\contentsline {subsubsection}{\numberline {2.1.7}United States wealth data}{28}{subsubsection.2.1.7}
+\contentsline {paragraph}{Wealth share data}{28}{section*.4}
+\contentsline {paragraph}{Wealth Growth Rate}{30}{section*.5}
+\contentsline {paragraph}{Volatility}{30}{section*.6}
+\contentsline {paragraph}{Empirical Analysis}{30}{section*.7}
+\contentsline {paragraph}{Convergence times}{31}{section*.8}
+\contentsline {paragraph}{Conclusions}{34}{section*.9}
+\contentsline {section}{List of Symbols}{37}{section*.10}
+\contentsline {section}{References}{37}{section*.11}

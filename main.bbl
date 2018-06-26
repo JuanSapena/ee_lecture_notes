@@ -5,6 +5,11 @@ A.~Adamou and O.~Peters.
 \newblock Dynamics of inequality.
 \newblock {\em Significance}, 13(3):32--35, 2016.
 
+\bibitem{AitchisonBrown1957}
+J.~Aitchison and J.~A.~C. Brown.
+\newblock {\em The lognormal distribution}.
+\newblock Cambridge University Press, 1957.
+
 \bibitem{atkinson1969timescale}
 A.~B. Atkinson.
 \newblock The timescale of economic models: How long is the long run?
@@ -27,6 +32,10 @@ Y.~Berman, O.~Peters, and A.~Adamou.
 \newblock An empirical test of the ergodic hypothesis: Wealth distributions in
   the {United States}.
 \newblock January 2017.
+
+\bibitem{Bouchaud2015b}
+J.-P. Bouchaud.
+\newblock Note on mean-field wealth models and the random energy model.
 
 \bibitem{Bouchaud2015}
 J.-P. Bouchaud.
@@ -57,6 +66,16 @@ M.~Corak.
   mobility.
 \newblock {\em The Journal of Economic Perspectives}, 27(3):79--102, 2013.
 
+\bibitem{Derrida1980}
+B.~Derrida.
+\newblock Random-energy model: Limit of a family of disordered models.
+\newblock {\em Phys. Rev. Lett.}, 45(2):79--82, July 1980.
+
+\bibitem{Derrida1981}
+B.~Derrida.
+\newblock Random-energy model: An exactly solvable model of disordered systems.
+\newblock {\em Phys. Rev. B}, 24:2613--2626, September 1981.
+
 \bibitem{DragulescuYakovenko2001}
 A.~Dr\u{a}gulescu and V.~M. Yakovenko.
 \newblock Exponential and power-law probability distributions of wealth and
@@ -73,6 +92,12 @@ X.~Gabaix.
 O.~S. Klass, O.~Biham, M.~Levy, O.~Malcai, and S.~Solomon.
 \newblock The forbes 400 and the pareto wealth distribution.
 \newblock {\em Economics Letters}, 90(2):290--295, 2006.
+
+\bibitem{KloedenPlaten1992}
+P.~E. Kloeden and E.~Platen.
+\newblock {\em Numerical solution of stochastic differential equations},
+  volume~23.
+\newblock Springer Science \& Business Media, 1992.
 
 \bibitem{kopczuk2015we}
 W.~Kopczuk.
@@ -108,10 +133,25 @@ J.~A. Nelder and R.~Mead.
 \newblock A simplex method for function minimization.
 \newblock {\em The computer journal}, 7(4):308--313, 1965.
 
+\bibitem{Newman2005}
+M.~E.~J. Newman.
+\newblock Power laws, {P}areto distributions and {Z}ipf's law.
+\newblock {\em Contemp. Phys.}, 46(5):323--351, 2005.
+
 \bibitem{Pareto1897}
 V.~Pareto.
 \newblock {\em Cours d'\'{e}conomie Politique}.
 \newblock F.\ Rouge, Lausanne, Switzerland, 1897.
+
+\bibitem{PetersGell-Mann2016}
+O.~Peters and M.~Gell-Mann.
+\newblock Evaluating gambles using dynamics.
+\newblock {\em Chaos}, 26:23103, February 2016.
+
+\bibitem{PetersKlein2013}
+O.~Peters and W.~Klein.
+\newblock Ergodicity breaking in geometric {B}rownian motion.
+\newblock {\em Phys. Rev. Lett.}, 110(10):100603, March 2013.
 
 \bibitem{Piketty2014}
 T.~Piketty.
@@ -131,6 +171,11 @@ Quandl.
   2016.
 \newblock Accessed: 04/19/2016.
 
+\bibitem{Redner1990}
+S.~Redner.
+\newblock Random multiplicative processes: An elementary tutorial.
+\newblock {\em Am. J. Phys.}, 58(3):267--273, March 1990.
+
 \bibitem{Rios20162013}
 J.-V. Rios-Rull and M.~Kuhn.
 \newblock {2013 Update on the U.S. Earnings, Income, and Wealth Distributional
@@ -148,11 +193,21 @@ P.~Samuelson.
 \newblock What classical and neoclassical monetary theory really was.
 \newblock {\em Canad. J. Econ.}, 1(1):1--15, February 1968.
 
+\bibitem{Sen1997}
+A.~Sen.
+\newblock {\em On Economic Inequality}.
+\newblock Oxford: Clarendon Press, 1997.
+
 \bibitem{WID2017}
 {The World Wealth and Income Database}.
 \newblock Usa top $10\%$ and $1\%$ and bottom $50\%$ wealth shares, 1913--2014.
 \newblock \url{http://wid.world/data/}, 2016.
 \newblock Accessed: 12/26/2016.
+
+\bibitem{Theil1967}
+H.~Theil.
+\newblock {\em Economics and information theory}.
+\newblock North-Holland Publishing Company, 1967.
 
 \bibitem{UhlenbeckOrnstein1930}
 G.~E. Uhlenbeck and L.~S. Ornstein.
