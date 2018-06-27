@@ -19,7 +19,8 @@
 \contentsline {subsubsection}{\numberline {2.2.4}Model behaviour}{26}{subsubsection.2.2.4}
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Positive $\tau $}}\mathsurround \z@ $\relax }{26}{section*.2}
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Negative $\tau $}}\mathsurround \z@ $\relax }{28}{section*.3}
-\contentsline {subsubsection}{\numberline {2.2.5}Derivation of the stable distribution}{28}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.5}Derivation of the stable distribution}{29}{subsubsection.2.2.5}
 \contentsline {subsubsection}{\numberline {2.2.6}Moments and convergence times}{30}{subsubsection.2.2.6}
-\contentsline {section}{List of Symbols}{31}{section*.4}
-\contentsline {section}{References}{32}{section*.5}
+\contentsline {subsubsection}{\numberline {2.2.7}Fitting United States wealth data}{31}{subsubsection.2.2.7}
+\contentsline {section}{List of Symbols}{34}{section*.4}
+\contentsline {section}{References}{34}{section*.5}

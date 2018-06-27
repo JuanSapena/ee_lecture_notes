@@ -47,6 +47,12 @@ J.-P. Bouchaud and M.~M\'ezard.
 \newblock Wealth condensation in a simple model of economy.
 \newblock {\em Physica A}, 282(4):536--545, 2000.
 
+\bibitem{bricker2016measuring2}
+J.~Bricker, A.~Henriques, J.~Krimmel, and J.~Sabelhaus.
+\newblock Measuring income and wealth at the top using administrative and
+  survey data.
+\newblock {\em Brookings Papers on Economic Activity}, pages 261--331, 2016.
+
 \bibitem{Corak2013}
 M.~Corak.
 \newblock Income inequality, equality of opportunity, and intergenerational
@@ -76,6 +82,18 @@ P.~E. Kloeden and E.~Platen.
   volume~23.
 \newblock Springer Science \& Business Media, 1992.
 
+\bibitem{kopczuk2015we}
+W.~Kopczuk.
+\newblock What do we know about the evolution of top wealth shares in the
+  united states?
+\newblock {\em The Journal of Economic Perspectives}, 29(1):47--66, 2015.
+
+\bibitem{kopczuk2004top}
+W.~Kopczuk and E.~Saez.
+\newblock Top wealth shares in the united states, 1916--2000: Evidence from
+  estate tax returns.
+\newblock {\em National Tax Journal}, 57(2):445--487, 2004.
+
 \bibitem{LiuETAL2013}
 K.~Liu, N.~Lubbers, W.~Klein, J.~Tobochnik, B.~Boghosian, and H.~Gould.
 \newblock The effect of growth on equality in models of the economy.
@@ -92,6 +110,11 @@ Z.~Liu and R.~A. Serota.
 J.~E. Meade.
 \newblock {\em Efficiency, Equality and The Ownership of Property}.
 \newblock Allen \& Unwin, London, UK, 1964.
+
+\bibitem{NelderMead1965}
+J.~A. Nelder and R.~Mead.
+\newblock A simplex method for function minimization.
+\newblock {\em The computer journal}, 7(4):308--313, 1965.
 
 \bibitem{Newman2005}
 M.~E.~J. Newman.
@@ -118,6 +141,19 @@ T.~Piketty.
 \newblock {\em Capital in the twenty-first century}.
 \newblock Harvard University Press, 2014.
 
+\bibitem{PikettyZucman2014}
+T.~Piketty and G.~Zucman.
+\newblock Capital is back: Wealth-income ratios in rich countries, 1700-2010.
+\newblock {\em The Quarterly Journal of Economics}, 129(3):1255--1310, 2014.
+
+\bibitem{Quandl2016}
+Quandl.
+\newblock {D}ow {J}ones {I}ndustrial {A}verage.
+\newblock
+  \url{http://www.quandl.com/data/BCB/UDJIAD1-Dow-Jones-Industrial-Average},
+  2016.
+\newblock Accessed: 04/19/2016.
+
 \bibitem{Redner1990}
 S.~Redner.
 \newblock Random multiplicative processes: An elementary tutorial.
@@ -128,6 +164,12 @@ J.-V. Rios-Rull and M.~Kuhn.
 \newblock {2013 Update on the U.S. Earnings, Income, and Wealth Distributional
   Facts: A View from Macroeconomics}.
 \newblock {\em Quarterly Review}, (April):1--75, 2016.
+
+\bibitem{SaezZucman2014}
+E.~Saez and G.~Zucman.
+\newblock Wealth inequality in the united states since 1913: Evidence from
+  capitalized income tax data.
+\newblock Technical report, National bureau of economic research, 2014.
 
 \bibitem{Samuelson1968}
 P.~Samuelson.

@@ -6,45 +6,45 @@ Database file #1: ./../LML_bibliography/bibliography.bib
 Warning--empty journal in BermanPetersAdamou2017
 Warning--empty note in Bouchaud2015b
 Warning--there's a number but no volume in Rios20162013
-You've used 31 entries,
+You've used 38 entries,
             2118 wiz_defined-function locations,
-            713 strings with 8199 characters,
-and the built_in function-call counts, 8579 in all, are:
-= -- 857
-> -- 325
-< -- 1
-+ -- 137
-- -- 100
-* -- 576
-:= -- 1484
-add.period$ -- 93
-call.type$ -- 31
-change.case$ -- 136
+            759 strings with 9406 characters,
+and the built_in function-call counts, 10802 in all, are:
+= -- 1088
+> -- 414
+< -- 2
++ -- 173
+- -- 128
+* -- 724
+:= -- 1853
+add.period$ -- 115
+call.type$ -- 38
+change.case$ -- 172
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 331
-empty$ -- 719
-format.name$ -- 100
-if$ -- 1744
+cite$ -- 41
+duplicate$ -- 410
+empty$ -- 896
+format.name$ -- 128
+if$ -- 2210
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 35
-newline$ -- 158
-num.names$ -- 62
-pop$ -- 136
+int.to.str$ -- 38
+missing$ -- 40
+newline$ -- 194
+num.names$ -- 76
+pop$ -- 166
 preamble$ -- 1
-purify$ -- 112
+purify$ -- 140
 quote$ -- 0
-skip$ -- 212
+skip$ -- 274
 stack$ -- 0
-substring$ -- 561
-swap$ -- 29
-text.length$ -- 1
+substring$ -- 725
+swap$ -- 44
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
+type$ -- 138
 warning$ -- 3
-while$ -- 96
-width$ -- 33
-write$ -- 331
+while$ -- 120
+width$ -- 40
+write$ -- 409
 (There were 3 warnings)
