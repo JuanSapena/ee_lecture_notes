@@ -44,7 +44,7 @@
 \contentsline {subsection}{\numberline {4.2}Reallocation}{92}{subsection.4.2}
 \contentsline {subsubsection}{\numberline {4.2.1}Introduction}{92}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}The ergodic hypothesis in economics}{92}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}Reallocating GBM}{94}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3}Reallocating geometric Brownian motion}{94}{subsubsection.4.2.3}
 \contentsline {subsubsection}{\numberline {4.2.4}Model behaviour}{95}{subsubsection.4.2.4}
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Positive $\tau $}}\mathsurround \z@ $\relax }{95}{section*.4}
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Negative $\tau $}}\mathsurround \z@ $\relax }{96}{section*.5}
