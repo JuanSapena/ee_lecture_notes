@@ -332,13 +332,19 @@ Considering the two growth rates in \secref{two_rates}, we anticipate the follow
 \end{enumerate}
 Situation A -- when a sample mean resembles the corresponding expectation value -- is known in statistical physics as ``self-averaging.'' A simple strategy for estimating when this occurs is to look at the relative variance of the PEA,
 \be
-R \equiv \frac{\text{var}(\ave{x(t)}_N)}{\ave{\ave{x(t)}_N}^2}.
+R \equiv \frac{\var[\ave{x(t)}_N]}{\ave{\ave{x(t)}_N}^2}.
+\elabel{rel_var}
 \ee
 To be explicit, here the $\ave{\cdot}$ and $\text{var}(\cdot)$ operators, 
 without $N$ as a subscript, 
-refer to the mean and variance over all possible PEAs. The PEAs themselves, taken over finite samples of size $N$, are denoted $\ave{\cdot}_N$. Using standard results for the mean and variance of sums of independent random variables and inserting the results in \eref{exp_x} and \eref{var_x}, we get
+refer to the mean and variance over all possible PEAs. The PEAs themselves, taken over finite samples of size $N$, are denoted $\ave{\cdot}_N$. \Eref{rel_var} simplifies to
+\be
+R = \frac{\frac{1}{N}\var[x(t)]}{\ave{x(t)}^2},
+\ee
+into which we insert \eref{exp_x} and \eref{var_x} to get an expression for the relative variance in terms of the GBM model parameters:
 \be
 R(N) = \frac{e^{\sigma^2 t}-1}{N}.
+\elabel{rel_var_N}
 \ee
 If $R \ll 1$, then the PEA will likely be close to its own expectation value, which is equal to the expectation value of the GBM. Thus, in terms of $N$ and $t$, $\ave{x(t)}_N\approx\ave{x(t)}$ when
 \be

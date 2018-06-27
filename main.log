@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.6)  27 JUN 2018 10:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.6)  27 JUN 2018 10:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1187,6 +1187,12 @@ File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
 
 LaTeX Warning: Label `eq:GBM' multiply defined.
 
+
+LaTeX Warning: Label `eq:GBM' multiply defined.
+
+
+LaTeX Warning: Label `eq:t_c' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1285,7 +1291,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 15.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 15.
-<./lml_LOGO_whiteBG-eps-converted-to.pdf, id=35, 142.5325pt x 48.18pt>
+<./lml_LOGO_whiteBG-eps-converted-to.pdf, id=99, 142.5325pt x 48.18pt>
 File: ./lml_LOGO_whiteBG-eps-converted-to.pdf Graphic file (type pdf)
 <use ./lml_LOGO_whiteBG-eps-converted-to.pdf>
 Package pdftex.def Info: ./lml_LOGO_whiteBG-eps-converted-to.pdf  used on input
@@ -1294,7 +1300,14 @@ Package pdftex.def Info: ./lml_LOGO_whiteBG-eps-converted-to.pdf  used on input
  [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./lml_L
-OGO_whiteBG-eps-converted-to.pdf>] (./main.toc)
+OGO_whiteBG-eps-converted-to.pdf>] (./main.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 2.
+)
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
@@ -1314,12 +1327,6 @@ LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 24.
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 39.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 39.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 39.
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 45.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1327,14 +1334,6 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 45.
  [4]
-
-LaTeX Warning: Citation `AitchisonBrown1957' on page 5 undefined on input line 
-85.
-
-
-LaTeX Warning: Citation `KloedenPlaten1992' on page 5 undefined on input line 9
-0.
-
 
 LaTeX Warning: Reference `section:RGBM_moments' on page 5 undefined on input li
 ne 90.
@@ -1350,30 +1349,7 @@ LaTeX Warning: Reference `eq:expectation_g' on page 5 undefined on input line 1
 
 LaTeX Warning: Reference `eq:time_g' on page 5 undefined on input line 114.
 
-[5]
-
-LaTeX Warning: Citation `AdamouPeters2016' on page 6 undefined on input line 12
-6.
-
-
-LaTeX Warning: Citation `Theil1967' on page 6 undefined on input line 126.
-
-[6]
-
-LaTeX Warning: Citation `Theil1967' on page 7 undefined on input line 182.
-
-
-LaTeX Warning: Citation `BouchaudMezard2000' on page 7 undefined on input line 
-200.
-
-[7]
-
-LaTeX Warning: Citation `Sen1997' on page 8 undefined on input line 216.
-
-
-LaTeX Warning: Reference `section:finite_populations' on page 8 undefined on in
-put line 237.
-
+[5] [6] [7]
 
 LaTeX Warning: Reference `section:dyn_from_u' on page 8 undefined on input line
  242.
@@ -1387,340 +1363,49 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 265.
 
-
-LaTeX Warning: Citation `Newman2005' on page 9 undefined on input line 275.
-
-[9]
-
-LaTeX Warning: Citation `PetersKlein2013' on page 10 undefined on input line 32
-6.
-
-
-LaTeX Warning: Reference `eq:sample' on page 10 undefined on input line 326.
-
-[10]
-
-LaTeX Warning: Reference `eq:short_t' on page 11 undefined on input line 348.
-
-
-LaTeX Warning: Reference `eq:t_c' on page 11 undefined on input line 348.
-
-
-LaTeX Warning: Reference `fig:trajectories' on page 11 undefined on input line 
-355.
-
-<./chapter_3/figs/trajectories.pdf, id=179, 391.2678pt x 267.6446pt>
+[9] [10]
+<./chapter_3/figs/trajectories.pdf, id=287, 391.2678pt x 267.6446pt>
 File: ./chapter_3/figs/trajectories.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/trajectories.pdf>
 Package pdftex.def Info: ./chapter_3/figs/trajectories.pdf  used on input line 
-361.
+367.
 (pdftex.def)             Requested size: 386.85481pt x 264.6107pt.
 
-Overfull \hbox (41.85481pt too wide) in paragraph at lines 361--368
+Overfull \hbox (41.85481pt too wide) in paragraph at lines 367--374
  [][] 
  []
 
-[11] [12 <./chapter_3/figs/trajectories.pdf>]
-
-LaTeX Warning: Citation `PetersKlein2013' on page 13 undefined on input line 37
-3.
-
-
-LaTeX Warning: Reference `eq:PEA' on page 13 undefined on input line 378.
-
-
-LaTeX Warning: Citation `PetersKlein2013' on page 13 undefined on input line 39
-7.
-
-
-LaTeX Warning: Reference `eq:PEA_2' on page 13 undefined on input line 403.
-
-
-LaTeX Warning: Reference `eq:gest' on page 13 undefined on input line 403.
-
-
-LaTeX Warning: Citation `PetersKlein2013' on page 13 undefined on input line 41
-0.
-
-
-LaTeX Warning: Reference `eq:gest' on page 13 undefined on input line 411.
-
-
-LaTeX Warning: Reference `eq:gest_4' on page 13 undefined on input line 417.
-
-
-LaTeX Warning: Reference `eq:gest_3' on page 13 undefined on input line 417.
-
-
-LaTeX Warning: Citation `PetersKlein2013' on page 13 undefined on input line 42
-1.
-
-
-LaTeX Warning: Reference `eq:gest_4' on page 13 undefined on input line 422.
-
-
-LaTeX Warning: Citation `Derrida1980' on page 13 undefined on input line 423.
-
-
-LaTeX Warning: Citation `Derrida1981' on page 13 undefined on input line 423.
-
-[13]
-
-LaTeX Warning: Citation `Derrida1980' on page 14 undefined on input line 433.
-
-
-LaTeX Warning: Reference `eq:gest' on page 14 undefined on input line 441.
-
-
-LaTeX Warning: Reference `eq:gest_4' on page 14 undefined on input line 442.
-
-
-LaTeX Warning: Reference `eq:map' on page 14 undefined on input line 452.
-
-
-LaTeX Warning: Reference `eq:gest_5' on page 14 undefined on input line 459.
-
-[14]
-
-LaTeX Warning: Reference `eq:t_c' on page 15 undefined on input line 474.
-
-
-LaTeX Warning: Reference `eq:short_t' on page 15 undefined on input line 474.
-
-
-LaTeX Warning: Citation `Derrida1980' on page 15 undefined on input line 476.
-
-
-LaTeX Warning: Reference `eq:F_2' on page 15 undefined on input line 489.
-
-
-LaTeX Warning: Citation `Derrida1980' on page 15 undefined on input line 490.
-
-
-LaTeX Warning: Reference `eq:F_2' on page 15 undefined on input line 502.
-
-
-LaTeX Warning: Reference `eq:gest_5' on page 15 undefined on input line 502.
-
-
-LaTeX Warning: Reference `eq:map' on page 15 undefined on input line 507.
-
-
-LaTeX Warning: Reference `eq:F_3' on page 15 undefined on input line 515.
-
-
-LaTeX Warning: Reference `eq:F_3' on page 15 undefined on input line 517.
-
-
-LaTeX Warning: Reference `eq:gest_5' on page 15 undefined on input line 517.
-
-
-LaTeX Warning: Reference `eq:gest_8' on page 15 undefined on input line 525.
-
-
-LaTeX Warning: Citation `PetersKlein2013' on page 15 undefined on input line 52
-5.
-
-
-LaTeX Warning: Citation `Redner1990' on page 15 undefined on input line 525.
-
-
-LaTeX Warning: Reference `eq:gest_8' on page 15 undefined on input line 528.
-
-
-LaTeX Warning: Reference `fig:1' on page 15 undefined on input line 531.
-
-
-LaTeX Warning: Citation `Derrida1980' on page 15 undefined on input line 532.
-
-
-LaTeX Warning: Citation `PetersKlein2013' on page 15 undefined on input line 53
-3.
-
-[15]
-
-LaTeX Warning: Citation `PetersKlein2013' on page 16 undefined on input line 53
-7.
-
-
-LaTeX Warning: Citation `PetersGell-Mann2016' on page 16 undefined on input lin
-e 547.
-
-
-LaTeX Warning: Reference `eq:quant_ave' on page 16 undefined on input line 549.
-
-
-<./chapter_3/figs/PEA.pdf, id=285, 404.92374pt x 266.68005pt>
+[11] [12 <./chapter_3/figs/trajectories.pdf>] [13] [14] [15]
+<./chapter_3/figs/PEA.pdf, id=440, 404.92374pt x 266.68005pt>
 File: ./chapter_3/figs/PEA.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/PEA.pdf>
-Package pdftex.def Info: ./chapter_3/figs/PEA.pdf  used on input line 557.
+Package pdftex.def Info: ./chapter_3/figs/PEA.pdf  used on input line 563.
 (pdftex.def)             Requested size: 401.81488pt x 264.6107pt.
 
-Overfull \hbox (56.81488pt too wide) in paragraph at lines 557--566
+Overfull \hbox (56.81488pt too wide) in paragraph at lines 563--572
  [][] 
  []
 
 
-LaTeX Warning: Reference `eq:Ito_sums' on page 16 undefined on input line 566.
+LaTeX Warning: Reference `eq:Ito_sums' on page 16 undefined on input line 572.
 
 
-LaTeX Warning: Reference `eq:gest_7' on page 16 undefined on input line 566.
-
-
-LaTeX Warning: Reference `eq:gest_8' on page 16 undefined on input line 566.
-
-
-LaTeX Warning: Reference `eq:Ito_sums' on page 16 undefined on input line 566.
-
-
-LaTeX Warning: Reference `eq:gest_7' on page 16 undefined on input line 566.
-
-
-LaTeX Warning: Reference `eq:gest_8' on page 16 undefined on input line 566.
+LaTeX Warning: Reference `eq:Ito_sums' on page 16 undefined on input line 572.
 
 [16] [17 <./chapter_3/figs/PEA.pdf>] [18]
-
-LaTeX Warning: Reference `eq:discrete_nonc_coop' on page 19 undefined on input 
-line 635.
-
-<./chapter_3/figs/blobs.pdf, id=372, 596.66095pt x 262.50914pt>
+<./chapter_3/figs/blobs.pdf, id=532, 596.66095pt x 262.50914pt>
 File: ./chapter_3/figs/blobs.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/blobs.pdf>
-Package pdftex.def Info: ./chapter_3/figs/blobs.pdf  used on input line 644.
+Package pdftex.def Info: ./chapter_3/figs/blobs.pdf  used on input line 650.
 (pdftex.def)             Requested size: 470.0pt x 206.78311pt.
-
-LaTeX Warning: Reference `eq:discrete_coop_grow' on page 19 undefined on input 
-line 684.
-
-
-LaTeX Warning: Reference `eq:discrete_coop_grow' on page 19 undefined on input 
-line 684.
-
-[19]
-
-LaTeX Warning: Reference `fig:cooperate' on page 20 undefined on input line 733
-.
-
-
-LaTeX Warning: Reference `eq:discrete_nonc_grow' on page 20 undefined on input 
-line 734.
-
-
-LaTeX Warning: Reference `eq:discrete_nonc_coop' on page 20 undefined on input 
-line 734.
-
-
-LaTeX Warning: Reference `eq:discrete_cooperate' on page 20 undefined on input 
-line 734.
-
-[20 <./chapter_3/figs/blobs.pdf>]
-<./chapter_3/figs/cooperate.pdf, id=417, 614.295pt x 794.97pt>
+ [19] [20 <./chapter_3/figs/blobs.pdf>]
+<./chapter_3/figs/cooperate.pdf, id=583, 614.295pt x 794.97pt>
 File: ./chapter_3/figs/cooperate.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/cooperate.pdf>
-Package pdftex.def Info: ./chapter_3/figs/cooperate.pdf  used on input line 738
+Package pdftex.def Info: ./chapter_3/figs/cooperate.pdf  used on input line 744
 .
 (pdftex.def)             Requested size: 440.0pt x 569.41818pt.
-
-
-LaTeX Warning: Reference `fig:cooperate' on page 21 undefined on input line 777
-.
-
-
-LaTeX Warning: Reference `fig:cooperate' on page 21 undefined on input line 786
-.
-
-
-LaTeX Warning: Reference `section:Cooperation' on page 21 undefined on input li
-ne 1059.
-
-[21] [22 <./chapter_3/figs/cooperate.pdf>]
-
-LaTeX Warning: Citation `Pareto1897' on page 23 undefined on input line 1072.
-
-
-LaTeX Warning: Reference `section:power_law' on page 23 undefined on input line
- 1072.
-
-
-LaTeX Warning: Citation `Samuelson1968' on page 23 undefined on input line 1072
-.
-
-[23]
-
-LaTeX Warning: Citation `BenhabibBisinZhu2011' on page 24 undefined on input li
-ne 1078.
-
-
-LaTeX Warning: Citation `atkinson1969timescale' on page 24 undefined on input l
-ine 1084.
-
-[24]
-
-LaTeX Warning: Citation `DragulescuYakovenko2001' on page 25 undefined on input
- line 1124.
-
-
-LaTeX Warning: Citation `BermanPetersAdamou2017' on page 25 undefined on input 
-line 1124.
-
-
-LaTeX Warning: Citation `meade1964efficiency' on page 25 undefined on input lin
-e 1124.
-
-
-LaTeX Warning: Reference `section:finite_populations' on page 25 undefined on i
-nput line 1127.
-
-
-LaTeX Warning: Citation `BermanPetersAdamou2017' on page 25 undefined on input 
-line 1127.
-
-
-LaTeX Warning: Reference `eq:rgbm' on page 25 undefined on input line 1141.
-
-[25]
-
-LaTeX Warning: Citation `UhlenbeckOrnstein1930' on page 26 undefined on input l
-ine 1146.
-
-
-LaTeX Warning: Citation `Vasicek1977' on page 26 undefined on input line 1146.
-
-
-LaTeX Warning: Reference `section:finite_populations' on page 26 undefined on i
-nput line 1151.
-
-
-LaTeX Warning: Reference `eq:rgbm' on page 26 undefined on input line 1161.
-
-
-LaTeX Warning: Citation `Bouchaud2015b' on page 26 undefined on input line 1166
-.
-
-
-LaTeX Warning: Reference `section:RGBM_stable' on page 26 undefined on input li
-ne 1166.
-
-
-LaTeX Warning: Reference `section:RGBM_stable' on page 26 undefined on input li
-ne 1177.
-
-
-LaTeX Warning: Reference `section:power_law' on page 26 undefined on input line
- 1182.
-
-[26]
-
-LaTeX Warning: Reference `fig:dist' on page 27 undefined on input line 1184.
-
-
-LaTeX Warning: Citation `BermanPetersAdamou2017' on page 27 undefined on input 
-line 1184.
-
-
-LaTeX Warning: Citation `BermanPetersAdamou2017' on page 27 undefined on input 
-line 1184.
-
+ [21] [22 <./chapter_3/figs/cooperate.pdf>] [23] [24] [25] [26]
 Package epstopdf Info: Source file: <./chapter_3/figs/dists.eps>
 (epstopdf)                    date: 2018-06-07 21:19:43
 (epstopdf)                    size: 238306 bytes
@@ -1730,60 +1415,17 @@ f>
 (epstopdf)                    size: 82477 bytes
 (epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/dists-eps
 -converted-to.pdf ./chapter_3/figs/dists.eps>
-(epstopdf)             \includegraphics on input line 1188.
+(epstopdf)             \includegraphics on input line 1194.
 Package epstopdf Info: Output file is already uptodate.
-<./chapter_3/figs/dists-eps-converted-to.pdf, id=475, 461.725pt x 456.70625pt>
+<./chapter_3/figs/dists-eps-converted-to.pdf, id=670, 461.725pt x 456.70625pt>
 File: ./chapter_3/figs/dists-eps-converted-to.pdf Graphic file (type pdf)
 <use ./chapter_3/figs/dists-eps-converted-to.pdf>
 Package pdftex.def Info: ./chapter_3/figs/dists-eps-converted-to.pdf  used on i
-nput line 1188.
+nput line 1194.
 (pdftex.def)             Requested size: 345.0pt x 341.25356pt.
-
-LaTeX Warning: Reference `eq:rgbm_ou_re' on page 27 undefined on input line 119
-3.
-
-
-LaTeX Warning: Citation `BouchaudMezard2000' on page 27 undefined on input line
- 1193.
-
-
-LaTeX Warning: Citation `Bouchaud2015' on page 27 undefined on input line 1193.
-
-
-
-LaTeX Warning: Citation `LiuSerota2016' on page 27 undefined on input line 1193
-.
-
-[27 <./chapter_3/figs/dists-eps-converted-to.pdf>]
-
-LaTeX Warning: Reference `fig:regimes' on page 28 undefined on input line 1198.
-
-
-
-LaTeX Warning: Citation `Piketty2014' on page 28 undefined on input line 1198.
-
-
-LaTeX Warning: Citation `wolff2014household' on page 28 undefined on input line
- 1198.
-
-
-LaTeX Warning: Citation `Rios20162013' on page 28 undefined on input line 1198.
-
-
-
-LaTeX Warning: Citation `WID2017' on page 28 undefined on input line 1198.
-
-
-LaTeX Warning: Citation `Corak2013' on page 28 undefined on input line 1201.
-
-
-LaTeX Warning: Citation `LiuETAL2013' on page 28 undefined on input line 1201.
-
-
-LaTeX Warning: Citation `berman2017' on page 28 undefined on input line 1201.
-
+ [27 <./chapter_3/figs/dists-eps-converted-to.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1217.
+(Font)              <9> on input line 1223.
 Package epstopdf Info: Source file: <./chapter_3/figs/trajectories.eps>
 (epstopdf)                    date: 2018-06-07 21:19:43
 (epstopdf)                    size: 60715 bytes
@@ -1793,81 +1435,33 @@ d-to.pdf>
 (epstopdf)                    size: 17564 bytes
 (epstopdf)             Command: <repstopdf --outfile=./chapter_3/figs/trajector
 ies-eps-converted-to.pdf ./chapter_3/figs/trajectories.eps>
-(epstopdf)             \includegraphics on input line 1237.
+(epstopdf)             \includegraphics on input line 1243.
 Package epstopdf Info: Output file is already uptodate.
-<./chapter_3/figs/trajectories-eps-converted-to.pdf, id=492, 464.73625pt x 409.
+<./chapter_3/figs/trajectories-eps-converted-to.pdf, id=701, 464.73625pt x 409.
 53pt>
 File: ./chapter_3/figs/trajectories-eps-converted-to.pdf Graphic file (type pdf
 )
 <use ./chapter_3/figs/trajectories-eps-converted-to.pdf>
 Package pdftex.def Info: ./chapter_3/figs/trajectories-eps-converted-to.pdf  us
-ed on input line 1237.
+ed on input line 1243.
 (pdftex.def)             Requested size: 209.87396pt x 184.9429pt.
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 124
-5.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 125
+1.
+
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (85.43726pt too wide) in paragraph at lines 1251--1252
+Overfull \hbox (85.43726pt too wide) in paragraph at lines 1257--1258
  [][] 
  []
 
 
-LaTeX Warning: Reference `eq:rgbm_self' on page 28 undefined on input line 1295
-.
+Overfull \hbox (2.76237pt too wide) in paragraph at lines 1303--1304
+[]\OT1/lmr/m/n/10 We pre-sented ar-gu-ments in Sec. [][]1.2.1[][] for why wealt
+h in GBM is self-averaging,
+ []
 
-
-LaTeX Warning: Reference `eq:tau_c' on page 28 undefined on input line 1295.
-
-
-LaTeX Warning: Citation `Bouchaud2015b' on page 28 undefined on input line 1295
-.
-
-
-LaTeX Warning: Reference `eq:disti' on page 28 undefined on input line 1295.
-
-
-LaTeX Warning: Reference `section:RGBM_behaviour' on page 28 undefined on input
- line 1295.
-
-
-LaTeX Warning: Reference `section:sketch' on page 28 undefined on input line 12
-97.
-
-
-LaTeX Warning: Reference `section:REM' on page 28 undefined on input line 1297.
-
-
-
-LaTeX Warning: Reference `eq:tau_c' on page 28 undefined on input line 1299.
-
-
-LaTeX Warning: Reference `section:RGBM_behaviour' on page 28 undefined on input
- line 1299.
-
-[28]
-
-LaTeX Warning: Reference `eq:fokker_planck' on page 29 undefined on input line 
-1315.
-
-[29 <./chapter_3/figs/trajectories-eps-converted-to.pdf>]
-
-LaTeX Warning: Reference `eq:disti' on page 30 undefined on input line 1333.
-
-
-LaTeX Warning: Reference `eq:diff2' on page 30 undefined on input line 1358.
-
-[30]
-
-LaTeX Warning: Reference `eq:var1' on page 31 undefined on input line 1383.
-
-
-LaTeX Warning: Reference `eq:var1' on page 31 undefined on input line 1390.
-
-
-LaTeX Warning: Citation `LiuSerota2016' on page 31 undefined on input line 1392
-.
-
+[28] [29 <./chapter_3/figs/trajectories-eps-converted-to.pdf>] [30]
 Excluding 'comment' comment.)
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
@@ -1880,21 +1474,15 @@ m}]. Rerun may be required (or you may have forgotten to use commands like \gls
 ) on input line 25.
 
 Using TeX to sort glossary entries---this may take a while
-(./main.bbl [31] [32]) [33]
+[31] (./main.bbl [32] [33]) [34]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 31.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 31.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 814139BF40F81084CA0717ED95053AB3;1692.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: B60C77C6BA8B8472B015A0DD68DD7A47;504
-(rerunfilecheck)             After:  814139BF40F81084CA0717ED95053AB3;1692.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1906,27 +1494,24 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36010 strings out of 492649
- 691724 string characters out of 6129623
- 792333 words of memory out of 5000000
- 39131 multiletter control sequences out of 15000+600000
+ 36042 strings out of 492649
+ 692189 string characters out of 6129623
+ 802489 words of memory out of 5000000
+ 39153 multiletter control sequences out of 15000+600000
  584128 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,15n,76p,10432b,720s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{glo:v} has been referenced but does not exist, re
-placed by a fixed one
+ 58i,15n,76p,10432b,720s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{equation.2.65} has been referenced but does not e
+xist, replaced by a fixed one
 
-pdfTeX warning (dest): name{glo:delta_t} has been referenced but does not exist
-, replaced by a fixed one
+pdfTeX warning (dest): name{equation.1.63} has been referenced but does not exi
+st, replaced by a fixed one
 
-pdfTeX warning (dest): name{glo:delta} has been referenced but does not exist, 
-replaced by a fixed one
+pdfTeX warning (dest): name{equation.1.57} has been referenced but does not exi
+st, replaced by a fixed one
 
-pdfTeX warning (dest): name{glo:gest} has been referenced but does not exist, r
-eplaced by a fixed one
-
-pdfTeX warning (dest): name{glo:W} has been referenced but does not exist, repl
-aced by a fixed one
+pdfTeX warning (dest): name{equation.1.46} has been referenced but does not exi
+st, replaced by a fixed one
 
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/
 texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018/t
@@ -1936,28 +1521,29 @@ dvips/lm/lm-mathex.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
 fonts/latxfont/line10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
 c/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx1
-2.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmex10.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/
-fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
-/public/lm/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/
-lmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/public/lm/lmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/p
-ublic/lm/lmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr
-i10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmss10.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/
-texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
-pe1/public/lm/lmtt9.pfb>
-Output written on main.pdf (33 pages, 945062 bytes).
+2.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/public/lm/lmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/
+lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr12.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/
+texlive/2018/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
+public/lm/lmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lm
+r9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri10.pfb></u
+sr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/lm/lmtt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
+lm/lmtt9.pfb>
+Output written on main.pdf (34 pages, 976499 bytes).
 PDF statistics:
- 720 PDF objects out of 1000 (max. 8388607)
- 575 compressed objects within 6 object streams
- 195 named destinations out of 1000 (max. 500000)
- 112 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 948 PDF objects out of 1000 (max. 8388607)
+ 796 compressed objects within 8 object streams
+ 205 named destinations out of 1000 (max. 500000)
+ 240 words of extra memory for PDF output out of 10000 (max. 10000000)
 
