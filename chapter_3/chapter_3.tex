@@ -11,11 +11,7 @@ assumed dynamic imposed on wealth. If we know the stochastic process that descri
 individual wealth, then we also know what happens at population level -- each individual
 is represented by a realisation of the process, and we can compute 
 the dynamics of wealth distributions. We answer questions about inequality and poverty in
-our model economy. It turns out that our decision criterion generates interesting emergent
-behaviour -- cooperation, the sharing and pooling of resources, is often time-average 
-growth optimal. This provides answers to the puzzles of why people cooperate, why there 
-is an insurance market, and why we see socio-economic structure from the formation of 
-firms to nation states with taxation and redistribution systems.}
+a model economy which, for the moment, contains no interactions between individuals. We also gain an understanding of when and how results for finite populations differ from those for the infinite ensemble.}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,14 +34,7 @@ from the set of trajectories we can judge what is likely to happen to an individ
 \eg by following a single trajectory for a long time; while the PDF of the random 
 variable $x(t^*)$ at some fixed value of $t^*$ tells us how wealth is distributed in our model. 
 
-We use the term wealth distribution to refer to the density function 
-$\PDF_x(x)$ (not to the process of distributing wealth among people). This can be 
-interpreted as follows: if I select a random individual (each individual with uniform probability 
-$\frac{1}{N}$), the probability of the selected individual 
-having wealth greater than $x$ is given by the CDF $F_x(x)=\int_x^\infty \PDF_x(s)\,ds$.
-In a large population of $N$ individuals, $\D x \PDF_x(x)N$ is the approximate 
-number of individuals who have wealth between $x$ and $x+\D x$. 
-Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
+We use the term wealth distribution to refer to the density function $\PDF_x(x)$ and not the process of distributing wealth among people. This can be interpreted as follows. Imagine a population of $N$ individuals. If I select a random individual, each having uniform probability $\frac{1}{N}$, then the probability of the selected individual having wealth greater than $x$ is given by the CDF $F_x(x)=\int_x^\infty \PDF_x(s)\,ds$. If $N$ is large, then $\D x \PDF_x(x)N$ is the approximate number of individuals who have wealth between $x$ and $x+\D x$. Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
 
 \underline{Examples:}
 \begin{itemize}
@@ -79,19 +68,15 @@ x(t) = x(0) \exp\left[\left(\mu-\frac{\sigma^2}{2}\right)t + \sigma W(t)\right],
 then we will observe a log-normal distribution of wealth at each moment in time:
 \be
 \ln x(t) \sim \mathcal{N}\left(\ln x(0) + \left(\mu - \frac{\sigma^2}{2}\right)t, \sigma^2 t\right).
-\elabel{lognormal}
+\elabel{log-normal}
 \ee
 It will be convenient hereafter to assume the initial condition $x(0)=1$ (and, therefore, $\ln x(0)=0$) unless otherwise stated.
 
-Note that the variance of $\ln x(t)$ increases linearly in time. We will develop an understanding of this shortly. As we will see, it indicates that any meaningful measure of inequality will grow over time in our simple model. To see what kind of a wealth distribution \eref{lognormal} is, it is worth spelling out the lognormal PDF:
+Note that the variance of $\ln x(t)$ increases linearly in time. We will develop an understanding of this shortly. As we will see, it indicates that any meaningful measure of inequality will grow over time in our simple model. To see what kind of a wealth distribution \eref{log-normal} is, it is worth spelling out the log-normal PDF:
 \be
 \PDF_x(x)=\frac{1}{x\sqrt{2\pi \sigma^2t}}\exp\left(-\frac{[\ln x-(\mu-\frac{\sigma^2}{2})t]^2}{2\sigma^2 t} \right).
 \elabel{PDFx}
 \ee
-
-%The expectation value $\ave{\ln x}=\ln x_0 + \left(\mu - \frac{\sigma^2}{2}\right)t$ is
-%given by \eref{lognormal}. It differs from the logarithm of the expectation value, 
-%$\ave{\ln x}\neq \ln\ave{x}$, which we now compute.
 
 This distribution is the subject of a wonderful book \cite{AitchisonBrown1957}, sadly out-of-print now. We will find it useful to know a few of its basic properties. Of particular importance is the expected wealth under this distribution. This is
 \be
@@ -116,7 +101,7 @@ For $\mu>0$ the expected wealth grows exponentially over time, as do its populat
 
 \subsubsection{Two growth rates}
 \seclabel{two_rates}
-We will recap briefly here one of our key ideas, covered in detail in \secref{Geometric_Brownian}, that the ensemble average of all possible trajectories of GBM grows at a different (faster) rate from that achieved by a single trajectory almost surely in the long-time limit. Understanding this difference was the key to developing a coherent theory of individual decision-making. We will see here that it is also crucial in understanding how wealth becomes distributed in a population of individuals whose wealths follow \elabel{GBM} and, in particular, how we can measure the inequality in such a distribution.
+We will recap briefly here one of our key ideas, covered in detail in \secref{Geometric_Brownian}, that the ensemble average of all possible trajectories of GBM grows at a different (faster) rate from that achieved by a single trajectory almost surely in the long-time limit. Understanding this difference was the key to developing a coherent theory of individual decision-making. We will see here that it is also crucial in understanding how wealth becomes distributed in a population of individuals whose wealths follow \eref{GBM} and, in particular, how we can measure the inequality in such a distribution.
 
 From \eref{expectation_g}, we recall that the growth rate of the expected wealth is
 \be
@@ -132,7 +117,7 @@ while, from \eref{time_g}, the time-average growth rate of wealth is
 \subsubsection{Measuring inequality}
 \seclabel{Inequality_measure}
 In the case of GBM we have just seen how to 
-compute the exact full wealth distribution $\PDF$. This is interesting but often we want only summary measures of the distribution. One such summary measure of particular interest to economists is inequality. How much inequality is there in a distribution like \eref{lognormal}? And how does this quantity increase over time under GBM, as we have suggested?
+compute the exact full wealth distribution $\PDF$. This is interesting but often we want only summary measures of the distribution. One such summary measure of particular interest to economists is inequality. How much inequality is there in a distribution like \eref{log-normal}? And how does this quantity increase over time under GBM, as we have suggested?
 
 Clearly, to answer these questions, we must quantify ``inequality''. In this section, and also in \cite{AdamouPeters2016}, we develop a natural way of measuring it, which makes use of the two growth rates we identified for the non-ergodic process. We will see that a particular inequality measure, known to economists as Theil's second index of inequality \cite{Theil1967}, is the difference between typical wealth (growing at the time-average growth rate) and average wealth (growing at the ensemble-average growth rate) in our model. Thus, the difference between the time average and ensemble average, the essence of ergodicity breaking, is the fundamental driver of the dynamics of inequality.
 
@@ -187,7 +172,8 @@ dynamic of inequality. Within the GBM framework we can write the difference in g
 \ee
 and integrate over time to get
 \be
-J(t)=\ln \ave{x}-\ave{\ln x}.
+J(t)=\ln \ave{x(t)}-\ave{\ln x(t)}.
+\elabel{J_x}
 \ee
 This quantity is known as the mean logarithmic deviation (MLD) or Theil's second index of inequality \cite{Theil1967}. 
 This is rather remarkable. Our general inequality measure, \eref{J}, evaluated 
@@ -198,7 +184,7 @@ Theil used the GBM model without realising it!
 
 Substituting the known values of the two growth rates into \eref{dJ} and integrating, we can evaluate the Theil inequality as a function of time:
 \be
-J(t)=J(0)+\frac{\sigma^2}{2} t.
+J(t)=\frac{\sigma^2}{2} t.
 \elabel{J_t}
 \ee
 Thus we see that, in GBM, our measure of inequality increases indefinitely.
@@ -223,51 +209,79 @@ where $\Phi$ is the CDF of the standard normal distribution. This fraction tends
 
 \subsubsection{Rescaled wealth}
 \seclabel{rescaled}
-Over the decades, economists have arrived at many inequality measures, and have drawn 
-up a list of conditions that particularly useful measures of inequality satisfy. Such measures
-are called ``relative measures'' \cite[Appendix 4]{Sen1997}, and $J$ is one of them. One of the conditions is that inequality measures
-should not change when $x$ is divided by the same factor for everyone. Since we are primarily 
-interested in inequality in this section it is useful to remove absolute wealth levels from the
-analysis and study an object called the rescaled wealth.
+Economists have arrived at many inequality measures, and have drawn up a list of conditions that particularly useful measures of inequality satisfy. Such measures are called ``relative measures'' \cite[Appendix 4]{Sen1997}, and $J$ is one of them.
+
+One of the conditions is that inequality measures should not change when $x$ is divided by the same factor for everyone. Since we are primarily interested in inequality in this section, we can remove absolute wealth levels from the analysis and study an object called the rescaled wealth.
 
 \definition{
 The rescaled wealth, 
 \be
-y=\frac{x}{\ave{x}_N},
+y_i(t) = \frac{x(t)}{\ave{x(t)}_N},
 \elabel{rescaled}
 \ee
-is the proportion of the population-average wealth owned by an individual.}
+is the proportion of the sample mean wealth -- \ie the wealth averaged over the finite population -- owned by an individual.}
 
-This quantity is useful, for instance because its numerical value does not 
-depend on the currency used, it is a dimensionless number. 
-Thus if my rescaled wealth, $y=1/2$, this means that my wealth is half the 
-average wealth, irrespective of whether I measure wealth in Kazakhstani Tenge 
-or in Swiss Francs. For a large population, \eref{J_dyn} may be expressed in 
-terms of $y$ as $\frac{dJ}{dt}=-\frac{d\ave{\ln y}}{dt}$.
+This quantity is useful because its numerical value does not 
+depend on the currency used: it is a dimensionless number. 
+Thus if my rescaled wealth is $y_i(t) = 1/2$, this means that my wealth is half the 
+average wealth, irrespective of whether I measure it in Kazakhstani Tenge 
+or in Swiss Francs. The sample mean rescaled wealth is easily calculated:
+\be
+\ave{y_i(t)}_N = \ave{\frac{x(t)}{\ave{x(t)}_N}}_N = 1.
+\ee
 
-\AA{Insert result for lognormal distribution of rescaled wealth under self-averaging conditions $\ave{x(t)}_N\sim\ave{x(t)}$.}
+If the population size, $N$, is large enough, then we might expect the sample mean wealth, $\ave{x(t)}_N$, to be close to the ensemble average, $\ave{x(t)}$, which is simply its $N\to\infty$ limit. We will discuss more carefully when this approximation holds for wealths following GBM in \secref{finite_populations}. Let's assume for now that it does hold. The rescaled wealth is then well approximated as
+\be
+y_i(t) = \frac{x_i(t)}{\ave{x(t)}} = x_i(t)\exp(-\mu t).
+\ee
 
-To make the model more tractable we consider the case $N \to \infty$, which replaces the finite-ensemble 
-average by the expectation value, $\ave{x}_N \to \ave{x}$. The finite ensemble size has important effects but 
-we will not discuss them here. $\ave{x(t)}=\exp(\mu t)$, just as for GBM without taxation, \eref{exp_x}. 
-We are again interested in rescaled wealth, $y=\frac{x}{\ave{x}}=x e^{-\mu t}$ (\eref{rescaled}), whose dynamic we derive using the chain rule
+Now that we have an expression for $y$ in terms of $x$ and $t$, we can derive the dynamic for rescaled wealth using \Ito's formula (just as we did to find the wealth dynamic for a general utility function in \secref{dyn_from_u}). We start with
 \bea
 dy &=& \frac{\partial y}{\partial t}\,dt + \frac{\partial y}{\partial x}\,dx + \frac{1}{2} \frac{\partial^2 y}{\partial x^2} \,dx^2 \\
-&=& -\mu y\,dt + \frac{1}{x}\,dx \elabel{ysde} \\
-&=& y\sigma dW.
+&=& -\mu y\,dt + \frac{y}{x}\,dx \elabel{ysde},
 \eea
-The first moment of $y$ is trivially $1$,
+and then substitute \eref{GBM} for $dx$ to get
 \be
-\ave{y}=\ave{\frac{x}{\ave{x}}}=1.
+dy = y \sigma dW.
+\elabel{GBM_y}
+\ee
+Thus $y(t)$ follows a very simple GBM with zero drift and volatility $\sigma$. This means that rescaled wealth, like wealth, has an ever-broadening log-normal distribution:
+\be
+\ln y(t) \sim \mathcal{N}\left(-\frac{\sigma^2}{2}t, \sigma^2 t\right).
+\elabel{log-normal_y}
+\ee
+
+Finally, noting that $\ave{\ln y}=\ave{\ln x}-\ln\ave{x}$ gives us a simple expression for our inequality measure in \eref{J_x} in terms of the rescaled wealth:
+\be
+J(t)=-\ave{\ln y}.
 \ee
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{$v$-normal distributions and Jensen's inequality}
+\subsubsection{$u$-normal distributions and Jensen's inequality}
 \seclabel{jensen}
-So far we have confined our analysis to GBM, where wealths follow the dynamic specific by \elabel{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible.
+So far we have confined our analysis to GBM, where wealths follow the dynamic specific by \eref{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible. In particular, we explored the dynamics corresponding to invertible utility functions, where utility executes a Brownian motion with drift as in \eref{bm_u}:
+\be
+\gd\gu = a_u \gd\t + b_u \gd\gW.
+\ee
+Under this dynamic, utility is normally distributed,
+\be
+u(x(t)) \sim \mathcal{N}\left(a_u\t, {b_u}^2 t\right),
+\ee
+and we can say that wealth has a ``$u$-normal'' distribution. For GBM, the corresponding utility function is, as we know, $u(x)=\ln x$, and $u$-normal becomes log-normal.
 
-\AA{Insert discussion of $v$-normal distributions and growth rates here.}
+Replacing the logarithm in \eref{J_x} by the general utility function gives a general expression for the wealth inequality measure,
+\be
+J_u(t)=u(\ave{x(t)}) - \ave{u(x(t))}.
+\elabel{J_u}
+\ee
+It's not easy to write a general expression for $J_u(t)$ in only $t$ and the model parameters $a_u$ and $b_u$, because it would involve the solution of the general wealth dynamic in \eref{dx}. However, we can still say something about how inequality evolves. Let's see what happens if we start with perfect equality, $x_i(0)=x_0$ with $x_0$ fixed, and let wealths evolve a little to $x(\D t)=x_0+\D x$, where $\D x$ is a random wealth increment generated by the wealth dynamic. The change in inequality would be
+\be
+\D J_u = u(\ave{x_0+\D x}) - \ave{u(x_0+\D x)},
+\ee
+since $u(\ave{x_0})=\ave{u(x_0)}=u(x_0)$.
+
+We can now appeal to Jensen's inequality: if $u$ is a concave function, like the logarithm, then $\D J_u \geq 0$; while if $u$ is convex, like the curious exponential in \eref{test_dyn_u}, then $\D J_u \leq 0$. The only cases for which $\D J_u=0$ are if $\D x$ is non-random or if $u$ is linear. Thus, it is both randomness and the nonlinearity of the utility function (or ergodicity transformation) that creates a difference in growth rates and generates inequality.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -275,7 +289,7 @@ So far we have confined our analysis to GBM, where wealths follow the dynamic sp
 \seclabel{power_law}
 It is an established empirical observation \cite{Newman2005} that the upper tails of 
 real wealth distributions look more like a power law than a log-normal. Our trivial model does not
-strictly reproduce this feature, but it is instructive to compare the lognormal distribution
+strictly reproduce this feature, but it is instructive to compare the log-normal distribution
 to a power-law distribution. A power law PDF has the asymptotic form 
 \be
 \PDF_x(x)= x^{-\alpha},
@@ -322,7 +336,7 @@ So far we have considered the properties the random variable, $x(t)$, generated 
 \ee
 as the sample size, $N$, grows large. In reality, human populations can be very large, say $N\sim10^7$ for a nation state, but they are most certainly finite. Therefore, we need to be diligent and ask what the effects of this finiteness are. In particular, we will focus on the sample mean wealth under GBM. For what values of $\mu$, $\sigma$, $t$, and $N$ is this well approximated by the expectation value? And when it is not, what does it resemble?
 
-\subsubsection{Sums of lognormals}
+\subsubsection{Sums of log-normals}
 \seclabel{sketch}
 In \cite{PetersKlein2013} we studied the sample mean of GBM, which we termed the ``partial ensemble average'' (PEA). This is the average of $N$ independent realisations the random variable $x(t)$, \eref{sample}. Here we sketch out some simple arguments about how this object depends on $N$ and $t$.
 
@@ -333,13 +347,19 @@ Considering the two growth rates in \secref{two_rates}, we anticipate the follow
 \end{enumerate}
 Situation A -- when a sample mean resembles the corresponding expectation value -- is known in statistical physics as ``self-averaging.'' A simple strategy for estimating when this occurs is to look at the relative variance of the PEA,
 \be
-R \equiv \frac{\text{var}(\ave{x(t)}_N)}{\ave{\ave{x(t)}_N}^2}.
+R \equiv \frac{\var[\ave{x(t)}_N]}{\ave{\ave{x(t)}_N}^2}.
+\elabel{rel_var}
 \ee
 To be explicit, here the $\ave{\cdot}$ and $\text{var}(\cdot)$ operators, 
 without $N$ as a subscript, 
-refer to the mean and variance over all possible PEAs. The PEAs themselves, taken over finite samples of size $N$, are denoted $\ave{\cdot}_N$. Using standard results for the mean and variance of sums of independent random variables and inserting the results in \eref{exp_x} and \eref{var_x}, we get
+refer to the mean and variance over all possible PEAs. The PEAs themselves, taken over finite samples of size $N$, are denoted $\ave{\cdot}_N$. \Eref{rel_var} simplifies to
+\be
+R = \frac{\frac{1}{N}\var[x(t)]}{\ave{x(t)}^2},
+\ee
+into which we insert \eref{exp_x} and \eref{var_x} to get an expression for the relative variance in terms of the GBM model parameters:
 \be
 R(N) = \frac{e^{\sigma^2 t}-1}{N}.
+\elabel{rel_var_N}
 \ee
 If $R \ll 1$, then the PEA will likely be close to its own expectation value, which is equal to the expectation value of the GBM. Thus, in terms of $N$ and $t$, $\ave{x(t)}_N\approx\ave{x(t)}$ when
 \be
@@ -421,11 +441,10 @@ where, as previously, $\ave{\cdot}$ without subscript refers to the average over
 \seclabel{REM}
 Since the publication of \cite{PetersKlein2013} we have learned, thanks to discussions with J.-P.~Bouchaud, 
 that the key object in \eref{gest_4} -- the sum log-normal random variates -- has been of
-interest to the mathematical physics community since the 1980s. The reason for this is Derrida's random energy model \cite{Derrida1980,Derrida1981}.
+interest to the mathematical physics community since the 1980s. The reason for this is Derrida's random energy model \cite{Derrida1980,Derrida1981}, which we will describe here. This section is very ``physicsy'' and the key results are in \eref{gest_7} and \eref{gest_8} -- it's safe to skip to them, if you like.
 
 It is defined as follows. Imagine a system whose energy levels are $2^K=N$ normally-distributed random numbers, $\xi_i$ (corresponding to $K$ spins). This is a very simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated that we ``give up'' and simply model its energy levels as realisations of a random variable. (We denote the number 
-of spins by $K$ and the number of resulting energy levels by $N$, while Derrida uses $N$ for the number of spins). In this model
-The partition function is then
+of spins by $K$ and the number of resulting energy levels by $N$, while Derrida uses $N$ for the number of spins). The partition function is then
 \be
 Z=\sum_{i=1}^N \exp\left(\beta J\sqrt{\frac{K}{2}}\xi_i\right),
 \elabel{Z}
@@ -569,15 +588,6 @@ over a super-ensemble of $S=10,000$ samples of $\gest$ estimated in sub-ensemble
 \end{figure}
 \FloatBarrier
 
-%\subsubsection{Discussion}
-%The \Ito result is exact. A Monte-Carlo estimate of \eref{Ito_sums} (which is easy to obtain) is 
-%shown in \fref{1} (yellow line). This agrees well with numerical observations.
-%The approximations from the random energy model have the right shape and asymptotic behavior, 
-%though they're not on the same scale as the median PEA. This is, of course, not surprising because
-%these estimates are not designed to coincide with the median PEA. Quantitatively they are closer to 
-%a higher quantile of the distribution of PEAs. An intriguing question is this: is our computation 
-%using \Ito calculus helpful to compute the expected free energy of the random energy model? 
-
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -586,8 +596,8 @@ over a super-ensemble of $S=10,000$ samples of $\gest$ estimated in sub-ensemble
 
 \section{Interactions}
 {\it
-Insert abstract here.
-}
+We add interactions to our null model of a population of noisy multipliers. It turns out that our decision criterion generates interesting emergent behaviour -- cooperation, the sharing and pooling of resources, is often time-average 
+growth optimal. This provides answers to the puzzles of why people cooperate and why we see socio-economic structure from the formation of firms to nation states with taxation and redistribution systems. We also ask whether assumptions about ergodicity in standard treatments of these topics are justified.}
 \newpage
 
 
@@ -774,6 +784,8 @@ $\mu_1>\mu_2$. An analysis of expectation values, again, is utterly misleading:
 the benefit conferred on entity 1 due to the fluctuation-reducing effect of 
 cooperation may outweigh the cost of having to cooperate with an entity with
 smaller expectation value.
+
+We may also generalise to correlations between the fluctuations experienced by different entities. These are uncorrelated in our model: the $dW_i$ in \eref{GBM} and, consequently, the $\xi_i$ in \eref{discrete_nonc_grow} onwards are independent random variables. In reality, cooperators are often spatially localised and experience similar environmental conditions. By allowing correlations between the $\xi_i$, our model can be adapted to describe such situations. This is more technically difficult and we won't present it here. If you are interested, you can find the details in \cite{PetersAdamou2015a}.
  
 Notice the nature of the Monte-Carlo simulation in \fref{cooperate}. No ensemble
 is constructed. Only individual trajectories are simulated and run for a time that is 
@@ -800,252 +812,6 @@ fluctuations, and over time (though not in expectation) this implies faster grow
 
 Another generalisation is partial cooperation -- entities may share only
 a proportion of their resources, resembling taxation and redistribution. We discuss this in the next section.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\subsection{Taxation}
-%\seclabel{Taxation}
-%In \secref{Every_man} we created a world of independent GBMs; in \secref{Cooperation} 
-%we introduced to this world
-%the invention of cooperation and saw that it increases long-time growth for those who participate
-%in resource-pooling and sharing. In this section we study what happens if a large number
-%of individuals pool and share a small fraction of their resources, which is reminiscent of taxation
-%and redistribution carried out in a large population. We will find that while cooperation for 2 individuals
-%increases their growth rates, sufficient cooperation in a large population
-%has two related effects. Firstly, everyone's wealth grows asymptotically at a rate close to that of
-%the expectation value. Secondly, wealth condensation and the divergence of inequality 
-%no longer occur.
-%
-%We introduce a model that applies a flat wealth tax rate and every individual, irrespective of his 
-%wealth, receives the same benefit from the collected tax, in absolute terms. This mimicks the
-%actions of a central agency that collects each year from everyone 1\% of his wealth and pays 
-%1-$N^\text{th}$ of the total collected amount to each individual. A similar model will be 
-%used for income tax, see \eref{isde} in \secref{Income_tax}. 
-%
-%Of course this isn't how taxation works in reality -- wealth taxes are usually only collected in 
-%the form of inheritance tax and sometimes property or land tax; often progressive rates are 
-%applied, and how tax takings are actually redistributed is very unclear. 
-%Who benefits from government activity? Infrastructure is built, benefits payments made, 
-%healthcare and education provided, a legal system is maintained of courts that can 
-%enforce contracts and enable corporate structures, police and an army may provide security. 
-%Individuals will benefit from these different aspects to very different degrees. Our model 
-%ignores this and lets everyone benefit equally.
-%
-%Despite the simplicity of the setup the following important feature emerges:
-%there is a critical tax rate. This qualitative result applies both to income tax and to wealth tax.
-%
-%\definition{ {\bf Critical tax rate}\\
-%Below the critical tax rate the variance of rescaled wealth increases indefinitely. 
-%Above the critical tax rate it stabilizes to an asymptotic value in the limit $t\to\infty$.
-%}
-%
-%\Secref{Cooperation} was concerned with growth, here we are concerned with inequality. 
-%We will therefore work with the rescaled wealth, $y$, introduced in \eref{rescaled}. \Eref{GBM} defines the 
-%dynamic of $x$. From it we can find the dynamic for $f(x)=y$ using \Ito calculus
-%\bea
-%df &=& \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial t} + \frac{1}{2} \frac{\partial^2 f}{\partial x^2} dx^2\\
-%=dy&=& -\mu y dt + \frac{y}{x} dx\\
-%&=&y \sigma dW.
-%\eea
-%
-%
-%
-%\subsubsection{Wealth tax}
-%\seclabel{Wealth_tax}
-%We investigate the situation where each individual's wealth is taxed at a rate of $0\leq\tau\leq1$ per unit time, 
-%and the total tax thus raised is redistributed equally among the population. This is modelled by the stochastic wealth process,
-%\be
-%dx = x[(\mu-\tau)\,dt + \sigma\,dW] + \tau\ave{x}_N dt,
-%\elabel{wsde}
-%\ee
-%which is a modified version of \eref{GBM} -- the term $-\tau x dt$ was added to represent tax 
-%collection, and the term $+\tau \ave{x}_N dt$ to represent redistribution of collected tax.
-%To make the model more tractable we consider the case $N \to \infty$, which replaces the finite-ensemble 
-%average by the expectation value, $\ave{x}_N \to \ave{x}$. The finite ensemble size has important effects but 
-%we will not discuss them here.
-%Total wealth is conserved by the taxation and redistribution process in this model, 
-%and the expectation value is unaffected, $\ave{x(t)}=\ave{x_0}e^{\mu t}$, just as for GBM without taxation, \eref{exp_x}. 
-%We are again interested in rescaled wealth, $y=\frac{x}{\ave{x}}=x e^{-\mu t}$ (\eref{rescaled}), whose dynamic we derive using the chain rule
-%\bea
-%dy &=& \frac{\partial y}{\partial t}\,dt + \frac{\partial y}{\partial x}\,dx + \frac{1}{2} \frac{\partial^2 y}{\partial x^2} \,dx^2 \\
-%&=& -\mu y\,dt + \frac{1}{x}\,dx \elabel{ysde} \\
-%&=& y(-\tau dt+ \sigma dW)+\tau dt.
-%\eea
-%The first moment of $y$ is trivially $1$,
-%\be
-%\ave{y}=\ave{\frac{x}{\ave{x}}}=1.
-%\ee
-%We compute the dynamic of the second moment of $y$, to first order in $dt$, using the chain rule again,
-%\bea
-%d(y^2)&=& \frac{\partial (y^2)}{\partial t}\,dt + \frac{\partial (y^2)}{\partial y}\,dy + \frac{1}{2} \frac{\partial^2 (y^2)}{\partial y^2} \,(dy)^2\\
-%&=&2y dy + (dy)^2\\
-%&=& 2y^2(-\tau dt+ \sigma dW)+2y\tau dt +y^2\sigma^2 dt.
-%\eea
-%Taking expectation values yields 
-%\bea
-%\ave{dy^2}&=& \ave{-2y^2(-\tau dt+ \sigma dW)+2y\tau dt -y^2\sigma^2dt}\\
-%=d\ave{y^2}&=&(\sigma^2-2\tau) \ave{y^2} dt + 2\tau dt.
-%\eea
-%This equation is an inhomogeneous first-order ordinary differential equation for 
-%the second moment. Perhaps it's more recognizable when written in standard form as
-%\be
-%\left(\frac{d}{dt}- (\sigma^2-2\tau)\right)\ave{y^2}= 2\tau.
-%\elabel{ODE2}
-%\ee
-%Such equations are solvable using the method of integrating factors, see \eg \cite[Chpater 1.5]{BenderOrszag1978}.
-%The solution of the dynamic \eref{ODE2} is the second moment 
-%of the distribution of rescaled wealth as a function of time, namely
-%\be
-%\ave{y^2} = \frac{2\tau}{2\tau-\sigma^2} + \left(\ave{y_0^2} - \frac{2\tau}{2\tau-\sigma^2}\right) e^{-(2\tau-\sigma^2)t}.
-%\ee
-%This can be rewritten in terms of the variance of rescaled wealth, $V=\ave{y^2}-1$, as
-%\be
-%V(t) = V_\infty + (V_0 - V_\infty) e^{-(2\tau-\sigma^2)t},
-%\elabel{wvar}
-%\ee
-%where $V_0$ is the initial variance and
-%\be
-%V_\infty \equiv \frac{\sigma^2}{2\tau-\sigma^2}.
-%\ee
-%$V$ converges in time to the asymptote, $V_\infty$, provided the exponential in \eref{wvar} is decaying. This can be expressed as a condition on $\tau$,
-%\be
-%\boxed{
-%\tau > \tau_c \equiv \frac{\sigma^2}{2},
-%}
-%\elabel{wstab}
-%\ee
-%which defines the critical tax rate, $\tau_c$. Above this critical tax rate, $\tau>\tau_c$, the 
-%variance of the rescaled-wealth distribution stabilises. Below it, the variance grows beyond all bounds.
-%We believe that the divergence or convergence of the variance signals an important change
-%in systemic behavior, but we hasten to point out the following caveat: a finite second moment 
-%does not guarantee finiteness of higher moments. A deeper analysis of ODEs of the type of 
-%\eref{ODE2}, which we don't reproduce here, reveals that any finite wealth tax rate implies
-%that all moments of order $n>\frac{2\tau}{\sigma^2}+1$ diverge. Under the flat 
-%wealth tax investigated here, the wealth distribution never fully stabilizes. In the language often
-%used by economists in this debate, an ergodic wealth distribution does not exist for our model.
-%
-%Caveats aside, \eref{wvar} also allows us to identify a characteristic timescale over 
-%which the variance stabilises for supercritical taxation,
-%\be
-%T_s = \frac{1}{2\tau-\sigma^2}.
-%\ee
-%$\tau_c$ may be viewed as the tax rate at which $T_s$ diverges.
-%
-%Numerical simulations confirm that the above analytical results are informative for finite ensembles. 
-%\fref{var_wealth} compares the 
-%evolution of the empirical variance of the rescaled wealths of $N=10^4$ realisations of the 
-%stochastic wealth process in \eref{wsde} with the theoretical result for the infinite ensemble 
-%in \eref{wvar}. Parameter values were $\mu=0.05$, $\sigma^2=0.02$, and $\tau=0.1$ per 
-%unit time, of which the first two are realistic for a time unit of one year \cite{PetersAdamou2013} 
-%(assuming individual wealth processes share parameters with stock market indices). The 
-%differences are finite-sample effects.
-%\begin{figure}
-%\bc
-%\includegraphics[width=0.8\textwidth]{./chapter_3/figs/var_wealth.pdf}
-%\caption{Wealth tax. The empirical variance of the rescaled wealths of $N=10^4$ realisations of 
-%\eref{wsde} with uniformly-distributed initial wealths (red); the theoretical variance for the infinite 
-%ensemble, $V(t)$ (blue dashed); and the asymptotic theoretical variance, $V_\infty$ (black dotted). 
-%Parameter values are $\mu=0.05$, $\sigma^2=0.02$, and $\tau=0.1$ per unit time.}
-%\flabel{var_wealth}
-%\ec
-%\end{figure}
-%\fref{hist_wealth} shows the initial distribution of rescaled wealths, which was chosen to be uniform, 
-%and the final distribution at the end of the period shown in \fref{var_wealth}.
-%\begin{figure}
-%\bc
-%\includegraphics[width=0.8\textwidth]{./chapter_3/figs/hist_wealth.pdf}
-%\caption{Histograms of the initial (left) and final (right) empirical distributions of the rescaled 
-%wealth for the same realisations of \eref{wsde} used in \fref{var_wealth}.}
-%\flabel{hist_wealth}
-%\ec
-%\end{figure}
-%
-%The simulated parameter values give a critical tax rate of 1\% pa. This is broadly in line 
-%with genuine annual wealth and property taxes in the few countries in which they are 
-%levied. Under the simulated tax rate of 10\% pa, the stabilisation time is $T_s\approx6$ 
-%years. It is hard to imagine a wealth tax of this magnitude being politically feasible in the 
-%real world. In our simple model, the tax rate could be set either to achieve convergence 
-%of inequality to a desired level, reflected by $V_\infty$, or over a desired timescale, 
-%represented by $T_s$.
-%
-%It is interesting to connect this with the most widely levied wealth tax: the inheritance 
-%tax. In the UK this is levied at 40\% of the value of an individual's estate (above a 
-%certain threshold) upon death. We can surmise that an individual will typically hold 
-%most of his wealth for the human generation time of around 30 years, this being a 
-%sensible estimate of the time between inheriting or otherwise accumulating his wealth 
-%and passing it on. Using our plausible parameter values, an inheritance tax of 40\% 
-%corresonds to an annually compounded wealth tax of $1-(0.6)^{1/30} \approx 1.7\%$ 
-%pa and a stabilisation time of around 70 years. The former is close to and, notably, 
-%above the critical rate of 1\% pa, suggesting that variance stabilisation may be an 
-%influential criterion in the determination of our taxes.
-%
-%\subsubsection{Income tax}
-%\seclabel{Income_tax}
-%In our very simple model, we have seen that a flat wealth tax can stabilize
-%the variance of the rescaled-wealth distribution. In this section we show 
-%that in a similarly simple model an income tax can achieve the same result. 
-%We introduce a model of income tax under which a fraction, $0\leq\tau\leq1$, of 
-%each individual's determinsitic wealth increment, $\mu x\,dt$, is deducted and 
-%the total tax raised is redistributed equally. This is modelled by the stochastic wealth process,
-%\be
-%dx = x[\mu(1-\tau)\,dt + \sigma\,dW] + \mu\tau\ave{x}_N dt.
-%\elabel{isde}
-%\ee
-%Again, we consider the large-population limit $N\to\infty$, corresponding to the replacement 
-%$\ave{x}_N\to\ave{x}$. For positive drift, $\mu>0$, the deterministic increment, $\mu x\,dt$, is guaranteed to 
-%be positive. It can be thought of as the income derived from that individual's activities, 
-%such as employment, on which governments typically levy taxes. Note that $\tau$ in \eref{isde} is a dimensionless number, whereas it is
-%a rate of dimension ``per unit time'' in \eref{wsde}. The form of 
-%\eref{isde} is identical to \eref{wsde} with the parameter transformation 
-%$\tau\rightarrow\mu\tau$. Thus we can immediately deduce the dynamic for the rescaled wealth as
-%\be
-%dy = y(-\mu\tau\,dt + \sigma\,dW) + \mu\tau\,dt.
-%\elabel{itax}
-%\ee
-%The variance stabilisation condition analogous to \eref{wstab} becomes
-%\be
-%\boxed{
-%\tau > \tau_c \equiv \frac{\sigma^2}{2\mu}.
-%}
-%\elabel{icrit}
-%\ee
-%This defines the critical income tax, $\tau_c$, above which the variance converges to its asymptotic value,
-%\be
-%V_\infty = \frac{\sigma^2}{2\mu\tau-\sigma^2},
-%\ee
-%according to
-%\be
-%V(t) = V_\infty + (V_0 - V_\infty) e^{-(2\mu\tau-\sigma^2)t}.
-%\elabel{ivar}
-%\ee
-%Finally, the stabilisation time is
-%\be
-%T_s = \frac{1}{2\mu\tau - \sigma^2}.
-%\ee
-%
-%\fref{var_income} compares the evolution of the empirical variance of the rescaled wealths of $10^4$ realisations of the stochastic wealth process in \eref{isde} with the theoretical result for the infinite ensemble. Parameter values were $\mu=0.05$ and $\sigma^2=0.02$ per unit time, and $\tau=0.45$. The latter is the UK's limiting income tax rate for large incomes, which will be the determining tax rate for variance stabilisation.
-%\begin{figure}
-%\bc
-%\includegraphics[width=0.8\textwidth]{./chapter_3/figs/var_income.pdf}
-%\caption{Income tax. The empirical variance of the rescaled wealths of $10^4$ realisations of \eref{isde} with uniformly-distributed initial wealths (red); the theoretical variance for the infinite ensemble, $V(t)$ (blue dashed); and the asymptotic theoretical variance, $V_\infty$ (black dotted). Parameter values are $\mu=0.05$ and $\sigma^2=0.02$ per unit time, and $\tau=0.45$.}
-%\flabel{var_income}
-%\ec
-%\end{figure}
-%
-%The finite-sample deviations from the infinite-ensemble result are larger in \fref{var_income} 
-%than in \fref{var_wealth}. This is due entirely to the simulated parameter values: \eref{wsde} 
-%and \eref{isde} can be made equivalent by choosing different parameters. 
-%
-%\fref{hist_income} shows the initial distribution of rescaled wealths, which was chosen to be uniform, and the final distribution at the end of the period shown in \fref{var_income}.
-%\begin{figure}
-%\bc
-%\includegraphics[width=0.8\textwidth]{./chapter_3/figs/hist_income.pdf}
-%\caption{Histograms of the initial (left) and final (right) empirical distributions of the rescaled wealth for the same realisations of \eref{itax} used in \fref{var_income}.}
-%\flabel{hist_income}
-%\ec
-%\end{figure}
-%The distribution of wealths under income tax has an appreciably longer tail than under wealth tax. As before this is a function of the parameter choices. The simulated parameter values have a critical income tax rate of $\tau_c=0.2$ and a stabilisation time of $T_s=40$ years. Thus the UK sets its income tax at a level which, at least in this simple framework, has a variance stabilising effect.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1079,29 +845,10 @@ Economics is often concerned with growth and a growing quantity cannot be ergodi
 Studies of wealth distributions also employ this strategy. Individual wealth is modelled as a growing quantity. Dividing by the population average transforms this to a rescaled wealth, as in \secref{rescaled}, which is hypothesised to be ergodic. For example, \cite[p.~130]{BenhabibBisinZhu2011} ``impose assumptions \dots that guarantee the existence and uniqueness of a limit stationary distribution.'' The idea is to take advantage of the simplicity with which the stable distribution can be analysed, \eg to predict the effects of policies encoded in model parameters.
 
 % What is the problem? What are we going to do?
-There is, however, an elephant in the room. To our knowledge, the validity of the ergodic hypothesis for rescaled wealth has never been tested empirically. It's certainly invalid for the GBM model world we studied previously because, as we saw in \secref{rescaled}, rescaled wealth has an ever-broadening lognormal distribution. That doesn't seem to say much, as most reasonable people would consider our model world -- containing a population of individuals whose wealths multiply noisily and who never interact -- somewhat unrealistic! The model we are about to present will not only extend our understanding from this simple model world to one containing interactions, but also will allows us to test the hypothesis. This is because it has regimes, \ie combinations of parameters, for which rescaled wealth is and isn't ergodic. This contrasts with models typically used by economists, which have the ergodic hypothesis ``baked in.''
+There is, however, an elephant in the room. To our knowledge, the validity of the ergodic hypothesis for rescaled wealth has never been tested empirically. It's certainly invalid for the GBM model world we studied previously because, as we saw in \secref{rescaled}, rescaled wealth has an ever-broadening log-normal distribution. That doesn't seem to say much, as most reasonable people would consider our model world -- containing a population of individuals whose wealths multiply noisily and who never interact -- somewhat unrealistic! The model we are about to present will not only extend our understanding from this simple model world to one containing interactions, but also will allows us to test the hypothesis. This is because it has regimes, \ie combinations of parameters, for which rescaled wealth is and isn't ergodic. This contrasts with models typically used by economists, which have the ergodic hypothesis ``baked in.''
 
 % Convergence time
-If it is reasonable to assume a stable distribution exists, we must also consider how long convergence to would take after a change of parameters. It's no use if convergence in the model takes millennia, if we are using it to estimate the effect of a new tax policy over the next election cycle. Therefore, treating a stable model distribution as representative of the empirical wealth distribution implies an assumption of fast convergence.  As the late Tony Atkinson pointed out, that ``the speed of convergence makes a great deal of difference to the way in which we think about the model'' \cite{atkinson1969timescale}. We will also use our model to discuss this point. Without further ado, let us introduce it.
-
-%% Our model
-%% AA20170120 - introduced reallocation here to make subsequent comments understandable
-%Our model satisfies this condition. Its basis is that individual wealth undergoes noisy exponential growth. Social structure is represented by a wealth reallocation mechanism in which a fraction of everyone's wealth is pooled and shared. The sign of the reallocation rate parameter determines whether a stationary distribution exists: if positive (corresponding to reallocation from richer to poorer) then it does; if negative (from poorer to richer) then it doesn't.
-%
-%We estimate model parameters using three different datasets of historical wealth shares in the US population. These estimated parameters -- and not an {\it a priori} assumption -- tell us whether a stationary distribution exists. When it does, it has a Pareto tail, consistent with data and standard models~\cite{Pareto1897,DragulescuYakovenko2001}. We evaluate convergence times, when convergence is possible, to assess whether the ergodic hypothesis is acceptable in practice.
-%
-%%Our results
-%% AA20170120 - added comment on negative reallocation
-%Our findings invalidate the ergodic hypothesis. The fitted reallocation rate is not robustly positive for any dataset we analyze. Indeed, for one dataset we find it to be consistently negative for the last thirty years or so. We cannot overstate our surprise at this finding. Most theorists would consider a model in which individual wealths grow independently, \ie with no reallocation, an extreme and unrealistic model of an advanced Western economy with socio-political institutions and infrastructure. We would expect to infer consistent positive reallocation from data for such an economy. We find the opposite: that, from the 1980s to the present, the US economy is best described in our model as one in which wealth is systematically reallocated from poorer to richer.
-%
-%% AA20170120 - merged sentence from last para and added remark on negative reallocation
-%Other datasets yield reallocation rates for which a stationary distribution does exist, but with convergence times of decades or centuries. Whichever data are used, our analysis does not provide the unequivocal endorsement of the ergodic hypothesis that would justify its ubiquitous use in the field. Policy recommendations based on models which assume the existence of a stationary distribution and fast convergence may be ineffective in practice. Worse still, such inappropriately-constrained models may paint a misleading picture of reality, for example that with taxation and public spending our economies are positively redistributive. This could lead to policy prescriptions which run counter to policy goals.
-%
-%Our contribution is threefold. Firstly, we develop a theoretical model which describes the dynamics of wealth and allows us to test empirically the validity of the ergodic hypothesis. Naturally, this cannot be done using models in which the ergodic hypothesis is implicit.
-%
-%Secondly, we use the model to assess how fast the wealth distribution converges to its asymptotic form, when this exists. We find convergence times greater than the typical intervals between changes in policy and other determinants of the distribution. This casts doubt over the ability of models with fast convergence to interpret observed changes in inequality and yield effective policy.
-%
-%Indiscriminate use of the ergodic hypothesis can mean that non-ergodic processes are analyzed with methods appropriate only for ergodic processes. This is a severe methodological problem, which we argue is behind many open problems in economics. Our work demonstrates the importance of establishing empirically and analytically which observables may be treated legitimately as ergodic.
+If it is reasonable to assume a stable distribution exists, we must also consider how long convergence to would take after a change of parameters. It's no use if convergence in the model takes millennia, if we are using it to estimate the effect of a new tax policy over the next election cycle. Therefore, treating a stable model distribution as representative of the empirical wealth distribution implies an assumption of fast convergence.  As the late Tony Atkinson pointed out, ``the speed of convergence makes a great deal of difference to the way in which we think about the model'' \cite{atkinson1969timescale}. We will also use our model to discuss this point. Without further ado, let us introduce it.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1196,7 +943,7 @@ For positive reallocation, \eref{rgbm_ou_re} and extensions of it have received 
 \paragraph{\underline{Negative $\tau$}}
 \mbox{}
 
-For $\tau<0$ the model exhibits mean repulsion rather than reversion. The ergodic hypothesis is invalid and no stationary wealth distribution exists. The population splits into those above the mean and those below the mean. Whereas in RGBM with non-negative $\tau$ it is impossible for wealth to become negative, negative $\tau$ leads to negative wealth. No longer is total economic wealth a limit to the wealth of the richest individual because the poorest develop large negative wealth. The wealth of the rich in the population increases exponentially away from the mean, and the wealth of the poor becomes negative and exponentially large in magnitude, see \Fref{regimes}. Qualitatively, this echoes the findings that the rich are experiencing higher growth rates of their wealth than the poor~\cite{Piketty2014,wolff2014household} and that the cumulative wealth of the poorest 50 percent of the American population was negative during 2008--2013~\cite{Rios20162013,WID2017}.
+For $\tau<0$ the model exhibits mean repulsion rather than reversion. The ergodic hypothesis is invalid and no stationary wealth distribution exists. The population splits into those above the mean and those below the mean. Whereas in RGBM with non-negative $\tau$ it is impossible for wealth to become negative, negative $\tau$ leads to negative wealth. No longer is total economic wealth a limit to the wealth of the richest individual because the poorest develop large negative wealth. The wealth of the rich in the population increases exponentially away from the mean, and the wealth of the poor becomes negative and exponentially large in magnitude, see \Fref{regimes}.
 
 % AA comment on social mobility
 Such splitting of the population is a common feature of non-ergodic processes. If rescaled wealth were an ergodic process, then individuals would, over long enough time, experience all parts of its distribution. People would spend 99 percent of their time as ``the 99 percent'' and 1 percent of their time as ``the 1 percent''. Therefore, the social mobility implicit in models that assume ergodicity might not exist in reality if that assumption is invalid. That inequality and immobility have been linked~\cite{Corak2013,LiuETAL2013,berman2017} may be unsurprising if both are viewed as consequences of non-ergodic wealth or income.
@@ -1258,41 +1005,6 @@ Such splitting of the population is a common feature of non-ergodic processes. I
 
 \subsubsection{Derivation of the stable distribution}
 \seclabel{RGBM_stable}
-%In transforming the differential equation for wealth, $x$, into a differential equation for rescaled wealth, $y$, we use the approximation $\ave{x\left(t\right)}_N=\ave{x\left(0\right)}_N e^{\mu t}$. In other words we assume that the population-average wealth grows like the expectation value of wealth. 
-%
-%It is known that this approximation is invalid for long times~\cite{PetersKlein2013}. Specifically, over long times $\ave{x\left(t\right)}_N$ grows at the exponential rate $\mu-\sigma^2/2$, whereas the expectation value, $\ave{x\left(t\right)}$, grows at the exponential rate $\mu$.
-%
-%This raises the question for how long our approximation is valid. 
-%The answer depends on the sample size $N$, as it must because the expectation value is just the $N\to\infty$ limit of the population average.
-%To assess whether the fluctuations in $\ave{x\left(t\right)}_N$ are important, we compare the variance of $\ave{x\left(t\right)}_N$ to the expectation value squared (equivalent to comparing the standard deviation to the expectation value). 
-%If the variance is smaller than the expectation value squared, then the approximation is acceptable. 
-%If this is not the case, then we cannot use this approximation.
-%
-%The calculations that use the approximation relate to properties of the stationary distribution. This exists for $\tau$ above some positive threshold, \ie with sufficiently strong reallocation. The coupling of wealth trajectories through reallocation lengthens the timescale over which the population average resembles the expected wealth. Therefore, we are on safe ground if we can show that the timescale on which the approximation is valid when $\tau=0$ is longer than practically relevant timescales. This is a sufficient condition for the approximation to be valid when $\tau>0$.
-%
-%This means we work with a population of $N$ independent GBMs, which makes the computation of the variance easy. GBM is log-normally distributed,
-%\be
-%\ln\left[x\left(t\right)\right]\sim \ln\mathcal{N}\ln\left(x\left(0\right)+\left[\mu-\frac{\sigma^2}{2}\right] t, \sigma^2 t\right).
-%\ee
-%From this, it follows that the expectation value of a single trajectory grows as
-%\be
-%\ave{x\left(t\right)}=x\left(0\right)e^{\mu t},
-%\ee
-%and the variance grows as
-%\be
-%V\left[x\left(t\right)\right]=x\left(0\right)^2 e^{2\mu t}\left[e^{\sigma^2 t}-1\right].
-%\ee
-%
-%Because the wealth trajectories are independent, the variance of an average over $N$ trajectories is one-$N^{\text{th}}$ of the variance for the individual trajectory.  
-%We are now in a position to compare standard deviation and average as follows
-%\be
-%\frac{V\left[\ave{x\left(t\right)}_N\right]}{\ave{\ave{x\left(t\right)}_N}^2} = \frac{e^{\sigma^2 t}-1}{N}\,.
-%\ee
-%So long as this is less than one, $\ave{x\left(t\right)}$ is a good approximation for $\ave{x\left(t\right)}_N$. Rearranging and taking $N\gg1$ gives an upper bound on the time for which this approximation holds:
-%\be
-%t < t_c \equiv \frac{\ln N}{\sigma^2}.
-%\ee
-
 In this section we will sketch the argument for why we can make the self-averaging approximation, \eref{rgbm_self}, in RGBM with sufficiently fast positive reallocation, \eref{tau_c}. This is shown rigorously in \cite{Bouchaud2015b}. Then we will solve the Fokker-Planck equation for the rescaled wealth and derive the inverse gamma distribution, \eref{disti}. If you are happy to believe the quoted results in \secref{RGBM_behaviour}, then you can skip the Fokker-Planck bit safely.
 
 We presented arguments in \secref{sketch} for why wealth in GBM is self-averaging, $\ave{x(t)}_N\sim\ave{x(t)}=\exp(\mu t)$ for short time. By mapping from GBM to the random energy model in \secref{REM}, we showed that ``short time'' means $t<t_c$, where $t_c=2\ln N/\sigma^2$. We can think of this as follows: $t_c$ is the timescale over which the inequality-increasing effects of noisy multiplicative growth drive wealths apart, such that a finite sample of wealths stops self-averaging and becomes dominated by a few trajectories.
@@ -1330,7 +1042,7 @@ with the gamma function $\Gamma\left(\zeta\right) = \int_0^\infty x^{\zeta-1} e^
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Moments and convergence times}
-\label{RGBM_moments}
+\seclabel{RGBM_moments}
 The inverse gamma distribution, \eref{disti}, has a power-law tail. This means that, for positive reallocation, while some of the lower moments of the stable rescaled wealth distribution may exist, higher moments will not. Specifically, the $k^\text{th}$ moment diverges if $k>\zeta$. 
 
 If we find parameters consistent with positive reallocation when we fit our model to data, we will be interested in whether certain statistics -- such as the variance -- exist. We will also want to know how long it takes the distribution to converge sufficiently to its stable form for them to be meaningful. Here we derive a condition for the convergence of the variance and calculate its convergence time, noting also the general procedure for other statistics.
@@ -1341,37 +1053,37 @@ V\left(y\right)=\ave{y^2}-\ave{y}^2
 \ee
 We thus need to find $\ave{y}$ and $\ave{y^2}$ in order to determine the variance. The first moment of the rescaled wealth is, by definition, $\ave{y}=1$. 
 
-To find the second moment, we start with the SDE for the rescaled wealth:
+To find the dynamic of the second moment, we start with the SDE for the rescaled wealth,
 \be
-dy = \sigma y\,dW - \tau\left(y - 1\right)\,dt.
+dy = \sigma y\,dW - \tau\left(y - 1\right)\,dt,
 \elabel{rescaledSDE}
 \ee
-This is an It\^o process, which implies that an increment, $df$, in some (twice-differentiable) function $f\left(y,t\right)$ will also be an It\^o process, and such increments can be found by Taylor-expanding to second order in $dy$ as follows:
+and follow a now familiar procedure. We insert $f\left(y,t\right)=y^2$ into \Ito's formula,
 \be
-df = \frac{\partial f}{\partial t} dt + \frac{\partial f}{\partial y} dy + \frac{1}{2}\frac{\partial^2 f}{\partial y^2} dy^2\,.
+df = \frac{\partial f}{\partial t} dt + \frac{\partial f}{\partial y} dy + \frac{1}{2}\frac{\partial^2 f}{\partial y^2} dy^2
 \ee
-We insert $f\left(y,t\right)=y^2$ and obtain
+to obtain
 \be
-d \left(y^2\right) = 2ydy + \left(dy\right)^2\,.
+d \left(y^2\right) = 2ydy + dy^2.
 \elabel{diff2}
 \ee
-
-We substitute $dy$ in \Eref{diff2}, which yields terms of order $dW$, $dt$, $dW^2$, $dt^2$, and $\left(dW\,dt\right)$. The scaling of Brownian motion allows us to replace $dW^2$ by $dt$, and we ignore $o\left(dt\right)$ terms. This yields
+We substitute \eref{diff2} for $dy$ to get terms at orders $dW$, $dt$, $dW^2$, $dt^2$, and $dWdt$. The scaling of Brownian motion allows us to replace $dW^2$ by $dt$ and we ignore terms at $o\left(dt\right)$. This yields
 \bea
-d \left(y^2\right) = 2\sigma y^2\,dW - \left(2\tau-\sigma^2\right) y^2\,dt + 2\tau y\,dt %+ \tau^2\left(y - 1\right)^2\,dt^2 - \st{\tau\left(y - 1\right)\,\sigma y\,dW\,dt}
+d \left(y^2\right) = 2\sigma y^2\,dW - \left(2\tau-\sigma^2\right) y^2\,dt + 2\tau y\,dt.
+%+ \tau^2\left(y - 1\right)^2\,dt^2 - \st{\tau\left(y - 1\right)\,\sigma y\,dW\,dt}
 \eea
-Taking expectations on both sides, and using $\ave{y}=1$, produces an ordinary differential equation for the second moment:
+Taking expectations on both sides and noting that $\ave{y}=1$ gives us an ordinary differential equation for the second moment:
 \be
-\frac{d \langle y^2 \rangle}{dt} = -\left(2\tau - \sigma^2\right) \langle y^2 \rangle + 2\tau
+\frac{d\ave{y^2}}{dt} = -\left(2\tau - \sigma^2\right) \ave{y^2} + 2\tau
 \elabel{avediff2}
 \ee
 with solution
 \be
-\langle y\left(t\right)^2 \rangle = \frac{2\tau}{2\tau - \sigma^2} + \left(\langle y\left(0\right)^2 \rangle - \frac{2\tau}{2\tau - \sigma^2}\right) e^{-\left(2\tau - \sigma^2\right)t}\,.
+\ave{y\left(t\right)^2} = \frac{2\tau}{2\tau - \sigma^2} + \left(\ave{y\left(0\right)^2} - \frac{2\tau}{2\tau - \sigma^2}\right) e^{-\left(2\tau - \sigma^2\right)t}.
 \elabel{avediff3}
 \ee
 
-The variance $V\left(t\right)=\langle y\left(t\right)^2 \rangle-1$ therefore follows
+The variance $V\left(t\right)=\ave{y\left(t\right)^2}-1$ therefore follows
 \be
 V\left(t\right) = V_{\infty}+\left(V_0 - V_{\infty}\right)e^{-\left(2\tau - \sigma^2\right)t}\,,
 \elabel{var1}
@@ -1381,86 +1093,37 @@ where $V_0$ is the initial variance and
 V_{\infty} = \frac{2\tau}{2\tau - \sigma^2}\,.
 \elabel{varinf}
 \ee
-$V$ converges in time to the asymptote, $V_{\infty}$, provided the exponential in \Eref{var1} is decaying. 
+$V$ converges in time to the asymptote, $V_{\infty}$, provided the exponential in \eref{var1} is decaying. 
 This can be expressed as a condition on $\tau$
 \be
 \tau > \frac{\sigma^2}{2},
 \ee
-which is the same as the condition we noted previously for the $2^\text{nd}$ moment to exist: $\zeta>2$.
+which is the same as the condition we noted previously for the second moment to exist: $\zeta>k$ where $k=2$.
 
-Clearly, for negative values of $\tau$ the condition cannot be satisfied, and the variance (and inequality) of the wealth distribution will diverge. In the regime where the variance exists, $\tau > \sigma^2/2$, it also follows from \Eref{var1} that the convergence time of the variance is $1/\left(2\tau - \sigma^2\right)$.
+Clearly, for negative values of $\tau$ the condition cannot be satisfied, and the variance (and inequality) of the wealth distribution will diverge. In the regime where the variance exists, $\tau > \sigma^2/2$, it also follows from \eref{var1} that the convergence time of the variance is $1/\left(2\tau - \sigma^2\right)$.
 
 As $\tau$ increases, increasingly high moments of the distribution become convergent to some finite value. The above procedure for finding the second moment (and thereby the variance) can be applied to the $k^\text{th}$ moment, just by changing the second power $y^2$ to $y^k$, and any other cumulant can therefore be found as a combination of the relevant moments. For instance, \cite{LiuSerota2016} also compute the third cumulant.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{comment}
-
-\subsubsection{United States wealth data}
+\subsubsection{Fitting United States wealth data}
 \seclabel{RGBM_data}
+We have introduced the RGBM model and understood its basic properties. It is a simple model of an interacting population of noisy multiplicative growers. We expect it to be more realistic than GBM ($\tau=0$) because we know that in the real world people interact. In particular, large populations have over centuries developed public institutions and infrastructure, to which everyone contributes and from which everyone benefits. At first glance, therefore, we might expect to find that RGBM with positive $\tau$ fits real wealth data better than GBM or, indeed, RGBM with negative $\tau$.
 
-\paragraph{Wealth share data}
+Additionally, if this is true and if associated convergence times are shorter than the timescales of policy changes, it would indicate that the ergodic hypothesis is warranted and a helpful modelling assumption. If not, then the hypothesis would be unjustified and could be acting as a serious constraint on models of economic inequality, generating misleading analyses and recommendations.
 
-We analyze the wealth shares of the top quantiles of the US population, as estimated by three sources using different methods:
+In \cite{BermanPetersAdamou2017} we fit the RGBM model to historical wealth data from the United States for the last hundred years. We won't include full technical description of this empirical analysis here. It would be too long and our main aim is to communicate the ideas we use to think about problems and build models. If you want to know more, please read the paper (and let us know what you think!) However, the results are interesting and, to us at least, a little shocking, so we include a brief summary.
 
+The basic setup is to fix the values of $\mu$, $\sigma$, and $N$ in our RGBM model using data about, respectively, aggregate economic growth, stock market volatility, and population data; and then to find by numerical simulation of \eref{rgbm} the time series of $\tau(t)$ values which best reproduces historical wealth shares in the United States. The wealth share, $S_q(t)$, is a type of inequality measure. It is defined as the proportion of total wealth owned by the richest fraction $q$ of the population. So, for example, $S_{0.1}=0.8$ means that the richest $10\%$ of the population own $80\%$ of the total wealth. Reproducing the historical wealth shares is one way of reproducing approximately the level of inequality in the wealth distribution, and the nice thing is that economists Emmanuel Saez and Gabriel Zucman have estimated around a century's worth of wealth shares for the United States \cite{SaezZucman2014}.
+
+Fitting the model to these data will address two main questions:
 \bi
-\item
-The income tax method (``capitalization method'') that uses information on capital income from individual income tax returns to estimate the underlying stock of wealth~\cite{SaezZucman2014,WID2017}. ``If we can observe capital income $k = rW$, where $W$ is the underlying value of an asset and $r$ is the known rate of return, then we can estimate wealth based on capital income and capitalization factor $1/r$ defined using the appropriate choice of rate of return''~\cite[p.~54] {kopczuk2015we}. Data availability: the wealth shares of the top 5, 0.5, 0.1 and 0.01 percent for 1917--2012 and of the top 10 and 1 percent for 1913--2014 (annually).
-\item
-The estate multiplier method that uses data from estate tax returns to estimate wealth for the upper tail of the wealth distribution~\cite{kopczuk2004top}. ``The basic idea is to think of decedents as a sample from the living population. The individual-specific mortality rate $m_i$ becomes the sampling rate. If $m_i$ is known, the distribution for the living population can be simply estimated by reweighting the data for decedents by inverse sampling weights $1/m_i$, which are called `estate multipliers' ''~\cite[p.~53] {kopczuk2015we}. Data availability: the wealth shares of the top 1, 0.5, 0.25, 0.1, 0.05 and 0.01 percent for 1916--2000 (annually, with several missing years).
-\item
-The survey-based method that uses data from the Survey of Consumer Finances (SCF) conducted by the Federal Reserve, plus defined-benefit pension wealth, plus the wealth of the members of the Forbes 400~\cite{bricker2016measuring2}. Data availability: the wealth shares of the top 1 and 0.1 percent for 1989--2013 (for every three years).
+\item Is the ergodic hypothesis valid for rescaled wealth in the United States? For it to be valid, fitted values of $\tau\left(t\right)$ must be robustly positive.
+\item If $\tau\left(t\right)$ is robustly positive, is convergence of of the distribution to its stable form fast enough for the distribution to be used as a representative of the empirical wealth distribution?
 \ei
+Note that we have relaxed the model slightly. $\tau$ is a fixed parameter in \eref{rgbm} but we allow it to vary with time in our empirical analysis.
 
-These sources are based on different datasets and for different time periods. In the overlapping periods, they sometimes report markedly different wealth share estimates (see \Fref{data1}).
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=1.0\textwidth] {./chapter_3/figs/data.eps}
-\caption{The top wealth shares in the US, 1913--2014. Sources --~\cite{SaezZucman2014,WID2017} (blue);~\cite{kopczuk2004top} (black);~\cite{bricker2016measuring2} (grey).}
-\flabel{data1}
-\end{figure}
-
-\cite{kopczuk2015we} reviewed the advantages and disadvantages of the different methods (see also the comment by Kopczuk on~\cite{bricker2016measuring2}). He observed that ``the survey-based and estate tax methods suggest that the share of wealth held by the top 1 percent has not increased much in recent decades, while the capitalization method suggests that it has''~\cite[p.~48] {kopczuk2015we}.
-
-Which method best reflects the recent trends in wealth inequality is a matter of ongoing debate. Each method suffers from bias. For example, the survey-based method suffers from some underrepresentation of families who belong to the top end of the distribution. The income tax method suffers from some practical difficulties -- ``not all categories of assets generate capital income that appears on tax returns. [\ldots] Owner-occupied housing does not generate annual taxable capital income''~\cite[p. 54] {kopczuk2015we}. The estate tax method suffers from the need to accurately estimate mortality rates for the wealthy, known to be lower than those for the rest of the population. We refer the reader to~\cite{kopczuk2015we,bricker2016measuring2} for a thorough discussion. We analyze each data source separately.
-
-\paragraph{Wealth Growth Rate}
-
-% AA20170120 - added new para and deleted old paras
-We find numerically that the results of our analysis do not depend on $\mu$. This is because wealth shares depend only on the distribution of rescaled wealth and, for $\tau>0$, it is possible to scale out $\mu$ completely from the wealth dynamic to obtain \Eref{rgbm_ou_re} for rescaled wealth. The fitted $\tau<0$ values we find are not large or persistent enough to make our simulations significantly $\mu$-dependent. However, formally, since we allow negative $\tau$, we must simulate \Eref{rgbm} and not \Eref{rgbm_ou_re}. This requires us to specify a value of $\mu$, which we estimate as $\mu=0.021\pm 0.001 \text{ year}^{-1}$ by a least-squares fit of historical per-capita private wealth in the US~\cite{PikettyZucman2014} to an exponential growth curve.
-
-\paragraph{Volatility}
-
-We must also specify the volatility parameter, $\sigma$, in \Eref{rgbm}. In principle, this can vary with time. We have no access to real individual wealth trajectories, so we resort to estimating $\sigma\left(t\right)$ from other data. We find numerically that our results are not very sensitive to the details, so we need only a good ``ballpark'' estimate. We obtain that by assuming that the volatility in individual wealths tracks the volatility in the values of the companies that constitute the commercial and industrial base of the national economy. Therefore, for each year, we estimate $\sigma\left(t\right)$ as the standard deviation of daily logarithmic changes of the Dow Jones Industrial Average~\cite{Quandl2016}, which we annualise by multiplying by $\left(250/\text{year}\right)^{1/2}$. The values usually lie between $0.1$ and $0.2 \text{ year}^{-1/2}$, with an average of $0.16\text{ year}^{-1/2}$. Running our empirical analysis with constant $\sigma$ in this range had little effect on our results (see Appendix \ref{app:fixed_sig}) so, for simplicity, we present the analysis using $\sigma\left(t\right)=0.16\text{ year}^{-1/2}$ for all $t$.
-
-Fitting $\sigma$ to stock market data means that we have only one model parameter -- the effective reallocation rate, $\tau\left(t\right)$ -- to fit to the historical wealth shares.
-
-\paragraph{Empirical Analysis}\label{sec:analysis}
-The goal of the empirical analysis is to estimate $\tau\left(t\right)$ from the historical wealth data, using RGBM as our model. This estimation allows us to address two main questions:
-
-\bi
-\item[1.] Is it valid to assume ergodicity for the dynamics of relative wealth in the US? For the ergodic hypothesis to be valid, fitted values of $\tau\left(t\right)$ would have to be robustly positive.
-\item[2.] If $\tau\left(t\right)$ is indeed positive, how long does it take for the distribution to converge to its asymptotic form?
-\ei
-
-We fit a time series, $\tau\left(t\right)$, that reproduces the annually observed wealth shares in the three datasets (see \secref{data}): Income tax-based~\cite{SaezZucman2014,WID2017}, estate tax-based~\cite{kopczuk2004top} and survey-based~\cite{bricker2016measuring2}. The wealth share, $S_q$, is defined as the proportion of total wealth, $\sum_i^N x_i$, owned by the richest fraction $q$ of the population, \eg $S_{10\%}=80 \text{ percent}$ means that the richest 10 percent of the population own 80 percent of the total wealth.
-
-For an empirical wealth share time series, $S^{\text{data}}_q\left(t\right)$, we proceed as follows.
-
-\bi
-\item[ -- Step 1]
-Initialise $N$ individual wealths, $\{x_i\left(t_0\right)\}$, as random variates of the inverse gamma distribution with parameters chosen to match $S^{\text{data}}_q\left(t_0\right)$.
-\item[ -- Step 2]
-Propagate $\{x_i\left(t\right)\}$ according to \Eref{rgbm} over $\Dt$,
-%OP changed this: $\Dt$ is not always one year.
-using the value of $\tau$ that minimises the difference between the wealth share in the modelled population, $S^{\text{model}}_q\left(t+\Dt, \tau\right)$, and $S^{\text{data}}_q\left(t+\Dt\right)$. We use the Nelder-Mead algorithm~\cite{NelderMead1965}.
-\item[ -- Step 3]
-Repeat Step 2 until the end of the time series.
-\ei
-
-We consider historical wealth shares of the richest $q=$ 10, 5, 1, 0.5, 0.25, 0.1, 0.05 and 0.01 percent and obtain time series of fitted effective reallocation rates, $\tau_q\left(t\right)$, shown in \Fref{tau}.
-For each value of $q$ we perform a run of the simulation for $N=10^8$. Since in practice $dW$ is randomly chosen, each run of the simulation will result in slightly different $\tau_q\left(t\right)$ values. However, we found that the differences between such calculations are negligible. 
+\Fref{tau} (top) shows the results of fitting the RGBM model to the wealth share data in \cite{SaezZucman2014}. There are large annual fluctuations in $\tau_q\left(t\right)$ (black line) but we are more interested in longer-term changes in reallocation driven by structural economic and political changes. To show these, we smooth the data by taking a central 10-year moving average, $\widetilde{\tau}_q\left(t\right)$ (red line), where the window is truncated at the ends of the time series. We also show the uncertainty in this moving average (red envelope).
 
 \begin{figure}[!htb]
 \centering
@@ -1469,70 +1132,12 @@ For each value of $q$ we perform a run of the simulation for $N=10^8$. Since in 
 \flabel{tau}
 \end{figure}
 
-\Fref{tau} (top) shows large annual fluctuations in $\tau_q\left(t\right)$. We are interested in longer-term changes in reallocation driven by structural economic and political changes. To elucidate these we smooth the data by taking a central 10-year moving average, $\widetilde{\tau}_q\left(t\right)$, where the window is truncated at the ends of the time series. To ensure the smoothing does not introduce artificial biases, we reverse the procedure and use $\widetilde{\tau}_q\left(t\right)$ to propagate the initially inverse gamma-distributed $\{x_i\left(t_0\right)\}$ and determine the wealth shares $S^{\text{model}}_q\left(t\right)$. The good agreement with $S^{\text{data}}_q\left(t\right)$ suggests that the smoothed $\widetilde{\tau}_q\left(t\right)$ is meaningful, see \Fref{tau} (bottom).
+To ensure the smoothing does not introduce artificial biases, we reverse the procedure and use $\widetilde{\tau}_q\left(t\right)$ to propagate the initially inverse gamma-distributed wealths and determine the wealth shares $S^{\text{model}}_q\left(t\right)$. The good agreement with $S^{\text{data}}_q\left(t\right)$ suggests that the smoothed $\widetilde{\tau}_q\left(t\right)$ is meaningful, see \Fref{tau} (bottom).
 
-For the income tax method wealth shares~\cite{SaezZucman2014}, the effective reallocation rate, $\widetilde{\tau}\left(t\right)$, has been negative -- \ie from poorer to richer -- since the mid-1980s. This holds for all of the inequality measures we derived from this dataset.
+The ``take home'' is this: while the effective reallocation rate, $\widetilde{\tau}\left(t\right)$, was positive for most of the last hundred years, it was negative -- \ie reallocation from poorer to richer -- from the mid-1980s onwards. Furthermore, even when $\tau\left(t\right)$ was positive, associated convergence times (estimated both by numerical simulation and by plugging fitted model parameters into the results of \secref{RGBM_moments}) were very long compared to the typical times between policy changes -- from several decades to several centuries. This makes the answer to both our questions above a resounding ``No.''
 
-For the survey-based wealth shares~\cite{bricker2016measuring2}, we observe briefer periods in which $\widetilde{\tau}\left(t\right) < 0$. The same is true for the estate tax data~\cite{kopczuk2004top}, see \Fref{shares_comp}. When $\tau\left(t\right)$ is positive, relevant convergence times are very long compared to the time scales of policy changes, namely at least several decades.
+What shocked us most when we first encountered these results was the existence of long periods with negative reallocation. We began the analysis imagining that GBM -- \ie $\tau=0$, no interactions -- was a really crazy model of the real world. After all, we personally pay our taxes and use public services, and the London Mathematical Laboratory is supported by generous charitable reallocations! We imagined that we would see $\tau>0$ but that it might be so small that convergence times would be too long for the ergodic hypothesis to be useful. Instead we found that, recently in the Unites States at least, reallocation has been consistently negative. In our model, this corresponds to wealths being driven apart, populations splitting into groups with positive and negative wealths, and no convergence to a stable distribution of rescaled wealth.
 
-All three datasets indicate that making the ergodic hypothesis is an unwarranted restriction on models and analyses. The hypothesis makes it impossible to observe and reason about the most dramatic qualitative features of wealth dynamics, such as rising inequality, negative reallocation, negative wealth, and social immobility.
+In retrospect, perhaps we shouldn't have been so surprised. Qualitatively, our results echo the findings that the rich are experiencing higher growth rates of their wealth than the poor~\cite{Piketty2014,wolff2014household} and that the cumulative wealth of the poorest 50 percent of the American population was negative during 2008--2013~\cite{Rios20162013,WID2017}.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=1.0\textwidth] {./chapter_3/figs/tau_top1_top0i1_datasets.eps}
-\caption{Effective reallocation rates for different datasets.}
-\flabel{shares_comp}
-\end{figure}
-
-\paragraph{Convergence times}
-
-In the ergodic regime it is possible to calculate how fast the wealth shares of different quantiles converge to their asymptotic value. We do this numerically. Starting with a population of equal wealths and assuming $\mu=0.021 \text{ year}^{-1}$, $\sigma=0.16 \text{ year}^{-1/2}$, and $\tau = 0.04\text{ year}^{-1}$, we let the system equilibrate for 3000 years, long enough for the distribution to reach its asymptotic form to numerical precision. We then create a ``shock'', by changing $\tau$ to a different ``shock value'', and allow the system to equilibrate again for 3000 years, see top panel of \Fref{conv}. Following the shock, the wealth shares converge to their asymptotic values. We fit this convergence numerically with an exponential function and interpret the inverse of the exponential convergence rate as the convergence time. The bottom panel of \Fref{conv}  shows the convergence times versus the shock value of $\tau$.
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=1.0\textwidth] {./chapter_3/figs/convergence.eps}
-\caption{Wealth share convergence time. Top: The convergence of the wealth share for $q=$ 10 percent (blue), $q=$ 1 percent (yellow) and $q=$ 0.1 percent (purple) following a change in the value of $\tau$ from $0.04\text{ year}^{-1}$ to $0.03\text{ year}^{-1}$ (solid), $0.025\text{ year}^{-1}$ (dashed) and $0.02\text{ year}^{-1}$ (dotted). Bottom: The wealth share exponential convergence time for $q=$ 10 percent (blue), $q=$ 1 percent (yellow) and $q=$ 0.1 percent (purple) as a function of $\tau$.}
-\flabel{conv}
-\end{figure}
-
-In addition, it is possible to calculate the convergence time of the variance of the stationary distribution (and other cumulants and moments of interest). In the ergodic regime the stationary distribution has a finite variance only if $\tau > \sigma^2/2$~\cite{LiuSerota2016}. Convergence of the actual variance to the stationary variance occurs exponentially over a timescale $1/(2\tau - \sigma^2)$. \Fref{convar} shows the convergence times for different values of $\sigma$. See Appendix \ref{app:var_conv} for more details.
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=1.0\textwidth] {./chapter_3/figs/variance_convergence.eps}
-\caption{Variance convergence time}
-\flabel{convar}
-\end{figure}
-
-Convergence times for wealth shares and variance are long, ranging from a few decades to several centuries. This implies that empirical studies which assume ergodicity and fast convergence will be inconsistent with the data. To test this, we simulate such a study by performing a different RGBM parameter fit. We find the reallocation rates, $\tau^\text{eqm}_q\left(t\right)$, that generate stationary distributions consistent with observed wealth shares. In other words, we assume instantaneous convergence.
-
-\Fref{asymptau} contrasts $\tau^\text{eqm}_{1\%}\left(t\right)$ assuming ergodicity with $\widetilde{\tau}_{1\%}\left(t\right)$ without assuming ergodicity (using the income tax method dataset). If convergence were always possible and fast, then the two values would be identical within statistical uncertainties. They are not. In addition, the generally large discrepancies between the wealth inequality implied by $\tau^\text{eqm}_{1\%}\left(t\right)$ (bottom panel, \Fref{asymptau}, green line) and as observed (bottom panel, \Fref{asymptau}, blue line) indicate that the wealth distribution does not stay close to its asymptotic form. This means that the long convergence times we calculate are a practical methodological problem for conventional studies.
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=1.0\textwidth] {./chapter_3/figs/tau_eqm_top1.eps}
-\caption{Comparison of dynamic and equilibrium reallocation rates. Top: $\widetilde{\tau}_{1\%}\left(t\right)$ (red, same as in the top of \Fref{tau}). $\tau^\text{eqm}_{1\%}\left(t\right)$ (green), defined such that $\lim_{t'\to\infty} S^{\text{model}}_{1\%}\left(t',\tau^\text{eqm}_{1\%}\left(t\right)\right)=S^{\text{data}}_{1\%}\left(t\right)$. It is impossible by design for this value to be negative. The significant difference between the red and green lines demonstrates that the fast convergence assumption is invalid for the problem under consideration. Bottom: $S^{\text{data}}_{1\%}$ (blue), $S^{\text{model}}_{1\%}$ based on the 10-year moving average $\widetilde{\tau}_{1\%}\left(t\right)$ (red), based on $\tau^\text{eqm}_{1\%}\left(t\right)$ (green). The reallocation rates found under the fast convergence assumption generate model wealth shares which bear little relation to reality.}
-\flabel{asymptau}
-\end{figure}
-
-\paragraph{Conclusions}
-
-Studies of economic inequality often assume ergodicity of relative wealth. This assumption also goes under the headings of equilibrium, stationarity, or stability~\cite{AdamouPeters2016}. Specifically, it is assumed that:
-\bi
-\item[1.] the system can equilibrate, \ie a stationary distribution exists to which the observed distribution converges in the long-time limit; and
-\item[2.] the system equilibrates quickly, \ie the observed distribution gets close to the stationary distribution after a time shorter than other relevant timescales, such as the time between policy changes.
-\ei
-Assumption 2 is often left unstated, but it is necessary for the stationary (model) distribution to resemble the observed (real) distribution. This matters because the stationary distribution is often a key object of study -- model parameters are found by fitting the stationary distribution to observed inequality, and effects of various model parameters on the stationary distribution are explored.
-
-We do not assume ergodicity. Fitting $\tau$ in RGBM allows the data to speak without constraint as to whether the ergodic hypothesis is valid. We find it to be invalid because:
-\bi
-\item[A.] We observe negative $\tau$ values in all datasets analyzed, most notably using the income tax method, especially since about 1980. The wealth distribution is non-stationary and inequality increases for as long as these conditions prevail.
-\item[B.] When we observe positive $\tau$, the associated convergence times are mostly of the order of decades or centuries, see \Fref{shares_comp} and \Fref{conv} (bottom). They are much longer than the periods over which economic conditions and policies change -- they are the timescales of history rather than of politics.
-\ei
-The ergodic hypothesis precludes what we find. Item A above corresponds to reallocation that moves wealth from poorer to richer individuals, which is inconsistent with the ergodic hypothesis. In this sense the ergodic hypothesis is a set of blindfolds, hiding from view the most dramatic economic conditions. For the most recent data, the system is in a state best described by non-ergodic RGBM, $\tau<0$~\cite{SaezZucman2014,WID2017} or $\tau \approx 0$~\cite{bricker2016measuring2}. Therefore, each time we observe the wealth distribution, we see a snapshot of it either in the process of diverging or very far from its asymptotic form. It is much like a photograph of an explosion in space: it will show a fireball whose finite extent tells us nothing of the eventual distance between pieces of debris.
-
-We also find that changes in the earnings distribution do not provide an adequate alternative explanation of the described dynamics of the wealth distribution. Although earnings have become more unequal over the recent decades in which wealth inequality has increased, their effect on the wealth distribution has been small and generally stabilizing rather than destabilizing. Treating earnings explicitly in our model does not change fundamentally our conclusions.
-
-The economic phenomena that trouble theorists most -- such as diverging inequality, social immobility, and the emergence of negative wealth -- are difficult to reproduce in a model that assumes ergodicity. In our simple model, this is easy to see: in the ergodic regime, $\tau>0$, our model cannot reproduce these phenomena at all. One may be tempted to conclude that their existence is a sign of special conditions prevailing in the real world -- collusion and conspiracies. But if we admit the possibility of non-ergodicity, $\tau\leq0$, it becomes clear that these phenomena can easily emerge in an economy that does not actively guard against them.
-
-\end{comment}
+The economic phenomena that trouble theorists most -- such as diverging inequality, social immobility, and the emergence of negative wealth -- are difficult to reproduce in models that make the ergodic hypothesis. In our simple model, this is easy to see: in the ergodic regime, $\tau>0$, our model cannot reproduce these phenomena at all. One may be tempted to conclude that their existence is a sign of special conditions prevailing in the real world -- collusion and conspiracies. But if we admit the possibility of non-ergodicity, $\tau\leq0$, it becomes clear that these phenomena can easily emerge in an economy that does not actively guard against them.
