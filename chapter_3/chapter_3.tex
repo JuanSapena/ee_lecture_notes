@@ -72,11 +72,11 @@ x(t) = x(0) \exp\left[\left(\mu-\frac{\sigma^2}{2}\right)t + \sigma W(t)\right],
 then we will observe a log-normal distribution of wealth at each moment in time:
 \be
 \ln x(t) \sim \mathcal{N}\left(\ln x(0) + \left(\mu - \frac{\sigma^2}{2}\right)t, \sigma^2 t\right).
-\elabel{lognormal}
+\elabel{log-normal}
 \ee
 It will be convenient hereafter to assume the initial condition $x(0)=1$ (and, therefore, $\ln x(0)=0$) unless otherwise stated.
 
-Note that the variance of $\ln x(t)$ increases linearly in time. We will develop an understanding of this shortly. As we will see, it indicates that any meaningful measure of inequality will grow over time in our simple model. To see what kind of a wealth distribution \eref{lognormal} is, it is worth spelling out the lognormal PDF:
+Note that the variance of $\ln x(t)$ increases linearly in time. We will develop an understanding of this shortly. As we will see, it indicates that any meaningful measure of inequality will grow over time in our simple model. To see what kind of a wealth distribution \eref{log-normal} is, it is worth spelling out the log-normal PDF:
 \be
 \PDF_x(x)=\frac{1}{x\sqrt{2\pi \sigma^2t}}\exp\left(-\frac{[\ln x-(\mu-\frac{\sigma^2}{2})t]^2}{2\sigma^2 t} \right).
 \elabel{PDFx}
@@ -121,7 +121,7 @@ while, from \eref{time_g}, the time-average growth rate of wealth is
 \subsubsection{Measuring inequality}
 \seclabel{Inequality_measure}
 In the case of GBM we have just seen how to 
-compute the exact full wealth distribution $\PDF$. This is interesting but often we want only summary measures of the distribution. One such summary measure of particular interest to economists is inequality. How much inequality is there in a distribution like \eref{lognormal}? And how does this quantity increase over time under GBM, as we have suggested?
+compute the exact full wealth distribution $\PDF$. This is interesting but often we want only summary measures of the distribution. One such summary measure of particular interest to economists is inequality. How much inequality is there in a distribution like \eref{log-normal}? And how does this quantity increase over time under GBM, as we have suggested?
 
 Clearly, to answer these questions, we must quantify ``inequality''. In this section, and also in \cite{AdamouPeters2016}, we develop a natural way of measuring it, which makes use of the two growth rates we identified for the non-ergodic process. We will see that a particular inequality measure, known to economists as Theil's second index of inequality \cite{Theil1967}, is the difference between typical wealth (growing at the time-average growth rate) and average wealth (growing at the ensemble-average growth rate) in our model. Thus, the difference between the time average and ensemble average, the essence of ergodicity breaking, is the fundamental driver of the dynamics of inequality.
 
@@ -176,7 +176,7 @@ dynamic of inequality. Within the GBM framework we can write the difference in g
 \ee
 and integrate over time to get
 \be
-J(t)=\ln \ave{x}-\ave{\ln x}.
+J(t)=\ln \ave{x(t)}-\ave{\ln x(t)}.
 \elabel{J_x}
 \ee
 This quantity is known as the mean logarithmic deviation (MLD) or Theil's second index of inequality \cite{Theil1967}. 
@@ -249,10 +249,10 @@ and then substitute \eref{GBM} for $dx$ to get
 dy = y \sigma dW.
 \elabel{GBM_y}
 \ee
-Thus $y(t)$ follows a very simple GBM with zero drift and volatility $\sigma$. This means that rescaled wealth, like wealth, has an ever-broadening lognormal distribution:
+Thus $y(t)$ follows a very simple GBM with zero drift and volatility $\sigma$. This means that rescaled wealth, like wealth, has an ever-broadening log-normal distribution:
 \be
 \ln y(t) \sim \mathcal{N}\left(-\frac{\sigma^2}{2}t, \sigma^2 t\right).
-\elabel{lognormal_y}
+\elabel{log-normal_y}
 \ee
 
 Finally, noting that $\ave{\ln y}=\ave{\ln x}-\ln\ave{x}$ gives us a simple expression for our inequality measure in \eref{J_x} in terms of the rescaled wealth:
@@ -262,11 +262,30 @@ J(t)=-\ave{\ln y}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{$v$-normal distributions and Jensen's inequality}
+\subsubsection{$u$-normal distributions and Jensen's inequality}
 \seclabel{jensen}
-So far we have confined our analysis to GBM, where wealths follow the dynamic specific by \elabel{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible.
+So far we have confined our analysis to GBM, where wealths follow the dynamic specific by \eref{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible. In particular, we explored the dynamics corresponding to invertible utility functions, where utility executes a Brownian motion with drift as in \eref{bm_u}:
+\be
+\gd\gu = a_u \gd\t + b_u \gd\gW.
+\ee
+Under this dynamic, utility is normally distributed,
+\be
+u(x(t)) \sim \mathcal{N}\left(a_u\t, {b_u}^2 t\right),
+\ee
+and we can say that wealth has a ``$u$-normal'' distribution. For GBM, the corresponding utility function is, as we know, $u(x)=\ln x$, and $u$-normal becomes log-normal.
 
-\AA{Insert discussion of $v$-normal distributions and growth rates here.}
+Replacing the logarithm in \eref{J_x} by the general utility function gives a general expression for the wealth inequality measure,
+\be
+J_u(t)=u(\ave{x(t)}) - \ave{u(x(t))}.
+\elabel{J_u}
+\ee
+It's not easy to write a general expression for $J_u(t)$ in only $t$ and the model parameters $a_u$ and $b_u$, because it would involve the solution of the general wealth dynamic in \eref{dx}. However, we can still say something about how inequality evolves. Let's see what happens if we start with perfect equality, $x_i(0)=x_0$ with $x_0$ fixed, and let wealths evolve a little to $x(\D t)=x_0+\D x$, where $\D x$ is a random wealth increment generated by the wealth dynamic. The change in inequality would be
+\be
+\D J_u = u(\ave{x_0+\D x}) - \ave{u(x_0+\D x)},
+\ee
+since $u(\ave{x_0})=\ave{u(x_0)}=u(x_0)$.
+
+We can now appeal to Jensen's inequality: if $u$ is a concave function, like the logarithm, then $\D J_u \geq 0$; while if $u$ is convex, like the curious exponential in \eref{test_dyn_u}, then $\D J_u \leq 0$. The only cases for which $\D J_u=0$ are if $\D x$ is non-random or if $u$ is linear. Thus, it is both randomness and the nonlinearity of the utility function (or ergodicity transformation) that creates a difference in growth rates and generates inequality.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -274,7 +293,7 @@ So far we have confined our analysis to GBM, where wealths follow the dynamic sp
 \seclabel{power_law}
 It is an established empirical observation \cite{Newman2005} that the upper tails of 
 real wealth distributions look more like a power law than a log-normal. Our trivial model does not
-strictly reproduce this feature, but it is instructive to compare the lognormal distribution
+strictly reproduce this feature, but it is instructive to compare the log-normal distribution
 to a power-law distribution. A power law PDF has the asymptotic form 
 \be
 \PDF_x(x)= x^{-\alpha},
@@ -321,7 +340,7 @@ So far we have considered the properties the random variable, $x(t)$, generated 
 \ee
 as the sample size, $N$, grows large. In reality, human populations can be very large, say $N\sim10^7$ for a nation state, but they are most certainly finite. Therefore, we need to be diligent and ask what the effects of this finiteness are. In particular, we will focus on the sample mean wealth under GBM. For what values of $\mu$, $\sigma$, $t$, and $N$ is this well approximated by the expectation value? And when it is not, what does it resemble?
 
-\subsubsection{Sums of lognormals}
+\subsubsection{Sums of log-normals}
 \seclabel{sketch}
 In \cite{PetersKlein2013} we studied the sample mean of GBM, which we termed the ``partial ensemble average'' (PEA). This is the average of $N$ independent realisations the random variable $x(t)$, \eref{sample}. Here we sketch out some simple arguments about how this object depends on $N$ and $t$.
 
@@ -829,10 +848,10 @@ Economics is often concerned with growth and a growing quantity cannot be ergodi
 Studies of wealth distributions also employ this strategy. Individual wealth is modelled as a growing quantity. Dividing by the population average transforms this to a rescaled wealth, as in \secref{rescaled}, which is hypothesised to be ergodic. For example, \cite[p.~130]{BenhabibBisinZhu2011} ``impose assumptions \dots that guarantee the existence and uniqueness of a limit stationary distribution.'' The idea is to take advantage of the simplicity with which the stable distribution can be analysed, \eg to predict the effects of policies encoded in model parameters.
 
 % What is the problem? What are we going to do?
-There is, however, an elephant in the room. To our knowledge, the validity of the ergodic hypothesis for rescaled wealth has never been tested empirically. It's certainly invalid for the GBM model world we studied previously because, as we saw in \secref{rescaled}, rescaled wealth has an ever-broadening lognormal distribution. That doesn't seem to say much, as most reasonable people would consider our model world -- containing a population of individuals whose wealths multiply noisily and who never interact -- somewhat unrealistic! The model we are about to present will not only extend our understanding from this simple model world to one containing interactions, but also will allows us to test the hypothesis. This is because it has regimes, \ie combinations of parameters, for which rescaled wealth is and isn't ergodic. This contrasts with models typically used by economists, which have the ergodic hypothesis ``baked in.''
+There is, however, an elephant in the room. To our knowledge, the validity of the ergodic hypothesis for rescaled wealth has never been tested empirically. It's certainly invalid for the GBM model world we studied previously because, as we saw in \secref{rescaled}, rescaled wealth has an ever-broadening log-normal distribution. That doesn't seem to say much, as most reasonable people would consider our model world -- containing a population of individuals whose wealths multiply noisily and who never interact -- somewhat unrealistic! The model we are about to present will not only extend our understanding from this simple model world to one containing interactions, but also will allows us to test the hypothesis. This is because it has regimes, \ie combinations of parameters, for which rescaled wealth is and isn't ergodic. This contrasts with models typically used by economists, which have the ergodic hypothesis ``baked in.''
 
 % Convergence time
-If it is reasonable to assume a stable distribution exists, we must also consider how long convergence to would take after a change of parameters. It's no use if convergence in the model takes millennia, if we are using it to estimate the effect of a new tax policy over the next election cycle. Therefore, treating a stable model distribution as representative of the empirical wealth distribution implies an assumption of fast convergence.  As Tony Atkinson pointed out, ``the speed of convergence makes a great deal of difference to the way in which we think about the model'' \cite{atkinson1969timescale}. We will also use our model to discuss this point. Without further ado, let us introduce it.
+If it is reasonable to assume a stable distribution exists, we must also consider how long convergence to would take after a change of parameters. It's no use if convergence in the model takes millennia, if we are using it to estimate the effect of a new tax policy over the next election cycle. Therefore, treating a stable model distribution as representative of the empirical wealth distribution implies an assumption of fast convergence.  As the late Tony Atkinson pointed out, ``the speed of convergence makes a great deal of difference to the way in which we think about the model'' \cite{atkinson1969timescale}. We will also use our model to discuss this point. Without further ado, let us introduce it.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

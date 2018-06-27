@@ -33,6 +33,13 @@ Y.~Berman, O.~Peters, and A.~Adamou.
   the {United States}.
 \newblock January 2017.
 
+\bibitem{Bernoulli1738}
+D.~Bernoulli.
+\newblock Specimen {T}heoriae {N}ovae de {M}ensura {S}ortis. {T}ranslation
+  ``{E}xposition of a new theory on the measurement of risk'' by {L.} {S}ommer
+  (1954).
+\newblock {\em Econometrica}, 22(1):23--36, 1738.
+
 \bibitem{Bouchaud2015b}
 J.-P. Bouchaud.
 \newblock Note on mean-field wealth models and the random energy model.
@@ -47,17 +54,26 @@ J.-P. Bouchaud and M.~M\'ezard.
 \newblock Wealth condensation in a simple model of economy.
 \newblock {\em Physica A}, 282(4):536--545, 2000.
 
-\bibitem{bricker2016measuring2}
-J.~Bricker, A.~Henriques, J.~Krimmel, and J.~Sabelhaus.
-\newblock Measuring income and wealth at the top using administrative and
-  survey data.
-\newblock {\em Brookings Papers on Economic Activity}, pages 261--331, 2016.
+\bibitem{Campbell2017}
+J.~Y. Campbell.
+\newblock {\em Financial decisions and markets, A course in asset pricing}.
+\newblock {Princeton University Press}, 2017.
 
 \bibitem{Corak2013}
 M.~Corak.
 \newblock Income inequality, equality of opportunity, and intergenerational
   mobility.
 \newblock {\em The Journal of Economic Perspectives}, 27(3):79--102, 2013.
+
+\bibitem{CoverThomas1991}
+T.~M. Cover and J.~A. Thomas.
+\newblock {\em Elements of {I}nformation {T}heory}.
+\newblock John Wiley \& Sons, 1991.
+
+\bibitem{CoxIngersollRoss1985}
+J.~C. Cox, J.~E. Ingersoll, and S.~A. Ross.
+\newblock An intertemporal general equilibrium model of asset prices.
+\newblock {\em Econometrica}, 53(2):363--384, 1985.
 
 \bibitem{Derrida1980}
 B.~Derrida.
@@ -76,23 +92,37 @@ A.~Dr\u{a}gulescu and V.~M. Yakovenko.
 \newblock {\em Physica A: Statistical Mechanics and its Applications},
   299(1):213--221, 2001.
 
+\bibitem{Hinrichsen2000}
+H.~Hinrichsen.
+\newblock Non-equilibrium critical phenomena and phase transitions into
+  absorbing states.
+\newblock {\em Adv. Phys.}, 49(7):815--958, 2000.
+
+\bibitem{Ito1944}
+K.~It\^o.
+\newblock Stochastic integral.
+\newblock {\em Proc. Imperial Acad. Tokyo}, 20:519--524, 1944.
+
+\bibitem{KaasETAL2008}
+R.~Kaas, M.~Goovaerts, J.~Dhaene, and M.~Denuit.
+\newblock {\em Modern Actuarial Risk Theory}.
+\newblock Springer, 2 edition, 2008.
+
+\bibitem{Kelly1956}
+J.~L. {Kelly~Jr.}
+\newblock A new interpretation of information rate.
+\newblock {\em Bell Sys. Tech. J.}, 35(4):917--926, July 1956.
+
 \bibitem{KloedenPlaten1992}
 P.~E. Kloeden and E.~Platen.
 \newblock {\em Numerical solution of stochastic differential equations},
   volume~23.
 \newblock Springer Science \& Business Media, 1992.
 
-\bibitem{kopczuk2015we}
-W.~Kopczuk.
-\newblock What do we know about the evolution of top wealth shares in the
-  united states?
-\newblock {\em The Journal of Economic Perspectives}, 29(1):47--66, 2015.
-
-\bibitem{kopczuk2004top}
-W.~Kopczuk and E.~Saez.
-\newblock Top wealth shares in the united states, 1916--2000: Evidence from
-  estate tax returns.
-\newblock {\em National Tax Journal}, 57(2):445--487, 2004.
+\bibitem{Laplace1814}
+P.~S. {Laplace}.
+\newblock {\em Th\'{e}orie analytique des probabilit\'{e}s}.
+\newblock Paris, Ve. Courcier, 2 edition, 1814.
 
 \bibitem{LiuETAL2013}
 K.~Liu, N.~Lubbers, W.~Klein, J.~Tobochnik, B.~Boghosian, and H.~Gould.
@@ -106,15 +136,31 @@ Z.~Liu and R.~A. Serota.
 \newblock {\em Physica A: Statistical Mechanics and its Applications},
   474:301--311, 2017.
 
+\bibitem{MarroDickman1999}
+J.~Marro and R.~Dickman.
+\newblock {\em Nonequilibrium Phase Transitions in Lattice Models.}
+\newblock Cambridge University Press, 1999.
+
 \bibitem{meade1964efficiency}
 J.~E. Meade.
 \newblock {\em Efficiency, Equality and The Ownership of Property}.
 \newblock Allen \& Unwin, London, UK, 1964.
 
-\bibitem{NelderMead1965}
-J.~A. Nelder and R.~Mead.
-\newblock A simplex method for function minimization.
-\newblock {\em The computer journal}, 7(4):308--313, 1965.
+\bibitem{Menger1934}
+K.~Menger.
+\newblock Das {U}nsicherheitsmoment in der {W}ertlehre.
+\newblock {\em J. Econ.}, 5(4):459--485, 1934.
+
+\bibitem{Montmort1713}
+P.~R. Montmort.
+\newblock {\em Essay d'analyse sur les jeux de hazard}.
+\newblock Jacque Quillau, Paris. Reprinted by the American Mathematical
+  Society, 2006, 2 edition, 1713.
+
+\bibitem{Morowitz1992}
+H.~Morowitz.
+\newblock {\em Beginnings of cellular life}.
+\newblock Yale University Press, 1992.
 
 \bibitem{Newman2005}
 M.~E.~J. Newman.
@@ -125,6 +171,16 @@ M.~E.~J. Newman.
 V.~Pareto.
 \newblock {\em Cours d'\'{e}conomie Politique}.
 \newblock F.\ Rouge, Lausanne, Switzerland, 1897.
+
+\bibitem{Peters2011b}
+O.~Peters.
+\newblock The time resolution of the {St} {Petersburg} paradox.
+\newblock {\em Phil. Trans. R. Soc. A}, 369(1956):4913--4931, December 2011.
+
+\bibitem{PetersAdamou2015b}
+O.~Peters and A.~Adamou.
+\newblock Rational insurance with linear utility and perfect informatio\ n.
+\newblock {\em ar{X}iv:1507.04655}, July 2015.
 
 \bibitem{PetersGell-Mann2016}
 O.~Peters and M.~Gell-Mann.
@@ -140,19 +196,6 @@ O.~Peters and W.~Klein.
 T.~Piketty.
 \newblock {\em Capital in the twenty-first century}.
 \newblock Harvard University Press, 2014.
-
-\bibitem{PikettyZucman2014}
-T.~Piketty and G.~Zucman.
-\newblock Capital is back: Wealth-income ratios in rich countries, 1700-2010.
-\newblock {\em The Quarterly Journal of Economics}, 129(3):1255--1310, 2014.
-
-\bibitem{Quandl2016}
-Quandl.
-\newblock {D}ow {J}ones {I}ndustrial {A}verage.
-\newblock
-  \url{http://www.quandl.com/data/BCB/UDJIAD1-Dow-Jones-Industrial-Average},
-  2016.
-\newblock Accessed: 04/19/2016.
 
 \bibitem{Redner1990}
 S.~Redner.
@@ -175,6 +218,12 @@ E.~Saez and G.~Zucman.
 P.~Samuelson.
 \newblock What classical and neoclassical monetary theory really was.
 \newblock {\em Canad. J. Econ.}, 1(1):1--15, February 1968.
+
+\bibitem{Samuelson1977}
+P.~Samuelson.
+\newblock St. {P}etersburg paradoxes: Defanged, dissected, and historically
+  described.
+\newblock {\em J. Econ. Lit.}, 15(1):24--55, 1977.
 
 \bibitem{Sen1997}
 A.~Sen.
@@ -201,6 +250,16 @@ G.~E. Uhlenbeck and L.~S. Ornstein.
 O.~Vasicek.
 \newblock An equilibrium characterization of the term structure.
 \newblock {\em Journal of Financial Economics}, 5(2):177--188, 1977.
+
+\bibitem{vonNeumannMorgenstern1944}
+J.~{von Neumann} and O.~Morgenstern.
+\newblock {\em Theory of games and economic behavior}.
+\newblock Princeton University Press, 1944.
+
+\bibitem{Whitworth1870}
+W.~A. Whitworth.
+\newblock {\em Choice and chance}.
+\newblock Deighton Bell, 2 edition, 1870.
 
 \bibitem{wolff2014household}
 E.~N. Wolff.
