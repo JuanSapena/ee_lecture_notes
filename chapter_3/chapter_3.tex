@@ -38,14 +38,7 @@ from the set of trajectories we can judge what is likely to happen to an individ
 \eg by following a single trajectory for a long time; while the PDF of the random 
 variable $x(t^*)$ at some fixed value of $t^*$ tells us how wealth is distributed in our model. 
 
-We use the term wealth distribution to refer to the density function 
-$\PDF_x(x)$ (not to the process of distributing wealth among people). This can be 
-interpreted as follows: if I select a random individual (each individual with uniform probability 
-$\frac{1}{N}$), the probability of the selected individual 
-having wealth greater than $x$ is given by the CDF $F_x(x)=\int_x^\infty \PDF_x(s)\,ds$.
-In a large population of $N$ individuals, $\D x \PDF_x(x)N$ is the approximate 
-number of individuals who have wealth between $x$ and $x+\D x$. 
-Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
+We use the term wealth distribution to refer to the density function $\PDF_x(x)$ and not the process of distributing wealth among people. This can be interpreted as follows. Imagine a population of $N$ individuals. If I select a random individual, each having uniform probability $\frac{1}{N}$, then the probability of the selected individual having wealth greater than $x$ is given by the CDF $F_x(x)=\int_x^\infty \PDF_x(s)\,ds$. If $N$ is large, then $\D x \PDF_x(x)N$ is the approximate number of individuals who have wealth between $x$ and $x+\D x$. Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
 
 \underline{Examples:}
 \begin{itemize}
@@ -88,10 +81,6 @@ Note that the variance of $\ln x(t)$ increases linearly in time. We will develop
 \PDF_x(x)=\frac{1}{x\sqrt{2\pi \sigma^2t}}\exp\left(-\frac{[\ln x-(\mu-\frac{\sigma^2}{2})t]^2}{2\sigma^2 t} \right).
 \elabel{PDFx}
 \ee
-
-%The expectation value $\ave{\ln x}=\ln x_0 + \left(\mu - \frac{\sigma^2}{2}\right)t$ is
-%given by \eref{lognormal}. It differs from the logarithm of the expectation value, 
-%$\ave{\ln x}\neq \ln\ave{x}$, which we now compute.
 
 This distribution is the subject of a wonderful book \cite{AitchisonBrown1957}, sadly out-of-print now. We will find it useful to know a few of its basic properties. Of particular importance is the expected wealth under this distribution. This is
 \be
@@ -188,6 +177,7 @@ dynamic of inequality. Within the GBM framework we can write the difference in g
 and integrate over time to get
 \be
 J(t)=\ln \ave{x}-\ave{\ln x}.
+\elabel{J_x}
 \ee
 This quantity is known as the mean logarithmic deviation (MLD) or Theil's second index of inequality \cite{Theil1967}. 
 This is rather remarkable. Our general inequality measure, \eref{J}, evaluated 
@@ -198,7 +188,7 @@ Theil used the GBM model without realising it!
 
 Substituting the known values of the two growth rates into \eref{dJ} and integrating, we can evaluate the Theil inequality as a function of time:
 \be
-J(t)=J(0)+\frac{\sigma^2}{2} t.
+J(t)=\frac{\sigma^2}{2} t.
 \elabel{J_t}
 \ee
 Thus we see that, in GBM, our measure of inequality increases indefinitely.
@@ -223,42 +213,51 @@ where $\Phi$ is the CDF of the standard normal distribution. This fraction tends
 
 \subsubsection{Rescaled wealth}
 \seclabel{rescaled}
-Over the decades, economists have arrived at many inequality measures, and have drawn 
-up a list of conditions that particularly useful measures of inequality satisfy. Such measures
-are called ``relative measures'' \cite[Appendix 4]{Sen1997}, and $J$ is one of them. One of the conditions is that inequality measures
-should not change when $x$ is divided by the same factor for everyone. Since we are primarily 
-interested in inequality in this section it is useful to remove absolute wealth levels from the
-analysis and study an object called the rescaled wealth.
+Economists have arrived at many inequality measures, and have drawn up a list of conditions that particularly useful measures of inequality satisfy. Such measures are called ``relative measures'' \cite[Appendix 4]{Sen1997}, and $J$ is one of them.
+
+One of the conditions is that inequality measures should not change when $x$ is divided by the same factor for everyone. Since we are primarily interested in inequality in this section, we can remove absolute wealth levels from the analysis and study an object called the rescaled wealth.
 
 \definition{
 The rescaled wealth, 
 \be
-y=\frac{x}{\ave{x}_N},
+y_i(t) = \frac{x(t)}{\ave{x(t)}_N},
 \elabel{rescaled}
 \ee
-is the proportion of the population-average wealth owned by an individual.}
+is the proportion of the sample mean wealth -- \ie the wealth averaged over the finite population -- owned by an individual.}
 
-This quantity is useful, for instance because its numerical value does not 
-depend on the currency used, it is a dimensionless number. 
-Thus if my rescaled wealth, $y=1/2$, this means that my wealth is half the 
-average wealth, irrespective of whether I measure wealth in Kazakhstani Tenge 
-or in Swiss Francs. For a large population, \eref{J_dyn} may be expressed in 
-terms of $y$ as $\frac{dJ}{dt}=-\frac{d\ave{\ln y}}{dt}$.
+This quantity is useful because its numerical value does not 
+depend on the currency used: it is a dimensionless number. 
+Thus if my rescaled wealth is $y_i(t) = 1/2$, this means that my wealth is half the 
+average wealth, irrespective of whether I measure it in Kazakhstani Tenge 
+or in Swiss Francs. The sample mean rescaled wealth is easily calculated:
+\be
+\ave{y_i(t)}_N = \ave{\frac{x(t)}{\ave{x(t)}_N}}_N = 1.
+\ee
 
-\AA{Insert result for lognormal distribution of rescaled wealth under self-averaging conditions $\ave{x(t)}_N\sim\ave{x(t)}$.}
+If the population size, $N$, is large enough, then we might expect the sample mean wealth, $\ave{x(t)}_N$, to be close to the ensemble average, $\ave{x(t)}$, which is simply its $N\to\infty$ limit. We will discuss more carefully when this approximation holds for wealths following GBM in \secref{finite_populations}. Let's assume for now that it does hold. The rescaled wealth is then well approximated as
+\be
+y_i(t) = \frac{x_i(t)}{\ave{x(t)}} = x_i(t)\exp(-\mu t).
+\ee
 
-To make the model more tractable we consider the case $N \to \infty$, which replaces the finite-ensemble 
-average by the expectation value, $\ave{x}_N \to \ave{x}$. The finite ensemble size has important effects but 
-we will not discuss them here. $\ave{x(t)}=\exp(\mu t)$, just as for GBM without taxation, \eref{exp_x}. 
-We are again interested in rescaled wealth, $y=\frac{x}{\ave{x}}=x e^{-\mu t}$ (\eref{rescaled}), whose dynamic we derive using the chain rule
+Now that we have an expression for $y$ in terms of $x$ and $t$, we can derive the dynamic for rescaled wealth using \Ito's formula (just as we did to find the wealth dynamic for a general utility function in \secref{dyn_from_u}). We start with
 \bea
 dy &=& \frac{\partial y}{\partial t}\,dt + \frac{\partial y}{\partial x}\,dx + \frac{1}{2} \frac{\partial^2 y}{\partial x^2} \,dx^2 \\
-&=& -\mu y\,dt + \frac{1}{x}\,dx \elabel{ysde} \\
-&=& y\sigma dW.
+&=& -\mu y\,dt + \frac{y}{x}\,dx \elabel{ysde},
 \eea
-The first moment of $y$ is trivially $1$,
+and then substitute \eref{GBM} for $dx$ to get
 \be
-\ave{y}=\ave{\frac{x}{\ave{x}}}=1.
+dy = y \sigma dW.
+\elabel{GBM_y}
+\ee
+Thus $y(t)$ follows a very simple GBM with zero drift and volatility $\sigma$. This means that rescaled wealth, like wealth, has an ever-broadening lognormal distribution:
+\be
+\ln y(t) \sim \mathcal{N}\left(-\frac{\sigma^2}{2}t, \sigma^2 t\right).
+\elabel{lognormal_y}
+\ee
+
+Finally, noting that $\ave{\ln y}=\ave{\ln x}-\ln\ave{x}$ gives us a simple expression for our inequality measure in \eref{J_x} in terms of the rescaled wealth:
+\be
+J(t)=-\ave{\ln y}.
 \ee
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1082,7 +1081,7 @@ Studies of wealth distributions also employ this strategy. Individual wealth is 
 There is, however, an elephant in the room. To our knowledge, the validity of the ergodic hypothesis for rescaled wealth has never been tested empirically. It's certainly invalid for the GBM model world we studied previously because, as we saw in \secref{rescaled}, rescaled wealth has an ever-broadening lognormal distribution. That doesn't seem to say much, as most reasonable people would consider our model world -- containing a population of individuals whose wealths multiply noisily and who never interact -- somewhat unrealistic! The model we are about to present will not only extend our understanding from this simple model world to one containing interactions, but also will allows us to test the hypothesis. This is because it has regimes, \ie combinations of parameters, for which rescaled wealth is and isn't ergodic. This contrasts with models typically used by economists, which have the ergodic hypothesis ``baked in.''
 
 % Convergence time
-If it is reasonable to assume a stable distribution exists, we must also consider how long convergence to would take after a change of parameters. It's no use if convergence in the model takes millennia, if we are using it to estimate the effect of a new tax policy over the next election cycle. Therefore, treating a stable model distribution as representative of the empirical wealth distribution implies an assumption of fast convergence.  As the late Tony Atkinson pointed out, that ``the speed of convergence makes a great deal of difference to the way in which we think about the model'' \cite{atkinson1969timescale}. We will also use our model to discuss this point. Without further ado, let us introduce it.
+If it is reasonable to assume a stable distribution exists, we must also consider how long convergence to would take after a change of parameters. It's no use if convergence in the model takes millennia, if we are using it to estimate the effect of a new tax policy over the next election cycle. Therefore, treating a stable model distribution as representative of the empirical wealth distribution implies an assumption of fast convergence.  As Tony Atkinson pointed out, ``the speed of convergence makes a great deal of difference to the way in which we think about the model'' \cite{atkinson1969timescale}. We will also use our model to discuss this point. Without further ado, let us introduce it.
 
 %% Our model
 %% AA20170120 - introduced reallocation here to make subsequent comments understandable
