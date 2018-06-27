@@ -15,6 +15,11 @@ A.~B. Atkinson.
 \newblock The timescale of economic models: How long is the long run?
 \newblock {\em The Review of Economic Studies}, 36(2):137--152, 1969.
 
+\bibitem{Barenblatt2003}
+G.~I. Barenblatt.
+\newblock {\em Scaling}.
+\newblock Cambridge University Press, 2003.
+
 \bibitem{BenhabibBisinZhu2011}
 J.~Benhabib, A.~Bisin, and S.~Zhu.
 \newblock The distribution of wealth and fiscal policy in economies with
@@ -40,6 +45,11 @@ D.~Bernoulli.
   (1954).
 \newblock {\em Econometrica}, 22(1):23--36, 1738.
 
+\bibitem{Black1986}
+F.~Black.
+\newblock Noise.
+\newblock {\em The Journal of Finance}, 41(3):528--543, 1986.
+
 \bibitem{Bouchaud2015b}
 J.-P. Bouchaud.
 \newblock Note on mean-field wealth models and the random energy model.
@@ -53,6 +63,12 @@ J.-P. Bouchaud.
 J.-P. Bouchaud and M.~M\'ezard.
 \newblock Wealth condensation in a simple model of economy.
 \newblock {\em Physica A}, 282(4):536--545, 2000.
+
+\bibitem{Burkhardt2007}
+T.~W. Burkhardt.
+\newblock The random acceleration process in bounded geometries.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
+  2007(07):P07004, 2007.
 
 \bibitem{Campbell2017}
 J.~Y. Campbell.
@@ -75,6 +91,11 @@ J.~C. Cox, J.~E. Ingersoll, and S.~A. Ross.
 \newblock An intertemporal general equilibrium model of asset prices.
 \newblock {\em Econometrica}, 53(2):363--384, 1985.
 
+\bibitem{Deakin2011}
+M.~A.~B. Deakin.
+\newblock {G. I. Taylor} and the {Trinity} test.
+\newblock {\em Int. J. Math. Edu. Sci. Tech.}, 42(8):1069--1079, 2011.
+
 \bibitem{Derrida1980}
 B.~Derrida.
 \newblock Random-energy model: Limit of a family of disordered models.
@@ -85,6 +106,11 @@ B.~Derrida.
 \newblock Random-energy model: An exactly solvable model of disordered systems.
 \newblock {\em Phys. Rev. B}, 24:2613--2626, September 1981.
 
+\bibitem{Devlin2008}
+K.~Devlin.
+\newblock {\em The unfinished game}.
+\newblock Basic Books, 2008.
+
 \bibitem{DragulescuYakovenko2001}
 A.~Dr\u{a}gulescu and V.~M. Yakovenko.
 \newblock Exponential and power-law probability distributions of wealth and
@@ -92,11 +118,38 @@ A.~Dr\u{a}gulescu and V.~M. Yakovenko.
 \newblock {\em Physica A: Statistical Mechanics and its Applications},
   299(1):213--221, 2001.
 
+\bibitem{Einstein1905}
+A.~Einstein.
+\newblock {\"U}ber die von der molekularkinetischen {T}heorie der {W}{\"a}rme
+  geforderte {B}ewegung von in ruhenden {F}l{\"u}ssigkeiten suspendierten
+  {T}eilchen.
+\newblock {\em Ann. Phys.}, IV(17):549--560, 1905.
+
+\bibitem{Fernandez2009}
+P.~Fern\'{a}ndez.
+\newblock The equity premium in 150 textbooks.
+\newblock Working paper, IESE Business School, University of Navarra, 2009.
+
+\bibitem{Feynman1963}
+R.~P. Feynman.
+\newblock {\em The Feynman lectures on physics}.
+\newblock Addison-Wesley, 1963.
+
+\bibitem{Harrison2013}
+J.~M. Harrison.
+\newblock {\em Brownian motion of performance and control}.
+\newblock Cambridge University Press, 2013.
+
 \bibitem{Hinrichsen2000}
 H.~Hinrichsen.
 \newblock Non-equilibrium critical phenomena and phase transitions into
   absorbing states.
 \newblock {\em Adv. Phys.}, 49(7):815--958, 2000.
+
+\bibitem{Hull2006}
+J.~C. Hull.
+\newblock {\em Options, {F}utures, and {O}ther {D}erivatives}.
+\newblock Prentice Hall, 6 edition, 2006.
 
 \bibitem{Ito1944}
 K.~It\^o.
@@ -124,6 +177,17 @@ P.~S. {Laplace}.
 \newblock {\em Th\'{e}orie analytique des probabilit\'{e}s}.
 \newblock Paris, Ve. Courcier, 2 edition, 1814.
 
+\bibitem{Latane1959}
+H.~A. Latan\'{e}.
+\newblock Rational decision-making in portfolio management.
+\newblock {\em J. Fin.}, 14(3):429--430, 1959.
+
+\bibitem{LeRoy2016}
+S.~F. LeRoy.
+\newblock excess volatility tests.
+\newblock In S.~N. Durlauf and L.~E. Blume, editors, {\em {The New Palgrave
+  Dictionary of Economics}}, pages 78--80. Springer, 2016.
+
 \bibitem{LiuETAL2013}
 K.~Liu, N.~Lubbers, W.~Klein, J.~Tobochnik, B.~Boghosian, and H.~Gould.
 \newblock The effect of growth on equality in models of the economy.
@@ -136,6 +200,26 @@ Z.~Liu and R.~A. Serota.
 \newblock {\em Physica A: Statistical Mechanics and its Applications},
   474:301--311, 2017.
 
+\bibitem{Markopolos2005}
+H.~M. Markopolos.
+\newblock The world's largest hedge fund is a fraud.
+\newblock Filed with the Securities and Exchang Commission, November 2005.
+
+\bibitem{Markowitz1952}
+H.~Markowitz.
+\newblock Portfolio selection.
+\newblock {\em J. Fin.}, 1:77--91, March 1952.
+
+\bibitem{Markowitz1976}
+H.~M. Markowitz.
+\newblock Investment for the long run: New evidence for an old rule.
+\newblock {\em J. Fin.}, 31(5):1273--1286, December 1976.
+
+\bibitem{Markowitz1991}
+H.~M. Markowitz.
+\newblock {\em Portfolio Selection}.
+\newblock Blackwell Publishers Inc., second edition, 1991.
+
 \bibitem{MarroDickman1999}
 J.~Marro and R.~Dickman.
 \newblock {\em Nonequilibrium Phase Transitions in Lattice Models.}
@@ -145,6 +229,11 @@ J.~Marro and R.~Dickman.
 J.~E. Meade.
 \newblock {\em Efficiency, Equality and The Ownership of Property}.
 \newblock Allen \& Unwin, London, UK, 1964.
+
+\bibitem{MehraPrescott1985}
+R.~Mehra and E.~C. Prescott.
+\newblock The equity premium puzzle.
+\newblock {\em J. Monetary Econ.}, 15:145--161, 1985.
 
 \bibitem{Menger1934}
 K.~Menger.
@@ -172,10 +261,25 @@ V.~Pareto.
 \newblock {\em Cours d'\'{e}conomie Politique}.
 \newblock F.\ Rouge, Lausanne, Switzerland, 1897.
 
+\bibitem{Peters2011a}
+O.~Peters.
+\newblock Optimal leverage from non-ergodicity.
+\newblock {\em Quant. Fin.}, 11(11):1593--1602, November 2011.
+
 \bibitem{Peters2011b}
 O.~Peters.
 \newblock The time resolution of the {St} {Petersburg} paradox.
 \newblock {\em Phil. Trans. R. Soc. A}, 369(1956):4913--4931, December 2011.
+
+\bibitem{PetersAdamou2011}
+O.~Peters and A.~Adamou.
+\newblock Stochastic market efficiency.
+\newblock {\em arXiv preprint arXiv:1101.4548}, 2011.
+
+\bibitem{PetersAdamou2013}
+O.~Peters and A.~Adamou.
+\newblock Stochastic market efficiency.
+\newblock {\em SFI working paper 13-06-022}, 2013.
 
 \bibitem{PetersAdamou2015b}
 O.~Peters and A.~Adamou.
@@ -235,6 +339,23 @@ A.~Sen.
 \newblock {\em On Economic Inequality}.
 \newblock Oxford: Clarendon Press, 1997.
 
+\bibitem{Sewell2011}
+M.~Sewell.
+\newblock History of the efficient market hypothesis.
+\newblock Technical report, University College London, Department of Computer
+  Science, January 2011.
+
+\bibitem{Sharpe1966}
+W.~F. Sharpe.
+\newblock Mutual fund performance.
+\newblock {\em J. Business}, 39(1):119--138, 1966.
+
+\bibitem{Taylor1950b}
+G.~Taylor.
+\newblock The formation of a blast wave by a very intense explosion. {II.} the
+  atomic explosion of 1945.
+\newblock {\em Proc. R. Soc. A}, 201:175--186, 1950.
+
 \bibitem{WID2017}
 {The World Wealth and Income Database}.
 \newblock Usa top $10\%$ and $1\%$ and bottom $50\%$ wealth shares, 1913--2014.
@@ -246,10 +367,20 @@ H.~Theil.
 \newblock {\em Economics and information theory}.
 \newblock North-Holland Publishing Company, 1967.
 
+\bibitem{Thorp1966}
+E.~O. Thorp.
+\newblock {\em Beat the dealer}.
+\newblock {Knopf Doubleday} Publishing Group, 1966.
+
 \bibitem{UhlenbeckOrnstein1930}
 G.~E. Uhlenbeck and L.~S. Ornstein.
 \newblock On the theory of the brownian motion.
 \newblock {\em Physical Review}, 36(5):823--841, Sep 1930.
+
+\bibitem{vanKampen1992}
+N.~G. van Kampen.
+\newblock {\em Stochastic Processes in Physics and Chemistry}.
+\newblock Elsevier (Amsterdam), 1992.
 
 \bibitem{Vasicek1977}
 O.~Vasicek.
