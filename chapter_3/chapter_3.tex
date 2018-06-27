@@ -105,7 +105,7 @@ For $\mu>0$ the expected wealth grows exponentially over time, as do its populat
 
 \subsubsection{Two growth rates}
 \seclabel{two_rates}
-We will recap briefly here one of our key ideas, covered in detail in \secref{Geometric_Brownian}, that the ensemble average of all possible trajectories of GBM grows at a different (faster) rate from that achieved by a single trajectory almost surely in the long-time limit. Understanding this difference was the key to developing a coherent theory of individual decision-making. We will see here that it is also crucial in understanding how wealth becomes distributed in a population of individuals whose wealths follow \elabel{GBM} and, in particular, how we can measure the inequality in such a distribution.
+We will recap briefly here one of our key ideas, covered in detail in \secref{Geometric_Brownian}, that the ensemble average of all possible trajectories of GBM grows at a different (faster) rate from that achieved by a single trajectory almost surely in the long-time limit. Understanding this difference was the key to developing a coherent theory of individual decision-making. We will see here that it is also crucial in understanding how wealth becomes distributed in a population of individuals whose wealths follow \eref{GBM} and, in particular, how we can measure the inequality in such a distribution.
 
 From \eref{expectation_g}, we recall that the growth rate of the expected wealth is
 \be
@@ -445,11 +445,10 @@ where, as previously, $\ave{\cdot}$ without subscript refers to the average over
 \seclabel{REM}
 Since the publication of \cite{PetersKlein2013} we have learned, thanks to discussions with J.-P.~Bouchaud, 
 that the key object in \eref{gest_4} -- the sum log-normal random variates -- has been of
-interest to the mathematical physics community since the 1980s. The reason for this is Derrida's random energy model \cite{Derrida1980,Derrida1981}.
+interest to the mathematical physics community since the 1980s. The reason for this is Derrida's random energy model \cite{Derrida1980,Derrida1981}, which we will describe here. This section is very ``physicsy'' and the key results are in \eref{gest_7} and \eref{gest_8} -- it's safe to skip to them, if you like.
 
 It is defined as follows. Imagine a system whose energy levels are $2^K=N$ normally-distributed random numbers, $\xi_i$ (corresponding to $K$ spins). This is a very simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated that we ``give up'' and simply model its energy levels as realisations of a random variable. (We denote the number 
-of spins by $K$ and the number of resulting energy levels by $N$, while Derrida uses $N$ for the number of spins). In this model
-The partition function is then
+of spins by $K$ and the number of resulting energy levels by $N$, while Derrida uses $N$ for the number of spins). The partition function is then
 \be
 Z=\sum_{i=1}^N \exp\left(\beta J\sqrt{\frac{K}{2}}\xi_i\right),
 \elabel{Z}
@@ -789,6 +788,8 @@ $\mu_1>\mu_2$. An analysis of expectation values, again, is utterly misleading:
 the benefit conferred on entity 1 due to the fluctuation-reducing effect of 
 cooperation may outweigh the cost of having to cooperate with an entity with
 smaller expectation value.
+
+We may also generalise to correlations between the fluctuations experienced by different entities. These are uncorrelated in our model: the $dW_i$ in \eref{GBM} and, consequently, the $\xi_i$ in \eref{discrete_nonc_grow} onwards are independent random variables. In reality, cooperators are often spatially localised and experience similar environmental conditions. By allowing correlations between the $\xi_i$, our model can be adapted to describe such situations. This is more technically difficult and we won't present it here. If you are interested, you can find the details in \cite{PetersAdamou2015a}.
  
 Notice the nature of the Monte-Carlo simulation in \fref{cooperate}. No ensemble
 is constructed. Only individual trajectories are simulated and run for a time that is 
