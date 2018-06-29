@@ -1,46 +1,50 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: ./../LML_bibliography/bibliography.bib
-You've used 55 entries,
+Warning--empty journal in BermanPetersAdamou2017
+Warning--empty note in Bouchaud2015b
+Warning--there's a number but no volume in Rios20162013
+You've used 77 entries,
             2118 wiz_defined-function locations,
-            871 strings with 10333 characters,
-and the built_in function-call counts, 14807 in all, are:
-= -- 1469
-> -- 498
+            1003 strings with 13703 characters,
+and the built_in function-call counts, 20690 in all, are:
+= -- 2058
+> -- 742
 < -- 2
-+ -- 214
-- -- 148
-* -- 919
-:= -- 2535
-add.period$ -- 166
-call.type$ -- 55
-change.case$ -- 225
++ -- 319
+- -- 224
+* -- 1300
+:= -- 3570
+add.period$ -- 232
+call.type$ -- 77
+change.case$ -- 327
 chr.to.int$ -- 0
-cite$ -- 55
-duplicate$ -- 624
-empty$ -- 1324
-format.name$ -- 148
-if$ -- 3076
+cite$ -- 80
+duplicate$ -- 847
+empty$ -- 1794
+format.name$ -- 224
+if$ -- 4261
 int.to.chr$ -- 0
-int.to.str$ -- 55
-missing$ -- 73
-newline$ -- 278
-num.names$ -- 112
-pop$ -- 266
+int.to.str$ -- 77
+missing$ -- 94
+newline$ -- 388
+num.names$ -- 156
+pop$ -- 363
 preamble$ -- 1
-purify$ -- 183
+purify$ -- 265
 quote$ -- 0
-skip$ -- 382
+skip$ -- 530
 stack$ -- 0
-substring$ -- 949
-swap$ -- 61
+substring$ -- 1289
+swap$ -- 79
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 178
-warning$ -- 0
-while$ -- 162
-width$ -- 57
-write$ -- 590
+type$ -- 260
+warning$ -- 3
+while$ -- 226
+width$ -- 79
+write$ -- 821
+(There were 3 warnings)

@@ -394,7 +394,7 @@ approximating it numerically. Consider the expectation value of \eref{gamble}
 \ave{\x(\t+\dt)}=\ave{\x(\t)\gr(\t+\dt)}.
 \elabel{step_1}
 \ee
-We've just learned what to call objects like $\gr(\t)$: it's another stochastic process, albeit an especially simple one, namely one that is ergodic. We'll explain in \secref{ergodic_observables} what we mean by that, but we note here that its ensemble average is time-independent.
+We've just learned what to call objects like $\gr(\t)$: it's another stochastic process, albeit an especially simple one, namely one that is ergodic. We'll explain in \secref{Ergodic_observables} what we mean by that, but we note here that its ensemble average is time-independent.
 Since $\gr(\t+\dt)$ is independent of $\x(\t)$, \eref{step_1} can be re-written as
 \be
 \ave{\x(\t+\dt)}=\ave{\x(\t)}\ave{\gr}.
@@ -883,7 +883,7 @@ and its time average converges to this value with probability one\footnote{Some 
 \elabel{def_ergodic}
 \ee
 \end{defn}
-The \RHS of \eref{def_ergodic} is evaluated at time $\t$, and unlike the \LHS could be a function of time. For now, we will restrict ourselves to a setup where that is not the case, \ie where the ergodic property holds at all times. In \secref{} we will discuss transient behavior, where the distribution of $\A$ is time dependent, and the expectation value only converges to the time-average in the $\t\to\infty$ limit.
+The \RHS of \eref{def_ergodic} is evaluated at time $\t$, and unlike the \LHS could be a function of time. For now, we will restrict ourselves to a setup where that is not the case, \ie where the ergodic property holds at all times. In \secref{RGBM_moments} we will discuss transient behavior, where the distribution of $\A$ is time dependent, and the expectation value only converges to the time-average in the $\t\to\infty$ limit.
 
 In terms of random variables, $\Z$, and stochastic processes, $\Y_{\Z}(\t)$, the ergodic property can be
 visualized as in \fref{ergodic_grid}. Averaging a stochastic process over time or over the ensemble
@@ -1395,7 +1395,7 @@ scaling of the variance, \eref{BM_var}, and more formal
 derivations, along the lines of \cite{Harrison2013}, rely on integrals.
 We simply accept \eref{Ito} as given. It makes it very easy to re-derive \eref{time_g}, which we leave as an exercise:
 use \eref{Ito} to find the \SDE for $\ln(\x)$, take its expectation value and differentiate with respect to $\t$. 
-We will use \eref{Ito} in \secref{Taxation}. The above computations are intended to 
+We will use \eref{Ito} in \secref{rescaled}. The above computations are intended to 
 give the reader intuitive confidence that \Ito calculus can be 
 trusted\footnote{\Ito calculus is one way of interpreting the non-differentiability of \gd\gW. Another interpretation
 is due to Stratonovich, which is not strictly equivalent. However, the key property of \GBM that we make
