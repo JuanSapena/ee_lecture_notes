@@ -411,7 +411,7 @@ is less straightforward. The PEA is a random object outside these limits.
 A quantity of crucial interest to us is the exponential growth rate experienced by the PEA, 
 \be
 \gest(\t,\N) \equiv \frac{\ln(\ave{\x(\t)}_\N)- \ln(\x(0))}{\t-0} = \frac{1}{\t}\ln(\ave{\x(\t)}_\N).
-\elabel{gest}
+\elabel{g_est}
 \ee
 In \cite{PetersKlein2013} we proved that the $\t\to\infty$ limit for any (finite) 
 $\N$ is the same as for the case $\N=1$, 
@@ -419,7 +419,7 @@ $\N$ is the same as for the case $\N=1$,
 \lim_{\t\to\infty}\gest(\t,\N)=\gmu-\frac{\gsigma^2}{2}
 \elabel{gest_2}
 \ee
-for all $\N\geq1$. Substituting \eref{PEA_2} in \eref{gest} produces
+for all $\N\geq1$. Substituting \eref{PEA_2} in \eref{g_est} produces
 \bea
 \gest(\t,\N)&=&\gmu-\frac{\gsigma^2}{2}+\frac{1}{\t} \ln\left(\frac{1}{\N} \sum_{i=1}^\N \exp( \t^{1/2} \gsigma \xi_i)\right)\\
 &=&\gmu-\frac{\gsigma^2}{2}-\frac{\ln \N}{\t}+\frac{1}{\t} \ln\left(\sum_{i=1}^\N \exp( \t^{1/2} \gsigma \xi_i)\right).
@@ -427,7 +427,7 @@ for all $\N\geq1$. Substituting \eref{PEA_2} in \eref{gest} produces
 \eea
 
 We didn't look in \cite{PetersKlein2013} at the expectation value of $\gest(\t,\N)$ for finite time and finite samples, but it's an interesting object that depends on $\N$ and $\t$ but is not stochastic. Note that this is not $\gest$ of the expectation value, 
-which would be the $\N\to\infty$ limit of \eref{gest}. Instead it is the 
+which would be the $\N\to\infty$ limit of \eref{g_est}. Instead it is the 
 $S\to\infty$ limit,
 \be
 \ave{\gest(\t,\N)} = \frac{1}{\t}\ave{\ln(\ave{\x(\t)}_\N)} = f(\N,\t),
@@ -456,7 +456,7 @@ F&=&-\frac{\ln Z}{\beta}\\
 \elabel{F}
 \eea
 
-Like the growth rate estimator in \eref{gest}, this involves a sum of 
+Like the growth rate estimator in \eref{g_est}, this involves a sum of 
 log-normal variates and, indeed, we can rewrite \eref{gest_4} as
 \be
 \gest=\gmu-\frac{\gsigma^2}{2}-\frac{\ln \N}{\t}-\frac{\beta F}{\t},
@@ -893,11 +893,8 @@ This resembles \GBM with a mean-reverting term like that of~\cite{UhlenbeckOrnst
 \paragraph{\underline{Positive $\tau$}}
 \mbox{}
 
-For $\tau>0$, individual wealth, $\x_\gi(\t)$, reverts to the sample mean, $\ave{\x(\t)}_\N$. We explored some of the properties of sample mean in \secref{finite_populations} for wealths undergoing \GBM. In particular, we saw that a short-time (or large-sample or low-volatility) self-averaging regime exists,
-\be
-\t < \t_c \equiv \frac{2\ln \N}{\gsigma^2},
-\elabel{t_c}
-\ee
+For $\tau>0$, individual wealth, $\x_\gi(\t)$, reverts to the sample mean, $\ave{\x(\t)}_\N$. We explored some of the properties of sample mean in \secref{finite_populations} for wealths undergoing \GBM. In particular, we saw that a short-time (or large-sample or low-volatility) self-averaging regime exists, \eref{t_c}
+$\t < \t_c \equiv \frac{2\ln \N}{\gsigma^2},$
 where the sample mean is approximated well by the ensemble average,
 \be
 \ave{\x(\t)}_\N \sim \ave{\x(\t)} = \exp(\gmu \t).

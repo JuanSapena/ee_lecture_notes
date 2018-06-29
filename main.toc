@@ -50,9 +50,9 @@
 \contentsline {subsubsection}{\numberline {4.2.4}Model behaviour}{96}{subsubsection.4.2.4}
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Positive $\tau $}}\mathsurround \z@ $\relax }{96}{section*.6}
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Negative $\tau $}}\mathsurround \z@ $\relax }{97}{section*.7}
-\contentsline {subsubsection}{\numberline {4.2.5}Derivation of the stable distribution}{98}{subsubsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.5}Derivation of the stable distribution}{97}{subsubsection.4.2.5}
 \contentsline {subsubsection}{\numberline {4.2.6}Moments and convergence times}{100}{subsubsection.4.2.6}
-\contentsline {subsubsection}{\numberline {4.2.7}Fitting United States wealth data}{102}{subsubsection.4.2.7}
+\contentsline {subsubsection}{\numberline {4.2.7}Fitting United States wealth data}{101}{subsubsection.4.2.7}
 \contentsline {section}{\numberline {5}Markets}{105}{section.5}
 \contentsline {subsection}{\numberline {5.1}Optimal leverage}{106}{subsection.5.1}
 \contentsline {subsubsection}{\numberline {5.1.1}A model market}{106}{subsubsection.5.1.1}
