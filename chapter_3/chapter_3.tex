@@ -854,22 +854,22 @@ If it is reasonable to assume a stable distribution exists, we must also conside
 % model
 Our model, called \RGBM, is a system of $\N$ individuals whose wealths, $\x_\gi(\t)$, evolve according to the stochastic differential equation,
 \be
-\gd\x_\gi=\x_\gi \left[(\gmu-\tau)\gd\t+\gsigma \gd\gW_\gi\left(\t\right)\right]+ \tau\ave{\x}_\N\gd\t,
+\gd\x_\gi=\x_\gi \left[(\gmu-\gphi)\gd\t+\gsigma \gd\gW_\gi\left(\t\right)\right]+ \gphi\ave{\x}_\N\gd\t,
 \elabel{rgbm}
 \ee
-for $\gi=1\dots \N$. In effect, we have added to \GBM a simple reallocation mechanism. Over a time step, $dt$, each individual pays a fixed proportion of its wealth, $\tau \x_\gi \gd\t$, into a central pot (``contributes to society'') and gets back an equal share of the pot, $\tau\ave{\x}_\N \gd\t$, (``benefits from society''). We can think of this as applying a wealth tax, say of $1\%$ per year, to everyone's wealth and then redistributing the tax revenues equally. Note that the reallocation parameter, $\tau$, is, like $\gmu$, a rate with dimensions per unit time. Note also that when $\tau=0$, we recover our old friend, \GBM, in which individuals grow their wealths without interacting.
+for $\gi=1\dots \N$. In effect, we have added to \GBM a simple reallocation mechanism. Over a time step, $dt$, each individual pays a fixed proportion of its wealth, $\gphi \x_\gi \gd\t$, into a central pot (``contributes to society'') and gets back an equal share of the pot, $\gphi\ave{\x}_\N \gd\t$, (``benefits from society''). We can think of this as applying a wealth tax, say of $1\%$ per year, to everyone's wealth and then redistributing the tax revenues equally. Note that the reallocation parameter, $\gphi$, is, like $\gmu$, a rate with dimensions per unit time. Note also that when $\gphi=0$, we recover our old friend, \GBM, in which individuals grow their wealths without interacting.
 
 % reallocation is a net effect
-\RGBM is our null model of an exponentially growing economy with social structure. It is intended to capture only the most general features of the dynamics of wealth. A more complex model would treat the economy as a system of agents that interact with each other through a network of relationships. These relationships include trade in goods and services, employment, taxation, welfare payments, using public infrastructure (roads, schools, a legal system, social security, scientific research, and so on), insurance, wealth transfers through inheritance and gifts, and so on. It would be a hopeless task to list exhaustively all these interactions, let alone model them explicitly. Instead we introduce a single parameter -- the reallocation rate, $\tau$ -- to represent their net effect. If $\tau$ is positive, the direction of net reallocation is from richer to poorer. If negative, it is from poorer to richer.
+\RGBM is our null model of an exponentially growing economy with social structure. It is intended to capture only the most general features of the dynamics of wealth. A more complex model would treat the economy as a system of agents that interact with each other through a network of relationships. These relationships include trade in goods and services, employment, taxation, welfare payments, using public infrastructure (roads, schools, a legal system, social security, scientific research, and so on), insurance, wealth transfers through inheritance and gifts, and so on. It would be a hopeless task to list exhaustively all these interactions, let alone model them explicitly. Instead we introduce a single parameter -- the reallocation rate, $\gphi$ -- to represent their net effect. If $\gphi$ is positive, the direction of net reallocation is from richer to poorer. If negative, it is from poorer to richer.
 
 % regimes
-We will see shortly that \RGBM has both ergodic and non-ergodic regimes, characterised to a good approximation by the sign of $\tau$. $\tau>0$ produces an ergodic regime, in which wealths are positive, distributed with a Pareto tail, and confined around their mean value. $\tau<0$ produces a non-ergodic regime, in which the population splits into two classes, characterised by positive and negative wealths which diverge away from the mean.
+We will see shortly that \RGBM has both ergodic and non-ergodic regimes, characterised to a good approximation by the sign of $\gphi$. $\gphi>0$ produces an ergodic regime, in which wealths are positive, distributed with a Pareto tail, and confined around their mean value. $\gphi<0$ produces a non-ergodic regime, in which the population splits into two classes, characterised by positive and negative wealths which diverge away from the mean.
 
 % health warnings
 We offer a couple of health warnings. In \RGBM, like in \GBM, there are no additive changes akin to labour income and consumption. This is unproblematic for large wealths, where additive changes are dwarfed by capital gains. For small wealths, however, wages and consumption are significant and empirical distributions look rather different for low and high wealths~\cite{DragulescuYakovenko2001}. We modelled earnings explicitly in \cite{BermanPetersAdamou2017} and found this didn't generate insights different from \RGBM when we fit both models to real wealth data. We note also, as \cite[p.~41]{meade1964efficiency} put it, that our agents ``do not marry or have children or die or even grow old.'' Therefore, the individual in our setup is best imagined as a household or a family, \ie some long-lasting unit into which personal events are subsumed.
 
 % next steps
-Having specified the model, we will use insights from \secref{finite_populations} to understand how rescaled wealth is distributed in the ergodic and non-ergodic regimes. Then we will show briefly our results from fitting the model to historical wealth data from the United States. The full technical details of this fitting exercise are beyond the scope of these notes -- if you are interested, you can find ``chapter and verse'' in \cite{BermanPetersAdamou2017}. Fitting $\tau$ to data will allow us to answer the important questions:
+Having specified the model, we will use insights from \secref{finite_populations} to understand how rescaled wealth is distributed in the ergodic and non-ergodic regimes. Then we will show briefly our results from fitting the model to historical wealth data from the United States. The full technical details of this fitting exercise are beyond the scope of these notes -- if you are interested, you can find ``chapter and verse'' in \cite{BermanPetersAdamou2017}. Fitting $\gphi$ to data will allow us to answer the important questions:
 \bi
 \item
 What is the net reallocating effect of socio-economic structure on the wealth distribution?
@@ -885,33 +885,33 @@ If so, how long does it take, after a change in conditions, for the rescaled wea
 \seclabel{RGBM_behaviour}
 It is instructive to write \eref{rgbm} as
 \be
-\gd\x_\gi=\underbrace{\x_\gi \left[\gmu \gd\t+\gsigma \gd\gW_\gi\left(\t\right)\right]}_{\text{Growth}} \;\; \underbrace{ - \;\; \tau (\x_\gi-\ave{\x}_\N) \gd\t}_{\text{Reallocation}}.
+\gd\x_\gi=\underbrace{\x_\gi \left[\gmu \gd\t+\gsigma \gd\gW_\gi\left(\t\right)\right]}_{\text{Growth}} \;\; \underbrace{ - \;\; \gphi (\x_\gi-\ave{\x}_\N) \gd\t}_{\text{Reallocation}}.
 \elabel{rgbm_ou}
 \ee
-This resembles \GBM with a mean-reverting term like that of~\cite{UhlenbeckOrnstein1930} in physics and~\cite{Vasicek1977} in finance. It exposes the importance of the sign of $\tau$. We discuss the two regimes in turn.
+This resembles \GBM with a mean-reverting term like that of~\cite{UhlenbeckOrnstein1930} in physics and~\cite{Vasicek1977} in finance. It exposes the importance of the sign of $\gphi$. We discuss the two regimes in turn.
 
-\paragraph{\underline{Positive $\tau$}}
+\paragraph{\underline{Positive $\gphi$}}
 \mbox{}
 
-For $\tau>0$, individual wealth, $\x_\gi(\t)$, reverts to the sample mean, $\ave{\x(\t)}_\N$. We explored some of the properties of sample mean in \secref{finite_populations} for wealths undergoing \GBM. In particular, we saw that a short-time (or large-sample or low-volatility) self-averaging regime exists, \eref{t_c}
+For $\gphi>0$, individual wealth, $\x_\gi(\t)$, reverts to the sample mean, $\ave{\x(\t)}_\N$. We explored some of the properties of sample mean in \secref{finite_populations} for wealths undergoing \GBM. In particular, we saw that a short-time (or large-sample or low-volatility) self-averaging regime exists, \eref{t_c}
 $\t < \t_c \equiv \frac{2\ln \N}{\gsigma^2},$
 where the sample mean is approximated well by the ensemble average,
 \be
 \ave{\x(\t)}_\N \sim \ave{\x(\t)} = \exp(\gmu \t).
 \elabel{rgbm_self}
 \ee
-(The final equality assumes, as previously, that $\x_\gi(0)=1$ for all $i$.) It turns out that the same self-averaging approximation can be made for wealths undergoing \RGBM, \eref{rgbm}, when the reallocation rate, $\tau$, is above some critical threshold:
+(The final equality assumes, as previously, that $\x_\gi(0)=1$ for all $i$.) It turns out that the same self-averaging approximation can be made for wealths undergoing \RGBM, \eref{rgbm}, when the reallocation rate, $\gphi$, is above some critical threshold:
 \be
-\tau > \tau_c \equiv \frac{\gsigma^2}{2\ln \N}.
+\gphi > \gphi_c \equiv \frac{\gsigma^2}{2\ln \N}.
 \elabel{tau_c}
 \ee
-Showing this is technically difficult \cite{Bouchaud2015b} and we will confine ourselves to sketching the key ideas in \secref{RGBM_stable} below. It won't have escaped your attention that $\tau_c={\t_c}^{-1}$ and, indeed, you will shortly have an intuition for why. 
+Showing this is technically difficult \cite{Bouchaud2015b} and we will confine ourselves to sketching the key ideas in \secref{RGBM_stable} below. It won't have escaped your attention that $\gphi_c={\t_c}^{-1}$ and, indeed, you will shortly have an intuition for why. 
 
-Fitting the model to data yields parameter values for which $\tau_c$ is extremely small. For example, typical parameters for US wealth data are $\N=10^8$ and $\gsigma=0.2\text{ year}^{-1/2}$, giving $\tau_c = 0.1\%\text{ year}^{-1}$ (or $t_c\ = 900\text{ years}$). Accounting for the uncertainty in the fitted parameters makes this statistically indistinguishable from $\tau_c=0$.
+Fitting the model to data yields parameter values for which $\gphi_c$ is extremely small. For example, typical parameters for US wealth data are $\N=10^8$ and $\gsigma=0.2\text{ year}^{-1/2}$, giving $\gphi_c = 0.1\%\text{ year}^{-1}$ (or $t_c\ = 900\text{ years}$). Accounting for the uncertainty in the fitted parameters makes this statistically indistinguishable from $\gphi_c=0$.
 
-This means we can safely make the self-averaging approximation for the entire positive $\tau$ regime. That's great news, because it means we can rescale wealth by the ensemble average, $\ave{\x(\t)}=\exp(\gmu \t)$, as we did in \secref{rescaled} for \GBM, and not have to worry about pesky finite $\N$ effects. Following the same procedure as there gives us a simple SDE in the rescaled wealth, $y_\gi(\t) = \x_\gi(\t)\exp(-\gmu \t)$:
+This means we can safely make the self-averaging approximation for the entire positive $\gphi$ regime. That's great news, because it means we can rescale wealth by the ensemble average, $\ave{\x(\t)}=\exp(\gmu \t)$, as we did in \secref{rescaled} for \GBM, and not have to worry about pesky finite $\N$ effects. Following the same procedure as there gives us a simple SDE in the rescaled wealth, $y_\gi(\t) = \x_\gi(\t)\exp(-\gmu \t)$:
 \be
-\gd y_\gi=y_\gi \gsigma \gd\gW_i\left(\t\right)- \tau (y_\gi-1) \gd\t.
+\gd y_\gi=y_\gi \gsigma \gd\gW_i\left(\t\right)- \gphi (y_\gi-1) \gd\t.
 \elabel{rgbm_ou_re}
 \ee
 Note that the common growth rate, $\gmu$, has been scaled out as it was in \secref{rescaled}.
@@ -921,23 +921,23 @@ The distribution of $y_\gi\left(\t\right)$ can found by solving the correspondin
 \mathcal{P}\left(y\right) = \frac{\left(\zeta-1\right)^\zeta}{\Gamma\left(\zeta\right)} e^{-\frac{\zeta-1}{y}} y^{-\left(1+\zeta\right)}.
 \elabel{disti}
 \ee
-$\zeta=1+2\tau/\gsigma^2$ is the Pareto tail index (corresponding to $\alpha-1$ in \secref{power_law}) and $\Gamma\left(\cdot\right)$ is the gamma function.
+$\zeta=1+2\gphi/\gsigma^2$ is the Pareto tail index (corresponding to $\alpha-1$ in \secref{power_law}) and $\Gamma\left(\cdot\right)$ is the gamma function.
 
-Example forms of the stationary distribution are shown in \Fref{dist}. The usual stylised facts are recovered: the larger $\gsigma$ (more randomness in the returns) and the smaller $\tau$ (less social cohesion), the smaller the tail index $\zeta$ and the fatter the tail of the distribution. Fitted $\tau$ values give typical $\zeta$ values between 1 and 2 for the different datasets analysed, consistent with observed tail indices between 1.2 to 1.6 (see \cite{BermanPetersAdamou2017} for details). Not only does \RGBM predict a realistic functional form for the distribution of rescaled wealth, but also it admits fitted parameter values which match observed tails. The inability to do this is a known weakness of earnings-based models (again, see \cite{BermanPetersAdamou2017} for discussion).
+Example forms of the stationary distribution are shown in \Fref{dist}. The usual stylised facts are recovered: the larger $\gsigma$ (more randomness in the returns) and the smaller $\gphi$ (less social cohesion), the smaller the tail index $\zeta$ and the fatter the tail of the distribution. Fitted $\gphi$ values give typical $\zeta$ values between 1 and 2 for the different datasets analysed, consistent with observed tail indices between 1.2 to 1.6 (see \cite{BermanPetersAdamou2017} for details). Not only does \RGBM predict a realistic functional form for the distribution of rescaled wealth, but also it admits fitted parameter values which match observed tails. The inability to do this is a known weakness of earnings-based models (again, see \cite{BermanPetersAdamou2017} for discussion).
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth] {./chapter_3/figs/dists.eps}
-\caption{The stationary distribution for \RGBM with positive $\tau$. Top -- linear scales; Bottom -- logarithmic scales.}
+\caption{The stationary distribution for \RGBM with positive $\gphi$. Top -- linear scales; Bottom -- logarithmic scales.}
 \flabel{dist}
 \end{figure}
 
 For positive reallocation, \eref{rgbm_ou_re} and extensions of it have received much attention in statistical mechanics and econophysics \cite{BouchaudMezard2000,Bouchaud2015}. As a combination of \GBM and a mean-reverting process it is a simple and analytically tractable stochastic process. \cite{LiuSerota2016} provide an overview of the literature and known results.
 
-\paragraph{\underline{Negative $\tau$}}
+\paragraph{\underline{Negative $\gphi$}}
 \mbox{}
 
-For $\tau<0$ the model exhibits mean repulsion rather than reversion. The ergodic hypothesis is invalid and no stationary wealth distribution exists. The population splits into those above the mean and those below the mean. Whereas in \RGBM with non-negative $\tau$ it is impossible for wealth to become negative, negative $\tau$ leads to negative wealth. No longer is total economic wealth a limit to the wealth of the richest individual because the poorest develop large negative wealth. The wealth of the rich in the population increases exponentially away from the mean, and the wealth of the poor becomes negative and exponentially large in magnitude, see \Fref{regimes}.
+For $\gphi<0$ the model exhibits mean repulsion rather than reversion. The ergodic hypothesis is invalid and no stationary wealth distribution exists. The population splits into those above the mean and those below the mean. Whereas in \RGBM with non-negative $\gphi$ it is impossible for wealth to become negative, negative $\gphi$ leads to negative wealth. No longer is total economic wealth a limit to the wealth of the richest individual because the poorest develop large negative wealth. The wealth of the rich in the population increases exponentially away from the mean, and the wealth of the poor becomes negative and exponentially large in magnitude, see \Fref{regimes}.
 
 % AA comment on social mobility
 Such splitting of the population is a common feature of non-ergodic processes. If rescaled wealth were an ergodic process, then individuals would, over long enough time, experience all parts of its distribution. People would spend 99 percent of their time as ``the 99 percent'' and 1 percent of their time as ``the 1 percent''. Therefore, the social mobility implicit in models that assume ergodicity might not exist in reality if that assumption is invalid. That inequality and immobility have been linked~\cite{Corak2013,LiuETAL2013,berman2017} may be unsurprising if both are viewed as consequences of non-ergodic wealth or income.
@@ -956,7 +956,7 @@ Such splitting of the population is a common feature of non-ergodic processes. I
 
 %draw timeline
 \draw [black,loosely dashed,ultra thick] (0,-0.5)--(0,0.5);
-\draw[black,->,ultra thick,>=latex] (0,0.5)--(0,7.4) node[above left,rotate=90] {\small{ Reallocation rate ($\tau$)}};
+\draw[black,->,ultra thick,>=latex] (0,0.5)--(0,7.4) node[above left,rotate=90] {\small{ Reallocation rate ($\gphi$)}};
   
 % draw ticks
 \draw [black,ultra thick] (-0.2,3.5)--(0.0,3.5);	\draw (-0.2,3.5) 	node[left=3pt] {\normalsize{$\scriptstyle 0$}};
@@ -991,7 +991,7 @@ Such splitting of the population is a common feature of non-ergodic processes. I
 \node[black,font=\normalsize\sffamily,anchor=west,text width=4.5cm] at (9.7,3.15) {E)};
   
 \end{tikzpicture}
-\caption{Regimes of \RGBM. A) $\tau=0$ separates the two regimes of \RGBM. For $\tau>0$, a stationary wealth distribution exists. For $\tau<0$, no stationary wealth distribution exists and wealths diverge. B) Simulations of \RGBM with $\N=1000$, $\gmu=0.021 \text{ year}^{-1}$ (presented after rescaling by $\exp(\gmu \t)$), $\gsigma=0.14\text{ year}^{-1/2}$, $\x_\gi\left(0\right)=1$, $\tau=0.15 \text{ year}^{-1}$. Magenta lines: largest and smallest wealths, blue lines: five randomly chosen wealth trajectories, black line: sample mean. C) The stationary distribution to which the system in B) converges. Inset: same distribution on linear scales. D) Similar to B), with $\tau=-0.15 \text{ year}^{-1}$. E) in the $\tau<0$ regime, no stationary wealth distribution exists.}
+\caption{Regimes of \RGBM. A) $\gphi=0$ separates the two regimes of \RGBM. For $\gphi>0$, a stationary wealth distribution exists. For $\gphi<0$, no stationary wealth distribution exists and wealths diverge. B) Simulations of \RGBM with $\N=1000$, $\gmu=0.021 \text{ year}^{-1}$ (presented after rescaling by $\exp(\gmu \t)$), $\gsigma=0.14\text{ year}^{-1/2}$, $\x_\gi\left(0\right)=1$, $\gphi=0.15 \text{ year}^{-1}$. Magenta lines: largest and smallest wealths, blue lines: five randomly chosen wealth trajectories, black line: sample mean. C) The stationary distribution to which the system in B) converges. Inset: same distribution on linear scales. D) Similar to B), with $\gphi=-0.15 \text{ year}^{-1}$. E) in the $\gphi<0$ regime, no stationary wealth distribution exists.}
 \flabel{regimes}
 \end{figure}
 
@@ -1003,20 +1003,20 @@ In this section we will sketch the argument for why we can make the self-averagi
 
 We presented arguments in \secref{sketch} for why wealth in \GBM is self-averaging, $\ave{\x(\t)}_\N\sim\ave{\x(\t)}=\exp(\gmu \t)$ for short time. By mapping from \GBM to the random energy model in \secref{REM}, we showed that ``short time'' means $\t<t_c$, where $t_c=2\ln \N/\gsigma^2$. We can think of this as follows: $t_c$ is the timescale over which the inequality-increasing effects of noisy multiplicative growth drive wealths apart, such that a finite sample of wealths stops self-averaging and becomes dominated by a few trajectories.
 
-Let's now think about what happens when we add reallocation to \GBM, creating \RGBM. $\tau$ is the reallocation rate, so $\tau^{-1}$ is reallocation timescale, \ie the timescale over which the inequality-reducing effects of reallocation pull wealths together. If $\tau^{-1}>t_c$, then reallocation happens too slowly to prevent the expiry of self-averaging. However, if $\tau^{-1}<t_c$, then reallocation pulls wealths together more quickly than they get driven apart, continually ``resetting'' the sample and allowing self-averaging to be maintained indefinitely. Converting this condition into a reallocation rate, we get $\tau>{t_c}^{-1}$, as in \eref{tau_c}. As mentioned in \secref{RGBM_behaviour}, this becomes indistinguishable from $\tau>0$ for realistic parameters, so the self-averaging approximation can be made safely for all positive $\tau$ when using the model to study real economies.
+Let's now think about what happens when we add reallocation to \GBM, creating \RGBM. $\gphi$ is the reallocation rate, so $\gphi^{-1}$ is reallocation timescale, \ie the timescale over which the inequality-reducing effects of reallocation pull wealths together. If $\gphi^{-1}>t_c$, then reallocation happens too slowly to prevent the expiry of self-averaging. However, if $\gphi^{-1}<t_c$, then reallocation pulls wealths together more quickly than they get driven apart, continually ``resetting'' the sample and allowing self-averaging to be maintained indefinitely. Converting this condition into a reallocation rate, we get $\gphi>{t_c}^{-1}$, as in \eref{tau_c}. As mentioned in \secref{RGBM_behaviour}, this becomes indistinguishable from $\gphi>0$ for realistic parameters, so the self-averaging approximation can be made safely for all positive $\gphi$ when using the model to study real economies.
 
 We can now approximate the rescaled wealth, $y_\gi(\t)=\x_\gi(\t)/\ave{\x(\t)}_\N$, as $y_\gi(\t)=\x_\gi(\t)\exp(-\gmu \t)$. Using \Ito's formula as we did \secref{rescaled} yields the following SDE for rescaled wealth, now under \RGBM instead of \GBM:
 \be
-dy= \gsigma\,y\,\gd\gW - \tau\left(y - 1\right)dt.
+dy= \gsigma\,y\,\gd\gW - \gphi\left(y - 1\right)dt.
 \ee
-This is an It\^o equation with drift term $A=\tau(y - 1)$ and diffusion term $B=y \gsigma$. Such equations imply ordinary second-order differential equations that describe the evolution of the \PDFa, called Fokker-Planck equations. The Fokker-Planck equation describes the change in probability density, at any point in (rescaled wealth) space, due to the action of the drift term (like advection in a fluid) and due to the diffusion term (like heat spreading). In this case, we have
+This is an It\^o equation with drift term $A=\gphi(y - 1)$ and diffusion term $B=y \gsigma$. Such equations imply ordinary second-order differential equations that describe the evolution of the \PDFa, called Fokker-Planck equations. The Fokker-Planck equation describes the change in probability density, at any point in (rescaled wealth) space, due to the action of the drift term (like advection in a fluid) and due to the diffusion term (like heat spreading). In this case, we have
 \be
 \frac{d\PDF\left(y,\t\right)}{dt}=\frac{\partial}{\partial y} \left[A\PDF\left(y,\t\right)\right]+\frac{1}{2} \frac{\partial^2}{\partial y^2}\left[B^2 \PDF\left(y,\t\right)\right].
 \ee
 
 The steady-state Fokker-Planck equation for the \PDFa, $\PDF\left(y\right)$, is obtained by setting the time derivative to zero,
 \be
-\frac{\gsigma^2}{2}\left(y^2 \PDF\right)_{yy} + \tau\left[\left(y-1\right)\PDF\right]_y = 0.
+\frac{\gsigma^2}{2}\left(y^2 \PDF\right)_{yy} + \gphi\left[\left(y-1\right)\PDF\right]_y = 0.
 \elabel{fokker_planck}
 \ee
 Positive wealth subjected to continuous-time multiplicative dynamics with non-negative reallocation can never reach zero. Therefore, we solve \Eref{fokker_planck} with boundary condition $\PDF\left(0\right)=0$ to give
@@ -1025,7 +1025,7 @@ Positive wealth subjected to continuous-time multiplicative dynamics with non-ne
 \ee
 where 
 \be
-\zeta = 1+\frac{2\tau}{\gsigma^2}
+\zeta = 1+\frac{2\gphi}{\gsigma^2}
 \ee
 and
 \be
@@ -1049,7 +1049,7 @@ Thus we need to find $\ave{y}$ and $\ave{y^2}$ in order to determine the varianc
 
 The first moment of the rescaled wealth is, by definition, $\ave{y}=1$. To find the dynamic of the second moment, we start with the SDE for the rescaled wealth,
 \be
-\gd y = \gsigma y\gd\gW - \tau\left(y - 1\right)\gd\t,
+\gd y = \gsigma y\gd\gW - \gphi\left(y - 1\right)\gd\t,
 \elabel{rescaledSDE}
 \ee
 and follow a now familiar procedure. We insert $f\left(y,\t\right)=y^2$ into \Ito's formula,
@@ -1063,75 +1063,75 @@ to obtain
 \ee
 We substitute \eref{diff2} for $\gd y$ to get terms at orders $\gd\gW$, $\gd\t$, $\gd\gW^2$, $\gd\t^2$, and $\gd\gW\gd\t$. The scaling of \BM allows us to replace $\gd\gW^2$ by $\gd\t$ and we ignore terms at $o\left(\gd\t\right)$. This yields
 \bea
-\gd \left(y^2\right) = 2\gsigma y^2\gd\gW - \left(2\tau-\gsigma^2\right) y^2\gd\t + 2\tau y\gd\t.
-%+ \tau^2\left(y - 1\right)^2\,dt^2 - \st{\tau\left(y - 1\right)\,\gsigma y\,\gd\gW\,dt}
+\gd \left(y^2\right) = 2\gsigma y^2\gd\gW - \left(2\gphi-\gsigma^2\right) y^2\gd\t + 2\gphi y\gd\t.
+%+ \gphi^2\left(y - 1\right)^2\,dt^2 - \st{\gphi\left(y - 1\right)\,\gsigma y\,\gd\gW\,dt}
 \eea
 Taking expectations on both sides and noting that $\ave{y}=1$ gives us an ordinary differential equation for the second moment:
 \be
-\frac{\gd\ave{y^2}}{\gd\t} = -\left(2\tau - \gsigma^2\right) \ave{y^2} + 2\tau
+\frac{\gd\ave{y^2}}{\gd\t} = -\left(2\gphi - \gsigma^2\right) \ave{y^2} + 2\gphi
 \elabel{avediff2}
 \ee
 with solution
 \be
-\ave{y\left(\t\right)^2} = \frac{2\tau}{2\tau - \gsigma^2} + \left(\ave{y\left(0\right)^2} - \frac{2\tau}{2\tau - \gsigma^2}\right) e^{-\left(2\tau - \gsigma^2\right)\t}.
+\ave{y\left(\t\right)^2} = \frac{2\gphi}{2\gphi - \gsigma^2} + \left(\ave{y\left(0\right)^2} - \frac{2\gphi}{2\gphi - \gsigma^2}\right) e^{-\left(2\gphi - \gsigma^2\right)\t}.
 \elabel{avediff3}
 \ee
 
 The variance $V\left(\t\right)=\ave{y\left(\t\right)^2}-1$ therefore follows
 \be
-V\left(\t\right) = V_{\infty}+\left(V_0 - V_{\infty}\right)e^{-\left(2\tau - \gsigma^2\right)\t}\,,
+V\left(\t\right) = V_{\infty}+\left(V_0 - V_{\infty}\right)e^{-\left(2\gphi - \gsigma^2\right)\t}\,,
 \elabel{var1}
 \ee
 where $V_0$ is the initial variance and
 \be
-V_{\infty} = \frac{2\tau}{2\tau - \gsigma^2}\,.
+V_{\infty} = \frac{2\gphi}{2\gphi - \gsigma^2}\,.
 \elabel{varinf}
 \ee
 $V$ converges in time to the asymptote, $V_{\infty}$, provided the exponential in \eref{var1} is decaying. 
-This can be expressed as a condition on $\tau$
+This can be expressed as a condition on $\gphi$
 \be
-\tau > \frac{\gsigma^2}{2},
+\gphi > \frac{\gsigma^2}{2},
 \ee
 which is the same as the condition we noted previously for the second moment to exist: $\zeta>k$ where $k=2$.
 
-Clearly, for negative values of $\tau$ the condition cannot be satisfied, and the variance (and inequality) of the wealth distribution will diverge. In the regime where the variance exists, $\tau > \gsigma^2/2$, it also follows from \eref{var1} that the convergence time of the variance is $1/\left(2\tau - \gsigma^2\right)$.
+Clearly, for negative values of $\gphi$ the condition cannot be satisfied, and the variance (and inequality) of the wealth distribution will diverge. In the regime where the variance exists, $\gphi > \gsigma^2/2$, it also follows from \eref{var1} that the convergence time of the variance is $1/\left(2\gphi - \gsigma^2\right)$.
 
-As $\tau$ increases, increasingly high moments of the distribution converge to finite values. The above procedure for finding the second moment (and thereby the variance) can be applied to the $k^\text{th}$ moment, just by changing the second power $y^2$ to $y^k$. Therefore, any other cumulant can be found as a combination of the relevant moments. For instance, \cite{LiuSerota2016} also compute the third cumulant.
+As $\gphi$ increases, increasingly high moments of the distribution converge to finite values. The above procedure for finding the second moment (and thereby the variance) can be applied to the $k^\text{th}$ moment, just by changing the second power $y^2$ to $y^k$. Therefore, any other cumulant can be found as a combination of the relevant moments. For instance, \cite{LiuSerota2016} also compute the third cumulant.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Fitting United States wealth data}
 \seclabel{RGBM_data}
-We have introduced the \RGBM model and understood its basic properties. It is a simple model of an interacting population of noisy multiplicative growers. We expect it to be more realistic than \GBM ($\tau=0$) because we know that in the real world people interact. In particular, large populations have over centuries developed public institutions and infrastructure, to which everyone contributes and from which everyone benefits. At first glance, therefore, we might expect to find that \RGBM with positive $\tau$ to fit real wealth data better than \GBM or, indeed, \RGBM with negative $\tau$.
+We have introduced the \RGBM model and understood its basic properties. It is a simple model of an interacting population of noisy multiplicative growers. We expect it to be more realistic than \GBM ($\gphi=0$) because we know that in the real world people interact. In particular, large populations have over centuries developed public institutions and infrastructure, to which everyone contributes and from which everyone benefits. At first glance, therefore, we might expect to find that \RGBM with positive $\gphi$ to fit real wealth data better than \GBM or, indeed, \RGBM with negative $\gphi$.
 
 Additionally, if this is true and if associated convergence times are shorter than the timescales of policy changes, it would indicate that the ergodic hypothesis is warranted and a helpful modelling assumption. If not, then the hypothesis would be unjustified and could be acting as a serious constraint on models of economic inequality, generating misleading analyses and recommendations.
 
 In \cite{BermanPetersAdamou2017} we fit the \RGBM model to historical wealth data from the United States for the last hundred years. We won't include full technical description of this empirical analysis here. It would be too long and our main aim is to communicate the ideas we use to think about problems and build models. If you want to know more, please read the paper (and let us know what you think!) However, the results are interesting and, to us at least, a little shocking, so we include a brief summary.
 
-The basic setup is to fix the values of $\gmu$, $\gsigma$, and $\N$ in our \RGBM model using data about, respectively, aggregate economic growth, stock market volatility, and population data; and then to find, by numerical simulation of \eref{rgbm}, the time series of $\tau(\t)$ values which best reproduces historical wealth shares in the United States. The wealth share, $S_q(\t)$, is a type of inequality measure. It is defined as the proportion of total wealth owned by the richest fraction $q$ of the population. So, for example, $S_{0.1}=0.8$ means that the richest $10\%$ of the population own $80\%$ of the total wealth. Reproducing the historical wealth shares is one way of reproducing approximately the level of inequality in the wealth distribution, and the nice thing is that economists Emmanuel Saez and Gabriel Zucman have estimated around a century's worth of wealth shares for the United States \cite{SaezZucman2014}.
+The basic setup is to fix the values of $\gmu$, $\gsigma$, and $\N$ in our \RGBM model using data about, respectively, aggregate economic growth, stock market volatility, and population data; and then to find, by numerical simulation of \eref{rgbm}, the time series of $\gphi(\t)$ values which best reproduces historical wealth shares in the United States. The wealth share, $S_q(\t)$, is a type of inequality measure. It is defined as the proportion of total wealth owned by the richest fraction $q$ of the population. So, for example, $S_{0.1}=0.8$ means that the richest $10\%$ of the population own $80\%$ of the total wealth. Reproducing the historical wealth shares is one way of reproducing approximately the level of inequality in the wealth distribution, and the nice thing is that economists Emmanuel Saez and Gabriel Zucman have estimated around a century's worth of wealth shares for the United States \cite{SaezZucman2014}.
 
 Fitting the model to these data will address two main questions:
 \bi
-\item Is the ergodic hypothesis valid for rescaled wealth in the United States? For it to be valid, fitted values of $\tau\left(\t\right)$ must be robustly positive.
-\item If $\tau\left(\t\right)$ is robustly positive, is convergence of of the distribution to its stable form fast enough for the distribution to be used as a representative of the empirical wealth distribution?
+\item Is the ergodic hypothesis valid for rescaled wealth in the United States? For it to be valid, fitted values of $\gphi\left(\t\right)$ must be robustly positive.
+\item If $\gphi\left(\t\right)$ is robustly positive, is convergence of of the distribution to its stable form fast enough for the distribution to be used as a representative of the empirical wealth distribution?
 \ei
-Note that we have relaxed the model slightly. $\tau$ is a fixed parameter in \eref{rgbm} but we allow it to vary with time in our empirical analysis.
+Note that we have relaxed the model slightly. $\gphi$ is a fixed parameter in \eref{rgbm} but we allow it to vary with time in our empirical analysis.
 
-\Fref{tau} (top) shows the results of fitting the \RGBM model to the wealth share data in \cite{SaezZucman2014}. There are large annual fluctuations in $\tau_q\left(\t\right)$ (black line) but we are more interested in longer-term changes in reallocation driven by structural economic and political changes. To show these, we smooth the data by taking a central 10-year moving average, $\widetilde{\tau}_q\left(\t\right)$ (red line), where the window is truncated at the ends of the time series. We also show the uncertainty in this moving average (red envelope).
+\Fref{tau} (top) shows the results of fitting the \RGBM model to the wealth share data in \cite{SaezZucman2014}. There are large annual fluctuations in $\gphi_q\left(\t\right)$ (black line) but we are more interested in longer-term changes in reallocation driven by structural economic and political changes. To show these, we smooth the data by taking a central 10-year moving average, $\widetilde{\gphi}_q\left(\t\right)$ (red line), where the window is truncated at the ends of the time series. We also show the uncertainty in this moving average (red envelope).
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth] {./chapter_3/figs/tau_top1.eps}
-\caption{Fitted effective reallocation rates. Calculations done using $\gmu=0.021 \text{ year}^{-1}$ and $\gsigma=0.16 \text{ year}^{-1/2}$. Top: $\tau_{1\%}\left(\t\right)$ (black) and $\widetilde{\tau}_{1\%}\left(\t\right)$ (red). Translucent envelopes indicate one standard error in the moving averages. Bottom: $S^{\text{data}}_{1\%}$ (blue), $S^{\text{model}}_{1\%}$ based on the annual $\tau_{1\%}\left(\t\right)$ (dashed black), based on the 10-year moving average $\widetilde{\tau}_{1\%}\left(\t\right)$ (red).}
+\caption{Fitted effective reallocation rates. Calculations done using $\gmu=0.021 \text{ year}^{-1}$ and $\gsigma=0.16 \text{ year}^{-1/2}$. Top: $\gphi_{1\%}\left(\t\right)$ (black) and $\widetilde{\gphi}_{1\%}\left(\t\right)$ (red). Translucent envelopes indicate one standard error in the moving averages. Bottom: $S^{\text{data}}_{1\%}$ (blue), $S^{\text{model}}_{1\%}$ based on the annual $\gphi_{1\%}\left(\t\right)$ (dashed black), based on the 10-year moving average $\widetilde{\gphi}_{1\%}\left(\t\right)$ (red).}
 \flabel{tau}
 \end{figure}
 
-To ensure the smoothing does not introduce artificial biases, we reverse the procedure and use $\widetilde{\tau}_q\left(\t\right)$ to propagate the initially inverse gamma-distributed wealths and determine the wealth shares $S^{\text{model}}_q\left(\t\right)$. The good agreement with $S^{\text{data}}_q\left(\t\right)$ suggests that the smoothed $\widetilde{\tau}_q\left(\t\right)$ is meaningful, see \Fref{tau} (bottom).
+To ensure the smoothing does not introduce artificial biases, we reverse the procedure and use $\widetilde{\gphi}_q\left(\t\right)$ to propagate the initially inverse gamma-distributed wealths and determine the wealth shares $S^{\text{model}}_q\left(\t\right)$. The good agreement with $S^{\text{data}}_q\left(\t\right)$ suggests that the smoothed $\widetilde{\gphi}_q\left(\t\right)$ is meaningful, see \Fref{tau} (bottom).
 
-The ``take home'' is this: while the effective reallocation rate, $\widetilde{\tau}\left(\t\right)$, was positive for most of the last hundred years, it was negative -- \ie reallocation from poorer to richer -- from the mid-1980s onwards. Furthermore, even when $\tau\left(\t\right)$ was positive, associated convergence times (estimated both by numerical simulation and by plugging fitted model parameters into the results of \secref{RGBM_moments}) were very long compared to the typical times between policy changes -- from several decades to several centuries. This makes the answer to both our questions above a resounding ``No.''
+The ``take home'' is this: while the effective reallocation rate, $\widetilde{\gphi}\left(\t\right)$, was positive for most of the last hundred years, it was negative -- \ie reallocation from poorer to richer -- from the mid-1980s onwards. Furthermore, even when $\gphi\left(\t\right)$ was positive, associated convergence times (estimated both by numerical simulation and by plugging fitted model parameters into the results of \secref{RGBM_moments}) were very long compared to the typical times between policy changes -- from several decades to several centuries. This makes the answer to both our questions above a resounding ``No.''
 
-What shocked us most when we first encountered these results was the existence of long periods with negative reallocation. We began the analysis imagining that \GBM (\ie $\tau=0$, no interactions) was a really crazy model of the real world. After all, we personally pay our taxes and use public services, and the London Mathematical Laboratory is supported by generous charitable reallocations! We imagined that we would see $\tau>0$ but that it might be so small that convergence times would be too long for the ergodic hypothesis to be useful. Instead we found that, recently in the Unites States at least, reallocation has been consistently negative. In our model, this corresponds to wealths being driven apart, populations splitting into groups with positive and negative wealths, and no convergence to a stable distribution of rescaled wealth.
+What shocked us most when we first encountered these results was the existence of long periods with negative reallocation. We began the analysis imagining that \GBM (\ie $\gphi=0$, no interactions) was a really crazy model of the real world. After all, we personally pay our taxes and use public services, and the London Mathematical Laboratory is supported by generous charitable reallocations! We imagined that we would see $\gphi>0$ but that it might be so small that convergence times would be too long for the ergodic hypothesis to be useful. Instead we found that, recently in the Unites States at least, reallocation has been consistently negative. In our model, this corresponds to wealths being driven apart, populations splitting into groups with positive and negative wealths, and no convergence to a stable distribution of rescaled wealth.
 
 In retrospect, perhaps we shouldn't have been so surprised. Qualitatively, our results echo the findings that the rich are experiencing higher growth rates of their wealth than the poor~\cite{Piketty2014,wolff2014household} and that the cumulative wealth of the poorest 50 percent of the American population was negative during 2008--2013~\cite{Rios20162013,WID2017}.
 
-The economic phenomena that trouble theorists most -- such as diverging inequality, social immobility, and the emergence of negative wealth -- are difficult to reproduce in models that make the ergodic hypothesis. In our simple model, this is easy to see: in the ergodic regime, $\tau>0$, our model cannot reproduce these phenomena at all. One may be tempted to conclude that their existence is a sign of special conditions prevailing in the real world -- collusion and conspiracies. But if we admit the possibility of non-ergodicity, $\tau\leq0$, it becomes clear that these phenomena can easily emerge in an economy that does not actively guard against them.
+The economic phenomena that trouble theorists most -- such as diverging inequality, social immobility, and the emergence of negative wealth -- are difficult to reproduce in models that make the ergodic hypothesis. In our simple model, this is easy to see: in the ergodic regime, $\gphi>0$, our model cannot reproduce these phenomena at all. One may be tempted to conclude that their existence is a sign of special conditions prevailing in the real world -- collusion and conspiracies. But if we admit the possibility of non-ergodicity, $\gphi\leq0$, it becomes clear that these phenomena can easily emerge in an economy that does not actively guard against them.
