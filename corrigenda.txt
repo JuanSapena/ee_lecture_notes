@@ -1,6 +1,16 @@
-﻿Corrections.
+﻿CORRIGENDA
+
+p.9 p_i -> p_j and use set notation for z_i
 
 p.26 bullet point 4
 “The median is the same as the mode.” No it’s not.
 
 p.93 r_{<>} expectation
+
+
+
+AGENDA
+
+- Glossary and bibliography
+- Simpler version of REM
+- Correlations in cooperation
