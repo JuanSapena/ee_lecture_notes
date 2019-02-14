@@ -1,6 +1,11 @@
-﻿Corrections.
+Corrections.
 
 p.26 bullet point 4
 “The median is the same as the mode.” No it’s not.
 
 p.93 r_{<>} expectation
+
+p.122
+"If at  any  time  the  equity  falls  below  zero,  the  investment  is  declared  bankrupt and the backtest is considered invalid for the corresponding leverage." 
+
+People were confused by the word "invalid" -- I'm not sure why. We could say we keep the wealth at zero and don't allow recovery from bankruptcy or something. Of course the backtest is "valid" in the sense that it produces bankruptcy.
