@@ -4,10 +4,10 @@
 %\section{Summary}
 %\seclabel{Summary}
 {\it In this introductory chapter we lay the conceptual foundation for the rest 
-of what we have to say. We play a simple coin-toss game and analyze it 
-by Monte Carlo simulation and with pen and paper. The game motivates the 
+of what we have to say about redeveloping economic theory. We play a simple coin-toss game and analyze it 
+numerically, by Monte Carlo simulation, and analytically, with pen and paper. The game motivates the 
 introduction of the expectation value and the time average, which in turn 
-lead to a discussion of ergodic properties. We note the importance of rates 
+lead to a discussion of ergodic properties. Ergodicity will turn out to be the key concept that was not understood -- because it hadn't been discovered -- in the initial development of formal economics. We note the importance of rates 
 of change and introduce Brownian motion and Geometric Brownian motion.
 Some historical perspective is provided to understand the prevalence or
 absence of key concepts in modern economic theory and other fields.
@@ -31,9 +31,9 @@ you attach to wealth that can be measured in monetary
 terms, whether you like the thrill of gambling, your 
 religion and moral convictions and so on.
 
-In these notes we will mostly ignore these.
+In these notes we will mostly ignore these factors.
 We will build an extremely simple model of your 
-wealth, which will lead to an extremely simple
+wealth, which will lead to an extremely simple and 
 powerful model of the way you make decisions that affect 
 your wealth. We are interested in analyzing the 
 game mathematically, which requires a translation 
@@ -45,8 +45,8 @@ We refer to $\t$ as ``time''. It should be kept in mind that
 mathematical objects. We have chosen these names because
 we want to compare the behaviour of the mathematical
 objects to the behaviour of wealth over time, but
-we emphasize that we're building a model -- whether we write $\x(\t)$ 
-or $\text{wealth}(\text{time})$ makes no difference to the mathematics. 
+we emphasize that we're building a model -- whether we write $\x(\t)$, 
+or $\text{wealth}(\text{time})$, or \smiley(\frownie) makes no difference to the mathematics. 
 
 The usefulness of our model will be different in different circumstances, 
 ranging from completely meaningless to very helpful. There is no 
@@ -54,7 +54,7 @@ substitute for careful consideration of any given situation, and
 labeling mathematical objects in one way or another is certainly none.
 
 Having got these words of warning out of the way, we define our 
-model of the dynamics of your wealth under the rules we specified. 
+model\footnote{For those in the know: ``our'' coin toss is a discrete version of geometric Brownian motion, the workhorse model of financial mathematics and much more.} of the dynamics of your wealth under the rules we just specified. 
 At regular intervals of duration $\dt$ we randomly generate a 
 factor $\gr(\t)$ with each possible value
 $\gr_i\in \{0.6, 1.5\}$ occurring with probability 1/2, 
@@ -91,7 +91,7 @@ original setup).
 \begin{picture}(200,190)(0,0)
     \put(0,0){\includegraphics[width=\textwidth]{./chapter_coins/figs/x_of_t_lin_1.pdf}}
 \end{picture}
-\caption{Wealth $\x(\t)$ resulting from a computer simulation of our game, repeated 52 times.}
+\caption{Wealth $\x(\t)$ resulting from a computer simulation of our game, as specified by \eref{law} and \eref{gamble}, for 52 time steps (corresponding to one year in the given setup).}
 \flabel{1_1}
 \end{figure}
 
@@ -105,7 +105,7 @@ conclude that playing the game for a year is quite risky, but is the
 risk worth taking? 
 
 \subsubsection{Averaging over many trials}
-A single trajectory doesn't tell us much about overall tendencies.
+The trajectory in \fref{1_1} doesn't tell us much about overall tendencies.
 There is too much noise to discern a clear signal. A common 
 strategy for getting rid of noise is to try again. And then try again and
 again, and look at what happens on average. For example, this is 
@@ -115,8 +115,8 @@ again. By averaging over many images the noise is reduced and
 \href{https://en.wikipedia.org/wiki/Super-resolution_microscopy#Stochastic_functional_techniques}{a resolution beyond the diffraction limit is achieved}.
 
 So let's try this in our case and see if we can make sense of the game.
-In \fref{1_2} we average over finite ensembles of $\N$ 
-trajectories, that is, we plot the finite-ensemble average.
+In \fref{1_2} we average over a finite number, $N$, of
+trajectories. We call a collection of trajectories an ensemble. We shall see that in the limit $N\to\infty$ the ensemble average converges to the expectation value, and indeed the terms ``ensemble average'' and ``expectation value'' are synonyms. To avoid confusion we will be explicit when $N$ is finite: in \fref{1_2} we plot ``finite-ensemble averages.''
 
 \begin{defn}{Finite-ensemble average} The finite-ensemble average of the quantity 
 $z$ at a given time $\t$ is
@@ -129,30 +129,31 @@ number of realizations included in the average.
 \end{defn}
 \begin{figure}[h!]
 \begin{picture}(200,200)(0,0)
-  \put(-50,30){(A)}
     \put(-100,0){\includegraphics[width=0.8\textwidth]{./chapter_coins/figs/x_of_t_lin.pdf}}
-  \put(230,30){(B)}  
+  \put(-50,30){(A)}
   \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_coins/figs/x_of_t_log.pdf}}
+  \put(230,30){(B)}  
 \end{picture}
-\caption{Partial ensemble averages $\ave{\x(\t)}_{\N}$ for ensemble sizes $\N=1, 
+\caption{Finite-ensemble averages $\ave{\x(\t)}_{\N}$ for ensemble sizes $\N=1, 
 10^2, 
-10^4, 10^6$. (A) linear scales, (B) logarithmic scales.}
+10^4, 10^6$. The noise in the finite-ensemble average diminishes systematically as $\N$ increases. 
+(A) on linear scales the multiplicative (non-linear) nature of the process is apparent, (B) on logarithmic scales the multiplicative process is additive in time, and the finite-ensemble average for $\N=10^6$ is a straight line except for small fluctuations.}
 \flabel{1_2}
 \end{figure}
 \FloatBarrier
 As expected, the more 
 trajectories are included in the average, the smaller the fluctuations of 
 that average. For $\N=10^6$ hardly any fluctuations are visible. Since the 
-noise-free trajectory points up it is tempting to conclude that the risk 
+noise-free trajectory points up it is tempting to conclude that my own wealth will similarly go up and  conclude that the risk 
 of the game is worth taking. This reasoning has dominated economic 
-theory for about 350 years now. But it is flawed. 
+theory for about 350 years now. But it is flawed. The correction of this flaw and its far-reaching consequences constitute our research program.
 
 \subsubsection{Averaging over time}
 Does our analysis necessitate the conclusion that the gamble is worth taking? 
 Of course it doesn't, otherwise we wouldn't be belabouring this point. 
  Our critique will focus on the type of averaging we have applied -- we didn't play the game many times
 in a row as would correspond to the real-world situation of repeating the game once a week for the rest of your life. 
-Instead we played the game many times in parallel, which corresponds to a different setup.
+Instead we played the game many times in parallel, which corresponds to a different setup\footnote{This different setup would correspond splitting our wealth into $\N$ equal parts and bet each in a sequence of independent coin tosses. But the rules of our game as we defined it don't allow that.}.
 
 We therefore try a different analysis. \Fref{1_3} shows another simulation of your wealth. This time we don't show an average over many trajectories but a simulation of a single trajectory
 over a long time. Noise is removed also in this case but in a different way: to capture visually what 
