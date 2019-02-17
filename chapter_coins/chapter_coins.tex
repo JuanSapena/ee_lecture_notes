@@ -72,6 +72,7 @@ and multiply current wealth by that factor, so that
 \elabel{gamble}
 \ee
 
+We have good reasons to suspect that this model will do something interesting. It's not just a silly game because it has one important property: it's multiplicative. Every time the coin is tossed, wealth is {\it multiplied} by one of the two possible factors. This introduces a reference point, or state-dependence to the absolute size of the change. Processes with this property are very common in nature -- the amount of anything that reproduces changes in proportion to what's already there. In the absence of other constraints, such as limited resources, this applies to the dynamics of the biomass of a cell culture. In fact, life itself has been defined as that which produces more of itself \cite{Morowitz1992}: life and evolution begin with the minimal chemical structure that can copy itself. The rest, in a sense, is details. We will see, especially in \secref{Interactions}, how multiplicativity generates interesting structure in -- including but not limited to -- economics.
 
 Without discussing in depth how realistic a representation of your 
 wealth this model is (for instance your non-gambling related 
@@ -164,23 +165,23 @@ just by the passage of time.
 
 \begin{figure}[h!]
 \begin{picture}(200,200)(0,0)
-  \put(-50,30){(A)}
     \put(-100,0){\includegraphics[width=0.75\textwidth]{./chapter_coins/figs/x_of_t_lin_20_year.pdf}}
-  \put(230,30){(B)}  
+  \put(-50,30){(A)}
   \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_coins/figs/x_of_t_log_20_year.pdf}}
+  \put(230,30){(B)}  
 \end{picture}
-\caption{Single trajectory over 1,040 time units, corresponding to 20 years 
+\caption{Single trajectory over 1,040 time steps, corresponding to 20 years 
 in our 
-setup. (A) linear scales, (B) logarithmic scales.}
+setup. (A) on linear scales all we see is wealth quickly dropping to zero, (B) logarithmic scales are more appropriate for the multiplicative process and reveal systematic exponential decay.}
 \flabel{1_3}
 \end{figure}
 \FloatBarrier
 
-Of course the trajectory in \fref{1_3} is random, but the apparent trend emerging from the randomness 
-strongly suggests that our initial analysis does not reflect what happens over time in a single system. 
-Jumping ahead a little, we reveal that this is indeed the case. If it seems counter-intuitive then this is 
-because our intuition is built on so-called ``ergodic processes'', whereas $\x$ is non-ergodic. We will say
-more about this in \secref{Ergodic_observables}.
+The trajectory in \fref{1_3} is, of course, random, but the apparent trend emerging from the randomness 
+strongly suggests that our initial analysis in \fref{1_2} does not reflect what happens over time in a single system. 
+%Jumping ahead a little, we reveal that this is indeed the case. If it seems counter-intuitive then this is 
+%because our intuition is built on so-called ``ergodic processes'', whereas $\x$ is non-ergodic. We will say
+%more about this in \secref{Ergodic_observables}.
 Several important messages can be derived from the observation that an individual trajectory grows 
 more slowly (or decays faster) over time than an average of a large ensemble. 
 
@@ -202,7 +203,7 @@ increases in our system.
 
 The two methods we've used to eliminate the noise from our system
 are well known. The first method is closely related to the mathematical object called the
-expectation value, and the second is closely related to the object called the time average.
+``expectation value,'' and the second is closely related to the object called the ``time average.''
 
 \subsubsection{Expectation value}
 In this section we validate \fref{1_2} by computing analytically the
@@ -268,7 +269,7 @@ possible values weighted by their probabilities $\p_\gj$
 \ee 
 If $\z$ is continuous, the expectation value is the integral
 \be
-\ave{\z}=\int_{-\infty}^{+\infty} \gs \PDF_{\Z}(\z) \gd\z.
+\ave{\z}=\int_{-\infty}^{+\infty} \gs \PDF_{\Z}(\\gs) \gd\gs.
 \ee 
 \end{defn}
 
@@ -374,17 +375,18 @@ This may not be how you think of a stochastic process, so let's illustrate this 
 \label{sp_grid}
 \end{picture}\\
 %\end{figure}
-When we simulate stochastic processes, we often start with some value and modify it iteratively in each step of a for-loop. In each step of the for-loop we would generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $\z$ of the random variable $\Z$ only once and insert that into \eref{st_pr}. The value $\z$ specifies a simple function of time
+When we simulate stochastic processes, we often start with some value and modify it iteratively, for example in each step of a for-loop. In each step we generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $\z$ of the random variable $\Z$ only once and insert that into \eref{st_pr}. The value $\z$ specifies a simple function of time
 \be
 \Y_{\z}(\t)=\gf(\z,\t)
+\elabel{st_pr_r}
 \ee
-meaning that all the randomness is contained in $\z$. Once $\z$ is specified, $\Y_{\z}(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. As an example you can think of drawing  at random a single uniformly distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which could be interpreted as a stochastic process, if $\t$ specifies the decimal place of the relevant digit.
+meaning that all the randomness is contained in $\z$. Once $\z$ is specified, $\Y_{\z}(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. Note the use of capital $\Z$ for the random variable in \eref{st_pr} and small $\z$ for a realization of it in \eref{st_pr_r}. As an example you can think of drawing at random a single uniformly distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which can be interpreted as a stochastic process, where $\t$ is given by the decimal place of the digit.
 
 We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $\Y_{\Z}(\t^*)$. That's again a random variable, an instance of which may be $\Y_{\z_1}(\t^*)$.
 
-Just as a function of a random variable is a another random variable, a function of a stochastic process is another stochastic process. We will often use the noun ``observable'' to refer to a quantity that is derived from a stochastic process. For example, the growth rate of wealth is an observable of the wealth process.
+Just as a function of a random variable is another random variable, a function of a stochastic process is another stochastic process. We will often use the noun ``observable'' to refer to a quantity that is derived from a stochastic process. For example, the growth rate of wealth is an observable of the wealth process.
 
-We will suppress the random variable $\Z$ in our notation, and just write $\x(\t)$ for the stochastic wealth process (instead of writing $\x(\Z,\t)$, {\it c.f.} \eref{st_pr}).
+We will suppress the random variable $\Z$ in our notation, and just write $\x(\t)$ for the stochastic wealth process (instead of writing $\x(\Z,\t)$, {\it c.f.} \eref{st_pr}). We will also write $\x(\t)$ for a specific realization of this process, or $\x_\gi(\t)$ when it's important to distinguish different realizations.
 \end{excursion}
 
 We pretended to be mathematically clueless when we ran the simulations,
@@ -395,7 +397,7 @@ approximating it numerically. Consider the expectation value of \eref{gamble}
 \ave{\x(\t+\dt)}=\ave{\x(\t)\gr(\t+\dt)}.
 \elabel{step_1}
 \ee
-We've just learned what to call objects like $\gr(\t)$: it's another stochastic process, albeit an especially simple one, namely one that is ergodic. We'll explain in \secref{Ergodic_observables} what we mean by that, but we note here that its ensemble average is time-independent.
+We've just learned what to call objects like $\gr(\t)$: it's another stochastic process, or an observable. This one is  especially simple: in a given realization $\x(\t)$ it's one instance of the same random variable for each time $\t$.  one, namely one that is ergodic. We note here that its ensemble average is time-independent (and in \secref{Ergodic_observables} we will see that it's an example of an ergodic observable).
 Since $\gr(\t+\dt)$ is independent of $\x(\t)$, \eref{step_1} can be re-written as
 \be
 \ave{\x(\t+\dt)}=\ave{\x(\t)}\ave{\gr}.
@@ -490,7 +492,7 @@ Instead, each player expected to receive either nothing or $\q$.
 \subsubsection{Time average}
 In this section we validate \fref{1_3} and compute analytically 
 what happens in the long-time limit. The blue line in \fref{1_3} is not completely smooth, there's still 
-some noise. It has some average slope, but that slope will vary from realisation to 
+some noise (see panel B). It has some average slope, but that slope will vary from realisation to 
 realisation. The longer we observe the system, \ie the more time
 is represented in a figure like \fref{1_3}, the smoother the line will be. In the long-time limit, $\Dt\to\infty$, 
 the line will be completely smooth, and the average slope will be a deterministic number -- in any
@@ -540,7 +542,7 @@ at rate $\rt$ and places it next to the average over a million systems.
   \put(250,120){(B)}  
 \end{picture}
 \caption{(A) Finite-ensemble average for $N=10^6$ and 52 time steps, the light blue line is 
-the expectation value.\protect\footnotemark
+the expectation value.
  (B) A single system simulated for 10,000 time steps, the light blue 
 line decays exponentially with the time-average decay factor $\rt$ in each time step.}
 \flabel{1_4}
@@ -637,8 +639,8 @@ hoped to show mathematically that gambling may not be a good idea even if
 the odds are favourable, and was a 
 proponent of the notion that commerce should and does
 consist of mutually beneficial interactions rather than one winner and one loser. 
-In the end his voice was not heard in the economics community. His main career was as a priest at All Saints Church in London's Margaret Street, only a 22 minute stroll away from the London 
-Mathematical Laboratory, according to Google.
+In the end his voice was not heard in the economics community. His main career was as a priest at All Saints Church in London's Margaret Street, only a 22 minute stroll away from the (first office of the) London 
+Mathematical Laboratory, according to Google \fref{all_saints}.
 %
 %$\rex$ and $\rt$ are two different properties of the game. $\rex$ is 
 %the large-ensemble limit, $\rt$ is the long-time limit. The Victorian 
@@ -686,7 +688,7 @@ Mathematical Laboratory, according to Google.
 \begin{picture}(200,270)(0,0)
   \put(-30,0){\includegraphics[width=1.15\textwidth]{./chapter_coins/figs/all_saints.pdf}}
 \end{picture}
-\caption{Location of All Saints Church and the London Mathematical Laboratory.}
+\caption{Location of All Saints Church and the London Mathematical Laboratory's initial office.}
 \flabel{all_saints}
 \end{figure}
 \FloatBarrier
