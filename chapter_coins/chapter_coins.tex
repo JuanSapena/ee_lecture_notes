@@ -46,7 +46,7 @@ mathematical objects. We have chosen these names because
 we want to compare the behaviour of the mathematical
 objects to the behaviour of wealth over time, but
 we emphasize that we're building a model -- whether we write $\x(\t)$, 
-or $\text{wealth}(\text{time})$, or \smiley(\frownie) makes no difference to the mathematics. 
+or $\text{wealth}(\text{time})$, or \smiley(\lightning) makes no difference to the mathematics. 
 
 The usefulness of our model will be different in different circumstances, 
 ranging from completely meaningless to very helpful. There is no 
@@ -72,7 +72,7 @@ and multiply current wealth by that factor, so that
 \elabel{gamble}
 \ee
 
-We have good reasons to suspect that this model will do something interesting. It's not just a silly game because it has one important property: it's multiplicative. Every time the coin is tossed, wealth is {\it multiplied} by one of the two possible factors. This introduces a reference point, or state-dependence to the absolute size of the change. Processes with this property are very common in nature -- the amount of anything that reproduces changes in proportion to what's already there. In the absence of other constraints, such as limited resources, this applies to the dynamics of the biomass of a cell culture. In fact, life itself has been defined as that which produces more of itself \cite{Morowitz1992}: life and evolution begin with the minimal chemical structure that can copy itself. The rest, in a sense, is details. We will see, especially in \secref{Interactions}, how multiplicativity generates interesting structure in -- including but not limited to -- economics.
+We have good reasons to suspect that this model will do something interesting. It's not just a silly game because it has one important property: it's multiplicative. Every time the coin is tossed, wealth is {\it multiplied} by one of the two possible factors. This introduces a reference point, or state-dependence, of the absolute size of the change. Processes with this property are very common in nature -- the amount of anything that reproduces changes in proportion to what's already there. In the absence of other constraints, such as limited resources, this applies to the dynamics of the biomass of a cell culture. In fact, life itself has been defined as that which produces more of itself \cite{Morowitz1992}: life and evolution begin with the minimal chemical structure that can copy itself. The rest, in a sense, is details. We will see, especially in \cref{Interactions}, how multiplicativity generates interesting structure in -- including but not limited to -- economics.
 
 Without discussing in depth how realistic a representation of your 
 wealth this model is (for instance your non-gambling related 
@@ -109,11 +109,14 @@ risk worth taking?
 The trajectory in \fref{1_1} doesn't tell us much about overall tendencies.
 There is too much noise to discern a clear signal. A common 
 strategy for getting rid of noise is to try again. And then try again and
-again, and look at what happens on average. For example, this is 
-very successful in imaging -- the 2014 Nobel Prize in chemistry 
-was awarded for a technique that takes a noisy image again and 
-again. By averaging over many images the noise is reduced and 
-\href{https://en.wikipedia.org/wiki/Super-resolution_microscopy#Stochastic_functional_techniques}{a resolution beyond the diffraction limit is achieved}.
+again, and look at what happens on average. 
+An example of the technique is Shannon's error-correcting code:
+instead of sending the message $0$ (or $1$), send the relevant digit 3 times. The recipient averages over the received digits and takes the closest possibility. If one out of three digits was miscommunicated because of noise, the code nonetheless recovers the original message: averaging gets rid of noise.
+%For example, this is 
+%very successful in imaging -- the 2014 Nobel Prize in chemistry 
+%was awarded for a technique that takes a noisy image again and 
+%again. By averaging over many images the noise is reduced and 
+%\href{https://en.wikipedia.org/wiki/Super-resolution_microscopy#Stochastic_functional_techniques}{a resolution beyond the diffraction limit is achieved}.
 
 So let's try this in our case and see if we can make sense of the game.
 In \fref{1_2} we average over a finite number, $N$, of
@@ -269,7 +272,7 @@ possible values weighted by their probabilities $\p_\gj$
 \ee 
 If $\z$ is continuous, the expectation value is the integral
 \be
-\ave{\z}=\int_{-\infty}^{+\infty} \gs \PDF_{\Z}(\\gs) \gd\gs.
+\ave{\z}=\int_{-\infty}^{+\infty} \gs \PDF_{\Z}(\gs) \gd\gs.
 \ee 
 \end{defn}
 
@@ -694,10 +697,66 @@ Mathematical Laboratory, according to Google \fref{all_saints}.
 \FloatBarrier
 
 
-An observable that neatly summarises the two different 
-aspects of multiplicative growth we have illustrated is the multiplicative (exponential) growth rate, 
+An observable that neatly captures the two different 
+aspects of multiplicative growth we have illustrated is the exponential growth rate, $\gm(\ave{\x(\t)}_\N, \Dt)$ 
 observed over finite time $\Dt$, in a finite ensemble
-of $\N$ realisations
+of $\N$ realisations. Exponential growth rates are ubiquitous and may be familiar, but because they are the origin of the logarithmic function, which will be important for us later on, we will intro them properly in a little excursion that will also clarify what a logarithm is.
+
+\begin{excursion}{Growth rates, exponentials, and the logarithm}
+The logarithm is a relatively recent mathematical discovery, made some time in the 1590s by John Napier, the 8th Laird of Merchiston in Scotland. Let's say you lend me some money, $\x(\t)$, for one year, $\Dt=1$~year, and I have to pay interest on the loan. We agree a yearly interest rate of $r_{1}=5\%$ per year. 
+
+After one year the amount I have to repay is
+\bea
+\x(\t+\Dt)=\overbrace{\x(\t)}^{\text{Principal}}+ \overbrace{\D \x}^{\text{Interest}}.
+\eea 
+I could convert the interest payment into a rate, $r_1$, so that $r_1 \x(\t)$ is the rate (dollars per time) at which I have to make constant payments to you for one year, so that you end up with the right amount of interest at the end of the year, and
+\be
+\x(\t+\Dt)=\x(\t)r_1 \Dt
+\elabel{deal}
+\ee
+This makes it easy, for instance, to find something to enter into my accounts if I have to say after 6 months how much I owe you at that moment. I would say: only half a year has passed, so I only owe you half the interest, 
+\be
+\x(\t+\Dt/2)=\x(\t)\left(1+r_1 \frac{\Dt}{2}\right). 
+\elabel{deal_2}
+\ee
+But if this is really the amount I owe you after 6 months, surely I should pay interest on this new amount for the following 6 months. We will see that this leads to a problem. Substituting $\x(\t+\Dt/2)$ for $\x(\t)$ on the \RHS of \eref{deal_2} gives
+\bea
+\x(\t+\Dt)&=&\x(t+\Dt/2)\left(1+r_1 \frac{\Dt}{2}\right)\\
+&=&\x(\t)\left(1+r_1\frac{\Dt}{2}\right)^2
+\eea
+Equating to \eref{deal} we find a contradiction
+\bea
+\x(\t) (1+ r_{\Dt} \Dt)&=&\x(\t)(1+r_{\Dt}/2)^2\\
+\implies 1+ r_{\Dt} \Dt&=&1+r_{\Dt}\Dt+\left(\frac{r\Dt}{2}\right)^2 \text{{\color{red} \huge \lightning}}.
+\eea
+Strange as it may seem, the solution to this problem is to acknowledge that interest rates depend on the time scale at which they're defined. We can fix the problem by introducing $r_2$ -- the semi-annual interest rate (the subscript 2 indicates that we've split the original interval in 2 equal parts). It is defined by
+insisting that the one-step and two-step computations give the same interest payment $\D\x$, 
+\be
+1+ r_1 \Dt=\left(1+r_2 \frac{\Dt}{2}\right)^2.
+\ee
+There's nothing stopping us from writing down the general expression for any number, $\T$, of intermediate stock-takings
+\bea
+\frac{\x(\t+\Dt)}{\x(\t)}&=&\left(1+r_\T\frac{ \Dt}{\T}\right)^\T\\
+&\text{which implies}&\\
+r_\T&=& \frac{1}{\Dt}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}
+\eea
+A common trick to remove the dependence of some quantity ($r_{\T})$ on another ($\T$)  is to let the control variable diverge. The limit no longer depends on the diverging quantity (we've seen this trick before: the expectation value doesn't depend on the ensemble size, which has diverged).
+\be
+r_\infty= \frac{1}{\Dt} \underbrace{\lim_{\T\to\infty}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}}_{\ln\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)}.
+\ee
+Note the procedure here: we keep the total time interval, $\Dt$, fixed and split it into $\T$ ever more numerous and shorter sub-intervals $\dt$.
+Because it's tedious to write down the long expression involving the limit, we define it as a new function, called the logarithm, $\ln(\cdot)$, as indicated by the underbrace.
+\be
+\ln \ga :=  \lim_{\T\to\infty}\T \left\{\ga^{1/\T}-1\right\}.
+\ee
+The logarithm has a property that makes it uniquely suited for characterizing multiplicative processes: the logarithm of a ratio is the difference of the logarithms of numerator and denominator, 
+\be
+\ln \frac{\ga_2}{\ga_1}=\ln \ga_2 - \ln \ga_1 = \D \ln \ga.
+\ee
+The inverse function of the logarithm is the exponential, denoted $\exp(\cdot)$, so that $\exp(\ln \ga)=\ga$, and the limiting growth rate $r_\infty$ is called the logarithmic or exponential growth rate, which we also denote by $\gm$ (subscript ''m'' for ``multiplicative'').
+\end{excursion}
+
+The exponential growth rate of average wealth in an ensemble of $\N$ systems, observed over time $\Dt$ is
 \be
 \gm(\ave{\x(\t)}_\N, \Dt)=\frac{\D \ln \ave{\x}_\N}{\Dt},
 \elabel{gest}
@@ -753,7 +812,7 @@ According to this definition, $\gt$ is the time average of
 the observable $\frac{\d \ln \x}{\dt}$. It can be shown that
 the time-average growth rate of a single trajectory is the same as that
 of a finite-ensemble average of trajectories,
-$\lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}=\lim_{\Dt\to\infty}\frac{\D \ln \ave{\x}_N}{\Dt}$, \cite{PetersKlein2013}.
+$\lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}=\lim_{\Dt\to\infty}\frac{\D \ln \ave{\x}_N}{\Dt}$, \cite{PetersKlein2013}. In \secref{finite_populations} we will derive this result as well as growth rates in finite ensembles and finite time.
 
 
 \begin{excursion}{Dimensional analysis}
@@ -802,7 +861,8 @@ The issue is related to a result obtained by \person{von Neumann} and
 famous
 %but quite unhelpful
 book \cite{vonNeumannMorgenstern1944}: 
-only differences in utility functions can have physical meaning.
+only differences in utility functions can have physical meaning. 
+We will have a lot more to say about utility functions (which we call ergodicity mappings) in \cref{decision}.
 \end{excursion}
 
 \subsubsection{Ergodic observables}
@@ -828,7 +888,7 @@ to certain people, and that an entire field of mathematics is devoted to dealing
 precisely this problem. The field of mathematics is called ``ergodic theory.'' It emerged
 from the question under what circumstances the expectation value is informative 
 of what happens over time, first raised in the development of statistical mechanics by Maxwell and 
-Boltzmann starting in the 1850s. 
+Boltzmann starting in the 1850s. These lecture notes are our attempt to use precisely the insights of these physicists to re-develop economic theory from the foundations up.
 
 \begin{history}{Randomness and ergodicity in physics}
 
@@ -854,11 +914,15 @@ answered -- the usefulness of probability theory relies heavily on expectation
 values, but as we have seen, they are averages over imagined future states of the 
 universe. \person{Boltzmann}'s critics were aware of this and were not shy to voice their
 concerns. Under what circumstances are expectation values meaningful? 
-\person{Boltzmann} gave two answers. Firstly, expectation values are meaningful when 
+\person{Boltzmann} gave two answers. 
+\bi
+\item expectation values are meaningful when 
 the quantity of interest really is an average (or a sum) over many approximately 
 independent systems. An average over a finite ensemble will be close to the 
-expectation value if the ensemble is large enough. Secondly, expectation values 
+expectation value if the ensemble is large enough. 
+\item expectation values 
 are meaningful, even if only a single system exists, if they reflect what happens over time. 
+\ei
 
 \person{Boltzmann} called a system ``ergodic\footnote{The word ``ergodic'' was coined by \person{Boltzmann}. 
 He initially proposed the word ``monodic'', from Greek $\mu o \nu o$ (unique) + $o\delta o \varsigma$ (path) suggesting 
@@ -873,7 +937,7 @@ Our setup requires us to be more modest, and we will speak of specific ergodic o
 \end{history}
 
 To convey concisely that we cannot use the expectation value and the 
-time average interchangeably in our game, we would say ``$\x$ is not ergodic.'' 
+time average interchangeably in our game, we would say ``the observable $\x$ is not ergodic.'' 
 
 \begin{defn}{Ergodic property}
 In these notes, an observable $\A$ is called ergodic if its 
@@ -886,11 +950,11 @@ and its time average converges to this value with probability one\footnote{Some 
 \elabel{def_ergodic}
 \ee
 \end{defn}
-The \RHS of \eref{def_ergodic} is evaluated at time $\t$, and unlike the \LHS could be a function of time. For now, we will restrict ourselves to a setup where that is not the case, \ie where the ergodic property holds at all times. In \secref{RGBM_moments} we will discuss transient behavior, where the distribution of $\A$ is time dependent, and the expectation value only converges to the time-average in the $\t\to\infty$ limit.
+The \RHS of \eref{def_ergodic} is evaluated at time $\t$, and unlike the \LHS could be a function of time. For now, we restrict our definition of ergodicity to a setup where that is not the case, \ie where the ergodic property holds at all times. In \secref{RGBM_moments} we will discuss transient behavior, where the distribution of $\A$ is time dependent. We then also consider an observable ``ergodic'' if its expectation value only converges to the time-average in the $\t\to\infty$ limit.
 
 In terms of random variables, $\Z$, and stochastic processes, $\Y_{\Z}(\t)$, the ergodic property can be
 visualized as in \fref{ergodic_grid}. Averaging a stochastic process over time or over the ensemble
-are completely different operations, and only under very rare circumstances (namely under ergodicity) can the two operations be interchanged.
+are completely different operations, and only under very rare circumstances (namely under ergodicity) can the two operations be interchanged. In our coin-tossing game the operations are clearly not interchangeable. An implicit assumption of interchangeability in the early days is the Original Sin of economic theory.
 \begin{figure}[h!]
 \begin{picture}(200,260)(0,0)
   \put(-40,-30){\includegraphics[width=1.2\textwidth]{./chapter_coins/figs/ergodic_grid.pdf}}
@@ -922,14 +986,14 @@ if others do not. Language therefore must be used carefully. Saying our game is 
 really means that some key observables of interest, most notably wealth $\x$, are
 not ergodic. Wealth $\x(\t)$, defined by \eref{law}, is clearly not ergodic -- with $\A=\x$ the \LHS of \eref{def_ergodic} 
 is zero, and the \RHS is not constant in time but grows. The expectation value $\ave{\x}(\t)$
-is simply doesn't give us the relevant information about the temporal behavior of $\x(\t)$.
+simply doesn't give us the relevant information about the temporal behavior of $\x(\t)$.
  
 This does not mean that no ergodic observables exist that are related
 to $\x$. Such observables do exist, and
 we have already encountered two of them. In fact, we will encounter a particular type
 of them frequently -- in our quest for an observable that tells us what happens over
 time in a stochastic system we will find them automatically. However, again, the issue
-is subtle: an ergodic observable may or may not tells us what we're interested in.
+is subtle: an ergodic observable may or may not tell  us what we're interested in.
 It may be ergodic but not indicate what happens to $\x$. For example, 
 the multiplicative factor $\gr(\t)$ is an 
 ergodic observable that reflects what happens to the expectation value of $\x$, 

@@ -1,83 +1,83 @@
 \contentsline {section}{\numberline {1}Coins}{4}{section.1}
 \contentsline {subsection}{\numberline {1.1}The game}{5}{subsection.1.1}
 \contentsline {subsubsection}{\numberline {1.1.1}Averaging over many trials}{6}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.2}Averaging over time}{7}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.2}Averaging over time}{8}{subsubsection.1.1.2}
 \contentsline {subsubsection}{\numberline {1.1.3}Expectation value}{9}{subsubsection.1.1.3}
 \contentsline {subsubsection}{\numberline {1.1.4}Time average}{14}{subsubsection.1.1.4}
-\contentsline {subsubsection}{\numberline {1.1.5}Ergodic observables}{19}{subsubsection.1.1.5}
-\contentsline {subsection}{\numberline {1.2}Rates}{23}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Brownian motion}{24}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Geometric Brownian motion}{28}{subsection.1.4}
-\contentsline {subsubsection}{\numberline {1.4.1}It\^{o}\xspace calculus}{31}{subsubsection.1.4.1}
-\contentsline {section}{\numberline {2}Decisions}{33}{section.2}
-\contentsline {subsection}{\numberline {2.1}Models and science fiction}{34}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Gambles}{34}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Repetition and wealth evolution}{36}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Growth rates}{39}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}The decision axiom}{41}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}The expected-wealth and expected-utility paradigms}{45}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}General dynamics}{48}{subsection.2.7}
-\contentsline {subsubsection}{\numberline {2.7.1}Why discuss general dynamics?}{48}{subsubsection.2.7.1}
-\contentsline {paragraph}{\bf Dynamic perspective:}{49}{section*.2}
-\contentsline {paragraph}{\bf Utility perspective:}{50}{section*.3}
-\contentsline {subsubsection}{\numberline {2.7.2}Technical setup}{50}{subsubsection.2.7.2}
-\contentsline {subsubsection}{\numberline {2.7.3}Dynamic from a utility function}{54}{subsubsection.2.7.3}
-\contentsline {subsubsection}{\numberline {2.7.4}Utility function from a dynamic}{56}{subsubsection.2.7.4}
-\contentsline {subsection}{\numberline {2.8}The St Petersburg paradox}{59}{subsection.2.8}
-\contentsline {subsection}{\numberline {2.9}The insurance puzzle}{65}{subsection.2.9}
-\contentsline {subsubsection}{\numberline {2.9.1}Solution in the time paradigm}{69}{subsubsection.2.9.1}
-\contentsline {subsubsection}{\numberline {2.9.2}The classical solution of the insurance puzzle}{71}{subsubsection.2.9.2}
-\contentsline {section}{\numberline {3}Populations}{72}{section.3}
-\contentsline {subsection}{\numberline {3.1}Every man for himself}{73}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Log-normal distribution}{73}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Two growth rates}{74}{subsubsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.3}Measuring inequality}{75}{subsubsection.3.1.3}
-\contentsline {subsubsection}{\numberline {3.1.4}Wealth condensation}{76}{subsubsection.3.1.4}
-\contentsline {subsubsection}{\numberline {3.1.5}Rescaled wealth}{77}{subsubsection.3.1.5}
-\contentsline {subsubsection}{\numberline {3.1.6}$u$-normal distributions and Jensen's inequality}{78}{subsubsection.3.1.6}
-\contentsline {subsubsection}{\numberline {3.1.7}power-law resemblance}{79}{subsubsection.3.1.7}
-\contentsline {subsection}{\numberline {3.2}Finite populations}{80}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Sums of log-normals}{80}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}The random energy model}{84}{subsubsection.3.2.2}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Short time}}\mathsurround \z@ $\relax }{85}{section*.4}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Long time}}\mathsurround \z@ $\relax }{85}{section*.5}
-\contentsline {section}{\numberline {4}Interactions}{88}{section.4}
-\contentsline {subsection}{\numberline {4.1}Cooperation}{89}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Reallocation}{93}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Introduction}{93}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}The ergodic hypothesis in economics}{93}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}Reallocating geometric Brownian motion}{95}{subsubsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.4}Model behaviour}{96}{subsubsection.4.2.4}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Positive ${\gls {phi}}$}}\mathsurround \z@ $\relax }{96}{section*.6}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Negative ${\gls {phi}}$}}\mathsurround \z@ $\relax }{97}{section*.7}
-\contentsline {subsubsection}{\numberline {4.2.5}Derivation of the stable distribution}{97}{subsubsection.4.2.5}
-\contentsline {subsubsection}{\numberline {4.2.6}Moments and convergence times}{100}{subsubsection.4.2.6}
-\contentsline {subsubsection}{\numberline {4.2.7}Fitting United States wealth data}{101}{subsubsection.4.2.7}
-\contentsline {section}{\numberline {5}Markets}{105}{section.5}
-\contentsline {subsection}{\numberline {5.1}Optimal leverage}{106}{subsection.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}A model market}{106}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}Leverage}{107}{subsubsection.5.1.2}
-\contentsline {subsubsection}{\numberline {5.1.3}Portfolio theory}{107}{subsubsection.5.1.3}
-\contentsline {subsubsection}{\numberline {5.1.4}Sharpe ratio}{110}{subsubsection.5.1.4}
-\contentsline {subsubsection}{\numberline {5.1.5}Expected return}{110}{subsubsection.5.1.5}
-\contentsline {subsubsection}{\numberline {5.1.6}Growth rate maximisation}{111}{subsubsection.5.1.6}
-\contentsline {subsection}{\numberline {5.2}Stochastic market efficiency}{113}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}A fundamental measure}{113}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Relaxing the model}{113}{subsubsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.3}Efficiency}{114}{subsubsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.4}Stability}{115}{subsubsection.5.2.4}
-\contentsline {subsubsection}{\numberline {5.2.5}Prediction accuracy}{117}{subsubsection.5.2.5}
-\contentsline {subsection}{\numberline {5.3}Applications of stochastic market efficiency}{117}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}A theory of noise -- Sisyphus discovers prices}{118}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Solution of the equity premium puzzle}{118}{subsubsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}Central-bank interest rates}{120}{subsubsection.5.3.3}
-\contentsline {subsubsection}{\numberline {5.3.4}Fraud detection}{121}{subsubsection.5.3.4}
-\contentsline {subsection}{\numberline {5.4}Real markets -- stochastic market efficiency in action}{121}{subsection.5.4}
-\contentsline {subsubsection}{\numberline {5.4.1}Backtests of constant-leverage investments}{122}{subsubsection.5.4.1}
-\contentsline {subsubsection}{\numberline {5.4.2}Data sets}{124}{subsubsection.5.4.2}
-\contentsline {subsubsection}{\numberline {5.4.3}Full time series}{125}{subsubsection.5.4.3}
-\contentsline {subsubsection}{\numberline {5.4.4}Shorter time scales}{126}{subsubsection.5.4.4}
-\contentsline {subsection}{\numberline {5.5}Discussion}{128}{subsection.5.5}
-\contentsline {section}{Acronyms}{128}{section*.8}
-\contentsline {section}{List of Symbols}{129}{section*.10}
-\contentsline {section}{References}{132}{section*.11}
+\contentsline {subsubsection}{\numberline {1.1.5}Ergodic observables}{22}{subsubsection.1.1.5}
+\contentsline {subsection}{\numberline {1.2}Rates}{26}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Brownian motion}{27}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Geometric Brownian motion}{31}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}It\^{o}\xspace calculus}{34}{subsubsection.1.4.1}
+\contentsline {section}{\numberline {2}Decisions}{36}{section.2}
+\contentsline {subsection}{\numberline {2.1}Models and science fiction}{37}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Gambles}{37}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Repetition and wealth evolution}{39}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Growth rates}{42}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}The decision axiom}{44}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}The expected-wealth and expected-utility paradigms}{48}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}General dynamics}{51}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}Why discuss general dynamics?}{51}{subsubsection.2.7.1}
+\contentsline {paragraph}{\bf Dynamic perspective:}{52}{section*.2}
+\contentsline {paragraph}{\bf Utility perspective:}{53}{section*.3}
+\contentsline {subsubsection}{\numberline {2.7.2}Technical setup}{53}{subsubsection.2.7.2}
+\contentsline {subsubsection}{\numberline {2.7.3}Dynamic from a utility function}{57}{subsubsection.2.7.3}
+\contentsline {subsubsection}{\numberline {2.7.4}Utility function from a dynamic}{59}{subsubsection.2.7.4}
+\contentsline {subsection}{\numberline {2.8}The St Petersburg paradox}{62}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}The insurance puzzle}{68}{subsection.2.9}
+\contentsline {subsubsection}{\numberline {2.9.1}Solution in the time paradigm}{72}{subsubsection.2.9.1}
+\contentsline {subsubsection}{\numberline {2.9.2}The classical solution of the insurance puzzle}{74}{subsubsection.2.9.2}
+\contentsline {section}{\numberline {3}Populations}{75}{section.3}
+\contentsline {subsection}{\numberline {3.1}Every man for himself}{76}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Log-normal distribution}{76}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Two growth rates}{77}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Measuring inequality}{78}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Wealth condensation}{79}{subsubsection.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.5}Rescaled wealth}{80}{subsubsection.3.1.5}
+\contentsline {subsubsection}{\numberline {3.1.6}$u$-normal distributions and Jensen's inequality}{81}{subsubsection.3.1.6}
+\contentsline {subsubsection}{\numberline {3.1.7}power-law resemblance}{82}{subsubsection.3.1.7}
+\contentsline {subsection}{\numberline {3.2}Finite populations}{83}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Sums of log-normals}{83}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}The random energy model}{87}{subsubsection.3.2.2}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Short time}}\mathsurround \z@ $\relax }{88}{section*.4}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Long time}}\mathsurround \z@ $\relax }{88}{section*.5}
+\contentsline {section}{\numberline {4}Interactions}{91}{section.4}
+\contentsline {subsection}{\numberline {4.1}Cooperation}{92}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Reallocation}{96}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Introduction}{96}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}The ergodic hypothesis in economics}{96}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Reallocating geometric Brownian motion}{98}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Model behaviour}{99}{subsubsection.4.2.4}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Positive ${\gls {phi}}$}}\mathsurround \z@ $\relax }{99}{section*.6}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Negative ${\gls {phi}}$}}\mathsurround \z@ $\relax }{100}{section*.7}
+\contentsline {subsubsection}{\numberline {4.2.5}Derivation of the stable distribution}{100}{subsubsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.6}Moments and convergence times}{103}{subsubsection.4.2.6}
+\contentsline {subsubsection}{\numberline {4.2.7}Fitting United States wealth data}{104}{subsubsection.4.2.7}
+\contentsline {section}{\numberline {5}Markets}{108}{section.5}
+\contentsline {subsection}{\numberline {5.1}Optimal leverage}{109}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}A model market}{109}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Leverage}{110}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.3}Portfolio theory}{110}{subsubsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.4}Sharpe ratio}{113}{subsubsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.5}Expected return}{113}{subsubsection.5.1.5}
+\contentsline {subsubsection}{\numberline {5.1.6}Growth rate maximisation}{114}{subsubsection.5.1.6}
+\contentsline {subsection}{\numberline {5.2}Stochastic market efficiency}{116}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}A fundamental measure}{116}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Relaxing the model}{116}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Efficiency}{117}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Stability}{118}{subsubsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.5}Prediction accuracy}{120}{subsubsection.5.2.5}
+\contentsline {subsection}{\numberline {5.3}Applications of stochastic market efficiency}{120}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}A theory of noise -- Sisyphus discovers prices}{121}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Solution of the equity premium puzzle}{121}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Central-bank interest rates}{123}{subsubsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.4}Fraud detection}{124}{subsubsection.5.3.4}
+\contentsline {subsection}{\numberline {5.4}Real markets -- stochastic market efficiency in action}{124}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Backtests of constant-leverage investments}{125}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Data sets}{127}{subsubsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.3}Full time series}{128}{subsubsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.4}Shorter time scales}{129}{subsubsection.5.4.4}
+\contentsline {subsection}{\numberline {5.5}Discussion}{131}{subsection.5.5}
+\contentsline {section}{Acronyms}{131}{section*.8}
+\contentsline {section}{List of Symbols}{132}{section*.10}
+\contentsline {section}{References}{135}{section*.11}
