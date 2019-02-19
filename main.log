@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.23)  18 FEB 2019 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.23)  19 FEB 2019 01:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1561,7 +1561,7 @@ Overfull \hbox (11.2216pt too wide) in paragraph at lines 1275--1285
 in-stances of a time-independent
  []
 
-<./chapter_coins/figs/BM_time_ave.pdf, id=2240, 408.75278pt x 266.68005pt>
+<./chapter_coins/figs/BM_time_ave.pdf, id=2235, 408.75278pt x 266.68005pt>
 File: ./chapter_coins/figs/BM_time_ave.pdf Graphic file (type pdf)
 
 <use ./chapter_coins/figs/BM_time_ave.pdf>
@@ -2123,11 +2123,14 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  36612 strings out of 493014
  689982 string characters out of 6133351
- 1137432 words of memory out of 5000000
+ 1137369 words of memory out of 5000000
  38729 multiletter control sequences out of 15000+600000
  84437 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2167,7 +2170,7 @@ ublic/lm/lmtt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/l
 mtt8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/wasy2-ps/wa
 sy10.pfb>
-Output written on main.pdf (139 pages, 6603567 bytes).
+Output written on main.pdf (139 pages, 6603136 bytes).
 PDF statistics:
  8478 PDF objects out of 8907 (max. 8388607)
  7335 compressed objects within 74 object streams

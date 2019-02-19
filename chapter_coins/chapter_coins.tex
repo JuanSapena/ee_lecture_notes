@@ -1001,7 +1001,7 @@ whereas per-round changes in the logarithm of wealth, $\d \ln \x = \ln \gr$, are
 and reflect what happens to $\x$ over time.
 
 \vspace{.3cm}
-\underline{Proposition:} $\gr(\t)$ and $\d \ln \x$  are ergodic.
+\underline{Proposition:} $\gr(\t)$ and $\d \ln \x$  are ergodic for the wealth dynamic defined by \eref{law} and \eref{gamble}.
 
 \begin{proof}
 
@@ -1015,9 +1015,9 @@ and, according to \eref{t_ave_f_disc}, the time average of $\gr(\t)$ is
 \tave{\gr}=\lim_{\T\to\infty} \frac{1}{\T} \sum_\gtau^\T \gr_\gtau,
 \elabel{t_r}
 \ee
-where we have written $\gr_\gtau = \gr(\t+\gtau\dt)$ to make clear the equivalence between the two expressions. The only difference between the two expressions is the label we have chosen
+where we have written $\gr_\gtau = \gr(\t+\gtau\dt)$ to make clear the equivalence between the two expressions. The only difference is between the labels we have chosen
 for the dummy variable ($\gi$ in \eref{e_r} and $\gtau$ in \eref{t_r}). Clearly, the 
-expressions yield the same value. $\gr(\t)$ takes independent identically distributed values.
+expressions yield the same value. 
 
 The same argument holds for $\d \ln \x$.
 \end{proof}
@@ -1025,16 +1025,19 @@ The same argument holds for $\d \ln \x$.
 Whether we consider \eref{t_r} an average over 
 time or over an ensemble is only a matter of our choice of words. 
 
-$\ave{\d \ln \x}$ is important, historically. \person{Daniel Bernoulli} noticed in 
+The expectation value $\ave{\d \ln \x}$ is important, historically. \person{Daniel Bernoulli} noticed in 
 1738 \cite{Bernoulli1738} that people tend to
 optimize $\ave{\d \ln \x}$, whereas it had been assumed that they should optimize $\ave{\d \x}$. 
 Unaware of the issue of ergodicity (200 years before the concept was discovered 
 and the word was coined), \person{Bernoulli} had no good explanation for this 
 empirical fact and simply stated that people tend to behave as though they valued
-money non-linearly. We now know what is actually going on: $\d \x$ is not ergodic, 
+money non-linearly. We now know what is actually going on: multiplicative dynamics
+are a fairly realistic model for real wealth, and under those dynamics
+$\d \x$ is not ergodic, 
 and $\ave{\d \x}$ is of no interest -- it doesn't tell us what happens over time. However,
-$\d \ln \x$ is ergodic, $\ave{\d \ln \x}$ specifies what happens to $\x$ over time, and it
-is the right object to optimize.
+$\d \ln \x$ {\it is} ergodic, and $\ave{\d \ln \x}$ does tell us what happens to $\x$ over time, 
+wherefore seeing people optimise $\ave{\d \ln \x}$ just means seeing them optimise wealth 
+over the one trajectory that describes a financial life, rather than across the ensemble of possibilities.
 
 % repetition
 %When the foundations of economic theory were laid, specifically in \person{Bernoulli}'s 
@@ -1045,11 +1048,11 @@ is the right object to optimize.
 %discrepancy remained mysterious and numerous puzzles and paradoxes in 
 %economic theory arose as a result. The paradigm we outline here resolves these puzzles.
 
-Ergodicity is related to stationarity but they are not the same concept. As an illustration, consider the following process: $\gf(\t)=\z_{\gi}$, where $\z_{\gi}$ is an instance of a random variable $\Z$. To be explicit, this means a realization of the stochastic process $\gf(\t)$ is generated as follows: we generate the random instance $\z_{\gi}$ once, and then fix $\gf(\t)$ at that value for all time. The distribution of $\gf(\t)$ is independent of $\t$ and in that sense $\gf(\t)$ is stationary. Averaging over the ensemble, we obtain $\ave{\gf(\t)}=\ave{\z}$, whereas averaging over time in the $\gi^{\text{th}}$ trajectory gives $\overline{\gf}=\z_{\gi}$. Thus the process is stationary but not ergodic.
+Ergodicity is not the same concept as stationarity. As an illustration of the difference, consider the following process: $\gf(\t)=\z_{\gi}$, where $\z_{\gi}$ is an instance of a random variable $\Z$. Explicitly, this means a realisation of the stochastic process $\gf(\t)$ is generated as follows: we generate the random instance $\z_{\gi}$ once, and then fix $\gf(\t)$ at that value for all time. The distribution of $\gf(\t)$ is independent of $\t$ and in that sense $\gf(\t)$ is stationary. But it is not ergodic: averaging over the ensemble, we obtain $\ave{\gf(\t)}=\ave{\z}$, whereas averaging over time in the $\gi^{\text{th}}$ trajectory gives $\overline{\gf}=\z_{\gi}$. Thus the process is stationary but not ergodic.
 
 \subsection{Rates}
 \seclabel{Rates}
-This section is a preview of an in-depth discussion of growth rates in \secref{decision}.
+This section is a preview of an in-depth discussion of growth rates in \cref{decision}.
 The ergodic observable $\d \ln \x$, identified in the previous section, is basically a rate.
 Dividing it by the duration of the gamble, we obtain exactly the exponential 
 growth rate of $\x$, namely $\frac{\d \ln \x}{\dt}$. Finding good growth rates 
@@ -1079,7 +1082,7 @@ voil\'a!, a useful equation could be written down in ink, remaining useful for 3
 
 Like \person{Newton}'s laws (a mathematical model of the world), our game is a prescription of changes. 
 Unlike \person{Newton}'s laws it's stochastic, but it's a prescription of changes nonetheless. 
-Our game is also a powerful mathematical model of the world, as we will see in subsequent lectures. 
+The multiplicative aspect of our game makes it also a powerful mathematical model of the world, as we shall see in subsequent lectures. 
 
 We're very much interested in changes of $\x$ -- we want to know 
 whether we're winning or losing -- but changes in $\x$ are not stable. 
@@ -1109,17 +1112,19 @@ For multiplicative dynamics, \ie if $\frac{\x(\t+\dt)}{\x(\t)}$ is stationary, t
 value of the rate of change of the logarithm of $\x(\t)$ determines whether the game is long-term profitable 
 for an individual.
 
-More generally, when evaluating a gamble that is represented as a stochastic process 
+More generally, when evaluating a gamble that is represented as a stochastic process, it seems that people's intuitive
+choices roughly maximise appropriate long-time growth rates. Mathematically speaking, they
 \begin{enumerate}
 \item
-Find a monotonically increasing function $\gv[\x(\t)]$ such that $\frac{\d \gv[\x(\t)]}{\dt}$ 
+find a monotonically increasing function $\gv[\x(\t)]$ such that $\frac{\d \gv[\x(\t)]}{\dt}$ 
 are independent instances of a stationary random variable.
 \item
-Compute the expectation value of $\frac{\d \gv[\x(\t)]}{\dt}$. If this is positive then $\x(\t)$
+compute the expectation value of $\frac{\d \gv[\x(\t)]}{\dt}$. If this is positive then $\x(\t)$
 grows in the long run, if it is negative then $\x(\t)$ decays.
 \end{enumerate}
 
-This is discussed in detail in \secref{decision}.
+The mathematics of this procedure is discussed in detail in \cref{decision}, and an
+experiment testing whether people behave as predicted is described in \secref{Copenhagen}.
 
 \subsection{Brownian motion}
 \seclabel{Brownian_motion}
