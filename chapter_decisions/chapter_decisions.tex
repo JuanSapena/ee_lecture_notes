@@ -21,6 +21,7 @@ In many cases it eliminates the need for well established but epistemologically 
 \newpage
 
 \subsection{Models and science fiction}
+\seclabel{Models_and}
 We will do decision theory 
 by using mathematical models, and since this can be done in many ways we will be
 explicit about how we choose to do it. We will define a gamble, which 
@@ -32,8 +33,8 @@ model create its world. Writing down a mathematical model is like laying out the
 a science-fiction novel. We may decide that people can download their consciousness onto a computer, 
 that medicine has advanced to eliminate ageing and death -- these are premises we are at liberty to invent.
 Once we have written them down we begin to explore the world that results from those premises.
-A choice of decision criterion implies an endless list of behaviors that will
-be observed. For example, some criteria will lead to cooperation, others will not, some will lead
+A choice of decision criterion is really a model of human behaviour -- what makes us who we are if not our decisions? It therefore implies a long list of specific behaviours that will
+be observed in a given model world. For example, some criteria will lead to cooperation, others will not, some will lead
 to the existence of insurance contracts, others will not \etc We will explore the worlds created by the different
 models. Once we have done so we invite you to judge which model you find most useful
 for your understanding of the world. Of course, having spent many years thinking about these
@@ -47,7 +48,8 @@ making purely financial decisions. We may bet on a horse or take out personal li
 This chapter will not tell you whom you should marry or even whose economics lectures you should attend.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Gambles}
+\subsection{Gamble: random number and duration}
+\seclabel{Gamble:}
 One fundamental building block of mathematical decision theory is the gamble.
 This is a mathematical object that resembles a number of situations in real life, 
 namely situations where we face a decision whose consequences will be purely
@@ -66,8 +68,9 @@ associated with a loss. We order them such that $\q_1<\ldots<\q_\K$.
 \end{defn}
 
 Everything we need to know about the gamble is contained in the 
-payouts, probabilities, and duration.
-We relate it to reality through a few examples:
+payouts, probabilities, and duration. In economics, the duration of a gamble is rarely discussed but it's clearly crucial information, as a trivial example shows. Let's say you get to choose between two gambles. One pays $\$1$ with probability $1$ and takes one second to complete; the other also pays $\$1$ also with probability $1$ but takes one year to complete. Clearly the former is more attractive.
+
+We relate the abstract gamble to reality through a few situations that may be modelled as gambles:
 
 \begin{example}{Betting on a fair coin}
 Imagine betting $\$ 10$ on the toss of a fair coin. We would model this 
@@ -76,7 +79,7 @@ with the following payouts and probabilities:
 \q_1 = -\$ 10, &\quad& \p_1 = 1/2;\\
 \q_2 = +\$ 10, &\quad& \p_2 = 1/2.
 \eea
-The duration would be the time between two coin tosses. If you participate in coin tosses once a week it would be $\dt=1$ week.
+The duration may be the time until you receive the payout, or if you participate in coin tosses once a week we may want to make it $\dt=1$ week.
 \end{example}
 
 \begin{example}{Playing the lottery}
@@ -107,9 +110,10 @@ The duration may be something like $\dt=30$ minutes.
 \begin{example}{The null gamble}
 It is useful to introduce the null gamble, in which a payout of zero is received 
 with certainty: $\q_1=\$0$, $\p_1=1$. This represents the `no bet' or `do nothing' option.
-The duration, $\dt$, has to be chosen appropriately. The meaning of the
-duration will become clearer later on -- often it is the time between two successive rounds
-of a gamble.
+
+As in the examples above, the duration, $\dt$, has to be chosen appropriately. 
+The meaning of the duration will become clearer later on -- often it is the time 
+between two successive rounds of a gamble.
 \end{example}
 
 The gamble is a simple but versatile mathematical model of an uncertain future. 
@@ -122,24 +126,49 @@ The extension to continuous random variables is natural and used frequently
 to model real-world scenarios where the number of possible outcomes, \eg the change 
 in a stock price over one day, is large.
 
-Suppose now that you have to choose between two options that you've modeled 
+Suppose now that you have to choose between two options that you've modelled 
 as two gambles (possibly including the null gamble). Which should you choose, 
 and why? This is the gamble problem, the central question of decision theory, and 
 the basis for much of mainstream economics.
 
+\begin{defn}{The gamble problem}
+The gamble problem is the problem to choose between two gambles.
+\end{defn}
+
+We stress here that the gamble alone is not enough information to answer this question. 
+The value of a gamble -- clearly -- depends on more facts than probabilities, payouts, and duration. Crucially, it depends 
+\begin{enumerate}
+\item
+on how the gamble affects our future. For instance: if we go bankrupt as a result, can we recover from that?
+\item
+on our circumstances. When you're very rich you can afford to take risks that you can't afford when you're poor. 
+\item
+on our personality. Some like the thrill of gambling, others find it unpleasant.
+\end{enumerate}
+Mainstream economics focuses on point 3, whereas we focus on points 1 and 2.
+
+Although the gamble problem is underspecified by a gamble alone, the gamble is a 
+useful conceptual unit because it specifies that part of the model of evolving wealth 
+that is independent of individual circumstances. It thus splits an easily observable part
+of the problem from information that's much harder to obtain. We can all buy the same lottery 
+ticket with publicly specified prizes, probabilities, duration -- for some of us that will be attractive, for others it won't, for a variety of reasons.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Repetition and wealth evolution}
+\subsection{Repeated gamble: from random number to stochastic process}
+\seclabel{Repeated_gamble}
 To solve the gamble problem we must propose a criterion to choose between two
 gambles. Different criteria will result in different decisions -- by writing down a criterion
 we build a model world of model humans who behave in ways that may seem sensible
-to us or crazy -- if the behavior seems crazy we have probably not chosen a good
-criterion and we should try a different one.
+to us or crazy -- if the behaviour seems crazy we have probably not chosen a good
+criterion and we should look back, think about what may be wrong with the criterion, 
+and try a better one.
 
-The wealth process $\x(\t)$ is connected to the gambles our model humans 
-choose to play. Precisely {\it how} it is affected remains to be specified.
+The wealth process $\x(\t)$ is related to the gambles our model humans 
+choose to play. Precisely {\it how} it is related remains to be specified.
 
-Considering a single round of a gamble in isolation -- the so-called `one-shot 
-game' of game theory -- is relatively uninstructive in this regard. All we know is 
+Considering a single round of a gamble in isolation -- the so-called `one-shot' setup 
+-- is relatively uninstructive in this regard, though that hasn't diminished its prominence in wider literature. 
+All we know is 
 that one of the possible payouts will be received, leading to the random value 
 $\x(\t+\dt)=\x(\t)+\q$. 
 We don't yet know how accepting this gamble will affect how our wealth, $\x(\t)$, grows or decays over time, since one time step isn't enough for this to become apparent. 
@@ -228,7 +257,7 @@ expressed instead as a random wealth multiplier,
 \ee
 The multiplier is another random variable -- it also (trivially) defines a stochastic process that is a new instance of the random variable at each point in time, $\gr(\t)$. The gamble is repeated by applying another instance of the same multiplier at all subsequent rounds:
 \be
-\x(\t+\dt) = \gr\x(\t).
+\x(\t+\dt) = \gr(\t)\x(\t).
 \ee
 From \eref{R_def} we see that $\gr(\t)$ is a sequence of instances 
 of a random variable with time-independent distribution, 
@@ -266,21 +295,21 @@ The difference between the two modes of repetition might easily be mistaken
 for a matter of taste. When the $\$ 10$ bet was first offered, what 
 difference does it make whether our individual imagined this to be a bet of a 
 fixed size or of a fixed fraction of his wealth? However, the consequences of 
-this choice between imagined situations are enormous. As we saw in the 
-previous lecture, additive and multiplicative dynamics differ as starkly as the 
-linear and exponential functions, and there is evidence that people adjust their behavior
+this choice between imagined situations are enormous, as we shall see 
+experimentally in \secref{Copenhagen}. In \cref{Coins} we saw that additive and multiplicative dynamics differ as starkly as the 
+linear and exponential functions, and there is evidence that people adjust their behaviour
 to the type of repetition they face. 
 %CPH
 It matters, therefore, that we consider 
 carefully the economic situation we wish to model in order to choose the 
 most realistic mode of repetition. For example, fluctuations in the price of a 
 stock tend to be proportional to the price, \cf \eref{DW_mult_short}, so 
-multiplicativity is the appropriate paradigm here.
+multiplicativity is the appropriate paradigm for large wealth fully invested in stocks.
 
 Now that we've established how the gamble is related to $\x(\t)$ we can 
 begin to think about decision criteria. Not surprisingly, appropriate
-growth rates are useful decision criteria -- ``pick the gamble that will lead
-your wealth to grow the fastest'' is generally good advice. To be able to 
+growth rates are useful decision criteria -- ``pick the gamble that will make
+your wealth grow fastest'' is generally good advice. To be able to 
 follow this advice we will think again about growth rates.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -293,7 +322,7 @@ is the rate of change of a monotonically increasing function of wealth, $\gv(\x(
 \ee
 The function, $\gv$, is chosen such that the increments, $\D \gv(\x(\t))$, over 
 the period $\Dt$,\footnote{Note that we use a general time period, $\Dt$, here 
-and not the period of the gamble, $\dt$.} are independent instances of a random variable. The growth rate is, therefore, ergodic\footnote{The increments don't necessarily need to be independent, and examples can be constructed where they are drawn from different distributions at different times, but in our case we have indepence and a fixed distribution, and that's a sufficient condition for the growth rate to be ergodic}. We consider $\g$ a function of $\t$ only 
+and not the period of the gamble, $\dt$.} are independent instances of a random variable. The growth rate is, therefore, ergodic\footnote{The increments don't necessarily need to be independent, and examples can be constructed where they are drawn from different distributions at different times, but in our case we have independence and a fixed distribution, and that's a sufficient condition for the growth rate to be ergodic.}. We consider $\g$ a function of $\t$ only 
 inasmuch as this labels a particular realisation of the randomness at a particular point in time.
 
 The statistical irrelevance of the time of measurement is 
@@ -302,7 +331,7 @@ to convey robust information about the underlying process, rather than
 mere happenstance about when it was sampled. 
 
 %Therefore, the increments in any function $\gv(\x)$ will also be stationary. We want $\gv(\x)$ to be increasing in $\x$.
-Under additive repetition, we know from \eref{DW_add} that $\D\x$ is already ergodic, so we know immediately that the correct mapping is the identity: $\gv(\x)=\x$.\footnote{In fact, any linear function $\gv(\x)=\alpha\x+\beta$ has stationary increments and is monotonically increasing provided $\alpha>0$. However, there is nothing gained by choosing anything other $\gv(\x)=\x$.} The ergodic growth rate for an additive process (denoted by the subscript `a') is therefore:
+Under additive repetition, we know from \eref{DW_add} that $\D\x$ is already ergodic, so we know immediately that the correct mapping is the identity: $\gv(\x)=\x$.\footnote{In fact, any linear function $\gv(\x)=\alpha\x+\beta$ has stationary increments and is monotonically increasing provided $\alpha>0$. However, there is nothing gained by choosing anything more complicated than $\gv(\x)=\x$.} The ergodic growth rate for an additive process (denoted by the subscript `a') is therefore:
 \be
 \gad(\t,\Dt) = \frac{\D\x(\t)}{\Dt}.
 \elabel{g_add}
@@ -351,10 +380,13 @@ of increments due to individual rounds of the gamble gives
 &=& \ave{\g(\t,\dt)},
 \eea
 where the final line follows from the stationarity and independence of the successive 
-per-round growth rates. This is a restatement of the ergodic property of the previous 
-lecture, namely that the time-average growth rate can be expressed equivalently as 
+per-round growth rates. 
+
+This is a restatement of the ergodic property: the time-average growth rate can be expressed equivalently as 
 the long-time limit and as the ensemble average of the properly chosen ergodic 
-growth rate. For additive and multiplicative dynamics, we obtain the following 
+growth rate. 
+
+For additive and multiplicative dynamics, we obtain the following 
 equivalences:
 \begin{align}
 \gt_\text{a} &= \lim_{\Dt\to\infty}\left\{\frac{\D\x(\t)}{\Dt}\right\} = \ave{\frac{\D\x(\t)}{\Dt}}; \elabel{g_bar_a}\\
@@ -418,7 +450,7 @@ to which indefinite repetition is a plausible approximation.
 
 In our thought experiment this decision rule outperforms any other 
 decision rule almost surely: so, at least in that imagined world, the 
-rationale has a logical basis. If our thought experiment is a good 
+rationale has a physical basis. If our thought experiment is a good 
 approximation to real-world decision scenarios, then our rationale 
 should be a good model of real-world decisions. Certainly it is 
 parsimonious, based on a single, 
@@ -427,15 +459,17 @@ to be specified. Unlike some treatments of human decision-making, it
 contains no arbitrary or hard-to-measure psychological factors.
 
 Having said all this, while we think that the decision axiom 
-is reasonable, we stress that it is an \textit{axiom}, \ie something we assert without empirical justification and which is not deduced from more primitive considerations. It 
+is reasonable, we stress that at this point it is an \textit{axiom}, \ie something we assert without empirical justification and which is not deduced from more primitive considerations. It 
 defines a model world where certain types of behaviour will be observed. 
-We feel reminded of reality by this model world, but you may disagree 
-or you may prefer a different model that creates a different model world
-that also reminds you of reality.
+We will show in \secref{Copenhagen} and in \cref{Markets} why we feel reminded 
+of reality by this model world, though you may disagree 
+and you may prefer a different model that creates a different model world
+that reminds you more of reality.
 Other decision axioms are 
 possible and, indeed, have been proposed. For instance, 
 classical decision theory is defined by the axiom that decision
-makers maximize expected utility. 
+makers maximize expected utility -- though \secref{Copenhagen} 
+shows that this model has flaws that may not be acceptable. 
 
 %Copenhagen experiment? Little excursion?
 
@@ -452,7 +486,7 @@ $\x(\t)$, and $\q$;
 \item Find the ergodicity transformation, $\gv(\x)$, of the wealth whose increments are 
 instances of a (time-independent) random variable under this dynamic;
 \item Determine the time-average growth rates, $\gt^{(\m)}$, either by taking 
-the long-time limit of the growth rates, $\g^{(\m)}(\t,\dt)$, or by invoking the 
+the long-time limit of the growth rates, $\g^{(\m)}(\t,\Dt)$, or by invoking the 
 ergodic property and taking their ensemble averages;
 \item Choose the gamble, $\m$, with the largest time-average growth rate.
 \end{enumerate}
@@ -462,12 +496,12 @@ In examples, we will focus on choices between two
 gambles, \ie $\m\in\{1,2\}$. Decisions between three or more gambles 
 are straightforward extensions.
 Often one of the gambles presented is the null gamble, which trivially 
-has a growth rate of zero. In this case, the question then posed is 
-whether the other gamble presented is preferable to doing nothing, 
+has a growth rate of zero. In this case, the question is 
+whether the other gamble is preferable to doing nothing, 
 \ie bet or no bet?
 
 We will illustrate the decision algorithm by applying it to the coin toss 
-game of the previous lecture. $\x(\tn)>\$ 0$ is the starting 
+game of \cref{Coins}. $\x(\tn)>\$ 0$ is the starting 
 wealth and $\dt$ is the time between rounds for each of the 
 gambles offered. We recall that the coin toss gamble is specified by the random payout:
 \bea
@@ -636,7 +670,7 @@ into usefulness, $\gu$. He claimed that this was the true quantity whose rate of
 \ave{\gr_\gu} \equiv \ave{\frac{\d\gu(\x)}{\dt}},
 \elabel{euh}
 \ee
-is maximised in a decision between gambles.
+is maximised in a choice between gambles.
 
 This is the axiom of utility theory. It leads to an alternative decision algorithm, which we summarise here:
 \begin{keypts}{Expected-utility decision algorithm}
@@ -757,7 +791,7 @@ In situation 1) I can relax. I'm happy with the status quo, and there's no reaso
 I should be change-averse, which is called risk-averse in the literature. In situation 2) the 
 status quo is terrible, and I should be change-seeking, or risk-seeking if you prefer that word.
 It's growth optimal -- rational, according to our rationality model -- to play the lottery and hope for a big win, even if the expected return is negative. In situation 2, if as 
-little as just \$1,000,000 fell into my lap, my life would change dramatically. Not because I would 
+little as just \$1,000,000 fell into my lap, my life would change dramatically -- not because I would 
 have all the money I need but because my wealth would enter a different dynamical regime. 
 
 \paragraph{\bf Utility perspective:}
@@ -772,8 +806,8 @@ accept gambles with negative expected return. Perhaps he (usually it's a he) wil
 arrow of causality as follows: the reason I'm so poor is that I make such terrible 
 financial decisions (which is, of course, a possibility).
 
-The utility perspective tends to draw our attention on the psychology of the decision maker, 
-whereas the dynamic perspective focuses on the situation of the decision maker. 
+The utility perspective focuses on the {\it psychology} of the decision maker, 
+whereas the dynamic perspective focuses on the {\it situation} of the decision maker. 
 
 \subsubsection{Technical setup}
 \seclabel{Technical}
@@ -1315,7 +1349,7 @@ systems, even though it had the basic arithmetic tools.
 
 Unfortunately, Bernoulli made a mathematical error in the implementation 
 of his own paradigm -- accidentally he proposed two mutually inconsistent versions of utility theory in the paper that established the paradigm. Initially, the error had little impact, and it was corrected by Laplace in 
-1814~\cite{Laplace1814}. But Laplace didn't openly say he'd corrected an error, he just work with what he thought Bernoulli had meant. This politeness had awful consequences. In
+1814~\cite{Laplace1814}. But Laplace didn't openly say he'd corrected an error, he just worked with what he thought Bernoulli had meant. This politeness had awful consequences. In
 1934 Menger~\cite{Menger1934}, keen to get the story right, went back to the original text by Bernoulli. He didn't notice the error but rather got confused by it which led him to introduce a further error. Based on this car crash of scientific communication, Menger derived the infamous (wrong) claim we encountered in \secref{Technical}: utility functions must be bounded, with disastrous consequences for the budding neoclassical formalism. We 
 will leave this most chequered part of the paradox's history alone -- details can be found 
 in~\cite{PetersGell-Mann2016}. Instead we will focus on what's usually 

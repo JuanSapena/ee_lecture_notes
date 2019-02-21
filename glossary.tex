@@ -16,7 +16,7 @@
 \newglossaryentry{gest}{
  type={symbols}, 
  name={\ensuremath{g_{\text{est}}}},
- description={Growth rate estimator for finite time and finite ensemble size},
+ description={Ergodic growth rate estimator for finite time and finite ensemble size},
  sort={g_est}}
 
 \newglossaryentry{mut}{
@@ -141,14 +141,14 @@
 \newglossaryentry{ga}{
  type={symbols}, 
  name={\ensuremath{{g_\text{a}}}},
- description={Additive growth rate, \ie rate of change},
+ description={Ergodic growth rate under additive dynamics, \ie rate of change, $\gad(\x; \t,\Dt)=\frac{\D\x(\t)}{\Dt}$},
  sort=ga}
 
  %\ga
 \newglossaryentry{gat}{
  type={symbols}, 
  name={\ensuremath{\overline{{g_\text{a}}}}},
- description={Time-average additive growth rate, \ie long-term rate of change},
+ description={Time-average ergodic growth rate under additive dynamics, \ie long-term rate of change, $\gat(\x)=\lim_{\Dt\to\infty}\frac{\D\x(\t)}{\Dt}$},
  sort=gat}
 
  %\gex
@@ -162,7 +162,7 @@
 \newglossaryentry{gm}{
  type={symbols}, 
  name={\ensuremath{{g_\text{m}}}},
- description={Multiplicative growth rate},
+ description={Ergodic growth rate for multiplicative dynamics, \ie exponential growth rate, $\gm(\x;\t,\Dt)=\frac{\D \ln \x}{\Dt}$},
  sort=gm}
 
 %\gt
@@ -170,7 +170,7 @@
  type={symbols}, 
 % name={\ensuremath{\stackrel{\text{\tiny{time}}}{g}}}, % AA: this is quite clunky
  name={\ensuremath{\overline{g}}}, % AA: cleaner notation?
- description={Time-average exponential growth rate},
+ description={Time-average ergodic growth rate},
  sort=gtime}
 
 %Gi
@@ -297,7 +297,7 @@
 \newglossaryentry{p}{
  type={symbols}, 
  name={\ensuremath{p}},
- description={Probability, $\p_i$ is the probability of observing event $i$ in a realization of a random variable},
+ description={Probability, $\p_\gj$ is the probability of observing event $\gj$ in a realization of a random variable},
  sort=p}
  
 %\pim
@@ -917,6 +917,6 @@
 {
   type={symbols}, 
   name={\ensuremath{\gls{gt}_\text{m}}},
-  description={time-average multiplicative growth rate},
+  description={Time-average ergodic growth rate for multiplicative dynamics, $\gtm(\x)=\lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}$},
   sort=gtm
 }
