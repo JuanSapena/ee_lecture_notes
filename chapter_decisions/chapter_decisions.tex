@@ -48,6 +48,358 @@ making purely financial decisions. We may bet on a horse or take out personal li
 This chapter will not tell you whom you should marry or even whose economics lectures you should attend.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The decision axiom}
+
+A ``decision theory'' is a model of human behaviour. We will write down such a model phrased as the following simple 
+axiom: 
+
+\begin{definition}{Decision axiom}
+
+People optimize the growth rate of their wealth.
+
+\end{definition}
+
+Without discussing why people might do this, let's step into the world created by this axiom.
+
+We will begin in a setting where everything is known. In such a perfectly deterministic world, we will see that our
+axiom leads to what's called ``discounting,'' a well-known behaviour of people facing inter-temporal choices.
+
+In the next step, we will introduce noise -- randomness, ignorance, fluctuations. In that setting, 
+just by holding on to our decision axiom we will again recover a well-known behaviour of people: maximization of expected utility functions.
+
+\subsection{Decisions in a deterministic world}
+\subsubsection{Different magnitudes}
+I'm off to the bank to withdraw some money for you. I offer to give you either (1) \$20 when I 
+get back or (2) \$50 when I get back. You tell me what you prefer.
+
+Let's see what our decision axiom does for us. First of all, there's no uncertainty, I'm not lying to you, no one will rob me on my trip to the bank \etc
+I haven't told you how long it will take me to get to the bank, so let's call that time interval $\Dt$.
+
+Because we know that $\Dt$ is the same under options (1) and (2) we don't actually need to know its value to compare the growth rates for the two options. 
+We don't even have to know much about the functional form of the growth rate - we know that different situations require different forms of growth rates. The simplest examples are multiplicative and additive growth rates, and the general form of a growth rate is 
+\be
+\g=\frac{\D\gv(\x)}{\Dt},
+\elabel{gen_rate}
+\ee
+where $\gv(\x)$ is a monotonically increasing function of wealth $\x$ that ensures temporal stability of $\g$. 
+How does this work? Imagine $\x(\t)$ grows according to some dynamic. In order to say meaningfully how fast $\x$ is growing, this rate has to be stable in time. For example, if $\x(\t)$ grows exponentially, the additive rate of change $\frac{\D\x}{\Dt}$ will change throughout time. 
+
+Therefore, we have to choose $\gv(\x)$ appropriately. In full generality, we demand that \eref{gen_rate} 
+be a constant, namely the relevant growth rate. The functional form of the growth rate, \ie the function 
+$\gv(\t)$, is given by the dynamic. To see this, we work backwards. Let's say \eref{gen_rate} is constant. 
+Considering infinitesimal changes, we have
+\be
+\g=\frac{d\gv(\x)}{d\t}.
+\elabel{gen_rate_inf}
+\ee
+We can separate variables and integrate this to find
+\be
+\gv(\x)=\g \t.
+\elabel{gen_rate_inf}
+\ee
+This in turn tells us what the dynamic must be. The function $\gv(\x)$, we know evaluates to $\g\t$. Its inverse function evaluated at $\g\t$ therefore must be $\x$, the desired dynamic
+\be
+\x=\gv^{[-1]}(\g \t).
+\elabel{gen_rate_inf}
+\ee
+It clearly works for multiplicative and additive growth. But let's take another example: what process has the growth rate $\frac{\D\x^{1/2}}{\Dt}$?
+Well, with $\gv=\x^{1/2}$, we have $\gv^{[-1](\g \t)}=(\g\t)^2$, and thus the dynamic has to be $\x(\t)=(\g\t)^2$. Let's check and compute the appropriate growth rate: 
+\bea
+\g&=&\frac{\D\gv(\x)}{\Dt}\\
+&=&\frac{\D[(\g\t)^2]^{1/2}}{\Dt}\\
+&=&\g
+\eea
+as desired.
+
+In the present case it turns out that any growth rate will give the same answer. Let's see.
+Under option a) we have
+\be
+\g^{(1)} =\frac{\gv(\x+\$20)-\gv(\x)}{\Dt},
+\ee
+and under option b) we have
+\be
+\g^{(2)} =\frac{\gv(\x+\$50)-\gv(\x)}{\Dt}.
+\ee
+To find out which growth rate is larger, we subtract $\g^{(a)}$ from $\g^{(b)}$ 
+\bea
+\g^{(2)}-\g^{(1)} &=&\frac{\gv(\x+\$50)-\gv(\x)(-\gv(\x+\$20)-\gv(\x))}{\Dt}\\
+ &=&\frac{\gv(\x+\$50)-\gv(\x+\$20)}{\Dt}.
+\eea
+Because $\gv(\x)$ is monotonically increasing, any growth rate will be greater under option (2), and 
+our model humans will always go for option (2). That's good -- because I would have chosen option (2), and 
+our model reproduces this intuitive result.
+
+More generally, our model says: of two certain payments of different sizes at the same time, choose the bigger one.
+
+\subsubsection{Different magnitudes and times - discounting}
+Let's make the decision a little harder: what if you offer me (1) \$1 in a month or (2) \$3 in two months?
+
+Again, we will compute the two growth rates corresponding to options (1) and (2), and then choose the bigger one -- that's how we have been programmed to behave in the world our axiom is creating. But unlike in the previous case, the functional form of the growth rate will now be important. 
+
+Let's start with the exponential growth rate, with $\gv(\x)=\ln \x$ in \eref{gen_rate} - this is the appropriate rate if wealth grows exponentially, like in a savings account.
+We now have growth rates
+\be
+\gm^{(1)} =\frac{\ln(\x+\$1)-\ln(\x)}{\frac{1}{12}\text{year}},
+\ee
+and
+\be
+\gm^{(2)} =\frac{\ln(\x+\$3)-\ln(\x)}{\frac{2}{12}\text{year}}.
+\ee
+Curiously, which is greater depends on my initial wealth, in our model world. If my wealth is \$100, then $\gm^{(1)}\approx 11.94\%$ p.a.., and 
+$\gm^{(2)}\approx 23.76\%$ p.a., wherefore I will choose option 2.
+
+But If my initial wealth is \$1, then $\gm^{(1)}\approx 831.8\%$ p.a. and $\gm^{(2)}\approx 659.2\%$ p.a., and I'd choose option 1.
+
+We learn: in this slightly more complex though still fully deterministic case, which option is 
+preferable does not only depend on the options available but also on the personal 
+circumstances (initial wealth) of the decision maker.
+
+Notice how the poorer decision maker seems to be more impatient, despite his use of the exact same decision axiom.
+In the economics literature, choosing in this way is called ``exponential discounting'' because it is mathematically equivalent to assigning to payments a value that decays exponentially with the waiting time, $\Dt$.
+
+What about the additive growth rate? That would be the relevant growth rate to compute if, for instance, these payments to us are promised as a salary. You already know what you'd pick: \$1 per month, or \$3 per two months? The reason I know you know what you'd choose is that it doesn't depend on your initial wealth. Let's see, that's just working with the identity function $\gv(\x)=\x$ in \eref{gen_rate}.
+\be
+\gad^{(1)} =\frac{\$1}{\frac{1}{12}\text{year}},
+\ee
+and
+\be
+\gad^{(2)} =\frac{\$3}{\frac{2}{12}\text{year}}.
+\ee
+Initial wealth cancels out: this is a unique feature of the additive growth rate. Only under additive dynamics does initial wealth not enter into the computation of the growth rate, and growth rates can be computed with knowledge of only the payouts and waiting times.
+
+In the economics literature, decision-making based on additive growth rates is called ``hyperbolic discounting'' because this case is mathematically equivalent to discounting payments in the future with the hyperbolic function $\frac{1}{\Dt}$.
+
+An interesting feature of optimizing additive growth rates is what's called ``preference reversal:'' let's keep our example as it is, except we now let time march forward, holding fixed the moments in time when the payments are to be made. Under these conditions, there comes a time, precisely after half a month, when option (2) is no longer preferred. This is most easily explained with a figure \fref{hyp_disc}.
+
+\begin{figure}
+\centering
+\begin{picture}(200,80)(0,0)
+ \put(-80,0){\includegraphics[width=.3\textwidth]{./chapter_decisions/figs/disc_1.JPG}}
+ \put(20,110){\includegraphics[width=.3\textwidth, angle=-90]{./chapter_decisions/figs/disc_2.JPG}}
+ \put(120,110){\includegraphics[width=.3\textwidth, angle=-90]{./chapter_decisions/figs/disc_3.JPG}}
+\end{picture}
+\caption{\small (A) At the beginning option (2) yields the highest additive growth rate; (B) after half a month, the options are equally good; (C) after 3/4 of a month, preference reversal has take place, and option (1) now yields the highest growth rate. As the first payment approaches, the associated growth rate diverges.}
+\flabel{hyp_disc}
+\end{figure}
+
+Perhaps the most significant message is the richness of this problem. We're applying nothing but our simple axiom, but it forces us to choose how we think about the dynamics of our wealth, and in reality that may depend strongly on many difficult to specify circumstances. In real life payments are not just offered at some point in time, but usually in return for something -- an asset or work. Depending on the specific exchange, an additive, multiplicative, or more general model will be appropriate.
+
+Importantly, we need not resort to psychology to generate a host of behaviours, such as impatience of poorer individuals or preference reversal.
+
+\subsection{Decisions in an uncertain world}
+In the previous section we saw some interesting types of behaviour that occur in a model world generated by our decision axiom. We were able to relate these to phenomena that already have names in the more complex model worlds of classical economics, for instance ``discounting'' and ``preference reversal.''
+
+In the present section we will make our model world more realistic by introducing randomness. For our purposes, this randomness can simply be thought of as ignorance. Thus, we don't quite know what payoff we will receive -- we won't worry about why that is. We will leave the times at which payments are made deterministic. We could also relax this bit of determinism, of course, but we won't.
+
+Instead we will generalise the concept of a payment -- generalise in the sense of randomise it. This introduces the concept of a gamble. We will also have to do something about our axiom: with random payouts, the growth rates on which we base our decisions will also be random. We get around that problem by interpreting ``growth rate'' in the axiom as ``time-average growth rate'' when there's randomness involved. The functional form of the rate that guarantees stability in time of rates  in the deterministic case will now guarantee ergodicity of rates, see below. This will allow us to use expectation values of rates when they are easier to compute.
+
+
+
+Our model rationale for deciding between two gambles is simple: 
+given a model for the mode of repetition, 
+choose the gamble with the largest time-average growth rate. 
+In other words, choose the gamble which, 
+if repeated indefinitely, causes your wealth to grow fastest.
+
+We are not saying that real repetitions are necessary. We 
+merely create model humans who base decisions on what would 
+happen to their wealth if they were repeated (infinitely many times). It is a 
+conceptual device -- in effect a thought experiment -- to elicit the 
+underlying tendency of each gamble. A particular choice that can be 
+represented by gambles 
+may be offered only once and, indeed, in the real world this will 
+often be the case. However, in the real world it is also the case 
+that a decision is likely to be followed by many others, a scenario 
+to which indefinite repetition is a plausible approximation.
+
+In our thought experiment this decision rule outperforms any other 
+decision rule almost surely: so, at least in that imagined world, the 
+rationale has a physical basis. If our thought experiment is a good 
+approximation to real-world decision scenarios, then our rationale 
+should be a good model of real-world decisions. Certainly it is 
+parsimonious, based on a single, 
+robust quantity and requiring only the gamble and its mode of repetition 
+to be specified. Unlike some treatments of human decision-making, it 
+contains no arbitrary or hard-to-measure psychological factors.
+
+Having said all this, while we think that the decision axiom 
+is reasonable, we stress that at this point it is an \textit{axiom}, \ie something we assert without empirical justification and which is not deduced from more primitive considerations. It 
+defines a model world where certain types of behaviour will be observed. 
+We will show in \secref{Copenhagen} and in \cref{Markets} why we feel reminded 
+of reality by this model world, though you may disagree 
+and you may prefer a different model that creates a different model world
+that reminds you more of reality.
+Other decision axioms are 
+possible and, indeed, have been proposed. For instance, 
+classical decision theory is defined by the axiom that decision
+makers maximize expected utility -- though \secref{Copenhagen} 
+shows that this model has flaws that may not be acceptable. 
+
+%Copenhagen experiment? Little excursion?
+
+Our decision rationale can be expressed as a set of instructions.
+We denote quantities relating to the $\m^\text{th}$ available gamble with the 
+superscript $(\m)$. Each gamble is specified by its random payout, $\Q^{(\m)}$, and 
+per-round period, $\dt^{(\m)}$. 
+
+\begin{keypts}{Growth-optimal decision algorithm}
+\begin{enumerate}
+\item Specify $\Q^{(\m)}$ and $\dt^{(\m)}$ for the gambles offered;
+\item Specify the wealth dynamic, \ie the relationship between $\d\x(\t)$, 
+$\x(\t)$, and $\q$;
+\item Find the ergodicity transformation, $\gv(\x)$, of the wealth whose increments are 
+instances of a (time-independent) random variable under this dynamic;
+\item Determine the time-average growth rates, $\gt^{(\m)}$, either by taking 
+the long-time limit of the growth rates, $\g^{(\m)}(\t,\Dt)$, or by invoking the 
+ergodic property and taking their ensemble averages;
+\item Choose the gamble, $\m$, with the largest time-average growth rate.
+\end{enumerate}
+\end{keypts}
+
+In examples, we will focus on choices between two 
+gambles, \ie $\m\in\{1,2\}$. Decisions between three or more gambles 
+are straightforward extensions.
+Often one of the gambles presented is the null gamble, which trivially 
+has a growth rate of zero. In this case, the question is 
+whether the other gamble is preferable to doing nothing, 
+\ie bet or no bet?
+
+We will illustrate the decision algorithm by applying it to the coin toss 
+game of \cref{Coins}. $\x(\tn)>\$ 0$ is the starting 
+wealth and $\dt$ is the time between rounds for each of the 
+gambles offered. We recall that the coin toss gamble is specified by the random payout:
+\bea
+\q^{(1)}_1 = -0.4\x(\tn), &\quad& \p^{(1)}_1 = 1/2; \\
+\q^{(1)}_2 = 0.5\x(\tn), &\quad& \p^{(1)}_2 = 1/2.
+\eea
+Note that, in our setup, the payouts $\Q^{(\m)}_\gi$ are always fixed 
+monetary amounts. Here they are expressed as fractions of $\x(\tn)$, 
+which is itself a fixed monetary wealth.\footnote{Even though this 
+formulation might appear to encode a multiplicative dynamic (largely 
+because it comes from an imagined multiplicative game), we have 
+arranged things so that formally it does not. Indeed, it encodes no 
+dynamic at all: that is specified separately.} We shall ask our individual 
+to choose between the coin toss and the null gamble,
+\be
+\q^{(2)}_1 = \$0, \quad \p^{(2)}_1 = 1.
+\ee
+Both the additive and multiplicative versions of the repeated gamble are analysed.
+
+\begin{example}{Additive coin toss game}
+If the repetition is additive, wealth will evolve over $T$ rounds according to:
+\bea
+\x^{(1)}(t_0+\T\dt) &=& \x(\tn) + \sum_{\gtau=1}^\T \q^{(1)}(\gtau); \\
+\x^{(2)}(t_0+\T\dt) &=& \x(\tn).
+\eea
+Here we have assumed that wealth is free to go negative, \ie that 
+there is no bankrupt state from which the individual can't 
+recover.\footnotemark\ The ergodicity transformation is the identity, 
+$\gv(\x)=\x$, so the growth rates are simply the rates of change of 
+wealth itself. We can express these over the $\T$ rounds as:
+\bea
+\gad^{(1)}(\t) = \frac{\x^{(1)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\q^{(1)}(\gtau)}{\dt}; \elabel{g1_add}\\
+\gad^{(2)}(\t) = \frac{\x^{(2)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \$ 0
+\eea
+per unit time. The long-time limit of the growth rate for the null gamble 
+is trivially $\gad^{(2)}=\$0$ per unit time. For the coin toss, we calculate it as
+\bea
+\overline{\gad}^{(1)} &=& \lim_{\T\to\infty}\left\{\frac{1}{\T}\sum_{\gtau=1}^\T \frac{\q^{(1)}(\gtau)}{\dt}\right\}\\
+&=& \ave{\frac{\q^{(1)}}{\dt}}\\
+&=& \frac{\p^{(1)}_1 \q^{(1)}_1 + \p^{(1)}_2 \q^{(1)}_2}{\dt}\\
+&=& \frac{0.05\x(\tn)}{\dt},
+\eea
+which is positive (assuming $\x(\tn)>\$0$). Therefore, $\overline{\gad}^{(1)}>\overline{\gad}^{(2)}$ 
+and our individual should accept the coin toss gamble under additive dynamics.
+\end{example}
+\footnotetext{We could model this realistic feature by an absorbing boundary on $\x(\t)$, if we were so minded.}
+
+We see from this example that the decision rule under additive repetition is to 
+maximise $\ave{\q/\dt}$.\footnote{Too frequently in presentations of decision 
+theory, it is assumed implicitly that $\dt$ is the same for all available gambles 
+and the decision algorithm is presented as the maximisation of the expected 
+payout, $\ave{\q}$. While this is equivalent if all the $\dt^{(\m)}$ are identical, it 
+is not if they aren't. Moreover, the assumption is usually left unstated. This is 
+unhelpful in that it masks the important role of time in the analysis and, in 
+particular, the fact that our individual is maximising a \textit{rate}.} This is the 
+rate of change of the expected wealth, which, as we know from \eref{g_bar_a}, 
+happens to coincide under this dynamic with the time-average growth rate. We 
+will see later that humans tend not to act to maximise $\ave{\q/\dt}$ in reality. 
+This may not be a great shock: additive repetition without bankruptcy isn't 
+going to win many prizes for the most realistic model of wealth evolution.
+
+Let's try multiplicative repetition instead.
+
+\begin{example}{Multiplicative coin toss game}
+The payout, $\Q^{(1)}$, is re-expressed as a per-round multiplier,
+\be
+\gr^{(1)} = \frac{\x(\tn)+\q^{(1)}}{\x(\tn)},
+\ee
+which takes the values:
+\bea
+\gr^{(1)}_1 = \frac{\x(\tn)+\q^{(1)}_1}{\x(\tn)} = 0.6, &\quad& \p^{(1)}_1 = 1/2; \\
+\gr^{(1)}_2 = \frac{\x(\tn)+\q^{(1)}_2}{\x(\tn)} = 1.5, &\quad& \p^{(1)}_2 = 1/2.
+\eea
+Under multiplicative dynamics, the wealth evolves according to:
+\bea
+\x^{(1)}(\tn+\T\dt) &=& \x(\tn) \prod_{\gtau=1}^\T \gr^{(1)}(\gtau); \elabel{W1T_mult}\\
+\x^{(2)}(\tn+\T\dt) &=& \x(\tn).\elabel{W2T_mult}
+\eea
+The ergodicity transformation is the logarithm, $\gv(\x)=\ln \x$. We have 
+already discussed why, but one way of seeing this is to take logarithms of 
+\eref{W1T_mult}. This converts the product into a sum of independent instances of a random variable:
+\bea
+\ln \x^{(1)}(\tn+\T\dt) &=& \ln \x(\tn) + \sum_{\gtau=1}^\T \ln \gr^{(1)}(\gtau); \elabel{lnW1T_mult}\\
+\ln \x^{(2)}(\tn+\T\dt) &=& \ln \x(\tn).\elabel{lnW2T_mult}
+\eea
+Therefore, $\ln \x$ is the desired quantity whose increments 
+inherit their ergodicity from $\q$. The growth rates, expressed over $\T$ rounds, are:
+\bea
+\gm^{(1)}(\t) = \frac{\ln \x^{(1)}(\t+\T\dt) - \ln \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\ln \gr^{(1)}(\gtau)}{\dt};\\
+\gm^{(2)}(\t) = \frac{\ln \x^{(2)}(\t+T\dt) - \ln \x(\tn)}{\T\dt} &=& 0
+\eea
+per unit time. As in the additive case, we take the $\T\to\infty$ limits. For the null 
+gamble this is trivial: $\gt_\text{m}^{(2)}=0$ per unit time. For the coin toss gamble, we get
+\bea
+\gt_\text{m}^{(1)} = \ave{\frac{\ln \gr^{(1)}}{\dt}} = \frac{\ln\left(\sqrt{0.9}\right)}{\dt},
+\eea
+which is negative. Thus, $\overline{\gm}^{(1)}<\overline{\gm}^{(2)}$ under multiplicative 
+dynamics and our individual should decline the coin toss. That this is the opposite 
+of his decision under additive repetition highlights the importance of specifying a 
+dynamic that corresponds well to what is happening in reality.
+
+Another way of presenting the repeated coin toss is to express the wealth 
+after $\T$ rounds as
+\be
+\x^{(1)}(\tn+\T\dt) = \x(\tn)\left(\gr_\T^{(1)}\right)^\T,
+\ee
+where
+\be
+\gr_\T^{(1)} = (0.6)^{(\T-\gk)/\T}(1.5)^{\gk/\T}
+\ee
+is the equivalent per-round multiplier after $\T$ rounds and 
+$0\leq \gk\leq \T$ is the number of winning rounds. $\gr_\T$ 
+is a random variable but it converges almost surely to a scalar in the long time limit,
+\be
+\gr_\infty^{(1)} \equiv \lim_{\T\to\infty}\{\gr_\T^{(1)}\} = (0.6)^{1/2}(1.5)^{1/2} = \sqrt{0.9},
+\ee
+since $\gk/\T\to1/2$ as $\T\to\infty$ (the coin is fair). $\gr_\infty^{(1)}<1$ so the 
+individual's wealth is sure to decay over time and he should decline the gamble. 
+The two approaches are, of course, linked, in that
+\be
+\gt_\text{m}^{(1)} = \frac{\ln \gr_\infty^{(1)}}{\dt}.
+\ee
+\end{example}
+
+Here we see that our decision rule boils down to maximising
+\be
+\ave{\frac{\ln \gr}{\dt}} = \ave{\frac{\ln(\x(\tn)+\q)-\ln \x(\tn)}{\dt}}.
+\ee
+This coincides with the time-average growth rate in \eref{g_bar_m}.
+
+===============================================
+
 \subsection{Gamble: random number and duration}
 \seclabel{Gamble:}
 One fundamental building block of mathematical decision theory is the gamble.
@@ -429,208 +781,6 @@ in red. How are we to decide which represents the more favourable
 gamble?\flabel{dec_dist}}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The decision axiom}
-Our model rationale for deciding between two gambles is simple: 
-given a model for the mode of repetition, 
-choose the gamble with the largest time-average growth rate. 
-In other words, choose the gamble which, 
-if repeated indefinitely, causes your wealth to grow fastest.
-
-We are not saying that real repetitions are necessary. We 
-merely create model humans who base decisions on what would 
-happen to their wealth if they were repeated (infinitely many times). It is a 
-conceptual device -- in effect a thought experiment -- to elicit the 
-underlying tendency of each gamble. A particular choice that can be 
-represented by gambles 
-may be offered only once and, indeed, in the real world this will 
-often be the case. However, in the real world it is also the case 
-that a decision is likely to be followed by many others, a scenario 
-to which indefinite repetition is a plausible approximation.
-
-In our thought experiment this decision rule outperforms any other 
-decision rule almost surely: so, at least in that imagined world, the 
-rationale has a physical basis. If our thought experiment is a good 
-approximation to real-world decision scenarios, then our rationale 
-should be a good model of real-world decisions. Certainly it is 
-parsimonious, based on a single, 
-robust quantity and requiring only the gamble and its mode of repetition 
-to be specified. Unlike some treatments of human decision-making, it 
-contains no arbitrary or hard-to-measure psychological factors.
-
-Having said all this, while we think that the decision axiom 
-is reasonable, we stress that at this point it is an \textit{axiom}, \ie something we assert without empirical justification and which is not deduced from more primitive considerations. It 
-defines a model world where certain types of behaviour will be observed. 
-We will show in \secref{Copenhagen} and in \cref{Markets} why we feel reminded 
-of reality by this model world, though you may disagree 
-and you may prefer a different model that creates a different model world
-that reminds you more of reality.
-Other decision axioms are 
-possible and, indeed, have been proposed. For instance, 
-classical decision theory is defined by the axiom that decision
-makers maximize expected utility -- though \secref{Copenhagen} 
-shows that this model has flaws that may not be acceptable. 
-
-%Copenhagen experiment? Little excursion?
-
-Our decision rationale can be expressed as a set of instructions.
-We denote quantities relating to the $\m^\text{th}$ available gamble with the 
-superscript $(\m)$. Each gamble is specified by its random payout, $\Q^{(\m)}$, and 
-per-round period, $\dt^{(\m)}$. 
-
-\begin{keypts}{Growth-optimal decision algorithm}
-\begin{enumerate}
-\item Specify $\Q^{(\m)}$ and $\dt^{(\m)}$ for the gambles offered;
-\item Specify the wealth dynamic, \ie the relationship between $\d\x(\t)$, 
-$\x(\t)$, and $\q$;
-\item Find the ergodicity transformation, $\gv(\x)$, of the wealth whose increments are 
-instances of a (time-independent) random variable under this dynamic;
-\item Determine the time-average growth rates, $\gt^{(\m)}$, either by taking 
-the long-time limit of the growth rates, $\g^{(\m)}(\t,\Dt)$, or by invoking the 
-ergodic property and taking their ensemble averages;
-\item Choose the gamble, $\m$, with the largest time-average growth rate.
-\end{enumerate}
-\end{keypts}
-
-In examples, we will focus on choices between two 
-gambles, \ie $\m\in\{1,2\}$. Decisions between three or more gambles 
-are straightforward extensions.
-Often one of the gambles presented is the null gamble, which trivially 
-has a growth rate of zero. In this case, the question is 
-whether the other gamble is preferable to doing nothing, 
-\ie bet or no bet?
-
-We will illustrate the decision algorithm by applying it to the coin toss 
-game of \cref{Coins}. $\x(\tn)>\$ 0$ is the starting 
-wealth and $\dt$ is the time between rounds for each of the 
-gambles offered. We recall that the coin toss gamble is specified by the random payout:
-\bea
-\q^{(1)}_1 = -0.4\x(\tn), &\quad& \p^{(1)}_1 = 1/2; \\
-\q^{(1)}_2 = 0.5\x(\tn), &\quad& \p^{(1)}_2 = 1/2.
-\eea
-Note that, in our setup, the payouts $\Q^{(\m)}_\gi$ are always fixed 
-monetary amounts. Here they are expressed as fractions of $\x(\tn)$, 
-which is itself a fixed monetary wealth.\footnote{Even though this 
-formulation might appear to encode a multiplicative dynamic (largely 
-because it comes from an imagined multiplicative game), we have 
-arranged things so that formally it does not. Indeed, it encodes no 
-dynamic at all: that is specified separately.} We shall ask our individual 
-to choose between the coin toss and the null gamble,
-\be
-\q^{(2)}_1 = \$0, \quad \p^{(2)}_1 = 1.
-\ee
-Both the additive and multiplicative versions of the repeated gamble are analysed.
-
-\begin{example}{Additive coin toss game}
-If the repetition is additive, wealth will evolve over $T$ rounds according to:
-\bea
-\x^{(1)}(t_0+\T\dt) &=& \x(\tn) + \sum_{\gtau=1}^\T \q^{(1)}(\gtau); \\
-\x^{(2)}(t_0+\T\dt) &=& \x(\tn).
-\eea
-Here we have assumed that wealth is free to go negative, \ie that 
-there is no bankrupt state from which the individual can't 
-recover.\footnotemark\ The ergodicity transformation is the identity, 
-$\gv(\x)=\x$, so the growth rates are simply the rates of change of 
-wealth itself. We can express these over the $\T$ rounds as:
-\bea
-\gad^{(1)}(\t) = \frac{\x^{(1)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\q^{(1)}(\gtau)}{\dt}; \elabel{g1_add}\\
-\gad^{(2)}(\t) = \frac{\x^{(2)}(\t+\T\dt) - \x(\tn)}{\T\dt} &=& \$ 0
-\eea
-per unit time. The long-time limit of the growth rate for the null gamble 
-is trivially $\gad^{(2)}=\$0$ per unit time. For the coin toss, we calculate it as
-\bea
-\overline{\gad}^{(1)} &=& \lim_{\T\to\infty}\left\{\frac{1}{\T}\sum_{\gtau=1}^\T \frac{\q^{(1)}(\gtau)}{\dt}\right\}\\
-&=& \ave{\frac{\q^{(1)}}{\dt}}\\
-&=& \frac{\p^{(1)}_1 \q^{(1)}_1 + \p^{(1)}_2 \q^{(1)}_2}{\dt}\\
-&=& \frac{0.05\x(\tn)}{\dt},
-\eea
-which is positive (assuming $\x(\tn)>\$0$). Therefore, $\overline{\gad}^{(1)}>\overline{\gad}^{(2)}$ 
-and our individual should accept the coin toss gamble under additive dynamics.
-\end{example}
-\footnotetext{We could model this realistic feature by an absorbing boundary on $\x(\t)$, if we were so minded.}
-
-We see from this example that the decision rule under additive repetition is to 
-maximise $\ave{\q/\dt}$.\footnote{Too frequently in presentations of decision 
-theory, it is assumed implicitly that $\dt$ is the same for all available gambles 
-and the decision algorithm is presented as the maximisation of the expected 
-payout, $\ave{\q}$. While this is equivalent if all the $\dt^{(\m)}$ are identical, it 
-is not if they aren't. Moreover, the assumption is usually left unstated. This is 
-unhelpful in that it masks the important role of time in the analysis and, in 
-particular, the fact that our individual is maximising a \textit{rate}.} This is the 
-rate of change of the expected wealth, which, as we know from \eref{g_bar_a}, 
-happens to coincide under this dynamic with the time-average growth rate. We 
-will see later that humans tend not to act to maximise $\ave{\q/\dt}$ in reality. 
-This may not be a great shock: additive repetition without bankruptcy isn't 
-going to win many prizes for the most realistic model of wealth evolution.
-
-Let's try multiplicative repetition instead.
-
-\begin{example}{Multiplicative coin toss game}
-The payout, $\Q^{(1)}$, is re-expressed as a per-round multiplier,
-\be
-\gr^{(1)} = \frac{\x(\tn)+\q^{(1)}}{\x(\tn)},
-\ee
-which takes the values:
-\bea
-\gr^{(1)}_1 = \frac{\x(\tn)+\q^{(1)}_1}{\x(\tn)} = 0.6, &\quad& \p^{(1)}_1 = 1/2; \\
-\gr^{(1)}_2 = \frac{\x(\tn)+\q^{(1)}_2}{\x(\tn)} = 1.5, &\quad& \p^{(1)}_2 = 1/2.
-\eea
-Under multiplicative dynamics, the wealth evolves according to:
-\bea
-\x^{(1)}(\tn+\T\dt) &=& \x(\tn) \prod_{\gtau=1}^\T \gr^{(1)}(\gtau); \elabel{W1T_mult}\\
-\x^{(2)}(\tn+\T\dt) &=& \x(\tn).\elabel{W2T_mult}
-\eea
-The ergodicity transformation is the logarithm, $\gv(\x)=\ln \x$. We have 
-already discussed why, but one way of seeing this is to take logarithms of 
-\eref{W1T_mult}. This converts the product into a sum of independent instances of a random variable:
-\bea
-\ln \x^{(1)}(\tn+\T\dt) &=& \ln \x(\tn) + \sum_{\gtau=1}^\T \ln \gr^{(1)}(\gtau); \elabel{lnW1T_mult}\\
-\ln \x^{(2)}(\tn+\T\dt) &=& \ln \x(\tn).\elabel{lnW2T_mult}
-\eea
-Therefore, $\ln \x$ is the desired quantity whose increments 
-inherit their ergodicity from $\q$. The growth rates, expressed over $\T$ rounds, are:
-\bea
-\gm^{(1)}(\t) = \frac{\ln \x^{(1)}(\t+\T\dt) - \ln \x(\tn)}{\T\dt} &=& \frac{1}{\T}\sum_{\gtau=1}^\T \frac{\ln \gr^{(1)}(\gtau)}{\dt};\\
-\gm^{(2)}(\t) = \frac{\ln \x^{(2)}(\t+T\dt) - \ln \x(\tn)}{\T\dt} &=& 0
-\eea
-per unit time. As in the additive case, we take the $\T\to\infty$ limits. For the null 
-gamble this is trivial: $\gt_\text{m}^{(2)}=0$ per unit time. For the coin toss gamble, we get
-\bea
-\gt_\text{m}^{(1)} = \ave{\frac{\ln \gr^{(1)}}{\dt}} = \frac{\ln\left(\sqrt{0.9}\right)}{\dt},
-\eea
-which is negative. Thus, $\overline{\gm}^{(1)}<\overline{\gm}^{(2)}$ under multiplicative 
-dynamics and our individual should decline the coin toss. That this is the opposite 
-of his decision under additive repetition highlights the importance of specifying a 
-dynamic that corresponds well to what is happening in reality.
-
-Another way of presenting the repeated coin toss is to express the wealth 
-after $\T$ rounds as
-\be
-\x^{(1)}(\tn+\T\dt) = \x(\tn)\left(\gr_\T^{(1)}\right)^\T,
-\ee
-where
-\be
-\gr_\T^{(1)} = (0.6)^{(\T-\gk)/\T}(1.5)^{\gk/\T}
-\ee
-is the equivalent per-round multiplier after $\T$ rounds and 
-$0\leq \gk\leq \T$ is the number of winning rounds. $\gr_\T$ 
-is a random variable but it converges almost surely to a scalar in the long time limit,
-\be
-\gr_\infty^{(1)} \equiv \lim_{\T\to\infty}\{\gr_\T^{(1)}\} = (0.6)^{1/2}(1.5)^{1/2} = \sqrt{0.9},
-\ee
-since $\gk/\T\to1/2$ as $\T\to\infty$ (the coin is fair). $\gr_\infty^{(1)}<1$ so the 
-individual's wealth is sure to decay over time and he should decline the gamble. 
-The two approaches are, of course, linked, in that
-\be
-\gt_\text{m}^{(1)} = \frac{\ln \gr_\infty^{(1)}}{\dt}.
-\ee
-\end{example}
-
-Here we see that our decision rule boils down to maximising
-\be
-\ave{\frac{\ln \gr}{\dt}} = \ave{\frac{\ln(\x(\tn)+\q)-\ln \x(\tn)}{\dt}}.
-\ee
-This coincides with the time-average growth rate in \eref{g_bar_m}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The expected-wealth and expected-utility paradigms}
