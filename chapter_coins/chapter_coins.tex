@@ -707,7 +707,7 @@ aspects of multiplicative growth we have illustrated is the exponential growth r
 observed over finite time $\Dt$, in a finite ensemble
 of $\N$ realisations. Exponential growth rates are ubiquitous and may be familiar, but because they are the origin of the logarithmic function, which will be important for us later on, we will intro them properly in a little excursion that will also clarify what a logarithm is.
 
-\begin{excursion}{Growth rates, exponentials, and the logarithm}
+\begin{excursion}{Compounding growth, exponentials, and the logarithm}
 The logarithm is a relatively recent mathematical discovery, made some time in the 1590s by John Napier, the 8th Laird of Merchiston in Scotland. Let's say you lend me some money, $\x(\t)$, for one year, $\Dt=1$~year, and I have to pay interest on the loan. We agree a yearly interest rate of $r_{1}=5\%$ per year. 
 
 After one year the amount I have to repay is
@@ -731,10 +731,10 @@ But if this is really the amount I owe you after 6 months, surely I should pay i
 \eea
 Equating to \eref{deal} we find a contradiction
 \bea
-\x(\t) (1+ r_{\Dt} \Dt)&=&\x(\t)(1+r_{\Dt}/2)^2\\
-\implies 1+ r_{\Dt} \Dt&=&1+r_{\Dt}\Dt+\left(\frac{r\Dt}{2}\right)^2 \text{{\color{red} \huge \lightning}}.
+\x(\t) (1+ r_{\Dt} \Dt)&\stackrel{?}{=}&\x(\t)(1+r_{\Dt}/2)^2\\
+\implies 1+ r_{\Dt} \Dt&\stackrel{?}{=}&1+r_{\Dt}\Dt+\left(\frac{r\Dt}{2}\right)^2 \text{{\color{red} \huge \lightning}}.
 \eea
-Strange as it may seem, the solution to this problem is to acknowledge that interest rates depend on the time scale at which they're defined. We can fix the problem by introducing $r_2$ -- the semi-annual interest rate (the subscript 2 indicates that we've split the original interval in 2 equal parts). It is defined by
+Strange as it may seem, the solution to this problem is to acknowledge that interest rates depend on the time scale at which they're defined -- the compounding time scale. We can fix the problem by introducing $r_2$ -- the semi-annual interest rate (the subscript 2 indicates that we've split the original interval in 2 equal parts). It is defined by
 insisting that the one-step and two-step computations give the same interest payment $\D\x$, 
 \be
 1+ r_1 \Dt=\left(1+r_2 \frac{\Dt}{2}\right)^2.
@@ -758,7 +758,9 @@ The logarithm has a property that makes it uniquely suited for characterizing mu
 \be
 \ln \frac{\ga_2}{\ga_1}=\ln \ga_2 - \ln \ga_1 = \D \ln \ga.
 \ee
-The inverse function of the logarithm is the exponential, denoted $\exp(\cdot)$, so that $\exp(\ln \ga)=\ga$, and the limiting growth rate $r_\infty$ is called the logarithmic or exponential growth rate, which we also denote by $\gm$ (subscript ''m'' for ``multiplicative'').
+The inverse function of the logarithm is the exponential (by definition), denoted $\exp(\cdot)$, so that $\exp(\ln \ga)=\ga$, and the limiting growth rate $r_\infty$ is called the logarithmic or exponential growth rate, which we also denote by $\gm$ (subscript ''m'' for ``multiplicative'').
+
+Just to be sure we got this across: these are the definitions of the logarithm and the exponential. You may know many properties of logarithms and exponentials -- all of them can be derived from the definitions we have just presented.
 \end{excursion}
 
 The exponential growth rate of average wealth in an ensemble of $\N$ systems, observed over time $\Dt$ is
@@ -1055,10 +1057,11 @@ over the one trajectory that describes a financial life, rather than across the 
 
 Ergodicity is not the same concept as stationarity. As an illustration of the difference, consider the following process: $\gf(\t)=\z_{\gi}$, where $\z_{\gi}$ is an instance of a random variable $\Z$. Explicitly, this means a realisation of the stochastic process $\gf(\t)$ is generated as follows: we generate the random instance $\z_{\gi}$ once, and then fix $\gf(\t)$ at that value for all time. The distribution of $\gf(\t)$ is independent of $\t$ and in that sense $\gf(\t)$ is stationary. But it is not ergodic: averaging over the ensemble, we obtain $\ave{\gf(\t)}=\ave{\z}$, whereas averaging over time in the $\gi^{\text{th}}$ trajectory gives $\overline{\gf}=\z_{\gi}$. Thus the process is stationary but not ergodic.
 
-\subsection{Rates}
+\subsection{Changes and stability}
 \seclabel{Rates}
-This section is a preview of an in-depth discussion of growth rates in \cref{decision}.
-The ergodic observable $\d \ln \x$, identified in the previous section, is basically a rate.
+In this section we discuss the role of changes and stability in science in general and then say a few words about the coin toss in particular. 
+If the latter part is hard to understand right now -- don't worry, we'll get back to it in much more detail in \cref{decisions}.
+The ergodic observable $\d \ln \x$, identified in the previous section, is almost a rate.
 Dividing it by the duration of the gamble, we obtain exactly the exponential 
 growth rate of $\x$, namely $\frac{\d \ln \x}{\dt}$. Finding good growth rates 
 will be important, wherefore we now discuss the notion of a rate and 
@@ -1066,7 +1069,8 @@ the notion of time independence.
 To do this properly let's think about the basic task of science. This may be described as the 
 search for stable structure. Science attempts to build models of the world 
 whose applicability does not vary over time. This doesn't mean that the world doesn't change, 
-but the way in which the models describe change does not change. The model identifies
+but the way in which the models describe change does not change. ``Children grow up to be adults'' is a 
+description of a change that has been true for a long time. The model identifies
 something stable. This is implied by the fact that we can write 
 equations (or English sentences) in ink on paper, with the equation (or sentence) remaining 
 useful over time. The ink won't change over time, so
@@ -1075,7 +1079,8 @@ changed in the meantime. These ``somethings'' are often somewhat
 grandiosely called laws of nature.
 
 \person{Newton}'s laws are a good illustration of this. They are part of mechanics, meaning that they
-are an idealized mathematical model of the behavior of positions, time, and masses. 
+are an idealized mathematical model of the behavior of positions, time, and masses (by the way, this definition of 
+mechanics in terms of base quantities is a neat application of dimensional analysis \cite{Barenblatt2003}). 
 For instance, \person{Newton}'s second law, $\NF=\Nm \frac{\gd^2 \Nx}{\gd\t^2}$, states that the mass multiplied by 
 the rate of change of the rate of change of its position equals the force. The law is an unchanging 
 law about positions, time, and masses, but it does not say that positions don't change, it doesn't even say 
@@ -1123,7 +1128,7 @@ Mathematically speaking, they
 \begin{enumerate}
 \item
 find a monotonically increasing function $\gv[\x(\t)]$ such that $\frac{\d \gv[\x(\t)]}{\dt}$ 
-is ergodic, overtime taking values of instances of a random variable.
+is ergodic, over time taking values of instances of a random variable.
 \item
 compute the expectation value of $\frac{\d \gv[\x(\t)]}{\dt}$. If this is positive then $\x(\t)$
 grows in the long run, if it is negative then $\x(\t)$ decays.
@@ -1519,3 +1524,51 @@ growth rate.
 This difference is sometimes called the ``spurious drift'', but at the \LML we call it the ``Weltschmerz'' because 
 it is the difference between the many worlds of our dreams and fantasies, and the one cruel reality that 
 the passage of time imposes on us.
+\newpage
+
+\subsection*{Summary of \cref{Coins}}
+
+In this chapter we have introduced the following key concepts:
+\bi
+\item[Random variable]
+A random variable $Y$ is a set of pairs of possible values and  corresponding probabilities, $Y=\{(y_1, p_1),(y_2, p_2)...\}$.
+The sets may be discrete or continuous. We stressed that a random variable is an a-temporal concept. It's just a bunch of possible values and their weights (probabilities). In real life we often this of generating instances of random variables as time passes, but this is not part of the formal definition of a random variable.
+
+\item[Expectation value]
+The expectation value of a random variable is the weighted sum $\ave{Y}=\int y \mathcal{P}_Y(y) dy$, where $\mathcal{P}_Y$ has atomic point masses in the discrete case, which means we can express the integral as $\ave{Y}=\sum_i y_i p_i$.
+
+The expectation value is also called the ensemble average, which reflects a physical interpretation: imagine (infinitely) many possible worlds, identical safe for the value taken by the the random variable $Y$. Those values are represented in the superverse of many worlds in proportion to their probabilties. Averaging $y$ over the ensemble of universes then gives the expectation value.
+
+\item[Logarithms and exponentials]
+The logarithmic function is defined as $\ln \ga :=  \lim_{\T\to\infty}\T \left\{\ga^{1/\T}-1\right\}$. It was motivated by computing interest on loans. Its property of turning products into sums makes it a key function in many branches of science where quantities that combine multiplicatively are to be represented by a quantity that combines additively. 
+
+The exponential function is the inverse of the logarithm.
+
+\item[Stochastic process]
+A stochastic process $Y_Z(z;t)$ is a family of random numbers, indexed by a parameter, $t$, that we call ``time.'' At each moment in time, a realization of a stochastic process takes a random value. We often think of stochastic processes as being generated through stochastic differential equations, where the initial value of some quantity is iteratively transformed -- for example by adding a random value to it.
+Examples include
+\bi
+\item[Coin-toss game]
+Start with initial value \$1 and multiply it in each round with an instance of the random variable $[(0.6,1/2),(1.5,1/2)].$
+
+\item[Brownian motion]
+Start with some initial value, and 
+
+\item[Geometric Brownian motion]
+\ei
+
+\item[Time average]
+
+\item[Scalars, rankings, transitivity]
+
+\item[Dimensional analysis]
+
+\item[Ito process]
+
+\item[Ito's formula]
+
+\item[Ergodic observable]
+\ei
+
+
+
