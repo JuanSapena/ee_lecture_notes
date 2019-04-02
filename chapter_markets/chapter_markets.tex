@@ -1,9 +1,8 @@
-\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Markets}
+\chapter{Markets}
 
-{\it This lecture applies the ideas developed in the first two lectures to markets. 
+{\it This lecture applies the ideas developed in the preceding lectures to markets. 
 
 We set up a simple portfolio selection problem in a market of two assets: one risky, like shares; and the other riskless, like a bank deposit. We ask how an investor would best allocate his money between the two assets, which we phrase in terms of his leverage. We review the classical approach, which can't answer this question without additional information about the investor's risk preferences. We then use the decision theory we've developed so far to answer the question unambiguously, by deriving the optimal leverage which maximises the investment's time-average growth rate. 
 
@@ -15,10 +14,10 @@ We test our predictions using data collected from the American and German stock 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Optimal leverage}
+\section{Optimal leverage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{A model market}
+\subsection{A model market}
 We consider assets whose values follow multiplicative dynamics, which we will model using \GBM. In general, an amount $\x$ invested in such an asset evolves according to the \SDE,
 \be
 \gd\x = \x(\gmu \gd\t + \gsigma \gd\gW),
@@ -59,7 +58,7 @@ We will refer to the difference
 as the excess drift. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Leverage}
+\subsection{Leverage}
 Let's turn to the concept of leverage. Imagine a very simple portfolio of value $\xl$, out of which $\l \xl$ is invested in stock and the remainder, $(1-\l)\xl$, is put in the bank. $\l$ is known as the leverage. It is the fraction of the total investment assigned to the risky asset. $\l=0$ corresponds to a portfolio consisting only of bank deposits. $\l=1$ corresponds to a portfolio only of stock.
 
 You would be forgiven for thinking that prudence dictates $0\leq\l\leq1$, \ie that we invest some of our money in stock and keep the rest in the bank. However, the financial markets have found all sorts of exciting ways for us to invest almost any amount in an asset. For example, we can make $\l>1$ by borrowing money from the bank to buy more stock than we could have bought with only our own money.\footnote{This doesn't immediately affect the portfolio's value. The bank loan constitutes a negative investment in the riskless asset, whose value cancels the value of the stock we bought with it. Of course, the change in the portfolio's composition will affect its future value.} We can even make $\l<0$ by borrowing stock (a negative investment in the risky asset), selling it, and putting the money raised in the bank. In the financial world this practice is called short selling.
@@ -91,7 +90,7 @@ In our model $\l$, once chosen, is held constant over time. This means that our 
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Portfolio theory\seclabel{pf_theory}}
+\subsection{Portfolio theory\seclabel{pf_theory}}
 Our simple model portfolio parametrised by $\l$ allows us to ask the
 \begin{keypts}{Question:}
 What is the optimal value of $\l$?
@@ -125,7 +124,7 @@ shown schematically in \fref{markowitz}.
 Under Markowitz's classification, all of the leveraged portfolios on this line are efficient.\footnote{Indeed, in finance this line is called the efficient frontier.} Therefore, any leverage we choose gives a portfolio the classification would recommend. This does not help answer our question. By itself, Markowitz's approach is agnostic to leverage: it requires additional information to select a specific portfolio as the optimum. Markowitz was aware of this limitation and argued that the optimal portfolio could be identified by considering the investor's risk preferences \cite{Markowitz1991}: ``The proper choice among portfolios depends on the willingness and ability of the investor to assume risk.'' The ultimate reliance on personal preferences is a theme that runs through all of economic theory, and we have seen examples of it in previous chapters. Of course, economic theory, or finance theory, is not meant to replace human judgement and imagination, nor is it supposed to force certain products and behaviours on people -- but it is supposed to guide decisions. A statement like ``this is the action that will eventually make your wealth grow fastest, assuming we have chosen models and estimated parameters correctly'' is helpful and leaves plenty of room for judgement calls. As in decision theory in general, risk preferences are typically included in the portfolio selection problem through a utility function, and thereby the theory of finance inherits a major cornerstone of economics, along with all its problems.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Sharpe ratio\seclabel{sharpe}}
+\subsection{Sharpe ratio\seclabel{sharpe}}
 The Sharpe ratio~\cite{Sharpe1966} for an asset with drift $\gmu$ and volatility $\gsigma$ is defined as
 \be
 \Sharpe\equiv\frac{\gmu-\mur}{\gsigma}
@@ -139,7 +138,7 @@ It is the gradient of the straight line in the $(\gsigma, \gmu)$-plane which pas
 This is insensitive to the leverage $\l$, resulting in the same non-advice as the Markowitz approach. Sharpe also suggested considering risk preferences to resolve the optimal portfolio: ``The investor's task is to select from among the efficient portfolios the one that he considers most desirable, based on his particular feelings regarding risk and expected return''~\cite{Sharpe1966}. Once more we encounter the theme of reliance on personal preferences in finance and economics. It is no surprise that this switch from formal recommendation (a portfolio should be on the efficient frontier/have a high Sharpe ratio) to personal preference (pick the one whose risks you feel most comfortable with) happens too soon, from our perspective. In general, we use a formal model as long as it's useful, and when we have pushed it to the point where it yields no further reliable answers we switch to personal judgement. The conceptual superiority of our analysis (relying on averages over time not over parallel worlds) allows us to push the model a little further, and the point where we previously had to switch now seems premature. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Expected return\seclabel{exp_ret}}
+\subsection{Expected return\seclabel{exp_ret}}
 We noted previously that the growth rate of the expectation value of the risky price is the risky drift, $\mus$, also known as the expected return. This is because
 \be
 \ave{\xone(\tn+\Dt)} = \ave{\xone(\tn)}\exp(\mus \Dt),
@@ -157,7 +156,7 @@ It follows immediately from comparison of \eref{sde_1} and \eref{sde_l} that the
 This illustrates why a portfolio theory which is insensitive to leverage, such as that of Markowitz and Sharpe\footnote{Both recipients of the 1990 Alfred Nobel Memorial Prize in Economic Sciences.}, is potentially dangerous. Because it doesn't alert the investor to the dangers of over-leveraging and considers any leverage optimal, the investor must find an additional criterion. There is nothing in the formalism that would prevent the investor to select as that additional criterion the expected return in \eref{exp_ret_l}. Consequently he would maximise his leverage, $\l\to\infty$. This, as we will shortly see, would almost surely ruin him.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Growth rate maximisation}
+\subsection{Growth rate maximisation}
 We now understand the classical approach, as applied to a very simple portfolio problem, and we are aware of its limitations. What does our own decision theory have to say?
 
 The time-average growth rate of the leveraged portfolio is
@@ -200,11 +199,11 @@ That \eref{g_l_quadratic} defines an inverted parabola means that, even on the e
 This confirms our assertion at the end of \secref{exp_ret}, that an investor maximising his leverage in either direction will, if he is able to apply enough leverage, lose wealth. Indeed, if his leveraging ability is unlimited, he will find to his horror what is easily seen in \eref{g_l_quadratic}, that $\gtm(\l)$ diverges negatively as $\l\to\pm\infty$. He will lose fast.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Stochastic market efficiency\seclabel{Stochastic}}
+\section{Stochastic market efficiency\seclabel{Stochastic}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{A fundamental measure\seclabel{fundamental}}
+\subsection{A fundamental measure\seclabel{fundamental}}
 Aside from being insensitive to leverage, the Sharpe ratio, $\Sharpe=\mue/\sigmas$, is a dimensionful quantity. Its unit is $(\text{time unit})^{-1/2}$. This means that its numerical value is arbitrary (since it depends on the choice of time unit) and tells us nothing fundamental about the system under study. For example, a portfolio with $\Sharpe=5$ per square root of one year has $\Sharpe=5(365)^{-1/2}\approx0.26$ per square root of one day. Same portfolio, different numbers.
 
 The optimal leverage, $\lopt=\mue/\sigmas^2$, which differs from the Sharpe ratio by a factor of $1/\sigmas$, is a dimensionless quantity. Therefore, its numerical value does not depend on choice of units and has the potential to carry fundamental information about the system.\footnote{See Barenblatt's modern classic on scaling~\cite{Barenblatt2003}.} We could view $\lopt$ as the fundamental measure of a portfolio's quality, similarly to how $\Sharpe$ is viewed in the classical picture. A portfolio with a high optimal leverage must represent a good investment opportunity to justify such a large commitment of the investor's funds.
@@ -215,7 +214,7 @@ Are there any special numerical values of $\lopt$ which describe different marke
 \end{keypts}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Relaxing the model}
+\subsection{Relaxing the model}
 Our model market contains assets whose prices follow \GBM with constant drift and volatility parameters.\footnote{A tautology, since \eref{sde_gbm} only describes a \GBM if $\gmu$ and $\gsigma$ are constant in time.} Once specified, $\mur$, $\mus$, and $\sigmas$ are static and, therefore, so is $\lopt$. This limits the extent to which we can explore the question, since we cannot consider changes in $\lopt$. To make progress we need to relax the model. We must consider which parts of the model are relevant to the question, and which parts can be discarded without grave loss.
 
 The \GBM-based model is useful because it motivates the idea of an objectively optimal leverage which maximises the growth of an investment over time. It also provides an expression for $\lopt$ in terms of parameters which, in essence, describe the market conditions under which prices fluctuate. These parameters have correspondences with quantities we can measure in real markets. All of this is useful.
@@ -223,7 +222,7 @@ The \GBM-based model is useful because it motivates the idea of an objectively o
 However, we are ultimately interested in real markets, and their asset prices do not strictly follow \GBM (because nothing in nature\footnote{We consider markets to be part of nature and appropriate objects of scientific study.} truly does). In particular, real market conditions are not static. They change over time, albeit on a longer time scale than that of the price fluctuations. In this context, the model assumption of constant $\mur$, $\mus$, and $\sigmas$ is restrictive and unhelpful. We will relax it and imagine a less constrained model market where these parameters, and therefore $\lopt$, are allowed to vary slowly. We will not build a detailed mathematical formulation of this, but instead use the idea to run some simple thought experiments.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Efficiency}
+\subsection{Efficiency}
 One way of approaching a question like this is to invoke the concept of efficiency. In economics this has a specific meaning in the context of financial markets, which we will mention imminently. In general terms, an efficient system is one which is already well optimised and whose performance cannot be improved upon by simple actions. For example, a refrigerator is efficient if it maintains a cool internal environment while consuming little electrical power and emitting little noise\footnote{This is a subtle reference to a fridge whose presence once graced the offices of \LML. It was not efficient.}. Similarly, Markowitz's portfolios were efficient because the investor could do no better than to choose one of them. 
 
 The ``efficient market hypothesis'' of classical economics treats markets as efficient processors of information. It claims that the price of an asset in an efficient market reflects all of the publicly available information about it. The corollary is that no market participant, without access to privileged information, can consistently beat the market simply by choosing the prices at which he buys and sells assets. We shall refer to this hypothesis as ordinary efficiency.\footnote{This is not the most precise hypothesis ever hypothesised. What does it mean for a price to ``reflect'' information? Presumably this involves some comparison between the observed price of the asset and its true value contingent on that information. But only the former is observable, while the latter evades clear definition. Similarly, what does it mean to ``beat the market''? Presumably something to do with achieving a higher growth rate than a general, na\"{i}ve investment in the overall market. But what investment, exactly? We will leave these legitimate questions unanswered here, since our focus is a different form of market efficiency. The interested reader can consult the comprehensive review in~\cite{Sewell2011}.}
@@ -249,7 +248,7 @@ is an attractive point for their stochastic properties.
 These stochastic properties are represented by $\mur$, $\mus$, and $\sigmas$ in the relaxed model that permits dynamic adjustment of their values. %We call this the strong form of the hypothesis, since it makes a very precise prediction about the attractive value for $\lopt$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Stability}
+\subsection{Stability}
 Another approach to the question in \secref{fundamental}, whose style owes more to physics than economics, is to consider the stability of the system under study (here, the market) and how this depends on the value of the observable in question (here, $\lopt$). 
 
 Systems which persist over long time scales tend to be stable. Many of the systems we find in nature therefore include stabilising elements. Unstable systems tend to last for shorter times,\footnote{We use the comparative ``shorter'' here. This does not mean short. It is quite possible for an unstable system to remain in flux for a long time in human terms, perhaps giving the illusion of stability. Indeed, much of classical economic theory is predicated on the idea that economies are at or close to equilibrium, \ie stable. We would argue that economies are fundamentally far-from-equilibrium systems and must be modelled as such, even if their dynamics unfold over time scales much longer than our day-to-day affairs.} so we observe them less frequently. With this in mind, let's think about what different values of $\lopt$ imply for systemic stability.
@@ -276,7 +275,7 @@ The dynamical adjustment, or self-organisation, of the market parameters takes p
 Furthermore, there are additional reasons why we would favour the strong form of the hypothesis over long time scales. The main one is that an economy in which $\lopt$ is close to, or even less than, zero gives people no incentive to invest in productive business activity. Such an economy would appear paralysed, resembling perhaps those periods in history to which economists refer as depressions. We'd like to think that economies are not systematically attracted to such states. The other reasons are more technical, to do with the different interest rates accrued on deposits and loans, and the costs associated with buying and selling assets. These are described in~\cite{PetersAdamou2013}. 
 
 
-\subsubsection{Prediction accuracy\seclabel{Prediction_accuracy}}
+\subsection{Prediction accuracy\seclabel{Prediction_accuracy}}
 When we simply use observed price changes to compute changes in portfolio value, we will overestimate optimal leverage. Denoting an estimate from real data of $\lopt$ by $\loptc$, we will  have $\loptc>\lopt$. This is because real investments incur transaction costs and other costs associated with leveraging. We therefore expect na\"ively measured values to be a little too big, $\loptc>1$. 
 
 Ignoring these effects for the moment, we can predict how close we expect observed optimal leverage to be to its predicted value, 1, when we estimate it from a finite time series, let's say of daily returns. Even assuming ideal conditions -- that $\lopt$ really is attracted to 1 and that any effects that lead to systematic mis-estimation can be neglected, we expect random
@@ -314,10 +313,10 @@ normally distributed with mean $\lopt$ and standard deviation
 We will use this quantity as the standard error for the prediction $\loptc\approx1$. 
 
 
-\subsection{Applications of stochastic market efficiency\seclabel{applications}}
+\section{Applications of stochastic market efficiency\seclabel{applications}}
 Our solution of the portfolio selection problem, and the concept of stochastic market efficiency that follows from it are momentous developments in the theory of financial markets. While in a sense the puzzle pieces necessary for these developments have been around for a while, it seems that they haven't so far been put together in quite the way we've presented them. This is evident from many puzzles and questions that exist in finance and economics but which have a straight-forward solution in the conceptual space we have developed in these notes. Before we look at data in \secref{real} to understand how accurately this fundamental theoretical work reflects empirical reality, we apply it to some of these famous puzzles to illustrate the type of solution the theory generates.
 
-\subsubsection{A theory of noise -- Sisyphus discovers prices\seclabel{a_theory}}
+\subsection{A theory of noise -- Sisyphus discovers prices\seclabel{a_theory}}
 According to stochastic market efficiency, prices of risky assets must fluctuate if an excess drift exists, $\mue>0$, simply because the market would otherwise become unstable. But, if price fluctuations are necessary for stability, then the intellectual basis for price efficiency -- that changes in price are driven by the arrival of new economic information --  cannot be the whole truth. Or  --depending on what is meant by ``information'' -- it may be an empty circular statement. At least some component of observed fluctuations must be driven by the leverage feedbacks described in section~\secref{Stochastic}, which enforce leverage efficiency and which have little to do with the arrival of meaningful economic information.
 
 Black differentiated between information-based and other types of price fluctuation, referring to the latter as ``noise'' and regarding it as a symptom of inaccurate information and market {\it in}-efficiency \cite{Black1986}. However, substituting $\lopt=1$ in \eref{lopt} yields 
@@ -328,7 +327,7 @@ Black differentiated between information-based and other types of price fluctuat
 Purely based on stochastic market efficiency, prices must fluctuate, and we can even quantify by how much. An asset whose expectation value grows faster than the value of the riskless asset must fluctuate; otherwise systemic stability will be undermined.
 This is a radical departure from conventional thinking, and it has practical consequences. For instance, prices ``discovered'' at ever higher trading frequencies must necessarily reveal more ups and downs, but this noise is self-generated, imposed by the requirement of leverage stability. That stability is the genesis of volatility constitutes a theory of noise requiring no appeal to the arrival of unspecified information, accurate or not.
 
-\subsubsection{Solution of the equity premium puzzle\seclabel{solution}}
+\subsection{Solution of the equity premium puzzle\seclabel{solution}}
 The term ``equity premium'' has been used to describe the ``premium'' I receive for holding ``equity'' -- meaning the extra growth rate my wealth experiences, compared to riskless interest rates, if I invest it in shares, or some other risky asset. We denote this with the symbol $\pim$ (for premium). 
 
 Puzzles usually arrise because we look at things from the wrong angle, with a mental model that doesn't reflect reality. The equity premium puzzle is no exception. The researchers who first studied the equity premium had a model in mind whereby equity prices are set based on the consumption preferences of the population \cite{MehraPrescott1985}. 
@@ -368,7 +367,7 @@ We regard the correct prediction of the equity premium by stochastic market effi
 \end{figure}
 
 
-\subsubsection{Central-bank interest rates\seclabel{central-bank}}
+\subsection{Central-bank interest rates\seclabel{central-bank}}
 Our observations are also relevant to the issue of setting a central bank's lending rate. The rate setter would view the total drift $\mus$ of an appropriate asset or index as given, and the risk-free drift $\mur$ as the central bank's rate. If the aim is to achieve full investment in productive activity without fuelling an asset bubble, then this rate should be set so that $\lopt=1$. Since $\lopt=\mus/(\sigmas)^2$ and $\mue=\mur-\mus$, this is achieved by setting 
 \be
 \mur=\mus-(\sigmas)^2.
@@ -376,13 +375,13 @@ Our observations are also relevant to the issue of setting a central bank's lend
 Using values for $\mus$ and $\sigmas$ estimated in section~\secref{real}, the optimal interest rate between 1988 and 2018 for the US comes out as 9\% {\it p.a.}, suggesting that actual interest rates over the analysed period have been in a region where they can inflate leverage bubbles (the geometric average on 10-year maturity Treasury bills was about 4.7\% \pa lower than this value). The effect is mitigated by trading costs, meaning that 9\% is an overestimate of the optimal interest rate, nonetheless it is hard to deny that asset bubbles were inflated over this period. The task of the central banker can be seen as the task of estimating $\mur$ and $\sigmas$ in the relevant way. This will involve choices about data and timescales which are far from trivial. For instance, in our data analyses at any given time there is an estimate for $\mus$ and one for $\sigmas$ for each possible length of lookback window. Operational matters aside, stability with respect to leverage is an important consideration for any central bank. Leverage efficiency provides a simple quantitative basis for a rate setting protocol and may frame qualitative discussions about interest rates in a useful way.
 
 
-\subsubsection{Fraud detection\seclabel{fraud}}
+\subsection{Fraud detection\seclabel{fraud}}
 We will see in the next section that stochastic market efficiency is real. Prices of real traded assets more or less obey the constraints dictated by systemic stability. Of course, over short time scales fluctuations will be large, there are all manner of difficult-to-model effects in real trading environments. These include transaction costs and other operational costs. Still -- a realistic asset should more or less satisfy stochastic market efficiency.
 
 But what if it doesn't? What if there is an asset that consistently, and at low volatility outperforms bank deposits? 
 First of all, we now know that such behavior is a challenge to systemic stability. Because of this, we don't expect it to survive for long. Where it does survive for long, one possible explanation is fraud. A common type of fraud is the so-called Ponzi scheme: the fraudster invents an attractive-looking past performance of a portfolio or asset value and entices new investors to give him their money. Instead of investing the money in the non-existent asset, it is passed on to pay off earlier investors and the fraudster siphons off and handy profit. Since the performance of the asset price is invented, there is no strong reason for it to obey stochastic market efficiency. Below we will test the Bernie-Madoff ponzi scheme and ask: was it too good to be true from the perspective of stochastic market efficiency? We will ask the same question about bitcoin: is it too good to be true from this perspective?
 
-\subsection{Real markets -- stochastic market efficiency in action\seclabel{real}}
+\section{Real markets -- stochastic market efficiency in action\seclabel{real}}
 In \secref{applications} we went through some earth-shattering consequences of leverage efficiency. Of course we wouldn't have done that if there wasn't strong evidence of this organizing principle actually working in practice. Let's get some data and try it out. 
 
 We test the stochastic efficiency hypothesis in real markets, quite na\"ively, by backtesting leveraged investments. The simplest thing to check is this: take two time series, one of the returns of a very stable, low-volatility, asset, like bank deposits, and the other of the returns of a more volatile asset, like shares. Then try out all possible fixed-leverage investment strategies and see which one does best. The leverage where that happens is a real-world estimate of $\lopt$, which we'll call $\loptc$.
@@ -390,7 +389,7 @@ We test the stochastic efficiency hypothesis in real markets, quite na\"ively, b
 Of course we can argue about the data until the cows come home -- which precise data set should be used, what biases will it introduce, and so on. But let's set those worries aside for the moment and just try something.
 
 
-\subsubsection{Backtests of constant-leverage investments}
+\subsection{Backtests of constant-leverage investments}
 
 An investment of constant leverage is backtested using two time series, $\rs(\t)$ (risky returns) and $\rr(\t)$ (returns on bank deposits) as illustrated in \fref{rebalance}.
 \begin{enumerate}
@@ -428,7 +427,7 @@ The optimal leverage is that which maximizes the final equity -- the trajectorie
 If at any time the equity falls below zero, the investment is declared bankrupt and the backtest is considered invalid for the corresponding leverage. This happens when the leverage is very high and the risky asset drops in value, or when it's very negative and the risky asset rises in value. Between these extremes, a smooth curve emerges, resembling a Gaussian bell-shape (or an upside-down parabola on logarithmic vertical scales).
 
 \FloatBarrier 
-\subsubsection{Data sets}
+\subsection{Data sets}
 We want to compare the true performance of one asset to that of another, and therefore it's important to find time series that really resemble changes in equity over time that an investment would have experienced. A stock market index would be nice because it will give a broad overall impression. It won't depend too much on the specific fortunes of any given company.
 
 Strangely, most stock indexes are simply weighted averages of (free-float) market capitalization of a bunch of listed companies, but when one of those companies pays a dividend of \$10, say, and its shares correspondingly drop by \$10, the index drops too. We don't want that, so we'll have to find an index that properly accounts for dividends. 
@@ -453,7 +452,7 @@ For all assets, we will overestimate real optimal leverage in the most straight-
 We could try to correct for this bias, and we have done that in \cite{PetersAdamou2011}. The necessary assumptions make the results more realistic but also more dependent on subjective guesses, so we'll just stick to the simplest case here and note that it will produce an over-estimate of $\lopt$.
 \FloatBarrier
 
-\subsubsection{Full time series}
+\subsection{Full time series}
 The bottom panel of \fref{STR_trajectories} shows the leverage-return curve for the \SPT. The optimal leverage is a little greater than 1, but still within 2 standard errors from the prediction. Without further ado, let's add to this figure the same curves for the \DAX and Bitcoin, this time on logarithmic vertical scales to see a bit more structure, \fref{STR_final_all}.  
 \begin{figure}
 \begin{picture}(200,200)(0,0)
@@ -483,7 +482,7 @@ The maxima for the real assets cluster near the predicted value $\lopt=1$. Madof
 \flabel{STR_final_all_MAD}}
 \end{figure}
 
-\subsubsection{Shorter time scales}
+\subsection{Shorter time scales}
 In \secref{Prediction_accuracy} we derived an expression, \eref{variance}, for the variance of optimal leverage that we expect to observe in a finite time series, and we used this to arrive at a statistical error estimate, a scale on which to judge whether leverage efficiency holds or not.
 But we can use \eref{variance} as a prediction in itself: is the sample variance of $\lopt$, measured in many windows of size $\Dt$ well described by \eref{variance}? We can't make the time series longer than they are, but we can make them shorter. In \fref{loglog} we collect statistics of $\loptc$ estimated in non-overlapping time windows and find good agreement with the model-specific prediction. 
 %\fref{g_l_linear} shows the simulated multiplicative return as a function of leverage for an investment over the entire time series.
@@ -573,7 +572,7 @@ The structure we have identified -- leverage efficiency -- operates on all time 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Discussion}
+\section{Discussion}
 The primary aim of this final lecture was to demonstrate that the mathematical formalism we have developed to conceptualise randomness in economics, which started with a simple model of wealth evolution by repetition of a gamble, is very powerful. It does more than simply create a rigorous and plausible foundation for economic theory. In particular, because the framework is epistemologically sound, we can make testable predictions, which we can corroborate empirically using real economic data. We could not have guessed from our simple coin-tossing game that we would end up making a prediction about the fluctuations of stock markets or those of bitcoin. The simple but deep conceptual insight that the ergodicity question has been overlooked ultimately shed a good deal of light on the equity premium puzzle, informed the debate of how to set central-bank interest rates, and provided a new way of thinking about noise and the stabilizing role of price fluctuations. What other surprising predictions can we make in this formalism? That, dear reader, is a question for you.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

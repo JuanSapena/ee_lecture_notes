@@ -3,7 +3,7 @@
 %% NEW CHAPTER
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Interactions}
+\chapter{Interactions}
 \clabel{Interactions}
 {\it
 We add interactions to our null model of a population of noisy multipliers. It turns out that our decision criterion generates interesting emergent behaviour -- cooperation, the sharing and pooling of resources, is often time-average 
@@ -13,7 +13,7 @@ growth optimal. This provides answers to the puzzles of why people cooperate and
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Cooperation}
+\section{Cooperation}
 \seclabel{Cooperation}
 Under multiplicative growth, fluctuations are undesirable because they reduce 
 time-average growth rates. In the long run, wealth $\x_1(\t)$ with noise term 
@@ -222,12 +222,12 @@ a proportion of their resources, resembling taxation and redistribution. We disc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Reallocation}
+\section{Reallocation}
 \seclabel{reallocation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Introduction}
+\subsection{Introduction}
 \seclabel{RGBM_intro}
 
 In \secref{Every_man} we created a model world of independent trajectories of \GBM. We studied how the distribution of the resulting random variables evolved over time. We saw that this is a world of broadening distributions, increasing inequality, and wealth condensation.
@@ -242,7 +242,7 @@ Finally, having understood how our model behaves in each of these reallocation r
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{The ergodic hypothesis in economics}
+\subsection{The ergodic hypothesis in economics}
 \seclabel{RGBM_EH}
 % Introduce the EH
 Of course, we are not the first to study resource distributions and inequality in economics. This topic has a long history, going back at least as far as Vilfredo Pareto's work in the late $19^\text{th}$ century \cite{Pareto1897} (in which he introduced the power-law distribution we discussed in \secref{power_law}). It's worth spending a few moments considering how the subject is approached classically, before we say how we approach it.
@@ -263,7 +263,7 @@ If it is reasonable to assume a stable distribution exists, we must also conside
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Reallocating geometric Brownian motion}
+\subsection{Reallocating geometric Brownian motion}
 \seclabel{RGBM_model}
 % model
 Our model, called \RGBM, is a system of $\N$ individuals whose wealths, $\x_\gi(\t)$, evolve according to the stochastic differential equation,
@@ -295,7 +295,7 @@ If so, how long does it take, after a change in conditions, for the rescaled wea
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Model behaviour}
+\subsection{Model behaviour}
 \seclabel{RGBM_behaviour}
 It is instructive to write \eref{rgbm} as
 \be
@@ -411,7 +411,7 @@ Such splitting of the population is a common feature of non-ergodic processes. I
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Derivation of the stable distribution}
+\subsection{Derivation of the stable distribution}
 \seclabel{RGBM_stable}
 In this section we will sketch the argument for why we can make the self-averaging approximation, \eref{rgbm_self}, in \RGBM with sufficiently fast positive reallocation, \eref{tau_c}. This is shown rigorously in \cite{Bouchaud2015b}. Then we will solve the Fokker-Planck equation for the rescaled wealth and derive the inverse gamma distribution, \eref{disti}.
 
@@ -449,7 +449,7 @@ with the gamma function $\Gamma\left(\zeta\right) = \int_0^\infty \x^{\zeta-1} e
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Moments and convergence times}
+\subsection{Moments and convergence times}
 \seclabel{RGBM_moments}
 The inverse gamma distribution, \eref{disti}, has a power-law tail. This means that, for positive reallocation, while some of the lower moments of the stable rescaled wealth distribution may exist, higher moments will not. Specifically, the $k^\text{th}$ moment diverges if $k>\zeta$. 
 
@@ -514,7 +514,7 @@ As $\gphi$ increases, increasingly high moments of the distribution converge to 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Fitting United States wealth data}
+\subsection{Fitting United States wealth data}
 \seclabel{RGBM_data}
 We have introduced the \RGBM model and understood its basic properties. It is a simple model of an interacting population of noisy multiplicative growers. We expect it to be more realistic than \GBM ($\gphi=0$) because we know that in the real world people interact. In particular, large populations have over centuries developed public institutions and infrastructure, to which everyone contributes and from which everyone benefits. At first glance, therefore, we might expect to find that \RGBM with positive $\gphi$ to fit real wealth data better than \GBM or, indeed, \RGBM with negative $\gphi$.
 

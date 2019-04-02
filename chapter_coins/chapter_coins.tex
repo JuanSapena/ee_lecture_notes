@@ -1,5 +1,4 @@
-
-\section{Coins}
+\chapter{Coins}
 \clabel{Coins}
 
 %\section{Summary}
@@ -19,7 +18,7 @@ absence of key concepts in modern economic theory and other fields.
 The emphasis is on introducing concepts and useful machinery, with applications in later chapters.}
 \newpage
 
-\subsection{The game}
+\section{The game}
 \seclabel{The_game}
 Imagine we offer you the following game: we toss a coin, and if it comes 
 up heads we increase your monetary wealth by 50\%; if 
@@ -109,7 +108,7 @@ Neither? What are we to learn from this simulation? Perhaps we
 conclude that playing the game for a year is quite risky, but is the 
 risk worth taking? 
 
-\subsubsection{Averaging over many trials}
+\subsection{Averaging over many trials}
 The trajectory in \fref{1_1} doesn't tell us much about overall tendencies.
 There is too much noise to discern a clear signal. A common 
 strategy for getting rid of noise is to try again. And then try again and
@@ -156,7 +155,7 @@ noise-free trajectory points up it is tempting to conclude that my own wealth wi
 of the game is worth taking. This reasoning has dominated economic 
 theory for about 350 years now. But it is flawed. The correction of this flaw and its far-reaching consequences constitute our research program.
 
-\subsubsection{Averaging over time}
+\subsection{Averaging over time}
 Does our analysis necessitate the conclusion that the gamble is worth taking? 
 Of course it doesn't, otherwise we wouldn't be belabouring this point. 
  Our critique will focus on the type of averaging we have applied -- we didn't play the game many times
@@ -212,7 +211,7 @@ The two methods we've used to eliminate the noise from our system
 are well known. The first method is closely related to the mathematical object called the
 ``expectation value,'' and the second is closely related to the object called the ``time average.''
 
-\subsubsection{Expectation value}
+\subsection{Expectation value}
 In this section we validate \fref{1_2} by computing analytically the
 average of $\x(\t)$ over infinitely many realizations, a quantity known as the expectation value.
 The expectation value is usually introduced as the sum of all possible values, 
@@ -495,7 +494,7 @@ or simply ``expectation value''. But this is really an unfortunate choice
 Instead, each player expected to receive either nothing or $\q$. 
 \end{history}
 
-\subsubsection{Time average}
+\subsection{Time average}
 In this section we validate \fref{1_3} and compute analytically 
 what happens in the long-time limit. The blue line in \fref{1_3} is not completely smooth, there's still 
 some noise (see panel B). It has some average slope, but that slope will vary from realisation to 
@@ -870,7 +869,7 @@ only differences in utility functions can have physical meaning.
 We will have a lot more to say about utility functions (which we call ergodicity mappings) in \cref{decision}.
 \end{excursion}
 
-\subsubsection{Ergodic observables}
+\subsection{Ergodic observables}
 \seclabel{Ergodic_observables}
 
 We have encountered two types of averaging -- the ensemble average and the
@@ -1055,7 +1054,7 @@ over the one trajectory that describes a financial life, rather than across the 
 
 Ergodicity is not the same concept as stationarity. As an illustration of the difference, consider the following process: $\gf(\t)=\z_{\gi}$, where $\z_{\gi}$ is an instance of a random variable $\Z$. Explicitly, this means a realisation of the stochastic process $\gf(\t)$ is generated as follows: we generate the random instance $\z_{\gi}$ once, and then fix $\gf(\t)$ at that value for all time. The distribution of $\gf(\t)$ is independent of $\t$ and in that sense $\gf(\t)$ is stationary. But it is not ergodic: averaging over the ensemble, we obtain $\ave{\gf(\t)}=\ave{\z}$, whereas averaging over time in the $\gi^{\text{th}}$ trajectory gives $\overline{\gf}=\z_{\gi}$. Thus the process is stationary but not ergodic.
 
-\subsection{Changes and stability}
+\section{Changes and stability}
 \seclabel{Rates}
 In this section we discuss the role of changes and stability in science in general and then say a few words about the coin toss in particular. 
 If the latter part is hard to understand right now -- don't worry, we'll get back to it in much more detail in \cref{decisions}.
@@ -1135,7 +1134,7 @@ grows in the long run, if it is negative then $\x(\t)$ decays.
 The mathematics of this procedure is discussed in detail in \cref{decision}, and an
 experiment testing whether people behave as predicted is described in \secref{Copenhagen}.
 
-\subsection{Brownian motion}
+\section{Brownian motion}
 \seclabel{Brownian_motion}
 We motivate the model called \BM as a limiting process, the continuous-time limit, that arises from random walks.
 In the previous section we established that the discrete increments of the logarithm of 
@@ -1344,7 +1343,7 @@ integration is a smoothing operation, and as a consequence the trajectories are 
 \end{figure}
 \FloatBarrier
 
-\subsection{Geometric Brownian motion}
+\section{Geometric Brownian motion}
 \seclabel{Geometric_Brownian}
 \begin{defn}{Geometric Brownian motion}
 If the logarithm of a quantity performs Brownian motion, the quantity itself performs ``geometric Brownian 
@@ -1475,7 +1474,7 @@ term of a Taylor-expansion becomes exact,
 \ee 
 in agreement with \eref{time_g} if the drift term $\mu=0$, as assumed by Whitworth.
 
-\subsubsection{\Ito calculus}
+\subsection{\Ito calculus}
 \seclabel{Ito}
 We have chosen to work with the discrete process here and have arrived at a result that is more
 commonly shown using \Ito's formula. We will not discuss \Ito calculus in depth 
@@ -1522,9 +1521,8 @@ growth rate.
 This difference is sometimes called the ``spurious drift'', but at the \LML we call it the ``Weltschmerz'' because 
 it is the difference between the many worlds of our dreams and fantasies, and the one cruel reality that 
 the passage of time imposes on us.
-\newpage
 
-\subsection*{Summary of \cref{Coins}}
+\section*{Summary of \cref{Coins}}
 
 In this chapter we have introduced the following key concepts:
 \bi
@@ -1574,6 +1572,3 @@ We will make use of \Ito's formula, which is a tool to find the increment in a f
 \item[\bf Ergodic observable]
 An ergodic observable is a stochastic process with the following ergodic property: its time average is identical to its expectation value. If the process includes transients, one has to consider the expectation value far away from any transients.
 \ei
-
-
-

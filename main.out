@@ -1,84 +1,84 @@
-\BOOKMARK [1][-]{section.1}{Why this book?}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{The game}{section.1}% 2
-\BOOKMARK [1][-]{section.2}{Coins}{}% 3
-\BOOKMARK [2][-]{subsection.2.1}{The game}{section.2}% 4
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Averaging over many trials}{subsection.2.1}% 5
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Averaging over time}{subsection.2.1}% 6
-\BOOKMARK [3][-]{subsubsection.2.1.3}{Expectation value}{subsection.2.1}% 7
-\BOOKMARK [3][-]{subsubsection.2.1.4}{Time average}{subsection.2.1}% 8
-\BOOKMARK [3][-]{subsubsection.2.1.5}{Ergodic observables}{subsection.2.1}% 9
-\BOOKMARK [2][-]{subsection.2.2}{Changes and stability}{section.2}% 10
-\BOOKMARK [2][-]{subsection.2.3}{Brownian motion}{section.2}% 11
-\BOOKMARK [2][-]{subsection.2.4}{Geometric Brownian motion}{section.2}% 12
-\BOOKMARK [3][-]{subsubsection.2.4.1}{It\364 calculus}{subsection.2.4}% 13
-\BOOKMARK [1][-]{section.3}{Decisions}{}% 14
-\BOOKMARK [2][-]{subsection.3.1}{Models and science fiction}{section.3}% 15
-\BOOKMARK [2][-]{subsection.3.2}{The decision axiom}{section.3}% 16
-\BOOKMARK [2][-]{subsection.3.3}{Growth rates}{section.3}% 17
-\BOOKMARK [2][-]{subsection.3.4}{Decisions in a deterministic world}{section.3}% 18
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Different magnitudes}{subsection.3.4}% 19
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Different magnitudes and times - discounting}{subsection.3.4}% 20
-\BOOKMARK [2][-]{subsection.3.5}{Decisions in an uncertain world}{section.3}% 21
-\BOOKMARK [2][-]{subsection.3.6}{Gamble: random number and duration}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.7}{Repeated gamble: from random number to stochastic process}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.8}{The expected-wealth and expected-utility paradigms}{section.3}% 24
-\BOOKMARK [2][-]{subsection.3.9}{General dynamics}{section.3}% 25
-\BOOKMARK [3][-]{subsubsection.3.9.1}{Why discuss general dynamics?}{subsection.3.9}% 26
-\BOOKMARK [3][-]{subsubsection.3.9.2}{Technical setup}{subsection.3.9}% 27
-\BOOKMARK [3][-]{subsubsection.3.9.3}{Dynamic from a utility function}{subsection.3.9}% 28
-\BOOKMARK [3][-]{subsubsection.3.9.4}{Utility function from a dynamic}{subsection.3.9}% 29
-\BOOKMARK [2][-]{subsection.3.10}{The Copenhagen experiment}{section.3}% 30
-\BOOKMARK [2][-]{subsection.3.11}{The St Petersburg paradox}{section.3}% 31
-\BOOKMARK [2][-]{subsection.3.12}{The insurance puzzle}{section.3}% 32
-\BOOKMARK [3][-]{subsubsection.3.12.1}{Solution in the time paradigm}{subsection.3.12}% 33
-\BOOKMARK [3][-]{subsubsection.3.12.2}{The classical solution of the insurance puzzle}{subsection.3.12}% 34
-\BOOKMARK [1][-]{section.4}{Populations}{}% 35
-\BOOKMARK [2][-]{subsection.4.1}{Every man for himself}{section.4}% 36
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Log-normal distribution}{subsection.4.1}% 37
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Two growth rates}{subsection.4.1}% 38
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Measuring inequality}{subsection.4.1}% 39
-\BOOKMARK [3][-]{subsubsection.4.1.4}{Wealth condensation}{subsection.4.1}% 40
-\BOOKMARK [3][-]{subsubsection.4.1.5}{Rescaled wealth}{subsection.4.1}% 41
-\BOOKMARK [3][-]{subsubsection.4.1.6}{u-normal distributions and Jensen's inequality}{subsection.4.1}% 42
-\BOOKMARK [3][-]{subsubsection.4.1.7}{power-law resemblance}{subsection.4.1}% 43
-\BOOKMARK [2][-]{subsection.4.2}{Finite populations}{section.4}% 44
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Sums of log-normals}{subsection.4.2}% 45
-\BOOKMARK [3][-]{subsubsection.4.2.2}{The random energy model}{subsection.4.2}% 46
-\BOOKMARK [1][-]{section.5}{Interactions}{}% 47
-\BOOKMARK [2][-]{subsection.5.1}{Cooperation}{section.5}% 48
-\BOOKMARK [2][-]{subsection.5.2}{Reallocation}{section.5}% 49
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Introduction}{subsection.5.2}% 50
-\BOOKMARK [3][-]{subsubsection.5.2.2}{The ergodic hypothesis in economics}{subsection.5.2}% 51
-\BOOKMARK [3][-]{subsubsection.5.2.3}{Reallocating geometric Brownian motion}{subsection.5.2}% 52
-\BOOKMARK [3][-]{subsubsection.5.2.4}{Model behaviour}{subsection.5.2}% 53
-\BOOKMARK [3][-]{subsubsection.5.2.5}{Derivation of the stable distribution}{subsection.5.2}% 54
-\BOOKMARK [3][-]{subsubsection.5.2.6}{Moments and convergence times}{subsection.5.2}% 55
-\BOOKMARK [3][-]{subsubsection.5.2.7}{Fitting United States wealth data}{subsection.5.2}% 56
-\BOOKMARK [1][-]{section.6}{Markets}{}% 57
-\BOOKMARK [2][-]{subsection.6.1}{Optimal leverage}{section.6}% 58
-\BOOKMARK [3][-]{subsubsection.6.1.1}{A model market}{subsection.6.1}% 59
-\BOOKMARK [3][-]{subsubsection.6.1.2}{Leverage}{subsection.6.1}% 60
-\BOOKMARK [3][-]{subsubsection.6.1.3}{Portfolio theory}{subsection.6.1}% 61
-\BOOKMARK [3][-]{subsubsection.6.1.4}{Sharpe ratio}{subsection.6.1}% 62
-\BOOKMARK [3][-]{subsubsection.6.1.5}{Expected return}{subsection.6.1}% 63
-\BOOKMARK [3][-]{subsubsection.6.1.6}{Growth rate maximisation}{subsection.6.1}% 64
-\BOOKMARK [2][-]{subsection.6.2}{Stochastic market efficiency}{section.6}% 65
-\BOOKMARK [3][-]{subsubsection.6.2.1}{A fundamental measure}{subsection.6.2}% 66
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Relaxing the model}{subsection.6.2}% 67
-\BOOKMARK [3][-]{subsubsection.6.2.3}{Efficiency}{subsection.6.2}% 68
-\BOOKMARK [3][-]{subsubsection.6.2.4}{Stability}{subsection.6.2}% 69
-\BOOKMARK [3][-]{subsubsection.6.2.5}{Prediction accuracy}{subsection.6.2}% 70
-\BOOKMARK [2][-]{subsection.6.3}{Applications of stochastic market efficiency}{section.6}% 71
-\BOOKMARK [3][-]{subsubsection.6.3.1}{A theory of noise \205 Sisyphus discovers prices}{subsection.6.3}% 72
-\BOOKMARK [3][-]{subsubsection.6.3.2}{Solution of the equity premium puzzle}{subsection.6.3}% 73
-\BOOKMARK [3][-]{subsubsection.6.3.3}{Central-bank interest rates}{subsection.6.3}% 74
-\BOOKMARK [3][-]{subsubsection.6.3.4}{Fraud detection}{subsection.6.3}% 75
-\BOOKMARK [2][-]{subsection.6.4}{Real markets \205 stochastic market efficiency in action}{section.6}% 76
-\BOOKMARK [3][-]{subsubsection.6.4.1}{Backtests of constant-leverage investments}{subsection.6.4}% 77
-\BOOKMARK [3][-]{subsubsection.6.4.2}{Data sets}{subsection.6.4}% 78
-\BOOKMARK [3][-]{subsubsection.6.4.3}{Full time series}{subsection.6.4}% 79
-\BOOKMARK [3][-]{subsubsection.6.4.4}{Shorter time scales}{subsection.6.4}% 80
-\BOOKMARK [2][-]{subsection.6.5}{Discussion}{section.6}% 81
-\BOOKMARK [1][-]{section*.10}{Acronyms}{}% 82
-\BOOKMARK [1][-]{section*.12}{List of Symbols}{}% 83
-\BOOKMARK [1][-]{section*.13}{References}{}% 84
+\BOOKMARK [0][-]{chapter.1}{Why this book?}{}% 1
+\BOOKMARK [1][-]{section.1.1}{The game}{chapter.1}% 2
+\BOOKMARK [0][-]{chapter.2}{Coins}{}% 3
+\BOOKMARK [1][-]{section.2.1}{The game}{chapter.2}% 4
+\BOOKMARK [2][-]{subsection.2.1.1}{Averaging over many trials}{section.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.1.2}{Averaging over time}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.3}{Expectation value}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.4}{Time average}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.5}{Ergodic observables}{section.2.1}% 9
+\BOOKMARK [1][-]{section.2.2}{Changes and stability}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Brownian motion}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{Geometric Brownian motion}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.4.1}{It\364 calculus}{section.2.4}% 13
+\BOOKMARK [0][-]{chapter.3}{Decisions}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Models and science fiction}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{The decision axiom}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.3}{Growth rates}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.4}{Decisions in a deterministic world}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.4.1}{Different magnitudes}{section.3.4}% 19
+\BOOKMARK [2][-]{subsection.3.4.2}{Different magnitudes and times - discounting}{section.3.4}% 20
+\BOOKMARK [1][-]{section.3.5}{Decisions in an uncertain world}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.6}{Gamble: random number and duration}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.7}{Repeated gamble: from random number to stochastic process}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.8}{The expected-wealth and expected-utility paradigms}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.9}{General dynamics}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.9.1}{Why discuss general dynamics?}{section.3.9}% 26
+\BOOKMARK [2][-]{subsection.3.9.2}{Technical setup}{section.3.9}% 27
+\BOOKMARK [2][-]{subsection.3.9.3}{Dynamic from a utility function}{section.3.9}% 28
+\BOOKMARK [2][-]{subsection.3.9.4}{Utility function from a dynamic}{section.3.9}% 29
+\BOOKMARK [1][-]{section.3.10}{The Copenhagen experiment}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.11}{The St Petersburg paradox}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.12}{The insurance puzzle}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.12.1}{Solution in the time paradigm}{section.3.12}% 33
+\BOOKMARK [2][-]{subsection.3.12.2}{The classical solution of the insurance puzzle}{section.3.12}% 34
+\BOOKMARK [0][-]{chapter.4}{Populations}{}% 35
+\BOOKMARK [1][-]{section.4.1}{Every man for himself}{chapter.4}% 36
+\BOOKMARK [2][-]{subsection.4.1.1}{Log-normal distribution}{section.4.1}% 37
+\BOOKMARK [2][-]{subsection.4.1.2}{Two growth rates}{section.4.1}% 38
+\BOOKMARK [2][-]{subsection.4.1.3}{Measuring inequality}{section.4.1}% 39
+\BOOKMARK [2][-]{subsection.4.1.4}{Wealth condensation}{section.4.1}% 40
+\BOOKMARK [2][-]{subsection.4.1.5}{Rescaled wealth}{section.4.1}% 41
+\BOOKMARK [2][-]{subsection.4.1.6}{u-normal distributions and Jensen's inequality}{section.4.1}% 42
+\BOOKMARK [2][-]{subsection.4.1.7}{power-law resemblance}{section.4.1}% 43
+\BOOKMARK [1][-]{section.4.2}{Finite populations}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.2.1}{Sums of log-normals}{section.4.2}% 45
+\BOOKMARK [2][-]{subsection.4.2.2}{The random energy model}{section.4.2}% 46
+\BOOKMARK [0][-]{chapter.5}{Interactions}{}% 47
+\BOOKMARK [1][-]{section.5.1}{Cooperation}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.2}{Reallocation}{chapter.5}% 49
+\BOOKMARK [2][-]{subsection.5.2.1}{Introduction}{section.5.2}% 50
+\BOOKMARK [2][-]{subsection.5.2.2}{The ergodic hypothesis in economics}{section.5.2}% 51
+\BOOKMARK [2][-]{subsection.5.2.3}{Reallocating geometric Brownian motion}{section.5.2}% 52
+\BOOKMARK [2][-]{subsection.5.2.4}{Model behaviour}{section.5.2}% 53
+\BOOKMARK [2][-]{subsection.5.2.5}{Derivation of the stable distribution}{section.5.2}% 54
+\BOOKMARK [2][-]{subsection.5.2.6}{Moments and convergence times}{section.5.2}% 55
+\BOOKMARK [2][-]{subsection.5.2.7}{Fitting United States wealth data}{section.5.2}% 56
+\BOOKMARK [0][-]{chapter.6}{Markets}{}% 57
+\BOOKMARK [1][-]{section.6.1}{Optimal leverage}{chapter.6}% 58
+\BOOKMARK [2][-]{subsection.6.1.1}{A model market}{section.6.1}% 59
+\BOOKMARK [2][-]{subsection.6.1.2}{Leverage}{section.6.1}% 60
+\BOOKMARK [2][-]{subsection.6.1.3}{Portfolio theory}{section.6.1}% 61
+\BOOKMARK [2][-]{subsection.6.1.4}{Sharpe ratio}{section.6.1}% 62
+\BOOKMARK [2][-]{subsection.6.1.5}{Expected return}{section.6.1}% 63
+\BOOKMARK [2][-]{subsection.6.1.6}{Growth rate maximisation}{section.6.1}% 64
+\BOOKMARK [1][-]{section.6.2}{Stochastic market efficiency}{chapter.6}% 65
+\BOOKMARK [2][-]{subsection.6.2.1}{A fundamental measure}{section.6.2}% 66
+\BOOKMARK [2][-]{subsection.6.2.2}{Relaxing the model}{section.6.2}% 67
+\BOOKMARK [2][-]{subsection.6.2.3}{Efficiency}{section.6.2}% 68
+\BOOKMARK [2][-]{subsection.6.2.4}{Stability}{section.6.2}% 69
+\BOOKMARK [2][-]{subsection.6.2.5}{Prediction accuracy}{section.6.2}% 70
+\BOOKMARK [1][-]{section.6.3}{Applications of stochastic market efficiency}{chapter.6}% 71
+\BOOKMARK [2][-]{subsection.6.3.1}{A theory of noise \205 Sisyphus discovers prices}{section.6.3}% 72
+\BOOKMARK [2][-]{subsection.6.3.2}{Solution of the equity premium puzzle}{section.6.3}% 73
+\BOOKMARK [2][-]{subsection.6.3.3}{Central-bank interest rates}{section.6.3}% 74
+\BOOKMARK [2][-]{subsection.6.3.4}{Fraud detection}{section.6.3}% 75
+\BOOKMARK [1][-]{section.6.4}{Real markets \205 stochastic market efficiency in action}{chapter.6}% 76
+\BOOKMARK [2][-]{subsection.6.4.1}{Backtests of constant-leverage investments}{section.6.4}% 77
+\BOOKMARK [2][-]{subsection.6.4.2}{Data sets}{section.6.4}% 78
+\BOOKMARK [2][-]{subsection.6.4.3}{Full time series}{section.6.4}% 79
+\BOOKMARK [2][-]{subsection.6.4.4}{Shorter time scales}{section.6.4}% 80
+\BOOKMARK [1][-]{section.6.5}{Discussion}{chapter.6}% 81
+\BOOKMARK [1][-]{section*.10}{Acronyms}{chapter.6}% 82
+\BOOKMARK [1][-]{section*.12}{List of Symbols}{chapter.6}% 83
+\BOOKMARK [1][-]{section*.13}{References}{chapter.6}% 84
