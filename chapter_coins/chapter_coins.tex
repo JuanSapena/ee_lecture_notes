@@ -4,12 +4,11 @@
 
 %\section{Summary}
 %\seclabel{Summary}
-{\it In this introductory chapter we lay the conceptual foundation for the rest 
-of what we have to say about redeveloping economic theory. In \secref{The_game} we play a simple coin-toss game and analyze it 
+{\it In this chapter we motivate and introduce the basic mathematical tools we will use. In \secref{The_game} we play a simple coin-toss game and analyze it 
 numerically, by Monte Carlo simulation, and analytically, with pen and paper. The game motivates the 
 introduction of the expectation value and the time average, which in turn 
-lead to a discussion of ergodic properties. The ergodicity question  -- whether time averages are identical to expectation values -- will turn out to be the key to our redevelopment of formal economics. This is because ergodicity hadn't been established as a concept when the original formalism was developed. We note the importance of rates as ergodic observables.
-This section also introduces the concepts of a random variable, a stochastic process, scalars as representations of transitive preferences, logarithms and exponentials, and dimensional analysis.
+lead to a discussion of ergodic properties. As we have seen, the ergodicity question  -- whether time averages are identical to expectation values -- is the key to our redevelopment of formal economics. This is because ergodicity hadn't been established as a concept when the original formalism was developed. The scientific search for stable structures leads to constants in deterministic settings. When randomness is introduced, the role previously played by constants is taken on by ergodic observables.
+We also introduce the concepts of a random variable, a stochastic process, scalars as representations of transitive preferences, logarithms and exponentials, and dimensional analysis.
 
 In \secref{Brownian_motion} we notice that wealth on logarithmic scales follows a random walk in our game, and we relate this to Brownian motion, as the continuous-time limit of the random walk. This allows us to introduce Brownian motion and its scaling properties that are robust enough to yield insights into more complicated models.
 
@@ -17,8 +16,7 @@ Finally, we ask in \secref{Geometric_Brownian} what wealth in our game is doing 
 
 Some historical perspective is provided to understand the prevalence or
 absence of key concepts in modern economic theory and other fields.
-The emphasis is on introducing key concepts and useful machinery, with more formal treatments and applications
-in later chapters.}
+The emphasis is on introducing concepts and useful machinery, with applications in later chapters.}
 \newpage
 
 \subsection{The game}
@@ -1530,44 +1528,51 @@ the passage of time imposes on us.
 
 In this chapter we have introduced the following key concepts:
 \bi
-\item[Random variable]
+\item[\bf Random variable]
 A random variable $Y$ is a set of pairs of possible values and  corresponding probabilities, $Y=\{(y_1, p_1),(y_2, p_2)...\}$.
 The sets may be discrete or continuous. We stressed that a random variable is an a-temporal concept. It's just a bunch of possible values and their weights (probabilities). In real life we often this of generating instances of random variables as time passes, but this is not part of the formal definition of a random variable.
 
-\item[Expectation value]
+\item[{\bf Expectation value}]
 The expectation value of a random variable is the weighted sum $\ave{Y}=\int y \mathcal{P}_Y(y) dy$, where $\mathcal{P}_Y$ has atomic point masses in the discrete case, which means we can express the integral as $\ave{Y}=\sum_i y_i p_i$.
 
 The expectation value is also called the ensemble average, which reflects a physical interpretation: imagine (infinitely) many possible worlds, identical safe for the value taken by the the random variable $Y$. Those values are represented in the superverse of many worlds in proportion to their probabilties. Averaging $y$ over the ensemble of universes then gives the expectation value.
 
-\item[Logarithms and exponentials]
+\item[\bf Logarithms and exponentials]
 The logarithmic function is defined as $\ln \ga :=  \lim_{\T\to\infty}\T \left\{\ga^{1/\T}-1\right\}$. It was motivated by computing interest on loans. Its property of turning products into sums makes it a key function in many branches of science where quantities that combine multiplicatively are to be represented by a quantity that combines additively. 
 
 The exponential function is the inverse of the logarithm.
 
-\item[Stochastic process]
+\item[\bf Stochastic process]
 A stochastic process $Y_Z(z;t)$ is a family of random numbers, indexed by a parameter, $t$, that we call ``time.'' At each moment in time, a realization of a stochastic process takes a random value. We often think of stochastic processes as being generated through stochastic differential equations, where the initial value of some quantity is iteratively transformed -- for example by adding a random value to it.
 Examples include
 \bi
-\item[Coin-toss game]
+\item[{\bf Coin-toss game}]
 Start with initial value \$1 and multiply it in each round with an instance of the random variable $[(0.6,1/2),(1.5,1/2)].$
 
-\item[Brownian motion]
-Start with some initial value, and 
+\item[\bf Brownian motion]
+Brownian motion can be defined as a stochastic process with continuous paths (no jumps) whose distribution is Gaussian $\mathcal{N}(\mu t, \sigma^2 t)$. 
 
-\item[Geometric Brownian motion]
+\item[\bf Geometric Brownian motion]
+If the logarithm of a quantity is a Brownian motion, the quantity itself is geometric Brownian motion. Wealth in the coin-toss game is a discrete form of geometric Brownian motion.
 \ei
 
-\item[Time average]
+\item[\bf Time average]
+Any function of time, including any stochastic process can time averaged. For an observable $\ga(\t)$, the finite-time average is $\frac{1}{\T}\int_0^\T \ga(\t) \dt$. This quantity is a random variable. One way to get rid of the randomness is to keep averaging, namely to let $\T$ diverge. The time average (without the qualifier ``finite-time'') is the limit  $\lim_{\T\to\infty} \frac{1}{\T}\int_0^\T \ga(\t) \dt$.
 
-\item[Scalars, rankings, transitivity]
+\item[\bf Scalars]
+Scalars are just numbers. We say ``scalar'' when we want to emphasize that we're not talking about higher-dimensional mathematical objects, like vectors or random variables. The neat thing about scalars is their transitivity property: if $a>b$ and $b>c$ then $a>c$. This allows us to rank scalars. As a consequence, anything that can be mapped, or collapsed onto a scalar can be ranked. For this reason, much of decision theory consists of coming up with ways of collapsing models of wealth onto scalars. These can then be ranked, yielding transitive preferences.
 
-\item[Dimensional analysis]
+\item[\bf Dimensional analysis]
+Dimensional analysis is a branch of mathematics that places constraints on what can be a physical quantity. This is done by insisting that the quantity cannot depend on human conventions. It is often used to derive scaling relations and as a sanity check for supposed mathematical relationships between physical quantities.
 
-\item[Ito process]
+\item[\bf \Ito process]
+\Ito processes are stochastic processes that can be written down as particularly simple stochastic differential equations. Their form allows a deep mathematical analysis of their properties.
 
-\item[Ito's formula]
+\item[\bf \Ito's formula]
+We will make use of \Ito's formula, which is a tool to find the increment in a function of an \Ito process.
 
-\item[Ergodic observable]
+\item[\bf Ergodic observable]
+An ergodic observable is a stochastic process with the following ergodic property: its time average is identical to its expectation value. If the process includes transients, one has to consider the expectation value far away from any transients.
 \ei
 
 
