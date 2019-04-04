@@ -10,6 +10,5 @@
 *.toc
 *.log
 *.gz(busy)
-
 *.out
-*.pdf
+main.pdf
