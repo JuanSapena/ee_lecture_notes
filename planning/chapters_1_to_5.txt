@@ -1,5 +1,4 @@
 1. Why
-Manifesto (later)
 Coin game
 
 Part 1 - TOOLS
