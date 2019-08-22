@@ -1,4 +1,0 @@
-simulatoins.m generates trajectories and the relevant finite-ensemble averages. 
-These are stored in trajectoties.mat
-
-fig1_6.m and so on load trajectories.mat and generate the relevant plots.
