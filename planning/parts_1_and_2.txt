@@ -1,4 +1,5 @@
 1. Why
+Manifesto (later)
 Coin game
 
 Part 1 - TOOLS
@@ -13,12 +14,12 @@ SDE/Ito/BM/CLT
 
 Part 2 - MICRO
 
-3. Decision in a riskless world
+3. Decisions in a riskless world
 Growth rates
 Dynamics/mapping
 Discounting
 
-4. Decision in a risky world
+4. Decisions in a risky world
 Introduce noise - GBM
 Dynamics/mapping
 Utility (including history, e.g. SPP)
