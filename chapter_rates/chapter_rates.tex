@@ -37,10 +37,7 @@ models. Once we have done so we invite you to judge which model you find most us
 for your understanding of the world. Of course, having spent many years thinking about these
 issues we have come to our own conclusions, and we will put them forward because we believe them to be helpful.
 
-To keep the discussion to a manageable volume we will only consider the gamble problem. 
-This is reminiscent of making decisions in an uncertain context -- where we have to decide on
-a course of action now although we don't know with certainty what will happen to us under any
-of our choices. To limit the debate even further, we will only consider a setup that corresponds to
+To keep the discussion to a manageable volume we will only consider a setup that corresponds to
 making purely financial decisions. We may bet on a horse or take out personal liability insurance.
 This chapter will not tell you whom you should marry or even whose economics lectures you should attend.
 
@@ -60,128 +57,126 @@ People optimize the growth rate of their wealth.
 
 Without discussing why people might do this, let's step into the world created by this axiom. To do that, we need to be crystal clear about what a growth rate is, so we'll discuss that first, in \secref{Growth_rates}
 
-Next, in \secref{Decisions_in_a_deterministic}, we will explore a setting where everything is known. 
-In such a perfectly deterministic world, we will see that our
-axiom leads to what's called ``discounting,'' a well-known behaviour of people facing inter-temporal choices.
+Traditionally, decision theory deals with an uncertain future: we have to decide on
+a course of action now although we don't know with certainty what will happen to us in the future under any
+of our choices. We will systematically work our way towards this setup, beginning with trivial decisions where neither time nor uncertainty matters \secref{Different_magnitudes}, next introducing time \secref{Different_magnitudes_and} (where we will recover what's called ``discounting''), and finally working with both time and uncertainty \secref{Decisions_in_an} (where we will recover ``expected utility theory'').
 
-In the next step, in \secref{Decisions_in_an} we will introduce noise -- randomness, ignorance, fluctuations. In that setting, 
-just by holding on to our decision axiom we will again recover a well-known behaviour of people: maximization of expected utility functions.
-
-\section{Growth rates\seclabel{Growth_rates}}
-In the previous lecture we introduced the concept of a growth rate, $\g$, which 
-is the rate of change of a monotonically increasing function of wealth, $\gv(\x(\t))$:
-\be
-\g(\t,\Dt) \equiv \frac{\D \gv(\x(\t))}{\Dt}.
-\elabel{g_def}
-\ee
-The function, $\gv$, is chosen such that the increments, $\D \gv(\x(\t))$, over 
-the period $\Dt$,\footnote{Note that we use a general time period, $\Dt$, here 
-and not the period of the gamble, $\dt$.} are independent instances of a random variable. The growth rate is, therefore, ergodic\footnote{The increments don't necessarily need to be independent, and examples can be constructed where they are drawn from different distributions at different times, but in our case we have independence and a fixed distribution, and that's a sufficient condition for the growth rate to be ergodic.}. We consider $\g$ a function of $\t$ only 
-inasmuch as this labels a particular realisation of the randomness at a particular point in time.
-
-The statistical irrelevance of the time of measurement is 
-important because we want the distribution of the random growth rate 
-to convey robust information about the underlying process, rather than 
-mere happenstance about when it was sampled. 
-
-%Therefore, the increments in any function $\gv(\x)$ will also be stationary. We want $\gv(\x)$ to be increasing in $\x$.
-Under additive repetition, we know from \eref{DW_add} that $\D\x$ is already ergodic, so we know immediately that the correct mapping is the identity: $\gv(\x)=\x$.\footnote{In fact, any linear function $\gv(\x)=\alpha\x+\beta$ has stationary increments and is monotonically increasing provided $\alpha>0$. However, there is nothing gained by choosing anything more complicated than $\gv(\x)=\x$.} The ergodic growth rate for an additive process (denoted by the subscript `a') is therefore:
-\be
-\gad(\t,\Dt) = \frac{\D\x(\t)}{\Dt}.
-\elabel{g_add}
-\ee
-
-For a multiplicative dynamic, however, using $\D\x$ in the numerator 
-of the rate will not do, as we know from \eref{DW_mult_short} that 
-changes in $\x(\t)$ depend on $\x(\t)$. Instead we must find the 
-mapping $\gv(\x)$ whose increments are independent instances of a random variable. 
-The correct mapping now is the logarithm, since the increment over a single round is
-\bea
-\d\ln \x(\t) &=& \ln \x(\t) - \ln \x(\t-\d\t)\\
-&=& \ln \gr(\t)\x(\t-\d\t) - \ln \x(\t-\d\t)\\
-&=& \ln \gr(\t),
-\eea
-where \eref{R_def} has been used in the second line. This inherits its 
-ergodicity from $\gr$. Thus the appropriate growth rate for a multiplicative 
-process (denoted by the subscript `m') over an arbitrary time period is
-\be
-\gm(\t,\Dt) = \frac{\D\ln \x(\t)}{\Dt}.
-\elabel{g_mult}
-\ee
-
-The distribution of the random variable 
-$\g(\t,\Dt)$ does not depend on $\t$ but it does depend on $\Dt$. Subject to certain conditions on $\D \gv(\x(\t))$, 
-the distribution of $\g(\t,\Dt)$ narrows as $\Dt$ increases, converging to a 
-scalar (just a number, no longer a random variable) in the limit $\Dt\to\infty$. 
-In other words, as the effect of the gamble manifests itself over an increasingly 
-long time, the noise is eliminated to reveal a growth rate reflecting the gamble's underlying tendency.
-
-We define this time-average growth rate, $\gt$, as
-\be
-\gt \equiv \lim_{\Dt\to\infty}\{\g(\t,\Dt)\}.
-\ee
-This is the growth rate that an individual will experience almost surely 
-(\ie with probability approaching one) as the number of rounds of the 
-gamble diverges. Indeed, we can express $\gt$ in precisely these terms,
-\be
-\gt = \lim_{\T\to\infty} \left\{ \frac{ \gv(\x(\t+\T\dt)) - \gv(\x(\t)) }{\T\dt } \right\},
-\ee
-where $\T$ is the number of rounds. Expanding the numerator as a sum 
-of increments due to individual rounds of the gamble gives
-\bea
-\gt &=& \lim_{\T\to\infty} \left\{ \frac{1}{\T} \sum_{\gtau=1}^\T \frac{ \D \gv(\x(\t+\gtau\dt)) }{ \dt } \right\} \\
-&=& \lim_{\T\to\infty} \left\{ \frac{1}{\T} \sum_{\gtau=1}^\T \g(\t+\gtau\dt,\dt) \right\} \\
-&=& \ave{\g(\t,\dt)},
-\eea
-where the final line follows from the stationarity and independence of the successive 
-per-round growth rates. 
-
-This is a restatement of the ergodic property: the time-average growth rate can be expressed equivalently as 
-the long-time limit and as the ensemble average of the properly chosen ergodic 
-growth rate. 
-
-For additive and multiplicative dynamics, we obtain the following 
-equivalences:
-\begin{align}
-\gt_\text{a} &= \lim_{\Dt\to\infty}\left\{\frac{\D\x(\t)}{\Dt}\right\} = \ave{\frac{\D\x(\t)}{\Dt}}; \elabel{g_bar_a}\\
-\gt_\text{m} &= \lim_{\Dt\to\infty}\left\{\frac{\D\ln \x(\t)}{\Dt}\right\} = \ave{\frac{\D\ln \x(\t)}{\Dt}}. \elabel{g_bar_m}
-\end{align}
-These follow the form of the general expression,
-\be
-\gt = \lim_{\Dt\to\infty}\left\{\frac{\D \gv(\x(\t))}{\Dt}\right\} = \ave{\frac{\D \gv(\x(\t))}{\Dt}}. \elabel{g_bar_gen}
-\ee 
-The value of $\Dt$ in the ensemble averages is immaterial. In calculations, 
-it is often set to the period, $\dt$, of a single round of the gamble.
-
-Where we are interested in the value of $\gt$, knowing that it is equal 
-to the value of $\ave{\g}$ may provide a convenient method of calculating it. 
-However, we will attach no special interpretation to the fact that $\ave{\g}$ is 
-an expectation value. It is simply a quantity whose value happens to 
-coincide with that of the quantity we're interested in, \ie the time-average 
-growth rate.
-
-Let's take a step back and remark more generally on what we have done so far. We 
-started with a high-dimensional mathematical object, namely the 
-probability distribution of the payout, $\Q$, of the gamble. To this we 
-added two model components: the time period, $\dt$, over which the 
-gamble unfolds; and a dynamic, in essence a set of instructions, specifying 
-how the repeated gamble causes your wealth to evolve. We 
-then collapsed all of this information into a single number, 
-$\gt$, which characterises the effect of the gamble. The collapse from 
-distribution to single number (or, equivalently, from uncertain to certain 
-quantity) allows different gambles to be compared and, in particular, 
-ranked. This permits an unequivocal decision criterion, which would be 
-much harder to formulate for higher-dimensional objects, such as the 
-two distributions shown in \fref{dec_dist}.
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{./chapter_rates/figs/two_dists.pdf}
-\caption{Two possible probability density functions for the per-round 
-multiplier, $\gr$, defined in \eref{R_def}. The distribution denoted by 
-the blue line has a higher mean and a higher variance than the one 
-in red. How are we to decide which represents the more favourable 
-gamble?\flabel{dec_dist}}
-\end{figure}
+%
+%\section{Growth rates\seclabel{Growth_rates}}
+%In the previous lecture we introduced the concept of a growth rate, $\g$, which 
+%is the rate of change of a monotonically increasing function of wealth, $\gv(\x(\t))$:
+%\be
+%\g(\t,\Dt) \equiv \frac{\D \gv(\x(\t))}{\Dt}.
+%\elabel{g_def}
+%\ee
+%The function, $\gv$, is chosen such that the increments, $\D \gv(\x(\t))$, over 
+%the period $\Dt$,\footnote{Note that we use a general time period, $\Dt$, here 
+%and not the period of the gamble, $\dt$.} are independent instances of a random variable. The growth rate is, therefore, ergodic\footnote{The increments don't necessarily need to be independent, and examples can be constructed where they are drawn from different distributions at different times, but in our case we have independence and a fixed distribution, and that's a sufficient condition for the growth rate to be ergodic.}. We consider $\g$ a function of $\t$ only 
+%inasmuch as this labels a particular realisation of the randomness at a particular point in time.
+%
+%The statistical irrelevance of the time of measurement is 
+%important because we want the distribution of the random growth rate 
+%to convey robust information about the underlying process, rather than 
+%mere happenstance about when it was sampled. 
+%
+%%Therefore, the increments in any function $\gv(\x)$ will also be stationary. We want $\gv(\x)$ to be increasing in $\x$.
+%Under additive repetition, we know from \eref{DW_add} that $\D\x$ is already ergodic, so we know immediately that the correct mapping is the identity: $\gv(\x)=\x$.\footnote{In fact, any linear function $\gv(\x)=\alpha\x+\beta$ has stationary increments and is monotonically increasing provided $\alpha>0$. However, there is nothing gained by choosing anything more complicated than $\gv(\x)=\x$.} The ergodic growth rate for an additive process (denoted by the subscript `a') is therefore:
+%\be
+%\gad(\t,\Dt) = \frac{\D\x(\t)}{\Dt}.
+%\elabel{g_add}
+%\ee
+%
+%For a multiplicative dynamic, however, using $\D\x$ in the numerator 
+%of the rate will not do, as we know from \eref{DW_mult_short} that 
+%changes in $\x(\t)$ depend on $\x(\t)$. Instead we must find the 
+%mapping $\gv(\x)$ whose increments are independent instances of a random variable. 
+%The correct mapping now is the logarithm, since the increment over a single round is
+%\bea
+%\d\ln \x(\t) &=& \ln \x(\t) - \ln \x(\t-\d\t)\\
+%&=& \ln \gr(\t)\x(\t-\d\t) - \ln \x(\t-\d\t)\\
+%&=& \ln \gr(\t),
+%\eea
+%where \eref{R_def} has been used in the second line. This inherits its 
+%ergodicity from $\gr$. Thus the appropriate growth rate for a multiplicative 
+%process (denoted by the subscript `m') over an arbitrary time period is
+%\be
+%\gm(\t,\Dt) = \frac{\D\ln \x(\t)}{\Dt}.
+%\elabel{g_mult}
+%\ee
+%
+%The distribution of the random variable 
+%$\g(\t,\Dt)$ does not depend on $\t$ but it does depend on $\Dt$. Subject to certain conditions on $\D \gv(\x(\t))$, 
+%the distribution of $\g(\t,\Dt)$ narrows as $\Dt$ increases, converging to a 
+%scalar (just a number, no longer a random variable) in the limit $\Dt\to\infty$. 
+%In other words, as the effect of the gamble manifests itself over an increasingly 
+%long time, the noise is eliminated to reveal a growth rate reflecting the gamble's underlying tendency.
+%
+%We define this time-average growth rate, $\gt$, as
+%\be
+%\gt \equiv \lim_{\Dt\to\infty}\{\g(\t,\Dt)\}.
+%\ee
+%This is the growth rate that an individual will experience almost surely 
+%(\ie with probability approaching one) as the number of rounds of the 
+%gamble diverges. Indeed, we can express $\gt$ in precisely these terms,
+%\be
+%\gt = \lim_{\T\to\infty} \left\{ \frac{ \gv(\x(\t+\T\dt)) - \gv(\x(\t)) }{\T\dt } \right\},
+%\ee
+%where $\T$ is the number of rounds. Expanding the numerator as a sum 
+%of increments due to individual rounds of the gamble gives
+%\bea
+%\gt &=& \lim_{\T\to\infty} \left\{ \frac{1}{\T} \sum_{\gtau=1}^\T \frac{ \D \gv(\x(\t+\gtau\dt)) }{ \dt } \right\} \\
+%&=& \lim_{\T\to\infty} \left\{ \frac{1}{\T} \sum_{\gtau=1}^\T \g(\t+\gtau\dt,\dt) \right\} \\
+%&=& \ave{\g(\t,\dt)},
+%\eea
+%where the final line follows from the stationarity and independence of the successive 
+%per-round growth rates. 
+%
+%This is a restatement of the ergodic property: the time-average growth rate can be expressed equivalently as 
+%the long-time limit and as the ensemble average of the properly chosen ergodic 
+%growth rate. 
+%
+%For additive and multiplicative dynamics, we obtain the following 
+%equivalences:
+%\begin{align}
+%\gt_\text{a} &= \lim_{\Dt\to\infty}\left\{\frac{\D\x(\t)}{\Dt}\right\} = \ave{\frac{\D\x(\t)}{\Dt}}; \elabel{g_bar_a}\\
+%\gt_\text{m} &= \lim_{\Dt\to\infty}\left\{\frac{\D\ln \x(\t)}{\Dt}\right\} = \ave{\frac{\D\ln \x(\t)}{\Dt}}. \elabel{g_bar_m}
+%\end{align}
+%These follow the form of the general expression,
+%\be
+%\gt = \lim_{\Dt\to\infty}\left\{\frac{\D \gv(\x(\t))}{\Dt}\right\} = \ave{\frac{\D \gv(\x(\t))}{\Dt}}. \elabel{g_bar_gen}
+%\ee 
+%The value of $\Dt$ in the ensemble averages is immaterial. In calculations, 
+%it is often set to the period, $\dt$, of a single round of the gamble.
+%
+%Where we are interested in the value of $\gt$, knowing that it is equal 
+%to the value of $\ave{\g}$ may provide a convenient method of calculating it. 
+%However, we will attach no special interpretation to the fact that $\ave{\g}$ is 
+%an expectation value. It is simply a quantity whose value happens to 
+%coincide with that of the quantity we're interested in, \ie the time-average 
+%growth rate.
+%
+%Let's take a step back and remark more generally on what we have done so far. We 
+%started with a high-dimensional mathematical object, namely the 
+%probability distribution of the payout, $\Q$, of the gamble. To this we 
+%added two model components: the time period, $\dt$, over which the 
+%gamble unfolds; and a dynamic, in essence a set of instructions, specifying 
+%how the repeated gamble causes your wealth to evolve. We 
+%then collapsed all of this information into a single number, 
+%$\gt$, which characterises the effect of the gamble. The collapse from 
+%distribution to single number (or, equivalently, from uncertain to certain 
+%quantity) allows different gambles to be compared and, in particular, 
+%ranked. This permits an unequivocal decision criterion, which would be 
+%much harder to formulate for higher-dimensional objects, such as the 
+%two distributions shown in \fref{dec_dist}.
+%\begin{figure}
+%\centering
+%\includegraphics[width=\textwidth]{./chapter_rates/figs/two_dists.pdf}
+%\caption{Two possible probability density functions for the per-round 
+%multiplier, $\gr$, defined in \eref{R_def}. The distribution denoted by 
+%the blue line has a higher mean and a higher variance than the one 
+%in red. How are we to decide which represents the more favourable 
+%gamble?\flabel{dec_dist}}
+%\end{figure}
 
 
 
@@ -255,6 +250,7 @@ our model reproduces this intuitive result.
 More generally, our model says: of two certain payments of different sizes at the same time, choose the bigger one.
 
 \subsection{Different magnitudes and times - discounting}
+\seclabel{Different_magnitudes_and}
 Let's make the decision a little harder: what if I offer you 
 \bi
 \item[(1)] \$10 in a month or 
