@@ -21,16 +21,16 @@ In many cases it eliminates the need for well established but epistemologically 
 \seclabel{Models_and}
 We will do decision theory 
 by using mathematical models, and since this can be done in many ways we will be
-explicit about how we choose to do it. We will define a gamble, which 
-is a mathematical object, and we will define a decision criterion. The gamble will be
-reminiscent of real-world situations; and the decision criterion may or may not be reminiscent
-of how real people make decisions. We will not worry too much about the accuracy 
+explicit about how we choose to do it. We will define a wealth process -- a model of how wealth changes with time -- 
+and a decision criterion. The wealth process and the decision criterion may or may not remind you
+of the real world. We will not worry too much about the accuracy 
 of these reminiscences. Instead we will ``shut up and calculate'' -- we will let the mathematical
 model create its world. Writing down a mathematical model is like laying out the premise for
 a science-fiction novel. We may decide that people can download their consciousness onto a computer, 
 that medicine has advanced to eliminate ageing and death -- these are premises we are at liberty to invent.
 Once we have written them down we begin to explore the world that results from those premises.
-A choice of decision criterion is really a model of human behaviour -- what makes us who we are if not our decisions? It therefore implies a long list of specific behaviours that will
+A decision criterion is really a model of human behaviour -- what makes us who we are if not our decisions? 
+It therefore implies a long list of specific behaviours that will
 be observed in a given model world. For example, some criteria will lead to cooperation, others will not, some will lead
 to the existence of insurance contracts, others will not \etc We will explore the worlds created by the different
 models. Once we have done so we invite you to judge which model you find most useful
@@ -55,14 +55,200 @@ People optimize the growth rate of their wealth.
 
 \end{keypts}
 
-Without discussing why people might do this, let's step into the world created by this axiom. To do that, we need to be crystal clear about what a growth rate is, so we'll discuss that first, in \secref{Growth_rates}
-
-Traditionally, decision theory deals with an uncertain future: we have to decide on
+Without discussing why people might do this, let's step into the world created by this axiom. To do that, we need to be crystal clear about what a growth rate is, so we'll discuss that first, in \secref{Growth_rates}. Traditionally, decision theory deals with an uncertain future: we have to decide on
 a course of action now although we don't know with certainty what will happen to us in the future under any
 of our choices. We will systematically work our way towards this setup, beginning with trivial decisions where neither time nor uncertainty matters \secref{Different_magnitudes}, next introducing time \secref{Different_magnitudes_and} (where we will recover what's called ``discounting''), and finally working with both time and uncertainty \secref{Decisions_in_an} (where we will recover ``expected utility theory'').
 
 %
-%\section{Growth rates\seclabel{Growth_rates}}
+\section{Growth rates\seclabel{Growth_rates}}
+
+You may have wondered why both 
+\be
+\gad=\frac{\x(\t+\Dt)- \x(\t)}{\Dt}
+\elabel{add_rate}
+\ee
+ and 
+\be
+\gexp= \frac{\ln \x(\t+\Dt)-\ln \x(\t)}{\Dt}
+\elabel{exp_rate}
+\ee
+are sometimes called a growth rate -- they're different objects, why the same name? By the end of this section, the answer to this question should be clear.
+
+When we say that $\x(\t)$ is a growth process, we mean that it is a monotonic function of $\t$. If you're thinking about randomness -- don't, we'll come to that later. For now, we will just work with a deterministic function $\x(\t)$.
+
+For a given process, the appropriate growth rate, $\g$, solves the following problem for us: how do we characterise how fast $\x$ grows?
+A growth rate is a mathematical object of the form
+\be
+\g=\frac{\D\gv(\x)}{\Dt},
+\elabel{gen_rate}
+\ee
+were $\gv(\x)$ is a monotonically increasing function of wealth $\x$. Comparing to \eref{add_rate} and \eref{exp_rate}, we find that $\gv(\x)=\x$ for additive dynamics and $\gv(\x)=\ln \x$ for multiplicative dynamics. The transformation $\x \to \gv(\x)$ ensures temporal stability of $\g$.
+
+How does this work, and what does it mean? Specifically, 
+\bi
+\item[1.]
+why the transformation? 
+\item[2.]
+how do we know which transformation to use?
+\ei
+We will start with the mathematically simple case of the additive growth rate, \eref{add_rate}, and discuss its properties by applying it to additive growth. Next we will ask under what conditions the exponential growth rate, \eref{exp_rate}, is appropriate, and that will lead us to the general growth rate, \eref{gen_rate}.
+
+%$\x(\t)$ grows according to some dynamic, meaning it is some function. In order to say meaningfully at what rate $\x$ is growing, this rate has to be stable in time. For example, if $\x(\t)$ grows exponentially, the additive rate of change $\frac{\D\x}{\Dt}$ will change throughout time. 
+
+\subsection{Additive growth rate\seclabel{add_rate}}
+If I want to know how fast $\x(\t)$ grows, the most obvious thing to compute is its rate of change -- that's the additive growth rate, \eref{add_rate}.
+This tells me by how much $\x$ grows in the interval $[\t,\t+\Dt]$. If $\x(\t)$ is linear in $\t$, so that 
+\be
+\x(\t)=\x(0)+\gamma \t
+\elabel{linx}
+\ee
+then this is a very informative quantity. We'll now state carefully why it is informative in this case. That may seem pedantic at this point, but it will become useful when we generalise in \secref{exp_rate,gen_rate}. 
+
+The additive growth rate \eref{add_rate} is informative of how fast $\x$ grows under additive dynamics \eref{linx} because in this case because the $\t$-dependence drops out: we can measure $\gad$ whenever we want, and we'll always get the same value, $\gad=\gamma$. Not to get too philosophical about it, but this kind of time-translation invariance (fancy word) is a key concept in science: the search for laws is the search for universal structure -- especially for time-translation invariant structure, for something ``timeless.''
+
+Let's re-write the linear dynamic \eref{linx} in differential form
+\be
+\gd\x=\gamma \gd\t
+\ee
+Because $\gamma$ depends neither on $\t$ nor on $\x$, we can re-write this as
+\be
+\gd\x= \gd(\gamma \t)
+\ee
+This second way of writing tells us that the growth rate $\gamma$ is really a sort of clock speed. There's no difference between rescaling $\t$ and rescaling $\gamma$ (by the same factor) -- that means $\gamma$ is a time scale.
+
+We make a mental note: {\it the growth rate is a clock speed.}
+But what kind of clock speed are we talking about? What's a clock speed anyway?
+
+Or: what's a clock? A clock is a process that we believe does something repeatedly at regular intervals. It lets us measure time by counting the repetitions. By convention, after 9,192,631,770 cycles of the radiation produced by the transition between two levels of the caesium 133 atom we say ``one second has elapsed.'' That's just something we've agreed on. But any other thing that does something regularly would work as a clock -- like the Earth completing one full rotation around its axis \etc
+
+When we say ``the growth rate of the process is $\gamma$,'' we mean that $\x$ advances by $\gamma$ units on the process-scale (meaning in $\x$) in one standard time unit (in finance we often choose one year as the unit, Earth going round the Sun). So it's a conversion factor between the time scales of a standard clock and the process clock.
+
+Of course, a clock is no good if it speeds up or slows down. For processes other than additive growth we have to be quite careful before we can use them as clocks, i.e. before we can state their growth rates.
+
+\subsection{Exponential growth rate\seclabel{exp_rate}}
+Now what about the exponential growth rate, \eref{exp_rate}? This first thing to notice is that it's not time-translation invariant for additive growth, \eref{linx}. Substituting \eref{linx} in \eref{exp_rate} gives
+\bea
+\gexp&=& \frac{\ln \x(\t+\Dt)-\ln \x(\t)}{\Dt}\\
+&=&\frac{\ln \left[\x(\t)+\gamma \Dt\right]-\ln \x(\t)}{\Dt}\\
+&=&\frac{\ln \left(1+\frac{\gamma \Dt}{\x(\t)}\right)}{\Dt}.
+\elabel{exp_lin}
+\eea
+That means the exponential growth rate does not extract the clock speed $\gamma$ from linear growth. There's a mismatch between the process and the form of the rate with which we're measuring its speed. The exponential growth rate of additive growth is not a constant but (see \RHS of \eref{exp_lin}) depends on $\x(\t)$, \ie on the time when we started measuring. It also depends on how long we measured, $\Dt$. If we used it to characterise the growth in described by \eref{linx}, we would find lots of contradictions -- some people would say the growth is faster, others slower because they measured at different times or for different periods. 
+
+But the exponential growth rate is commonly used, and for good reasons. Let's see what it's good for, by imposing that it's useful and then working backwards to find the process we should use it for (we expect to find exponential growth).
+
+We require that \eref{exp_rate} yield a constant, let's call that $\gamma$ again, irrespective of when we measure it.
+\be
+ \gexp=\frac{\D \ln \x}{\Dt}=\gamma,
+\ee
+or
+\be
+\D \ln \x = \gamma\Dt,
+\ee
+or indeed, in differential form, and revealing that again the growth rate is a clock speed: $\gamma$ plays the same role as $\t$,
+\be
+\gd\ln \x = \gd(\gamma \t).
+\ee
+This differential equation can be directly integrated and has the solution
+\be
+\ln \x(\t)- \ln \x(0)=\gamma \t.
+\ee
+We solve for the dynamic $\x(\t)$ by writing the log difference as a fraction
+\be
+\ln \left[\frac{\x(\t)}{\x(0)}\right] = \gamma \t ,
+\ee
+and exponentiating
+\be
+\x(\t)=\x(0)\exp(\gamma \t)
+\ee
+As expected, we find that the {\it exponential} growth rate, \eref{exp_rate}, is the appropriate 
+growth rate (meaning time-independent) for {\it exponential} growth.
+
+In terms of clocks, what just happened is this: we insisted that \eref{exp_rate} be a good 
+definition of a clock speed. That requires it to be constant, meaning that the process has 
+to advance on the logarithmic scale, specified in \eref{exp_rate}, by the same amount in 
+every time interval (measured on the standard clock, of course Ñ Earth or caesium).
+
+
+\subsection{General growth rate\seclabel{gen_rate}}
+
+Finally let's be more ambitious and posit a general process, $\x(\t)$, of which we only assume that it grows according to a dynamic that can be written down as a separable differential equation. We could be even more general, but this is bad enough.
+
+How do we define a growth rate now?
+
+Well, as in \secref{Exponential_growth}, we insist that the thing we're measuring will be a clock speed, \ie a time-independent rescaling of time. 
+We enforce this by writing down the dynamic in differential form, containing the growth rate as a time 
+rescaling factor. Then we'll work backwards and solve for $\g$:
+
+\be
+\gd\x=\gf(\x) \gd(\g \t)
+\elabel{gen_diff_x}
+\ee
+(for linear growth, like in \eref{linx}, $\gf(\x)$ would just be $\gf(\x)=1$, and for exponential growth, \eref{expx}, 
+it would be $\gf(\x)=\x$, but we're leaving it general). We separate variables in \eref{gen_diff_x} and integrate the differential equation
+\be
+\int_{\x(\t)}^{\x(\t+\Dt)}\frac{1}{\gf(\x)}\d\x= \g \Dt,
+\ee
+and we've got what we want, namely the functional form of $\g$:
+\be
+\g= \frac{ \int_{\x(\t)}^{\x(\t+\D\t)}\frac{1}{\gf(\x)}\gd\x}{\Dt}.
+\elabel{g_int}
+\ee
+This doesn't quite look like our stated aim: the general expression for a growth rate, \eref{gen_rate}. But we get there, by simplifying \eref{g_int} and denoting the definite integral with the letter $\gv$, so that
+\be
+ \Delta \gv=\int_{\x(\t)}^{\x(\t+\Dt)}\frac{1}{\gf(\x)}\gd\x.
+ \elabel{Dv}
+\ee
+\Eref{gen_rate} now follows exactly by substituting \eref{Dv} in \eref{g_int}.
+This answers the second question of \secref{Growth_rates}: ``how do we know which transformation to use?''
+
+
+%
+%That's actually a very useful property, and there are many ways of saying why. It means that $\gad$ is time translation invariant, or law-like. It's a stable regularity of the process $\x$. It means that $\gad$ is not only a local measure of the speed of the process but really a rescaling factor of time. It tells us, fundamentally, how fast the clock is ticking for the process $\x$. Conversely, this means we can use $\x$ to make a clock! 
+%
+%To build a clock from $\x$, we would take an initial measurement, $\x(\t0)$, and a second measurement $\x(\t0+\Dt)$.
+%
+%
+%But -- crucially -- knowing its value may not be useful. The reason it may not be useful is that this quantity may well change with $\t$, in which case it's not very informative. Science -- not to get too philosophical, but here we go -- may be thought of as a search for laws, which are time-invariant relationships. If $\frac{\x(\t+\Dt)-\x(\t)}{\Dt}$ depends on when it was measured, meaning on $\t$, then it is not a law. This happens whenever $\x$ is a non-linear function of $\t$.
+%
+%So let's recap: the rate of change $\frac{\x(\t+\Dt)-\x(\t)}{\Dt}$ is a useful quantity -- equal to some constant -- if $\x$ depends linearly on $\t$. If this isn't the case, how can we say how fast $\x(\t)$ grows? The answer: find the transformation of $\x$ that grows linearly in time!
+%
+%We want to know how fast the non-linear monotonic function $\x(\t)$ grows, and we want our answer to be independent of $\t$.... hmmm... If $\x(\t)$ grows monotonically in time, then so will any monotonically increasing function $\gv(\x)$. This allows us more freedom: perhaps we can find a $\gv(\x)$ such that $\frac{\D\gv(\x)}{\Dt}$ is constant.
+
+
+But there's a simpler way of finding the transformation $\gv(\x)$ that doesn't involve integrals and differential equations. Let $\x(\t)$ be whatever function it wants -- we know one transformation of $\x(\t)$ that's linear in time, namely the inverse function of $\x(\t)$, which we denote 
+\be
+\x^{(-1)}(\x)=\t
+\ee
+$\x^{(-1)}(\x)$ is the transformation that pulls $\t$ out of $\x$: I give you the value of $\x$, you take $\x^{(-1)}(\x)$, and you know what $\t$ is.
+
+So far, so good -- now we know how to get $\t$, which is of course linear in $\t$. But that no longer tells us how fast something grows: we can't use $\x^{(-1)}(\x)$ as $\gv(\x)$ because $\frac{\x^{(-1)}(\x(\t+\Dt))-\x(\t)}{\Dt}=1$, always. So something is missing.
+
+If we use $\x^{(-1)}$ as the transformation in the general growth rate, we're in effect measuring the speed of the process on the scale of the process, which is why the answer is trivial: we will always find a growth rate of $1$.  Remember that the growth rate is a {\it conversion factor} between time measured on the standard clock (one that ticks once a second, say), and time measured on the process clock (one that advances $\gamma$ units on the $\x$-scale in each second). 
+
+So $\x^{(-1)}$ has the right form but not the right scale. Instead, let's try the following: take the process $\x(\t)$ at unit rate on the standard clock. We'll denote this as $\x_1(\t)$. If we now take its inverse as the transformation,  $\gv(\x)=\x_1^{(-1)}(\x)$, it will of course produce a rate $1$ if $\gamma=1$. But if $\gamma$ is something else, it will extract that something else for us!
+
+Here's the algorithm for measuring the growth rate for a general process $\x(\t)$.
+\bi
+\item
+Write down the process at rate 1 on the standard clock, $\x_1(\t)$.
+\item
+Invert it, to find the transformation $\gv=\x_1^{(-1)}(\x)$.
+\item
+Finally, evaluate the rate of change of the transformation of the process at the unknown growth rate, 
+\be
+\g=\frac{\x_1^{(-1)}(\x(\t+\Dt))-\x_1^{(-1)}(\x(\t))}{\Dt}
+\elabel{g_inv}
+\ee
+\ei
+
+The key conceptual message from this section is this: any growth process defines an appropriate functional form of a growth rate. If we measure a process with the wrong form of growth rate, we obtain nonsense. Measurements will be inconsistent, depending on arbitrary circumstances like the time of measurement.
+
+The key formal result is this: with \eref{gen_rate} tells us there is a special transformation of wealth that enters into the only meaningful way of stating how fast wealth grows. \Eref{g_inv} tells us what that transformation is.
+
+The transformation is a linearisation. At the moment we could call it the stationarity transformation because it appropriately removes time dependence.
+Later -- when we generalise to random growth processes -- we will call it the ergodicity mapping. In the economics literature, what appears in its place is called the utility function -- a term we will mostly avoid because it comes with unhelpful connotations.
+
 %In the previous lecture we introduced the concept of a growth rate, $\g$, which 
 %is the rate of change of a monotonically increasing function of wealth, $\gv(\x(\t))$:
 %\be
@@ -193,42 +379,7 @@ Let's see what our decision axiom says you'll do. Remember there's no uncertaint
 
 I haven't told you how long it will take me to get to the bank, so let's keep that general and call that time interval $\Dt$.
 Because we know that $\Dt$ is the same under options (1) and (2) we don't actually need to know its value to compare the growth rates for the two options. 
-We don't even have to know much about the functional form of the growth rate - we know that different situations require different forms of growth rates. The simplest examples are multiplicative and additive growth rates, and the general form of a growth rate is 
-\be
-\g=\frac{\D\gv(\x)}{\Dt},
-\elabel{gen_rate}
-\ee
-where $\gv(\x)$ is a monotonically increasing function of wealth $\x$ that ensures temporal stability of $\g$. 
-How does this work? Imagine $\x(\t)$ grows according to some dynamic. In order to say meaningfully how fast $\x$ is growing, this rate has to be stable in time. For example, if $\x(\t)$ grows exponentially, the additive rate of change $\frac{\D\x}{\Dt}$ will change throughout time. 
-
-Therefore, we have to choose $\gv(\x)$ appropriately. In full generality, we demand that \eref{gen_rate} 
-be a constant, namely the relevant growth rate. The functional form of the growth rate, \ie the function 
-$\gv(\t)$, is given by the dynamic. To see this, we work backwards. Let's say \eref{gen_rate} is constant. 
-Considering infinitesimal changes, we have
-\be
-\g=\frac{d\gv(\x)}{d\t}.
-\elabel{gen_rate_inf}
-\ee
-We can separate variables and integrate this to find
-\be
-\gv(\x)=\g \t
-\elabel{gen_rate_inf}
-\ee
-(where we've set the constant of integration to zero -- we're only ever interested in changes in $\gv$ so this constant will always cancel out).
-This in turn tells us what the dynamic must be. The function $\gv(\x)$, we know evaluates to $\g\t$. Its inverse function evaluated at $\g\t$ therefore must be $\x$, the desired dynamic
-\be
-\x=\gv^{[-1]}(\g \t).
-\elabel{gen_rate_inf}
-\ee
-It clearly works for multiplicative and additive growth. But let's take another example: what process has the growth rate $\frac{\D\x^{1/2}}{\Dt}$?
-Well, with $\gv=\x^{1/2}$, we have $\gv^{[-1](\g \t)}=(\g\t)^2$, and thus the dynamic has to be $\x(\t)=(\g\t)^2$. Let's check and compute the appropriate growth rate: 
-\bea
-\g&=&\frac{\D\gv(\x)}{\Dt}\\
-&=&\frac{\D[(\g\t)^2]^{1/2}}{\Dt}\\
-&=&\g
-\eea
-as desired.
-
+We don't even have to know much about the functional form of the growth rate - we know that different situations require different forms of growth rates. 
 In the present case it turns out that any growth rate will give the same answer. Let's see.
 Under option a) we have
 \be
