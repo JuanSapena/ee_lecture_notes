@@ -222,7 +222,7 @@ But there's a simpler way of finding the transformation $\gv(\x)$ that doesn't i
 \ee
 $\x^{(-1)}(\x)$ is the transformation that pulls $\t$ out of $\x$: I give you the value of $\x$, you take $\x^{(-1)}(\x)$, and you know what $\t$ is.
 
-So far, so good -- now we know how to get $\t$, which is of course linear in $\t$. But that no longer tells us how fast something grows: we can't use $\x^{(-1)}(\x)$ as $\gv(\x)$ because $\frac{\x^{(-1)}(\x(\t+\Dt))-\x(\t)}{\Dt}=1$, always. So something is missing.
+So far, so good -- now we know how to get $\t$, which is of course linear in $\t$. But that no longer tells us how fast something grows: we can't use $\x^{(-1)}(\x)$ as $\gv(\x)$ because $\frac{\x^{(-1)}[\x(\t+\Dt)]-\x^{(-1)}[\x(\t)]}{\Dt}=1$, always. So something is missing.
 
 If we use $\x^{(-1)}$ as the transformation in the general growth rate, we're in effect measuring the speed of the process on the scale of the process, which is why the answer is trivial: we will always find a growth rate of $1$.  Remember that the growth rate is a {\it conversion factor} between time measured on the standard clock (one that ticks once a second, say), and time measured on the process clock (one that advances $\gamma$ units on the $\x$-scale in each second). 
 
