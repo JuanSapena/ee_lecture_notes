@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.23)  30 AUG 2019 14:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.23)  31 AUG 2019 18:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1306,7 +1306,7 @@ LaTeX Font Info:    Try loading font information for U+wasy on input line 17.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
-<./lml_LOGO_whiteBG-eps-converted-to.pdf, id=71, 142.5325pt x 48.18pt>
+<./lml_LOGO_whiteBG-eps-converted-to.pdf, id=151, 142.5325pt x 48.18pt>
 File: ./lml_LOGO_whiteBG-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./lml_LOGO_whiteBG-eps-converted-to.pdf>
@@ -1318,29 +1318,366 @@ line 17.
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./lml_L
 OGO_whiteBG-eps-converted-to.pdf>] (./main.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 4.
+(Font)              <10> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 4.
+(Font)              <7> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 4.
-)
-\tf@toc=\write8
-\openout8 = `main.toc'.
-
+(Font)              <5> on input line 3.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.21 \part
-          {Tools} [1
+l.40 ...ine {section}{References}{81}{section*.10}
+                                                   [1
 
-] [2
+])
+\tf@toc=\write8
+\openout8 = `main.toc'.
 
-] [3
+ [2] [3
 
-] (./chapter_riskless/chapter_riskless.tex
+]
+(./chapter_tools/chapter_tools.tex
 Chapter 1.
 [4
+
+]
+
+LaTeX Warning: Reference `chapter:Interactions' on page 5 undefined on input li
+ne 77.
+
+[5] <./chapter_tools/figs/x_of_t_lin_1.pdf, id=269, 381.4846pt x 266.68005pt>
+File: ./chapter_tools/figs/x_of_t_lin_1.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/x_of_t_lin_1.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/x_of_t_lin_1.pdf used on input li
+ne 95.
+(pdftex.def)             Requested size: 345.0pt x 241.18175pt.
+ [6 <./chapter_tools/figs/x_of_t_lin_1.pdf>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 127.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 135.
+
+<./chapter_tools/figs/x_of_t_lin.pdf, id=325, 397.45052pt x 266.68005pt>
+File: ./chapter_tools/figs/x_of_t_lin.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/x_of_t_lin.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/x_of_t_lin.pdf used on input line
+ 138.
+(pdftex.def)             Requested size: 276.00105pt x 185.19357pt.
+
+<./chapter_tools/figs/x_of_t_log.pdf, id=326, 393.16888pt x 266.68005pt>
+File: ./chapter_tools/figs/x_of_t_log.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/x_of_t_log.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/x_of_t_log.pdf used on input line
+ 140.
+(pdftex.def)             Requested size: 276.00105pt x 187.2119pt.
+
+Underfull \hbox (badness 1675) in paragraph at lines 146--146
+[]\OT1/lmr/m/n/10 Figure 1.2: []Finite-ensemble av-er-ages $[][]$ for en-sem-bl
+e sizes $[] =
+ []
+
+[7 <./chapter_tools/figs/x_of_t_lin.pdf> <./chapter_tools/figs/x_of_t_log.pdf
+
+pdfTeX warning: pdflatex (file ./chapter_tools/figs/x_of_t_log.pdf): PDF inclus
+ion: multiple pdfs with page group included in a single page
+>]
+<./chapter_tools/figs/x_of_t_lin_20_year.pdf, id=402, 381.4846pt x 266.68005pt>
+File: ./chapter_tools/figs/x_of_t_lin_20_year.pdf Graphic file (type pdf)
+<use ./chapter_tools/figs/x_of_t_lin_20_year.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/x_of_t_lin_20_year.pdf used on in
+put line 173.
+(pdftex.def)             Requested size: 258.75pt x 180.88835pt.
+
+<./chapter_tools/figs/x_of_t_log_20_year.pdf, id=403, 403.20639pt x 266.68005pt
+>
+File: ./chapter_tools/figs/x_of_t_log_20_year.pdf Graphic file (type pdf)
+ <use ./chapter_tools/figs/x_of_t_log_20_year.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/x_of_t_log_20_year.pdf used on in
+put line 175.
+(pdftex.def)             Requested size: 276.00105pt x 182.55266pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8] [9 <./chapter_tools/figs/x_of_t_lin_20_year.pdf> <./chapter_tools/figs/x_of
+_t_log_20_year.pdf
+
+pdfTeX warning: pdflatex (file ./chapter_tools/figs/x_of_t_log_20_year.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 220.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 227.
+
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 227.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 250.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 252.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 259.
+ [10]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 267.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 279.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 352.
+
+<./chapter_tools/figs/sp_grid.pdf, id=603, 382.22174pt x 272.81235pt>
+File: ./chapter_tools/figs/sp_grid.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/sp_grid.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/sp_grid.pdf used on input line 36
+3.
+(pdftex.def)             Requested size: 389.03902pt x 277.67793pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 394.
+Package mdframed Info: Not enough space on this page on input line 394.
+ [11]
+Package mdframed Info: Not enough space on this page on input line 394.
+ [12 <./chapter_tools/figs/sp_grid.pdf>]
+<./chapter_tools/figs/x_of_t_lin_exp.pdf, id=737, 387.86783pt x 266.97804pt>
+File: ./chapter_tools/figs/x_of_t_lin_exp.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/x_of_t_lin_exp.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/x_of_t_lin_exp.pdf used on input 
+line 430.
+(pdftex.def)             Requested size: 276.00105pt x 189.98755pt.
+
+<./chapter_tools/figs/x_of_t_log_exp.pdf, id=738, 393.16888pt x 266.68005pt>
+File: ./chapter_tools/figs/x_of_t_log_exp.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/x_of_t_log_exp.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/x_of_t_log_exp.pdf used on input 
+line 431.
+(pdftex.def)             Requested size: 276.00105pt x 187.2119pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 452.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 494.
+ [14 <./chapter_tools/figs/x_of_t_lin_exp.pdf> <./chapter_tools/figs/x_of_t_log
+_exp.pdf
+
+pdfTeX warning: pdflatex (file ./chapter_tools/figs/x_of_t_log_exp.pdf): PDF in
+clusion: multiple pdfs with page group included in a single page
+>] [15]
+<./chapter_tools/figs/x_of_t_N1M.pdf, id=969, 393.16888pt x 266.68005pt>
+File: ./chapter_tools/figs/x_of_t_N1M.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/x_of_t_N1M.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/x_of_t_N1M.pdf used on input line
+ 543.
+(pdftex.def)             Requested size: 265.65147pt x 180.18845pt.
+
+<./chapter_tools/figs/x_of_t_log_10000.pdf, id=970, 420.70367pt x 266.68005pt>
+File: ./chapter_tools/figs/x_of_t_log_10000.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/x_of_t_log_10000.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/x_of_t_log_10000.pdf used on inpu
+t line 544.
+(pdftex.def)             Requested size: 276.00105pt x 174.95952pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 568.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 606.
+ [16 <./chapter_tools/figs/x_of_t_N1M.pdf> <./chapter_tools/figs/x_of_t_log_100
+00.pdf
+
+pdfTeX warning: pdflatex (file ./chapter_tools/figs/x_of_t_log_10000.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 615.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 690.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 690.
+ [17]
+<./chapter_tools/figs/all_saints.pdf, id=1103, 845.1575pt x 597.23125pt>
+File: ./chapter_tools/figs/all_saints.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/all_saints.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/all_saints.pdf used on input line
+ 693.
+(pdftex.def)             Requested size: 396.7479pt x 280.37065pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 706.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 760.
+ [18 <./chapter_tools/figs/all_saints.pdf>]
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 760.
+ [19] [20]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 792.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 804.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 806.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 813.
+
+
+LaTeX Warning: Reference `section:finite_populations' on page 21 undefined on i
+nput line 818.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 821.
+
+LaTeX Warning: Reference `chapter:Rates' on page 21 undefined on input line 868
+.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 869.
+[21] [22]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 896.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 940.
+ [23]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 945.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 955.
+
+
+LaTeX Warning: Reference `section:RGBM_moments' on page 24 undefined on input l
+ine 956.
+
+<./chapter_tools/figs/ergodic_grid.pdf, id=1436, 382.22174pt x 272.81235pt>
+File: ./chapter_tools/figs/ergodic_grid.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/ergodic_grid.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/ergodic_grid.pdf used on input li
+ne 963.
+(pdftex.def)             Requested size: 413.99895pt x 295.49461pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24] [25 <./chapter_tools/figs/ergodic_grid.pdf>]
+
+LaTeX Warning: Reference `chapter:decisions' on page 26 undefined on input line
+ 1059.
+
+[26] [27]
+
+LaTeX Warning: Reference `chapter:Rates' on page 28 undefined on input line 113
+3.
+
+
+LaTeX Warning: Reference `section:Copenhagen' on page 28 undefined on input lin
+e 1134.
+
+
+Overfull \hbox (5.35939pt too wide) in paragraph at lines 1156--1159
+\OT1/lmr/m/n/10 The Gaus-sian cen-tral limit the-o-rem tells us that such a sum
+ will be-come Gaussian-
+ []
+
+[28] [29]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1241.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1244.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1248.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1251.
+ [30] [31]
+<./chapter_tools/figs/BM_time_ave.pdf, id=2078, 408.75278pt x 266.68005pt>
+File: ./chapter_tools/figs/BM_time_ave.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/BM_time_ave.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/BM_time_ave.pdf used on input lin
+e 1334.
+(pdftex.def)             Requested size: 345.0pt x 225.08398pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1347.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1350.
+
+
+LaTeX Warning: Reference `section:Log-normal_wealth' on page 32 undefined on in
+put line 1363.
+
+[32 <./chapter_tools/figs/BM_time_ave.pdf>]
+<./chapter_tools/figs/GBM_trajectory.pdf, id=2199, 394.26591pt x 266.68005pt>
+File: ./chapter_tools/figs/GBM_trajectory.pdf Graphic file (type pdf)
+
+<use ./chapter_tools/figs/GBM_trajectory.pdf>
+Package pdftex.def Info: ./chapter_tools/figs/GBM_trajectory.pdf used on input 
+line 1387.
+(pdftex.def)             Requested size: 345.0pt x 233.3648pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[33] [34 <./chapter_tools/figs/GBM_trajectory.pdf>]
+
+LaTeX Warning: Reference `section:rescaled' on page 35 undefined on input line 
+1500.
+
+[35]
+
+LaTeX Warning: Reference `chapter:Coins' on page 36 undefined on input line 152
+4.
+
+[36]) [37] [38
+
+] (./chapter_riskless/chapter_riskless.tex
+Chapter 2.
+[39
 
 ]
 Package mdframed Info: mdframed detected package amsthm 
@@ -1351,87 +1688,75 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 56.
 
 
-LaTeX Warning: Reference `section:Different_magnitudes' on page 5 undefined on 
-input line 60.
+LaTeX Warning: Reference `section:Decisions_in_an' on page 40 undefined on inpu
+t line 60.
+
+[40]
+
+LaTeX Warning: Reference `section:exp_rate,gen_rate' on page 41 undefined on in
+put line 105.
+
+[41] [42]
+
+LaTeX Warning: Reference `section:Exponential_growth' on page 43 undefined on i
+nput line 179.
 
 
-LaTeX Warning: Reference `section:Decisions_in_an' on page 5 undefined on input
- line 60.
+LaTeX Warning: Reference `eq:expx' on page 43 undefined on input line 187.
 
-[5]
+[43] [44]
 
-LaTeX Warning: Reference `section:exp_rate,gen_rate' on page 6 undefined on inp
-ut line 105.
+LaTeX Warning: Reference `section:uncertainty' on page 45 undefined on input li
+ne 373.
 
-[6] [7]
-
-LaTeX Warning: Reference `section:Exponential_growth' on page 8 undefined on in
-put line 179.
-
-
-LaTeX Warning: Reference `eq:expx' on page 8 undefined on input line 187.
-
-[8]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 234.
-
- (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 234.
- [9] [10]
-<./chapter_riskless/figs/exp_disc_2.pdf, id=495, 405.96725pt x 258.79121pt>
-File: ./chapter_riskless/figs/exp_disc_2.pdf Graphic file (type pdf)
-
-<use ./chapter_riskless/figs/exp_disc_2.pdf>
-Package pdftex.def Info: ./chapter_riskless/figs/exp_disc_2.pdf used on input l
-ine 433.
-(pdftex.def)             Requested size: 155.24895pt x 98.96559pt.
-
-<./chapter_riskless/figs/exp_disc_1.pdf, id=496, 395.74155pt x 258.79121pt>
-File: ./chapter_riskless/figs/exp_disc_1.pdf Graphic file (type pdf)
-
-<use ./chapter_riskless/figs/exp_disc_1.pdf>
-Package pdftex.def Info: ./chapter_riskless/figs/exp_disc_1.pdf used on input l
-ine 434.
-(pdftex.def)             Requested size: 155.24895pt x 101.52443pt.
-
-
-LaTeX Warning: Reference `eq:' on page 11 undefined on input line 444.
-
-
-LaTeX Warning: Citation `MavroyiannisETAL2019' on page 11 undefined on input li
-ne 444.
-
-[11 <./chapter_riskless/figs/exp_disc_2.pdf> <./chapter_riskless/figs/exp_disc_
-1.pdf
-
-pdfTeX warning: pdflatex (file ./chapter_riskless/figs/exp_disc_1.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
->] <./chapter_riskless/figs/disc_1.pdf, id=557, 385.51584pt x 258.79121pt>
+[45] [46]
+<./chapter_riskless/figs/disc_1.pdf, id=2931, 395.74155pt x 261.37901pt>
 File: ./chapter_riskless/figs/disc_1.pdf Graphic file (type pdf)
 
 <use ./chapter_riskless/figs/disc_1.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/disc_1.pdf used on input line 
-463.
-(pdftex.def)             Requested size: 113.85063pt x 76.42566pt.
+436.
+(pdftex.def)             Requested size: 113.85063pt x 75.19572pt.
 
-<./chapter_riskless/figs/disc_2.pdf, id=558, 388.6445pt x 258.79121pt>
+<./chapter_riskless/figs/disc_2.pdf, id=2932, 397.5746pt x 261.37901pt>
 File: ./chapter_riskless/figs/disc_2.pdf Graphic file (type pdf)
 
 <use ./chapter_riskless/figs/disc_2.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/disc_2.pdf used on input line 
-464.
-(pdftex.def)             Requested size: 113.85063pt x 75.80965pt.
+437.
+(pdftex.def)             Requested size: 113.85063pt x 74.84874pt.
 
-<./chapter_riskless/figs/disc_3.pdf, id=559, 390.60759pt x 258.79121pt>
+<./chapter_riskless/figs/disc_3.pdf, id=2933, 400.1763pt x 261.37901pt>
 File: ./chapter_riskless/figs/disc_3.pdf Graphic file (type pdf)
 
 <use ./chapter_riskless/figs/disc_3.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/disc_3.pdf used on input line 
-465.
-(pdftex.def)             Requested size: 113.85063pt x 75.43056pt.
- [12 <./chapter_riskless/figs/disc_1.pdf> <./chapter_riskless/figs/disc_2.pdf
+438.
+(pdftex.def)             Requested size: 113.85063pt x 74.36217pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 443.
+
+<./chapter_riskless/figs/exp_disc_2.pdf, id=2949, 405.96725pt x 258.79121pt>
+File: ./chapter_riskless/figs/exp_disc_2.pdf Graphic file (type pdf)
+
+<use ./chapter_riskless/figs/exp_disc_2.pdf>
+Package pdftex.def Info: ./chapter_riskless/figs/exp_disc_2.pdf used on input l
+ine 468.
+(pdftex.def)             Requested size: 155.24895pt x 98.96559pt.
+
+<./chapter_riskless/figs/exp_disc_1.pdf, id=2950, 395.74155pt x 258.79121pt>
+File: ./chapter_riskless/figs/exp_disc_1.pdf Graphic file (type pdf)
+
+<use ./chapter_riskless/figs/exp_disc_1.pdf>
+Package pdftex.def Info: ./chapter_riskless/figs/exp_disc_1.pdf used on input l
+ine 469.
+(pdftex.def)             Requested size: 155.24895pt x 101.52443pt.
+
+
+LaTeX Warning: Citation `MavroyiannisETAL2019' on page 47 undefined on input li
+ne 478.
+
+[47 <./chapter_riskless/figs/disc_1.pdf> <./chapter_riskless/figs/disc_2.pdf
 
 pdfTeX warning: pdflatex (file ./chapter_riskless/figs/disc_2.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
@@ -1440,56 +1765,265 @@ on: multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex (file ./chapter_riskless/figs/disc_3.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
 >]
+
+LaTeX Warning: Citation `MavroyiannisETAL2019' on page 48 undefined on input li
+ne 487.
+
+) (./chapter_risky/chapter_risky.tex [48 <./chapter_riskless/figs/exp_disc_2.pd
+f> <./chapter_riskless/figs/exp_disc_1.pdf
+
+pdfTeX warning: pdflatex (file ./chapter_riskless/figs/exp_disc_1.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>] [49]
+Chapter 3.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 497.
+(mdframed)              on input line 9.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 13.
+[50
 
-Overfull \hbox (7.34679pt too wide) in paragraph at lines 529--531
+]
+
+LaTeX Warning: Reference `section:Copenhagen' on page 51 undefined on input lin
+e 45.
+
+
+LaTeX Warning: Reference `chapter:Markets' on page 51 undefined on input line 4
+5.
+
+
+LaTeX Warning: Reference `section:Copenhagen' on page 51 undefined on input lin
+e 52.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 62.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 74.
+
+LaTeX Warning: Reference `chapter:Coins' on page 51 undefined on input line 85.
+
+
+[51]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 105.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 130.
+
+
+LaTeX Warning: Reference `eq:g_bar_a' on page 52 undefined on input line 141.
+
+[52]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 149.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 208.
+ [53]
+
+LaTeX Warning: Reference `eq:g_bar_m' on page 54 undefined on input line 214.
+
+
+Overfull \hbox (35.56528pt too wide) in paragraph at lines 216--217
+[]\OT1/lmr/m/n/10 =============================================== 
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 225.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 235.
+[54]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 242.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 250.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 252.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 262.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 264.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 275.
+ [55]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 277.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 284.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 301.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 303.
+ [56]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 363.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 393.
+ [57]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 396.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 410.
+ [58]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 444.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 459.
+
+
+LaTeX Warning: Reference `section:Copenhagen' on page 59 undefined on input lin
+e 466.
+
+
+LaTeX Warning: Reference `chapter:Coins' on page 59 undefined on input line 466
+.
+
+[59]
+Overfull \hbox (58.35892pt too wide) in paragraph at lines 485--485
+[]\OT1/lmr/bx/n/14.4 The expected-wealth and expected-utility paradigms 
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 525.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 535.
+[60]
+
+LaTeX Warning: Reference `eq:g_bar_gen' on page 61 undefined on input line 539.
+
+
+[61] [62] [63] [64] [65] [66]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 844.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 848.
+ [67]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 881.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 886.
+ [68]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 933.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 970.
+ [69] [70]
+<./chapter_riskless/figs/trajectories.pdf, id=4278, 417.5412pt x 266.97804pt>
+File: ./chapter_riskless/figs/trajectories.pdf Graphic file (type pdf)
+
+<use ./chapter_riskless/figs/trajectories.pdf>
+Package pdftex.def Info: ./chapter_riskless/figs/trajectories.pdf used on input
+ line 1049.
+(pdftex.def)             Requested size: 345.0pt x 220.59772pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1057.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1105.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 1105.
+ [71 <./chapter_riskless/figs/trajectories.pdf>]
+<./chapter_riskless/figs/u_of_x.pdf, id=4433, 391.3496pt x 278.34865pt>
+File: ./chapter_riskless/figs/u_of_x.pdf Graphic file (type pdf)
+
+<use ./chapter_riskless/figs/u_of_x.pdf>
+Package pdftex.def Info: ./chapter_riskless/figs/u_of_x.pdf used on input line 
+1110.
+(pdftex.def)             Requested size: 162.15042pt x 115.3299pt.
+
+<./chapter_riskless/figs/x_of_u.pdf, id=4434, 404.8061pt x 278.34865pt>
+File: ./chapter_riskless/figs/x_of_u.pdf Graphic file (type pdf)
+
+<use ./chapter_riskless/figs/x_of_u.pdf>
+Package pdftex.def Info: ./chapter_riskless/figs/x_of_u.pdf used on input line 
+1111.
+(pdftex.def)             Requested size: 162.15042pt x 111.49463pt.
+ [72]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1136.
+
+Overfull \hbox (7.34679pt too wide) in paragraph at lines 1168--1170
 \OT1/lmr/m/n/10 This di-verges for any fi-nite ticket price. Un-der the expecte
 d-wealth paradigm,
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 531.
+(mdframed)              on input line 1170.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 531.
-[13]
-<./chapter_riskless/figs/lottery_add_traj.pdf, id=675, 422.57875pt x 316.18124p
-t>
+(mdframed)              on input line 1170.
+[73 <./chapter_riskless/figs/u_of_x.pdf> <./chapter_riskless/figs/x_of_u.pdf
+
+pdfTeX warning: pdflatex (file ./chapter_riskless/figs/x_of_u.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>]
+<./chapter_riskless/figs/lottery_add_traj.pdf, id=4545, 422.57875pt x 316.18124
+pt>
 File: ./chapter_riskless/figs/lottery_add_traj.pdf Graphic file (type pdf)
  <use ./chapter_riskless/figs/lottery_add_traj.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/lottery_add_traj.pdf used on i
-nput line 535.
+nput line 1174.
 (pdftex.def)             Requested size: 345.0pt x 258.14134pt.
- [14 <./chapter_riskless/figs/lottery_add_traj.pdf>]
-
-LaTeX Warning: Reference `section:Technical' on page 15 undefined on input line
- 558.
-
+ [74 <./chapter_riskless/figs/lottery_add_traj.pdf>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 563.
+(mdframed)              on input line 1202.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 576.
-<./chapter_riskless/figs/gbar_zero.png, id=743, 559.33969pt x 421.575pt>
+(mdframed)              on input line 1215.
+
+<./chapter_riskless/figs/gbar_zero.png, id=4611, 559.33969pt x 421.575pt>
 File: ./chapter_riskless/figs/gbar_zero.png Graphic file (type png)
 
 <use ./chapter_riskless/figs/gbar_zero.png>
 Package pdftex.def Info: ./chapter_riskless/figs/gbar_zero.png used on input li
-ne 581.
+ne 1220.
 (pdftex.def)             Requested size: 345.0pt x 260.03578pt.
- [15] [16 <./chapter_riskless/figs/gbar_zero.png>]
-<./chapter_riskless/figs/lottery_mult_traj.pdf, id=806, 421.575pt x 316.18124pt
->
+ [75] [76 <./chapter_riskless/figs/gbar_zero.png>]
+<./chapter_riskless/figs/lottery_mult_traj.pdf, id=4671, 421.575pt x 316.18124p
+t>
 File: ./chapter_riskless/figs/lottery_mult_traj.pdf Graphic file (type pdf)
  <use ./chapter_riskless/figs/lottery_mult_traj.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/lottery_mult_traj.pdf used on 
-input line 615.
+input line 1254.
 (pdftex.def)             Requested size: 345.0pt x 258.75406pt.
-) [17] [18 <./chapter_riskless/figs/lottery_mult_traj.pdf>]
+) [77] [78 <./chapter_riskless/figs/lottery_mult_traj.pdf>]
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
 . Rerun may be required (or you may have forgotten to use commands like \gls). 
@@ -1502,16 +2036,16 @@ it/10 i.e. \OT1/lmr/m/n/10 rate of change, $[]([]; []\OML/lmm/m/it/10 ; []\OT1/
 lmr/m/n/10 ) =
  []
 
-[19] (./main.bbl [20]) [21
+[79] [80] (./main.bbl [81] [82
 
-]
+]) [83]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 39.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 39.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 39.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 39.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7454E60BDFA69C6D7A50E00D7EFE4782;1071.
+(rerunfilecheck)             Checksum: 1701EE388AEF94A0B57AA1C97B9036FB;2542.
 
 
 LaTeX Warning: There were undefined references.
@@ -1521,38 +2055,49 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 35720 strings out of 493014
- 674705 string characters out of 6133351
- 787821 words of memory out of 5000000
- 38547 multiletter control sequences out of 15000+600000
- 68820 words of font info for 64 fonts, out of 8000000 for 9000
+ 36438 strings out of 493014
+ 686808 string characters out of 6133351
+ 1000403 words of memory out of 5000000
+ 38917 multiletter control sequences out of 15000+600000
+ 89944 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,12n,78p,10432b,1008s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,14n,78p,10432b,1031s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
-16/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2016/texmf-d
-ist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/texlive/2016/texmf-dist/fonts/
-type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx
-7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmex10.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2016/
-texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/
-lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr5.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/lm/lmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/lm/lmri10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lm
-sy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (22 pages, 576278 bytes).
+texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
+16/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2016/texmf-d
+ist/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/local/texlive/2016/texmf-dist/fonts/en
+c/dvips/lm/lm-mathex.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/amsfonts/latxfont/line10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
+ublic/lm/lmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/l
+mbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx7.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts
+/type1/public/lm/lmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/lm/lmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi8
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fon
+ts/type1/public/lm/lmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
+lic/lm/lmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2016/texmf-dist/fonts
+/type1/public/lm/lmri8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/lm/lmri9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy1
+0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/wasy2-ps/wasy10.pfb>
+Output written on main.pdf (84 pages, 3669202 bytes).
 PDF statistics:
- 1062 PDF objects out of 1200 (max. 8388607)
- 914 compressed objects within 10 object streams
- 123 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5026 PDF objects out of 5155 (max. 8388607)
+ 4337 compressed objects within 44 object streams
+ 438 named destinations out of 1000 (max. 500000)
+ 431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

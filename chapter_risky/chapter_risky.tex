@@ -1114,3 +1114,162 @@ low wealth and into higher wealth. It will then tend to stay there.
 Left panel: $\gu(\x)$. Right panel: inverse $\x(\gu)$.}
 \flabel{u_of_x}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The St Petersburg paradox}
+The problem known today as the St Petersburg paradox was suggested by Nicolaus 
+Bernoulli\footnote{Daniel's cousin. The Bernoulli family produced a remarkable 
+number of famous mathematicians in the $17^\text{th}$ and $18^\text{th}$ centuries, 
+who helped lay the foundations of applied mathematics and physics.} in 1713 in his 
+correspondence with Montmort~\cite{Montmort1713}. It involves a hypothetical 
+lottery for which the rate of change of expected wealth diverges for any finite ticket 
+price. The expected-wealth paradigm would predict, therefore, that people are 
+prepared to pay any price to enter the lottery. However, when the question is put 
+to them, they rarely want to wager more than a few dollars. This 
+is the paradox. It is the first well-documented example of the inadequacy of the 
+expected-wealth paradigm as a model of human rationality. It was the primary 
+motivating example for Daniel Bernoulli's and Cramer's development of the 
+expected-utility paradigm~\cite{Bernoulli1738}.
+
+In some sense it is a pity that this deliberately provocative and unrealistic lottery has played such an important role in the development of classical decision theory. It is quite unnecessary to invent a gamble with a diverging change in expected wealth to expose the flaws in the expected-wealth paradigm. The presence of infinities in the problem and its variously proposed solutions has caused much confusion, and permits objections on the grounds of physical impossibility. Such objections are unhelpful because they are not fundamental: they address only the gamble and not the decision paradigm. Nevertheless, the paradox is an indelible part not only of history but also of the current debate~\cite{Peters2011b}, and so we recount it here. We'll start by defining the lottery.
+
+\begin{example}{St Petersburg lottery}
+The classical statement of the lottery is to imagine a starting prize 
+of $\$1$ (originally the prize was in ducats). A fair coin is tossed: 
+if it lands heads, the player wins the prize and the lottery ends; if it lands 
+tails, the prize is doubled and the process is repeated. Therefore, the 
+player wins $\$2$, $\$4$, $\$8$ if the first head lands 
+on the second, third, fourth toss, and so on. The player must buy a ticket, 
+at price $\F$, to enter the lottery. The question usually posed is: what is 
+the largest $\F$ the player is willing to pay?
+
+The lottery can be translated neatly into our gamble formalism:
+\be
+\q_\gj = \$ 2^{\gj-1} - \F, \quad \p_\gj = 2^{-\gj},
+\elabel{lottery_def}
+\ee
+for $\gj\in\{1,2,3,\ldots\}$, \ie the set of positive integers. The vast majority 
+of observed payouts are small, but occasionally an extremely large payout 
+(corresponding to a very long unbroken sequence of tails in the classical 
+description) occurs. This is shown in the example trajectories in 
+\fref{lottery_add_traj}, where the lottery has been repeated additively.
+
+From now on we will forget about the coin tosses, which are simply a 
+mechanism for selecting one of the possible payouts. In effect, they 
+are just a random number generator. Instead we shall work with the 
+compact definition of the lottery in \eref{lottery_def} and assume it 
+takes a fixed amount of time, $\dt$, to play.
+
+The rate of change of expected wealth is
+\bea
+\frac{\ave{\d\x}}{\dt} & = & \frac{1}{\dt} \sum_{\gj=1}^\infty \p_\gj \q_\gj \\
+&=& \frac{1}{\dt} \left( \$ \sum_{\gj=1}^\infty 2^{-\gj}\,2^{\gj-1} - \sum_{\gj=1}^\infty 2^{-\gj} \F \right) \\
+&=& \frac{1}{\dt} \left( \$ \sum_{\gj=1}^\infty \frac{1}{2} - \F \right). \elabel{lottery_ex_wealth}
+\eea
+This diverges for any finite ticket price. Under the expected-wealth paradigm, this means that the lottery is favourable at any price.
+\end{example}
+\begin{figure}
+\centering
+\begin{picture}(200,230)(0,0)
+\put(-75,0){\includegraphics[width=\textwidth]{./chapter_riskless/figs/lottery_add_traj.pdf}}
+\end{picture}
+\caption{Wealth trajectories for the additively repeated St Petersburg lottery, 
+with starting wealth, $\x(0)=\$100$, and ticket price, $\F=\$10$. 
+Ten trajectories are plotted over 1,000 rounds.\flabel{lottery_add_traj}}
+\end{figure}
+
+This implausible conclusion, which does not accord with human behaviour, 
+exposes the weakness of judging a gamble by its effect on expected 
+wealth. Daniel Bernoulli suggested to resolve the paradox by adopting 
+the expected-utility paradigm. His choice of utility function was the 
+logarithm, $\gu(\x)=\ln \x$, which, as we now know, produces a decision 
+rule equivalent to growth-rate optimisation under multiplicative repetition. 
+This correspondence was not appreciated by Bernoulli: indeed $18^\text{th}$-century mathematics did not possesse the concepts and 
+language required to distinguish between averages over time and across 
+systems, even though it had the basic arithmetic tools. 
+%In any case, the 
+%correspondence relies on the choice of a particular utility function, and vanishes the moment something other than the logarithm is chosen. We also have
+%to interpret expected utility theory a little differently from how it is usually presented -- for instance we have to assume that expected changes in utility really mean expected rates of changes, with a specific gamble duration, \ie we have to introduce the concept of time into utility theory quite differently from that's usually done (which we won't discuss here).
+
+Unfortunately, Bernoulli made a mathematical error in the implementation 
+of his own paradigm -- accidentally he proposed two mutually inconsistent versions of utility theory in the paper that established the paradigm. Initially, the error had little impact, and it was corrected by Laplace in 
+1814~\cite{Laplace1814}. But Laplace didn't openly say he'd corrected an error, he just worked with what he thought Bernoulli had meant. This politeness had awful consequences. In
+1934 Menger~\cite{Menger1934}, keen to get the story right, went back to the original text by Bernoulli. He didn't notice the error but rather got confused by it which led him to introduce a further error. Based on this car crash of scientific communication, Menger derived the infamous (wrong) claim we encountered in \secref{Technical}: utility functions must be bounded, with disastrous consequences for the budding neoclassical formalism. We 
+will leave this most chequered part of the paradox's history alone -- details can be found 
+in~\cite{PetersGell-Mann2016}. Instead we will focus on what's usually 
+presumed Bernoulli meant to write.
+
+\begin{example}{Resolution by logarithmic utility}
+Instead of \eref{lottery_ex_wealth}, we calculate the rate of change of expected logarithmic utility,
+\bea
+\frac{\ave{\d\ln \x}}{\dt} & = & \frac{1}{\dt} \sum_{\gj=1}^\infty \p_\gj \left[\ln(\x+\q_\gj)-\ln \x\right] \\
+&=& \frac{1}{\dt} \sum_{\gj=1}^\infty 2^{-\gj} \ln\left(\frac{\x+\$2^{\gj-1}-\F}{\x}\right), \elabel{lottery_ex_util}
+\eea
+where $\x$ is the ticket buyer's wealth.
+
+This is finite for all finite ticket prices less than the buyer's wealth plus the smallest 
+prize: $\F<\x+\$1$. This can be shown by applying the ratio 
+test.\footnotemark\ It may be positive or negative, depending on the values 
+of $\F$ and $\x$. \fref{gbar_zero} shows the locus of points in the $(\x,\F)$-plane 
+for which the sum is zero.
+\end{example}
+\footnotetext{The ratio of the $(\gj+1)^\text{th}$ term to the $\gj^\text{th}$ term 
+in the sum tends to $1/2$ as $\gj\to\infty$.}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{./chapter_riskless/figs/gbar_zero.png}
+\caption{Locus of points in the $(\x,\F)$-plane for which the expected change in 
+logarithmic utility is zero. The inset shows the expected change in utility as a 
+function of $\x$ for $\F=\$2$. Adapted from~\cite{Peters2011b}.\flabel{gbar_zero}}
+\end{figure}
+
+The utility paradigm is a model that resolves the paradox, in the sense that creates a world where players may decline to buy a ticket. Bernoulli argued for this resolution framework in plausible terms: the usefulness of a monetary gain depends on how much money you already have. He also argued specifically for the logarithm in plausible terms: the gain in usefulness should be proportional to the fractional gain it represents, $\d \gu = \d\x/\x$. Yet, the framework has left many unsatisfied: why does usefulness have this functional form? We provide this deeper reason by connecting the problem to dynamics and time, unlike Bernoulli. Had Bernoulli made the connection, he might have been less willing to accept Cramer's square-root utility function as an alternative, which, as we've seen, corresponds to a rather less intuitive dynamic.
+
+%However, while plausible, the framework relies on a utility function, which must be postulated. It can neither be derived from fundamental considerations nor verified empirically.
+
+Turning to our decision algorithm, we will assume that the lottery is repeated multiplicatively. This means, in effect, that the prizes and ticket price are treated as fractions of the player's wealth, such that the effect of each lottery is to multiply current wealth by a random factor,
+\be
+\gr_\gj = \frac{\x+\$2^{\gj-1}-\F}{\x}, \quad \p_\gj= 2^{-\gj}.
+\ee
+This follows precisely our earlier treatment of a gamble with multiplicative dynamics, and we can apply our results directly. 
+The time-average (exponential) growth rate is
+\be
+\gt_\text{m} = \frac{1}{\dt} \lim_{\T\to\infty} \left\{ \frac{1}{\T}  \sum_{\gtau=1}^\T \ln \gr(\gtau) \right\} = \frac{1}{\dt}  \sum_{\gj=1}^\infty 2^{-\gj} \ln \gr_\gj, \elabel{lottery_gbar}
+\ee
+which is identical to the expression for the rate of change of expected log-utility, 
+\eref{lottery_ex_util}. This is, as we've discussed, because $\gv(\x)=\ln(\x)$ 
+is the appropriate ergodicity mapping for multiplicative dynamics. The result is the same, but 
+the interpretation is different: we have assumed less, only that our player is 
+interested in the growth rate of his wealth and that he gauges this by imagining 
+the outcome of an indefinite sequence of repeated lotteries.
+
+Thus the locus in \fref{gbar_zero} also marks the decision threshold \textit{versus} 
+the null gamble under our decision axiom. The player can sensibly decline the 
+gamble, even though it results in a divergent change in expected wealth. This 
+is illustrated by comparing \fref{lottery_mult_traj}, which shows trajectories of 
+multiplicatively repeated lotteries, with the additively repeated lotteries already 
+seen in \fref{lottery_add_traj}.
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{./chapter_riskless/figs/lottery_mult_traj.pdf}
+\caption{Wealth trajectories for the multiplicatively repeated St Petersburg lottery, 
+with starting wealth, $\x(0)=\$100$, and ticket price, $\F=\$10$. Ten 
+trajectories are plotted over 1,000 rounds. The realisations of the individual 
+lotteries are the same as in \fref{lottery_add_traj} but the mode of repetition is 
+different.\flabel{lottery_mult_traj}}
+\end{figure}
+The trajectories are based on the same sequences of lottery outcomes, only 
+the mode of repetition is different. The simulation shows us visually what we 
+have already gleaned by analysis: what appears favourable in the 
+expected-wealth paradigm (corresponding to additive repetition) results in a 
+disastrous decay of the player's wealth over time under a realistic dynamic.
+
+As $\F\to \x+\$1$ from above in \eref{lottery_gbar}, $\gt_\text{m}$ diverges 
+negatively, since the first term in the sum is the logarithm of a quantity approaching 
+zero. This corresponds to a lottery which can make the player bankrupt. The effect 
+is also shown in the inset of \fref{gbar_zero}.
+
+Treatments based on multiplicative repetition have appeared sporadically in the 
+literature, starting with Whitworth in 
+1870~\cite[App.~IV]{Whitworth1870}.\footnote{Whitworth was dismissive of early utility theory: ``The result at which we have arrived is not to be classed with 
+the arbitrary methods which have been again and again propounded to evade the difficulty of the Petersburg problem\ldots. Formulae have often been proposed, which have possessed the one virtue of presenting a finite result\ldots but they have often had no intelligible basis to rest upon, or\ldots sufficient care has not been taken to draw a distinguishing line between the significance of the result obtained, and the different result arrived at when the mathematical expectation is calculated.'' Sadly he chose to place these revolutionary remarks in an appendix of a college probability textbook.} It is related to the famous Kelly Criterion~\cite{Kelly1956}\footnote{Kelly was similarly unimpressed with the mainstream and noted in his treatment of decision theory, which he developed from the perspective of information theory and which is identical to ergodicity economics with multiplicative dynamics, that the utility function is ``too general to shed any light on the specific problems of communication theory.''}, although Kelly did not explicitly treat the St Petersburg game, and tangentially to \Ito's lemma~\cite{Ito1944}. It appears as an exercise in a well-known text on information theory~\cite[Ex.~6.17]{CoverThomas1991}. Mainstream economics has ignored all this. A full and rigorous resolution of the paradox, including the epistemological significance of the shift from ensemble to time averages, was published recently by one of the present authors~\cite{Peters2011b}.
