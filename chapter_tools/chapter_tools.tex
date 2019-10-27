@@ -18,35 +18,62 @@ The emphasis is on introducing concepts and useful machinery, with applications 
 \newpage
 
 \section{Random variables}
-We assume that you are somewhat familiar with the concept of a random variable, and we 
-will avoid a lengthy technical discussion. Instead, we highly recommend reading the 2-page discussion in van Kampen's excellent book \cite[p.~2]{vanKampen1992}, some of whose key points we reproduce here.
+In economics, as elsewhere, we are often interested in `experiments' whose outcomes we do not yet know. Examples are each coin toss in the game in \cref{Why} and the result of a football match. We might know something about the experiment, such as the possible outcomes and that some are more plausible than others, but we are ignorant of the actual outcome. We use probability theory, a branch of mathematics, to build models of our ignorance.
 
-A random variable is an object $\Z$ defined by
-\begin{itemize}
-\item
-a set of possible values
-\item
-a probability distribution over this set.
-\end{itemize}
-That's it. The set may be discrete, like $\{4, 7.8, 29\}$ or the integers, $\mathbb{Z}$; or it may be continuous, like the interval $(3,12)$, or the positive reals, $\mathbb{R}^+$. The \PDFa is a non-negative function of the set,
-\be
-\PDF_{\Z}(\z)\geq 0.
-\ee
-Note the (common) use of capital and small letters: $\PDF_{\Z}(\z)$ is the \PDFa
-of the random variable $\Z$ (capital) at value $\z$ (small).
-The \PDFa is normalized, so that the integral over the entire set is one,
-\be
-\int \PDF_{\Z}(\z)d\z =1.
-\ee
-The probability (a number between 0 and 1) that $\z$ is between $a$ and $b$ is
-\be
-\int_a^b \PDF_{\Z}(\z)d\z.
-\ee
-When the set of possible values is discrete, we will write $\p_\gj$ to mean the probability of the $\gj^{\text{th}}$ value in the set, $\z_{\gj}$. We could also express this as an integral of the \PDFa over a neighborhood of $\z_{\gj}$ that includes no other possible values.
+Often the experimental outcomes have, or can be mapped to, numerical values. For example, each coin toss in the game has possible outcomes heads and tails, which correspond to wealth multipliers 1.5 and 0.6. In such cases, we model the uncertain numerical value as a \textit{random variable}. We assume you have seen random variables before and we will avoid a lengthy technical discussion. Instead, we recommend the two-page discussion in \cite[p.~2]{vanKampen1992}, whose key points we reproduce here.
 
-A possible value $\z$, randomly selected in accordance with $\PDF_{\Z}(\z)$, is called an ``instance'' or ``realization'' of the random variable $\Z$.
+A random variable, $\Z$, is defined by:
+\bi
+\item the set of its possible values; and
+\item a probability distribution over this set.
+\ei
+The set of values of $\Z$ may be continuous, like the interval $(3,12)$ or the real numbers, $\mathbb{R}$; discrete, like $\{4, 7.8, 29\}$ or the integers, $\mathbb{Z}$; or a combination of the two. The probability distribution is a function which maps values to probabilities. For example,
+\be
+\text{P}\left[\Z=\z\right]=\p
+\ee
+means that the outcome $\Z=\z$ is associated with the probability $\p$. A specific value, $\z$, is sometimes called an `instance' or `realisation' of the random variable $\Z$. While not obligatory, it is a common convention to write random variables in upper case and realisations in lower case.
 
-Of course we can define the distribution of a random variable to depend on all kinds of things -- the day of the week, or the country we find ourselves in. Sometimes it will be useful to consider distributions of random numbers that depend on time, like in the case of wealth $\x(\t)$. By default we will assume that the distributions of random variables are time-independent, but to avoid confusion we will often make time dependence or independence explicit.
+Forget, for the moment, what probabilities might mean in terms of the experiment. In purely mathematical terms, they are just real numbers associated with outcomes. The probability distribution has two constraints:
+\bi
+\item the probability of any outcome must not be negative; and
+\item the probability of an outcome that is guaranteed to happen, \ie one that includes all possible outcomes, must be one.
+\ei
+The latter is a normalisation condition which fixes the scale of the probabilities.
+\\
+\mbox{}\\
+\textbf{Discrete random variables}
+
+When the set of outcomes is discrete, say $\{\z_\gj\}$ for $\gj=1 \dots M$, we assign a probability, $p_j$, to each outcome, $z_j$, such that
+\be
+\text{P}\left[\Z=\z\right] = \begin{cases}
+\p_\gj & \z=\z_\gj\\
+0 & \text{otherwise}
+\end{cases}
+\ee
+and
+\be
+\sum_{\gj=1}^M\p_\gj = 1.
+\ee
+\\
+\mbox{}\\
+\textbf{Continuous random variables}
+
+Most of the models we will study contain random variables whose outcomes lie in a continuous set. In this case, $\Z$ can take uncountably many values, meaning that we can't assign non-zero probabilities to single-valued outcomes while maintaining normalisation. Instead, we assign probabilities to value intervals. We define a \PDFa, $\PDF_{\Z}(\z)$, such that the probability of $\Z$ being in any interval, $(a,b)$, is
+\be
+\text{P}\left[a \leq \Z \leq b\right] = \int_a^b \PDF_{\Z}(\z)d\z.
+\ee
+The \PDFa is a non-negative function, $\PDF_{\Z}(\z) \geq 0$, normalised so that the probability of a guaranteed outcome, \ie the integral over all possible outcomes, is one:
+\be
+\int_{-\infty}^\infty \PDF_{\Z}(\z)d\z = 1.
+\ee
+Note the difference between subscript and argument: $\PDF_{\Z}(\z)$ is the probability density of the random variable $\Z$ at value $\z$. You might find it helpful to think of $\PDF_{\Z}(\z)\delta\z$ as the approximate probability of $\Z$ being in a small interval $(\z,\z+\delta\z)$ close to $\z$. 
+\\
+\mbox{}\\
+\textbf{Interpretation}
+
+So far we have said nothing of the meaning of probabilities. They are simply numbers assigned to outcomes of random variables, which we use to model our ignorance of the outcomes of real experiments. One way to interpret probabilities is to imagine many separate experiments, of whose outcomes we have the same ignorance. For example, we could imagine tossing the same coin many different times or many different coins at the same time, assuming that each coin toss is equally likely to result in a head or a tail. Suppose we perform $N$ such experiments and record the number of times, $n$, that a particular outcome occurs. Under the so-called `frequentist' interpretation, the probability assigned to this outcome is its relative frequency, $n/N$, in the limit $N\to\infty$.
+
+Note also that time does not appear in the random variable setup. Of course, there is nothing stopping us from using a probability distribution which depends on time or, indeed, any other variable, like the day of the week or the country we are in. Such parametrisations of the random variable do not change fundamentally its mathematical structure: a set of outcomes and associated probabilities. When we consider probability distributions of random variables that do depend on time, such as wealth, $\x(\t)$, in the coin tossing game, we will make the time dependence explicit. By default we assume random variables are time-independent
 
 \section{Expectation values}
 In this section we validate \fref{1_2} by computing analytically the
@@ -896,6 +923,9 @@ Deleted -- the material now appears in the next chapter. However, we must say en
 %
 %The mathematics of this procedure is discussed in detail in \cref{Rates}, and an
 %experiment testing whether people behave as predicted is described in \secref{Copenhagen}.
+
+\section{Normal distribution}
+\seclabel{Normal_distribution}
 
 \section{Brownian motion}
 \seclabel{Brownian_motion}
