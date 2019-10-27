@@ -1,29 +1,29 @@
 \contentsline {part}{I\hspace {1em}Tools}{2}{part.1}% 
 \contentsline {chapter}{\numberline {1}Tools}{3}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Random variables}{5}{section.1.1}% 
-\contentsline {section}{\numberline {1.2}Expectation values}{7}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Stochastic processes}{9}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Time averages}{10}{section.1.4}% 
-\contentsline {section}{\numberline {1.5}The game -- revisited}{12}{section.1.5}% 
-\contentsline {section}{\numberline {1.6}Ergodicity}{15}{section.1.6}% 
-\contentsline {section}{\numberline {1.7}Changes and stability}{18}{section.1.7}% 
-\contentsline {section}{\numberline {1.8}Normal distribution}{19}{section.1.8}% 
-\contentsline {section}{\numberline {1.9}Brownian motion}{19}{section.1.9}% 
-\contentsline {section}{\numberline {1.10}Geometric Brownian motion}{24}{section.1.10}% 
-\contentsline {section}{\numberline {1.11}It\^{o}\xspace calculus}{28}{section.1.11}% 
-\contentsline {part}{II\hspace {1em}Microeconomics}{30}{part.2}% 
-\contentsline {chapter}{\numberline {2}Decisions in a riskless world}{31}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Models and science fiction}{32}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}The decision axiom}{32}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}Growth rates}{33}{section.2.3}% 
-\contentsline {subsection}{\numberline {2.3.1}Additive growth rate}{34}{subsection.2.3.1}% 
-\contentsline {subsection}{\numberline {2.3.2}Exponential growth rate}{35}{subsection.2.3.2}% 
-\contentsline {subsection}{\numberline {2.3.3}General growth rate}{36}{subsection.2.3.3}% 
-\contentsline {section}{\numberline {2.4}Decisions in a deterministic world}{38}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}Different magnitudes}{39}{subsection.2.4.1}% 
-\contentsline {subsection}{\numberline {2.4.2}Different magnitudes and times: discounting}{40}{subsection.2.4.2}% 
-\contentsline {subsubsection}{Discounting under additive dynamics}{40}{section*.3}% 
-\contentsline {subsubsection}{Discounting under multiplicative dynamics}{41}{section*.4}% 
-\contentsline {section}{Acronyms}{43}{section*.5}% 
-\contentsline {section}{List of Symbols}{43}{section*.7}% 
-\contentsline {section}{References}{45}{section*.8}% 
+\contentsline {section}{\numberline {1.1}Random variables}{4}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Expectation values}{5}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Stochastic processes}{7}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Time averages}{8}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}The game -- revisited}{9}{section.1.5}% 
+\contentsline {section}{\numberline {1.6}Ergodicity}{12}{section.1.6}% 
+\contentsline {section}{\numberline {1.7}Changes and stability}{15}{section.1.7}% 
+\contentsline {section}{\numberline {1.8}Normal distribution}{15}{section.1.8}% 
+\contentsline {section}{\numberline {1.9}Brownian motion}{15}{section.1.9}% 
+\contentsline {section}{\numberline {1.10}Geometric Brownian motion}{20}{section.1.10}% 
+\contentsline {section}{\numberline {1.11}It\^{o}\xspace calculus}{23}{section.1.11}% 
+\contentsline {part}{II\hspace {1em}Microeconomics}{25}{part.2}% 
+\contentsline {chapter}{\numberline {2}Decisions in a riskless world}{26}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Models and science fiction}{27}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}The decision axiom}{27}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Growth rates}{28}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Additive growth rate}{28}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Exponential growth rate}{29}{subsection.2.3.2}% 
+\contentsline {subsection}{\numberline {2.3.3}General growth rate}{30}{subsection.2.3.3}% 
+\contentsline {section}{\numberline {2.4}Decisions in a deterministic world}{32}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Different magnitudes}{32}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Different magnitudes and times: discounting}{33}{subsection.2.4.2}% 
+\contentsline {subsubsection}{Discounting under additive dynamics}{33}{section*.3}% 
+\contentsline {subsubsection}{Discounting under multiplicative dynamics}{34}{section*.4}% 
+\contentsline {section}{Acronyms}{35}{section*.5}% 
+\contentsline {section}{List of Symbols}{36}{section*.7}% 
+\contentsline {section}{References}{37}{section*.8}% 
