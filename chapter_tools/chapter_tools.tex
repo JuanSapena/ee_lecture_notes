@@ -48,49 +48,6 @@ A possible value $\z$, randomly selected in accordance with $\PDF_{\Z}(\z)$, is 
 
 Of course we can define the distribution of a random variable to depend on all kinds of things -- the day of the week, or the country we find ourselves in. Sometimes it will be useful to consider distributions of random numbers that depend on time, like in the case of wealth $\x(\t)$. By default we will assume that the distributions of random variables are time-independent, but to avoid confusion we will often make time dependence or independence explicit.
 
-\section{Stochastic processes}
-Once again, we recommend van Kampen \cite[p.~52]{vanKampen1992} for a simple definition -- this time of stochastic processes. 
-Imagine we've defined a random variable, $\Z$. Any function $\Y(\Z)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, a simple scalar parameter, a number, which is interpreted as time, so we write
-\be
-\Y_{\Z}(\t)=\gf(\Z,\t).
-\elabel{st_pr}
-\ee
-This may not be how you think of a stochastic process, so let's illustrate this with a picture.
-
-%\begin{figure}[h!]
-\begin{picture}(200,220)(20,30)
-  \put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/sp_grid.pdf}}
-  \put(13,190){$Y_{z_1}(\t)$}
-  \put(13,159){$Y_{z_2}(\t)$}
-  \put(13,128){$Y_{z_3}(\t)$}
-  \put(13,97){$Y_{z_4}(\t)$}
-  \put(13,66){$Y_{z_5}(\t)$}
-  \put(-20,180){\rotatebox{-90}{realization (universe) $\gi$}}  
-%  \put(-25,12){(universe)}  
-%  \put(122,220){specific moment in time $\t=\t^*$}  
-  \put(200,235){Time $\t$}  
-  \put(188,207){$Y_{z_1}(\t^*)$}
-  \put(187,208){\vector(-1,-1){15}}
-%  \put(-27,125){$\gi=3$}
-%  \put(362,127){$\overline{Y}_{x_3}=$}
-%  \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} Y_{x_3}(\gs)\gd \gs$}
-%  \put(100,10){$\ave{Y_X(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N Y_{x_i}(\t^*)$}  
-\label{sp_grid}
-\end{picture}\\
-%\end{figure}
-When we simulate stochastic processes, we often start with some value and modify it iteratively, for example in each step of a for-loop. In each step we generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $\z$ of the random variable $\Z$ only once and insert that into \eref{st_pr}. The value $\z$ specifies a simple function of time
-\be
-\Y_{\z}(\t)=\gf(\z,\t)
-\elabel{st_pr_r}
-\ee
-meaning that all the randomness is contained in $\z$. Once $\z$ is specified, $\Y_{\z}(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. Note the use of capital $\Z$ for the random variable in \eref{st_pr} and small $\z$ for a realization of it in \eref{st_pr_r}. As an example you can think of drawing at random a single uniformly distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which can be interpreted as a stochastic process, where $\t$ is given by the decimal place of the digit.
-
-We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $\Y_{\Z}(\t^*)$. That's again a random variable, an instance of which may be $\Y_{\z_1}(\t^*)$.
-
-Just as a function of a random variable is another random variable, a function of a stochastic process is another stochastic process. We will often use the noun ``observable'' to refer to a quantity that is derived from a stochastic process. For example, the growth rate of wealth is an observable of the wealth process.
-
-We will suppress the random variable $\Z$ in our notation, and just write $\x(\t)$ for the stochastic wealth process (instead of writing $\x(\Z,\t)$, {\it c.f.} \eref{st_pr}). We will also write $\x(\t)$ for a specific realization of this process, or $\x_\gi(\t)$ when it's important to distinguish different realizations.
-
 \section{Expectation values}
 In this section we validate \fref{1_2} by computing analytically the
 average of $\x(\t)$ over infinitely many realizations, a quantity known as the expectation value.
@@ -254,6 +211,49 @@ Suppressed.
 % -- no player ``expected'' to receive $\ave{\q}$. 
 %Instead, each player expected to receive either nothing or $\q$. 
 \end{history}
+
+\section{Stochastic processes}
+Once again, we recommend van Kampen \cite[p.~52]{vanKampen1992} for a simple definition -- this time of stochastic processes. 
+Imagine we've defined a random variable, $\Z$. Any function $\Y(\Z)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, a simple scalar parameter, a number, which is interpreted as time, so we write
+\be
+\Y_{\Z}(\t)=\gf(\Z,\t).
+\elabel{st_pr}
+\ee
+This may not be how you think of a stochastic process, so let's illustrate this with a picture.
+
+%\begin{figure}[h!]
+\begin{picture}(200,220)(20,30)
+  \put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/sp_grid.pdf}}
+  \put(13,190){$Y_{z_1}(\t)$}
+  \put(13,159){$Y_{z_2}(\t)$}
+  \put(13,128){$Y_{z_3}(\t)$}
+  \put(13,97){$Y_{z_4}(\t)$}
+  \put(13,66){$Y_{z_5}(\t)$}
+  \put(-20,180){\rotatebox{-90}{realization (universe) $\gi$}}  
+%  \put(-25,12){(universe)}  
+%  \put(122,220){specific moment in time $\t=\t^*$}  
+  \put(200,235){Time $\t$}  
+  \put(188,207){$Y_{z_1}(\t^*)$}
+  \put(187,208){\vector(-1,-1){15}}
+%  \put(-27,125){$\gi=3$}
+%  \put(362,127){$\overline{Y}_{x_3}=$}
+%  \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} Y_{x_3}(\gs)\gd \gs$}
+%  \put(100,10){$\ave{Y_X(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N Y_{x_i}(\t^*)$}  
+\label{sp_grid}
+\end{picture}\\
+%\end{figure}
+When we simulate stochastic processes, we often start with some value and modify it iteratively, for example in each step of a for-loop. In each step we generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $\z$ of the random variable $\Z$ only once and insert that into \eref{st_pr}. The value $\z$ specifies a simple function of time
+\be
+\Y_{\z}(\t)=\gf(\z,\t)
+\elabel{st_pr_r}
+\ee
+meaning that all the randomness is contained in $\z$. Once $\z$ is specified, $\Y_{\z}(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. Note the use of capital $\Z$ for the random variable in \eref{st_pr} and small $\z$ for a realization of it in \eref{st_pr_r}. As an example you can think of drawing at random a single uniformly distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which can be interpreted as a stochastic process, where $\t$ is given by the decimal place of the digit.
+
+We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $\Y_{\Z}(\t^*)$. That's again a random variable, an instance of which may be $\Y_{\z_1}(\t^*)$.
+
+Just as a function of a random variable is another random variable, a function of a stochastic process is another stochastic process. We will often use the noun ``observable'' to refer to a quantity that is derived from a stochastic process. For example, the growth rate of wealth is an observable of the wealth process.
+
+We will suppress the random variable $\Z$ in our notation, and just write $\x(\t)$ for the stochastic wealth process (instead of writing $\x(\Z,\t)$, {\it c.f.} \eref{st_pr}). We will also write $\x(\t)$ for a specific realization of this process, or $\x_\gi(\t)$ when it's important to distinguish different realizations.
 
 \section{Time averages}
 An observable that neatly captures the two different 
