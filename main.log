@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.1)  27 OCT 2019 15:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.1)  27 OCT 2019 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1369,33 +1369,31 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 27.
  [4]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 77.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 89.
+ [5]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 120.
 
-LaTeX Warning: Reference `fig:1_2' on page 5 undefined on input line 73.
+
+LaTeX Warning: Reference `eq:f_ens' on page 6 undefined on input line 122.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 79.
-
-LaTeX Warning: Reference `eq:f_ens' on page 5 undefined on input line 81.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 86.
-[5]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 94.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 106.
- [6]
+(mdframed)              on input line 127.
+[6]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 191.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 234.
-<./chapter_tools/figs/sp_grid.pdf, id=364, 382.22174pt x 272.81235pt>
+<./chapter_tools/figs/sp_grid.pdf, id=362, 382.22174pt x 272.81235pt>
 File: ./chapter_tools/figs/sp_grid.pdf Graphic file (type pdf)
 <use ./chapter_tools/figs/sp_grid.pdf>
 Package pdftex.def Info: ./chapter_tools/figs/sp_grid.pdf  used on input line 2
@@ -1442,13 +1440,13 @@ LaTeX Warning: Reference `eq:law' on page 10 undefined on input line 471.
 
 LaTeX Warning: Reference `fig:1_2' on page 10 undefined on input line 482.
 
-<./chapter_tools/figs/x_of_t_lin_exp.pdf, id=607, 387.86783pt x 266.97804pt>
+<./chapter_tools/figs/x_of_t_lin_exp.pdf, id=605, 387.86783pt x 266.97804pt>
 File: ./chapter_tools/figs/x_of_t_lin_exp.pdf Graphic file (type pdf)
 <use ./chapter_tools/figs/x_of_t_lin_exp.pdf>
 Package pdftex.def Info: ./chapter_tools/figs/x_of_t_lin_exp.pdf  used on input
  line 486.
 (pdftex.def)             Requested size: 276.00105pt x 189.98755pt.
-<./chapter_tools/figs/x_of_t_log_exp.pdf, id=608, 393.16888pt x 266.68005pt>
+<./chapter_tools/figs/x_of_t_log_exp.pdf, id=606, 393.16888pt x 266.68005pt>
 File: ./chapter_tools/figs/x_of_t_log_exp.pdf Graphic file (type pdf)
 <use ./chapter_tools/figs/x_of_t_log_exp.pdf>
 Package pdftex.def Info: ./chapter_tools/figs/x_of_t_log_exp.pdf  used on input
@@ -1475,13 +1473,13 @@ LaTeX Warning: Reference `fig:1_3' on page 11 undefined on input line 536.
 
 LaTeX Warning: Reference `fig:1_3' on page 11 undefined on input line 539.
 
-<./chapter_tools/figs/x_of_t_N1M.pdf, id=788, 393.16888pt x 266.68005pt>
+<./chapter_tools/figs/x_of_t_N1M.pdf, id=786, 393.16888pt x 266.68005pt>
 File: ./chapter_tools/figs/x_of_t_N1M.pdf Graphic file (type pdf)
 <use ./chapter_tools/figs/x_of_t_N1M.pdf>
 Package pdftex.def Info: ./chapter_tools/figs/x_of_t_N1M.pdf  used on input lin
 e 543.
 (pdftex.def)             Requested size: 265.65147pt x 180.18845pt.
-<./chapter_tools/figs/x_of_t_log_10000.pdf, id=789, 420.70367pt x 266.68005pt>
+<./chapter_tools/figs/x_of_t_log_10000.pdf, id=787, 420.70367pt x 266.68005pt>
 File: ./chapter_tools/figs/x_of_t_log_10000.pdf Graphic file (type pdf)
 <use ./chapter_tools/figs/x_of_t_log_10000.pdf>
 Package pdftex.def Info: ./chapter_tools/figs/x_of_t_log_10000.pdf  used on inp
@@ -1527,7 +1525,7 @@ Package mdframed Info: mdframed detected package amsthm
 LaTeX Warning: Reference `section:RGBM_moments' on page 13 undefined on input l
 ine 740.
 
-<./chapter_tools/figs/ergodic_grid.pdf, id=922, 382.22174pt x 272.81235pt>
+<./chapter_tools/figs/ergodic_grid.pdf, id=920, 382.22174pt x 272.81235pt>
 File: ./chapter_tools/figs/ergodic_grid.pdf Graphic file (type pdf)
 <use ./chapter_tools/figs/ergodic_grid.pdf>
 Package pdftex.def Info: ./chapter_tools/figs/ergodic_grid.pdf  used on input l
@@ -1574,7 +1572,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 1039.
  [18]
-<./chapter_tools/figs/BM_time_ave.pdf, id=1455, 408.75278pt x 266.68005pt>
+<./chapter_tools/figs/BM_time_ave.pdf, id=1453, 408.75278pt x 266.68005pt>
 File: ./chapter_tools/figs/BM_time_ave.pdf Graphic file (type pdf)
 <use ./chapter_tools/figs/BM_time_ave.pdf>
 Package pdftex.def Info: ./chapter_tools/figs/BM_time_ave.pdf  used on input li
@@ -1600,7 +1598,7 @@ put line 1151.
 
 LaTeX Warning: Reference `fig:1_2' on page 21 undefined on input line 1171.
 
-<./chapter_tools/figs/GBM_trajectory.pdf, id=1584, 394.26591pt x 266.68005pt>
+<./chapter_tools/figs/GBM_trajectory.pdf, id=1582, 394.26591pt x 266.68005pt>
 File: ./chapter_tools/figs/GBM_trajectory.pdf Graphic file (type pdf)
 <use ./chapter_tools/figs/GBM_trajectory.pdf>
 Package pdftex.def Info: ./chapter_tools/figs/GBM_trajectory.pdf  used on input
@@ -1669,19 +1667,19 @@ LaTeX Warning: Reference `section:uncertainty' on page 32 undefined on input li
 ne 373.
 
 [32] [33]
-<./chapter_riskless/figs/disc_1.pdf, id=2293, 395.74155pt x 261.37901pt>
+<./chapter_riskless/figs/disc_1.pdf, id=2291, 395.74155pt x 261.37901pt>
 File: ./chapter_riskless/figs/disc_1.pdf Graphic file (type pdf)
 <use ./chapter_riskless/figs/disc_1.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/disc_1.pdf  used on input line
  436.
 (pdftex.def)             Requested size: 113.85063pt x 75.19572pt.
-<./chapter_riskless/figs/disc_2.pdf, id=2294, 397.5746pt x 261.37901pt>
+<./chapter_riskless/figs/disc_2.pdf, id=2292, 397.5746pt x 261.37901pt>
 File: ./chapter_riskless/figs/disc_2.pdf Graphic file (type pdf)
 <use ./chapter_riskless/figs/disc_2.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/disc_2.pdf  used on input line
  437.
 (pdftex.def)             Requested size: 113.85063pt x 74.84874pt.
-<./chapter_riskless/figs/disc_3.pdf, id=2295, 400.1763pt x 261.37901pt>
+<./chapter_riskless/figs/disc_3.pdf, id=2293, 400.1763pt x 261.37901pt>
 File: ./chapter_riskless/figs/disc_3.pdf Graphic file (type pdf)
 <use ./chapter_riskless/figs/disc_3.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/disc_3.pdf  used on input line
@@ -1689,13 +1687,13 @@ Package pdftex.def Info: ./chapter_riskless/figs/disc_3.pdf  used on input line
 (pdftex.def)             Requested size: 113.85063pt x 74.36217pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 443.
-<./chapter_riskless/figs/exp_disc_2.pdf, id=2311, 405.96725pt x 258.79121pt>
+<./chapter_riskless/figs/exp_disc_2.pdf, id=2309, 405.96725pt x 258.79121pt>
 File: ./chapter_riskless/figs/exp_disc_2.pdf Graphic file (type pdf)
 <use ./chapter_riskless/figs/exp_disc_2.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/exp_disc_2.pdf  used on input 
 line 468.
 (pdftex.def)             Requested size: 155.24895pt x 98.96559pt.
-<./chapter_riskless/figs/exp_disc_1.pdf, id=2312, 395.74155pt x 258.79121pt>
+<./chapter_riskless/figs/exp_disc_1.pdf, id=2310, 395.74155pt x 258.79121pt>
 File: ./chapter_riskless/figs/exp_disc_1.pdf Graphic file (type pdf)
 <use ./chapter_riskless/figs/exp_disc_1.pdf>
 Package pdftex.def Info: ./chapter_riskless/figs/exp_disc_1.pdf  used on input 
@@ -1767,11 +1765,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  39143 strings out of 492616
  733778 string characters out of 6132769
- 929322 words of memory out of 5000000
+ 929142 words of memory out of 5000000
  42183 multiletter control sequences out of 15000+600000
  627816 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,11n,76p,2032b,1095s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,11n,76p,2032b,1093s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2018/tex
 mf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2018/texmf-dist/fonts/enc/
 dvips/lm/lm-mathsy.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.e
@@ -1800,10 +1798,10 @@ pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/texlive/201
 type1/public/lm/lmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lms
 y8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb>
-Output written on main.pdf (40 pages, 770128 bytes).
+Output written on main.pdf (40 pages, 769574 bytes).
 PDF statistics:
- 2702 PDF objects out of 2984 (max. 8388607)
- 2314 compressed objects within 24 object streams
+ 2700 PDF objects out of 2984 (max. 8388607)
+ 2312 compressed objects within 24 object streams
  251 named destinations out of 1000 (max. 500000)
  299 words of extra memory for PDF output out of 10000 (max. 10000000)
 
