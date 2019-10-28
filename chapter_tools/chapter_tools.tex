@@ -17,8 +17,8 @@ absence of key concepts in modern economic theory and other fields.
 The emphasis is on introducing concepts and useful machinery, with applications in later chapters.}
 \newpage
 
-\section{Random variables}
-In economics, as elsewhere, we are often interested in `experiments' whose outcomes we do not yet know. Examples are each coin toss in the game in \cref{Why} and the result of a football match. We might know something about the experiment, such as the possible outcomes and that some are more plausible than others, but we are ignorant of the actual outcome. Luckily, we can use probability theory, a branch of mathematics, to build models of our ignorance.
+\section{Random variable}
+In economics, as elsewhere, we are often interested in `experiments' whose outcomes we don't yet know. Examples are each coin toss in the game in \cref{Why} and the result of a football match. We might know something about the experiment, such as the possible outcomes and that some are more plausible than others, but we are ignorant of the actual outcome. Luckily, we can use probability theory, a branch of mathematics, to build models of our ignorance.
 
 Often the experimental outcomes have, or can be mapped to, numerical values. For example, each coin toss in the game has possible outcomes heads and tails, which correspond to wealth multipliers 1.5 and 0.6. In such cases, we model the uncertain numerical value as a \textit{random variable}. We assume you have seen random variables before and we will not give a lengthy technical account. Instead, we recommend the two-page discussion in \cite[p.~2]{vanKampen1992}, whose key points we reproduce here.
 
@@ -36,15 +36,15 @@ means that the outcome $\Z=\z$ is associated with the probability $\p$. A specif
 Forget, for the moment, what probabilities might mean in the context of an experiment. In purely mathematical terms, they are just real numbers associated with outcomes. The probability distribution has two constraints:
 \bi
 \item the probability of any outcome must be non-negative; and
-\item the probability of an outcome that is certain to happen, \ie one that includes all possible outcomes, must be one.
+\item the probability of an outcome that is certain to happen, \ie that includes all possible outcomes, must be one.
 \ei
 The latter is a normalisation condition which fixes the scale of the probabilities.
 
-\boldhead{Discrete random variables}
-When the set of outcomes is discrete, say $\left\{\z_\gj\right\}_{\gj=1}^M$, we assign a probability, $p_j$, to each outcome, $z_j$, such that
+\boldhead{Discrete random variable}
+When the set of outcomes is discrete, say $\{\z_1,\dots,\z_M\}$, we assign a probability, $p_j$, to each outcome, $z_j$, such that
 \be
 \text{P}\left[\Z=\z\right] = \begin{cases}
-\p_\gj & \z=\z_\gj\\
+\p_\gj & \text{if } \z=\z_\gj\\
 0 & \text{otherwise}
 \end{cases}
 \ee
@@ -53,38 +53,33 @@ and
 \sum_{\gj=1}^M\p_\gj = 1.
 \ee
 
-\boldhead{Continuous random variables}
-Most of the models we will study contain random variables whose possible outcomes form a continuous set. In this case, $\Z$ can take uncountably many values, to which we cannot assign non-zero probabilities while maintaining the normalisation condition. Instead, we must assign probabilities to intervals. We define a \PDFa, $\PDF_{\Z}(\z)$, such that the probability of $\Z$ being in the interval $(a,b)$ is given by
+\boldhead{Continuous random variable}
+Most of the models we will study contain random variables whose possible outcomes form a continuous set. In this case, $\Z$ can take uncountably many values, to which we can't assign non-zero probabilities while maintaining the normalisation condition. Instead, we assign probabilities to intervals. We define a \PDFa, $\PDF_{\Z}(\z)$, such that the probability of $\Z$ being in the interval $(a,b)$ is given by
 \be
-\text{P}\left[a \leq \Z \leq b\right] = \int_a^b \PDF_{\Z}(\z)d\z.
+\text{P}\left[a \leq \Z \leq b\right] = \int_a^b \PDF_{\Z}(\z)\gd\z.
 \ee
 The \PDFa is a non-negative function, $\PDF_{\Z}(\z) \geq 0$, normalised so that the probability of the certain outcome, \ie the integral over all possible outcomes, is one:
 \be
-\int_{-\infty}^\infty \PDF_{\Z}(\z)d\z = 1.
+\int_{-\infty}^{+\infty} \PDF_{\Z}(\z)\gd\z = 1.
 \ee
-Note the difference between subscript and argument: $\PDF_{\Z}(\z)$ is the probability density of the random variable $\Z$ at value $\z$. You might find it helpful to think of $\PDF_{\Z}(\z)\delta\z$ as the approximate probability of $\Z$ being in a small interval $(\z,\z+\delta\z)$ close to $\z$. 
+Note the difference between subscript and argument: $\PDF_{\Z}(\z)$ is the probability density of the random variable $\Z$ at value $\z$. You might find it helpful to think of $\PDF_{\Z}(\z)\delta\z$ as the approximate probability of $\Z$ being in the small interval $(\z,\z+\delta\z)$ close to $\z$. 
 
 \boldhead{Interpretation}
-So far we have said nothing of the meaning of probabilities: they are simply numbers assigned to outcomes of random variables. One way to interpret probabilities is to imagine many separate experiments, of whose outcomes we have the same ignorance. For example, we can imagine tossing the same coin at many different times, assuming that each coin toss is equally likely to result in heads. Suppose we perform a sample of $N$ experiments and record the number of times, $n$, that a particular outcome occurs. Under the so-called `frequentist' interpretation, the appropriate probability to assign to this outcome is its relative frequency, $n/N$, in the limit $N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were unbiased. If biased, it would be some other number between 0 and 1.
+So far we have said nothing of the meaning of probabilities: they are simply numbers assigned to outcomes of random variables. One way to interpret probabilities is to imagine many separate experiments, of whose outcomes are identically ignorant. For example, we can imagine tossing the same coin many different times, assuming that each coin toss is equally likely to result in heads. Suppose we perform a sample of $N$ experiments and record the number of times, $n$, that a particular outcome occurs. Under the so-called `frequentist' interpretation, the appropriate probability to assign to this outcome is its relative frequency, $n/N$, in the limit $N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were unbiased; if biased, it would be some other number between 0 and 1.
 
 Note also that time does not appear in the random variable setup. Of course, there is nothing stopping us from using a probability distribution which depends on time or, indeed, any other variable, like the day of the week or the country we are in. Such parametrisations of the random variable do not change fundamentally its mathematical structure: a set of outcomes and associated probabilities. When we consider probability distributions of random variables that do depend on time, such as wealth, $\x(\t)$, in the coin tossing game, we will make the time dependence explicit. By default we assume random variables are time-independent
 
-\section{Expectation values}
-%In this section we validate \fref{1_2} by computing analytically the average of $\x(\t)$ over infinitely many realizations, a quantity known as the expectation value.
-The expectation value is usually introduced as the sum of all possible values, 
-weighted by their probabilities.
-
+\section{Expectation value}
+The \textit{expectation value}\footnote{Also known as expected value, mathematical expectation, first moment, and mean.} is a property of a random variable. Denoted by $\eval{\Z}$, it is formally defined as the integral of $\Z$ with respect to its probability measure. For our purposes, the following definitions are sufficient.
 \begin{defn}{Expectation value}
-The expectation value of a random variable  $\z$ 
-that can take discrete values $\z_\gj$ is the sum of all 
-possible values weighted by their probabilities $\p_\gj$
+If $\Z$ is a discrete random variable, its expectation value is the sum of all possible realisations, $\z_\gj$, weighted by their probabilities, $\p_\gj$:
 \be
-\ave{\z}=\sum_\gj \p_\gj \z_\gj.
+\eval{\Z}=\sum_\gj \p_\gj \z_\gj.
 \elabel{exp_sum}
 \ee 
-If $\z$ is continuous, the expectation value is the integral
+If $\Z$ is a continuous random variable, its expectation value is the integral:
 \be
-\ave{\z}=\int_{-\infty}^{+\infty} \gs \PDF_{\Z}(\gs) \gd\gs.
+\eval{\Z}=\int_{-\infty}^{+\infty} \z \PDF_{\Z}(\z) \gd\z.
 \ee 
 \end{defn}
 
@@ -109,6 +104,20 @@ If $\z$ is continuous, the expectation value is the integral
 %$\ave{x}_N$ converges to the expectation value $\ave{x}$ with probability 1.
 %If this is unclear, 
 
+The expectation value is a property of a mathematical object. We distinguish it from a conceptually different quantity, the \textit{ensemble average}, denoted by $\ave{Z}$. This is the many-realisations limit of the sample average we met when averaging over wealth trajectories of the coin game in \cref{Why}.  
+\begin{defn}{Ensemble average}
+The ensemble average of a random variable, $\Z$, is the many-realisations limit of its sample average,
+\bea
+\ave{\Z} &=& \lim_{\N\to\infty}\ave{\Z}_{\N}\\
+&=& \lim_{\N\to\infty} \frac{1}{N} \sum_{\gi=1}^N \z_\gi,
+\elabel{ens}
+\eea
+where $\z_\gi$ denotes the $i^\text{th}$ independent realisation of $\Z$.
+\end{defn}
+
+Note that, unlike the expectation value, the ensemble average of a random variable is not defined in terms of probabilities. It is the quantity to which average over realisations converge as the number of realisations grows. We followed this procedure when analysing the coin game: at each round of the gamble, we found sample averages of simulated wealth for increasingly large samples, from one to one million, plotted as functions of time in \fref{1_2}. As the sample size increased, we saw that the temporal fluctuations in the sample average decreased, which we took 
+
+While   in Recall in the coin game that we because In this section we validate \fref{1_2} by computing analytically the average of $\x(\t)$ over infinitely many realizations, a quantity known as the expectation value.
 We will define it as a limit instead, and then
 show that this limit is identical to the familiar expression.
 This implies that in our first analysis of the game -- by averaging
@@ -117,19 +126,10 @@ expectation value of a time-dependent random variable as a gauge of the desirabi
 letting $\N\to\infty$ is indeed the same as working with the more
 familiar definition of the expectation value.
 
-\begin{defn}{Ensemble average}
-The expectation value of a quantity $\z$
-is the large-ensemble limit of the finite-ensemble average \eref{f_ens},
-\be
-\ave{\z}=\lim_{\N\to\infty}\ave{\z}_{\N}.
-\elabel{ens}
-\ee
-\end{defn}
 
 We now show that the two definitions of the expectation value are equivalent.
 \begin{proof}
-Consider the number of times the value $\z_\gj$ is observed in an ensemble 
-of $\N$ instances. Call this number $\gn_\gj$. 
+Denote by  $\gn_\gj$ the number of times the value $\z_\gj$ is observed in a sample of $\N$ realisations of $\Z$. Call this number. 
 The finite-ensemble average can then be re-written as
 \bea
 \ave{\z}_\N&=&\frac{1}{\N}\sum_\gi  \z_\gi\\
