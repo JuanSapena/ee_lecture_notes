@@ -30,4 +30,4 @@
 \contentsline {subsubsection}{Discounting under multiplicative dynamics}{41}{section*.5}% 
 \contentsline {section}{Acronyms}{42}{section*.6}% 
 \contentsline {section}{List of Symbols}{43}{section*.8}% 
-\contentsline {section}{References}{44}{section*.9}% 
+\contentsline {section}{References}{45}{section*.9}% 
