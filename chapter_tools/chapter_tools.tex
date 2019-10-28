@@ -17,264 +17,69 @@ absence of key concepts in modern economic theory and other fields.
 The emphasis is on introducing concepts and useful machinery, with applications in later chapters.}
 \newpage
 
-\section{The game}
-\seclabel{The_game}
-Imagine we offer you the following game: we toss a coin, and if it comes 
-up heads we increase your monetary wealth by 50\%; if 
-it comes up tails we reduce your wealth by 40\%. We're not only 
-doing this once, we will do it many times, for example 
-once per week for the rest of your life. Would you accept 
-the rules of our game? Would you submit your wealth to 
-the dynamic our game will impose on it?
+\section{Random variable}
+In economics, as elsewhere, we are often interested in `experiments' whose outcomes we don't yet know. Examples are each coin toss in the game in \cref{Why} and the result of a football match. We might know something about the experiment, such as the possible outcomes and that some are more plausible than others, but we are ignorant of the actual outcome. Luckily, we can use probability theory, a branch of mathematics, to build models of our ignorance.
 
-Your answer to this question is up to you and will be 
-influenced by many factors, such as the importance 
-you attach to wealth that can be measured in monetary 
-terms, whether you like the thrill of gambling, your 
-religion and moral convictions and so on.
+Often the experimental outcomes have, or can be mapped to, numerical values. For example, each coin toss in the game has possible outcomes heads and tails, which correspond to wealth multipliers 1.5 and 0.6. In such cases, we model the uncertain numerical value as a \textit{random variable}. We assume you have seen random variables before and we will not give a lengthy technical account. Instead, we recommend the two-page discussion in \cite[p.~2]{vanKampen1992}, whose key points we reproduce here.
 
-In these notes we will mostly ignore these factors.
-We will build an extremely simple model of your 
-wealth, which will lead to an extremely simple and 
-powerful model of the way you make decisions that affect 
-your wealth. We are interested in analyzing the 
-game mathematically, which requires a translation 
-of the game into mathematics. We choose the 
-following translation: we introduce the key 
-variable, $\x(\t)$, which we refer to as ``wealth''. 
-We refer to $\t$ as ``time''. It should be kept in mind that
-``wealth'' and ``time'' are just names that we've given to 
-mathematical objects. We have chosen these names because
-we want to compare the behaviour of the mathematical
-objects to the behaviour of wealth over time, but
-we emphasize that we're building a model -- whether we write $\x(\t)$, 
-or $\text{wealth}(\text{time})$, or \smiley(\lightning) makes no difference to the mathematics. 
+A random variable, $\Z$, is defined by:
+\bi
+\item the set of its possible values; and
+\item a probability distribution over this set.
+\ei
+The set of values of $\Z$ may be continuous, like the interval $(3,12)$ or the real numbers, $\mathbb{R}$; discrete, like $\{4, 7.8, 29\}$ or the integers, $\mathbb{Z}$; or a combination of the two. The probability distribution is a function which maps values to probabilities. So
+\be
+\text{P}\left[\Z=\z\right]=\p
+\ee
+means that the outcome $\Z=\z$ is associated with the probability $\p$. A specific value, $\z$, is sometimes called an `instance' or `realisation' of the random variable, $\Z$. While not obligatory, it is a common convention to denote random variables in upper case and realisations in lower case.
 
-The usefulness of our model will be different in different circumstances, 
-ranging from completely meaningless to very helpful. There is no 
-substitute for careful consideration of any given situation, and
-labeling mathematical objects in one way or another is certainly none.
+Forget, for the moment, what probabilities might mean in the context of an experiment. In purely mathematical terms, they are just real numbers associated with outcomes. The probability distribution has two constraints:
+\bi
+\item the probability of any outcome must be non-negative; and
+\item the probability of an outcome that is certain to happen, \ie that includes all possible outcomes, must be one.
+\ei
+The latter is a normalisation condition which fixes the scale of the probabilities.
 
-Having got these words of warning out of the way, we define our 
-model\footnote{For those in the know: ``our'' coin toss is a discrete version of geometric Brownian motion, the workhorse model of financial mathematics and much more.} of the dynamics of your wealth under the rules we just specified. 
-At regular intervals of duration $\dt$ we randomly generate a 
-factor $\gr(\t)$ with each possible value
-$\gr_i\in \{0.6, 1.5\}$ occurring with probability 1/2, 
-
-\be 
-\gr(\t) = \begin{cases}
-0.6 &\text{with probability  1/2}\\
-1.5 &\text{with probability 1/2}
+\boldhead{Discrete random variable}
+When the set of outcomes is discrete, say $\{\z_1,\dots,\z_M\}$, we assign a probability, $p_j$, to each outcome, $z_j$, such that
+\be
+\text{P}\left[\Z=\z\right] = \begin{cases}
+\p_\gj & \text{if } \z=\z_\gj\\
+0 & \text{otherwise}
 \end{cases}
-\elabel{law}
 \ee
-and multiply current wealth by that factor, so that
+and
 \be
-\x(\t)=\gr(\t)\x(\t-\d \t).
-\elabel{gamble}
+\sum_{\gj=1}^M\p_\gj = 1.
 \ee
 
-We have good reasons to suspect that this model will do something interesting. It's not just a silly game because it has one important property: it's multiplicative. Every time the coin is tossed, wealth is {\it multiplied} by one of the two possible factors. This introduces a reference point, or state-dependence, of the absolute size of the change. Processes with this property are very common in nature -- the amount of anything that reproduces changes in proportion to what's already there. In the absence of other constraints, such as limited resources, this applies to the dynamics of the biomass of a cell culture. In fact, life itself has been defined as that which produces more of itself \cite{Morowitz1992}: life and evolution begin with the minimal chemical structure that can copy itself. The rest, in a sense, is details. We will see, especially in \cref{Interactions}, how multiplicativity generates interesting structure in -- including but not limited to -- economics.
-
-Without discussing in depth how realistic a representation of your 
-wealth this model is (for instance your non-gambling related 
-income and spending are not represented in the model),
- and without discussing whether randomness truly exists and 
-what the meaning of a probability is, we simply switch on a 
-computer and simulate what might happen. You may have many 
-good ideas of how to analyze our game with pen and paper, 
-but we will just generate possible trajectories of your wealth 
-and pretend we know nothing about mathematics or 
-economic theory. \Fref{1_1} is a trajectory of your wealth, 
-according to our computer model as it might evolve over 
-the course of 52 time steps (corresponding to one year given our 
-original setup).
-
-\begin{figure}[h!]
-\begin{picture}(200,230)(0,0)
-    \put(0,0){\includegraphics[width=\textwidth]{./chapter_tools/figs/x_of_t_lin_1.pdf}}
-\end{picture}
-\caption{Wealth $\x(\t)$ resulting from a computer simulation of our game, as specified by \eref{law} and \eref{gamble}, for 52 time steps (corresponding to one year in the given setup).}
-\flabel{1_1}
-\end{figure}
-
-
-A cursory glance at the trajectory does not reveal much structure. 
-Of course there are regularities, for instance at each time step 
-$\x(\t)$ changes, but no trend is discernible -- does this trajectory 
-have a tendency to go up, does it have a tendency to go down? 
-Neither? What are we to learn from this simulation? Perhaps we 
-conclude that playing the game for a year is quite risky, but is the 
-risk worth taking? 
-
-\subsection{Averaging over many trials}
-The trajectory in \fref{1_1} doesn't tell us much about overall tendencies.
-There is too much noise to discern a clear signal. A common 
-strategy for getting rid of noise is to try again. And then try again and
-again, and look at what happens on average. 
-An example of the technique is Shannon's error-correcting code:
-instead of sending the message $0$ (or $1$), send the relevant digit 3 times. The recipient averages over the received digits and takes the closest possibility. If one out of three digits was miscommunicated because of noise, the code nonetheless recovers the original message: averaging gets rid of noise.
-%For example, this is 
-%very successful in imaging -- the 2014 Nobel Prize in chemistry 
-%was awarded for a technique that takes a noisy image again and 
-%again. By averaging over many images the noise is reduced and 
-%\href{https://en.wikipedia.org/wiki/Super-resolution_microscopy#Stochastic_functional_techniques}{a resolution beyond the diffraction limit is achieved}.
-
-So let's try this in our case and see if we can make sense of the game.
-In \fref{1_2} we average over a finite number, $N$, of
-trajectories. We call a collection of trajectories an ensemble. We shall see that in the limit $N\to\infty$ the ensemble average converges to the expectation value, and indeed the terms ``ensemble average'' and ``expectation value'' are synonyms. To avoid confusion we will be explicit when $N$ is finite: in \fref{1_2} we plot ``finite-ensemble averages.''
-
-\begin{defn}{Finite-ensemble average} The finite-ensemble average of the quantity 
-$z$ at a given time $\t$ is
+\boldhead{Continuous random variable}
+Most of the models we will study contain random variables whose possible outcomes form a continuous set. In this case, $\Z$ can take uncountably many values, to which we can't assign non-zero probabilities while maintaining the normalisation condition. Instead, we assign probabilities to intervals. We define a \PDFa, $\PDF_{\Z}(\z)$, such that the probability of $\Z$ being in the interval $(a,b)$ is given by
 \be
-\ave{\z(\t)}_{\N}=\frac{1}{\N}\sum_{\gi}^{\N} \z_{\gi}(\t),
-\elabel{f_ens}
-\ee 
-where $\gi$ indexes a particular realization of $\z(\t)$ and $\N$ is the
-number of realizations included in the average.
-\end{defn}
-\begin{figure}[h!]
-\begin{picture}(200,200)(0,0)
-    \put(-100,0){\includegraphics[width=0.8\textwidth]{./chapter_tools/figs/x_of_t_lin.pdf}}
-  \put(-50,60){(A)}
-  \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_tools/figs/x_of_t_log.pdf}}
-  \put(230,60){(B)}  
-\end{picture}
-\caption{Finite-ensemble averages $\ave{\x(\t)}_{\N}$ for ensemble sizes $\N=1, 
-10^2, 
-10^4, 10^6$. The noise in the finite-ensemble average diminishes systematically as $\N$ increases. 
-(A) on linear scales the multiplicative (non-linear) nature of the process is apparent, (B) on logarithmic scales the multiplicative process is additive in time, and the finite-ensemble average for $\N=10^6$ is a straight line except for small fluctuations.}
-\flabel{1_2}
-\end{figure}
-\FloatBarrier
-As expected, the more 
-trajectories are included in the average, the smaller the fluctuations of 
-that average. For $\N=10^6$ hardly any fluctuations are visible. Since the 
-noise-free trajectory points up it is tempting to conclude that my own wealth will similarly go up and  conclude that the risk 
-of the game is worth taking. This reasoning has dominated economic 
-theory for about 350 years now. But it is flawed. The correction of this flaw and its far-reaching consequences constitute our research program.
-
-\subsection{Averaging over time}
-Does our analysis necessitate the conclusion that the gamble is worth taking? 
-Of course it doesn't, otherwise we wouldn't be belabouring this point. 
- Our critique will focus on the type of averaging we have applied -- we didn't play the game many times
-in a row as would correspond to the real-world situation of repeating the game once a week for the rest of your life. 
-Instead we played the game many times in parallel, which corresponds to a different setup\footnote{This different setup could be realised by splitting your wealth into $\N$ equal parts and betting each part in a different sequence of independent coin tosses. But the rules of our game as we defined it don't allow that. Another interesting setup allows the gambler to choose what proportion of his wealth he wants to wager. These conditions were studied by \person{Kelly} \cite{Kelly1956} and are known to every professional poker player. In the present setup, betting $1/4$ of your wealth in each coin toss will lead to the fastest possible growth if you're allowed to choose your wager. You can think of the proportion not wagered as frozen in time: it ensures that, to some extent, you can restore the conditions before the coin toss, which is a bit like allowing you to step back in time.}.
-
-We therefore try a different analysis. \Fref{1_3} shows another simulation of your wealth. This time we don't show an average over many trajectories but a simulation of a single trajectory
-over a long time. Noise is removed also in this case but in a different way: to capture visually what 
-happens over a long time we have to zoom out -- more time has to be represented by 
-the same amount of space on the page. In the process of this zooming-out, small 
-short-time fluctuations will be diminished. Eventually the noise will be removed from the system 
-just by the passage of time.
-
-\begin{figure}[h!]
-\begin{picture}(200,200)(0,0)
-    \put(-100,0){\includegraphics[width=0.75\textwidth]{./chapter_tools/figs/x_of_t_lin_20_year.pdf}}
-  \put(-50,50){(A)}
-  \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_tools/figs/x_of_t_log_20_year.pdf}}
-  \put(230,50){(B)}  
-\end{picture}
-\caption{Single trajectory over 1,040 time steps, corresponding to 20 years 
-in our 
-setup. (A) on linear scales all we see is wealth quickly dropping to zero, (B) logarithmic scales are more appropriate for the multiplicative process and reveal systematic exponential decay.}
-\flabel{1_3}
-\end{figure}
-\FloatBarrier
-
-The trajectory in \fref{1_3} is, of course, random, but the apparent trend emerging from the randomness 
-strongly suggests that our initial analysis in \fref{1_2} does not reflect what happens over time in a single system. 
-%Jumping ahead a little, we reveal that this is indeed the case. If it seems counter-intuitive then this is 
-%because our intuition is built on so-called ``ergodic processes'', whereas $\x$ is non-ergodic. We will say
-%more about this in \secref{Ergodic_observables}.
-Several important messages can be derived from the observation that an individual trajectory grows 
-more slowly (or decays faster) over time than an average of a large ensemble. 
-
-\begin{enumerate}
-\item
-An individual whose wealth follows \eref{gamble} will make poor decisions if he uses the 
-finite-ensemble average of wealth as an indication of what is likely to happen to his own wealth.
-\item
-The performance of the average (or aggregate) wealth of a large group of individuals differs systematically from 
-the performance of an individual's wealth. In our case large-group wealth grows (think \GDP), whereas 
-individual wealth decays.
-\item
-For point 2 to be possible, \ie for the average to outperform the typical individual, wealth must 
-become increasingly concentrated in a 
-few extremely rich individuals. The wealth of the richest individuals must be so large that the average becomes 
-dominated by it, so that the average can grow although almost everyone's wealth decays. Inequality 
-increases in our system.
-\end{enumerate}
-
-The two methods we've used to eliminate the noise from our system
-are well known. The first method is closely related to the mathematical object called the
-``expectation value,'' and the second is closely related to the object called the ``time average.''
-
-\subsection{Expectation value}
-In this section we validate \fref{1_2} by computing analytically the
-average of $\x(\t)$ over infinitely many realizations, a quantity known as the expectation value.
-The expectation value is usually introduced as the sum of all possible values, 
-weighted by their probabilities. We will define it as a limit instead, and then
-show that this limit is identical to the familiar expression.
-
-\begin{excursion}{Random variables}
-We assume that you are somewhat familiar with the concept of a random variable, and we 
-will avoid a lengthy technical discussion. Instead, we highly recommend reading the 2-page discussion in van Kampen's excellent book \cite[p.~2]{vanKampen1992}, some of whose key points we reproduce here.
-
-A random variable is an object $\Z$ defined by
-\begin{itemize}
-\item
-a set of possible values
-\item
-a probability distribution over this set.
-\end{itemize}
-That's it. The set may be discrete, like $\{4, 7.8, 29\}$ or the integers, $\mathbb{Z}$; or it may be continuous, like the interval $(3,12)$, or the positive reals, $\mathbb{R}^+$. The \PDFa is a non-negative function of the set,
-\be
-\PDF_{\Z}(\z)\geq 0.
+\text{P}\left[a \leq \Z \leq b\right] = \int_a^b \PDF_{\Z}(\z)\gd\z.
 \ee
-Note the (common) use of capital and small letters: $\PDF_{\Z}(\z)$ is the \PDFa
-of the random variable $\Z$ (capital) at value $\z$ (small).
-The \PDFa is normalized, so that the integral over the entire set is one,
+The \PDFa is a non-negative function, $\PDF_{\Z}(\z) \geq 0$, normalised so that the probability of the certain outcome, \ie the integral over all possible outcomes, is one:
 \be
-\int \PDF_{\Z}(\z)d\z =1.
+\int_{-\infty}^{+\infty} \PDF_{\Z}(\z)\gd\z = 1.
 \ee
-The probability (a number between 0 and 1) that $\z$ is between $a$ and $b$ is
+Note the difference between subscript and argument: $\PDF_{\Z}(\z)$ is the probability density of the random variable $\Z$ at value $\z$. You might find it helpful to think of $\PDF_{\Z}(\z)\delta\z$ as the approximate probability of $\Z$ being in the small interval $(\z,\z+\delta\z)$ close to $\z$. 
+
+\boldhead{Interpretation}
+So far we have said nothing of the meaning of probabilities: they are simply numbers assigned to outcomes of random variables. One way to interpret probabilities is to imagine many separate experiments, of whose outcomes are identically ignorant. For example, we can imagine tossing the same coin many different times, assuming that each coin toss is equally likely to result in heads. Suppose we perform a sample of $N$ experiments and record the number of times, $n$, that a particular outcome occurs. Under the so-called `frequentist' interpretation, the appropriate probability to assign to this outcome is its relative frequency, $n/N$, in the limit $N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were unbiased; if biased, it would be some other number between 0 and 1.
+
+Note also that time does not appear in the random variable setup. Of course, there is nothing stopping us from using a probability distribution which depends on time or, indeed, any other variable, like the day of the week or the country we are in. Such parametrisations of the random variable do not change fundamentally its mathematical structure: a set of outcomes and associated probabilities. When we consider probability distributions of random variables that do depend on time, such as wealth, $\x(\t)$, in the coin tossing game, we will make the time dependence explicit. By default we assume random variables are time-independent
+
+\section{Expectation value}
+The \textit{expectation value}\footnote{Also known as expected value, mathematical expectation, first moment, and mean.} is a property of a random variable. Denoted by $\eval{\Z}$, it is formally defined as the integral of $\Z$ with respect to its probability measure. For our purposes, the following definitions are sufficient.
+\begin{defn}{Expectation value}
+If $\Z$ is a discrete random variable, its expectation value is the sum of all possible realisations, $\z_\gj$, weighted by their probabilities, $\p_\gj$:
 \be
-\int_a^b \PDF_{\Z}(\z)d\z.
-\ee
-When the set of possible values is discrete, we will write $\p_\gj$ to mean the probability of the $\gj^{\text{th}}$ value in the set, $\z_{\gj}$. We could also express this as an integral of the \PDFa over a neighborhood of $\z_{\gj}$ that includes no other possible values.
-
-A possible value $\z$, randomly selected in accordance with $\PDF_{\Z}(\z)$, is called an ``instance'' or ``realization'' of the random variable $\Z$.
-
-Of course we can define the distribution of a random variable to depend on all kinds of things -- the day of the week, or the country we find ourselves in. Sometimes it will be useful to consider distributions of random numbers that depend on time, like in the case of wealth $\x(\t)$. By default we will assume that the distributions of random variables are time-independent, but to avoid confusion we will often make time dependence or independence explicit.
-\end{excursion}
-
-\begin{defn}{Expectation value i}
-The expectation value of a quantity $\z$
-is the large-ensemble limit of the finite-ensemble average \eref{f_ens},
-\be
-\ave{\z}=\lim_{\N\to\infty}\ave{\z}_{\N}.
-\elabel{ens}
-\ee
-\end{defn}
-
-This implies that in our first analysis of the game -- by averaging
-over $\N$ trajectories -- we were approximately using the (time-dependent)
-expectation value of a time-dependent random variable as a gauge of the desirability of the game. We will now prove that 
-letting $\N\to\infty$ is indeed the same as working with the more
-familiar definition of the expectation value.
-
-\begin{defn}{Expectation value ii}
-The expectation value of a quantity $\z$ 
-that can take discrete values $\z_\gj$ is the sum of all 
-possible values weighted by their probabilities $\p_\gj$
-\be
-\ave{\z}=\sum_\gj \p_\gj \z_\gj.
+\eval{\Z}=\sum_\gj \p_\gj \z_\gj.
 \elabel{exp_sum}
 \ee 
-If $\z$ is continuous, the expectation value is the integral
+If $\Z$ is a continuous random variable, its expectation value is the integral:
 \be
-\ave{\z}=\int_{-\infty}^{+\infty} \gs \PDF_{\Z}(\gs) \gd\gs.
+\eval{\Z}=\int_{-\infty}^{+\infty} \z \PDF_{\Z}(\z) \gd\z.
 \ee 
 \end{defn}
 
@@ -298,11 +103,32 @@ If $\z$ is continuous, the expectation value is the integral
 %In the large-ensemble limit $N\to\infty$, the finite-ensemble average 
 %$\ave{x}_N$ converges to the expectation value $\ave{x}$ with probability 1.
 %If this is unclear, 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The expectation value is a property of a mathematical object. We distinguish it from a conceptually different quantity, the \textit{ensemble average}, denoted by $\ave{Z}$. This is the many-realisations limit of the sample average we met when averaging over wealth trajectories of the coin game in \cref{Why}.  
+\begin{defn}{Ensemble average}
+The ensemble average of a random variable, $\Z$, is the many-realisations limit of its sample average,
+\bea
+\ave{\Z} &=& \lim_{\N\to\infty}\ave{\Z}_{\N}\\
+&=& \lim_{\N\to\infty} \frac{1}{N} \sum_{\gi=1}^N \z_\gi,
+\elabel{ens}
+\eea
+where $\z_\gi$ denotes the $i^\text{th}$ independent realisation of $\Z$.
+\end{defn}
+
+Note that, unlike the expectation value, the ensemble average of a random variable is not defined in terms of probabilities. It is the quantity to which average over realisations converge as the number of realisations grows. We followed this procedure when analysing the coin game: at each round of the gamble, we found sample averages of simulated wealth for increasingly large samples, from one to one million, plotted as functions of time in \fref{1_2}. As the sample size increased, we saw that the temporal fluctuations in the sample average decreased, which we took 
+
+We will define it as a limit instead, and then
+show that this limit is identical to the familiar expression.
+This implies that in our first analysis of the game -- by averaging
+over $\N$ trajectories -- we were approximately using the (time-dependent)
+expectation value of a time-dependent random variable as a gauge of the desirability of the game. We will now prove that 
+letting $\N\to\infty$ is indeed the same as working with the more
+familiar definition of the expectation value.
+
+
 We now show that the two definitions of the expectation value are equivalent.
 \begin{proof}
-Consider the number of times the value $\z_\gj$ is observed in an ensemble 
-of $\N$ instances. Call this number $\gn_\gj$. 
+Denote by  $\gn_\gj$ the number of times the value $\z_\gj$ is observed in a sample of $\N$ realisations of $\Z$. Call this number. 
 The finite-ensemble average can then be re-written as
 \bea
 \ave{\z}_\N&=&\frac{1}{\N}\sum_\gi  \z_\gi\\
@@ -317,7 +143,9 @@ the probability $\p_\gj$, and we find
 \ee
 The \LHS is the expectation value by its first definition as a limit, 
 the \RHS is the expectation value by its second definition as a weighted sum. 
-This shows that the two definitions are indeed equivalent. 
+This shows that the two definitions are indeed equivalent.
+
+\textbf{Here, or earlier, we must give an interpretation of probability as the limiting frequency of an outcome over many trials.}
 \end{proof}
 
 
@@ -349,7 +177,62 @@ This shows that the two definitions are indeed equivalent.
 %and because the expectation value can be obtained by averaging
 %over all ensemble members it is also called the ensemble average. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{excursion}{Stochastic processes}
+
+%But we caution against this. We have correctly computed
+%the expectation value, first numerically and then analytically.
+We stress that the expectation value is just some mathematical
+object -- someone a long time ago gave it a suggestive 
+name, but we certainly shouldn't 
+give any credence to a statement like ``we expect to find $\x(\t)=\ave{\x(\t)}$ 
+because it's the expectation value.'' Mathematical objects
+are quite indifferent to the names we give them.
+
+\begin{history}{The invention of the expectation value}
+Suppressed.
+%Expectation values 
+%were not invented in order to assess whether a gamble is 
+%worth taking. Instead, they were developed to settle a  
+%moral question that arises in the following somewhat contrived 
+%context: imagine playing a game of dice with a 
+%group of gamblers. The rules of the game are simple: we 
+%roll the dice three times,  and whoever rolls the most points 
+%gets the pot to which we've all contributed equal amounts. 
+%We've already rolled the dice twice when suddenly the 
+%police burst in because they've heard of our illegal gambling ring. 
+%We all avoid arrest, most of us escape through the backdoor, 
+%and to everyone's great relief you had the presence of mind 
+%to grab the pot before jumping out of a conveniently located 
+%ground-floor window. Later that day, under the cover of dusk, 
+%we meet behind the old oak tree just outside of town to split 
+%the pot in a fair way. But hold on -- what does ``fair'' mean here?
+%Some of us had acquired more points than others in the first 
+%two rolls of the dice. Shouldn't they get more? The game was 
+%not concluded, so wouldn't it be fair to return to everyone his 
+%wager and thank our lucky stars that we weren't arrested? 
+%Should we split the pot in proportion to each player's points? 
+%All of these solutions were proposed \cite{Devlin2008}.
+%The question is fundamentally moral, and there is no 
+%mathematical answer. But \person{Blaise Pascal}, now famous for 
+%addressing theological questions using expectation values, put the 
+%problem to Pierre de Fermat, and over the course of a few months' 
+%correspondence (the two never met in person) \person{Fermat} and 
+%\person{Pascal} agreed that fairness is achieved as follows: 
+%think of all (equally likely) possible outcomes of the third round 
+%of throws of the dice, call the number of all possibilities $\N$. 
+%Now count those possibilities that result in player $\gj$ winning, 
+%call this $\gn_\gj$. If $\q$ is the amount of money in the pot, then 
+%we split the pot fairly by giving each player
+% $\frac{\gn_\gj}{\N}\times \q$.
+%This is $\ave{\q}$, according to \eref{exp_sum}, 
+%because $\frac{\gn_\gj}{\N}=\p_\gj$ is the probability that player $\gj$ wins the
+%amount \q. 
+%Later researchers called this amount the ``mathematical expectation''  
+%or simply ``expectation value''. But this is really an unfortunate choice 
+% -- no player ``expected'' to receive $\ave{\q}$. 
+%Instead, each player expected to receive either nothing or $\q$. 
+\end{history}
+
+\section{Stochastic processes}
 Once again, we recommend van Kampen \cite[p.~52]{vanKampen1992} for a simple definition -- this time of stochastic processes. 
 Imagine we've defined a random variable, $\Z$. Any function $\Y(\Z)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, a simple scalar parameter, a number, which is interpreted as time, so we write
 \be
@@ -391,8 +274,180 @@ We can also do this: fix a specific time, $\t^*$, and consider the stochastic pr
 Just as a function of a random variable is another random variable, a function of a stochastic process is another stochastic process. We will often use the noun ``observable'' to refer to a quantity that is derived from a stochastic process. For example, the growth rate of wealth is an observable of the wealth process.
 
 We will suppress the random variable $\Z$ in our notation, and just write $\x(\t)$ for the stochastic wealth process (instead of writing $\x(\Z,\t)$, {\it c.f.} \eref{st_pr}). We will also write $\x(\t)$ for a specific realization of this process, or $\x_\gi(\t)$ when it's important to distinguish different realizations.
+
+\section{Time averages}
+An observable that neatly captures the two different 
+aspects of multiplicative growth we have illustrated is the exponential growth rate, $\gm(\ave{\x(\t)}_\N, \Dt)$ 
+observed over finite time $\Dt$, in a finite ensemble
+of $\N$ realisations. Exponential growth rates are ubiquitous and may be familiar, but because they are the origin of the logarithmic function, which will be important for us later on, we will intro them properly in a little excursion that will also clarify what a logarithm is.
+
+\begin{excursion}{Compounding growth, exponentials, and the logarithm}
+Suppressed.
+%The logarithm is a relatively recent mathematical discovery, made some time in the 1590s by John Napier, the 8th Laird of Merchiston in Scotland. Let's say you lend me some money, $\x(\t)$, for one year, $\Dt=1$~year, and I have to pay interest on the loan. We agree a yearly interest rate of $r_{1}=5\%$ per year. 
+%
+%After one year the amount I have to repay is
+%\bea
+%\x(\t+\Dt)=\overbrace{\x(\t)}^{\text{Principal}}+ \overbrace{\D \x}^{\text{Interest}}.
+%\eea 
+%I could convert the interest payment into a rate, $r_1$, so that $r_1 \x(\t)$ is the rate (dollars per time) at which I have to make constant payments to you for one year, so that you end up with the right amount of interest at the end of the year, and
+%\be
+%\x(\t+\Dt)=\x(\t)r_1 \Dt
+%\elabel{deal}
+%\ee
+%This makes it easy, for instance, to find something to enter into my accounts if I have to say after 6 months how much I owe you at that moment. I would say: only half a year has passed, so I only owe you half the interest, 
+%\be
+%\x(\t+\Dt/2)=\x(\t)\left(1+r_1 \frac{\Dt}{2}\right). 
+%\elabel{deal_2}
+%\ee
+%But if this is really the amount I owe you after 6 months, surely I should pay interest on this new amount for the following 6 months. We will see that this leads to a problem. Substituting $\x(\t+\Dt/2)$ for $\x(\t)$ on the \RHS of \eref{deal_2} gives
+%\bea
+%\x(\t+\Dt)&=&\x(t+\Dt/2)\left(1+r_1 \frac{\Dt}{2}\right)\\
+%&=&\x(\t)\left(1+r_1\frac{\Dt}{2}\right)^2
+%\eea
+%Equating to \eref{deal} we find a contradiction
+%\bea
+%\x(\t) (1+ r_{\Dt} \Dt)&\stackrel{?}{=}&\x(\t)(1+r_{\Dt}/2)^2\\
+%\implies 1+ r_{\Dt} \Dt&\stackrel{?}{=}&1+r_{\Dt}\Dt+\left(\frac{r\Dt}{2}\right)^2 \text{{\color{red} \huge \lightning}}.
+%\eea
+%Strange as it may seem, the solution to this problem is to acknowledge that interest rates depend on the time scale at which they're defined -- the compounding time scale. We can fix the problem by introducing $r_2$ -- the semi-annual interest rate (the subscript 2 indicates that we've split the original interval in 2 equal parts). It is defined by
+%insisting that the one-step and two-step computations give the same interest payment $\D\x$, 
+%\be
+%1+ r_1 \Dt=\left(1+r_2 \frac{\Dt}{2}\right)^2.
+%\ee
+%There's nothing stopping us from writing down the general expression for any number, $\T$, of intermediate stock-takings
+%\bea
+%\frac{\x(\t+\Dt)}{\x(\t)}&=&\left(1+r_\T\frac{ \Dt}{\T}\right)^\T\\
+%&\text{which implies}&\\
+%r_\T&=& \frac{1}{\Dt}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}
+%\eea
+%A common trick to remove the dependence of some quantity ($r_{\T})$ on another ($\T$)  is to let the control variable diverge. The limit no longer depends on the diverging quantity (we've seen this trick before: the expectation value doesn't depend on the ensemble size, which has diverged).
+%\be
+%r_\infty= \frac{1}{\Dt} \underbrace{\lim_{\T\to\infty}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}}_{\ln\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)}.
+%\ee
+%Note the procedure here: we keep the total time interval, $\Dt$, fixed and split it into $\T$ ever more numerous and shorter sub-intervals $\dt$.
+%Because it's tedious to write down the long expression involving the limit, we define it as a new function, called the logarithm, $\ln(\cdot)$, as indicated by the underbrace.
+%\be
+%\ln \ga :=  \lim_{\T\to\infty}\T \left\{\ga^{1/\T}-1\right\}.
+%\ee
+%The logarithm has a property that makes it uniquely suited for characterizing multiplicative processes: the logarithm of a ratio is the difference of the logarithms of numerator and denominator, 
+%\be
+%\ln \frac{\ga_2}{\ga_1}=\ln \ga_2 - \ln \ga_1 = \D \ln \ga.
+%\ee
+%The inverse function of the logarithm is the exponential (by definition), denoted $\exp(\cdot)$, so that $\exp(\ln \ga)=\ga$, and the limiting growth rate $r_\infty$ is called the logarithmic or exponential growth rate, which we also denote by $\gm$ (subscript ''m'' for ``multiplicative'').
+%
+%Just to be sure we got this across: these are the definitions of the logarithm and the exponential. You may know many properties of logarithms and exponentials -- all of them can be derived from the definitions we have just presented.
 \end{excursion}
 
+The exponential growth rate of average wealth in an ensemble of $\N$ systems, observed over time $\Dt$ is
+\be
+\gm(\ave{\x(\t)}_\N, \Dt)=\frac{\D \ln \ave{\x}_\N}{\Dt},
+\elabel{gest}
+\ee
+where the $\D$ in the numerator corresponds to the change over the $\Dt$ in the denominator. For $\N$ and $\Dt$ finite this is a random variable. The relevant scalars arise as two different limits
+of the same stochastic object. The exponential growth rate of the expectation value 
+(that's also $\frac{1}{\dt} \ln \ave{\gr}$) is
+\be
+\gm(\ave{\x})=\lim_{\N\to\infty}\gm,
+\ee
+and the exponential growth rate followed by every trajectory when
+observed for a long time (that's also $\frac{1}{\dt} \ln \rt$) is 
+\be
+\gt=\lim_{\Dt\to\infty}\gm.
+\elabel{gt}
+\ee
+We can also write \eref{gest} as a sum of the logarithmic differences in  the 
+$\T$ individual rounds of the gamble that make up the time interval 
+$\Dt=\T \dt$
+\be
+\gm(\ave{\x(\t)}_\N, \Dt)=\frac{1}{\T\dt}  \sum_{\gtau=1}^{\T} \D\ln \ave{\x(\t+\gtau\dt)}_\N.
+\ee
+%For a single trajectory, $\N=1$, \eref{gt} becomes
+%\bea
+%\t&=&\lim_{\t\to\infty}\frac{1}{\t} \ln \x(\t)\\
+%&=&\lim_{\T\to\infty}\frac{1}{\T\dt} \sum_\t^\T \D \ln \x(\t).
+%\eea
+This leads us to a technical definition of the time average.
+
+\begin{defn}{Finite-time average}
+The ``finite-time average'' of the quantity $\x(\t)$ is
+\be
+\xbar_{\Dt}=\frac{1}{\Dt}\int_{\t}^{\t+\Dt} \x(\gs)\gd\gs.
+\elabel{t_ave_f}
+\ee
+If $\x$ only changes at $\T=\Dt/\dt$ discrete times 
+$\t+\dt$, $\t+2\dt$, {\it etc.}, then this can be written as 
+\be
+\xbar_{\Dt}=\frac{1}{\T\dt}\sum_{\gtau=1}^{\T}\x(\t+\gtau \dt).
+\elabel{t_ave_f_disc}
+\ee
+\end{defn}
+
+\begin{defn}{Time average}
+The ``time average'' is the long-time limit
+of the finite-time average
+\be
+\xbar=\lim_{\Dt\to\infty}\xbar_{\Dt}.
+\elabel{t_ave}
+\ee
+\end{defn}
+According to this definition, $\gt$ is the time average of 
+the observable $\frac{\d \ln \x}{\dt}$. It can be shown that
+the time-average growth rate of a single trajectory is the same as that
+of a finite-ensemble average of trajectories,
+$\lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}=\lim_{\Dt\to\infty}\frac{\D \ln \ave{\x}_N}{\Dt}$, \cite{PetersKlein2013}. In \secref{finite_populations} we will derive this result as well as growth rates in finite ensembles and finite time.
+
+\begin{excursion}{Dimensional analysis}
+Suppressed.
+%We will often and without qualm write the expression $\D \ln \x$. Dimensional
+%analysis suggests to think about this expression carefully, at least once. This may
+%seem pedantic but the absence of this pedantry has caused sufficient
+%confusion in economic theory for us to risk antagonizing you. ``Dimension'' in this context is closely related to the 
+%concept of ``unit'' -- for instance, a dollar is a money unit, and the dimension function
+%for money tells us how to convert from one currency into another. Similarly, length may 
+%have the unit ``meter'', and the dimension function for length tells us how to convert between 
+%different systems of units, such as meters and yards. 
+%We can only point to the subject here and recommend the book
+%by \person{Barenblatt} for a comprehensive treatment \cite{Barenblatt2003}.
+%Dimensional analysis is a deeply fascinating and powerful tool that every physicist 
+%is drilled to use at all times. \person{Taylor} famously used it to compute the energy
+%released by an early nuclear explosion at the Trinity site near Alamogordo, New Mexico, based on 
+%some grainy pictures published by Life magazine, at least that's the legend 
+%\cite{Taylor1950b,Deakin2011}. Fluid dynamicists in general use it to find meaningful quantities 
+%to distinguish different types of flow. In many problems involving random walks dimensional 
+%analysis immediately reveals scaling properties, supposed solutions to many problems can
+%be seen at a glance to be wrong, and, conversely some complicated-looking 
+%problems can be solved as if by magic just by appealing to dimensional analysis.
+%
+%\person{Barenblatt} shows in his book that the dimension function must be a (scale-free) power-law 
+%monomial if there is to be no distinguished system of units. We can all agree that the unit
+%of money is physically irrelevant -- I can do exactly the same with the pennies in my 
+%bank account as I can do with the pounds those pennies correspond to. Since this is so, 
+%for functions of monetary amounts to be physically meaningful we want them to be 
+%power-law monomials. An amount of square-dollars, $\$^2$, may be meaningful, but an
+%amount of logarithmic or exponential dollars cannot be meaningful. Hence $\ln(\x)$ on its own
+%is just some symbol spat on a page by a printer, but it has no physical meaning.
+%The reason we're comfortable writing $\D \ln \x$ is the unique property of the logarithmic function
+%\be
+%\ln \x_1 - \ln \x_2 = \ln\left(\frac{\x_1}{\x_2}\right).
+%\ee
+%The quantity in brackets on the \RHS is always dimensionless, it's a pure number because
+%the dimension functions of two different values of $\x$ always cancel out. So do the units:
+%$\$1/\$2=1/2$, which is a pure number without units. We will see that indeed only differences 
+%in logarithms of $\x$ will appear in these lecture notes or in any other reasonable lecture notes. 
+%Pedantically, we would refuse to write $\D \ln(\x)$ and insist on writing $\ln\left(\frac{\x_1}{\x_2}\right)$.
+%Since the first notation is shorter and one can make formal arguments for its validity, we are 
+%happy to use it here. 
+%
+%The issue is related to a result obtained by \person{von Neumann} and 
+%\person{Morgenstern} in their 
+%famous
+%%but quite unhelpful
+%book \cite{vonNeumannMorgenstern1944}: 
+%only differences in utility functions can have physical meaning. 
+%We will have a lot more to say about utility functions (which we call ergodicity mappings) in \cref{Rates}.
+\end{excursion}
+
+\section{The game -- revisited}
 We pretended to be mathematically clueless when we ran the simulations,
 with the purpose to gain a deeper conceptual understanding of the expectation 
 value. We now compute exactly the expectation value of the stochastic process $\x(\t)$, instead of 
@@ -438,62 +493,6 @@ of \fref{1_2} for finite ensembles.
 \end{figure}
 \FloatBarrier
 
-
-%But we caution against this. We have correctly computed
-%the expectation value, first numerically and then analytically.
-We stress that the expectation value is just some mathematical
-object -- someone a long time ago gave it a suggestive 
-name, but we certainly shouldn't 
-give any credence to a statement like ``we expect to find $\x(\t)=\ave{\x(\t)}$ 
-because it's the expectation value.'' Mathematical objects
-are quite indifferent to the names we give them.
-
-
-\begin{history}{The invention of the expectation value}
-Expectation values 
-were not invented in order to assess whether a gamble is 
-worth taking. Instead, they were developed to settle a  
-moral question that arises in the following somewhat contrived 
-context: imagine playing a game of dice with a 
-group of gamblers. The rules of the game are simple: we 
-roll the dice three times,  and whoever rolls the most points 
-gets the pot to which we've all contributed equal amounts. 
-We've already rolled the dice twice when suddenly the 
-police burst in because they've heard of our illegal gambling ring. 
-We all avoid arrest, most of us escape through the backdoor, 
-and to everyone's great relief you had the presence of mind 
-to grab the pot before jumping out of a conveniently located 
-ground-floor window. Later that day, under the cover of dusk, 
-we meet behind the old oak tree just outside of town to split 
-the pot in a fair way. But hold on -- what does ``fair'' mean here?
-Some of us had acquired more points than others in the first 
-two rolls of the dice. Shouldn't they get more? The game was 
-not concluded, so wouldn't it be fair to return to everyone his 
-wager and thank our lucky stars that we weren't arrested? 
-Should we split the pot in proportion to each player's points? 
-All of these solutions were proposed \cite{Devlin2008}.
-The question is fundamentally moral, and there is no 
-mathematical answer. But \person{Blaise Pascal}, now famous for 
-addressing theological questions using expectation values, put the 
-problem to Pierre de Fermat, and over the course of a few months' 
-correspondence (the two never met in person) \person{Fermat} and 
-\person{Pascal} agreed that fairness is achieved as follows: 
-think of all (equally likely) possible outcomes of the third round 
-of throws of the dice, call the number of all possibilities $\N$. 
-Now count those possibilities that result in player $\gj$ winning, 
-call this $\gn_\gj$. If $\q$ is the amount of money in the pot, then 
-we split the pot fairly by giving each player
- $\frac{\gn_\gj}{\N}\times \q$.
-This is $\ave{\q}$, according to \eref{exp_sum}, 
-because $\frac{\gn_\gj}{\N}=\p_\gj$ is the probability that player $\gj$ wins the
-amount \q. 
-Later researchers called this amount the ``mathematical expectation''  
-or simply ``expectation value''. But this is really an unfortunate choice 
- -- no player ``expected'' to receive $\ave{\q}$. 
-Instead, each player expected to receive either nothing or $\q$. 
-\end{history}
-
-\subsection{Time average}
 In this section we validate \fref{1_3} and compute analytically 
 what happens in the long-time limit. The blue line in \fref{1_3} is not completely smooth, there's still 
 some noise (see panel B). It has some average slope, but that slope will vary from realisation to 
@@ -566,43 +565,42 @@ line decays exponentially with the time-average decay factor $\rt$ in each time 
 %\FloatBarrier
 
 \begin{excursion}{Scalars}
-
-$\gr(\t)$ is a random variable, whereas both $\rex$ and $\rt$ are scalars.
-Scalars have the so-called ``transitive property'' that is heavily relied upon in 
-economic theory. Let $\ga_i$ be a set of scalars. Transitivity means that if $\ga_1>\ga_2$ and 
-$\ga_2>\ga_3$ we have $\ga_1>\ga_3$. Notice that we cannot rank random variables 
-in such a way. The ``greater than'' relation, $>$,
-is not defined for a pair of random variables, which is the mathematical
-way of saying that it is difficult to choose between two gambles, and it is why 
-we went to the trouble of removing the randomness from the stochastic process 
-$\x(\t)$. Removing randomness by
-averaging always involves a limiting process, and results are said to hold ``with probability one''. 
-In the case of $\rex$ we considered the infinite-ensemble limit, $\N\to \infty$, and 
-in the case of $\rt$ we considered the infinite-time limit, $\Dt\to\infty$. If we use the scalars 
-$a_i$ to represent preferences, we can test for consistency among preferences. 
-For instance, in such a model world where preferences are represented by scalars, 
-the facts that ``I prefer kangaroos to Beethoven'' and ``I prefer mango chutney to kangaroos'' 
-imply the fact ``I prefer mango chutney to Beethoven''. Translating back to reality, 
-economists like to call individuals who make the first two statements but not the 
-third ``irrational.'' 
-
-Because transitivity makes for a
-nicely ordered world, it is useful to find scalars to represent preferences.
-We are skeptical about the attempt to map all preferences
-into scalars because  the properties of mango chutney are too different, {\it qualitatively},
-from the properties of Beethoven. We will restrict our analysis to money --
-the amount of money we will receive is random and this introduces
-a complication, but at least we know how to compare one amount to 
-another in the limit of no randomness -- there is no qualitative differences 
-between $\$1$ and $\$3$, only a quantitative difference. 
-
-Both $\rex$ and $\rt$ are scalars, and both are therefore potentially powerful 
-representations of preferences. Your decision whether to accept our gamble could
-now be modelled as a choice between the value of the scalar $\rt$ if you do not
-accept our game, namely $\ga_1=1$, and the value of the scalar $\rt$ if you do accept, 
-namely approximately $\ga_2=0.95$. In this model of your decision-making you 
-would prefer not to play because $1>0.95$.
-
+Suppressed.
+%$\gr(\t)$ is a random variable, whereas both $\rex$ and $\rt$ are scalars.
+%Scalars have the so-called ``transitive property'' that is heavily relied upon in 
+%economic theory. Let $\ga_i$ be a set of scalars. Transitivity means that if $\ga_1>\ga_2$ and 
+%$\ga_2>\ga_3$ we have $\ga_1>\ga_3$. Notice that we cannot rank random variables 
+%in such a way. The ``greater than'' relation, $>$,
+%is not defined for a pair of random variables, which is the mathematical
+%way of saying that it is difficult to choose between two gambles, and it is why 
+%we went to the trouble of removing the randomness from the stochastic process 
+%$\x(\t)$. Removing randomness by
+%averaging always involves a limiting process, and results are said to hold ``with probability one''. 
+%In the case of $\rex$ we considered the infinite-ensemble limit, $\N\to \infty$, and 
+%in the case of $\rt$ we considered the infinite-time limit, $\Dt\to\infty$. If we use the scalars 
+%$a_i$ to represent preferences, we can test for consistency among preferences. 
+%For instance, in such a model world where preferences are represented by scalars, 
+%the facts that ``I prefer kangaroos to Beethoven'' and ``I prefer mango chutney to kangaroos'' 
+%imply the fact ``I prefer mango chutney to Beethoven''. Translating back to reality, 
+%economists like to call individuals who make the first two statements but not the 
+%third ``irrational.'' 
+%
+%Because transitivity makes for a
+%nicely ordered world, it is useful to find scalars to represent preferences.
+%We are skeptical about the attempt to map all preferences
+%into scalars because  the properties of mango chutney are too different, {\it qualitatively},
+%from the properties of Beethoven. We will restrict our analysis to money --
+%the amount of money we will receive is random and this introduces
+%a complication, but at least we know how to compare one amount to 
+%another in the limit of no randomness -- there is no qualitative differences 
+%between $\$1$ and $\$3$, only a quantitative difference. 
+%
+%Both $\rex$ and $\rt$ are scalars, and both are therefore potentially powerful 
+%representations of preferences. Your decision whether to accept our gamble could
+%now be modelled as a choice between the value of the scalar $\rt$ if you do not
+%accept our game, namely $\ga_1=1$, and the value of the scalar $\rt$ if you do accept, 
+%namely approximately $\ga_2=0.95$. In this model of your decision-making you 
+%would prefer not to play because $1>0.95$.
 \end{excursion}
 
 There are two averages, $\rex$ and $\rt$ that we have determined numerically and analytically. 
@@ -611,71 +609,30 @@ of the system. Each average is the answer to a different question. Saying that `
 goes up, on average'' is clearly meaningless and should be countered with the question 
 ``on what type of average?'' 
 
-
 \begin{history}{William Allen Whitworth}
-
-$\rex$ and $\rt$ are two different properties of the game. $\rex$ is 
-the large-ensemble limit, $\rt$ is the long-time limit, of wealth growth it induces. The Victorian 
-mathematician William Allen Whitworth postulated $\rt$ as the relevant property 
-for an individual deciding whether to take part in a repeated gamble. 
-He used this knowledge to write an appendix  entitled ``The disadvantage 
-of gambling'' to the 1870 edition of his book ``Choice and Chance'' 
-\cite{Whitworth1870}. He phrased his argument in terms of the difference of two squares. 
-Imagine that you either win or lose, with equal probability, 
-an amount $\epsilon \x(\t)$ in each round of a game. In the long run, positive and 
-negative changes will occur equally frequently, and to determine
-the overall effect we just need to consider the effect of one positive and one negative change
-in a row. Over one up and one down-move wealth changes by the factor
-\be
-(1+\epsilon)(1-\epsilon)=1-\epsilon^2.
-\elabel{Whitworth}
-\ee
-This factor is clearly less than one, meaning that what's often called a ``fair gamble'' -- one 
-that does not change the expectation value of the gambler's wealth -- leads to an 
-exponential decay of his wealth over time. Hence the title of the appendix 
-``The disadvantage of gambling.'' We will see in \secref{Geometric_Brownian} that Whitworth's work
-captured the essence of \Ito's famous 1944 discovery \cite{Ito1944} that was to form the basis of
-much of financial mathematics.
-
-Whitworth was arguing against a dogma of expectation values of wealth, that had 
-been established almost immediately following Fermat and Pascal's work. He 
-hoped to show mathematically that gambling may not be a good idea even if 
-the odds are favourable, and was a 
-proponent of the notion that commerce should and does
-consist of mutually beneficial interactions rather than one winner and one loser. 
-In the end his voice was not heard in the economics community. His main career was as a priest at All Saints Church in London's Margaret Street, only a 22 minute stroll away from the (first office of the) London 
-Mathematical Laboratory, according to Google \fref{all_saints}.
-%
+Suppressed.
 %$\rex$ and $\rt$ are two different properties of the game. $\rex$ is 
-%the large-ensemble limit, $\rt$ is the long-time limit. The Victorian 
-%mathematician William Allen Whitworth was aware that $\rt$ is often the property 
-%relevant for an individual deciding whether to take part in a repeated gamble. 
+%the large-ensemble limit, $\rt$ is the long-time limit, of wealth growth it induces. The Victorian 
+%mathematician William Allen Whitworth postulated $\rt$ as the relevant property 
+%for an individual deciding whether to take part in a repeated gamble. 
 %He used this knowledge to write an appendix  entitled ``The disadvantage 
 %of gambling'' to the 1870 edition of his book ``Choice and Chance'' 
-%\cite{Whitworth1870}. His argument, in slightly different notation, went as 
-%follows. Imagine that you either win or lose, with equal probability, 
-%an amount $\x(\t) \gsigma \sqrt{\dt}$ in each round of a game. This scaling in $\dt$
-%is not arbitrarily chosen -- it would be observed if the multiplicative increment in each time interval
-%were the product of many independent smaller multiplicative 
-%increments, $\ln \gr=\sum_\gi \ln \tilde{\gr_\gi} \tilde{\dt}$. In the long run, positive and 
+%\cite{Whitworth1870}. He phrased his argument in terms of the difference of two squares. 
+%Imagine that you either win or lose, with equal probability, 
+%an amount $\epsilon \x(\t)$ in each round of a game. In the long run, positive and 
 %negative changes will occur equally frequently, and to determine
 %the overall effect we just need to consider the effect of one positive and one negative change
-%in a row. Wealth changes by the factor
+%in a row. Over one up and one down-move wealth changes by the factor
 %\be
-%(1+\gsigma \sqrt{\dt})(1-\gsigma \sqrt{\dt}).
+%(1+\epsilon)(1-\epsilon)=1-\epsilon^2.
+%\elabel{Whitworth}
 %\ee
-%We take the square root of this factor to determine what happens time-averaged per 
-%round. This is 
-%\be
-%[(1+\gsigma \sqrt{\dt})(1-\gsigma \sqrt{\dt})]^{1/2}= (1-\gsigma^2 \dt)^{1/2}
-%\ee
-%Letting $\dt$ become infinitesimal we replace it by $\gdt$, and 
-%the first term in a Taylor expansion becomes exact. We find
-%\be
-%\left[(1+\gsigma \sqrt{\dt})(1-\gsigma \sqrt{\dt})\right]^{1/2}\to 1-\frac{\gsigma^2}{2} \gdt.
-%\ee
-%We choose this notation (also in \secref{Geometric_Brownian}) to anticipate \Ito's 
-%work of 1944 that is now the basis of much of financial mathematics.
+%This factor is clearly less than one, meaning that what's often called a ``fair gamble'' -- one 
+%that does not change the expectation value of the gambler's wealth -- leads to an 
+%exponential decay of his wealth over time. Hence the title of the appendix 
+%``The disadvantage of gambling.'' We will see in \secref{Geometric_Brownian} that Whitworth's work
+%captured the essence of \Ito's famous 1944 discovery \cite{Ito1944} that was to form the basis of
+%much of financial mathematics.
 %
 %Whitworth was arguing against a dogma of expectation values of wealth, that had 
 %been established almost immediately following Fermat and Pascal's work. He 
@@ -683,192 +640,18 @@ Mathematical Laboratory, according to Google \fref{all_saints}.
 %the odds are favourable, and was a 
 %proponent of the notion that commerce should and does
 %consist of mutually beneficial interactions rather than one winner and one loser. 
-%In the end his voice was not heard in the economics
-%or mathematics communities. He quit mathematics to become a priest at All Saints Church
-%in London's Margaret Street, only a 22 minute stroll away from the London 
-%Mathematical Laboratory, according to Google.
+%In the end his voice was not heard in the economics community. His main career was as a priest at All Saints Church in London's Margaret Street, only a 22 minute stroll away from the (first office of the) London Mathematical Laboratory, according to Google \fref{all_saints}.
 \end{history}
-\begin{figure}[h!]
-\begin{picture}(200,270)(0,0)
-  \put(-30,0){\includegraphics[width=1.15\textwidth]{./chapter_tools/figs/all_saints.pdf}}
-\end{picture}
-\caption{Location of All Saints Church and the London Mathematical Laboratory's initial office.}
-\flabel{all_saints}
-\end{figure}
-\FloatBarrier
+%\begin{figure}[h!]
+%\begin{picture}(200,270)(0,0)
+%  \put(-30,0){\includegraphics[width=1.15\textwidth]{./chapter_tools/figs/all_saints.pdf}}
+%\end{picture}
+%\caption{Location of All Saints Church and the London Mathematical Laboratory's initial office.}
+%\flabel{all_saints}
+%\end{figure}
+%\FloatBarrier
 
-
-An observable that neatly captures the two different 
-aspects of multiplicative growth we have illustrated is the exponential growth rate, $\gm(\ave{\x(\t)}_\N, \Dt)$ 
-observed over finite time $\Dt$, in a finite ensemble
-of $\N$ realisations. Exponential growth rates are ubiquitous and may be familiar, but because they are the origin of the logarithmic function, which will be important for us later on, we will intro them properly in a little excursion that will also clarify what a logarithm is.
-
-\begin{excursion}{Compounding growth, exponentials, and the logarithm}
-The logarithm is a relatively recent mathematical discovery, made some time in the 1590s by John Napier, the 8th Laird of Merchiston in Scotland. Let's say you lend me some money, $\x(\t)$, for one year, $\Dt=1$~year, and I have to pay interest on the loan. We agree a yearly interest rate of $r_{1}=5\%$ per year. 
-
-After one year the amount I have to repay is
-\bea
-\x(\t+\Dt)=\overbrace{\x(\t)}^{\text{Principal}}+ \overbrace{\D \x}^{\text{Interest}}.
-\eea 
-I could convert the interest payment into a rate, $r_1$, so that $r_1 \x(\t)$ is the rate (dollars per time) at which I have to make constant payments to you for one year, so that you end up with the right amount of interest at the end of the year, and
-\be
-\x(\t+\Dt)=\x(\t)r_1 \Dt
-\elabel{deal}
-\ee
-This makes it easy, for instance, to find something to enter into my accounts if I have to say after 6 months how much I owe you at that moment. I would say: only half a year has passed, so I only owe you half the interest, 
-\be
-\x(\t+\Dt/2)=\x(\t)\left(1+r_1 \frac{\Dt}{2}\right). 
-\elabel{deal_2}
-\ee
-But if this is really the amount I owe you after 6 months, surely I should pay interest on this new amount for the following 6 months. We will see that this leads to a problem. Substituting $\x(\t+\Dt/2)$ for $\x(\t)$ on the \RHS of \eref{deal_2} gives
-\bea
-\x(\t+\Dt)&=&\x(t+\Dt/2)\left(1+r_1 \frac{\Dt}{2}\right)\\
-&=&\x(\t)\left(1+r_1\frac{\Dt}{2}\right)^2
-\eea
-Equating to \eref{deal} we find a contradiction
-\bea
-\x(\t) (1+ r_{\Dt} \Dt)&\stackrel{?}{=}&\x(\t)(1+r_{\Dt}/2)^2\\
-\implies 1+ r_{\Dt} \Dt&\stackrel{?}{=}&1+r_{\Dt}\Dt+\left(\frac{r\Dt}{2}\right)^2 \text{{\color{red} \huge \lightning}}.
-\eea
-Strange as it may seem, the solution to this problem is to acknowledge that interest rates depend on the time scale at which they're defined -- the compounding time scale. We can fix the problem by introducing $r_2$ -- the semi-annual interest rate (the subscript 2 indicates that we've split the original interval in 2 equal parts). It is defined by
-insisting that the one-step and two-step computations give the same interest payment $\D\x$, 
-\be
-1+ r_1 \Dt=\left(1+r_2 \frac{\Dt}{2}\right)^2.
-\ee
-There's nothing stopping us from writing down the general expression for any number, $\T$, of intermediate stock-takings
-\bea
-\frac{\x(\t+\Dt)}{\x(\t)}&=&\left(1+r_\T\frac{ \Dt}{\T}\right)^\T\\
-&\text{which implies}&\\
-r_\T&=& \frac{1}{\Dt}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}
-\eea
-A common trick to remove the dependence of some quantity ($r_{\T})$ on another ($\T$)  is to let the control variable diverge. The limit no longer depends on the diverging quantity (we've seen this trick before: the expectation value doesn't depend on the ensemble size, which has diverged).
-\be
-r_\infty= \frac{1}{\Dt} \underbrace{\lim_{\T\to\infty}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}}_{\ln\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)}.
-\ee
-Note the procedure here: we keep the total time interval, $\Dt$, fixed and split it into $\T$ ever more numerous and shorter sub-intervals $\dt$.
-Because it's tedious to write down the long expression involving the limit, we define it as a new function, called the logarithm, $\ln(\cdot)$, as indicated by the underbrace.
-\be
-\ln \ga :=  \lim_{\T\to\infty}\T \left\{\ga^{1/\T}-1\right\}.
-\ee
-The logarithm has a property that makes it uniquely suited for characterizing multiplicative processes: the logarithm of a ratio is the difference of the logarithms of numerator and denominator, 
-\be
-\ln \frac{\ga_2}{\ga_1}=\ln \ga_2 - \ln \ga_1 = \D \ln \ga.
-\ee
-The inverse function of the logarithm is the exponential (by definition), denoted $\exp(\cdot)$, so that $\exp(\ln \ga)=\ga$, and the limiting growth rate $r_\infty$ is called the logarithmic or exponential growth rate, which we also denote by $\gm$ (subscript ''m'' for ``multiplicative'').
-
-Just to be sure we got this across: these are the definitions of the logarithm and the exponential. You may know many properties of logarithms and exponentials -- all of them can be derived from the definitions we have just presented.
-\end{excursion}
-
-The exponential growth rate of average wealth in an ensemble of $\N$ systems, observed over time $\Dt$ is
-\be
-\gm(\ave{\x(\t)}_\N, \Dt)=\frac{\D \ln \ave{\x}_\N}{\Dt},
-\elabel{gest}
-\ee
-where the $\D$ in the numerator corresponds to the change over the $\Dt$ in the denominator. For $\N$ and $\Dt$ finite this is a random variable. The relevant scalars arise as two different limits
-of the same stochastic object. The exponential growth rate of the expectation value 
-(that's also $\frac{1}{\dt} \ln \ave{\gr}$) is
-\be
-\gm(\ave{\x})=\lim_{\N\to\infty}\gm,
-\ee
-and the exponential growth rate followed by every trajectory when
-observed for a long time (that's also $\frac{1}{\dt} \ln \rt$) is 
-\be
-\gt=\lim_{\Dt\to\infty}\gm.
-\elabel{gt}
-\ee
-We can also write \eref{gest} as a sum of the logarithmic differences in  the 
-$\T$ individual rounds of the gamble that make up the time interval 
-$\Dt=\T \dt$
-\be
-\gm(\ave{\x(\t)}_\N, \Dt)=\frac{1}{\T\dt}  \sum_{\gtau=1}^{\T} \D\ln \ave{\x(\t+\gtau\dt)}_\N.
-\ee
-%For a single trajectory, $\N=1$, \eref{gt} becomes
-%\bea
-%\t&=&\lim_{\t\to\infty}\frac{1}{\t} \ln \x(\t)\\
-%&=&\lim_{\T\to\infty}\frac{1}{\T\dt} \sum_\t^\T \D \ln \x(\t).
-%\eea
-This leads us to a technical definition of the time average.
-
-\begin{defn}{Finite-time average}
-The ``finite-time average'' of the quantity $\x(\t)$ is
-\be
-\xbar_{\Dt}=\frac{1}{\Dt}\int_{\t}^{\t+\Dt} \x(\gs)\gd\gs.
-\elabel{t_ave_f}
-\ee
-If $\x$ only changes at $\T=\Dt/\dt$ discrete times 
-$\t+\dt$, $\t+2\dt$, {\it etc.}, then this can be written as 
-\be
-\xbar_{\Dt}=\frac{1}{\T\dt}\sum_{\gtau=1}^{\T}\x(\t+\gtau \dt).
-\elabel{t_ave_f_disc}
-\ee
-\end{defn}
-
-\begin{defn}{Time average}
-The ``time average'' is the long-time limit
-of the finite-time average
-\be
-\xbar=\lim_{\Dt\to\infty}\xbar_{\Dt}.
-\elabel{t_ave}
-\ee
-\end{defn}
-According to this definition, $\gt$ is the time average of 
-the observable $\frac{\d \ln \x}{\dt}$. It can be shown that
-the time-average growth rate of a single trajectory is the same as that
-of a finite-ensemble average of trajectories,
-$\lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}=\lim_{\Dt\to\infty}\frac{\D \ln \ave{\x}_N}{\Dt}$, \cite{PetersKlein2013}. In \secref{finite_populations} we will derive this result as well as growth rates in finite ensembles and finite time.
-
-
-\begin{excursion}{Dimensional analysis}
-We will often and without qualm write the expression $\D \ln \x$. Dimensional
-analysis suggests to think about this expression carefully, at least once. This may
-seem pedantic but the absence of this pedantry has caused sufficient
-confusion in economic theory for us to risk antagonizing you. ``Dimension'' in this context is closely related to the 
-concept of ``unit'' -- for instance, a dollar is a money unit, and the dimension function
-for money tells us how to convert from one currency into another. Similarly, length may 
-have the unit ``meter'', and the dimension function for length tells us how to convert between 
-different systems of units, such as meters and yards. 
-We can only point to the subject here and recommend the book
-by \person{Barenblatt} for a comprehensive treatment \cite{Barenblatt2003}.
-Dimensional analysis is a deeply fascinating and powerful tool that every physicist 
-is drilled to use at all times. \person{Taylor} famously used it to compute the energy
-released by an early nuclear explosion at the Trinity site near Alamogordo, New Mexico, based on 
-some grainy pictures published by Life magazine, at least that's the legend 
-\cite{Taylor1950b,Deakin2011}. Fluid dynamicists in general use it to find meaningful quantities 
-to distinguish different types of flow. In many problems involving random walks dimensional 
-analysis immediately reveals scaling properties, supposed solutions to many problems can
-be seen at a glance to be wrong, and, conversely some complicated-looking 
-problems can be solved as if by magic just by appealing to dimensional analysis.
-
-\person{Barenblatt} shows in his book that the dimension function must be a (scale-free) power-law 
-monomial if there is to be no distinguished system of units. We can all agree that the unit
-of money is physically irrelevant -- I can do exactly the same with the pennies in my 
-bank account as I can do with the pounds those pennies correspond to. Since this is so, 
-for functions of monetary amounts to be physically meaningful we want them to be 
-power-law monomials. An amount of square-dollars, $\$^2$, may be meaningful, but an
-amount of logarithmic or exponential dollars cannot be meaningful. Hence $\ln(\x)$ on its own
-is just some symbol spat on a page by a printer, but it has no physical meaning.
-The reason we're comfortable writing $\D \ln \x$ is the unique property of the logarithmic function
-\be
-\ln \x_1 - \ln \x_2 = \ln\left(\frac{\x_1}{\x_2}\right).
-\ee
-The quantity in brackets on the \RHS is always dimensionless, it's a pure number because
-the dimension functions of two different values of $\x$ always cancel out. So do the units:
-$\$1/\$2=1/2$, which is a pure number without units. We will see that indeed only differences 
-in logarithms of $\x$ will appear in these lecture notes or in any other reasonable lecture notes. 
-Pedantically, we would refuse to write $\D \ln(\x)$ and insist on writing $\ln\left(\frac{\x_1}{\x_2}\right)$.
-Since the first notation is shorter and one can make formal arguments for its validity, we are 
-happy to use it here. 
-
-The issue is related to a result obtained by \person{von Neumann} and 
-\person{Morgenstern} in their 
-famous
-%but quite unhelpful
-book \cite{vonNeumannMorgenstern1944}: 
-only differences in utility functions can have physical meaning. 
-We will have a lot more to say about utility functions (which we call ergodicity mappings) in \cref{Rates}.
-\end{excursion}
-
-\subsection{Ergodic observables}
+\section{Ergodicity}
 \seclabel{Ergodic_observables}
 
 We have encountered two types of averaging -- the ensemble average and the
@@ -894,49 +677,49 @@ of what happens over time, first raised in the development of statistical mechan
 Boltzmann starting in the 1850s. These lecture notes are our attempt to use precisely the insights of these physicists to re-develop economic theory from the foundations up.
 
 \begin{history}{Randomness and ergodicity in physics}
-
-The 1850s were about 200 years after \person{Fermat} and \person{Pascal} introduced expectation 
-values into the study of random systems. Following the success of \person{Newton}'s 
-laws of motion, established around the same time as the expectation value, 
-the notion of ``proper science'' had become synonymous with 
-mechanics. Mechanics had no use for randomness and probability 
-theory, and the success of mechanics was interpreted as a sign that 
-the world was deterministic and that sooner or later we would understand 
-what at the time still seemed random. At that point probability theory would 
-become obsolete. 
-
-When \person{Boltzmann} hit upon the ingenious idea of introducing randomness into 
-physics, to explain the laws of thermodynamics in terms of the underlying 
-dynamics of large numbers of molecules, he was fighting an uphill battle. 
-Neither molecules nor randomness were much liked in the physics 
-community, especially in continental Europe, right up until the publication of 
-\person{Einstein}'s 1905 paper on diffusion \cite{Einstein1905}. \person{Boltzmann} had to be 
-more careful than \person{Fermat} and \person{Pascal}. He had to pre-empt
-predictable objections from his peers, and the question of ergodicity had to be 
-answered -- the usefulness of probability theory relies heavily on expectation 
-values, but as we have seen, they are averages over imagined future states of the 
-universe. \person{Boltzmann}'s critics were aware of this and were not shy to voice their
-concerns. Under what circumstances are expectation values meaningful? 
-\person{Boltzmann} gave two answers. 
-\bi
-\item expectation values are meaningful when 
-the quantity of interest really is an average (or a sum) over many approximately 
-independent systems. An average over a finite ensemble will be close to the 
-expectation value if the ensemble is large enough. 
-\item expectation values 
-are meaningful, even if only a single system exists, if they reflect what happens over time. 
-\ei
-
-\person{Boltzmann} called a system ``ergodic\footnote{The word ``ergodic'' was coined by \person{Boltzmann}. 
-He initially proposed the word ``monodic'', from Greek $\mu o \nu o$ (unique) + $o\delta o \varsigma$ (path) suggesting 
-that a single path when followed for a sufficiently long time will explore all there is to explore and reflect what happens 
-in an ensemble. The term ``ergodic'' refers to the specific system \person{Boltzmann} was considering, namely an energy 
-($\epsilon \rho \gamma o \nu$) shell across which a path is being traced out.}'' if the possible 
-states of the system could be assigned probabilities in such a way that
-the expectation value of any observable with respect to those probabilities would 
-be the same as its time average with probability 1.
-
-Our setup requires us to be more modest, and we will speak of specific ergodic observables (not of ergodic systems) if their ensemble and time averages are the same.
+Suppressed.
+%The 1850s were about 200 years after \person{Fermat} and \person{Pascal} introduced expectation 
+%values into the study of random systems. Following the success of \person{Newton}'s 
+%laws of motion, established around the same time as the expectation value, 
+%the notion of ``proper science'' had become synonymous with 
+%mechanics. Mechanics had no use for randomness and probability 
+%theory, and the success of mechanics was interpreted as a sign that 
+%the world was deterministic and that sooner or later we would understand 
+%what at the time still seemed random. At that point probability theory would 
+%become obsolete. 
+%
+%When \person{Boltzmann} hit upon the ingenious idea of introducing randomness into 
+%physics, to explain the laws of thermodynamics in terms of the underlying 
+%dynamics of large numbers of molecules, he was fighting an uphill battle. 
+%Neither molecules nor randomness were much liked in the physics 
+%community, especially in continental Europe, right up until the publication of 
+%\person{Einstein}'s 1905 paper on diffusion \cite{Einstein1905}. \person{Boltzmann} had to be 
+%more careful than \person{Fermat} and \person{Pascal}. He had to pre-empt
+%predictable objections from his peers, and the question of ergodicity had to be 
+%answered -- the usefulness of probability theory relies heavily on expectation 
+%values, but as we have seen, they are averages over imagined future states of the 
+%universe. \person{Boltzmann}'s critics were aware of this and were not shy to voice their
+%concerns. Under what circumstances are expectation values meaningful? 
+%\person{Boltzmann} gave two answers. 
+%\bi
+%\item expectation values are meaningful when 
+%the quantity of interest really is an average (or a sum) over many approximately 
+%independent systems. An average over a finite ensemble will be close to the 
+%expectation value if the ensemble is large enough. 
+%\item expectation values 
+%are meaningful, even if only a single system exists, if they reflect what happens over time. 
+%\ei
+%
+%\person{Boltzmann} called a system ``ergodic\footnote{The word ``ergodic'' was coined by \person{Boltzmann}. 
+%He initially proposed the word ``monodic'', from Greek $\mu o \nu o$ (unique) + $o\delta o \varsigma$ (path) suggesting 
+%that a single path when followed for a sufficiently long time will explore all there is to explore and reflect what happens 
+%in an ensemble. The term ``ergodic'' refers to the specific system \person{Boltzmann} was considering, namely an energy 
+%($\epsilon \rho \gamma o \nu$) shell across which a path is being traced out.}'' if the possible 
+%states of the system could be assigned probabilities in such a way that
+%the expectation value of any observable with respect to those probabilities would 
+%be the same as its time average with probability 1.
+%
+%Our setup requires us to be more modest, and we will speak of specific ergodic observables (not of ergodic systems) if their ensemble and time averages are the same.
 \end{history}
 
 To convey concisely that we cannot use the expectation value and the 
@@ -1055,83 +838,87 @@ Ergodicity is not the same concept as stationarity. As an illustration of the di
 
 \section{Changes and stability}
 \seclabel{Rates}
-In this section we discuss the role of changes and stability in science in general and then say a few words about the coin toss in particular. 
-If the latter part is hard to understand right now -- don't worry, we'll get back to it in much more detail in \cref{decisions}.
-The ergodic observable $\d \ln \x$, identified in the previous section, is almost a rate.
-Dividing it by the duration of the gamble, we obtain exactly the exponential 
-growth rate of $\x$, namely $\frac{\d \ln \x}{\dt}$. Finding good growth rates 
-will be important, wherefore we now discuss the notion of a rate and 
-the notion of time independence. 
-To do this properly let's think about the basic task of science. This may be described as the 
-search for stable structure. Science attempts to build models of the world 
-whose applicability does not vary over time. This doesn't mean that the world doesn't change, 
-but the way in which the models describe change does not change. ``Children grow up to be adults'' is a 
-description of a change that has been true for a long time. The model identifies
-something stable. This is implied by the fact that we can write 
-equations (or English sentences) in ink on paper, with the equation (or sentence) remaining 
-useful over time. The ink won't change over time, so
-if an article written in 1905 is useful today then it must describe something that hasn't 
-changed in the meantime. These ``somethings'' are often somewhat 
-grandiosely called laws of nature.
+Deleted -- the material now appears in the next chapter. However, we must say enough about rates to consider the growth rates of \BM and \GBM.
+%In this section we discuss the role of changes and stability in science in general and then say a few words about the coin toss in particular. 
+%If the latter part is hard to understand right now -- don't worry, we'll get back to it in much more detail in \cref{decisions}.
+%The ergodic observable $\d \ln \x$, identified in the previous section, is almost a rate.
+%Dividing it by the duration of the gamble, we obtain exactly the exponential 
+%growth rate of $\x$, namely $\frac{\d \ln \x}{\dt}$. Finding good growth rates 
+%will be important, wherefore we now discuss the notion of a rate and 
+%the notion of time independence. 
+%To do this properly let's think about the basic task of science. This may be described as the 
+%search for stable structure. Science attempts to build models of the world 
+%whose applicability does not vary over time. This doesn't mean that the world doesn't change, 
+%but the way in which the models describe change does not change. ``Children grow up to be adults'' is a 
+%description of a change that has been true for a long time. The model identifies
+%something stable. This is implied by the fact that we can write 
+%equations (or English sentences) in ink on paper, with the equation (or sentence) remaining 
+%useful over time. The ink won't change over time, so
+%if an article written in 1905 is useful today then it must describe something that hasn't 
+%changed in the meantime. These ``somethings'' are often somewhat 
+%grandiosely called laws of nature.
+%
+%\person{Newton}'s laws are a good illustration of this. They are part of mechanics, meaning that they
+%are an idealized mathematical model of the behavior of positions, time, and masses (by the way, this definition of 
+%mechanics in terms of base quantities is a neat application of dimensional analysis \cite{Barenblatt2003}). 
+%For instance, \person{Newton}'s second law, $\NF=\Nm \frac{\gd^2 \Nx}{\gd\t^2}$, states that the mass multiplied by 
+%the rate of change of the rate of change of its position equals the force. The law is an unchanging 
+%law about positions, time, and masses, but it does not say that positions don't change, it doesn't even say 
+%that rates of change of positions don't change. It does say that the rate of change of the 
+%rate of change of a position remains unchanged so long as the force and the mass 
+%remain unchanged. \person{Newton}'s deep insight was to transform an unstable thing -- the position of a mass --
+%until it became stable: he fixed the force and considered rates of changes of rates of changes, et 
+%voil\'a!, a useful equation could be written down in ink, remaining useful for 350 years so far.
+%
+%Like \person{Newton}'s laws (a mathematical model of the world), our game is a prescription of changes. 
+%Unlike \person{Newton}'s laws it's stochastic, but it's a prescription of changes nonetheless. 
+%The multiplicative aspect of our game makes it also a powerful mathematical model of the world, as we shall see in subsequent lectures. 
+%
+%We're very much interested in changes of $\x$ -- we want to know 
+%whether we're winning or losing -- but changes in $\x$ are not stable. 
+%Under the rules of the game the rate of change of wealth, $\frac{\d \x(\t)}{\dt}$, is a different 
+%random variable for each $\t$ because it is proportional to $\x(\t)$. But not to worry, 
+%in \person{Newton}'s case changes in the position are not stable either, even in a 
+%constant force field. Nonetheless \person{Newton} found a useful stable property. 
+%Maybe we can do something similar. We're looking for a function $\gv(\x)$ that satisfies two conditions: 
+%it should indicate what happens to $\x$ itself, and its random changes should be instances of a time-independent random variable.
+%
+%The first condition is that $\gv(\x)$ must tell us 
+%whether $\x(\t)$ is growing or shrinking -- this just means that $\gv(\x)$ has to 
+%be monotonic in $\x$. We know that there is something time-independent
+%about $\x$ because we were able to write down in ink how $\x$ changes. So we only need 
+%to find the monotonic function of $\x$ whose additive changes inherit the time-independence 
+%of the ink in \eref{law}. The game is defined by a set of factors of change in $\x(\t)$, \eref{gamble}. 
+%Therefore, the fractional change in $\x$, namely
+%$\gr(\t) = \frac{\x(\t+\dt)}{\x(\t)}$, comes from a time-independent distribution. Which 
+%function responds additively to a multiplicative change in its argument? 
+%The answer is the logarithm, \ie
+%only the logarithm satisfies
+%\be
+%\gv[\x(\t+\dt)]-\gv[\x(\t)]=\gv \left(\frac{\x(\t+\dt)}{\x(\t)}\right)
+%\ee
+%and we conclude that for our game $\gv(\x)=\ln\x$.
+%For multiplicative dynamics, \ie if $\frac{\x(\t+\dt)}{\x(\t)}$ is ergodic, the expectation 
+%value of the rate of change of the logarithm of $\x(\t)$ determines whether the game is long-term profitable 
+%for an individual.
+%
+%More generally, when evaluating a gamble that is represented as a stochastic process, it seems that people's intuitive
+%choices roughly maximise appropriate long-time growth rates.
+%Mathematically speaking, they
+%\begin{enumerate}
+%\item
+%find a monotonically increasing function $\gv[\x(\t)]$ such that $\frac{\d \gv[\x(\t)]}{\dt}$ 
+%is ergodic, over time taking values of instances of a random variable.
+%\item
+%compute the expectation value of $\frac{\d \gv[\x(\t)]}{\dt}$. If this is positive then $\x(\t)$
+%grows in the long run, if it is negative then $\x(\t)$ decays.
+%\end{enumerate}
+%
+%The mathematics of this procedure is discussed in detail in \cref{Rates}, and an
+%experiment testing whether people behave as predicted is described in \secref{Copenhagen}.
 
-\person{Newton}'s laws are a good illustration of this. They are part of mechanics, meaning that they
-are an idealized mathematical model of the behavior of positions, time, and masses (by the way, this definition of 
-mechanics in terms of base quantities is a neat application of dimensional analysis \cite{Barenblatt2003}). 
-For instance, \person{Newton}'s second law, $\NF=\Nm \frac{\gd^2 \Nx}{\gd\t^2}$, states that the mass multiplied by 
-the rate of change of the rate of change of its position equals the force. The law is an unchanging 
-law about positions, time, and masses, but it does not say that positions don't change, it doesn't even say 
-that rates of change of positions don't change. It does say that the rate of change of the 
-rate of change of a position remains unchanged so long as the force and the mass 
-remain unchanged. \person{Newton}'s deep insight was to transform an unstable thing -- the position of a mass --
-until it became stable: he fixed the force and considered rates of changes of rates of changes, et 
-voil\'a!, a useful equation could be written down in ink, remaining useful for 350 years so far.
-
-Like \person{Newton}'s laws (a mathematical model of the world), our game is a prescription of changes. 
-Unlike \person{Newton}'s laws it's stochastic, but it's a prescription of changes nonetheless. 
-The multiplicative aspect of our game makes it also a powerful mathematical model of the world, as we shall see in subsequent lectures. 
-
-We're very much interested in changes of $\x$ -- we want to know 
-whether we're winning or losing -- but changes in $\x$ are not stable. 
-Under the rules of the game the rate of change of wealth, $\frac{\d \x(\t)}{\dt}$, is a different 
-random variable for each $\t$ because it is proportional to $\x(\t)$. But not to worry, 
-in \person{Newton}'s case changes in the position are not stable either, even in a 
-constant force field. Nonetheless \person{Newton} found a useful stable property. 
-Maybe we can do something similar. We're looking for a function $\gv(\x)$ that satisfies two conditions: 
-it should indicate what happens to $\x$ itself, and its random changes should be instances of a time-independent random variable.
-
-The first condition is that $\gv(\x)$ must tell us 
-whether $\x(\t)$ is growing or shrinking -- this just means that $\gv(\x)$ has to 
-be monotonic in $\x$. We know that there is something time-independent
-about $\x$ because we were able to write down in ink how $\x$ changes. So we only need 
-to find the monotonic function of $\x$ whose additive changes inherit the time-independence 
-of the ink in \eref{law}. The game is defined by a set of factors of change in $\x(\t)$, \eref{gamble}. 
-Therefore, the fractional change in $\x$, namely
-$\gr(\t) = \frac{\x(\t+\dt)}{\x(\t)}$, comes from a time-independent distribution. Which 
-function responds additively to a multiplicative change in its argument? 
-The answer is the logarithm, \ie
-only the logarithm satisfies
-\be
-\gv[\x(\t+\dt)]-\gv[\x(\t)]=\gv \left(\frac{\x(\t+\dt)}{\x(\t)}\right)
-\ee
-and we conclude that for our game $\gv(\x)=\ln\x$.
-For multiplicative dynamics, \ie if $\frac{\x(\t+\dt)}{\x(\t)}$ is ergodic, the expectation 
-value of the rate of change of the logarithm of $\x(\t)$ determines whether the game is long-term profitable 
-for an individual.
-
-More generally, when evaluating a gamble that is represented as a stochastic process, it seems that people's intuitive
-choices roughly maximise appropriate long-time growth rates.
-Mathematically speaking, they
-\begin{enumerate}
-\item
-find a monotonically increasing function $\gv[\x(\t)]$ such that $\frac{\d \gv[\x(\t)]}{\dt}$ 
-is ergodic, over time taking values of instances of a random variable.
-\item
-compute the expectation value of $\frac{\d \gv[\x(\t)]}{\dt}$. If this is positive then $\x(\t)$
-grows in the long run, if it is negative then $\x(\t)$ decays.
-\end{enumerate}
-
-The mathematics of this procedure is discussed in detail in \cref{Rates}, and an
-experiment testing whether people behave as predicted is described in \secref{Copenhagen}.
+\section{Normal distribution}
+\seclabel{Normal_distribution}
 
 \section{Brownian motion}
 \seclabel{Brownian_motion}
@@ -1473,7 +1260,7 @@ term of a Taylor-expansion becomes exact,
 \ee 
 in agreement with \eref{time_g} if the drift term $\mu=0$, as assumed by Whitworth.
 
-\subsection{\Ito calculus}
+\section{\Ito calculus}
 \seclabel{Ito}
 We have chosen to work with the discrete process here and have arrived at a result that is more
 commonly shown using \Ito's formula. We will not discuss \Ito calculus in depth 
@@ -1522,52 +1309,52 @@ it is the difference between the many worlds of our dreams and fantasies, and th
 the passage of time imposes on us.
 
 \section*{Summary of \cref{Coins}}
-
-In this chapter we have introduced the following key concepts:
-\bi
-\item[\bf Random variable]
-A random variable $Y$ is a set of pairs of possible values and  corresponding probabilities, $Y=\{(y_1, p_1),(y_2, p_2)...\}$.
-The sets may be discrete or continuous. We stressed that a random variable is an a-temporal concept. It's just a bunch of possible values and their weights (probabilities). In real life we often this of generating instances of random variables as time passes, but this is not part of the formal definition of a random variable.
-
-\item[{\bf Expectation value}]
-The expectation value of a random variable is the weighted sum $\ave{Y}=\int y \mathcal{P}_Y(y) dy$, where $\mathcal{P}_Y$ has atomic point masses in the discrete case, which means we can express the integral as $\ave{Y}=\sum_i y_i p_i$.
-
-The expectation value is also called the ensemble average, which reflects a physical interpretation: imagine (infinitely) many possible worlds, identical safe for the value taken by the the random variable $Y$. Those values are represented in the superverse of many worlds in proportion to their probabilties. Averaging $y$ over the ensemble of universes then gives the expectation value.
-
-\item[\bf Logarithms and exponentials]
-The logarithmic function is defined as $\ln \ga :=  \lim_{\T\to\infty}\T \left\{\ga^{1/\T}-1\right\}$. It was motivated by computing interest on loans. Its property of turning products into sums makes it a key function in many branches of science where quantities that combine multiplicatively are to be represented by a quantity that combines additively. 
-
-The exponential function is the inverse of the logarithm.
-
-\item[\bf Stochastic process]
-A stochastic process $Y_Z(z;t)$ is a family of random numbers, indexed by a parameter, $t$, that we call ``time.'' At each moment in time, a realization of a stochastic process takes a random value. We often think of stochastic processes as being generated through stochastic differential equations, where the initial value of some quantity is iteratively transformed -- for example by adding a random value to it.
-Examples include
-\bi
-\item[{\bf Coin-toss game}]
-Start with initial value \$1 and multiply it in each round with an instance of the random variable $[(0.6,1/2),(1.5,1/2)].$
-
-\item[\bf Brownian motion]
-Brownian motion can be defined as a stochastic process with continuous paths (no jumps) whose distribution is Gaussian $\mathcal{N}(\mu t, \sigma^2 t)$. 
-
-\item[\bf Geometric Brownian motion]
-If the logarithm of a quantity is a Brownian motion, the quantity itself is geometric Brownian motion. Wealth in the coin-toss game is a discrete form of geometric Brownian motion.
-\ei
-
-\item[\bf Time average]
-Any function of time, including any stochastic process can time averaged. For an observable $\ga(\t)$, the finite-time average is $\frac{1}{\T}\int_0^\T \ga(\t) \dt$. This quantity is a random variable. One way to get rid of the randomness is to keep averaging, namely to let $\T$ diverge. The time average (without the qualifier ``finite-time'') is the limit  $\lim_{\T\to\infty} \frac{1}{\T}\int_0^\T \ga(\t) \dt$.
-
-\item[\bf Scalars]
-Scalars are just numbers. We say ``scalar'' when we want to emphasize that we're not talking about higher-dimensional mathematical objects, like vectors or random variables. The neat thing about scalars is their transitivity property: if $a>b$ and $b>c$ then $a>c$. This allows us to rank scalars. As a consequence, anything that can be mapped, or collapsed onto a scalar can be ranked. For this reason, much of decision theory consists of coming up with ways of collapsing models of wealth onto scalars. These can then be ranked, yielding transitive preferences.
-
-\item[\bf Dimensional analysis]
-Dimensional analysis is a branch of mathematics that places constraints on what can be a physical quantity. This is done by insisting that the quantity cannot depend on human conventions. It is often used to derive scaling relations and as a sanity check for supposed mathematical relationships between physical quantities.
-
-\item[\bf \Ito process]
-\Ito processes are stochastic processes that can be written down as particularly simple stochastic differential equations. Their form allows a deep mathematical analysis of their properties.
-
-\item[\bf \Ito's formula]
-We will make use of \Ito's formula, which is a tool to find the increment in a function of an \Ito process.
-
-\item[\bf Ergodic observable]
-An ergodic observable is a stochastic process with the following ergodic property: its time average is identical to its expectation value. If the process includes transients, one has to consider the expectation value far away from any transients.
-\ei
+Suppressed.
+%In this chapter we have introduced the following key concepts:
+%\bi
+%\item[\bf Random variable]
+%A random variable $Y$ is a set of pairs of possible values and  corresponding probabilities, $Y=\{(y_1, p_1),(y_2, p_2)...\}$.
+%The sets may be discrete or continuous. We stressed that a random variable is an a-temporal concept. It's just a bunch of possible values and their weights (probabilities). In real life we often this of generating instances of random variables as time passes, but this is not part of the formal definition of a random variable.
+%
+%\item[{\bf Expectation value}]
+%The expectation value of a random variable is the weighted sum $\ave{Y}=\int y \mathcal{P}_Y(y) dy$, where $\mathcal{P}_Y$ has atomic point masses in the discrete case, which means we can express the integral as $\ave{Y}=\sum_i y_i p_i$.
+%
+%The expectation value is also called the ensemble average, which reflects a physical interpretation: imagine (infinitely) many possible worlds, identical safe for the value taken by the the random variable $Y$. Those values are represented in the superverse of many worlds in proportion to their probabilties. Averaging $y$ over the ensemble of universes then gives the expectation value.
+%
+%\item[\bf Logarithms and exponentials]
+%The logarithmic function is defined as $\ln \ga :=  \lim_{\T\to\infty}\T \left\{\ga^{1/\T}-1\right\}$. It was motivated by computing interest on loans. Its property of turning products into sums makes it a key function in many branches of science where quantities that combine multiplicatively are to be represented by a quantity that combines additively. 
+%
+%The exponential function is the inverse of the logarithm.
+%
+%\item[\bf Stochastic process]
+%A stochastic process $Y_Z(z;t)$ is a family of random numbers, indexed by a parameter, $t$, that we call ``time.'' At each moment in time, a realization of a stochastic process takes a random value. We often think of stochastic processes as being generated through stochastic differential equations, where the initial value of some quantity is iteratively transformed -- for example by adding a random value to it.
+%Examples include
+%\bi
+%\item[{\bf Coin-toss game}]
+%Start with initial value \$1 and multiply it in each round with an instance of the random variable $[(0.6,1/2),(1.5,1/2)].$
+%
+%\item[\bf Brownian motion]
+%Brownian motion can be defined as a stochastic process with continuous paths (no jumps) whose distribution is Gaussian $\mathcal{N}(\mu t, \sigma^2 t)$. 
+%
+%\item[\bf Geometric Brownian motion]
+%If the logarithm of a quantity is a Brownian motion, the quantity itself is geometric Brownian motion. Wealth in the coin-toss game is a discrete form of geometric Brownian motion.
+%\ei
+%
+%\item[\bf Time average]
+%Any function of time, including any stochastic process can time averaged. For an observable $\ga(\t)$, the finite-time average is $\frac{1}{\T}\int_0^\T \ga(\t) \dt$. This quantity is a random variable. One way to get rid of the randomness is to keep averaging, namely to let $\T$ diverge. The time average (without the qualifier ``finite-time'') is the limit  $\lim_{\T\to\infty} \frac{1}{\T}\int_0^\T \ga(\t) \dt$.
+%
+%\item[\bf Scalars]
+%Scalars are just numbers. We say ``scalar'' when we want to emphasize that we're not talking about higher-dimensional mathematical objects, like vectors or random variables. The neat thing about scalars is their transitivity property: if $a>b$ and $b>c$ then $a>c$. This allows us to rank scalars. As a consequence, anything that can be mapped, or collapsed onto a scalar can be ranked. For this reason, much of decision theory consists of coming up with ways of collapsing models of wealth onto scalars. These can then be ranked, yielding transitive preferences.
+%
+%\item[\bf Dimensional analysis]
+%Dimensional analysis is a branch of mathematics that places constraints on what can be a physical quantity. This is done by insisting that the quantity cannot depend on human conventions. It is often used to derive scaling relations and as a sanity check for supposed mathematical relationships between physical quantities.
+%
+%\item[\bf \Ito process]
+%\Ito processes are stochastic processes that can be written down as particularly simple stochastic differential equations. Their form allows a deep mathematical analysis of their properties.
+%
+%\item[\bf \Ito's formula]
+%We will make use of \Ito's formula, which is a tool to find the increment in a function of an \Ito process.
+%
+%\item[\bf Ergodic observable]
+%An ergodic observable is a stochastic process with the following ergodic property: its time average is identical to its expectation value. If the process includes transients, one has to consider the expectation value far away from any transients.
+%\ei
