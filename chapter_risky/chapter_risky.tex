@@ -12,15 +12,50 @@ People optimize the {\it time-average} growth rate of their wealth.
 
 \end{keypts}
 
-\section{Perturbing the process}
-We begin by introducing noise into the wealth dynamic. This has to be done carefully because we want the significance of the noise to stay the same as time passes. That doesn't necessarily mean that the amplitude of the noise -- the absolute size of the typical perturbation -- will stay the same. But we don't want to have to adjust the perturbation by hand, either -- we're looking for a systematic way of perturbing the process that automatically takes into account the way in which $\x(\t)$ changes with time. As a second requirement, we would like the expectation value of the process, $\ave{\x(\t)}$, to be unaffected by our adding the noise, \ie we will require
-\be
-\ave{\x}(\t)=\xd(\t)
-\elabel{exp_unchanged}
-\ee
-This is just a convention, which we don't have to adhere to, but it will make it easier to connect to the economics literature, where a perturbation that satisfies \eref{exp_unchanged} is called ``risk-neutral.''
+\section{Perturbing the process \seclabel{Perturbing}}
+XXX new structure
 
-Without further ado, here's the solution: introduce a constant-amplitude perturbation to something about the process that is otherwise unchanging. Of course -- you've guessed it -- the growth rate fits the bill. In general, such a perturbation will change the expectation value $\ave{\x(\t)}$, and we will correct for that to satisfy \eref{exp_unchanged}.
+perturb by adding noise to growth rate (no change).
+
+point out $\gv(\x)$ does BM (no change)
+
+point out expectation of $\x$ is $\ave{\gv^{(-1)}(\gv)}$
+
+because $\gv$ is being perturbed symmetrically, if $\gv^{(-1)}$ is convex, then $\ave{\x}>\xd$, meaning perturbation increases expectation value, and is not neutral.
+
+In these cases, what happens over time will underperform what happens to expected wealth (non-ergodicity of $\x$).
+
+convexity of $\gv^{(-1)}$ is guaranteed by concavity of $\gv(\x)$ [also need $\gv(\x)$ to be monotonically increasing, which it is by assumption].
+
+concavity of $\gv(\x)$ is called ``risk aversion'' in economics: that's because it corresponds to dynamics where the expectation value of $\x$ is misleading w.r.t what happens over time.
+
+
+-----------------
+
+In other words: show that $\ave{\x}$ is misleading. That's all. No need to compute correction, just make the structural statement.
+
+Alternative: compute the correction. the magnitude of Jensen's inequality must grow as $\x \to$ does that mean we can always define a simple correction term?
+
+Compute expectation value of square-root normal distribution, \ie check special case of Cramer explicitly. square-root u gives chi-squared distribution for x.
+
+XXX
+
+We begin by introducing noise into the wealth dynamic. This has to be done carefully because we want the significance of the noise to stay the same as time passes. That doesn't necessarily mean that the amplitude of the noise -- the absolute size of the typical perturbation -- will stay the same. But we don't want to have to adjust the perturbation by hand, either -- we're looking for a systematic way of perturbing the process that automatically takes into account the way in which $\x(\t)$ changes with time. 
+
+%As a second requirement, we would like the expectation value of the process, $\ave{\x(\t)}$, to be unaffected by the noise, \ie we will require
+%\be
+%\ave{\x}(\t)=\xd(\t)
+%\elabel{exp_unchanged}
+%\ee
+%This is just a convention, which we don't have to adhere to, but it will make it easier to connect to the economics literature, where a perturbation that satisfies \eref{exp_unchanged} is called ``risk-neutral.''
+
+Without further ado, here's the solution: introduce a constant-amplitude perturbation to something about the process that is otherwise unchanging. Of course -- you've guessed it -- the growth rate fits the bill. In general -- namely unless $\x(\t)$ is additive -- such a perturbation will change the expectation value $\ave{\x(\t)}$, that is, in general we will have 
+\be
+\ave{\x}(\t)\neq \xd(\t)
+\elabel{exp_changed}
+\ee
+and we will explore the consequences of this inequality. Incidentally, when we say $\x(\t)$ ``is additive,'' we mean that time is an additive operation. Adding some $\dt$ to time $\t$ is then equivalent to adding some $\d \x$ to $\x$.
+%correct for that to satisfy \eref{exp_unchanged}.
 
 We will follow the familiar structure, and first try out this recipe for additive dynamics,  $\gv(\x)= \x$, then for multiplicative dynamics, $\gv(\x)=\ln \x$, and finally for general dynamics.
 
@@ -29,36 +64,61 @@ We will follow the familiar structure, and first try out this recipe for additiv
 We expect additive dynamics to be a trivial case because the additive growth rate is just the rate of change, and the stationarity transformation is the identity, $\gv(\x)=\x$.
 We start from deterministic additive growth, written in differential form
 \be
-\gad=\frac{\gd\xd}{\gd\t}=\mu
+\gad=\frac{\gd\xd}{\gd\t}=\ggamma
 \ee
-then rearrange and add the perturbation to the ergodic growth rate. This makes sure that the dynamic significance of the perturbation doesn't change over time.
-Specifically, we choose a standard Wiener perturbation. Mindful that this perturbation could affect the growth rate, we also add a correction term $\alpha \gd\t$
+then rearrange and add the perturbation. This makes sure that the dynamic significance of the perturbation doesn't change over time: the constant growth rate becomes the ergodic growth rate. Specifically, we choose a standard Wiener perturbation. 
+%Mindful that this perturbation could affect the growth rate, we also add a correction term $\alpha \gd\t$
+%\bea
+%\gd \x&=&(\gad+ \alpha) \gd\t+\gsigma \gd \gW(\t)\\ 
+%&=&(\gmu + \alpha) \gd\t+\gsigma \gd \gW(\t).
+%\eea
+%We integrate this (setting $\x(0)=0$ for simplicity)
+%\be
+%\x(\t)= (\gmu + \alpha)\t + \gsigma \gW(\t).
+%\ee
+%%and invert to find $\x=\gv^{(-1)}(\gv(\x))$, which is trivial because $\gv=\gv^{(-1)}=x$
+%%\be
+%%\x(\t)= \gmu \t + \gsigma \tilde{W}(t).
+%%\ee
+%Taking expectations, we find
+%\bea
+%\ave{\x(\t)}&=&\ave{(\gmu+\alpha) \t + \gsigma \gW(\t)}\\
+%&=&(\gmu+\alpha) \t
+%\eea
+%Comparing to $\xd$, we conclude that \eref{exp_unchanged}
+%is satisfied (the perturbation is risk-neutral) if $\alpha=0$. We therefore choose the correction drift, $\alpha$, to be zero and arrive at the appropriately perturbed additive dynamic
+%\be
+%\gd \x= \gmu \gd\t +\gsigma \gd \gW(\t).
+%\elabel{BM_dx}
+%\ee
+%To recap: first, the noise in this dynamic has constant dynamic significance because it is a constant-amplitude perturbation applied to 
+%something that is unchanging in time in the deterministic case. Second, the expectation value of this dynamic is identical to 
+%the unperturbed, deterministic, case ($\gsigma=0$).
 \bea
-\gd \x&=&(\gad+ \alpha) \gd\t+\sigma \gd \gW(\t)\\ 
-&=&(\mu + \alpha) \gd\t+\sigma \gd \gW(\t).
+\gd \x&=&\gad \gd\t+\gsigma \gd \gW(\t)\\ 
+&=&\ggamma \gd\t+\gsigma \gd \gW(\t).
+\elabel{BM_dx}
 \eea
 We integrate this (setting $\x(0)=0$ for simplicity)
-\be
-\x(\t)= (\mu + \alpha)\t + \sigma \gW(\t).
-\ee
+\bea
+\x(\t)&=&\int_0^t\gad \gd\gs+\gsigma \gd \gW(\gs)\\ 
+&=& \ggamma \t + \gsigma \gW(\t).
+\elabel{BM_x}
+\eea
 %and invert to find $\x=\gv^{(-1)}(\gv(\x))$, which is trivial because $\gv=\gv^{(-1)}=x$
 %\be
-%\x(\t)= \mu \t + \sigma \tilde{W}(t).
+%\x(\t)= \gmu \t + \gsigma \tilde{W}(t).
 %\ee
-Taking expectations, we find
+Because of additivity, in this special case we expect $\xd(\t)=\ave{\x(\t)}$ -- meaning \eref{exp_changed} is not true here. So let's check by taking expectations
 \bea
-\ave{\x(\t)}&=&\ave{(\mu+\alpha) \t + \sigma \gW(\t)}\\
-&=&(\mu+\alpha) \t
+\ave{\x(\t)}&=&\ave{\ggamma \t + \gsigma \gW(\t)}\\
+&=&\ggamma \t
 \eea
-Comparing to $\xd$, we conclude that \eref{exp_unchanged}
-is satisfied (the perturbation is risk-neutral) if $\alpha=0$. We therefore choose the correction drift, $\alpha$, to be zero and arrive at the appropriately perturbed additive dynamic
-\be
-\gd \x= \mu \gd\t +\sigma \gd \gW(\t).
-\elabel{BM_x}
-\ee
+Comparing to $\xd$, we confirm that the perturbation in this case does not change the expectation value of the process.
+
 To recap: first, the noise in this dynamic has constant dynamic significance because it is a constant-amplitude perturbation applied to 
 something that is unchanging in time in the deterministic case. Second, the expectation value of this dynamic is identical to 
-the unperturbed, deterministic, case ($\sigma=0$).
+the unperturbed, deterministic, case ($\gsigma=0$).
 
 \subsection{Perturbed multiplicative dynamics} 
 \seclabel{Perturbed multiplicative}
@@ -66,42 +126,57 @@ Multiplicative dynamics will be less trivial but shouldn't be too hard.
 The multiplicative growth rate is just rate of change of the logarithm, meaning the stationarity transformation is the logarithm, $\gv(\xd)=\ln \xd$.
 We start from deterministic multiplicative growth, written in differential form
 \be
-\gexp=\frac{\gd\ln \xd}{\gd\t}=\mu
+\gexp=\frac{\gd\ln \xd}{\gd\t}=\ggamma
 \elabel{gexp}
 \ee
-then, as before, rearrange and add the perturbation to the ergodic growth rate. Again this ensures that the dynamic significance of the perturbation doesn't change over time.
-Like in the additive case, we choose a standard Wiener perturbation with a correction term $\alpha \gd\t$ in case the noise affects the expectation value of $\x$
+then, as before, rearrange and add the perturbation to the ergodic growth rate. Again this 
+ensures that the dynamic significance of the perturbation doesn't change over time.
+Like in the additive case, we choose a standard Wiener perturbation.
 \bea
-\gd \ln \x= (\mu + \alpha) \gd\t +\sigma \gd \gW(\t).
-\elabel{GBM_x}
+\gd \ln \x= \ggamma  \gd\t +\gsigma \gd \gW(\t).
+\elabel{GBM_dlnx}
 \eea
-We integrate this (setting $\ln \x(0)=0$ for simplicity)
+Just as we did to arrive at \eref{BM_x}, we have to integrate a Brownian motion. Because we're 
+working in the ergodically transformed variable, this is a recurring theme: whatever the process 
+$\x(\t)$, once it's been put through the appropriate transformation, we will end up with Brownian 
+motion. Integrating \eref{BM_mult} (setting $\ln \x(0)=0$ for simplicity),
+\bea
+\ln \x(\t)&=& \int_0^t \ggamma  \gd\gs +\gsigma \gd \gW(\gs)\\
+&=&\ggamma \t + \gsigma \gW(\t).
+\elabel{GBM_lnx}
+\eea
+Because the stationarity transformation is no longer the identity, we now have to invert the 
+logarithm (apply $\gv^{(-1)}(\cdot)=\exp(\cdot)$) to find the actual process
+\bea
+\x(\t)= \exp\left[\ggamma \t + \gsigma \gW(\t)\right].
+\eea
+Multiplicative dynamics are not additive, meaning there is a mismatch between the additive 
+expectation value and the multiplicative effects of time. The expectation value of an 
+exponentiated Wiener noise is boosted by the fluctuations: the expectation value is linear, 
+but the exponential generates disproportionately large contributions for positive values of 
+$\gW(\t)$. We leave it as an exercise to compute the expectation value, $\ave{x(\t)}$, 
+(hint: $\x(\t)$ is log-normally distributed) and only state the well-known result here
+\bea
+\ave{\x(\t)}&=&\ave{\exp\left[\ggamma \t + \gsigma \gW(\t)\right]}\\
+&=&\exp\left[\left(\ggamma+\frac{\gsigma^2}{2}\right) \t \right]
+\eea
+Comparing to $\xd$, we see that in this case, as in most cases, \eref{exp_changed} applies. 
+If we want a multiplicative process whose expectation value is identical to its zero-noise limit, 
+we have to include a correction. Indeed, when we consider multiplicative dynamics, we will 
+work with this parameterization
 \be
-\ln \x(\t)= (\mu + \alpha)\t + \sigma \gW(\t).
-\ee
-Because the stationarity transformation is no longer the identity, we now have to invert the logarithm (apply $\gv^{(-1)}(\cdot)=\exp(\cdot)$) to find the actual process
-\bea
-\x(\t)= \exp\left[(\mu + \alpha) \t + \sigma \gW(\t)\right].
-\eea
-The expectation value of an exponentiated Wiener noise is boosted by the fluctuations: the expectation value is linear, but the exponential
-generates disproportionately large contributions for positive values of $\gW(\t)$. We leave it as an exercise to compute the expectation value, $\ave{x(\t)}$, (hint: $\x(\t)$ is log-normally distributed) and only state the well-known result here
-\bea
-\ave{\x(\t)}&=&\ave{\exp\left[(\mu + \alpha) \t + \sigma \gW(\t)\right]}\\
-&=&\exp\left[\left(\mu+\alpha+\frac{\sigma^2}{2}\right) \t \right]
-\eea
-Comparing to $\xd$, we conclude that \eref{exp_unchanged}
-is satisfied if $\alpha=-\frac{\sigma^2}{2}$. Whereas in the additive case, adding the correction $\alpha$ turned out to be unnecessary, in the multiplicative case it is required. We arrive at the appropriately perturbed multiplicative dynamic
-\be
-\gd \ln \x= \left(\mu-\frac{\sigma^2}{2} \right)\gd\t +\sigma \gd \gW(\t).
+\gd \ln \x= \left(\gmu-\frac{\gsigma^2}{2} \right)\gd\t +\gsigma \gd \gW(\t).
 \elabel{log_inc_noise}
 \ee
-Again: the noise in this dynamic has constant dynamic significance because it is a constant-amplitude perturbation applied to 
-something that is unchanging in time in the deterministic case. The expectation value of this dynamic is identical to 
-the unperturbed, deterministic, case ($\sigma=0$).
+Again: the noise in this dynamic has constant dynamic significance because it is a 
+constant-amplitude perturbation applied to 
+something that is unchanging in time in the deterministic case. Thanks to the correction 
+term $-\frac{\gsigma^2}{2}$, the expectation value of this dynamic, \eref{log_inc_noise}, 
+is identical to the unperturbed, deterministic, case ($\gsigma=0$).
 
 \Eref{log_inc_noise} is solved for $\x$ by integrating and then exponentiating, 
 \be
-\x(\t)= \exp\left[\left(\mu-\frac{\sigma^2}{2} \right)\t +\sigma \gW(\t)\right].
+\x(\t)= \exp\left[\left(\gmu-\frac{\gsigma^2}{2} \right)\t +\gsigma \gW(\t)\right].
 \elabel{mult_x}
 \ee
 
@@ -109,108 +184,138 @@ the unperturbed, deterministic, case ($\sigma=0$).
 \subsection{Perturbed general dynamics}
 \seclabel{Perturbed_general}
 The simplest, and probably most important, models to describe real-life wealth are additive, $\gv(\x)=\x$,
-and multiplicative, $\gv(\x)=\ln\x$. But it may help to think of those two cases as examples of something more general. 
+and multiplicative, $\gv(\x)=\ln\x$. But it helps to think of those two cases as examples of something more general. 
 In this section, we will re-do what we did for additive and multiplicative dynamics but keep things completely 
-general -- $\x(t)$ may now follow any dynamic you like. To confirm we're really just generalising, 
+general -- $\x(\t)$ may now follow any dynamic you like. To confirm we're really just generalising, 
 you can go through the following steps and verify that \secref{Perturbed additive} and 
 \secref{Perturbed multiplicative} are special cases. 
 
-We find it intuitive to start with a deterministic process and add an appropriate perturbation. However, this
-approach may not produce the smoothest mathematics in the general setting. To avoid over-complicating things, 
-we will write down all steps formally, but we won't work them out fully. In \secref{From_growth} we will return, from a slightly 
-different angle, to the problem of finding the noisy dynamic corresponding to a general deterministic one. This will
-allow us to use \Ito calculus and lead to a deeper analysis.
+We find it intuitive to start with a deterministic process and add an appropriate perturbation. However, because 
+this approach doesn't always produce the smoothest mathematics, we will return to the problem in 
+\secref{From_growth} from a slightly different angle. That will allow us to use \Ito calculus and lead to 
+a deeper analysis, but first things first.
 
 The starting point is now a general deterministic growth rate
 \bea
 \g&=&\frac{\gd\gv(\xd)}{\gd\t}\\
-&=&\mu.
+&=&\ggamma.
 \elabel{growth_gen}
 \eea
-We re-arrange this and add the perturbation and correction terms
+We re-arrange this and add the perturbation
 \be
-\gd \gv= (\mu+\alpha) \gd\t + \sigma \gd\gW.
+\gd \gv= \ggamma \gd\t + \gsigma \gd\gW.
 \elabel{dv_gen}
 \ee
-As before the perturbation is guaranteed to have constant dynamic significance because it is applied to 
+As before, the perturbation is guaranteed to have constant dynamic significance because it is applied to 
 the otherwise unchanging growth rate -- that's how $\gv$ is defined: it's the transformation of $\xd$ that 
-grows linearly in time (so that $\g=\frac{\gd\gv}{\gd\t}$ is constant in the absence of any perturbations).
-We integrate (assuming $\gv(0)=0$ for simplicity),
+grows linearly in time (so that $\g=\frac{\gd\gv}{\gd\t}$ is constant, taking the value $\ggamma$, in 
+the absence of any perturbations). We integrate (assuming $\gv(0)=0$ for simplicity),
 \bea
-\gv[\x(\t)]&=& \int_0^\t (\mu+\alpha) \gd s + \sigma \gd\gW\\
-&=& (\mu+\alpha)\t  + \sigma \gW(\t)\\
+\gv[\x(\t)]&=& \int_0^\t \ggamma \gd s + \gsigma \gd\gW\\
+&=& \ggamma \t  + \gsigma \gW(\t)\\
 \elabel{v_int}
 \eea
-...apply the inverse function $\gv^{(-1)}$...
+...and apply the inverse function $\gv^{(-1)}$...
 \be
-\x(\t)=\gv^{(-1)}[(\mu+\alpha)\t  + \sigma \gW(\t)]
+\x(\t)=\gv^{(-1)}[\ggamma \t  + \gsigma \gW(\t)].
 \elabel{inversion}
 \ee
-...and compute the expectation value...
+\Eref{inversion} can be read as $\x$ being a non-linear function, $\gv^{(-1)}$, of a symmetrically perturbed 
+time, $\ggamma \t + \gsigma \gW(\t)$. If $\gv^{(-1)}$ is convex Jensen's inequality tells us that the 
+expectation value of this perturbed function is greater than the unperturbed case, meaning at any time
 \be
-\ave{\x(\t)}=\ave{\gv^{(-1)}[(\mu+\alpha)\t  + \sigma \gW(\t)]}.
+\ave{\x(\t)} > \xd(\t).
 \elabel{exp_x_gen}
 \ee
-Now impose risk-neutrality by choosing $\alpha$ so that this coincides with the unperturbed dynamic, which is
-\be
-\xd(\t)=\gv^{(-1)}(\mu\t).
-\ee
-The unperturbed dynamic can be obtained by setting $\sigma=0$ in \eref{exp_x_gen} (in which case no correction is needed, $\alpha=0$, and the expectation-value operation can be ignored), or by directly integrating \eref{growth_gen}.
+It can be shown that $\gv^{(-1)}$ is convex whenever $\gv$ itself is concave (to prove this $\gv$ has 
+to be monotonically increasing, which is true by construction in our case).
 
+\begin{keypts}{The expectation value is misleading}
+This means, whenever the ergodicity transformation is concave, the expectation value of $\x$ is 
+misleadingly large: it is larger than $\xd$ (the unperturbed case), and grows faster (at a higher rate) 
+than any individual trajectory of $\x$ will grow in the long run. 
+Put simply: as regards an individual trajectory, 
+the expectation value is pure fiction in this case. Its performance over time is not indicative of
+the performance of real trajectories.
+\end{keypts}
 
+We will see below that a concave ergodicity transformation (called a utility function in economics) is 
+associated with what economists call ``risk aversion.'' I am deemed risk averse if I prefer the risk-free 
+process $\xd(\t)$ to a risky process $\x(\t)$ whose expectation value is $\ave{\x(\t)}=\xd(\t)$. 
+Because the expectation value is misleadingly large, it makes perfect sense to be risk averse: 
+in the long run, the risk-free process -- by Jensen's inequality above -- is guaranteed to outperform 
+the risky one.
 
 \section{The appropriate growth rate is ergodic}
 
-\Eref{gen_rate} defines deterministic dynamics by specifying a growth rate. Knowledge of the growth rate is thus knowledge of the dynamic. In the deterministic case, we defined growth rates by insisting that they don't change over time. 
-In the risky, or noisy, case, of course growth rates do change over time but -- crucially -- the appropriately defined growth rate changes only because of the noise and nothing else -- it fluctuates from one time interval to another, but it does not systematically increase or decrease. Specifically, the way we constructed noisy dynamics, starting from the growth rate, guarantees that the noisy growth rates are ergodic: their expectation values are also their long-time averages. We will now prove this result. We will only prove it for the general case because that's easily done, and it implies the veracity of the statement for any special case. 
+\Eref{gen_rate} defines deterministic dynamics by specifying a growth rate. Knowledge of the growth 
+rate is thus knowledge of the dynamic. In the deterministic case, we defined growth rates by insisting 
+that they not change over time. In the risky, or noisy, case, of course growth rates do change over 
+time but -- crucially -- the appropriately defined growth rate changes only because of the noise and 
+nothing else -- it fluctuates from one time interval to another, but it does not systematically increase 
+or decrease. Specifically, the way we constructed noisy dynamics, starting from the growth rate, 
+guarantees that the noisy growth rates are ergodic: their expectation values are also their long-time 
+averages. We will now prove this result. We will only prove it for the general case because that's 
+easily done, and it implies the veracity of the statement for any special case. 
 \begin{proof}
 To avoid problems with differentiating the non-differentiable Wiener process, we begin with the expectation value of $\g \gd\t$,
 \bea
 \ave{\g \gd\t}&=&\ave{\gd\gv}\\
-&=&\ave{(\mu+\alpha) \gd\t + \sigma \gd\gW}\\
-&=&(\mu+\alpha) \gd\t
+&=&\ave{\ggamma \gd\t + \gsigma \gd\gW}\\
+&=&\gamma \gd\t
 \eea
 Dividing by $\gd\t$, we find the expectation value of $\g$ to be
 \be
-\ave{\g}=\mu+\alpha.
+\ave{\g}=\ggamma.
 \elabel{exp_value_growth_gen}
 \ee
 Next, we compute the time average of $\g$. By the definition of time averages, that's
 \bea
 \gt&=&\lim_{\T\to\infty}\frac{1}{\T}\int_0^\T\g(\t)\gd\t\\
 &=&\lim_{\T\to\infty}\frac{1}{\T}\int_0^\T \gd\gv\\
-&=&\lim_{\T\to\infty}\frac{1}{\T}\int_0^\T \left[(\mu+\alpha) \gd\t + \sigma \gd\gW\right]\\
-&=&\mu+\alpha+\lim_{\T\to\infty}\frac{1}{\T} \sigma \gW(\T)\\
-\elabel{time_average_growth_gen}&=&\mu+\alpha,
+&=&\lim_{\T\to\infty}\frac{1}{\T}\int_0^\T \left[\ggamma \gd\t + \gsigma \gd\gW\right]\\
+&=&\ggamma+\lim_{\T\to\infty}\frac{1}{\T} \gsigma \gW(\T)\\
+\elabel{time_average_growth_gen}&=&\ggamma,
 \eea
 where the last line follows with probability one from the scaling properties of the Wiener process.
 
-Comparing \eref{exp_value_growth_gen} and \eref{time_average_growth_gen}, we conclude that the expectation value and time average of $\g$ are identical for general dynamics, and hence that the growth rate, appropriately defined for a given process, is an ergodic observable.
+Comparing \eref{exp_value_growth_gen} and \eref{time_average_growth_gen}, we conclude that the expectation 
+value and time average of $\g$ are identical for general dynamics, and hence that the growth rate, appropriately 
+defined for a given process, is an ergodic observable.
 \end{proof}
 
-The result shows that the two averages are identical, irrespective of the value of $\alpha$. That reflects the fact that including the correction term $\alpha$ is just  a convention that we didn't have to adopt. We could perturb the process in a non-risk-neutral way, \ie in a way that makes its expectation value different from its zero-noise limit. The growth rate would then still be ergodic.
+The result shows that the two averages are identical, irrespective of whether \eref{exp_changed} applies or not. 
+So, while the expectation value of $\x$ usually does not reflect what actually happens over time in a single 
+system, the expectation value of the growth rate $\g$ is {\it guaranteed} to reflect what happens over time in a single system.
 
-We leave it as an exercise to prove that the appropriate growth rates for additive and multiplicative growth are ergodic.
+%We leave it as an exercise to prove that the appropriate growth rates for additive and multiplicative growth are ergodic.
 
-We cannot overstate the importance of the fact that the appropriate growth rate for a stochastic wealth process is an ergodic observable. Economic theory, historically, is based on expectation values. This is simply because when the foundations of economic theory were laid, expectation values had been invented as tools of analysis, whereas time averages had not. The ergodicity of growth rates allows us to use their expectation values, even in cases where we're actually interested in time averages. This, and its science-historical significance, will become clearer in \secref{Expected_utility}.
+We cannot overstate the importance of this fact: {\it the appropriate growth rate for a stochastic wealth process is an 
+ergodic observable.} Economic theory, historically, is based on expectation values. This is simply because when the 
+foundations of economic theory were laid, expectation values had been invented as tools of analysis, whereas time 
+averages had not. The ergodicity of growth rates allows us to use their expectation values, even in cases where 
+we're actually interested in time averages. This, and its science-historical significance, will be worked out in detail 
+in \secref{Relation_to_earlier}.
 
 \section{Ergodicity economics decision algorithm}
 We're now in a position to specify how humans in our model will make decisions under uncertainty. 
-In \cref{} we worked out precisely how a growth rate must be defined for a given deterministic dynamic. In \secref{} 
-we used our knowlegde of such growth rates to generate perturbed dynamics in a consistent and risk-neutral way. 
+In \cref{Riskless} we worked out precisely how a growth rate must be defined for a given deterministic dynamic. 
+In \secref{Perturbing} we used our knowlegde of such growth rates to generate consistently perturbed dynamics. 
  
-It is possible to write down dynamics that don't allow the definition of a growth rate. It is also possible to perturb a dynamic in an inconsistent way. But
-in these lecture notes we will only consider (deterministic) dynamics with proper growth rates, and we will only consider stochastic dynamics obtained
-as consistently perturbed deterministic dynamics.
+It is possible to write down dynamics that don't allow the definition of a growth rate. It is also possible to perturb 
+a dynamic in an inconsistent way. But in these lecture notes, all deterministic dynamics will have 
+proper growth rates, and all stochastic dynamics are obtained as consistently perturbed deterministic 
+dynamics.
 
-Given these mild constraints on the processes we consider, we can specify the algorithm our model humans will follow when making decisions under risk.
+Given these constraints on the processes we consider, we can specify the algorithm our model humans will 
+follow when making decisions under risk.
 
 \begin{keypts}{Ergodicity economics decision algorithm}
 When deciding which option, $\m^*$, to choose
 \begin{enumerate}
-\item Specify the wealth dynamic, $\d\x(\t)$, or equivalently its ergodicity transformation, $\gv(\x)$, or equivalently the form of the relevant growth rate $\g$;
-\item Determine the time-average growth rates, $\gt^{(\m)}$, either directly, or by invoking the 
-ergodic property and taking ensemble averages;
+\item Specify the wealth dynamic, $\gd\x(\t)$, or equivalently its ergodicity transformation, $\gv(\x)$, or equivalently the form of the relevant growth rate $\g$;
+\item Determine the time-average growth rates, $\gt^{(\m)}$, either directly by averaging over time; or by invoking the 
+ergodic property and averaging over the ensemble;
 \item Choose the option, $\m^*$, with the largest time-average growth rate.
 \end{enumerate}
 \end{keypts}
@@ -437,7 +542,7 @@ ergodic property and taking ensemble averages;
 %
 %===============================================
 
-\section{Relation to earlier economic theories}
+\section{Relation to earlier economic theories \seclabel{Relation_to_earlier}}
 In the previous section we presented the ergodicity economics model of decision-making: maximise the time-average growth rate of wealth.
 That's it; everything in ergodicity economics can be related back to this simple idea. 
 
@@ -445,14 +550,31 @@ In the present section, we will detail precisely how our model is related to mod
 specifically at a time before the ergodicity question had been asked. This section is thus about history: how did we
 model human decision making under risk before we knew we had to find appropriate growth rates?
 
-The story is a fascinating: in the absence of appropriate tools and concepts, early researchers nonetheless
-invented ingenious mathematical representations of human behaviour. With not very much work, it is possible to tweak
-these models, at least in special cases, to coincide with ergodicity economics.
+The story is fascinating: despite the absence of appropriate tools and concepts, early researchers
+invented ingenious mathematical representations of human behaviour. With not very much work, it is 
+possible to tweak these models, at least in special cases, to coincide with ergodicity economics.
 
-The roadmap for this section is as follows. We will first explain what a gamble is -- in essence that's a little piece of a stochastic process, a random wealth change realised over some short time.
-Conversely, putting many gambles in a row can generate a wealth trajectory, just like our perturbed wealth dynamics.
-The really fascinating big is called expected utility theory: as early as 1738 -- long before the ergodicity debate -- Daniel Bernoulli noticed that people's behaviour is often quite well modelled as optmimizing the expectation value of changes in the logarithm of wealth. We already know what that means: it corresponds to people optimising the time-average growth rate under multiplicative dynamics. But Bernoulli didn't have those concepts at his disposal, and simply stated that people have what he called a ``utility function,'' namely a non-linear transformation of wealth whose expected changes they optimise.
-We already know this transformation: it's the ergodicity mapping that allows us to compute time-average growth rates as expectation values. Bernoulli called the function $\gu(\x)$, we called it $\gv(\x)$. Of course the function can be the same, \eg the logarithm. But its the meaning of $\gu$ is very different from the meaning of $\gv$. The former, supposedly is a property of a person -- it's supposed to describe someone's character. The latter, $\gv$, is not a property of a person but a property of a dynamic. It doesn't matter whose wealth is subjected the dynamic whose ergodicity transformation is $\gv$ -- if it's $\gv$, that's what's being optimised under EE.
+The roadmap for this section is as follows. We will first introduce the concept of a {\it gamble} -- in essence that's a 
+little piece of a stochastic process, a random wealth change realised over some short time. Next, we will 
+mention the {\it gamble problem}, namely the problem of choosing between different gambles when we have 
+to. To connect to ergodicity economics, we point out how different ways of repeating a gamble 
+can generate different dynamics, very similar to the types considered in \secref{}.
+Finally, we will present the classic solution to the gamble problem, which assigns a utility $\gu(\x)$ -- non-linear in wealth -- to
+monetary wealth. This will be summarised in the expected-utility-theory decision algorithm.
+
+%Conversely, putting many gambles in a row can generate a wealth trajectory, just like our perturbed wealth dynamics.
+%The really fascinating bit is called expected utility theory: as early as 1738 -- long before the ergodicity debate -- 
+%Daniel Bernoulli noticed that people's behaviour is often quite well modelled as optimizing the expectation value 
+%of changes in the logarithm of wealth. We already know what that means: it corresponds to people optimising 
+%the time-average growth rate under multiplicative dynamics. But Bernoulli didn't have those concepts at his 
+%disposal, and simply stated that people have what he called a ``utility function,'' namely a non-linear transformation 
+%of wealth whose expected changes they optimise. We already know this transformation: it's the ergodicity mapping 
+%that allows us to compute time-average growth rates as expectation values. Bernoulli called the function 
+%$\gu(\x)$, we called it $\gv(\x)$. Of course the function can be the same, \eg the logarithm. But its the meaning 
+%of $\gu$ is very different from the meaning of $\gv$. The former, supposedly, is a property of a person -- it 
+%describes someone's character. The latter, $\gv$, is not a property of a person but a property 
+%of a dynamic. It doesn't matter whose wealth is subjected the dynamic with ergodicity transformation 
+%$\gv$ -- if it's $\gv$, that's what's being optimised under EE.
 
 \subsection{Gamble: random number and duration}
 \seclabel{Gamble:}
@@ -577,7 +699,10 @@ will be attractive, for others it won't, for a variety of reasons.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Repetition: from gamble to wealth process}
 \seclabel{Repeated_gamble}
-We know how to evaluate a gamble once it's part of a wealth process. 
+
+We already know a few touch points between ergodicity economics and 
+the classic gamble setup.
+Ergodicity economics specifies how to evaluate a gamble once it's part of a wealth process. 
 %we must propose a criterion to choose between two
 %gambles. Different criteria will result in different decisions -- by writing down a criterion
 %we build a model world of model humans who behave in ways that may seem sensible
@@ -587,8 +712,9 @@ We know how to evaluate a gamble once it's part of a wealth process.
 We also know how to construct a gamble as the random variable 
 corresponding to a time interval of a stochastic process -- that's just \eref{gamble_from_process}.
 
-We will now do the opposite: take a gamble, and construct from it a stochastic wealth process.
-That means we have to extend the gamble over an arbitrarily long time. A principled way of doing that
+We will now add another connection: take a gamble, and construct from it a stochastic 
+wealth process. That means we have to extend the gamble over an arbitrarily long time. 
+A principled way of doing that (one that keeps extra assumptions to a minimum and clearly visible)
 is to imagine the gamble is being repeated over and over again. 
 
 %The wealth process $\x(\t)$ is related to the gambles our model humans 
@@ -617,18 +743,19 @@ is to imagine the gamble is being repeated over and over again.
 %the idea that individuals live in time and that their decisions have consequences 
 %which unfold over time.
 
-Crucially, {\it the mode of repetition is not specified in the gamble itself.} It is a 
-second component of the model, which must be specified separately. We shall 
+Crucially, {\it the mode of repetition is not specified in the gamble itself.} It is the only
+additional assumption we have to make to arrive at a wealth process and unlock the 
+power of ergodicity economics. We shall 
 focus on two modes: \textit{additive} and \textit{multiplicative} repetition, which
-correspond to additive and multiplicative dynamics. Thus the same gamble can correspond to different dynamics.
+correspond to additive and multiplicative dynamics. Thus {\it the same gamble can 
+correspond to different dynamics.}
 %Other dynamics will be considered later on, in \secref{general_dynamics}.
 
 \subsubsection{Additive repetition}
 \begin{defn}{Additive repetition}
-If a gamble is repeated additively then  
-a newly generated realization of the random payout, $\q$, is added to $\x(\t)$ 
-at each round. We define the change in wealth occurring 
-over a single round as
+If a gamble is repeated additively, then a newly generated realization of the random 
+payout, $\q$, is added to $\x(\t)$ in each round. We define the change in wealth 
+occurring over a single round as
 \be
 \d \x(\t) \equiv \x(\t+\dt)-\x(\t).
 \elabel{DW_def}
@@ -1130,8 +1257,8 @@ $\ax(\x)$ and $\bx(\x)$ without explicit $\t$ dependence, meaning wealth will fo
 \gd\x = \ax(\x) \gd\t + \bx(\x) \gd\gW.
 \ee
 In this phrasing, we can implement additive dynamics by setting $\ax=\gmu$ and $\bx=\gsigma$ as constants 
-(Brownian motion, \eref{BM_x}). We can also choose multiplicative dynamics, with $\ax=\gmu\x$ and $\bx=\gsigma\x$ 
-(geometric Brownian motion, \eref{GBM_x}).
+(Brownian motion, \eref{BM_dx}). We can also choose multiplicative dynamics, with $\ax=\gmu\x$ and $\bx=\gsigma\x$ 
+(geometric Brownian motion, \eref{GBM_dlnx}).
 
 
 We will consider the problem of decision theory as choosing between two repeated gambles.
@@ -1473,7 +1600,7 @@ much of the work currently carried out in statistical mechanics.
 %%refer to place where Ito is introduced
 %we find
 %\be
-%\gd\x=\left[(\mu+\alpha)\frac{\partial\gv^{(-1)}(\gv)}{\partial \gv}+\frac{\sigma^2}{2}\frac{\partial^2\gv^{(-1)}(\gv)}{\partial \gv^2}\right]\gd\t+\frac{\partial\gv^{(-1)}(\gv)}{\partial \gv}\sigma\gd\gW.
+%\gd\x=\left[(\gmu+\alpha)\frac{\partial\gv^{(-1)}(\gv)}{\partial \gv}+\frac{\gsigma^2}{2}\frac{\partial^2\gv^{(-1)}(\gv)}{\partial \gv^2}\right]\gd\t+\frac{\partial\gv^{(-1)}(\gv)}{\partial \gv}\gsigma\gd\gW.
 %\ee
 %
 %\subsection{Technical setup}
