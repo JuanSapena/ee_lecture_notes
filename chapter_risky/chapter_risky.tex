@@ -185,8 +185,8 @@ is identical to the unperturbed, deterministic, case ($\gsigma=0$).
 \seclabel{Perturbed_general}
 The simplest, and probably most important, models to describe real-life wealth are additive, $\gv(\x)=\x$,
 and multiplicative, $\gv(\x)=\ln\x$. But it helps to think of those two cases as examples of something more general. 
-In this section, we will re-do what we did for additive and multiplicative dynamics but keep things completely 
-general -- $\x(\t)$ may now follow any dynamic you like. To confirm we're really just generalising, 
+In this section, we will re-do what we did for additive and multiplicative dynamics but keep things more 
+general -- within reason $\x(\t)$ may now follow any dynamic you like. To confirm we're really just generalising, 
 you can go through the following steps and verify that \secref{Perturbed additive} and 
 \secref{Perturbed multiplicative} are special cases. 
 
@@ -208,8 +208,8 @@ We re-arrange this and add the perturbation
 \ee
 As before, the perturbation is guaranteed to have constant dynamic significance because it is applied to 
 the otherwise unchanging growth rate -- that's how $\gv$ is defined: it's the transformation of $\xd$ that 
-grows linearly in time (so that $\g=\frac{\gd\gv}{\gd\t}$ is constant, taking the value $\ggamma$, in 
-the absence of any perturbations). We integrate (assuming $\gv(0)=0$ for simplicity),
+grows linearly in time (so that $\g=\frac{\gd\gv}{\gd\t}$ is constant, taking the value $\ggamma$ in 
+the absence of perturbations). We integrate (assuming $\gv(0)=0$ for simplicity),
 \bea
 \gv[\x(\t)]&=& \int_0^\t \ggamma \gd s + \gsigma \gd\gW\\
 &=& \ggamma \t  + \gsigma \gW(\t)\\
@@ -221,7 +221,7 @@ the absence of any perturbations). We integrate (assuming $\gv(0)=0$ for simplic
 \elabel{inversion}
 \ee
 \Eref{inversion} can be read as $\x$ being a non-linear function, $\gv^{(-1)}$, of a symmetrically perturbed 
-time, $\ggamma \t + \gsigma \gW(\t)$. If $\gv^{(-1)}$ is convex Jensen's inequality tells us that the 
+time, $\ggamma \t + \gsigma \gW(\t)$. If $\gv^{(-1)}$ is convex, then Jensen's inequality tells us that the 
 expectation value of this perturbed function is greater than the unperturbed case, meaning at any time
 \be
 \ave{\x(\t)} > \xd(\t).
@@ -697,22 +697,24 @@ lottery ticket with publicly specified prizes, probabilities, duration -- for so
 will be attractive, for others it won't, for a variety of reasons.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Repetition: from gamble to wealth process}
+\subsection{Repeated gamble: towards a wealth process}
 \seclabel{Repeated_gamble}
 
-We already know a few touch points between ergodicity economics and 
-the classic gamble setup.
-Ergodicity economics specifies how to evaluate a gamble once it's part of a wealth process. 
+We already know one touch point between ergodicity economics and 
+the classic gamble setup: we know how to construct a gamble as the random variable 
+corresponding to a time interval of a stochastic process -- that's \eref{gamble_from_process}.
+Ergodicity economics specifies how to evaluate a wealth process, and if
+it's justifiable to identify the gamble with the process, then we know how to evaluate 
+the gamble under ergodicity economics. 
 %we must propose a criterion to choose between two
 %gambles. Different criteria will result in different decisions -- by writing down a criterion
 %we build a model world of model humans who behave in ways that may seem sensible
 %to us or crazy -- if the behaviour seems crazy we have probably not chosen a good
 %criterion and we should look back, think about what may be wrong with the criterion, 
 %and try a better one.
-We also know how to construct a gamble as the random variable 
-corresponding to a time interval of a stochastic process -- that's just \eref{gamble_from_process}.
 
-We will now add another connection: take a gamble, and construct from it a stochastic 
+We will now strengthen this connection by showing what it might mean to identify the gamble 
+and the process. To do this we will take a gamble and construct from it a 
 wealth process. That means we have to extend the gamble over an arbitrarily long time. 
 A principled way of doing that (one that keeps extra assumptions to a minimum and clearly visible)
 is to imagine the gamble is being repeated over and over again. 
@@ -785,7 +787,7 @@ Note that $\x(\tn+\T\dt)$ is itself a random variable.
 \end{defn}
 
 
-\begin{example}{Additive repetition}
+\begin{example}{Additive repetition of a \$10 bet}
 We return to our first example of a gamble: a $\$ 10$ bet on 
 a coin toss. Under additive repetition, successive bets will always 
 be $\$ 10$, regardless of how rich or poor you 
@@ -820,7 +822,7 @@ expressed as a random wealth multiplier,
 \ee
 This multiplier is another random variable, and multiplicative repetition 
 means drawing a new instance of it every $\dt$ and multiplying wealth 
-$\x(\t)$ accordingle,
+$\x(\t)$ accordingly.
 % -- it also (trivially) 
 %defines a stochastic process that is a new instance of the 
 %random variable at each point in time, $\gr(\t)$. The gamble 
@@ -865,8 +867,8 @@ The wealth after $\T$ rounds is, therefore,
 \x(\tn+\T\dt) = \$100\,\,(1.1)^\gk\,(0.9)^{\T-\gk},
 \ee
 where $0\leq \gk \leq \T$ is the number of winning tosses. In this example there is 
-no need to invoke a `no bankruptcy' condition, since our individual can lose no 
-more than 10\% of his wealth in each round.
+no need to invoke a `no bankruptcy' condition, since we can lose no 
+more than 10\% of our wealth in each round.
 \end{example}
 
 %The difference between the two modes of repetition might easily be mistaken 
@@ -890,9 +892,9 @@ more than 10\% of his wealth in each round.
 %your wealth grow fastest'' is generally good advice. To be able to 
 %follow this advice we will think again about growth rates.
 We have defined a gamble and clarified how it is related to ergodicity economics. 
-It can be derived from a wealth dynamic, 
-and conversely a wealth dynamic can be constructed from it provided we know 
-how to repeat the gamble. But early decision theory didn't use the concept of 
+It can be derived from a wealth dynamic; conversely a wealth dynamic can be 
+constructed from a gamble provided we know 
+how to repeat the gamble. But early decision theory didn't use the concepts of 
 repetition, time averages, or ergodicity transformations. In the next section we will 
 present how the gamble problem was addressed before the advent of ergodicity 
 economics, and precisely how this earlier treatment is related to ours.
@@ -903,10 +905,11 @@ economics, and precisely how this earlier treatment is related to ours.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Expected wealth and expected utility}
 
-In ergodicity economics, we solve the gamble problem by maximizing the time (or ensemble) average
-of the ergodic growth rate for the process we consider the gamble to be part of. 
+In ergodicity economics, we solve the gamble problem by maximizing the time 
+(or ensemble) average of the ergodic growth rate for the process we consider 
+the gamble to be part of. 
 
-But until recently, this is not how economists treated the gamble problem. It's instructive
+But until recently, this was not how economists treated the gamble problem. It's instructive
 to mention two earlier criteria for gamble evaluation: the expected wealth change, 
 invented around 1654; and the expected utility change, invented around 1738. Despite the 
 conceptual error embedded in these criteria -- confusing expectation values with time 
@@ -935,7 +938,7 @@ days of probability theory in the $17^\text{th}$ century, was this:
 \ave{\d\x}^{(m)}=\ave{\Q{(^m)}};
 \elabel{EUT_criterion}
 \ee
-\item Choose the gamble, $\m$, with the largest $\ave{\d\x}^{(\m)}$.
+\item Choose the gamble, $\m^*$, with the largest $\ave{\d\x}^{(\m)}$.
 \end{enumerate}
 \end{keypts}
 
@@ -946,26 +949,29 @@ say after two throws, and someone wants to take over your
 position, it may be fair to sell your position for the expectation value of your 
 winnings. One reason this criterion makes some sense is conservation: the sum 
 of the expected winnings of all players is precisely the pot, so buying everyone 
-out of his position is equivalent to buying the pot, as it should be.
+out of his position is equivalent to buying the pot, as perhaps it should be.
 
 Connecting this back to ergodicity economics: under what conditions would we evaluate a gamble 
-by computing $\ave{\d\x}$? Strictly: never -- we really need to know the duration of the gamble, $\dt$.
-This duration is rarely mentioned in the early gambling texts, a first hint that considerations of time
-did not dominate the thinking in this space. But it's just a hint, not a major stumbling block: 
-if $\dt$ is the same for all gambles -- whatever the dynamic -- it will cancel out when we compare different gambles.
+by computing $\ave{\d\x}$? 
+%Strictly: never -- we really need to know the duration of the gamble, $\dt$.
+%This duration is rarely mentioned in the early gambling texts, a first hint that considerations of time
+%did not dominate the thinking in this space. But it's just a hint, not a major stumbling block: 
+%if $\dt$ is the same for all gambles -- whatever the dynamic -- it will cancel out when we compare 
+%time-average growth rates of different gambles.
+The answer is: under additive dynamics.
+The ergodicity economics maximand is then $\ave{\gad}=\frac{\ave{\d\x}}{\dt}$. Apart from the 
+$\dt$ in the denominator (which cancels if we assume it's the same for all considered gambles), 
+this is expected-wealth maximisation. We conclude that 
+expected-wealth maximisation is equivalent to ergodicity economics under the assumption 
+of additive wealth dynamics: one of the simplest wealth models we can write down.
 
-The ergodicity economics criterion would be $\ave{\gad}=\frac{\ave{\d\x}}{\dt}$ 
-under additive dynamics. Apart from the $\dt$ in the denominator, this is 
-expected-wealth maximisation. We conclude that expected-wealth maximisation
-is essentially equivalent to the assumption of additive wealth dynamics: one of 
-the simplest wealth models we can write down.
 There is even a good reason why additive dynamics may have been 
 assumed in the early developments. Let's Taylor-expand the time average of the general 
-ergodic growth rate
+ergodic growth rate (which we may write as an ensemble average because of ergodicity)
 \bea
 \ave{\g}&=&\frac{\ave{\d\gv(\x)}}{\dt}\\
-&=&\frac{1}{\dt} \ave{\left[\frac{\gd\gv}{\gd\x}\d\x+\frac{\gd^2\gv}{\gd\x^2}\d\x^2 + \cdots \right]}\\
-&=&\frac{1}{\dt} \left[\frac{\gd\gv}{\gd\x}\ave{\d\x}+\frac{\gd^2\gv}{\gd\x^2}\ave{\d\x^2} + \cdots \right]
+&=&\frac{1}{\dt} \ave{\left[\frac{\gd\gv}{\gd\x}\d\x+\frac{1}{2}\frac{\gd^2\gv}{\gd\x^2}\d\x^2 + \cdots \right]}\\
+&=&\frac{1}{\dt} \left[\frac{\gd\gv}{\gd\x}\ave{\d\x}+\frac{1}{2}\frac{\gd^2\gv}{\gd\x^2}\ave{\d\x^2} + \cdots \right]
 \eea
 The last line follows from the fact that the derivatives of $\gv$ are known functions, evaluated at the
 known wealth $\x$ before the gamble takes place. In other words, they are just constants and can be
@@ -1035,17 +1041,22 @@ This is the axiom of utility theory. It leads to yet another decision algorithm.
 \ave{\d\gu}=\ave{\gu\left(\x+\q^{(\m)}\right)}-\gu(\x);
 \elabel{EUT_criterion}
 \ee
-\item Choose the gamble, $\m$, with the largest $\ave{\d\gu}^{(\m)}$.
+\item Choose the gamble, $\m^*$, with the largest $\ave{\d\gu}^{(\m)}$.
 \end{enumerate}
 \end{keypts}
 
 Let's ask the same question as for the expected-wealth paradigm: under what conditions
 would ergodicity economics maximise the quantity in \eref{EUT_criterion}?
-The utility function $\gu(\x)$ is defined -- somewhat circularly, as \eg von Neumann and Morgenstern pointed out 
-\cite[p.~28]{vonNeumannMorgenstern1944} -- as the object whose expected changes are maximised by a person.
-Under ergodicity economics, it is the expected (rate of) change of the ergodicity transformation, $\gv(\x)$, that is being maximised. 
-We conclude that expected-utility theory is equivalent to ergodicity economics if gambles of equal duration, $\dt$ are considered
+The utility function $\gu(\x)$ is defined -- somewhat circularly, as \eg von Neumann and Morgenstern 
+pointed out \cite[p.~28]{vonNeumannMorgenstern1944} -- as the object whose expected changes 
+are maximised by a person. Under ergodicity economics, what's being maximised is the expected 
+(rate of) change of the ergodicity transformation, $\gv(\x)$. 
+
+\begin{keypts}{Mapping: expected-utility theory $\Leftrightarrow$ ergodicity economics}
+We conclude that expected-utility theory is 
+equivalent to ergodicity economics if gambles of equal duration, $\dt$ are considered
 and {\it if the utility function, $\gu$, coincides with the ergodicity transformation $\gv$.}
+\end{keypts}
 
 But it gets even better. Bernoulli did not just write down a general function $\gu(\x)$ but argued
 that the logarithm is a plausible candidate for this function. People, he claimed, tend to behave
@@ -1243,7 +1254,7 @@ anyone else in the long run. It is in this sense that the decision axiom of ergo
 the axiom ``people prefer more to less'' -- but in a world with time.
 
 We demonstrate the generality of the procedure by considering ergodicity mappings other 
-than linear, $\gv(\x)=\x$, and logarithmic, $\gv(\x)=\\ln \x$.
+than linear, $\gv(\x)=\x$, and logarithmic, $\gv(\x)=\ln \x$.
 
 \subsection{Wealth is an \Ito process}
 With dynamics generalized beyond additive and multiplicative we have to be careful not to 
@@ -1301,32 +1312,42 @@ the randomness vanish from the system.
 
 Conceptually this criterion is tantamount to maximising 
 $\lim_{\Dt\to\infty}\{\D\x\}$ or, equivalently, $\lim_{\Dt\to\infty}\{\D\x/\Dt\}$. 
-However, we learned in \cref{Riskless} that it would be na\"ive to do so: the 
-only meaningful maximands are the appropriate growth rates, and
-neither limit of the na\"ive maximands is guaranteed to exist. As a concrete example of such a failure, 
+However, we learned in \cref{Riskless} that 
+neither limit of these na\"ive maximands is guaranteed to exist 
+(we should maximise the appropriate growth rate instead).
+As a concrete example, 
 consider a choice between two geometric Brownian motions,
 \bea
 \gd\x &=& \x(\gmu \gd\t + \gsigma \gd\gW),\\
 \gd\x^* &=& \x^*(\gmu^* \gd\t + \gsigma^* \gd\gW).
 \eea
-Assuming that both grow over time, meaning $\gmu > \gsigma^2/2$ and $\gmu^* > {\gsigma^*}^2/2$, the quantities $\D\x/\Dt$ and $\D\x^*/\Dt$ both diverge in the limit $\Dt\to\infty$. The growth is exponential, so linear additive changes will diverge over time. A 
-criterion requiring the larger rate of wealth change to be selected fails to yield a decision: comparing $\infty$ to $\infty$ is not meaningful.
+Assuming that both grow over time, meaning $\gmu > \gsigma^2/2$ 
+and $\gmu^* > {\gsigma^*}^2/2$, the quantities $\D\x/\Dt$ and 
+$\D\x^*/\Dt$ both diverge in the limit $\Dt\to\infty$. The growth is 
+exponential, so linear additive changes will diverge over time. A 
+criterion requiring the larger rate of wealth change to be selected 
+fails to yield a decision: comparing $\infty$ to $\infty$ is not meaningful.
 
 
-\subsection{Maximizing the ergodicity transformation outperforms all other behaviours}
+\subsection{Maximising the ergodicity transformation outperforms all other behaviours}
 
-
-But what about that idea of transforming wealth? 
-Since we just want to decide which repeated gamble to pick, we only need to know which wealth will be larger ($\x$ or $\x^*$); we don't care by how much. 
-That means we don't have to consider $\x$ itself, but any monotonically increasing function of $\x$ will also do. 
-We know where this is going, so let's call the monotonically transformed wealth $\gv(\x)$. Why do we keep coming back to monotonic functions? Well, monotonicity means that the events $\x>\x^*$ and $\gv(\x)>\gv(\x^*)$ are identical -- whenever one of the inequalities is satisfied, the other is too. So a monotonically increasing function of $\x$ works as an indicator and can help us out of that infinity-fix we just found ourselves in. We define:
+Since we just want to decide which repeated gamble to pick, we only need 
+to know which wealth will be larger ($\x$ or $\x^*$); we don't care by how much. 
+That means we don't have to consider $\x$ itself, but any monotonically 
+increasing function of $\x$ will also do. We know where this is going, so let's 
+call the monotonically transformed wealth $\gv(\x)$. Why do we keep coming 
+back to monotonic functions? Well, monotonicity means that the events 
+$\x>\x^*$ and $\gv(\x)>\gv(\x^*)$ are identical -- whenever one of the inequalities 
+is satisfied, the other is too. So a monotonically increasing function of $\x$ works 
+as an indicator and can help us out of that infinity-fix we just found ourselves in. 
+We define:
 \bea
 \Dv &\equiv& \gv(\x(\tn+\Dt)) - \gv(\x(\tn));\\
 \Dv^* &\equiv& \gv(\x^*(\tn+\Dt)) - \gv(\x^*(\tn)).
 \elabel{Du}
 \eea
-Since the events $\D\x>\D\x^*$ and $\Dv>\Dv^*$ are the same (and$\Dt>0$) we can express this 
-as $\Dv/\Dt>\Dv^*/\Dt$, whence the decision criterion in 
+Since the events $\D\x>\D\x^*$ and $\Dv>\Dv^*$ are the same (and $\Dt>0$) we 
+can express this as $\Dv/\Dt>\Dv^*/\Dt$, whence the decision criterion in 
 \eref{max_Dx} becomes
 \be
 \forall \eps, \x^*(\t) \quad \exists \Dt \quad \text{s.t.} \quad \prob{\frac{\Dv}{\Dt} > \frac{\Dv^*}{\Dt}} > 1 - \epsilon.
@@ -1334,11 +1355,11 @@ as $\Dv/\Dt>\Dv^*/\Dt$, whence the decision criterion in
 \ee
 
 %Note that this suggests a time-average growth rate, but not yet shown that limit exists 
-Our decision criterion has been recast to focus on the rate of change
+The decision criterion has been recast to focus on the growth rate
 \be
-\gad(\gv) \equiv \frac{\Dv}{\Dt},
+\g = \frac{\Dv}{\Dt},
 \ee
-As before, it is conceptually similar to maximising
+Making $\eps$ small, \ie requiring great certainty, is conceptually similar to maximising
 \be
 \gat \equiv \lim_{\Dt\to\infty}  \left\{ \frac{\Dv(\x)}{\Dt} \right\} =  \lim_{\Dt\to\infty} \{\gad(\gv)\}.
 \elabel{barr}
