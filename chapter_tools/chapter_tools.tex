@@ -93,11 +93,11 @@ z^{-2} & \z\geq1 \\
 \ee
 
 \section{Ensemble average}
-A conceptually different quantity from the expectation value is the \textit{ensemble average}. The idea is that, instead of weighting the average of the possible realisations of $\Z$ by their probabilities, we take an unweighted average of a collection of realisations. For a finite number of realisations, we call this the \textit{finite-ensemble average} and denote it by $\ave{\Z}_\N$. 
+A conceptually different quantity from the expectation value is the \textit{ensemble average}. Instead of weighting the average of the possible realisations of $\Z$ by their probabilities, we take an unweighted average of a collection of realisations. For a finite number of realisations, we call this the \textit{finite-ensemble average} and denote it by $\ave{\Z}_\N$. 
 \begin{defn}{Finite-ensemble average}
 The finite-ensemble average of a random variable, $\Z$, is the average over a finite number, $\N$, of realisations,
 \be
-\ave{\Z}_{\N}=\frac{1}{\N}\sum_{\gi=1}^{\N} \z_{\gi},
+\ave{\Z}_{\N} \equiv \frac{1}{\N}\sum_{\gi=1}^{\N} \z_{\gi},
 \elabel{f_ens}
 \ee 
 where $\z_\gi$ denotes the $\gi^\text{th}$ realisation of $\Z$.
@@ -108,27 +108,27 @@ The finite-ensemble average is itself a random variable: each finite ensemble of
 \begin{defn}{Ensemble average}
 The ensemble average of a random variable, $\Z$, is the $\N\to\infty$ limit of the finite-ensemble average,
 \be
-\ave{\Z} = \lim_{\N\to\infty}\ave{\Z}_{\N} =  \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^\N \z_\gi,
+\ave{\Z} \equiv \lim_{\N\to\infty}\ave{\Z}_{\N} =  \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^\N \z_\gi,
 \elabel{ens}
 \ee
 where $\z_\gi$ denotes the $\gi^\text{th}$ realisation of $\Z$.
 \end{defn}
-The limit is not guaranteed to exist, in which case $\Z$ has no ensemble average, but finite-ensemble averages can always be computed. We will sometimes refer to the imagined infinite collection of realisations as the ``ensemble'' of $\Z$.
+The limit is not guaranteed to exist, in which case $\Z$ has no ensemble average, although  finite-ensemble averages can always be computed. We will sometimes refer to the imagined infinite collection of realisations as the ``ensemble'' of $\Z$.
 
 Note that, unlike the expectation value, the ensemble average of a random variable is not defined in terms of probabilities. It is the quantity to which averages over realisations converge as the number of realisations grows. Recall that we followed this procedure when analysing the coin game. At each round of the gamble, we found finite-ensemble averages of simulated wealth for increasingly large samples, from one to one million, plotted against time in \fref{1_2}.
 
-It is laborious to compute averages of ever-larger finite ensembles, in the hope of discerning their convergence to a limit. Fortunately, we can show, under the frequentist interpretation of probability introduced in \secref{random_variable}, that the ensemble average of a random variable is equal to its expectation value.
+It is laborious to compute averages of ever larger finite ensembles, in the hope of discerning their convergence to a limit. Fortunately, we can show, under the frequentist interpretation of probability introduced in \secref{random_variable}, that the ensemble average of a random variable is equal to its expectation value.
 \begin{proof}
-Denote by  $\gn_\gj$ the number of times the value $\z_\gj$ is observed in $\N$ realisations of $\Z$. The finite-ensemble average can be written as
+Denote by  $\gn_\gj$ the number of times $\z_\gj$ is observed in $\N$ realisations of $\Z$. The finite-ensemble average can be written as
 \be
-\ave{\Z}_\N =\frac{1}{\N}\sum_\gi  \z_\gi = \sum_\gj \frac{\gn_\gj}{\N} \z_\gj,
+\ave{\Z}_\N =\frac{1}{\N}\sum_{\gi=1}^{\N}  \z_\gi = \sum_\gj \frac{\gn_\gj}{\N} \z_\gj,
 \ee
 where the subscript $\gi$ indexes a particular realisation of $\z$ and the subscript $\gj$ indexes a possible value of $\z$. Under the frequentist interpretation, the relative frequency of each possible value, $\gn_\gj/\N$, converges almost surely in the limit $\N\to\infty$ to its probability, $\p_\gj$. Thus, we find
 \be
 \lim_{\N\to\infty}\ave{\Z}_\N = \sum_\gj \p_\gj \z_\gj = \eval{\Z}.
 \ee
 \end{proof}
-This result, commonly known as the \textit{law of large numbers}, is exceedingly useful. It means that we no longer need large numbers of realisations of a random variable to compute its ensemble average. Instead, if we know the probability distribution, we can compute its expectation value straightforwardly as a weighted average or integral. It also means that, from now on, we can use ensemble average and expectation value interchangeably.
+This result, commonly known as the \textit{law of large numbers}, is exceedingly useful. It means that we no longer need many realisations of a random variable to compute its ensemble average. Instead, if we know the probability distribution, we can compute its expectation value straightforwardly as a weighted average or integral. It also means that, from now on, we can use ensemble average and expectation value interchangeably.
 
 \begin{history}{The invention of the expectation value}
 Suppressed.
