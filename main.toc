@@ -1,110 +1,62 @@
-\contentsline {chapter}{\numberline {1}Why this book?}{4}{chapter.1}
-\contentsline {section}{\numberline {1.1}The game}{5}{section.1.1}
-\contentsline {part}{I\hspace {1em}Tools}{7}{part.1}
-\contentsline {chapter}{\numberline {2}Tools}{8}{chapter.2}
-\contentsline {section}{\numberline {2.1}The game}{9}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Averaging over many trials}{10}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Averaging over time}{12}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Expectation value}{14}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Time average}{19}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}Ergodic observables}{26}{subsection.2.1.5}
-\contentsline {section}{\numberline {2.2}Changes and stability}{30}{section.2.2}
-\contentsline {section}{\numberline {2.3}Brownian motion}{32}{section.2.3}
-\contentsline {section}{\numberline {2.4}Geometric Brownian motion}{36}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}It\^{o}\xspace calculus}{39}{subsection.2.4.1}
-\contentsline {part}{II\hspace {1em}Microeconomics}{42}{part.2}
-\contentsline {chapter}{\numberline {3}Decisions in a riskless world}{43}{chapter.3}
-\contentsline {section}{\numberline {3.1}Models and science fiction}{44}{section.3.1}
-\contentsline {section}{\numberline {3.2}The decision axiom}{44}{section.3.2}
-\contentsline {section}{\numberline {3.3}Growth rates}{45}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Additive growth rate}{45}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Exponential growth rate}{46}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}General growth rate}{47}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Decisions in a deterministic world}{49}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Different magnitudes}{49}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Different magnitudes and times: discounting}{50}{subsection.3.4.2}
-\contentsline {subsubsection}{Discounting under additive dynamics}{50}{section*.4}
-\contentsline {subsubsection}{Discounting under multiplicative dynamics}{51}{section*.5}
-\contentsline {chapter}{\numberline {4}Decisions in a risky world}{53}{chapter.4}
-\contentsline {section}{\numberline {4.1}Perturbing the process }{53}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Perturbed additive dynamics}{54}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Perturbed multiplicative dynamics}{55}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Perturbed general dynamics}{56}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}The appropriate growth rate is ergodic}{57}{section.4.2}
-\contentsline {section}{\numberline {4.3}Ergodicity economics decision algorithm}{59}{section.4.3}
-\contentsline {section}{\numberline {4.4}Relation to earlier economic theories }{59}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Gamble: random number and duration}{60}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Repetition: from gamble to wealth process}{62}{subsection.4.4.2}
-\contentsline {subsubsection}{Additive repetition}{62}{section*.6}
-\contentsline {subsubsection}{Multiplicative repetition}{63}{section*.7}
-\contentsline {subsection}{\numberline {4.4.3}Expected wealth and expected utility}{65}{subsection.4.4.3}
-\contentsline {subsubsection}{Expected wealth}{65}{section*.8}
-\contentsline {subsubsection}{Expected utility}{66}{section*.9}
-\contentsline {section}{\numberline {4.5}From growth rate to dynamic and back -- It\^{o}\xspace }{68}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Wealth is an It\^{o}\xspace process}{69}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Maximizing the ergodicity transformation outperforms all other behaviours}{70}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}From ergodicity transformation to wealth process}{72}{subsection.4.5.3}
-\contentsline {subsubsection}{Examples}{74}{section*.10}
-\contentsline {subsection}{\numberline {4.5.4}From wealth process to ergodicity transformation -- time-optimal utility}{75}{subsection.4.5.4}
-\contentsline {subsubsection}{Examples}{76}{section*.11}
-\contentsline {section}{\numberline {4.6}The St Petersburg paradox}{78}{section.4.6}
-\contentsline {chapter}{\numberline {5}Decisions in the real world}{84}{chapter.5}
-\contentsline {section}{\numberline {5.1}The Copenhagen experiment}{84}{section.5.1}
-\contentsline {section}{\numberline {5.2}Insurance}{84}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Solution in the time paradigm}{88}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}The classical solution of the insurance puzzle}{90}{subsection.5.2.2}
-\contentsline {part}{III\hspace {1em}Macroeconomics}{91}{part.3}
-\contentsline {chapter}{\numberline {6}People}{92}{chapter.6}
-\contentsline {section}{\numberline {6.1}Every man for himself}{93}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Log-normal distribution}{93}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Two growth rates}{94}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Measuring inequality}{95}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Wealth condensation}{96}{subsection.6.1.4}
-\contentsline {subsection}{\numberline {6.1.5}Rescaled wealth}{97}{subsection.6.1.5}
-\contentsline {subsection}{\numberline {6.1.6}$u$-normal distributions and Jensen's inequality}{98}{subsection.6.1.6}
-\contentsline {subsection}{\numberline {6.1.7}power-law resemblance}{99}{subsection.6.1.7}
-\contentsline {section}{\numberline {6.2}Finite populations}{100}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Sums of log-normals}{100}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}The random energy model}{104}{subsection.6.2.2}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Short time}}\mathsurround \z@ $\relax }{105}{section*.12}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Long time}}\mathsurround \z@ $\relax }{105}{section*.13}
-\contentsline {chapter}{\numberline {7}Interactions}{108}{chapter.7}
-\contentsline {section}{\numberline {7.1}Cooperation}{109}{section.7.1}
-\contentsline {section}{\numberline {7.2}Reallocation}{113}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Introduction}{113}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}The ergodic hypothesis in economics}{113}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Reallocating geometric Brownian motion}{115}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}Model behaviour}{116}{subsection.7.2.4}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Positive ${\gls {phi}}$}}\mathsurround \z@ $\relax }{116}{section*.14}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Negative ${\gls {phi}}$}}\mathsurround \z@ $\relax }{117}{section*.15}
-\contentsline {subsection}{\numberline {7.2.5}Derivation of the stable distribution}{118}{subsection.7.2.5}
-\contentsline {subsection}{\numberline {7.2.6}Moments and convergence times}{120}{subsection.7.2.6}
-\contentsline {subsection}{\numberline {7.2.7}Fitting United States wealth data}{122}{subsection.7.2.7}
-\contentsline {chapter}{\numberline {8}Markets}{125}{chapter.8}
-\contentsline {section}{\numberline {8.1}Optimal leverage}{126}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}A model market}{126}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Leverage}{127}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Portfolio theory}{127}{subsection.8.1.3}
-\contentsline {subsection}{\numberline {8.1.4}Sharpe ratio}{130}{subsection.8.1.4}
-\contentsline {subsection}{\numberline {8.1.5}Expected return}{130}{subsection.8.1.5}
-\contentsline {subsection}{\numberline {8.1.6}Growth rate maximisation}{131}{subsection.8.1.6}
-\contentsline {section}{\numberline {8.2}Stochastic market efficiency}{133}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}A fundamental measure}{133}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Relaxing the model}{133}{subsection.8.2.2}
-\contentsline {subsection}{\numberline {8.2.3}Efficiency}{134}{subsection.8.2.3}
-\contentsline {subsection}{\numberline {8.2.4}Stability}{135}{subsection.8.2.4}
-\contentsline {subsection}{\numberline {8.2.5}Prediction accuracy}{137}{subsection.8.2.5}
-\contentsline {section}{\numberline {8.3}Applications of stochastic market efficiency}{137}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}A theory of noise -- Sisyphus discovers prices}{138}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}Solution of the equity premium puzzle}{138}{subsection.8.3.2}
-\contentsline {subsection}{\numberline {8.3.3}Central-bank interest rates}{140}{subsection.8.3.3}
-\contentsline {subsection}{\numberline {8.3.4}Fraud detection}{141}{subsection.8.3.4}
-\contentsline {section}{\numberline {8.4}Real markets -- stochastic market efficiency in action}{141}{section.8.4}
-\contentsline {subsection}{\numberline {8.4.1}Backtests of constant-leverage investments}{142}{subsection.8.4.1}
-\contentsline {subsection}{\numberline {8.4.2}Data sets}{144}{subsection.8.4.2}
-\contentsline {subsection}{\numberline {8.4.3}Full time series}{145}{subsection.8.4.3}
-\contentsline {subsection}{\numberline {8.4.4}Shorter time scales}{146}{subsection.8.4.4}
-\contentsline {section}{\numberline {8.5}Discussion}{148}{section.8.5}
-\contentsline {section}{Acronyms}{148}{section*.16}
-\contentsline {section}{List of Symbols}{149}{section*.18}
-\contentsline {section}{References}{152}{section*.19}
+\contentsline {chapter}{\numberline {1}Why this book?}{3}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}The game}{4}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}Averaging over many trials}{5}{subsection.1.1.1}% 
+\contentsline {subsection}{\numberline {1.1.2}Averaging over time}{7}{subsection.1.1.2}% 
+\contentsline {part}{I\hspace {1em}Tools}{10}{part.1}% 
+\contentsline {chapter}{\numberline {2}Tools}{11}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Random variable}{12}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Expectation value}{13}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Ensemble average}{14}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Stochastic processes}{16}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Time averages}{17}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}The game -- revisited}{18}{section.2.6}% 
+\contentsline {section}{\numberline {2.7}Ergodicity}{21}{section.2.7}% 
+\contentsline {section}{\numberline {2.8}Changes and stability}{24}{section.2.8}% 
+\contentsline {section}{\numberline {2.9}Normal distribution}{24}{section.2.9}% 
+\contentsline {section}{\numberline {2.10}Brownian motion}{24}{section.2.10}% 
+\contentsline {section}{\numberline {2.11}Geometric Brownian motion}{28}{section.2.11}% 
+\contentsline {section}{\numberline {2.12}It\^{o}\xspace calculus}{31}{section.2.12}% 
+\contentsline {part}{II\hspace {1em}Microeconomics}{33}{part.2}% 
+\contentsline {chapter}{\numberline {3}Decisions in a riskless world}{34}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Models and science fiction}{35}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}The decision axiom}{35}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Growth rates}{36}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Additive growth rate}{36}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Exponential growth rate}{37}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}General growth rate}{38}{subsection.3.3.3}% 
+\contentsline {section}{\numberline {3.4}Decisions in a deterministic world}{40}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Different magnitudes}{40}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Different magnitudes and times: discounting}{41}{subsection.3.4.2}% 
+\contentsline {subsubsection}{Discounting under additive dynamics}{41}{section*.4}% 
+\contentsline {subsubsection}{Discounting under multiplicative dynamics}{42}{section*.5}% 
+\contentsline {chapter}{\numberline {4}Decisions in a risky world}{44}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Perturbing the process }{44}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Perturbed additive dynamics}{45}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.2}Perturbed multiplicative dynamics}{46}{subsection.4.1.2}% 
+\contentsline {subsection}{\numberline {4.1.3}Perturbed general dynamics}{47}{subsection.4.1.3}% 
+\contentsline {section}{\numberline {4.2}The appropriate growth rate is ergodic}{48}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Ergodicity economics decision algorithm}{50}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Relation to earlier economic theories }{50}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Gamble: random number and duration}{51}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Repetition: from gamble to wealth process}{53}{subsection.4.4.2}% 
+\contentsline {subsubsection}{Additive repetition}{53}{section*.6}% 
+\contentsline {subsubsection}{Multiplicative repetition}{54}{section*.7}% 
+\contentsline {subsection}{\numberline {4.4.3}Expected wealth and expected utility}{56}{subsection.4.4.3}% 
+\contentsline {subsubsection}{Expected wealth}{56}{section*.8}% 
+\contentsline {subsubsection}{Expected utility}{57}{section*.9}% 
+\contentsline {section}{\numberline {4.5}From growth rate to dynamic and back -- It\^{o}\xspace }{59}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Wealth is an It\^{o}\xspace process}{60}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Maximizing the ergodicity transformation outperforms all other behaviours}{61}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}From ergodicity transformation to wealth process}{63}{subsection.4.5.3}% 
+\contentsline {subsubsection}{Examples}{65}{section*.10}% 
+\contentsline {subsection}{\numberline {4.5.4}From wealth process to ergodicity transformation -- time-optimal utility}{66}{subsection.4.5.4}% 
+\contentsline {subsubsection}{Examples}{67}{section*.11}% 
+\contentsline {section}{\numberline {4.6}The St Petersburg paradox}{69}{section.4.6}% 
+\contentsline {chapter}{\numberline {5}Decisions in the real world}{75}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}The Copenhagen experiment}{75}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Insurance}{75}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}Solution in the time paradigm}{79}{subsection.5.2.1}% 
+\contentsline {subsection}{\numberline {5.2.2}The classical solution of the insurance puzzle}{81}{subsection.5.2.2}% 
+\contentsline {section}{Acronyms}{81}{section*.12}% 
+\contentsline {section}{List of Symbols}{81}{section*.14}% 
+\contentsline {section}{References}{83}{section*.15}% 

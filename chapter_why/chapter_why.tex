@@ -1,5 +1,4 @@
 \chapter{Why this book?\clabel{Why}}
-
 %\section{Summary}
 %\seclabel{Summary}
 {\it In this introductory chapter we lay the conceptual foundation for the rest 
@@ -125,11 +124,10 @@ instead of sending the message $0$ (or $1$), send the relevant digit 3 times. Th
 So let's try this in our case and see if we can make sense of the game.
 In \fref{1_2} we average over a finite number, $N$, of
 trajectories. We call a collection of trajectories an ensemble. We shall see that in the limit $N\to\infty$ the ensemble average converges to the expectation value, and indeed the terms ``ensemble average'' and ``expectation value'' are synonyms. To avoid confusion we will be explicit when $N$ is finite: in \fref{1_2} we plot ``finite-ensemble averages.''
-
 \begin{defn}{Finite-ensemble average} The finite-ensemble average of the quantity 
 $z$ at a given time $\t$ is
 \be
-\ave{\z(\t)}_{\N}=\frac{1}{\N}\sum_{\gi}^{\N} \z_{\gi}(\t),
+\ave{\z(\t)}_{\N}=\frac{1}{\N}\sum_{\gi=1}^{\N} \z_{\gi}(\t),
 \elabel{f_ens}
 \ee 
 where $\gi$ indexes a particular realization of $\z(\t)$ and $\N$ is the
