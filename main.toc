@@ -9,9 +9,9 @@
 \contentsline {section}{\numberline {2.3}Ensemble average}{14}{section.2.3}% 
 \contentsline {section}{\numberline {2.4}Stochastic process}{16}{section.2.4}% 
 \contentsline {section}{\numberline {2.5}Time average}{18}{section.2.5}% 
-\contentsline {section}{\numberline {2.6}The game -- revisited}{19}{section.2.6}% 
+\contentsline {section}{\numberline {2.6}The game, revisited}{19}{section.2.6}% 
 \contentsline {section}{\numberline {2.7}Ergodicity}{23}{section.2.7}% 
-\contentsline {section}{\numberline {2.8}Changes and stability}{25}{section.2.8}% 
+\contentsline {section}{\numberline {2.8}Changes and stability}{26}{section.2.8}% 
 \contentsline {section}{\numberline {2.9}Normal distribution}{26}{section.2.9}% 
 \contentsline {section}{\numberline {2.10}Brownian motion}{26}{section.2.10}% 
 \contentsline {section}{\numberline {2.11}Geometric Brownian motion}{30}{section.2.11}% 
