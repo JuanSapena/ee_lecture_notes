@@ -13,32 +13,32 @@ People optimize the {\it time-average} growth rate of their wealth.
 \end{keypts}
 
 \section{Perturbing the process \seclabel{Perturbing}}
-XXX new structure
-
-perturb by adding noise to growth rate (no change).
-
-point out $\gv(\x)$ does BM (no change)
-
-point out expectation of $\x$ is $\ave{\gv^{(-1)}(\gv)}$
-
-because $\gv$ is being perturbed symmetrically, if $\gv^{(-1)}$ is convex, then $\ave{\x}>\xd$, meaning perturbation increases expectation value, and is not neutral.
-
-In these cases, what happens over time will underperform what happens to expected wealth (non-ergodicity of $\x$).
-
-convexity of $\gv^{(-1)}$ is guaranteed by concavity of $\gv(\x)$ [also need $\gv(\x)$ to be monotonically increasing, which it is by assumption].
-
-concavity of $\gv(\x)$ is called ``risk aversion'' in economics: that's because it corresponds to dynamics where the expectation value of $\x$ is misleading w.r.t what happens over time.
-
-
------------------
-
-In other words: show that $\ave{\x}$ is misleading. That's all. No need to compute correction, just make the structural statement.
-
-Alternative: compute the correction. the magnitude of Jensen's inequality must grow as $\x \to$ does that mean we can always define a simple correction term?
-
-Compute expectation value of square-root normal distribution, \ie check special case of Cramer explicitly. square-root u gives chi-squared distribution for x.
-
-XXX
+%XXX new structure
+%
+%perturb by adding noise to growth rate (no change).
+%
+%point out $\gv(\x)$ does BM (no change)
+%
+%point out expectation of $\x$ is $\ave{\gv^{(-1)}(\gv)}$
+%
+%because $\gv$ is being perturbed symmetrically, if $\gv^{(-1)}$ is convex, then $\ave{\x}>\xd$, meaning perturbation increases expectation value, and is not neutral.
+%
+%In these cases, what happens over time will underperform what happens to expected wealth (non-ergodicity of $\x$).
+%
+%convexity of $\gv^{(-1)}$ is guaranteed by concavity of $\gv(\x)$ [also need $\gv(\x)$ to be monotonically increasing, which it is by assumption].
+%
+%concavity of $\gv(\x)$ is called ``risk aversion'' in economics: that's because it corresponds to dynamics where the expectation value of $\x$ is misleading w.r.t what happens over time.
+%
+%
+%-----------------
+%
+%In other words: show that $\ave{\x}$ is misleading. That's all. No need to compute correction, just make the structural statement.
+%
+%Alternative: compute the correction. the magnitude of Jensen's inequality must grow as $\x \to$ does that mean we can always define a simple correction term?
+%
+%Compute expectation value of square-root normal distribution, \ie check special case of Cramer explicitly. square-root u gives chi-squared distribution for x.
+%
+%XXX
 
 We begin by introducing noise into the wealth dynamic. This has to be done carefully because we want the significance of the noise to stay the same as time passes. That doesn't necessarily mean that the amplitude of the noise -- the absolute size of the typical perturbation -- will stay the same. But we don't want to have to adjust the perturbation by hand, either -- we're looking for a systematic way of perturbing the process that automatically takes into account the way in which $\x(\t)$ changes with time. 
 
@@ -89,7 +89,7 @@ then rearrange and add the perturbation. This makes sure that the dynamic signif
 %is satisfied (the perturbation is risk-neutral) if $\alpha=0$. We therefore choose the correction drift, $\alpha$, to be zero and arrive at the appropriately perturbed additive dynamic
 %\be
 %\gd \x= \gmu \gd\t +\gsigma \gd \gW(\t).
-%\elabel{BM_dx}
+%\elabel{BMo_dx}
 %\ee
 %To recap: first, the noise in this dynamic has constant dynamic significance because it is a constant-amplitude perturbation applied to 
 %something that is unchanging in time in the deterministic case. Second, the expectation value of this dynamic is identical to 
@@ -97,7 +97,7 @@ then rearrange and add the perturbation. This makes sure that the dynamic signif
 \bea
 \gd \x&=&\gad \gd\t+\gsigma \gd \gW(\t)\\ 
 &=&\ggamma \gd\t+\gsigma \gd \gW(\t).
-\elabel{BM_dx}
+\elabel{BMo_dx}
 \eea
 We integrate this (setting $\x(0)=0$ for simplicity)
 \bea
@@ -936,7 +936,7 @@ days of probability theory in the $17^\text{th}$ century, was this:
 \item Determine the change of expected wealth induced by each gamble,
 \be
 \ave{\d\x}^{(m)}=\ave{\Q{(^m)}};
-\elabel{EUT_criterion}
+\elabel{EW_criterion}
 \ee
 \item Choose the gamble, $\m^*$, with the largest $\ave{\d\x}^{(\m)}$.
 \end{enumerate}
@@ -1277,7 +1277,7 @@ meaning wealth will follow
 \elabel{dx_Ito}
 \ee
 In this phrasing, we can implement additive dynamics by setting $\ax=\gmu$ and $\bx=\gsigma$ as constants 
-(Brownian motion, \eref{BM_dx}). We can also choose multiplicative dynamics, with $\ax=\gmu\x$ and $\bx=\gsigma\x$ 
+(Brownian motion, \eref{BMo_dx}). We can also choose multiplicative dynamics, with $\ax=\gmu\x$ and $\bx=\gsigma\x$ 
 (geometric Brownian motion, \eref{GBM_dlnx}). So \Ito processes include the most important models
 we've already seen, and many others.
 
@@ -1557,17 +1557,17 @@ We will work with the following wealth dynamic
 \end{equation}
 A typical trajectory of \eref{test_dyn} is shown in \fref{test_dyn}.
 
-\begin{figure}
+\begin{SCfigure}
 \centering
 %\begin{picture}(200,300)(0,0)
 %  \put(0,0){
-\includegraphics[width=\textwidth]{./chapter_riskless/figs/trajectories.pdf}
+\includegraphics[width=.5\textwidth]{./chapter_riskless/figs/trajectories.pdf}
 %}
 %\end{picture}
 \caption{\small Typical trajectory $\x(\t)$ of the wealth
 dynamic \eref{test_dyn}, with parameter values $\av=1/2$ and $\bv=1$,  and the corresponding Brownian motion $\gv(\t)$. Note that the fluctuations in $\x(\t)$ become smaller for larger wealth. }
 \flabel{test_dyn}
-\end{figure}
+\end{SCfigure}
 
 We will check whether an ergodicity 
 mapping exists for it, find that to be the case, then construct the 
@@ -1610,7 +1610,7 @@ plotted in \fref{u_of_x}.
 
 \begin{figure}
 \centering
-\begin{picture}(200,80)(0,0)
+\begin{picture}(200,110)(0,0)
  \put(-80,0){\includegraphics[width=.47\textwidth]{./chapter_riskless/figs/u_of_x.pdf}}
  \put(110,0){\includegraphics[width=.47\textwidth]{./chapter_riskless/figs/x_of_u.pdf}}
 \end{picture}
@@ -1665,280 +1665,3 @@ Menger, with his bounded utility functions, and those who endorsed him inadverte
 argued for all of economics to take place in this non-physical realm outside the real 
 numbers. A formal disaster.
 
-\section{The St. Petersburg paradox}
-\seclabel{SPP}
-For a bit of history and cultural background, we felt it was a good idea to discuss the 
-St. Petersburg paradox, from the perspective of ergodicity economics.
-
-The problem was suggested by Nicolaus 
-Bernoulli
-%\footnote{Daniel's cousin. 
-%The Bernoulli family produced a remarkable 
-%number of famous mathematicians in the $17^\text{th}$ and $18^\text{th}$ centuries, 
-%who helped lay the foundations of applied mathematics and physics.} 
-in 1713 in his 
-correspondence with Montmort~\cite{Montmort1713}. 
-It involves a hypothetical 
-lottery for which the rate of change of expected wealth diverges for any finite ticket 
-price. The expected-wealth paradigm would predict, therefore, that people are 
-prepared to pay any price to enter the lottery. However, when the question is put 
-to them, they rarely want to wager more than a few dollars. This 
-is the paradox. It is the first well-documented example of the inadequacy of the 
-expected-wealth paradigm as a model of human rationality. It was the primary 
-motivating example for Daniel Bernoulli's and Cramer's development of the 
-expected-utility paradigm~\cite{Bernoulli1738}.
-
-In some sense it is a pity that this deliberately provocative and unrealistic lottery has played such 
-an important role in the development of classical decision theory.  As we've seen, it is quite 
-unnecessary to invent 
-a gamble with a divergent change in expected wealth to expose the flaws in the expected-wealth 
-paradigm. The presence of infinities in the problem and its variously proposed solutions has 
-caused much confusion, and permits objections on the grounds of physical impossibility. These 
-objections don't much advance decision theory: they address only the gamble and 
-not the decision paradigm. Nevertheless, the paradox is an indelible part not only of history but 
-also of the current debate~\cite{Peters2011b}, and so we recount it here. We'll start by defining 
-the lottery.
-
-The St. Petersburg lottery requires the player to pay a fee $\F$ and offers a random 
-prize whose realisations are power-law distributed, with exponent $-1$. Neither the duration
-nor the dynamic are specified in the setup. 
-
-Phrased as a gamble, we have the random payout $\Q$ with realisations 
-\be
-\forall \gj \in \mathcal{N}^+, \q_{\gj}=\$2^{\gj-1} -\F
-\elabel{SPQ}
-\ee
-and corresponding probabilities 
-\be
-\p_\gj=\left(\frac{1}{2}\right)^\gj.
-\elabel{SPP}
-\ee
-
-The problem was considered a paradox because it was posed at a time when the 
-expected-wealth paradigm reigned supreme. This means researchers at the time
-computed -- or failed to compute -- the expected wealth change $\ave{\D\x}=\ave{\Q}$ 
-of the lottery. 
-The idea was to compute this as a function of the fee, and find the maximum 
-fee people would be willing to pay, that is find 
-$\F=\F^{\text{max}}$ s.t. $\ave{\Q}=0$.
-
-With the random payout $\Q$ specified by \eref{SPQ} and \eref{SPP}, no such fee exists.
-The expected wealth change diverges positively for any finite fee. The expected-wealth 
-paradigm thus fails, and this precipitated the development of expected-utility theory
-in the 18th century.
-
-We will resolve the paradox here via ergodicity 
-economics. This is done by specifying the wealth dynamic which we believe the wealth
-of any potential player is subjected to. This is a guess: we would look at the circumstances
-of a person and conclude something like ``in the relevant regime his wealth is 
-roughly multiplicative'' or whatever dynamic we guess. 
-We will then compute the ergodic growth rate corresponding to participation in the lottery, 
-and find the value $\F^{\text{max}}$ at which
-this growth rate becomes zero. Since dynamics are generally non-additive, ergodicity economics
-does not run aground -- for many realistic dynamics such a fee exists.
-
-Without further ado, here's the solution. We assume multiplicative wealth dynamics
-whose ergodic growth rate is $\frac{\D \ln \x}{\D \t}$. The dynamic is not specified
-in the problem statement, but neither is a utility function or anything else that would allow
-a solution: the problem as stated is underspecified.
-
-Now compute the time average of this growth rate, which we can do by invoking ergodicity
-and computing its expectation value.
-\be
-\frac{\ave{\D \ln \x}}{\D \t}=\frac{\ave{\ln(\x+\q-\F)}-\ln(\x)}{\D\t}.
-\elabel{SPg}
-\ee
-While there's no simple closed-form solution for $\F^{\text{max}}$, it's not hard to 
-show that this expression converges to something finite for sufficiently large fees. 
-It also shows us that the time-average growth depends on the player's wealth.
-A rich player will be willing to pay a higher fee (though not an arbitrarily 
-large fee) than a poor player.
-
-In \fref{gbar_zero} we plot $\F^{\text{max}}$ (where \eref{SPg} is zero) as a 
-function of the player's wealth. These values were obtained numerically.
-In the inset we assume a fee of \$2 and plot the time-average growth 
-rate \eref{SPg} as a function of the player's wealth. 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{./chapter_riskless/figs/gbar_zero.png}
-\caption{Locus of points in the $(\x,\F)$-plane for which the expected change in 
-logarithmic utility is zero. The inset shows the expected change in utility as a 
-function of $\x$ for $\F=\$2$. Adapted from~\cite{Peters2011b}.\flabel{gbar_zero}}
-\end{figure}
-
-%\begin{figure}
-%\centering
-%\begin{picture}(200,230)(0,0)
-%\put(-75,0){\includegraphics[width=\textwidth]{./chapter_riskless/figs/lottery_add_traj.pdf}}
-%\end{picture}
-%\caption{Wealth trajectories for the additively repeated St Petersburg lottery, 
-%with starting wealth, $\x(0)=\$100$, and ticket price, $\F=\$10$. 
-%Ten trajectories are plotted over 1,000 rounds.\flabel{lottery_add_traj}}
-%\end{figure}
-Treatments based on multiplicative repetition have appeared sporadically in the 
-literature, starting with Whitworth in 
-1870~\cite[App.~IV]{Whitworth1870}.\footnote{Whitworth was dismissive of early 
-utility theory: ``The result at which we have arrived is not to be classed with 
-the arbitrary methods which have been again and again propounded to evade 
-the difficulty of the Petersburg problem\ldots. Formulae have often been proposed, 
-which have possessed the one virtue of presenting a finite result\ldots but they 
-have often had no intelligible basis to rest upon, or\ldots sufficient care has not 
-been taken to draw a distinguishing line between the significance of the result 
-obtained, and the different result arrived at when the mathematical expectation 
-is calculated.'' Sadly he chose to place these revolutionary remarks in an appendix 
-of a college probability textbook.} It is related to the famous Kelly 
-Criterion~\cite{Kelly1956}\footnote{Kelly was similarly unimpressed with the 
-mainstream and noted in his treatment of decision theory, which he developed 
-from the perspective of information theory and which is identical to ergodicity 
-economics with multiplicative dynamics, that the utility function is ``too general 
-to shed any light on the specific problems of communication theory.''}, although 
-Kelly did not explicitly treat the St Petersburg game, and tangentially to \Ito's 
-lemma~\cite{Ito1944}. It appears as an exercise in a well-known text on information 
-theory~\cite[Ex.~6.17]{CoverThomas1991}. Mainstream economics has ignored all 
-this. A full and rigorous resolution of the paradox, including the epistemological 
-significance of the shift from ensemble to time averages, was published recently 
-by one of the present authors~\cite{Peters2011b}.
-
-%
-%Imagine a starting prize 
-%of $\$1$ (originally the prize was in ducats). A fair coin is tossed: 
-%if it lands heads, the player wins the prize and the lottery ends; if it lands 
-%tails, the prize is doubled and the process is repeated. Therefore, the 
-%player wins $\$2$, $\$4$, $\$8$ if the first head lands 
-%on the second, third, fourth toss, and so on. The player must buy a ticket, 
-%at price $\F$, to enter the lottery. The question is: what is 
-%the largest $\F$ the player is willing to pay?
-%
-%The lottery can be translated neatly into our gamble formalism:
-%\be
-%\q_\gj = \$ 2^{\gj-1} - \F, \quad \p_\gj = 2^{-\gj},
-%\elabel{lottery_def}
-%\ee
-%for $\gj\in\{1,2,3,\ldots\}$, \ie the set of positive integers. The vast majority 
-%of observed payouts are small, but occasionally an extremely large payout 
-%(corresponding to a very long unbroken sequence of tails in the classical 
-%description) occurs. This is shown in the example trajectories in 
-%\fref{lottery_add_traj}, where the lottery has been repeated additively.
-%
-%From now on we will forget about the coin tosses, which are simply a 
-%mechanism for selecting one of the possible payouts. They 
-%are nothing but an 18th-century random number generator. Instead we shall work with the 
-%compact definition of the lottery in \eref{lottery_def} and assume it 
-%takes a fixed amount of time, $\dt$, to play.
-%
-%The rate of change of expected wealth is
-%\bea
-%\frac{\ave{\d\x}}{\dt} & = & \frac{1}{\dt} \sum_{\gj=1}^\infty \p_\gj \q_\gj \\
-%&=& \frac{1}{\dt} \left( \$ \sum_{\gj=1}^\infty 2^{-\gj}\,2^{\gj-1} - \sum_{\gj=1}^\infty 2^{-\gj} \F \right) \\
-%&=& \frac{1}{\dt} \left( \$ \sum_{\gj=1}^\infty \frac{1}{2} - \F \right). \elabel{lottery_ex_wealth}
-%\eea
-%This diverges for any finite ticket price. Under the expected-wealth paradigm, 
-%this means that the lottery is favourable at any price.
-
-%
-%This implausible conclusion, which does not accord with human behaviour, 
-%exposes the weakness of judging a gamble by its effect on expected 
-%wealth. Daniel Bernoulli suggested to resolve the paradox by adopting 
-%the expected-utility paradigm. His choice of utility function was the 
-%logarithm, $\gu(\x)=\ln \x$, which, as we now know, produces a decision 
-%rule equivalent to growth-rate optimisation under multiplicative repetition. 
-%This correspondence was not appreciated by Bernoulli: indeed 
-%$18^\text{th}$-century mathematics did not possess the concepts and 
-%language required to distinguish between averages over time and across 
-%systems, even though it had the basic arithmetic tools. 
-%%In any case, the 
-%%correspondence relies on the choice of a particular utility function, and vanishes the moment something other than the logarithm is chosen. We also have
-%%to interpret expected utility theory a little differently from how it is usually presented -- for instance we have to assume that expected changes in utility really mean expected rates of changes, with a specific gamble duration, \ie we have to introduce the concept of time into utility theory quite differently from that's usually done (which we won't discuss here).
-%
-%Unfortunately, Bernoulli made a mathematical error in the implementation 
-%of his own paradigm -- accidentally he proposed two mutually inconsistent 
-%versions of utility theory in the paper that established the paradigm. Initially, 
-%the error had little impact, and it was corrected by Laplace in 
-%1814~\cite{Laplace1814}. But Laplace didn't openly say he'd corrected an 
-%error, he just worked with what he thought Bernoulli had meant. This politeness 
-%had awful consequences. In 1934 Menger~\cite{Menger1934}, keen to get the 
-%story right, went back to the original text by Bernoulli. He didn't notice the 
-%error but rather got confused by it which led him to introduce a further error. 
-%Based on this car crash of scientific communication, Menger derived the 
-%infamous (wrong) claim we encountered in the history segment in \secref{dyn_from_u}: utility functions 
-%must be bounded, with disastrous consequences for the budding neoclassical formalism. We 
-%will leave this most chequered part of the paradox's history alone -- details can be found 
-%in~\cite{PetersGell-Mann2016,Peters2019}. Instead we will focus on what's usually 
-%presumed Bernoulli meant to write.
-%
-%\begin{example}{Resolution by logarithmic utility}
-%Instead of \eref{lottery_ex_wealth}, we calculate the rate of change of expected logarithmic utility,
-%\bea
-%\frac{\ave{\d\ln \x}}{\dt} & = & \frac{1}{\dt} \sum_{\gj=1}^\infty \p_\gj \left[\ln(\x+\q_\gj)-\ln \x\right] \\
-%&=& \frac{1}{\dt} \sum_{\gj=1}^\infty 2^{-\gj} \ln\left(\frac{\x+\$2^{\gj-1}-\F}{\x}\right), \elabel{lottery_ex_util}
-%\eea
-%where $\x$ is the ticket buyer's wealth.
-%
-%This is finite for all finite ticket prices less than the buyer's wealth plus the smallest 
-%prize: $\F<\x+\$1$. This can be shown by applying the ratio 
-%test.\footnotemark\ It may be positive or negative, depending on the values 
-%of $\F$ and $\x$. \fref{gbar_zero} shows the locus of points in the $(\x,\F)$-plane 
-%for which the sum is zero.
-%\end{example}
-%\footnotetext{The ratio of the $(\gj+1)^\text{th}$ term to the $\gj^\text{th}$ term 
-%in the sum tends to $1/2$ as $\gj\to\infty$.}
-%
-%The utility paradigm is a model that resolves the paradox, in the sense that creates 
-%a world where players may decline to buy a ticket. Bernoulli argued for this resolution 
-%framework in plausible terms: the usefulness of a monetary gain depends on how 
-%much money you already have. He also argued specifically for the logarithm in 
-%plausible terms: the gain in usefulness should be proportional to the fractional gain 
-%it represents, $\d \gu = \d\x/\x$. Yet, the framework has left many unsatisfied: why 
-%does usefulness have this functional form? We provide this deeper reason by 
-%connecting the problem to dynamics and time, unlike Bernoulli. Had Bernoulli made 
-%the connection, he might have been less willing to accept Cramer's square-root utility 
-%function as an alternative, which, as we've seen, corresponds to a rather less intuitive dynamic.
-%
-%%However, while plausible, the framework relies on a utility function, which must be postulated. It can neither be derived from fundamental considerations nor verified empirically.
-%
-%Turning to our decision algorithm, we will assume that the lottery is assessed by
-%the growth rate it would impart on the player were it repeated 
-%multiplicatively. This means, in effect, that the prizes and ticket price are treated 
-%as fractions of the player's wealth, such that the effect of each lottery is to 
-%multiply current wealth by a random factor,
-%\be
-%\gr_\gj = \frac{\x+\$2^{\gj-1}-\F}{\x}, \quad \p_\gj= 2^{-\gj}.
-%\ee
-%This follows precisely our earlier treatment of a gamble with multiplicative dynamics, 
-%and we can apply our results directly. The time-average (exponential) growth rate is
-%\be
-%\gt_\text{m} = \frac{1}{\dt} \lim_{\T\to\infty} \left\{ \frac{1}{\T}  \sum_{\gtau=1}^\T \ln \gr(\gtau) \right\} = \frac{1}{\dt}  \sum_{\gj=1}^\infty 2^{-\gj} \ln \gr_\gj, \elabel{lottery_gbar}
-%\ee
-%which is identical to the expression for the rate of change of expected log-utility, 
-%\eref{lottery_ex_util}. This is, as we've discussed, because $\gv(\x)=\ln(\x)$ 
-%is the appropriate ergodicity transformation for multiplicative dynamics. The result is the same, but 
-%the interpretation is different: we have assumed less, only that our player is 
-%interested in the growth rate of his wealth and that he gauges this by imagining 
-%the outcome of an indefinite sequence of repeated lotteries.
-%
-%Thus the locus in \fref{gbar_zero} also marks the decision threshold \textit{versus} 
-%the null gamble under our decision axiom. The player can sensibly decline the 
-%gamble, even though it results in a divergent change in expected wealth. This 
-%is illustrated by comparing \fref{lottery_mult_traj}, which shows trajectories of 
-%multiplicatively repeated lotteries, with the additively repeated lotteries already 
-%seen in \fref{lottery_add_traj}.
-%\begin{figure}
-%\centering
-%\includegraphics[width=\textwidth]{./chapter_riskless/figs/lottery_mult_traj.pdf}
-%\caption{Wealth trajectories for the multiplicatively repeated St Petersburg lottery, 
-%with starting wealth, $\x(0)=\$100$, and ticket price, $\F=\$10$. Ten 
-%trajectories are plotted over 1,000 rounds. The realisations of the individual 
-%lotteries are the same as in \fref{lottery_add_traj} but the mode of repetition is 
-%different.\flabel{lottery_mult_traj}}
-%\end{figure}
-%The trajectories are based on the same sequences of lottery outcomes, only 
-%the mode of repetition is different. The simulation shows us visually what we 
-%have already gleaned by analysis: what appears favourable in the 
-%expected-wealth paradigm (corresponding to additive repetition) results in a 
-%disastrous decay of the player's wealth over time under a realistic dynamic.
-%
-%As $\F\to \x+\$1$ from above in \eref{lottery_gbar}, $\gt_\text{m}$ diverges 
-%negatively, since the first term in the sum is the logarithm of a quantity approaching 
-%zero. This corresponds to a lottery which can make the player bankrupt. The effect 
-%is also shown in the inset of \fref{gbar_zero}.
-%
