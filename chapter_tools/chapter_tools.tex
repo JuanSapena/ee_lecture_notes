@@ -42,7 +42,7 @@ Forget, for the moment, what probabilities might mean in the context of an exper
 The latter is a normalisation condition which fixes the scale of the probabilities.
 
 \boldhead{Discrete random variable}
-When the set of outcomes is discrete, say $\{\z_1,\dots,\z_M\}$, we assign a probability, $p_j$, to each outcome, $z_j$, such that
+When the set of outcomes is discrete, say $\{\z_1,\dots,\z_M\}$, we assign a probability, $\p_\gj$, to each outcome, $\z_\gj$, such that
 \be
 \prob{\Z=\z} = \begin{cases}
 \p_\gj & \text{if } \z=\z_\gj\\
@@ -66,7 +66,7 @@ The \PDFa is a non-negative function, $\PDF_{\Z}(\z) \geq 0$, normalised so that
 Note the difference between subscript and argument: $\PDF_{\Z}(\z)$ is the probability density of the random variable $\Z$ at value $\z$. You might find it helpful to think of $\PDF_{\Z}(\z)\delta\z$ as the approximate probability of $\Z$ being in the small interval $(\z,\z+\delta\z)$ close to $\z$. 
 
 \boldhead{Interpretation}
-So far we have said nothing of the meaning of probabilities: they are simply numbers assigned to outcomes of random variables. One way to interpret probabilities is to imagine many separate experiments, of whose outcomes are identically ignorant. For example, we can imagine tossing the same coin many different times, assuming that each coin toss is equally likely to result in heads. Suppose we perform $N$ experiments and record the number of times, $n$, that a particular outcome occurs. Under the so-called `frequentist' interpretation, the appropriate probability to assign to this outcome is its relative frequency, $n/N$, in the limit $N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were unbiased; if biased, it would be some other number between 0 and 1.
+So far we have said nothing of the meaning of probabilities: they are simply numbers assigned to outcomes of random variables. One way to interpret probabilities is to imagine many separate experiments, of whose outcomes are identically ignorant. For example, we can imagine tossing the same coin many different times, assuming that each coin toss is equally likely to result in heads. Suppose we perform $\N$ experiments and record the number of times, $n$, that a particular outcome occurs. Under the so-called `frequentist' interpretation, the appropriate probability to assign to this outcome is its relative frequency, $n/\N$, in the limit $\N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were unbiased; if biased, it would be some other number between 0 and 1.
 
 Note also that time does not appear in the random variable setup. Of course, there is nothing stopping us from using a probability distribution which depends on time or, indeed, any other variable, like the day of the week or the country we are in. Such parametrisations of the random variable do not change fundamentally its mathematical structure: a set of outcomes and associated probabilities. When we consider probability distributions of random variables that do depend on time, such as wealth, $\x(\t)$, in the coin tossing game, we will make the time dependence explicit. By default we assume random variables are time-independent
 
@@ -87,7 +87,7 @@ If $\Z$ is a continuous random variable, its expectation value is the integral o
 The sum or the integral may not exist, in which case the random variable does not have an expectation value. Examples of this are the payout of the St Petersburg lottery in \secref{SPP} and the power-law distributed random variable with \PDFa:
 \be
 \PDF_{\Z}(\z) = \begin{cases}
-z^{-2} & \z\geq1 \\
+\z^{-2} & \z\geq1 \\
 0 & \z<1.
 \end{cases}
 \ee
@@ -102,7 +102,7 @@ The finite-ensemble average of a random variable, $\Z$, is the average over a fi
 \ee 
 where $\z_\gi$ denotes the $\gi^\text{th}$ realisation of $\Z$.
 \end{defn}
-You may know this as the sample average or sample mean.
+You may know this as the sample average or sample mean. Note that it is an additive average: $\ave{\Z}_{\N}$ is, in effect, the value which each of the $\N$ realisations of $\Z$ can be replaced by if we want their \textit{sum} to be the same.
 
 The finite-ensemble average is itself a random variable: each finite ensemble of size $\N$ can contain different realisations of $\Z$ which sum to a different total. As $\N\to\infty$, this random average may converge with probability one to a unique constant. If it does, we call this limiting value the ensemble average and denote it by $\ave{\Z}$.
 \begin{defn}{Ensemble average}
@@ -117,7 +117,7 @@ The limit is not guaranteed to exist, in which case $\Z$ has no ensemble average
 
 Note that, unlike the expectation value, the ensemble average of a random variable is not defined in terms of probabilities. It is the quantity to which averages over realisations converge as the number of realisations grows. Recall that we followed this procedure when analysing the coin game. At each round of the gamble, we found finite-ensemble averages of simulated wealth for increasingly large samples, from one to one million, plotted against time in \fref{1_2}.
 
-It is laborious to compute averages of ever larger finite ensembles, in the hope of discerning their convergence to a limit. Fortunately, we can show, under the frequentist interpretation of probability introduced in \secref{random_variable}, that the ensemble average of a random variable is equal to its expectation value.
+It is laborious to compute averages of ever larger finite ensembles, in the hope of discerning their convergence to a limit. Fortunately, we can show, under the frequentist interpretation of probability introduced in \secref{random_variable}, that the ensemble average of a random variable is equal to its expectation value. We do this here for the discrete case, noting that a similar proof can be offered for the continuous case.
 \begin{proof}
 Denote by  $\gn_\gj$ the number of times $\z_\gj$ is observed in $\N$ realisations of $\Z$. The finite-ensemble average can be written as
 \be
@@ -175,240 +175,121 @@ Suppressed.
 %Instead, each player expected to receive either nothing or $\q$. 
 \end{history}
 
-\section{Stochastic processes}
-Once again, we recommend van Kampen \cite[p.~52]{vanKampen1992} for a simple definition -- this time of stochastic processes. 
-Imagine we've defined a random variable, $\Z$. Any function $\Y(\Z)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, a simple scalar parameter, a number, which is interpreted as time, so we write
+\section{Stochastic process}
+% Start by illustrating with the coin toss game
+In the coin game, the wealth multipliers, $\gr(\t)$, at each time, $\t$, are realisations of a random variable with outcomes $\{0.6,1.5\}$ and probabilities $\{0.5,0.5\}$. Starting from $x(0)=\$1$, successive applications of the wealth updating rule,
 \be
-\Y_{\Z}(\t)=\gf(\Z,\t).
-\elabel{st_pr}
+\x(\t)=\gr(\t)\x(\t-\d\t),
 \ee
-This may not be how you think of a stochastic process, so let's illustrate this with a picture.
+generate a function of time, $\x(\t)$, which describes one possible evolution of wealth in the game. If we start again, generating fresh realisations of the wealth multiplier at each time step, we get a second function of time, almost certain to be different from the first. If run the game $\N$ times, we get a set of wealth evolution functions, $\{\x_1(\t),\dots,\x_{\N}(\t)\}$.
 
-%\begin{figure}[h!]
+%SP as generalisation of RV
+This situation reminds us of a random variable, except that each realisation is now a function of a parameter -- in effect, a set of real numbers -- rather than a single real number. We call such functions \textit{trajectories}. Many natural phenomena are like the coin game, in that they result not in single observations but in ordered sequences of connected observations, about whose values we are uncertain. To model such phenomena, we need a new type of mathematical object, the \textit{stochastic process}, denoted $\Y(\t)$. We define this analogously to the random variable, as:
+\bi
+\item a set of possible trajectories, $\{y(\t)\}$; and
+\item a probability distribution over this set.
+\ei
+More technical presentations are available and, again, we point you to \cite[p.~52]{vanKampen1992} for greater depth. The set of trajectories may be countable and associated with a discrete set of probabilities, or uncountable and associated with a \PDFa. For simplicity, when we index trajectories, we will do so using integers, $y_\gi(\t)$ for $\gi=1,2,\dots$, even though strictly this is incompatible with the uncountable case. Furthermore, we will always interpret the parameter, $\t$, as time.
+
+This might seem like lot to take in, but conceptually it's fairly simple. A stochastic process is nothing more than a family of trajectories from which we can select at random, according to a probability distribution. It is the generalisation of the random variable to from single numbers to functions of time. If you are already familiar with stochastic processes, this may not be how you think of them. We illustrate our perspective in \fref{sp_grid}.
+\begin{figure}[h]
 \begin{picture}(200,220)(20,30)
-  \put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/sp_grid.pdf}}
-  \put(13,190){$Y_{z_1}(\t)$}
-  \put(13,159){$Y_{z_2}(\t)$}
-  \put(13,128){$Y_{z_3}(\t)$}
-  \put(13,97){$Y_{z_4}(\t)$}
-  \put(13,66){$Y_{z_5}(\t)$}
-  \put(-20,180){\rotatebox{-90}{realization (universe) $\gi$}}  
-%  \put(-25,12){(universe)}  
-%  \put(122,220){specific moment in time $\t=\t^*$}  
-  \put(200,235){Time $\t$}  
-  \put(188,207){$Y_{z_1}(\t^*)$}
-  \put(187,208){\vector(-1,-1){15}}
-%  \put(-27,125){$\gi=3$}
-%  \put(362,127){$\overline{Y}_{x_3}=$}
-%  \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} Y_{x_3}(\gs)\gd \gs$}
-%  \put(100,10){$\ave{Y_X(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N Y_{x_i}(\t^*)$}  
-\label{sp_grid}
-\end{picture}\\
-%\end{figure}
-When we simulate stochastic processes, we often start with some value and modify it iteratively, for example in each step of a for-loop. In each step we generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $\z$ of the random variable $\Z$ only once and insert that into \eref{st_pr}. The value $\z$ specifies a simple function of time
+\put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/sp_grid.pdf}}
+\put(18,195){$y_1(\t)$}
+\put(18,164){$y_2(\t)$}
+\put(18,133){$y_3(\t)$}
+\put(18,102){$y_4(\t)$}
+\put(18,71){$y_5(\t)$}
+\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
+\put(200,235){time, $\t$}  
+\put(120,220){$y_1(\t^*)$}
+\put(130,215){\vector(1,-1){13}}
+\end{picture}
+\caption{Realisations of a stochastic process, $\Y(\t)$. Each trajectory, $y_\gi(\t)$ is a function of time, which runs horizontally across the page. Fixing time, $\t=\t^*$, results in a random variable, $\Y(\t^*)$, one realisation of which, $y_1(\t^*)$, is shown.}
+\flabel{sp_grid}
+\end{figure}
+
+This picture suggests another way of viewing the stochastic process: if we choose a time, $\t=\t^*$, then $\Y(\t^*)$ is a random variable, whose possible realisations form the set of possible function values, $\{y(\t^*)\}$. So, if you prefer, you can think of a stochastic process as a family of random variables, with probability distributions parametrised by time.
+
+\boldhead{Generating stochastic processes}
+Switching to practical considerations, there are two main ways of generating a trajectory of a stochastic processes, say on a computer. The first is consistent with our conceptualisation of selecting one from a family of trajectories. For example, if the possible trajectories were finitely many and equally probable, then we could label them with integers and draw one from a discrete uniform distribution. All the uncertainty is resolved at the start, in a single realisation of a random variable.
+
+The other approach is to generate a trajectory sequentially, by successive application of the rule that tells us which possible values of $y_\gi(\t+\dt)$ are compatible with a known value of $y_\gi(\t)$. This is how we generate wealth trajectories in the coin game, where the rule is to multiply current wealth by the realisation of a random variable. Realising a random variable at every time step sounds laborious. However, in many models of natural phenomena, it is easier to write down a realistic updating rule than an expression for all possible trajectories. This is because it is often about the changes of quantities that we can reason `physically'. Moreover, many stochastic processes have uncountably many trajectories, making the single realisation approach difficult, because it requires high numerical precision, \ie very long numbers, to be useful.
+
+Therefore, typically we generate trajectories sequentially, using updating rules which we call the \textit{dynamics} of the stochastic process. Usually, where it creates no ambiguity, we don't distinguish between the stochastic process and a single realisation of it, using lower case to denote both, \eg $\x(\t)$ for wealth. When it's important to identify different trajectories, we include an index, \eg $\x_\gi(\t)$. Sometimes we refer to these different realisations as \textit{systems} and to the index as the system number.
+
+\section{Time average}
+Stochastic processes are models of uncertain quantities which vary across systems and over time. Examples are the wealth of a player of the coin game and the total goals scored in a football match. If we fix time in a stochastic process, then we can take the ensemble average of the resulting random variable,
 \be
-\Y_{\z}(\t)=\gf(\z,\t)
-\elabel{st_pr_r}
+\ave{\Y(\t^*)} = \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^{\N} y_\gi(\t^*).
 \ee
-meaning that all the randomness is contained in $\z$. Once $\z$ is specified, $\Y_{\z}(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. Note the use of capital $\Z$ for the random variable in \eref{st_pr} and small $\z$ for a realization of it in \eref{st_pr_r}. As an example you can think of drawing at random a single uniformly distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which can be interpreted as a stochastic process, where $\t$ is given by the decimal place of the digit.
-
-We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $\Y_{\Z}(\t^*)$. That's again a random variable, an instance of which may be $\Y_{\z_1}(\t^*)$.
-
-Just as a function of a random variable is another random variable, a function of a stochastic process is another stochastic process. We will often use the noun ``observable'' to refer to a quantity that is derived from a stochastic process. For example, the growth rate of wealth is an observable of the wealth process.
-
-We will suppress the random variable $\Z$ in our notation, and just write $\x(\t)$ for the stochastic wealth process (instead of writing $\x(\Z,\t)$, {\it c.f.} \eref{st_pr}). We will also write $\x(\t)$ for a specific realization of this process, or $\x_\gi(\t)$ when it's important to distinguish different realizations.
-
-\section{Time averages}
-An observable that neatly captures the two different 
-aspects of multiplicative growth we have illustrated is the exponential growth rate, $\gm(\ave{\x(\t)}_\N, \Dt)$ 
-observed over finite time $\Dt$, in a finite ensemble
-of $\N$ realisations. Exponential growth rates are ubiquitous and may be familiar, but because they are the origin of the logarithmic function, which will be important for us later on, we will intro them properly in a little excursion that will also clarify what a logarithm is.
-
-\begin{excursion}{Compounding growth, exponentials, and the logarithm}
-Suppressed.
-%The logarithm is a relatively recent mathematical discovery, made some time in the 1590s by John Napier, the 8th Laird of Merchiston in Scotland. Let's say you lend me some money, $\x(\t)$, for one year, $\Dt=1$~year, and I have to pay interest on the loan. We agree a yearly interest rate of $r_{1}=5\%$ per year. 
-%
-%After one year the amount I have to repay is
-%\bea
-%\x(\t+\Dt)=\overbrace{\x(\t)}^{\text{Principal}}+ \overbrace{\D \x}^{\text{Interest}}.
-%\eea 
-%I could convert the interest payment into a rate, $r_1$, so that $r_1 \x(\t)$ is the rate (dollars per time) at which I have to make constant payments to you for one year, so that you end up with the right amount of interest at the end of the year, and
-%\be
-%\x(\t+\Dt)=\x(\t)r_1 \Dt
-%\elabel{deal}
-%\ee
-%This makes it easy, for instance, to find something to enter into my accounts if I have to say after 6 months how much I owe you at that moment. I would say: only half a year has passed, so I only owe you half the interest, 
-%\be
-%\x(\t+\Dt/2)=\x(\t)\left(1+r_1 \frac{\Dt}{2}\right). 
-%\elabel{deal_2}
-%\ee
-%But if this is really the amount I owe you after 6 months, surely I should pay interest on this new amount for the following 6 months. We will see that this leads to a problem. Substituting $\x(\t+\Dt/2)$ for $\x(\t)$ on the \RHS of \eref{deal_2} gives
-%\bea
-%\x(\t+\Dt)&=&\x(t+\Dt/2)\left(1+r_1 \frac{\Dt}{2}\right)\\
-%&=&\x(\t)\left(1+r_1\frac{\Dt}{2}\right)^2
-%\eea
-%Equating to \eref{deal} we find a contradiction
-%\bea
-%\x(\t) (1+ r_{\Dt} \Dt)&\stackrel{?}{=}&\x(\t)(1+r_{\Dt}/2)^2\\
-%\implies 1+ r_{\Dt} \Dt&\stackrel{?}{=}&1+r_{\Dt}\Dt+\left(\frac{r\Dt}{2}\right)^2 \text{{\color{red} \huge \lightning}}.
-%\eea
-%Strange as it may seem, the solution to this problem is to acknowledge that interest rates depend on the time scale at which they're defined -- the compounding time scale. We can fix the problem by introducing $r_2$ -- the semi-annual interest rate (the subscript 2 indicates that we've split the original interval in 2 equal parts). It is defined by
-%insisting that the one-step and two-step computations give the same interest payment $\D\x$, 
-%\be
-%1+ r_1 \Dt=\left(1+r_2 \frac{\Dt}{2}\right)^2.
-%\ee
-%There's nothing stopping us from writing down the general expression for any number, $\T$, of intermediate stock-takings
-%\bea
-%\frac{\x(\t+\Dt)}{\x(\t)}&=&\left(1+r_\T\frac{ \Dt}{\T}\right)^\T\\
-%&\text{which implies}&\\
-%r_\T&=& \frac{1}{\Dt}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}
-%\eea
-%A common trick to remove the dependence of some quantity ($r_{\T})$ on another ($\T$)  is to let the control variable diverge. The limit no longer depends on the diverging quantity (we've seen this trick before: the expectation value doesn't depend on the ensemble size, which has diverged).
-%\be
-%r_\infty= \frac{1}{\Dt} \underbrace{\lim_{\T\to\infty}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}}_{\ln\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)}.
-%\ee
-%Note the procedure here: we keep the total time interval, $\Dt$, fixed and split it into $\T$ ever more numerous and shorter sub-intervals $\dt$.
-%Because it's tedious to write down the long expression involving the limit, we define it as a new function, called the logarithm, $\ln(\cdot)$, as indicated by the underbrace.
-%\be
-%\ln \ga :=  \lim_{\T\to\infty}\T \left\{\ga^{1/\T}-1\right\}.
-%\ee
-%The logarithm has a property that makes it uniquely suited for characterizing multiplicative processes: the logarithm of a ratio is the difference of the logarithms of numerator and denominator, 
-%\be
-%\ln \frac{\ga_2}{\ga_1}=\ln \ga_2 - \ln \ga_1 = \D \ln \ga.
-%\ee
-%The inverse function of the logarithm is the exponential (by definition), denoted $\exp(\cdot)$, so that $\exp(\ln \ga)=\ga$, and the limiting growth rate $r_\infty$ is called the logarithmic or exponential growth rate, which we also denote by $\gm$ (subscript ''m'' for ``multiplicative'').
-%
-%Just to be sure we got this across: these are the definitions of the logarithm and the exponential. You may know many properties of logarithms and exponentials -- all of them can be derived from the definitions we have just presented.
-\end{excursion}
-
-The exponential growth rate of average wealth in an ensemble of $\N$ systems, observed over time $\Dt$ is
-\be
-\gm(\ave{\x(\t)}_\N, \Dt)=\frac{\D \ln \ave{\x}_\N}{\Dt},
-\elabel{gest}
-\ee
-where the $\D$ in the numerator corresponds to the change over the $\Dt$ in the denominator. For $\N$ and $\Dt$ finite this is a random variable. The relevant scalars arise as two different limits
-of the same stochastic object. The exponential growth rate of the expectation value 
-(that's also $\frac{1}{\dt} \ln \ave{\gr}$) is
-\be
-\gm(\ave{\x})=\lim_{\N\to\infty}\gm,
-\ee
-and the exponential growth rate followed by every trajectory when
-observed for a long time (that's also $\frac{1}{\dt} \ln \rt$) is 
-\be
-\gt=\lim_{\Dt\to\infty}\gm.
-\elabel{gt}
-\ee
-We can also write \eref{gest} as a sum of the logarithmic differences in  the 
-$\T$ individual rounds of the gamble that make up the time interval 
-$\Dt=\T \dt$
-\be
-\gm(\ave{\x(\t)}_\N, \Dt)=\frac{1}{\T\dt}  \sum_{\gtau=1}^{\T} \D\ln \ave{\x(\t+\gtau\dt)}_\N.
-\ee
-%For a single trajectory, $\N=1$, \eref{gt} becomes
-%\bea
-%\t&=&\lim_{\t\to\infty}\frac{1}{\t} \ln \x(\t)\\
-%&=&\lim_{\T\to\infty}\frac{1}{\T\dt} \sum_\t^\T \D \ln \x(\t).
-%\eea
-This leads us to a technical definition of the time average.
-
+The introduction of time in the stochastic process makes another type of average possible, conceptually different from the ensemble average. Instead of choosing a time and averaging across  systems, we can choose a system and average over time. Let's start by doing this for a finite time period, $\Dt$, to generate a \textit{finite-time average}.
 \begin{defn}{Finite-time average}
-The ``finite-time average'' of the quantity $\x(\t)$ is
+The finite-time average of the trajectory $y(\t)$ is the average value of the function from $\t$ to $\t+\Dt$,
 \be
-\xbar_{\Dt}=\frac{1}{\Dt}\int_{\t}^{\t+\Dt} \x(\gs)\gd\gs.
+\bar{y}_{\Dt}(\t) \equiv \frac{1}{\Dt} \int_{\t}^{\t+\Dt} y(\gs) \gd\gs.
 \elabel{t_ave_f}
 \ee
-If $\x$ only changes at $\T=\Dt/\dt$ discrete times 
-$\t+\dt$, $\t+2\dt$, {\it etc.}, then this can be written as 
+If $y(\t)$ changes only at discrete times, $\{\t+\dt,\dots,\t+\T\dt\}$, where $\Dt=\T\dt$, then the finite-time average can be written as 
 \be
-\xbar_{\Dt}=\frac{1}{\T\dt}\sum_{\gtau=1}^{\T}\x(\t+\gtau \dt).
+\bar{y}_{\Dt}(\t)  = \frac{1}{\T\dt} \sum_{\gtau=1}^{\T} y(\t+\gtau\dt).
 \elabel{t_ave_f_disc}
 \ee
 \end{defn}
 
+In the same way that the ensemble average is the many-systems limit of the finite-ensemble average, so the \textit{time average} is the long-time limit of the finite-time average.
 \begin{defn}{Time average}
-The ``time average'' is the long-time limit
-of the finite-time average
+The time average is the long-time limit of the finite-time average,
 \be
-\xbar=\lim_{\Dt\to\infty}\xbar_{\Dt}.
+\bar{y}(t) \equiv \lim_{\Dt\to\infty} \bar{y}_{\Dt}(\t),
 \elabel{t_ave}
 \ee
+where this limit exists.
 \end{defn}
-According to this definition, $\gt$ is the time average of 
-the observable $\frac{\d \ln \x}{\dt}$. It can be shown that
-the time-average growth rate of a single trajectory is the same as that
-of a finite-ensemble average of trajectories,
-$\lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}=\lim_{\Dt\to\infty}\frac{\D \ln \ave{\x}_N}{\Dt}$, \cite{PetersKlein2013}. In \secref{finite_populations} we will derive this result as well as growth rates in finite ensembles and finite time.
+Note that both the finite-time and time averages are strictly functions of the time, $\t$, at which the averaging starts. In many of the models we consider, dependence on the initial condition vanishes in the limit of long averaging time. If so, we remove it from the notation and write $\bar{y}$.
 
-\begin{excursion}{Dimensional analysis}
-Suppressed.
-%We will often and without qualm write the expression $\D \ln \x$. Dimensional
-%analysis suggests to think about this expression carefully, at least once. This may
-%seem pedantic but the absence of this pedantry has caused sufficient
-%confusion in economic theory for us to risk antagonizing you. ``Dimension'' in this context is closely related to the 
-%concept of ``unit'' -- for instance, a dollar is a money unit, and the dimension function
-%for money tells us how to convert from one currency into another. Similarly, length may 
-%have the unit ``meter'', and the dimension function for length tells us how to convert between 
-%different systems of units, such as meters and yards. 
-%We can only point to the subject here and recommend the book
-%by \person{Barenblatt} for a comprehensive treatment \cite{Barenblatt2003}.
-%Dimensional analysis is a deeply fascinating and powerful tool that every physicist 
-%is drilled to use at all times. \person{Taylor} famously used it to compute the energy
-%released by an early nuclear explosion at the Trinity site near Alamogordo, New Mexico, based on 
-%some grainy pictures published by Life magazine, at least that's the legend 
-%\cite{Taylor1950b,Deakin2011}. Fluid dynamicists in general use it to find meaningful quantities 
-%to distinguish different types of flow. In many problems involving random walks dimensional 
-%analysis immediately reveals scaling properties, supposed solutions to many problems can
-%be seen at a glance to be wrong, and, conversely some complicated-looking 
-%problems can be solved as if by magic just by appealing to dimensional analysis.
-%
-%\person{Barenblatt} shows in his book that the dimension function must be a (scale-free) power-law 
-%monomial if there is to be no distinguished system of units. We can all agree that the unit
-%of money is physically irrelevant -- I can do exactly the same with the pennies in my 
-%bank account as I can do with the pounds those pennies correspond to. Since this is so, 
-%for functions of monetary amounts to be physically meaningful we want them to be 
-%power-law monomials. An amount of square-dollars, $\$^2$, may be meaningful, but an
-%amount of logarithmic or exponential dollars cannot be meaningful. Hence $\ln(\x)$ on its own
-%is just some symbol spat on a page by a printer, but it has no physical meaning.
-%The reason we're comfortable writing $\D \ln \x$ is the unique property of the logarithmic function
-%\be
-%\ln \x_1 - \ln \x_2 = \ln\left(\frac{\x_1}{\x_2}\right).
-%\ee
-%The quantity in brackets on the \RHS is always dimensionless, it's a pure number because
-%the dimension functions of two different values of $\x$ always cancel out. So do the units:
-%$\$1/\$2=1/2$, which is a pure number without units. We will see that indeed only differences 
-%in logarithms of $\x$ will appear in these lecture notes or in any other reasonable lecture notes. 
-%Pedantically, we would refuse to write $\D \ln(\x)$ and insist on writing $\ln\left(\frac{\x_1}{\x_2}\right)$.
-%Since the first notation is shorter and one can make formal arguments for its validity, we are 
-%happy to use it here. 
-%
-%The issue is related to a result obtained by \person{von Neumann} and 
-%\person{Morgenstern} in their 
-%famous
-%%but quite unhelpful
-%book \cite{vonNeumannMorgenstern1944}: 
-%only differences in utility functions can have physical meaning. 
-%We will have a lot more to say about utility functions (which we call ergodicity mappings) in \cref{Rates}.
-\end{excursion}
+The two types of average possible in a stochastic process are illustrated in \fref{regodic_grid}.
+\begin{figure}[h]
+\begin{picture}(200,260)(0,0)
+\put(-40,-30){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/ergodic_grid.pdf}}
+\put(13,190){$y_1(\t)$}
+\put(13,159){$y_2(\t)$}
+\put(13,128){$y_3(\t)$}
+\put(13,97){$y_4(\t)$}
+\put(13,66){$y_5(\t)$}
+\put(-25,22){realisation, $\gi$}  
+\put(162,242){$\t=\t^*$}  
+\put(344,235){time, $\t$}  
+\put(188,207){$y_1(\t^*)$}
+\put(187,208){\vector(-1,-1){15}}
+\put(-27,125){$\gi=3$}
+\put(362,127){$\bar{y_3} =$}
+\put(340,114){$\lim_{\Dt\to\infty} \frac{1}{\Dt} \int_0^{\Dt} y_3(\gs) \gd\gs$}
+\put(100,10){$\ave{\Y(\t^*)} = \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^\N y_\gi(\t^*)$}  
+\end{picture}
+\caption{Realisations of a stochastic process, $\Y(\t)$, \cf \fref{sp_grid}. The ensemble average, $\ave{\Y(\t^*)}$, is obtained by choosing a time, $\t=\t^*$, and averaging over trajectories (green box). The time average is obtained by choosing a trajectory, $\gi=3$, and averaging over time (red box).}
+\flabel{ergodic_grid}
+\end{figure}
 
-\section{The game -- revisited}
-We pretended to be mathematically clueless when we ran the simulations,
-with the purpose to gain a deeper conceptual understanding of the expectation 
-value. We now compute exactly the expectation value of the stochastic process $\x(\t)$, instead of 
-approximating it numerically. Consider the expectation value of \eref{gamble}  
+\section{The game, revisited}
+We have introduced some essential tools for studying models such as that of the coin game, where outcomes are uncertain and vary over time. It makes sense, therefore, to apply these tools to the game to see how they deepen our understanding of it.
+
+We pretended to be mathematically clueless when we ran the simulations in \cref{Why}, hoping to gain an understanding of the game by simply looking at many possible outcomes. We can now compute exactly the ensemble average of the stochastic process for wealth, $\x(\t)$, instead of approximating it numerically by a finite-ensemble average. We start by taking the ensemble average of the wealth updating rule in \eref{gamble},
 \be
-\ave{\x(\t+\dt)}=\ave{\x(\t)\gr(\t+\dt)}.
+\ave{\x(\t+\dt)} = \ave{\x(\t)\gr(\t)}.
 \elabel{step_1}
 \ee
-We've just learned what to call objects like $\gr(\t)$: it's another stochastic process, or an observable. This one is  especially simple: in a given realization $\x(\t)$ it's one instance of the same random variable for each time $\t$.  one, namely one that is ergodic. We note here that its ensemble average is time-independent (and in \secref{Ergodic_observables} we will see that it's an example of an ergodic observable).
-Since $\gr(\t+\dt)$ is independent of $\x(\t)$, \eref{step_1} can be re-written as
+The wealth multiplier, $\gr(\t)$, can be viewed in two ways: as a random variable, with realisations indexed by $\t$; or as a stochastic process in its own right. Since we are taking an expectation value, the former view is more helpful. We assume the outcomes of coin tosses are independent of the player's wealth and of time, so that $\ave{\x(\t)\gr(\t)} = \ave{\x(\t)}\ave{\gr}$. Thus, \eref{step_1} can be written as
 \be
 \ave{\x(\t+\dt)}=\ave{\x(\t)}\ave{\gr}.
 \ee
-Therefore, we can solve recursively for the wealth after $\T$ rounds, corresponding to a playing time of $\Dt=\T\dt$:
+We can solve this recursively for the wealth after $\T$ rounds,
 \be
 \ave{\x(\t+\Dt)} = \ave{\x(\t+\T\dt)}=\x(\t)\ave{\gr}^\T.
 \ee
-$\dt$ is the duration of a single round of a gamble, while $\Dt$ is the amount of time spent gambling.
+$\dt$ is the duration of a single round of the game, so the total playing time is $\Dt=\T\dt$.
+
+\textbf{Ideal place to introduce exponential and logarithmic functions.}
 
 The expectation value $\ave{\gr}$ is easily found from \eref{law} 
 as $\ave{\gr}=\frac{1}{2}\times 0.6 + \frac{1}{2}\times 1.5=1.05$. Since 
@@ -423,7 +304,7 @@ conclude that the gamble is worth taking. \Fref{cf_exp} compares the
 analytical result for the infinite ensemble to the numerical results 
 of \fref{1_2} for finite ensembles.
 
-\begin{figure}[h!]
+\begin{figure}[h]
 \begin{picture}(200,200)(0,0)
     \put(-100,0){\includegraphics[width=0.8\textwidth]{./chapter_tools/figs/x_of_t_lin_exp.pdf}}
   \put(180,0){\includegraphics[width=0.8\textwidth]{./chapter_tools/figs/x_of_t_log_exp.pdf}}
@@ -434,7 +315,6 @@ of \fref{1_2} for finite ensembles.
  (A) linear scales, (B) logarithmic scales.}
 \flabel{cf_exp}
 \end{figure}
-\FloatBarrier
 
 In this section we validate \fref{1_3} and compute analytically 
 what happens in the long-time limit. The blue line in \fref{1_3} is not completely smooth, there's still 
@@ -594,6 +474,156 @@ Suppressed.
 %\end{figure}
 %\FloatBarrier
 
+\textbf{Expectation values are not what you expect.}
+
+An observable that neatly captures the two different 
+aspects of multiplicative growth we have illustrated is the exponential growth rate, $\gm(\ave{\x(\t)}_\N, \Dt)$ 
+observed over finite time $\Dt$, in a finite ensemble
+of $\N$ realisations. Exponential growth rates are ubiquitous and may be familiar, but because they are the origin of the logarithmic function, which will be important for us later on, we will intro them properly in a little excursion that will also clarify what a logarithm is.
+
+\begin{excursion}{Compounding growth, exponentials, and the logarithm}
+Suppressed.
+%The logarithm is a relatively recent mathematical discovery, made some time in the 1590s by John Napier, the 8th Laird of Merchiston in Scotland. Let's say you lend me some money, $\x(\t)$, for one year, $\Dt=1$~year, and I have to pay interest on the loan. We agree a yearly interest rate of $r_{1}=5\%$ per year. 
+%
+%After one year the amount I have to repay is
+%\bea
+%\x(\t+\Dt)=\overbrace{\x(\t)}^{\text{Principal}}+ \overbrace{\D \x}^{\text{Interest}}.
+%\eea 
+%I could convert the interest payment into a rate, $r_1$, so that $r_1 \x(\t)$ is the rate (dollars per time) at which I have to make constant payments to you for one year, so that you end up with the right amount of interest at the end of the year, and
+%\be
+%\x(\t+\Dt)=\x(\t)r_1 \Dt
+%\elabel{deal}
+%\ee
+%This makes it easy, for instance, to find something to enter into my accounts if I have to say after 6 months how much I owe you at that moment. I would say: only half a year has passed, so I only owe you half the interest, 
+%\be
+%\x(\t+\Dt/2)=\x(\t)\left(1+r_1 \frac{\Dt}{2}\right). 
+%\elabel{deal_2}
+%\ee
+%But if this is really the amount I owe you after 6 months, surely I should pay interest on this new amount for the following 6 months. We will see that this leads to a problem. Substituting $\x(\t+\Dt/2)$ for $\x(\t)$ on the \RHS of \eref{deal_2} gives
+%\bea
+%\x(\t+\Dt)&=&\x(t+\Dt/2)\left(1+r_1 \frac{\Dt}{2}\right)\\
+%&=&\x(\t)\left(1+r_1\frac{\Dt}{2}\right)^2
+%\eea
+%Equating to \eref{deal} we find a contradiction
+%\bea
+%\x(\t) (1+ r_{\Dt} \Dt)&\stackrel{?}{=}&\x(\t)(1+r_{\Dt}/2)^2\\
+%\implies 1+ r_{\Dt} \Dt&\stackrel{?}{=}&1+r_{\Dt}\Dt+\left(\frac{r\Dt}{2}\right)^2 \text{{\color{red} \huge \lightning}}.
+%\eea
+%Strange as it may seem, the solution to this problem is to acknowledge that interest rates depend on the time scale at which they're defined -- the compounding time scale. We can fix the problem by introducing $r_2$ -- the semi-annual interest rate (the subscript 2 indicates that we've split the original interval in 2 equal parts). It is defined by
+%insisting that the one-step and two-step computations give the same interest payment $\D\x$, 
+%\be
+%1+ r_1 \Dt=\left(1+r_2 \frac{\Dt}{2}\right)^2.
+%\ee
+%There's nothing stopping us from writing down the general expression for any number, $\T$, of intermediate stock-takings
+%\bea
+%\frac{\x(\t+\Dt)}{\x(\t)}&=&\left(1+r_\T\frac{ \Dt}{\T}\right)^\T\\
+%&\text{which implies}&\\
+%r_\T&=& \frac{1}{\Dt}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}
+%\eea
+%A common trick to remove the dependence of some quantity ($r_{\T})$ on another ($\T$)  is to let the control variable diverge. The limit no longer depends on the diverging quantity (we've seen this trick before: the expectation value doesn't depend on the ensemble size, which has diverged).
+%\be
+%r_\infty= \frac{1}{\Dt} \underbrace{\lim_{\T\to\infty}\T \left\{\left[\frac{\x(\t+\Dt)}{\x(\t)}\right]^{1/\T}-1\right\}}_{\ln\left(\frac{\x(\t+\Dt)}{\x(\t)}\right)}.
+%\ee
+%Note the procedure here: we keep the total time interval, $\Dt$, fixed and split it into $\T$ ever more numerous and shorter sub-intervals $\dt$.
+%Because it's tedious to write down the long expression involving the limit, we define it as a new function, called the logarithm, $\ln(\cdot)$, as indicated by the underbrace.
+%\be
+%\ln \ga :=  \lim_{\T\to\infty}\T \left\{\ga^{1/\T}-1\right\}.
+%\ee
+%The logarithm has a property that makes it uniquely suited for characterizing multiplicative processes: the logarithm of a ratio is the difference of the logarithms of numerator and denominator, 
+%\be
+%\ln \frac{\ga_2}{\ga_1}=\ln \ga_2 - \ln \ga_1 = \D \ln \ga.
+%\ee
+%The inverse function of the logarithm is the exponential (by definition), denoted $\exp(\cdot)$, so that $\exp(\ln \ga)=\ga$, and the limiting growth rate $r_\infty$ is called the logarithmic or exponential growth rate, which we also denote by $\gm$ (subscript ''m'' for ``multiplicative'').
+%
+%Just to be sure we got this across: these are the definitions of the logarithm and the exponential. You may know many properties of logarithms and exponentials -- all of them can be derived from the definitions we have just presented.
+\end{excursion}
+
+The exponential growth rate of average wealth in an ensemble of $\N$ systems, observed over time $\Dt$ is
+\be
+\gm(\ave{\x(\t)}_\N, \Dt)=\frac{\D \ln \ave{\x}_\N}{\Dt},
+\elabel{gest}
+\ee
+where the $\D$ in the numerator corresponds to the change over the $\Dt$ in the denominator. For $\N$ and $\Dt$ finite this is a random variable. The relevant scalars arise as two different limits
+of the same stochastic object. The exponential growth rate of the expectation value 
+(that's also $\frac{1}{\dt} \ln \ave{\gr}$) is
+\be
+\gm(\ave{\x})=\lim_{\N\to\infty}\gm,
+\ee
+and the exponential growth rate followed by every trajectory when
+observed for a long time (that's also $\frac{1}{\dt} \ln \rt$) is 
+\be
+\gt=\lim_{\Dt\to\infty}\gm.
+\elabel{gt}
+\ee
+We can also write \eref{gest} as a sum of the logarithmic differences in  the 
+$\T$ individual rounds of the gamble that make up the time interval 
+$\Dt=\T \dt$
+\be
+\gm(\ave{\x(\t)}_\N, \Dt)=\frac{1}{\T\dt}  \sum_{\gtau=1}^{\T} \D\ln \ave{\x(\t+\gtau\dt)}_\N.
+\ee
+%For a single trajectory, $\N=1$, \eref{gt} becomes
+%\bea
+%\t&=&\lim_{\t\to\infty}\frac{1}{\t} \ln \x(\t)\\
+%&=&\lim_{\T\to\infty}\frac{1}{\T\dt} \sum_\t^\T \D \ln \x(\t).
+%\eea
+
+According to this definition, $\gt$ is the time average of 
+the observable $\frac{\d \ln \x}{\dt}$. It can be shown that
+the time-average growth rate of a single trajectory is the same as that
+of a finite-ensemble average of trajectories,
+$\lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}=\lim_{\Dt\to\infty}\frac{\D \ln \ave{\x}_N}{\Dt}$, \cite{PetersKlein2013}. In \secref{finite_populations} we will derive this result as well as growth rates in finite ensembles and finite time.
+
+\begin{excursion}{Dimensional analysis}
+Suppressed.
+%We will often and without qualm write the expression $\D \ln \x$. Dimensional
+%analysis suggests to think about this expression carefully, at least once. This may
+%seem pedantic but the absence of this pedantry has caused sufficient
+%confusion in economic theory for us to risk antagonizing you. ``Dimension'' in this context is closely related to the 
+%concept of ``unit'' -- for instance, a dollar is a money unit, and the dimension function
+%for money tells us how to convert from one currency into another. Similarly, length may 
+%have the unit ``meter'', and the dimension function for length tells us how to convert between 
+%different systems of units, such as meters and yards. 
+%We can only point to the subject here and recommend the book
+%by \person{Barenblatt} for a comprehensive treatment \cite{Barenblatt2003}.
+%Dimensional analysis is a deeply fascinating and powerful tool that every physicist 
+%is drilled to use at all times. \person{Taylor} famously used it to compute the energy
+%released by an early nuclear explosion at the Trinity site near Alamogordo, New Mexico, based on 
+%some grainy pictures published by Life magazine, at least that's the legend 
+%\cite{Taylor1950b,Deakin2011}. Fluid dynamicists in general use it to find meaningful quantities 
+%to distinguish different types of flow. In many problems involving random walks dimensional 
+%analysis immediately reveals scaling properties, supposed solutions to many problems can
+%be seen at a glance to be wrong, and, conversely some complicated-looking 
+%problems can be solved as if by magic just by appealing to dimensional analysis.
+%
+%\person{Barenblatt} shows in his book that the dimension function must be a (scale-free) power-law 
+%monomial if there is to be no distinguished system of units. We can all agree that the unit
+%of money is physically irrelevant -- I can do exactly the same with the pennies in my 
+%bank account as I can do with the pounds those pennies correspond to. Since this is so, 
+%for functions of monetary amounts to be physically meaningful we want them to be 
+%power-law monomials. An amount of square-dollars, $\$^2$, may be meaningful, but an
+%amount of logarithmic or exponential dollars cannot be meaningful. Hence $\ln(\x)$ on its own
+%is just some symbol spat on a page by a printer, but it has no physical meaning.
+%The reason we're comfortable writing $\D \ln \x$ is the unique property of the logarithmic function
+%\be
+%\ln \x_1 - \ln \x_2 = \ln\left(\frac{\x_1}{\x_2}\right).
+%\ee
+%The quantity in brackets on the \RHS is always dimensionless, it's a pure number because
+%the dimension functions of two different values of $\x$ always cancel out. So do the units:
+%$\$1/\$2=1/2$, which is a pure number without units. We will see that indeed only differences 
+%in logarithms of $\x$ will appear in these lecture notes or in any other reasonable lecture notes. 
+%Pedantically, we would refuse to write $\D \ln(\x)$ and insist on writing $\ln\left(\frac{\x_1}{\x_2}\right)$.
+%Since the first notation is shorter and one can make formal arguments for its validity, we are 
+%happy to use it here. 
+%
+%The issue is related to a result obtained by \person{von Neumann} and 
+%\person{Morgenstern} in their 
+%famous
+%%but quite unhelpful
+%book \cite{vonNeumannMorgenstern1944}: 
+%only differences in utility functions can have physical meaning. 
+%We will have a lot more to say about utility functions (which we call ergodicity mappings) in \cref{Rates}.
+\end{excursion}
+
 \section{Ergodicity}
 \seclabel{Ergodic_observables}
 
@@ -684,31 +714,6 @@ The \RHS of \eref{def_ergodic} is evaluated at time $\t$, and unlike the \LHS co
 In terms of random variables, $\Z$, and stochastic processes, $\Y_{\Z}(\t)$, the ergodic property can be
 visualized as in \fref{ergodic_grid}. Averaging a stochastic process over time or over the ensemble
 are completely different operations, and only under very rare circumstances (namely under ergodicity) can the two operations be interchanged. In our coin-tossing game the operations are clearly not interchangeable. An implicit assumption of interchangeability in the early days is the Original Sin of economic theory.
-\begin{figure}[h!]
-\begin{picture}(200,260)(0,0)
-  \put(-40,-30){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/ergodic_grid.pdf}}
-  \put(13,190){$\Y_{\z_1}(\t)$}
-  \put(13,159){$\Y_{\z_2}(\t)$}
-  \put(13,128){$\Y_{\z_3}(\t)$}
-  \put(13,97){$\Y_{\z_4}(\t)$}
-  \put(13,66){$\Y_{\z_5}(\t)$}
-  \put(-25,22){realization}  
-  \put(-25,12){(universe) $\gi$}  
-  \put(162,242){$\t=\t^*$}  
-  \put(344,235){Time $\t$}  
-  \put(188,207){$\Y_{\z_1}(\t^*)$}
-  \put(187,208){\vector(-1,-1){15}}
-  \put(-27,125){$\gi=3$}
-  \put(362,127){$\overline{\Y}_{\z_3}=$}
-  \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} \Y_{\z_3}(\gs)\gd \gs$}
-  \put(100,10){$\ave{\Y_{\Z}(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N \Y_{\z_\gi}(\t^*)$}  
-\end{picture}
-\caption{Extending the figure on p.~\pageref{sp_grid}, averaging over time means averaging 
-along one trajectory from left to right; averaging over the ensemble
-means averaging at a fixed time across different trajectories from top to bottom.}
-\flabel{ergodic_grid}
-\end{figure}
-%\FloatBarrier
 
 We stress that in a given setup, some observables may have the ergodic property even
 if others do not. Language therefore must be used carefully. Saying our game is non-ergodic
