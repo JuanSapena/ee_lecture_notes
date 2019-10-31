@@ -102,7 +102,7 @@ The finite-ensemble average of a random variable, $\Z$, is the average over a fi
 \ee 
 where $\z_\gi$ denotes the $\gi^\text{th}$ realisation of $\Z$.
 \end{defn}
-You may know this as the sample average or sample mean.
+You may know this as the sample average or sample mean. Note that it is an additive average: $\ave{\Z}_{\N}$ is, in effect, the value which each of the $\N$ realisations of $\Z$ can be replaced by if we want their \textit{sum} to be the same.
 
 The finite-ensemble average is itself a random variable: each finite ensemble of size $\N$ can contain different realisations of $\Z$ which sum to a different total. As $\N\to\infty$, this random average may converge with probability one to a unique constant. If it does, we call this limiting value the ensemble average and denote it by $\ave{\Z}$.
 \begin{defn}{Ensemble average}
@@ -212,11 +212,43 @@ This picture suggests another way of viewing the stochastic process: if we choos
 \boldhead{Generating stochastic processes}
 Switching to practical considerations, there are two main ways of generating a trajectory of a stochastic processes, say on a computer. The first is consistent with our conceptualisation of selecting one from a family of trajectories. For example, if the possible trajectories were finitely many and equally probable, then we could label them with integers and draw one from a discrete uniform distribution. All the uncertainty is resolved at the start, in a single realisation of a random variable.
 
-The other approach is to generate a trajectory sequentially, by successive application of the rule which tell us which possible values of $y_\gi(\t+\d\t)$ are compatible with a known value of $y_\gi(\t)$. This is how we generated wealth trajectories in the coin game, where the rule is to multiply current wealth by the realisation of a random variable. Realising a random variable at every time step sounds laborious. However, in many models of natural phenomena, it is easier to write down a realistic updating rule than an expression for all possible trajectories, because it is often about the changes of quantities that we can reason `physically'. Moreover, many stochastic processes have uncountably many trajectories, making the single realisation approach difficult, because it requires high numerical precision, \ie very long numbers, to be useful.
+The other approach is to generate a trajectory sequentially, by successive application of the rule that tells us which possible values of $y_\gi(\t+\dt)$ are compatible with a known value of $y_\gi(\t)$. This is how we generate wealth trajectories in the coin game, where the rule is to multiply current wealth by the realisation of a random variable. Realising a random variable at every time step sounds laborious. However, in many models of natural phenomena, it is easier to write down a realistic updating rule than an expression for all possible trajectories. This is because it is often about the changes of quantities that we can reason `physically'. Moreover, many stochastic processes have uncountably many trajectories, making the single realisation approach difficult, because it requires high numerical precision, \ie very long numbers, to be useful.
 
-Therefore, typically we generate trajectories sequentially, using updating rules which we call the \textit{dynamics} of the stochastic process. We use lower case to denote both the stochastic process and a single realisation of it, \eg $\x(\t)$ for wealth. When it's important to distinguish different realisations, we include an index, \eg $\x_\gi(\t)$.
+Therefore, typically we generate trajectories sequentially, using updating rules which we call the \textit{dynamics} of the stochastic process. Usually, where it creates no ambiguity, we don't distinguish between the stochastic process and a single realisation of it, using lower case to denote both, \eg $\x(\t)$ for wealth. When it's important to identify different trajectories, we include an index, \eg $\x_\gi(\t)$. Sometimes we refer to these different realisations as \textit{systems} and to the index as the system number.
 
 \section{Time average}
+Stochastic processes are models of uncertain quantities which vary across systems and over time. Examples are the wealth of a player of the coin game and the total goals scored in a football match. If we fix time in a stochastic process, then we can take the ensemble average of the resulting random variable,
+\be
+\ave{\Y(\t^*)} = \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^{\N} y_\gi(\t^*).
+\ee
+The introduction of time in the stochastic process makes another type of average possible, conceptually different from the ensemble average. Instead of choosing a time and averaging across  systems, we can choose a system and average over time. Let's start by doing this for a finite time period, $\Dt$, to generate a \textit{finite-time average}.
+\begin{defn}{Finite-time average}
+The finite-time average of the trajectory $y(\t)$ is the average value of the function from $\t$ to $\t+\Dt$,
+\be
+\bar{y}_{\Dt}(\t) \equiv \frac{1}{\Dt} \int_{\t}^{\t+\Dt} y(\gs) \gd\gs.
+\elabel{t_ave_f}
+\ee
+If $y(\t)$ changes only at discrete times, $\{\t+\dt,\dots,\t+\T\dt\}$, where $\Dt=\T\dt$, then the finite-time average can be written as 
+\be
+\bar{y}_{\Dt}(\t)  = \frac{1}{\T\dt} \sum_{\gtau=1}^{\T} y(\t+\gtau\dt).
+\elabel{t_ave_f_disc}
+\ee
+\end{defn}
+
+In the same way that the ensemble average is the many-systems limit of the finite-ensemble average, so the \textit{time average} is the long-time limit of the finite-time average.
+\begin{defn}{Time average}
+The time average is the long-time limit of the finite-time average,
+\be
+\bar{y}(t) \equiv \lim_{\Dt\to\infty} \bar{y}_{\Dt}(\t),
+\elabel{t_ave}
+\ee
+where this limit exists.
+\end{defn}
+Note that both the finite-time and time averages are strictly functions of the time, $\t$, at which the averaging starts. In many of the models we consider, dependence on the initial condition vanishes in the limit of long averaging time. If so, we remove it from the notation and write $\bar{y}$.
+
+\section{The game -- revisited}
+\textbf{The rest is example -- move to game?}
+
 An observable that neatly captures the two different 
 aspects of multiplicative growth we have illustrated is the exponential growth rate, $\gm(\ave{\x(\t)}_\N, \Dt)$ 
 observed over finite time $\Dt$, in a finite ensemble
@@ -307,30 +339,7 @@ $\Dt=\T \dt$
 %\t&=&\lim_{\t\to\infty}\frac{1}{\t} \ln \x(\t)\\
 %&=&\lim_{\T\to\infty}\frac{1}{\T\dt} \sum_\t^\T \D \ln \x(\t).
 %\eea
-This leads us to a technical definition of the time average.
 
-\begin{defn}{Finite-time average}
-The ``finite-time average'' of the quantity $\x(\t)$ is
-\be
-\xbar_{\Dt}=\frac{1}{\Dt}\int_{\t}^{\t+\Dt} \x(\gs)\gd\gs.
-\elabel{t_ave_f}
-\ee
-If $\x$ only changes at $\T=\Dt/\dt$ discrete times 
-$\t+\dt$, $\t+2\dt$, {\it etc.}, then this can be written as 
-\be
-\xbar_{\Dt}=\frac{1}{\T\dt}\sum_{\gtau=1}^{\T}\x(\t+\gtau \dt).
-\elabel{t_ave_f_disc}
-\ee
-\end{defn}
-
-\begin{defn}{Time average}
-The ``time average'' is the long-time limit
-of the finite-time average
-\be
-\xbar=\lim_{\Dt\to\infty}\xbar_{\Dt}.
-\elabel{t_ave}
-\ee
-\end{defn}
 According to this definition, $\gt$ is the time average of 
 the observable $\frac{\d \ln \x}{\dt}$. It can be shown that
 the time-average growth rate of a single trajectory is the same as that
@@ -388,7 +397,6 @@ Suppressed.
 %We will have a lot more to say about utility functions (which we call ergodicity mappings) in \cref{Rates}.
 \end{excursion}
 
-\section{The game -- revisited}
 We pretended to be mathematically clueless when we ran the simulations,
 with the purpose to gain a deeper conceptual understanding of the expectation 
 value. We now compute exactly the expectation value of the stochastic process $\x(\t)$, instead of 
