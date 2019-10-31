@@ -42,7 +42,7 @@ Forget, for the moment, what probabilities might mean in the context of an exper
 The latter is a normalisation condition which fixes the scale of the probabilities.
 
 \boldhead{Discrete random variable}
-When the set of outcomes is discrete, say $\{\z_1,\dots,\z_M\}$, we assign a probability, $p_j$, to each outcome, $z_j$, such that
+When the set of outcomes is discrete, say $\{\z_1,\dots,\z_M\}$, we assign a probability, $\p_\gj$, to each outcome, $\z_\gj$, such that
 \be
 \prob{\Z=\z} = \begin{cases}
 \p_\gj & \text{if } \z=\z_\gj\\
@@ -66,7 +66,7 @@ The \PDFa is a non-negative function, $\PDF_{\Z}(\z) \geq 0$, normalised so that
 Note the difference between subscript and argument: $\PDF_{\Z}(\z)$ is the probability density of the random variable $\Z$ at value $\z$. You might find it helpful to think of $\PDF_{\Z}(\z)\delta\z$ as the approximate probability of $\Z$ being in the small interval $(\z,\z+\delta\z)$ close to $\z$. 
 
 \boldhead{Interpretation}
-So far we have said nothing of the meaning of probabilities: they are simply numbers assigned to outcomes of random variables. One way to interpret probabilities is to imagine many separate experiments, of whose outcomes are identically ignorant. For example, we can imagine tossing the same coin many different times, assuming that each coin toss is equally likely to result in heads. Suppose we perform $N$ experiments and record the number of times, $n$, that a particular outcome occurs. Under the so-called `frequentist' interpretation, the appropriate probability to assign to this outcome is its relative frequency, $n/N$, in the limit $N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were unbiased; if biased, it would be some other number between 0 and 1.
+So far we have said nothing of the meaning of probabilities: they are simply numbers assigned to outcomes of random variables. One way to interpret probabilities is to imagine many separate experiments, of whose outcomes are identically ignorant. For example, we can imagine tossing the same coin many different times, assuming that each coin toss is equally likely to result in heads. Suppose we perform $\N$ experiments and record the number of times, $n$, that a particular outcome occurs. Under the so-called `frequentist' interpretation, the appropriate probability to assign to this outcome is its relative frequency, $n/\N$, in the limit $\N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were unbiased; if biased, it would be some other number between 0 and 1.
 
 Note also that time does not appear in the random variable setup. Of course, there is nothing stopping us from using a probability distribution which depends on time or, indeed, any other variable, like the day of the week or the country we are in. Such parametrisations of the random variable do not change fundamentally its mathematical structure: a set of outcomes and associated probabilities. When we consider probability distributions of random variables that do depend on time, such as wealth, $\x(\t)$, in the coin tossing game, we will make the time dependence explicit. By default we assume random variables are time-independent
 
@@ -87,7 +87,7 @@ If $\Z$ is a continuous random variable, its expectation value is the integral o
 The sum or the integral may not exist, in which case the random variable does not have an expectation value. Examples of this are the payout of the St Petersburg lottery in \secref{SPP} and the power-law distributed random variable with \PDFa:
 \be
 \PDF_{\Z}(\z) = \begin{cases}
-z^{-2} & \z\geq1 \\
+\z^{-2} & \z\geq1 \\
 0 & \z<1.
 \end{cases}
 \ee
@@ -117,7 +117,7 @@ The limit is not guaranteed to exist, in which case $\Z$ has no ensemble average
 
 Note that, unlike the expectation value, the ensemble average of a random variable is not defined in terms of probabilities. It is the quantity to which averages over realisations converge as the number of realisations grows. Recall that we followed this procedure when analysing the coin game. At each round of the gamble, we found finite-ensemble averages of simulated wealth for increasingly large samples, from one to one million, plotted against time in \fref{1_2}.
 
-It is laborious to compute averages of ever larger finite ensembles, in the hope of discerning their convergence to a limit. Fortunately, we can show, under the frequentist interpretation of probability introduced in \secref{random_variable}, that the ensemble average of a random variable is equal to its expectation value.
+It is laborious to compute averages of ever larger finite ensembles, in the hope of discerning their convergence to a limit. Fortunately, we can show, under the frequentist interpretation of probability introduced in \secref{random_variable}, that the ensemble average of a random variable is equal to its expectation value. We do this here for the discrete case, noting that a similar proof can be offered for the continuous case.
 \begin{proof}
 Denote by  $\gn_\gj$ the number of times $\z_\gj$ is observed in $\N$ realisations of $\Z$. The finite-ensemble average can be written as
 \be
@@ -175,50 +175,48 @@ Suppressed.
 %Instead, each player expected to receive either nothing or $\q$. 
 \end{history}
 
-\section{Stochastic processes}
-Once again, we recommend van Kampen \cite[p.~52]{vanKampen1992} for a simple definition -- this time of stochastic processes. 
-Imagine we've defined a random variable, $\Z$. Any function $\Y(\Z)$ is then also a random variable. A stochastic process is a special case of such a function, namely one that depends on an additional variable $\t$, a simple scalar parameter, a number, which is interpreted as time, so we write
+\section{Stochastic process}
+% Start by illustrating with the coin toss game
+In the coin game, the wealth multipliers, $r(\t)$, at each time, $\t$, are realisations of a random variable with outcomes $\{0.6,1.5\}$ and probabilities $\{0.5,0.5\}$. Starting from $x(0)=\$1$, successive applications of the wealth updating rule,
 \be
-\Y_{\Z}(\t)=\gf(\Z,\t).
-\elabel{st_pr}
+\x(\t)=r(\t)\x(\t-\d\t),
 \ee
-This may not be how you think of a stochastic process, so let's illustrate this with a picture.
+generate a function of time, $\x(\t)$, which describes one possible evolution of wealth in the game. If we start again, generating fresh realisations of the wealth multiplier at each time step, we get a second function of time, almost certain to be different from the first. If run the game $\N$ times, we get a set of wealth evolution functions, $\{\x_1(\t),\dots,\x_{\N}(\t)\}$.
 
-%\begin{figure}[h!]
+%SP as generalisation of RV
+This situation reminds us of a random variable, except that each realisation is now a function of a parameter -- in effect, a set of real numbers -- rather than a single real number. We call such functions \textit{trajectories}. Many natural phenomena are like the coin game, in that they result not in single observations but in ordered sequences of connected observations, about whose values we are uncertain. To model such phenomena, we need a new type of mathematical object, the \textit{stochastic process}, denoted $\Y(\t)$. We define this analogously to the random variable, as:
+\bi
+\item a set of possible trajectories, $\{y(\t)\}$; and
+\item a probability distribution over this set.
+\ei
+More technical presentations are available and, again, we point you to \cite[p.~52]{vanKampen1992} for greater depth. The set of trajectories may be countable and associated with a discrete set of probabilities, or uncountable and associated with a \PDFa. For simplicity, when we index trajectories, we will do so using integers, $y_\gi(\t)$ for $\gi=1,2,\dots$, even though strictly this is incompatible with the uncountable case. Furthermore, we will always interpret the parameter, $\t$, as time.
+
+This might seem like lot to take in, but conceptually it's fairly simple. A stochastic process is nothing more than a family of trajectories from which we can select at random, according to a probability distribution. It is the generalisation of the random variable to from single numbers to functions of time. If you are already familiar with stochastic processes, this may not be how you think of them. Let's illustrate our perspective with a picture:
+
 \begin{picture}(200,220)(20,30)
-  \put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/sp_grid.pdf}}
-  \put(13,190){$Y_{z_1}(\t)$}
-  \put(13,159){$Y_{z_2}(\t)$}
-  \put(13,128){$Y_{z_3}(\t)$}
-  \put(13,97){$Y_{z_4}(\t)$}
-  \put(13,66){$Y_{z_5}(\t)$}
-  \put(-20,180){\rotatebox{-90}{realization (universe) $\gi$}}  
-%  \put(-25,12){(universe)}  
-%  \put(122,220){specific moment in time $\t=\t^*$}  
-  \put(200,235){Time $\t$}  
-  \put(188,207){$Y_{z_1}(\t^*)$}
-  \put(187,208){\vector(-1,-1){15}}
-%  \put(-27,125){$\gi=3$}
-%  \put(362,127){$\overline{Y}_{x_3}=$}
-%  \put(340,114){$\lim_{\t\to\infty}\frac{1}{\t}\int_0^{\t} Y_{x_3}(\gs)\gd \gs$}
-%  \put(100,10){$\ave{Y_X(\t^*)}=\lim_{\N\to\infty}\frac{1}{\N}\sum_{i=1}^\N Y_{x_i}(\t^*)$}  
+\put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/sp_grid.pdf}}
+\put(18,195){$y_1(\t)$}
+\put(18,164){$y_2(\t)$}
+\put(18,133){$y_3(\t)$}
+\put(18,102){$y_4(\t)$}
+\put(18,71){$y_5(\t)$}
+\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
+\put(200,235){time, $\t$}  
+\put(120,220){$y_1(\t^*)$}
+\put(130,215){\vector(1,-1){13}}
 \label{sp_grid}
 \end{picture}\\
-%\end{figure}
-When we simulate stochastic processes, we often start with some value and modify it iteratively, for example in each step of a for-loop. In each step we generate a new instance of a random number and thereby construct the trajectory of the stochastic process. In \eref{st_pr} it's not generated that way. Instead, in this picture, we generate an instance $\z$ of the random variable $\Z$ only once and insert that into \eref{st_pr}. The value $\z$ specifies a simple function of time
-\be
-\Y_{\z}(\t)=\gf(\z,\t)
-\elabel{st_pr_r}
-\ee
-meaning that all the randomness is contained in $\z$. Once $\z$ is specified, $\Y_{\z}(\t)$ is specified for all time, and we call it a ``realization'' or ``trajectory'' of the stochastic process. Note the use of capital $\Z$ for the random variable in \eref{st_pr} and small $\z$ for a realization of it in \eref{st_pr_r}. As an example you can think of drawing at random a single uniformly distributed real number from the interval $(0,1)$. With probability 1, this number will be irrational and correspond to an infinite sequence of random decimal digits, which can be interpreted as a stochastic process, where $\t$ is given by the decimal place of the digit.
 
-We can also do this: fix a specific time, $\t^*$, and consider the stochastic process at that time, $\Y_{\Z}(\t^*)$. That's again a random variable, an instance of which may be $\Y_{\z_1}(\t^*)$.
+This picture suggests another way of viewing the stochastic process: if we choose a time, $\t=\t^*$, then $\Y(\t^*)$ is a random variable, whose possible realisations form the set of possible function values, $\{y(\t^*)\}$. So, if you prefer, you can think of a stochastic process as a family of random variables, with probability distributions parametrised by time.
 
-Just as a function of a random variable is another random variable, a function of a stochastic process is another stochastic process. We will often use the noun ``observable'' to refer to a quantity that is derived from a stochastic process. For example, the growth rate of wealth is an observable of the wealth process.
+\boldhead{Generating stochastic processes}
+Switching to practical considerations, there are two main ways of generating a trajectory of a stochastic processes, say on a computer. The first is consistent with our conceptualisation of selecting one from a family of trajectories. For example, if the possible trajectories were finitely many and equally probable, then we could label them with integers and draw one from a discrete uniform distribution. All the uncertainty is resolved at the start, in a single realisation of a random variable.
 
-We will suppress the random variable $\Z$ in our notation, and just write $\x(\t)$ for the stochastic wealth process (instead of writing $\x(\Z,\t)$, {\it c.f.} \eref{st_pr}). We will also write $\x(\t)$ for a specific realization of this process, or $\x_\gi(\t)$ when it's important to distinguish different realizations.
+The other approach is to generate a trajectory sequentially, by successive application of the rule which tell us which possible values of $y_\gi(\t+\d\t)$ are compatible with a known value of $y_\gi(\t)$. This is how we generated wealth trajectories in the coin game, where the rule is to multiply current wealth by the realisation of a random variable. Realising a random variable at every time step sounds laborious. However, in many models of natural phenomena, it is easier to write down a realistic updating rule than an expression for all possible trajectories, because it is often about the changes of quantities that we can reason `physically'. Moreover, many stochastic processes have uncountably many trajectories, making the single realisation approach difficult, because it requires high numerical precision, \ie very long numbers, to be useful.
 
-\section{Time averages}
+Therefore, typically we generate trajectories sequentially, using updating rules which we call the \textit{dynamics} of the stochastic process. We use lower case to denote both the stochastic process and a single realisation of it, \eg $\x(\t)$ for wealth. When it's important to distinguish different realisations, we include an index, \eg $\x_\gi(\t)$.
+
+\section{Time average}
 An observable that neatly captures the two different 
 aspects of multiplicative growth we have illustrated is the exponential growth rate, $\gm(\ave{\x(\t)}_\N, \Dt)$ 
 observed over finite time $\Dt$, in a finite ensemble
@@ -593,6 +591,8 @@ Suppressed.
 %\flabel{all_saints}
 %\end{figure}
 %\FloatBarrier
+
+\textbf{Expectation values are not what you expect.}
 
 \section{Ergodicity}
 \seclabel{Ergodic_observables}
