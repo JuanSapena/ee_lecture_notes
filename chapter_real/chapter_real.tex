@@ -35,15 +35,25 @@ prepared to pay any price to enter the lottery. However, it seems that researche
 in the early 18th century conducted rudimentary informal experiments and presented
 the gamble to friends or strangers, asking them how much they'd be willing to wager.
 In other words, the expected-wealth paradigm was put to a real-world test. And it failed 
-unequivocally: no one wanted to wager more than a few dollars. This 
-is the paradox. It is the first well-documented example of the inadequacy of the 
+unequivocally: no one wanted to wager more than a few dollars. This is the first 
+well-documented example of the inadequacy of the 
 expected-wealth paradigm as a model of human decision-making. It was the primary 
 motivation for Daniel Bernoulli's and Cramer's development of an alternative model: the
-expected-utility paradigm~\cite{Bernoulli1738}.
+expected-utility paradigm~\cite{Bernoulli1738}. 
 
-In some sense it is a pity that this deliberately provocative and unrealistic lottery has played such 
-an important role in the development of classical decision theory.  As we've seen, it is quite 
-unnecessary to invent 
+It's useful to separate two aspects of the paradox. First, at a superficial level, the divergent
+rate of change of expected wealth, irrespective of the fee, may be taken to translate into
+the real-world prediction that people will be willing to pay very high prices for a ticket. 
+That's not observed, and the prediction is {\it quantitatively wrong}. Second, on a deeper 
+level, the entire expected-wealth paradigm fails because it produces no prediction for 
+the maximum fee. This quantity diverges under this paradigm -- a good place to remember
+that an infinity as a model output is an error message. We will consider the paradox to be
+the non-existence of a maximum fee. As we address this core issue, it will turn out that the
+quantitative values for this fee are realistic.
+
+In some sense it is a pity that this deliberately provocative and unrealistic lottery has played 
+such an important role in the development of classical decision theory.  As we've seen, it is 
+quite unnecessary to invent 
 a gamble with a divergent change in expected wealth to expose the flaws in the expected-wealth 
 paradigm. The presence of infinities in the problem and its variously proposed solutions has 
 caused much confusion, and permits objections on the grounds of physical impossibility. These 
@@ -341,8 +351,8 @@ new lands and call for further ships to be sent out to sea.
 So: different concepts, very nice. But do the differences between concepts allow an experiment, 
 at least in principle, that would tell us something radically new. Specifically, since we can 
 map ergodicity economics and expected utility theory under certain conditions, can an experiment
-be designed that has discriminating power between the two sides of the map? If we mess with the
-conditions that allow the mapping, so that the two theories are no longer equivalent, which theory
+be designed that has discriminating power between the two mapped models? If we mess with the
+conditions that allow the mapping, so that the two models are no longer equivalent, which model
 will be better at describing observed behaviour?
 
 Without our knowledge, a group of neuroscientists at the Danish Research Center for Magnetic 
@@ -510,16 +520,25 @@ the red and blue curves is spurious.
 \section{Insurance}
 \seclabel{Insurance}
 The insurance contract is an important and ubiquitous type of economic transaction, 
-which can be modelled as a gamble. However, it poses a 
-puzzle~\cite{PetersAdamou2015b}. In the expected-wealth paradigm, insurance 
-contracts shouldn't exist, because buying insurance would only be rational at a 
-price at which it would be irrational to sell. More specifically:
+which can be modelled as a gamble. Its significance is two-fold: insurance contracts 
+transfer risk from one party to another, and this -- the transfer, or sharing, of risk -- is 
+a key driver of the emergence of social structure at all levels of evolution 
+\secref{Cooperation}. More mundanely, insurance is an important thing
+to understand because the selling and buying of insurance contracts (derivatives)
+constitutes the vast majority of global trade. Perhaps -- a tantalising hypothesis -- 
+these two facts are not unrelated.
+
+However, classically insurance poses a puzzle~\cite{PetersAdamou2015b}. In 
+the expected-wealth paradigm, insurance contracts shouldn't exist, because 
+buying insurance would only be rational at a price at which it would be irrational 
+to sell. More specifically:
 \begin{enumerate}
 \item To be viable, an insurer must charge an insurance premium of at least the 
 expectation value of any claims that may be made against it, called the ``net 
 premium'' \cite[p.~1]{KaasETAL2008}.
-\item The insurance buyer therefore has to be willing to pay more than the net 
-premium so that an insurance contract may be successfully signed.
+\item The insurance buyer therefore has to be willing to pay more than the expectation
+value of the claims he will receive (the net premium), so that an insurance contract 
+may be successfully signed.
 \item Under the expected-wealth paradigm it is irrational to pay more than the 
 net premium, and therefore insurance contracts should not exist.
 \end{enumerate}
@@ -527,24 +546,28 @@ In this picture, an insurance contract can only ever be beneficial to one party.
 has the anti-symmetric property that the expectation value of one party's gain is 
 the expectation value of the other party's loss.
 
-The puzzle is that insurance contracts are observed to exist.\footnote{Something 
-of an understatement. The Bank for International Settlements estimated the 
-market value of all the world's derivatives contracts, which are essentially 
-insurance contracts, as \$15 trillion in the first half of 2015 (see 
-\url{http://www.bis.org/statistics/d5\_1.pdf}). That's six times the gross domestic 
-product of the United Kingdom.} Why? Classical resolutions appeal to utility 
+The puzzle is that insurance contracts are observed to exist. Why? Classical 
+resolutions appeal to utility 
 theory (\ie psychology) and asymmetric information (\ie deception). However, 
-our decision theory naturally predicts contracts with a range of prices that 
-increase the time-average growth rate for both buyer and seller. We illustrate 
-this with an example drawn from maritime trade, in which the use of insurance 
+ergodicity economics naturally predicts contracts with a range of prices that 
+increase the time-average growth rate for both buyer and seller. 
+This is rather an important point. It means that, at a good price, insurance 
+contracts are mutually beneficial -- a theme we will return to in \secref{Cooperation}. 
+We will also see that these voluntary contracts lead to a flow of cash from 
+poor to rich -- another theme we will return to, in \secref{Reallocation}.
+
+We illustrate how this all works with an example drawn from maritime trade, in 
+which the use of insurance 
 has a very long history.\footnote{Contracts between Babylonian traders and 
 lenders were recorded around 1750 BC in the Code of Hammurabi. Chinese 
 traders practised diversification by spreading cargoes across multiple vessels 
 even earlier than this, in the third millennium BC.} A similar 
-example was used by Bernoulli~\cite{Bernoulli1738}.
+example was used by Bernoulli~\cite{Bernoulli1738}, incidentally in the
+paper containing his solution to the St. Petersburg paradox.
 
-\begin{example}{A shipping contract}
-We imagine a shipowner sending a cargo from St Petersburg to Amsterdam, with the following parameters:
+\section{Setup: a shipping insurance contract}
+We imagine a shipowner sending cargo from St Petersburg to Amsterdam, 
+with the following parameters:
 \begin{itemize}
 \item owner's wealth, $\x_\text{own}=\$100,000$;
 \item gain on safe arrival of cargo, $\G=\$4,000$;
@@ -555,7 +578,7 @@ We imagine a shipowner sending a cargo from St Petersburg to Amsterdam, with the
 An insurer with wealth $\x_\text{ins}=\$1,000,000$ proposes to insure the voyage for a 
 fee, $\F=\$1,800$. If the ship is lost, the insurer pays the owner $\gL=\G+\C$ to make him 
 good on the loss of his ship and the profit he would have made.
-\end{example}
+
 We phrase the decision the owner is facing as a choice between 
 two gambles. 
 
@@ -591,9 +614,10 @@ Insuring the ship corresponds to gamble i2
 \eea
 \end{definition}
 
-We ask whether the owner should sign the contract, and whether the insurer should have proposed it.
+To establish the puzzle, we ask in the expected-wealth paradigm whether 
+the owner should sign the contract, and whether the insurer should have proposed it.
 
-\begin{example}{Expected-wealth paradigm}
+\subsubsection{Insurance in the expected-wealth paradigm}
 In the expected-wealth paradigm (corresponding to additive repetition under 
 the time paradigm) decision makers
 maximise the rate of change of the expectation values of their wealths, according to \eref{ex_crit}:
@@ -639,69 +663,76 @@ Again we compute the difference -- the net benefit to the insurer that arises fr
 \ee
 In the example this is $\delta\gt_a^\text{i}=\$100$ per month, meaning that in the 
 world of the expected-wealth paradigm the insurer will offer the contract.
-\end{example}
+
 
 Because only one party (the insurer) is willing to sign, no contract will come into existence. We could think that we got
-the price wrong, and the contract would be sigend if offered at a different fee. 
-But this is not the case, and that's the fundamental insurance puzzle: in the
-world created by expected-wealth maximisation no price exists at which both
-parties will sign the contract.
-
-Looking at \eref{dro} and \eref{dri} we notice the anti-symmetric relationship between
-the two expressions,  
-$\delta\gt_a^\text{o}=-\delta\gt_a^\text{i}$.
+the price wrong, and the contract would be signed if offered at a different fee. 
+But this is not the case. Looking at \eref{dro} and \eref{dri} we notice the anti-symmetric 
+relationship between the two expressions, 
+\be
+\delta\gt_a^\text{o}=-\delta\gt_a^\text{i}.
+\ee
 By symmetry, there can be no fee at which both expressions are positive. 
+If one is positive, the other must be negative. The only point where this
+isn't the case is when both sides are exactly zero.
 Hence there are no circumstances in the world created by the 
-expected-wealth paradigm under which both parties will sign. Insurance
-contracts cannot exist in this world.
+expected-wealth paradigm under which both parties have an incentive to 
+sign; there is merely one specific price at which neither party has a reason 
+to refrain from signing. Insurance contracts cannot exist in this model world.
+
+\begin{keypts}{Fundamental insurance puzzle}
+In the model world created by expected-wealth maximisation, {\it no price exists} at 
+which two parties will sign an insurance contract.
+\end{keypts}
 
 One party winning at the expense of the other makes insurance an 
 unsavoury business in the expected-wealth paradigm. This is further 
 illustrated in \fref{ins_lin}, which shows the change in the rate of 
-change of expected wealth (the decision variable) for both parties 
+change of expected wealth (the decision criterion) for both parties 
 as a function of the fee, $\F$.
-\begin{figure}
+\begin{SCfigure}
 \centering
-\includegraphics[width=\textwidth]{./chapter_riskless/figs/ins_lin_cropped.pdf}
+\includegraphics[width=.5\textwidth]{./chapter_riskless/figs/ins_lin_cropped.pdf}
 \caption{Change in the rate of change of expected wealth for the shipowner (green) and the 
 insurer (blue) as a function of the insurance fee, $\F$.\flabel{ins_lin}}
-\end{figure}
-There is no price at which the decision variable is positive for the both parties. The best they can 
+\end{SCfigure}
+There is no price at which the decision variable is positive for both parties. The best they can 
 do is to pick the price at which neither of them cares whether they sign or not.
 
-In this picture, the existence of insurance contracts requires some asymmetry between the contracting parties, such as:
+In this picture, the existence of insurance contracts requires some asymmetry 
+between the contracting parties, such as:
 \begin{itemize}
-\item different attitudes to bearing risk;
+\item different psychological attitudes to bearing risk;
 \item different access to information about the voyage;
 \item different assessments of the riskiness of the voyage;
 \item one party to deceive, coerce, or gull the other into a bad decision.
 \end{itemize}
-It is difficult to believe that this is truly the basis for a market of the size and global reach of the insurance market.
+It is difficult to believe that this is truly the basis for a market of the size and 
+global reach of the insurance market.
 
-\subsection{Solution in the time paradigm}
+\subsection{Ergodicity economics solution}
 
-\begin{example}{Time paradigm}
-The insurance puzzle is resolved in the `time paradigm', \ie using 
-the growth-optimal decision theory we have developed in this lecture
-and multiplicative repetition. Again, we pause to reflect what multiplicative
-repetition means compared to additive repetition. This is important because
-additive repetition is equivalent to the expected-wealth paradigm that 
-created the insurance puzzle.  Multiplicative repetition means that the 
-ship owner sends out a ship and a cargo whose values are proportional to 
+Ergodicity economics resolves the insurance puzzle under many
+different types of dynamics -- so long as the ergodicity mapping is
+concave. For simplicity we will assume multiplicative dynamics, pausing 
+to reflect on the difference to additive dynamics (which is equivalent to 
+the expected-wealth paradigm that created the insurance puzzle). 
+Assuming a multiplicative wealth dynamic models the 
+ship owner as sending out a ship and a cargo whose values are proportional to 
 his wealth at the start of each voyage. A rich owner who has had many 
-successful voyages will send out more cargo, a larger ship, or perhaps a \textit{flotilla}, while an owner 
-to whom the sea has been a cruel mistress will send out a small vessel until his luck changes.
-Under additive repetition, the ship owner would send out the same amount
+successful voyages will send out more cargo, a larger ship, or perhaps a 
+\textit{flotilla}, while an owner to whom the sea has been a cruel mistress 
+will send out a small vessel until his luck changes. Modelling wealth with an
+additive dynamic, the ship owner would send out the same amount
 of cargo on each journey, irrespective of his wealth. Shipping companies
-of the size of Evergreen or Maersk would be inconceivable under additive repetition,
-where returns on successful investments are not reinvested.
+of the size of Evergreen or Maersk would be inconceivable under additive 
+dynamics, where returns on successful investments are not reinvested.
 
-The two parties seek to maximise
+Under multiplicative dynamics, the two parties seek to maximise
 \be
 \gt_m = \lim_{\Dt\to\infty}\frac{\D\gv(\x)}{\Dt} = \frac{\ave{\d\ln \x}}{\dt},
 \ee
-where we have used the ergodic property of $\D\gv(\x)=\D\ln\x$
-under multiplicative repetition.
+where we have used the ergodic property of $\D\gv(\x)=\D\ln\x$.
 
 The owner's time-average growth rate without insurance is 
 \be
@@ -730,23 +761,26 @@ or 0.0071\% per month. The net benefit to the insurer is therefore also
 \be
 \delta\gbar_m^{\text{i}} = \gt_m^{\text{i2}}-\gt_m^{\text{i1}}
 \ee
-\ie 0.0071\% per month. Unlike the expected wealth paradigm, the time paradigm with multiplicative repetition 
-creates a world where an insurance contract can exist -- there exists a range of fees $\F$ at which
-both parties gain from signing the contract! 
-\end{example}
+\ie 0.0071\% per month. Unlike the expected wealth paradigm, ergodicity economics 
+with multiplicative repetition creates a world where an insurance contract can exist -- 
+there exists a range of fees $\F$ at which both parties gain from signing the contract! 
 
-
-We view this as the
+We view this as the fundamental resolution of the insurance puzzle.
 \begin{keypts}{Fundamental resolution of the insurance puzzle:}
-The buyer and seller of an insurance contract both sign when it increases the time-average growth rates of their wealths.
+The buyer and seller of an insurance contract both sign when it increases the 
+time-average ergodic growth rates of their wealths.
 \end{keypts}
-It requires no appeal to arbitrary utility functions or asymmetric circumstances, rather it arises naturally from the model of human decision-making that we have set out. \fref{ins_log} shows the mutually beneficial range of insurance fees predicted by our model.
-\begin{figure}
+It requires no appeal to arbitrary utility functions or asymmetric circumstances, rather 
+it arises naturally from the model of human decision-making that we have set out. 
+\fref{ins_log} shows the mutually beneficial range of insurance fees predicted by our model.
+\begin{SCfigure}
 \centering
-\includegraphics[width=\textwidth]{./chapter_riskless/figs/ins_log_cropped.pdf}
-\caption{Change in the time-average growth rate of wealth for the shipowner (green) and the insurer (blue) as a function of the insurance fee, $F$. The mutually beneficial fee range is marked by the beige background.\flabel{ins_log}}
-\end{figure}
-Generalizing, the message of the time paradigm is that business happens when both parties gain.
+\includegraphics[width=.5\textwidth]{./chapter_riskless/figs/ins_log_cropped.pdf}
+\caption{Change in the time-average growth rate of wealth for the shipowner (green) and the insurer 
+(blue) as a function of the insurance fee, $F$. The mutually beneficial fee range is marked by the beige background.\flabel{ins_log}}
+\end{SCfigure}
+
+Generalizing, the message of ergodicity economics is that business happens when both parties gain.
 In the world created by this model any agreement, any contract, any commercial interaction 
 comes into existence because it is mutually beneficial.
 
@@ -797,8 +831,9 @@ Wealth is replaced by a non-linear utility function of wealth, which breaks the 
 expected-wealth paradigm. While it is always true that $\delta\ave{r}_\text{own}=-\delta\ave{r}_\text{ins}$, 
 the expected growth rates of non-linear utility functions don't share this anti-symmetry. A difference in 
 the decision makers' wealths is sufficient, though often different utility functions are assumed for owner and insurer, 
-which is a model that can create pretty much any behavior. The downside of a model with this ability is, of course, 
-that it makes no predictions -- nothing is ruled out, so the model cannot be falsified.
+which is a model that can create pretty much any behaviour. The downside of a model with this ability is, of course, 
+that it makes no predictions -- nothing is ruled out, so the model cannot be falsified. Popper would mark it as 
+not science.
 %
 %This represents the classical resolution of the insurance puzzle. The symmetry broken by the different wealths $W_\text{own}$ and $W_\text{ins}$, which now appear in $\ave{r_u}$ since the utility function is nonlinear.\footnote{Note that the symmetry could also have been broken by assigning different utility functions to the two parties, even if their wealths were the same. However, it suffices only that their wealths be different for the puzzle to be resolved.} Certain combinations of $W_\text{own}$, $W_\text{ins}$, and $u$ will admit a range of mutually beneficial prices, $F$. This is visible as the beige region in \fref{ins_sqrt}, which plots the decision variable, $\delta\ave{r_u}$, for both parties as a function of the fee, $F$.
 %\begin{figure}
