@@ -25,16 +25,30 @@ Often the experimental outcomes have, or can be mapped to, numerical values. For
 
 A random variable, $\Z$, is defined by:
 \bi
-\item the set of its possible values; and
-\item a probability distribution over this set.
+\item the set of its possible values, $\{\z_\gj\}$; and
+\item a probability distribution, $\prob{}$, over this set.
 \ei
-The set of values of $\Z$ may be continuous, like the interval $(3,12)$ or the real numbers, $\mathbb{R}$; discrete, like $\{4, 7.8, 29\}$ or the integers, $\mathbb{Z}$; or a combination of the two. The probability distribution is a function which maps values to probabilities. So
+The set of possible values of $\Z$ may be continuous, like the interval $(3,12)$ or the real numbers, 
+$\mathbb{R}$; discrete, like $\{4, 7.8, 29\}$ or the integers, $\mathbb{Z}$; or a combination 
+of the two. The probability distribution is a function which maps values to probabilities. We define an 
+event as $\Z$ taking the value $\z$, which we write as $\Z=\z$. This is strictly an abuse
+of notation because $\Z$ is a random variable, and $\z$ is a scalar (so they can't be identical as 
+the ``$=$'' sign suggests). But this is common notation, and we will use it here. Similarly, we may write $\Z<a$
+to denote the union of all events where $\Z$ takes a value $\z<a$ \etc
+In terms of probabilities, we write
 \be
 \prob{\Z=\z}=\p
 \ee
-means that the outcome $\Z=\z$ is associated with the probability $\p$. A specific value, $\z$, is sometimes called an `instance' or `realisation' of the random variable, $\Z$. While not obligatory, it is a common convention to denote random variables in upper case and realisations in lower case.
+to mean that the event $\Z=\z$ is associated with the probability $\p$. A specific value, $\z$, 
+is sometimes called an `outcome', an `instance' or a `realisation' of the random variable, $\Z$. 
+While not obligatory, it is a common convention to denote random variables in upper case and 
+realisations in lower case. Later in these lecture notes, where this won't lead to confusion, we will 
+often overload notation and use lower case letters for both random variables and realisations. 
+This is a little less precise but easier on the eye. 
 
-Forget, for the moment, what probabilities might mean in the context of an experiment. In purely mathematical terms, they are just real numbers associated with outcomes. The probability distribution has two constraints:
+Forget, for the moment, what probabilities might mean in the context of an experiment. In purely 
+mathematical terms, they are just real numbers associated with outcomes. The probability 
+distribution has two constraints:
 \bi
 \item the probability of any outcome must be non-negative; and
 \item the probability of an outcome that is certain to happen, \ie that includes all possible outcomes, must be one.
@@ -42,7 +56,8 @@ Forget, for the moment, what probabilities might mean in the context of an exper
 The latter is a normalisation condition which fixes the scale of the probabilities.
 
 \boldhead{Discrete random variable}
-When the set of outcomes is discrete, say $\{\z_1,\dots,\z_M\}$, we assign a probability, $\p_\gj$, to each outcome, $\z_\gj$, such that
+When the set of outcomes is discrete, say $\{\z_1,\dots,\z_M\}$, we assign a probability, 
+$\p_\gj$, to each outcome, $\z_\gj$, such that
 \be
 \prob{\Z=\z} = \begin{cases}
 \p_\gj & \text{if } \z=\z_\gj\\
@@ -55,54 +70,98 @@ and
 \ee
 
 \boldhead{Continuous random variable}
-Most of the models we will study contain random variables whose possible outcomes form a continuous set. In this case, $\Z$ can take uncountably many values, to which we can't assign non-zero probabilities while maintaining the normalisation condition. Instead, we assign probabilities to intervals. We define a \PDFa, $\PDF_{\Z}(\z)$, such that the probability of $\Z$ being in the interval $(a,b)$ is given by
+Most of the models we will study contain random variables whose possible outcomes form a 
+continuous set. In this case, $\Z$ can take uncountably many values, to which we can't assign 
+non-zero probabilities while maintaining the normalisation condition. Instead, we assign 
+probabilities to intervals. We define a \PDFa, $\PDF_{\Z}(\z)$, such that the probability of $\Z$ 
+being in the interval $(a,b)$ is given by
 \be
 \prob{a \leq \Z \leq b} = \int_a^b \PDF_{\Z}(\z)\gd\z.
 \ee
-The \PDFa is a non-negative function, $\PDF_{\Z}(\z) \geq 0$, normalised so that the probability of the certain outcome, \ie the integral over all possible outcomes, is one:
+The \PDFa is a non-negative function, $\PDF_{\Z}(\z) \geq 0$, normalised so that the probability of 
+the certain outcome, \ie the integral over all possible outcomes, is one:
 \be
 \int_{-\infty}^{+\infty} \PDF_{\Z}(\z)\gd\z = 1.
 \ee
-Note the difference between subscript and argument: $\PDF_{\Z}(\z)$ is the probability density of the random variable $\Z$ at value $\z$. You might find it helpful to think of $\PDF_{\Z}(\z)\delta\z$ as the approximate probability of $\Z$ being in the small interval $(\z,\z+\delta\z)$ close to $\z$. 
+Note the difference between subscript and argument: $\PDF_{\Z}(\z)$ is the probability density of 
+the random variable $\Z$ at value $\z$. You might find it helpful to think of $\PDF_{\Z}(\z)\delta\z$ 
+as the approximate probability of $\Z$ being in the small interval $(\z,\z+\delta\z)$ close to $\z$. 
 
 \boldhead{Interpretation}
-So far we have said nothing of the meaning of probabilities: they are simply numbers assigned to outcomes of random variables. One way to interpret probabilities is to imagine many separate experiments, of whose outcomes are identically ignorant. For example, we can imagine tossing the same coin many different times, assuming that each coin toss is equally likely to result in heads. Suppose we perform $\N$ experiments and record the number of times, $n$, that a particular outcome occurs. Under the so-called `frequentist' interpretation, the appropriate probability to assign to this outcome is its relative frequency, $n/\N$, in the limit $\N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were unbiased; if biased, it would be some other number between 0 and 1.
+So far we have said nothing about the meaning of probabilities: formally, they are simply numbers 
+assigned to outcomes of random variables. Giving these numbers meaning is a separate step. 
 
-Note also that time does not appear in the random variable setup. Of course, there is nothing stopping us from using a probability distribution which depends on time or, indeed, any other variable, like the day of the week or the country we are in. Such parametrisations of the random variable do not change fundamentally its mathematical structure: a set of outcomes and associated probabilities. When we consider probability distributions of random variables that do depend on time, such as wealth, $\x(\t)$, in the coin tossing game, we will make the time dependence explicit. By default we assume random variables are time-independent
+In these notes, we will use a frequentist interpretation of probabilities, by which we mean the following. 
+Imagine many separate experiments. For example, suppose we toss a coin $\N$ times, 
+and record the number of times, $n$, that a particular outcome occurs. Under the frequentist 
+interpretation, the probability associated with this outcome is its relative frequency, $n/\N$, in the limit 
+$\N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were 
+unbiased; if biased, it would be some other number between 0 and 1.
+Formally, in terms of a random variable, the frequentist interpretation means that $n/\N$ will approach
+the probability of $n$ when we generate $\N$ instances of the random variable.
+
+Note also that time does not appear in the formal definition of a random variable. The moment we
+try to illustrate what a random variable might model, we introduce time. For instance by saying ``we toss
+a coin, and we model its {\it future} state (heads or tails) as a random variable.'' But the mathematical
+object that is the random variable doesn't know about this interpretation. It just knows about possible
+values, associated with numbers between zero and one.
+
+Nor do random variables usually depend on time. Of course, there is nothing stopping us from using a 
+probability distribution which does depend on time or, indeed, any other variable, like the day of the 
+week or the country we are in. Such parameterisations of the random variable do not change 
+fundamentally its mathematical structure: a set of outcomes and associated probabilities. When we 
+consider probability distributions of random variables that do depend on time, as we do for wealth, $\x(\t)$, 
+in the coin tossing game, we will make the time dependence explicit. By default we assume random 
+variables are time-independent
 
 \section{Expectation value}
-The \textit{expectation value}\footnote{Also known as expected value, mathematical expectation, first moment, and mean.} is a property of a random variable. Denoted by $\eval{\Z}$, it is the probability-weighted average of the realisations of $\Z$.
+The \textit{expectation value}\footnote{Also known as expected value, mathematical expectation, 
+first moment, and mean.} is a property of a random variable. Denoted by $\eval{\Z}$, it is the 
+probability-weighted average of the realisations of $\Z$.
 
 \begin{defn}{Expectation value}
-If $\Z$ is a discrete random variable, its expectation value is the sum of the possible realisations, $\z_\gj$, weighted by their probabilities, $\p_\gj$:
+If $\Z$ is a discrete random variable, its expectation value is the sum of the possible realisations, 
+$\z_\gj$, weighted by their probabilities, $\p_\gj$:
 \be
 \eval{\Z}=\sum_\gj \p_\gj \z_\gj.
 \elabel{exp_sum}
 \ee 
-If $\Z$ is a continuous random variable, its expectation value is the integral over the possible realisations weighted by the probability density:
+If $\Z$ is a continuous random variable, its expectation value is the integral over the possible 
+realisations weighted by the probability density:
 \be
 \eval{\Z}=\int_{-\infty}^{+\infty} \PDF_{\Z}(\z) \z \gd\z.
 \ee 
 \end{defn}
-The sum or the integral may not exist, in which case the random variable does not have an expectation value. Examples of this are the payout of the St Petersburg lottery in \secref{SPP} and the power-law distributed random variable with \PDFa:
+The sum or the integral may not exist, in which case the random variable does not have an 
+expectation value. One examples of this are the payout of the St Petersburg lottery, which 
+we will encounter in \secref{SPP}. Another example is any fat-tailed random variable with 
+\PDFa of the form:
 \be
 \PDF_{\Z}(\z) = \begin{cases}
-\z^{-2} & \z\geq1 \\
-0 & \z<1.
+\z^{-\tau} & \z\geq1 \\
+0 & \z<1
 \end{cases}
+\text{\hspace{.3cm}with $\tau \leq 2$}.
 \ee
 
 \section{Ensemble average}
-A conceptually different quantity from the expectation value is the \textit{ensemble average}. Instead of weighting the average of the possible realisations of $\Z$ by their probabilities, we take an unweighted average of a collection of realisations. For a finite number of realisations, we call this the \textit{finite-ensemble average} and denote it by $\ave{\Z}_\N$. 
+The \textit{ensemble average} is conceptually different from the expectation value, although we
+will see that it always is identical in value. Instead of weighting the average of the possible 
+realisations of $\Z$ by their probabilities, we take an unweighted average of a collection of 
+generated realisations. For a finite number of realisations, we call this the \textit{finite-ensemble 
+average} and denote it by $\ave{\Z}_\N$. 
 \begin{defn}{Finite-ensemble average}
-The finite-ensemble average of a random variable, $\Z$, is the average over a finite number, $\N$, of realisations,
+The finite-ensemble average of a random variable, $\Z$, is the average over a finite number, 
+$\N$, of generated realisations,
 \be
 \ave{\Z}_{\N} \equiv \frac{1}{\N}\sum_{\gi=1}^{\N} \z_{\gi},
 \elabel{f_ens}
 \ee 
 where $\z_\gi$ denotes the $\gi^\text{th}$ realisation of $\Z$.
 \end{defn}
-You may know this as the sample average or sample mean. Note that it is an additive average: $\ave{\Z}_{\N}$ is, in effect, the value which each of the $\N$ realisations of $\Z$ can be replaced by if we want their \textit{sum} to be the same.
+You may know this as the sample average or sample mean. Note that it is an additive average, 
+meaning that $\ave{\Z}_{\N}$ is the value by which each of the $\N$ realisations of $\Z$ must 
+be replaced if we want them all to be equal without altering their \textit{sum}.
 
 The finite-ensemble average is itself a random variable: each finite ensemble of size $\N$ can contain different realisations of $\Z$ which sum to a different total. As $\N\to\infty$, this random average may converge with probability one to a unique constant. If it does, we call this limiting value the ensemble average and denote it by $\ave{\Z}$.
 \begin{defn}{Ensemble average}
@@ -113,7 +172,14 @@ The ensemble average of a random variable, $\Z$, is the $\N\to\infty$ limit of t
 \ee
 where $\z_\gi$ denotes the $\gi^\text{th}$ realisation of $\Z$.
 \end{defn}
-The limit is not guaranteed to exist, in which case $\Z$ has no ensemble average, although  finite-ensemble averages can always be computed. We will sometimes refer to the imagined infinite collection of realisations as the ``ensemble'' of $\Z$.
+The limit is not guaranteed to exist, in which case $\Z$ has no ensemble average, although 
+finite-ensemble averages can always be computed. We will sometimes refer to the imagined 
+infinite collection of realisations as the ``ensemble'' of $\Z$.
+
+Incidentally, if $\ave{\Z}$ is divergent, then 
+$\ave{\Z}_\N$ will grow systematically with $\N$. If $\ave{\Z}$ represents an average
+taken over $\N$ successive measurements (a time series), then a fat-tailed $\Z$ is often
+as good a model as a non-stationary (time-dependent) $\Z$.
 
 Note that, unlike the expectation value, the ensemble average of a random variable is not defined in terms of probabilities. It is the quantity to which averages over realisations converge as the number of realisations grows. Recall that we followed this procedure when analysing the coin game. At each round of the gamble, we found finite-ensemble averages of simulated wealth for increasingly large samples, from one to one million, plotted against time in \fref{1_2}.
 
@@ -123,7 +189,9 @@ Denote by  $\gn_\gj$ the number of times $\z_\gj$ is observed in $\N$ realisatio
 \be
 \ave{\Z}_\N =\frac{1}{\N}\sum_{\gi=1}^{\N}  \z_\gi = \sum_\gj \frac{\gn_\gj}{\N} \z_\gj,
 \ee
-where the subscript $\gi$ indexes a particular realisation of $\z$ and the subscript $\gj$ indexes a possible value of $\z$. Under the frequentist interpretation, the relative frequency of each possible value, $\gn_\gj/\N$, converges almost surely in the limit $\N\to\infty$ to its probability, $\p_\gj$. Thus, we find
+where the subscript $\gi$ indexes a particular realisation of $\z$ and the subscript $\gj$ indexes a possible value of $\z$. 
+Circularly -- because we work with frequentist probabilities -- the relative frequency of each possible value, 
+$\gn_\gj/\N$, converges almost surely in the limit $\N\to\infty$ to its (frequentist) probability, $\p_\gj$. Thus, we find
 \be
 \lim_{\N\to\infty}\ave{\Z}_\N = \sum_\gj \p_\gj \z_\gj = \eval{\Z}.
 \ee
@@ -177,21 +245,39 @@ Suppressed.
 
 \section{Stochastic process}
 % Start by illustrating with the coin toss game
-In the coin game, the wealth multipliers, $\gr(\t)$, at each time, $\t$, are realisations of a random variable with outcomes $\{0.6,1.5\}$ and probabilities $\{0.5,0.5\}$. Starting from $x(0)=\$1$, successive applications of the wealth updating rule,
+In the coin game, the wealth multipliers, $\gr(\t)$, at each time, $\t$, are realisations 
+of a random variable with outcomes $\{0.6,1.5\}$ and probabilities $\{0.5,0.5\}$. 
+Starting from $x(0)=\$1$, successive applications of the wealth updating rule,
 \be
 \x(\t)=\gr(\t)\x(\t-\d\t),
 \ee
-generate a function of time, $\x(\t)$, which describes one possible evolution of wealth in the game. If we start again, generating fresh realisations of the wealth multiplier at each time step, we get a second function of time, almost certain to be different from the first. If run the game $\N$ times, we get a set of wealth evolution functions, $\{\x_1(\t),\dots,\x_{\N}(\t)\}$.
+generate a function of time, $\x(\t)$, which describes one possible evolution of wealth in the game. 
+If we start again, generating fresh realisations of the wealth multiplier at each time step, we get a 
+second function of time, almost certain to be different from the first. If we run the game $\N$ 
+times, we get a set of wealth functions of time, $\{\x_1(\t),\dots,\x_{\N}(\t)\}$.
 
 %SP as generalisation of RV
-This situation reminds us of a random variable, except that each realisation is now a function of a parameter -- in effect, a set of real numbers -- rather than a single real number. We call such functions \textit{trajectories}. Many natural phenomena are like the coin game, in that they result not in single observations but in ordered sequences of connected observations, about whose values we are uncertain. To model such phenomena, we need a new type of mathematical object, the \textit{stochastic process}, denoted $\Y(\t)$. We define this analogously to the random variable, as:
+This situation reminds us of a random variable, except that each realisation is now a function 
+($\x$) of a parameter ($\t$). Each $\x_\gj(\t)$ is an ordered set of real numbers (one for each 
+$\t$), rather than a single real number. We call such functions \textit{trajectories}. Many natural 
+phenomena are like the coin game, in that they result not in single observations but in ordered 
+sequences of connected observations, about whose values we are uncertain. To model such 
+phenomena, we need a new type of mathematical object, the \textit{stochastic process}, 
+denoted $\Y(\t)$. We define this analogously to the random variable, as:
 \bi
 \item a set of possible trajectories, $\{y(\t)\}$; and
 \item a probability distribution over this set.
 \ei
-More technical presentations are available and, again, we point you to \cite[p.~52]{vanKampen1992} for greater depth. The set of trajectories may be countable and associated with a discrete set of probabilities, or uncountable and associated with a \PDFa. For simplicity, when we index trajectories, we will do so using integers, $y_\gi(\t)$ for $\gi=1,2,\dots$, even though strictly this is incompatible with the uncountable case. Furthermore, we will always interpret the parameter, $\t$, as time.
+More technical presentations are available and, again, we point you to \cite[p.~52]{vanKampen1992} 
+for greater depth. The set of trajectories may be countable and associated with a discrete 
+set of probabilities, or uncountable and associated with a \PDFa. 
+%For simplicity, when we 
+%index trajectories, $y_\gi(\t)$, we will do so using integers $\gi=1,2,\dots$, even though 
+%strictly this is incompatible with the uncountable case. 
+We will always interpret 
+the parameter, $\t$, as time.
 
-This might seem like lot to take in, but conceptually it's fairly simple. A stochastic process is nothing more than a family of trajectories from which we can select at random, according to a probability distribution. It is the generalisation of the random variable to from single numbers to functions of time. If you are already familiar with stochastic processes, this may not be how you think of them. We illustrate our perspective in \fref{sp_grid}.
+This might seem like lot to take in, but conceptually it's fairly simple. A stochastic process is nothing more than a family of trajectories from which we can select at random, according to a probability distribution. It is the generalisation of the random variable from single numbers to functions of time. If you are already familiar with stochastic processes, this may not be how you think of them. We illustrate our perspective in \fref{sp_grid}.
 \begin{figure}[h]
 \begin{picture}(200,220)(20,30)
 \put(-30,-20){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/sp_grid.pdf}}
@@ -219,7 +305,9 @@ The other approach is to generate a trajectory sequentially, by successive appli
 Therefore, typically we generate trajectories sequentially, using updating rules which we call the \textit{dynamics} of the stochastic process. Usually, where it creates no ambiguity, we don't distinguish between the stochastic process and a single realisation of it, using lower case to denote both, \eg $\x(\t)$ for wealth. When it's important to identify different trajectories, we include an index, \eg $\x_\gi(\t)$. Sometimes we refer to these different realisations as \textit{systems} and to the index as the system number.
 
 \section{Time average}
-Stochastic processes are models of uncertain quantities which vary across systems and over time. Examples are the wealth of a player of the coin game and the total goals scored in a football match. If we fix time in a stochastic process, then we can take the ensemble average of the resulting random variable,
+Stochastic processes are models of uncertain quantities which vary across systems and over time. 
+One example is the wealth of a player of the coin game; another example is the total goals 
+scored in a football match. If we fix time in a stochastic process, then we can take the ensemble average of the resulting random variable,
 \be
 \ave{\Y(\t^*)} = \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^{\N} y_\gi(\t^*).
 \ee
@@ -241,12 +329,15 @@ In the same way that the ensemble average is the many-systems limit of the finit
 \begin{defn}{Time average}
 The time average is the long-time limit of the finite-time average,
 \be
-\bar{y}(t) \equiv \lim_{\Dt\to\infty} \bar{y}_{\Dt}(\t),
+\bar{y}(\t) \equiv \lim_{\Dt\to\infty} \bar{y}_{\Dt}(\t),
 \elabel{t_ave}
 \ee
 where this limit exists.
 \end{defn}
-Note that both the finite-time and time averages are strictly functions of the time, $\t$, at which the averaging starts. In many of the models we consider, dependence on the initial condition vanishes in the limit of long averaging time. If so, we remove it from the notation and write $\bar{y}$.
+Note that both the finite-time average and the time average are strictly functions of the time, 
+$\t$, at which the averaging starts. In many of the models we consider, dependence on the 
+initial condition vanishes in the limit of long averaging time. If so, we remove it from the 
+notation and write $\bar{y}$.
 
 The two types of average possible in a stochastic process are illustrated in \fref{regodic_grid}.
 \begin{figure}[h]
@@ -267,7 +358,7 @@ The two types of average possible in a stochastic process are illustrated in \fr
 \put(340,114){$\lim_{\Dt\to\infty} \frac{1}{\Dt} \int_0^{\Dt} y_3(\gs) \gd\gs$}
 \put(100,10){$\ave{\Y(\t^*)} = \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^\N y_\gi(\t^*)$}  
 \end{picture}
-\caption{Realisations of a stochastic process, $\Y(\t)$, \cf \fref{sp_grid}. The ensemble average, $\ave{\Y(\t^*)}$, is obtained by choosing a time, $\t=\t^*$, and averaging over trajectories (green box). The time average is obtained by choosing a trajectory, $\gi=3$, and averaging over time (red box).}
+\caption{Realisations of a stochastic process, $\Y(\t)$, \cf \fref{sp_grid}. The ensemble average, $\ave{\Y(\t^*)}$, is obtained by choosing a time, $\t=\t^*$, and averaging over trajectories (red box). The time average is obtained by choosing a trajectory, $\gi=3$, and averaging over time (green box).}
 \flabel{ergodic_grid}
 \end{figure}
 
