@@ -54,24 +54,23 @@ or $\text{wealth}(\text{time})$, or \smiley(\lightning) makes no difference to t
 The usefulness of our model will be different in different circumstances, 
 ranging from completely meaningless to very helpful. There is no 
 substitute for careful consideration of any given situation, and
-labeling mathematical objects in one way or another is certainly none.
+labelling mathematical objects in one way or another is certainly none.
 
 Having got these words of warning out of the way, we define our 
 model\footnote{For those in the know: ``our'' coin toss is a discrete version of geometric Brownian motion, the workhorse model of financial mathematics and much more.} of the dynamics of your wealth under the rules we just specified. 
 At regular intervals of duration $\dt$ we randomly generate a 
-factor $\gr(\t)$ with each possible value
+factor $\gr$ with each possible value
 $\gr_i\in \{0.6, 1.5\}$ occurring with probability 1/2, 
-
 \be 
-\gr(\t) = \begin{cases}
-0.6 &\text{with probability  1/2}\\
+\gr = \begin{cases}
+0.6 &\text{with probability 1/2}\\
 1.5 &\text{with probability 1/2}
 \end{cases}
 \elabel{law}
 \ee
 and multiply current wealth by that factor, so that
 \be
-\x(\t+\dt)=\gr(\t)\x(\t).
+\x(\t+\dt) = \x(\t)\gr.
 \elabel{gamble}
 \ee
 
@@ -90,7 +89,6 @@ economic theory. \Fref{1_1} is a trajectory of your wealth,
 according to our computer model as it might evolve over 
 the course of 52 time steps (corresponding to one year given our 
 original setup).
-
 \begin{figure}[h!]
 \begin{picture}(200,230)(0,0)
     \put(0,0){\includegraphics[width=\textwidth]{./chapter_tools/figs/x_of_t_lin_1.pdf}}
