@@ -35,31 +35,45 @@ def ave_g(F,x):
        p=p*.5
     return g
 
-data_points=220
-wealth=np.zeros(data_points)
-Fmax=np.zeros(data_points)
-x=.1
+p=0.05
+L=34000
+
+data_points=50
+dgo=np.zeros(data_points)
+dgi=np.zeros(data_points)
+fee=np.zeros(data_points)
+F=1600
 for i in range(data_points):
-    wealth[i]=x
-    Fmax[i]=optimize.root_scalar(ave_g, x0=0, args=(x), bracket=[0, 100],method='bisect').root
-    x=x*1.1
-    
+#    wealth[i]=x
+#    Fmax[i]=optimize.root_scalar(ave_g, x0=0, args=(x), bracket=[0, 100],method='bisect').root
+#    x=x*1.1
+    fee[i]=F
+    dgo[i]=p*L-F
+    dgi[i]=F-p*L    
+    F=F+10
     
 #Plotting...
-plt.plot(wealth,Fmax,color='#0000FF',linewidth=2, label=r'$x_1(t)$')
+plt.plot(fee,dgo,color='#00FF00',linewidth=2, label=r'owner')
+plt.plot(fee,dgi,color='#0000FF',linewidth=2, label=r'insurer')
+plt.hlines(y=0,xmin=1600,xmax=2100,color='k',linewidth=1)
+plt.vlines(x=1800,ymin=-170,ymax=170,color='r',linestyle='--',linewidth=2)
 
 plt.gca().spines['right'].set_color('none')
 plt.gca().spines['top'].set_color('none')
+#plt.gca().spines['bottom'].set_position('zero')
+plt.gca().spines['left'].set_position(['data',1600])
 
-plt.xscale('log')
-#plt.legend()
-plt.xlabel('wealth $x$')
-plt.ylabel('maximum fee $F^{max}$')
+#plt.xscale('log')
+plt.legend()
+plt.xlabel(r'Insurance fee $F$ (\$)')
+plt.ylabel(r'Change in rate (\$/month)')
+
+plt.ylim([-170,170])
 #
 #plt.yticks([1,10.**10.,10.**20.,10.**30.,10.**40.],\
 #           ['1',r'$10^{10}$',r'$10^{20}$',r'$10^{30}$',\
 #            r'$10^{40}$'], rotation=0)
 
 
-plt.savefig("./../Fmax.pdf", bbox_inches='tight')
+plt.savefig("./../insurance_exp.pdf", bbox_inches='tight')
 plt.show()
