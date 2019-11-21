@@ -138,11 +138,11 @@ we will encounter in \secref{SPP}. Another example is any fat-tailed random vari
 \PDFa of the form:
 \be
 \PDF_{\Z}(\z) = \begin{cases}
-\z^{-\tau} & \z\geq1 \\
+(\tau-1)\z^{-\tau} & \z\geq1 \\
 0 & \z<1
 \end{cases}
-\text{\hspace{.3cm}with $\tau \leq 2$}.
 \ee
+for $\tau \leq 2$
 
 \section{Ensemble average}
 The \textit{ensemble average} is conceptually different from the expectation value, although we
@@ -361,7 +361,7 @@ The two types of average possible in a stochastic process are illustrated in \fr
 \section{The game, revisited}
 We have introduced some essential tools for studying models such as that of the coin game, where outcomes are uncertain and vary over time. It makes sense, therefore, to apply these tools to the game to see how they deepen our understanding of it.
 
-We pretended to be mathematically clueless when we ran the simulations in \secref{The_game}, hoping to gain an understanding of the game by simply looking at many possible outcomes. We can now compute exactly the ensemble average of the stochastic process for wealth, $\x(\t)$, instead of approximating it numerically by a finite-ensemble average. We start by taking the ensemble average of the wealth updating rule in \eref{x_update},
+We pretended to be mathematically clueless when we ran the simulations in \secref{The_game}, hoping to gain an understanding of the game by simply looking at many possible outcomes. We can now compute exactly the ensemble average of the stochastic process for wealth, $\x(\t)$, instead of approximating it numerically by a finite-ensemble average. We start by taking the ensemble average of the wealth updating equation, \eref{x_update},
 \be
 \ave{\x(\t+\dt)} = \ave{\x(\t)\gr}.
 \elabel{step_1}
@@ -383,21 +383,20 @@ Recall that $\gr$ is random variable with outcomes $\{0.6,1.5\}$ and probabiliti
 \ee
 Since this number is greater than one, the ensemble average wealth, $\ave{\x(\t)}$, grows exponentially over time by a factor 1.05 per round of the game.
 
-It is useful to quantify this growth in a standard way, as a growth rate. We will say much more about this in \secref{Growth_rates}, since it is a central concept in ergodicity economics. For the moment, it is enough to know that the appropriate growth rate is the coefficient of time, $\g$, in the exponential function, $\exp(\g\t)$.
+It is useful to quantify this growth in a standard way, as a growth rate. We will say much more about this in \secref{Growth_rates}, since it is a central concept in ergodicity economics. For the moment, it is enough to know that the appropriate growth rate for a quantity which grows multiplicatively is the coefficient of time, $\g$, in the exponential function, $\exp(\g\t)$.
 
-Writing
+We write
 \be
-\ave{\x(\t_0+\Dt)} = \x(\t_0) \exp(\g\Dt)
+\ave{\x(\t_0+\Dt)} = \x(\t_0) \exp(\ggave\Dt)
 \elabel{x_exp_g}
 \ee
-and equating it to $\x(\t_0)\ave{\gr}^\T$ from \eref{x_exp_r}, we get the exponential growth rate
+and equate it to $\x(\t_0)\ave{\gr}^\T$ in \eref{x_exp_r} to get the exponential growth rate,
 \be
-\g = \frac{\T\ln\ave{\gr}}{\Dt} = \frac{\ln\ave{\gr}}{\dt}.
+\ggave = \frac{\T\ln\ave{\gr}}{\Dt} = \frac{\ln\ave{\gr}}{\dt}.
 \ee
-We aren't interested here in whether time is measured in minutes, days, or years, so for simplicity let's just measure it in rounds of the game, \ie $\dt=1\text{ round}$. This choice gives us a growth rate of $\g = \ln(1.05)/1 \approx 4.9\%$ per round.
+We aren't interested here in whether time is measured in minutes, days, or years, so for simplicity let's just measure it in rounds of the game, \ie $\dt=1\text{ round}$. This choice gives us a growth rate of $\ggave = \ln(1.05)/1 \approx 4.9\%$ per round.
 
-The positive growth rate of ensemble average wealth is what might have led us to conclude that the game is worth playing, when we analysed it numerically in \secref{The_game}. \Fref{cf_exp} compares the analytical result for the ensemble, derived above, to the numerical results of \fref{1_2} for finite ensembles. We could now conclude that the case is closed. Mathematics and simulations agree there is some risk involved, but ``on average'' our wealth grows if we play the game. However, we now know that there are two ways in which we can say ``on average'': we have shown how wealth averaged over many systems evolves; let's now consider a single wealth trajectory over long time.
-
+The positive growth rate of ensemble average wealth is what might have led us to conclude that the game is worth playing, when we analysed it numerically in \secref{The_game}. \Fref{cf_exp} compares the analytical result for the ensemble, derived above, to the numerical results of \fref{1_2} for finite ensembles. We could now conclude that the case is closed. Mathematics and simulations agree there is some risk involved, but ``on average'' our wealth grows if we play the game.
 \begin{figure}[h]
 \begin{picture}(200,200)(0,0)
 \put(-100,0){\includegraphics[width=0.8\textwidth]{./chapter_tools/figs/x_of_t_lin_exp.pdf}}
@@ -408,16 +407,15 @@ The positive growth rate of ensemble average wealth is what might have led us to
 \caption{Expectation value (thick light blue line) and finite-ensemble averages on (A) linear scales and  (B) logarithmic scales.}
 \flabel{cf_exp}
 \end{figure}
-
 %In this section we validate \fref{1_3} and compute analytically what happens in the long-time limit. The blue line in \fref{1_3} is not completely smooth, there's still some noise (see panel B). It has some average slope, but that slope will vary from realisation to realisation. The longer we observe the system, \ie the more time is represented in a figure like \fref{1_3}, the smoother the line will be. In the long-time limit, $\Dt\to\infty$, the line will be completely smooth, and the average slope will be a deterministic number -- in any realisation of the process it will come out identical. 
 
-Starting from $\x(\t_0)$ and playing for $\T$ rounds leads to wealth,
+However, we now know that there are two ways in which we can say ``on average'': we have shown how wealth averaged over many systems evolves; let's now consider a single wealth trajectory over long time. Starting from $\x(\t_0)$ and playing for $\T$ rounds leads to wealth,
 \be
 \x(\t_0+\T\Dt) = \x(\t_0) \prod_{\gtau=1}^\T \gr_\gtau,
 \ee
-where $\{\gr_\gtau\}$ are random wealth multipliers, all distributed like $r$, and $\gtau$ indexes the round of the game. We have taken no kind of average yet and $\x(\t_0+\T\Dt)$ remains a random variable, consistent with fixing time in a stochastic process.
+where $\{\gr_\gtau\}$ are random wealth multipliers, all distributed like $r$, and $\gtau$ is the index for the round of the game. We have taken no kind of average yet and $\x(\t_0+\T\Dt)$ remains a random variable. It is, after all, the outcome of a stochastic process at a specified time.
 
-Let's follows our previous strategy and write this as an exponential function of time,
+We follow our previous strategy of expressing this as exponential growth,
 \be
 \x(\t_0+\Dt) = \x(\t_0) \exp(\g\Dt).
 \ee
@@ -426,28 +424,39 @@ Equating the two expressions and rearranging for the growth rate, we get
 \g = \frac{1}{\Dt} \ln\left(\prod_{\gtau=1}^\T \gr_\gtau\right) = \frac{1}{\dt} \left(\frac{1}{\T} \sum_{\gtau=1}^\T \ln\gr_\gtau\right),
 \elabel{g_x_T}
 \ee
-where we used the unique property of the logarithm that $\ln(\alpha\beta) = \ln\alpha + \ln\beta$ to convert the product into a sum. So, wealth grows exponentially at a random growth rate, $\g$, whose distribution depends on the number of rounds played, $\T$.
+where we used the unique property of the logarithm that $\ln(\alpha\beta) = \ln\alpha + \ln\beta$ to convert the product into a sum. Individual wealth grows exponentially at a random growth rate, $\g$, whose distribution depends on the number of rounds played, $\T$.
 
-What happens to $\g$ in the long run? There are two ways of evaluating the $\Dt\to\infty$ -- or, equivalently, $\T\to\infty$ -- limit of \eref{g_x_T}, both illuminating in different ways. First, we can look at the product of wealth multipliers. Consider the equivalent single multiplier that, if applied at each round, would have the same product, \ie
+What happens to $\g$ in the long run? There are two ways of evaluating the $\Dt\to\infty$ (or, equivalently, $\T\to\infty$) limit of \eref{g_x_T}. Both are illuminating in different ways. First, we can consider the product of wealth multipliers. Consider the effective multiplier which, if applied at each of the $\T$ rounds, would yield the same product, \ie
 \be
-(\reff)^\T =  \prod_{\gtau=1}^\T \gr_\gtau \quad \Rightarrow \quad \reff = \left(\prod_{\gtau=1}^\T \gr_\gtau\right)^\frac{1}{\T},
+%(\greff)^\T =  \prod_{\gtau=1}^\T \gr_\gtau \quad \Rightarrow \quad
+\greff = \left(\prod_{\gtau=1}^\T \gr_\gtau\right)^\frac{1}{\T}.
 \ee
-known as the \textit{geometric mean} of $\{\gr_\gtau\}$. Suppose heads appear $m$ times and tails $n$ times. Then
+This is known as the \textit{geometric mean} of $\{\gr_\gtau\}$. Suppose heads appear $m$ times and tails $n$ times. Then
 \be
-\reff = (1.5)^\frac{m}{\T} (0.6)^\frac{n}{\T}
+\greff = (1.5)^\frac{m}{\T} (0.6)^\frac{n}{\T},
 \ee
-This is just the product of possible realisations of the wealth multiplier raised to their relative frequencies. We know what happens to relative frequencies the number of rounds grows large: they converge almost surely to their corresponding probabilities, in this case both $1/2$. So, over many rounds, the effective per round multiplier of wealth converges to
+which is simply the product of possible realisations of the wealth multiplier raised to their relative frequencies. We know already what happens to relative frequencies the number of rounds grows large: they converge almost surely to their corresponding probabilities, in this case both $1/2$. So, over many rounds, the effective per-round multiplier of wealth converges to
 \be
-\lim_{\T\to\infty} \reff = (1.5\times0.6)^\frac{1}{2} \approx 0.95.
+\grtime = \lim_{\T\to\infty} \greff = (1.5)^\frac{1}{2} (0.6)^\frac{1}{2} = (0.9)^\frac{1}{2}  \approx 0.95.
+\ee
+This tells a strikingly different story from that told by ensemble average wealth. Instead of growing exponentially by a factor 1.05 per round, a single wealth trajectory over long time decays exponentially by an effective factor of 0.95 per round. The corresponding exponential growth rate, from \eref{g_x_T}, is
+\be
+\ggtime = \frac{\ln\grtime}{\dt} \approx -5.3\% \text{ per round}.
 \ee
 
-This is a very different story from that told by ensemble average wealth. Instead of growing exponentially by a factor 1.05 per round, a single wealth trajectory over long time decays exponentially by an effective factor of approximately 0.95 per round. The corresponding growth rate, from \eref{g_x_T}, is
+The alternative route to this result is to take the $\T\to\infty$ limit of the sum in \eref{g_x_T}. Something rather interesting -- and central to ergodicity economics -- happens when we do this:
 \be
-\g = \frac{\ln\left(\reff^\T\right)}{\Dt}  = \frac{\ln\reff}{\dt} \approx -5.3\% \text{ per round}
+\ggtime = \lim_{\T\to\infty} \frac{1}{\dt} \left(\frac{1}{\T} \sum_{\gtau=1}^\T \ln\gr_\gtau\right) =  \frac{\ave{\ln\gr}}{\dt}.
 \ee
-in the $\T\to\infty$ limit.
+The first equality says that the growth rate of individual wealth over long time is the time average of the logarithm of the wealth multipliers, $\ln\gr_\gtau$, divided by the round duration, $\dt$. That's kind of believable. The second equality, however, contains a remarkable conceptual insight: it turns out we can express this time average as the expectation value of the random variable, $\ln\gr$. In other words, provided we know which observable to average, we can investigate what happens in our model over time by averaging over systems!
 
-This is consistent with our simulations in \secref{The_game}. \Fref{1_4} (B) compares the trajectory generated in \fref{1_3} to a trajectory decaying exactly at rate $\g$. The trajectory in \fref{1_3} was not a fluke: {\it every} trajectory will decay in the long run at a rate of $(\gr_1 \gr_2)^{1/2}$ per round. 
+To maintain sanity, let's check that this is the same as the result arrived at by finding the effective wealth multiplier:
+\be
+\ggtime = \frac{\frac{1}{2}\ln(1.5) + \frac{1}{2}\ln(0.6)}{\dt} = \frac{\ln\left[(1.5)^\frac{1}{2} (0.6)^\frac{1}{2}\right]}{\dt} = \frac{\ln\grtime}{\dt}.
+\ee
+It checks out. Observables whose time and ensemble averages are equivalent are very special, and we will say much more about them in the next section.
+
+Our computations of $\ggtime$ are consistent with the simulations in \secref{The_game}. \Fref{ens_v_time} (B) compares the single trajectory generated in \fref{1_3} to exponential decay at rate $\ggtime$. The trajectory in \fref{1_3} was no fluke: {\it every} trajectory will decay in the long run, with a growth rate approaching $-5.3\%$ per round. 
 \begin{figure}[h]
 \begin{picture}(200,200)(0,0)
 \put(-100,0){\includegraphics[width=0.77\textwidth]{./chapter_tools/figs/x_of_t_N1M.pdf}}
@@ -456,17 +465,12 @@ This is consistent with our simulations in \secref{The_game}. \Fref{1_4} (B) com
 \put(250,120){(B)}  
 \end{picture}
 \caption{(A) Finite-ensemble average for $N=10^6$ and 52 time steps, the light blue line is 
-the expectation value.
- (B) A single system simulated for 10,000 time steps, the light blue 
-line decays exponentially with the time-average decay factor $\rt$ in each time step.}
-\flabel{1_4}
+the expectation value. (B) A single system simulated for 10,000 time steps, the light blue 
+line decays exponentially with factor $\grtime$ in each time step.}
+\flabel{ens_v_time}
 \end{figure}
 
-There are two averages, $\rex$ and $\rt$ that we have determined numerically and analytically. 
-Neither average is ``wrong'' in itself; instead each average corresponds to a different property
-of the system. Each average is the answer to a different question. Saying that ``wealth 
-goes up, on average'' is clearly meaningless and should be countered with the question 
-``on what type of average?'' 
+There are two average wealth multipliers -- $\ave{\gr}$ and $\grtime$ -- and corresponding growth rates -- $\ggave$ and $\ggtime$ -- which we have determined numerically and analytically. Neither average is ``wrong'' \textit{per se}. Instead, each average corresponds to a different property of the model and, therefore, answers a different question about the model. A statement like ``wealth goes up, on average'' is meaningless on its own. It should be countered with the question: ``on what type of average?''
 
 \textbf{Expectation values are not what you expect.}
 
