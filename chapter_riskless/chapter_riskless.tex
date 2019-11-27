@@ -1,0 +1,553 @@
+%\section*{Summary}
+\chapter{Decisions in a riskless world\clabel{Riskless}}
+%Decision theory is re-developed. How should an individual decide whether to take some gamble (the usual way of phrasing decision problems in economics)? We solve typical decision problems (gamble evaluation) by considering the time-average growth rate (or the [time- and ensemble-] average of the ergodic growth rate) under multiplicative dynamics. The construction of an ergodic observable motivates the introduction of a non-linear function that encodes the dynamics. This function is historically called the “utility function” and encodes the dynamics. 
+%
+%In life we frequently find ourselves in situations which require us to make decisions, \ie to choose between two or more available actions whose outcomes may be uncertain. In this lecture we shall develop a theory of how individuals make such decisions. Of course, this is far too broad a promise. We can't possibly develop a {\it complete} theory of decisions in a single lecture, and perhaps not even in a lifetime. Indeed, since we will be studying mathematical models of decisions, we will necessarily have little to say about actions whose outcomes cannot be quantified, \eg in pounds, shillings, and pence. This lecture will not tell you whom you should marry or even whose economics lectures you should attend.
+%
+%Instead, we will narrow our gaze to problems which are mathematically tractable but, we hope, no less illuminating for being so. Specifically we will solve the gamble problem, which is the canonical problem in decision theory. Its treatment forms the cornerstone on which much of classical economics -- such as utility theory, game theory, and asset pricing -- is built.
+
+%We shall not consider whether our theory is prescriptive, in that it informs us how individuals {\it should} make decisions, or descriptive, in that informs us how they {\it do}. This is an important epistemological question in decision theory but, for now at least, we will leave it to the philosophers.
+
+{\it Decision theory is a cornerstone of formal economics. As the name suggests, it 
+models how people make decisions. In this chapter we will generalise and formalise
+the treatment of the coin tossing game to introduce our 
+approach to decision theory. Our central axiom will be that people attempt to maximize
+the rate at which wealth grows when averaged over time. This is a surprisingly powerful idea.
+In many cases it eliminates the need for well established but epistemologically troublesome techniques, such as utility functions. 
+}
+\newpage
+
+\section{Models and science fiction}
+\seclabel{Models_and}
+We will do decision theory 
+by using mathematical models, and since this can be done in many ways we will be
+explicit about how we choose to do it. We will define a wealth process -- a model of how wealth changes with time -- 
+and a decision criterion. The wealth process and the decision criterion may or may not remind you
+of the real world. We will not worry too much about the accuracy 
+of these reminiscences. Instead we will ``shut up and calculate'' -- we will let the mathematical
+model create its world. Writing down a mathematical model is like laying out the premise for
+a science-fiction novel. We may decide that people can download their consciousness onto a computer, 
+that medicine has advanced to eliminate ageing and death -- these are premises we are at liberty to invent.
+Once we have written them down we begin to explore the world that results from those premises.
+A decision criterion is really a model of human behaviour -- what makes us who we are if not our decisions? 
+It therefore implies a long list of specific behaviours that will
+be observed in a given model world. For example, some criteria will lead to cooperation, others will not, some will lead
+to the existence of insurance contracts, others will not \etc We will explore the worlds created by the different
+models. Once we have done so we invite you to judge which model you find most useful
+for your understanding of the world. Of course, having spent many years thinking about these
+issues we have come to our own conclusions, and we will put them forward because we believe them to be helpful.
+
+To keep the discussion to a manageable volume we will only consider a setup that corresponds to
+making purely financial decisions. We may bet on a horse or take out personal liability insurance.
+This chapter will not tell you whom you should marry or even whose economics lectures you should attend.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The decision axiom}
+
+A ``decision theory'' is a model of human behaviour. We will write down such a model phrased as the following simple 
+axiom: 
+
+\begin{keypts}{Decision axiom}
+
+People optimize the growth rate of their wealth.
+
+\end{keypts}
+
+Without discussing why people might do this, let's step into the world created by this axiom. To do that, we need to be crystal clear about what a growth rate is, so we'll discuss that first, in \secref{Growth_rates}. Traditionally, decision theory deals with an uncertain future: we have to decide on
+a course of action now although we don't know with certainty what will happen to us in the future under any
+of our choices. We will systematically work our way towards this setup, beginning with trivial decisions where neither time nor uncertainty matters \secref{Different_magnitudes}, next introducing time \secref{Different_magnitudes_and} (where we will shed light on what's called ``discounting''). In the next chapter we will introduce uncertainty, see \secref{Decisions_in_an} (where we will shed light on what's called ``expected utility theory'').
+
+%
+\section{Growth rates\seclabel{Growth_rates}}
+
+You may have wondered why both 
+\be
+\gad=\frac{\xd(\t+\Dt)- \xd(\t)}{\Dt}
+\elabel{add_rate}
+\ee
+ and 
+\be
+\gexp= \frac{\ln \xd(\t+\Dt)-\ln \xd(\t)}{\Dt}
+\elabel{exp_rate}
+\ee
+are sometimes called a growth rate -- they're different objects, why the same name? By the end of this section, the answer to this question should be clear.
+
+When we say that $\xd(\t)$ is a growth process, we mean that it is a monotonic function of $\t$. If you're thinking about randomness -- don't, we'll come to that later. For now, we will just work with a deterministic function $\xd(\t)$ -- we even use an unusual font to indicate that this is a deterministic function.
+
+For a given process, the appropriate growth rate, $\g$, solves the following problem for us: how do we characterise how fast $\xd$ grows?
+A growth rate is a mathematical object of the form
+\be
+\g=\frac{\D\gv(\xd)}{\Dt},
+\elabel{gen_rate}
+\ee
+were $\gv(\xd)$ is a monotonically increasing function of wealth $\xd$. Comparing to \eref{add_rate} and \eref{exp_rate}, we find that $\gv(\xd)=\xd$ for additive dynamics and $\gv(\xd)=\ln \xd$ for multiplicative dynamics. The transformation $\xd \to \gv(\xd)$ ensures temporal stability of $\g$.
+
+How does this work, and what does it mean? Specifically, 
+\bi
+\item[1.]
+why the transformation? 
+\item[2.]
+how do we know which transformation to use?
+\ei
+We will start with the mathematically simple case of the additive growth rate, \eref{add_rate}, and discuss its properties by applying it to additive growth. Next we will ask under what conditions the exponential growth rate, \eref{exp_rate}, is appropriate, and that will lead us to the general growth rate, \eref{gen_rate}.
+
+%$\x(\t)$ grows according to some dynamic, meaning it is some function. In order to say meaningfully at what rate $\x$ is growing, this rate has to be stable in time. For example, if $\x(\t)$ grows exponentially, the additive rate of change $\frac{\D\x}{\Dt}$ will change throughout time. 
+
+\subsection{Additive growth rate\seclabel{add_rate}}
+If I want to know how fast $\xd(\t)$ grows, the most obvious thing to compute is its rate of change -- that's the additive growth rate, \eref{add_rate}.
+This tells me by how much $\xd$ grows in the interval $[\t,\t+\Dt]$. If $\xd(\t)$ is linear in $\t$, so that 
+\be
+\xd(\t)=\xd(0)+\ggamma \t
+\elabel{linx}
+\ee
+then this is a very informative quantity. We'll now state carefully why it is informative in this case. That may seem pedantic at this point, but it will become useful when we generalise in \secref{exp_rate} and \secref{gen_rate}. 
+
+The additive growth rate \eref{add_rate} is informative of how fast $\xd$ grows under additive 
+dynamics \eref{linx} because in this case the $\t$-dependence drops out: we can measure 
+$\gad$ whenever we want, and we'll always get the same value, $\gad=\ggamma$. Not to get 
+too philosophical about it, but this kind of time-translation invariance (fancy word) is a key 
+concept in science: the search for laws is the search for universal structure -- especially for 
+time-translation invariant structure, for something ``timeless.''
+
+Let's re-write the linear dynamic \eref{linx} in differential form
+\be
+\gd\xd=\ggamma \gd\t
+\ee
+Because $\ggamma$ depends neither on $\t$ nor on $\xd$, we can re-write this as
+\be
+\gd\xd= \gd(\ggamma \t)
+\ee
+This way of writing it tells us that the growth rate $\ggamma$ is really a sort of clock speed. 
+There's no difference between rescaling $\t$ and rescaling $\ggamma$ (by the same factor).
+
+We make a mental note: {\it the growth rate is a clock speed.}
+But what kind of clock speed are we talking about? What's a clock speed anyway?
+
+Or: what's a clock? A clock is a process that we believe does something repeatedly at regular 
+intervals. It lets us measure time by counting the repetitions. By convention, after 
+9,192,631,770 cycles of the radiation produced by the transition between two levels of the 
+caesium 133 atom we say ``one second has elapsed.'' That's just something we've agreed 
+on. But any other thing that does something regularly would work as a clock -- like the Earth 
+completing one full rotation around its axis \etc
+
+When we say ``the growth rate of the process is $\ggamma$,'' we mean that $\xd$ advances 
+by $\ggamma$ units on the process-scale (meaning in $\xd$) in one standard time unit (in 
+finance we often choose one year as the unit, Earth going round the Sun). So it's a conversion 
+factor between the time scales of a standard clock and the process clock.
+
+Of course, a clock is no good if it speeds up or slows down. For processes other than additive 
+growth we have to be quite careful before we can use them as clocks, i.e. before we can state 
+their growth rates.
+
+\subsection{Exponential growth rate\seclabel{exp_rate}}
+Now what about the exponential growth rate, \eref{exp_rate}? This first thing to notice is that 
+it's not time-translation invariant for additive growth, \eref{linx}. Substituting \eref{linx} in 
+\eref{exp_rate} gives
+\bea
+\gexp&=& \frac{\ln \xd(\t+\Dt)-\ln \xd(\t)}{\Dt}\\
+&=&\frac{\ln \left[\xd(\t)+\ggamma \Dt\right]-\ln \xd(\t)}{\Dt}\\
+&=&\frac{\ln \left(1+\frac{\ggamma \Dt}{\xd(\t)}\right)}{\Dt}.
+\elabel{exp_lin}
+\eea
+That means the exponential growth rate does not extract the clock speed $\ggamma$ from 
+linear growth. There's a mismatch between the process and the form of the rate with which 
+we're measuring its speed. The exponential growth rate of additive growth is not a constant 
+but (see \RHS of \eref{exp_lin}) depends on $\xd(\t)$, \ie on the time when we started 
+measuring. It also depends on how long we measured, $\Dt$. If we used it to characterise 
+the growth in described by \eref{linx}, we would find lots of contradictions -- some people 
+would say the growth is faster, others slower because they measured at different times or 
+for different periods. 
+
+But the exponential growth rate is commonly used, and for good reasons. Let's see what it's 
+good for, by imposing that it's useful and then working backwards to find the process we 
+should use it for (we expect to find exponential growth).
+
+We require that \eref{exp_rate} yield a constant, let's call that $\ggamma$ again, irrespective 
+of when we measure it.
+\be
+ \gexp=\frac{\D \ln \xd}{\Dt}=\ggamma,
+\ee
+or
+\be
+\D \ln \xd = \ggamma\Dt,
+\ee
+or indeed, in differential form, and revealing that again the growth rate is a clock speed: 
+$\ggamma$ plays the same role as $\t$,
+\be
+\gd\ln \xd = \gd(\ggamma \t).
+\ee
+This differential equation can be directly integrated and has the solution
+\be
+\ln \xd(\t)- \ln \xd(0)=\ggamma \t.
+\ee
+We solve for the dynamic $\xd(\t)$ by writing the log difference as a fraction
+\be
+\ln \left[\frac{\xd(\t)}{\xd(0)}\right] = \ggamma \t ,
+\ee
+and exponentiating
+\be
+\xd(\t)=\xd(0)\exp(\ggamma \t)
+\elabel{expx}
+\ee
+As expected, we find that the {\it exponential} growth rate, \eref{exp_rate}, is the appropriate 
+growth rate (meaning time-independent) for {\it exponential} growth.
+
+In terms of clocks, what just happened is this: we insisted that \eref{exp_rate} be a good 
+definition of a clock speed. That requires it to be constant, meaning that the process has 
+to advance on the logarithmic scale, specified in \eref{exp_rate}, by the same amount in 
+every time interval (measured on the standard clock, of course -- Earth or caesium).
+
+\subsection{General growth rate\seclabel{gen_rate}}
+
+Finally let's be more ambitious and posit a general process, $\xd(\t)$, of which we only assume that it grows according to a dynamic that can be written down as a separable differential equation. We could be even more general, but this is bad enough.
+
+How do we define a growth rate now?
+
+Well, as in \secref{exp_rate}, we insist that the thing we're measuring will be a clock speed, \ie a 
+time-independent rescaling of time. We enforce this by writing down the dynamic in differential 
+form, containing the growth rate as a time rescaling factor. Then we'll work backwards and solve 
+for $\g$:
+
+\be
+\gd\xd=\gf(\xd) \gd(\g \t)
+\elabel{gen_diff_x}
+\ee
+(for linear growth, like in \eref{linx}, $\gf(\xd)$ would just be $\gf(\xd)=1$, and for exponential growth, \eref{expx}, 
+it would be $\gf(\xd)=\xd$, but we're leaving it general). We separate variables in \eref{gen_diff_x} and integrate the differential equation
+\be
+\int_{\xd(\t)}^{\xd(\t+\Dt)}\frac{1}{\gf(\xd)}\d\xd= \g \Dt,
+\ee
+and we've got what we want, namely the functional form of $\g$:
+\be
+\g= \frac{ \int_{\xd(\t)}^{\xd(\t+\D\t)}\frac{1}{\gf(\xd)}\gd\xd}{\Dt}.
+\elabel{g_int}
+\ee
+This doesn't quite look like our stated aim: the general expression for a growth rate, \eref{gen_rate}. But we get there, by simplifying \eref{g_int} and denoting the definite integral with the letter $\gv$, so that
+\be
+ \Delta \gv=\int_{\xd(\t)}^{\xd(\t+\Dt)}\frac{1}{\gf(\xd)}\gd\xd.
+ \elabel{Dv}
+\ee
+\Eref{gen_rate} now follows exactly by substituting \eref{Dv} in \eref{g_int}.
+This answers the second question of \secref{Growth_rates}: ``how do we know which transformation to use?''
+
+
+%
+%That's actually a very useful property, and there are many ways of saying why. It means that $\gad$ is time translation invariant, or law-like. It's a stable regularity of the process $\x$. It means that $\gad$ is not only a local measure of the speed of the process but really a rescaling factor of time. It tells us, fundamentally, how fast the clock is ticking for the process $\x$. Conversely, this means we can use $\x$ to make a clock! 
+%
+%To build a clock from $\x$, we would take an initial measurement, $\x(\t0)$, and a second measurement $\x(\t0+\Dt)$.
+%
+%
+%But -- crucially -- knowing its value may not be useful. The reason it may not be useful is that this quantity may well change with $\t$, in which case it's not very informative. Science -- not to get too philosophical, but here we go -- may be thought of as a search for laws, which are time-invariant relationships. If $\frac{\x(\t+\Dt)-\x(\t)}{\Dt}$ depends on when it was measured, meaning on $\t$, then it is not a law. This happens whenever $\x$ is a non-linear function of $\t$.
+%
+%So let's recap: the rate of change $\frac{\x(\t+\Dt)-\x(\t)}{\Dt}$ is a useful quantity -- equal to some constant -- if $\x$ depends linearly on $\t$. If this isn't the case, how can we say how fast $\x(\t)$ grows? The answer: find the transformation of $\x$ that grows linearly in time!
+%
+%We want to know how fast the non-linear monotonic function $\x(\t)$ grows, and we want our answer to be independent of $\t$.... hmmm... If $\x(\t)$ grows monotonically in time, then so will any monotonically increasing function $\gv(\x)$. This allows us more freedom: perhaps we can find a $\gv(\x)$ such that $\frac{\D\gv(\x)}{\Dt}$ is constant.
+
+
+But there's a simpler way of finding the transformation $\gv(\xd)$ that doesn't involve integrals and differential 
+equations. Let $\xd(\t)$ be whatever function it wants -- we know one transformation of $\xd(\t)$ that's linear in 
+time, namely the inverse function of $\xd(\t)$, which we denote 
+\be
+\xd^{(-1)}(\xd)=\t
+\ee
+$\xd^{(-1)}(\xd)$ is the transformation that pulls $\t$ out of $\xd$: I give you the value of $\xd$, you take 
+$\xd^{(-1)}(\xd)$, and you know what $\t$ is.
+
+So far, so good -- now we know how to get $\t$, which is of course linear in $\t$. But that no longer tells 
+us how fast something grows: we can't use $\xd^{(-1)}(\xd)$ as $\gv(\xd)$ because 
+$\frac{\xd^{(-1)}[\xd(\t+\Dt)]-\xd^{(-1)}[\xd(\t)]}{\Dt}=1$, always. So something is missing.
+
+If we use $\xd^{(-1)}$ as the transformation in the general growth rate, we're in effect measuring the 
+speed of the process on the scale of the process, which is why the answer is trivial: we will always 
+find a growth rate of $1$.  The growth rate is a {\it conversion factor} between time measured on 
+the standard clock (one that ticks once a second, say), and time measured on the process clock 
+(one that advances $\ggamma$ units on the $\gv(\x)$-scale in each second). 
+
+So $\xd^{(-1)}$ has the right form but not the right scale. Instead, let's try the following: take the process 
+$\xd(\t)$ at unit rate on the standard clock. We'll denote this as $\xd_1(\t)$. If we now take its inverse as 
+the transformation,  $\gv(\xd)=\xd_1^{(-1)}(\xd)$, it will of course produce a rate $1$ if $\ggamma=1$. 
+But if $\ggamma$ is something else, it will extract that something else for us!
+
+Here's the algorithm for measuring the growth rate for a general process $\xd(\t)$.
+\bi
+\item
+Write down the process at rate 1 on the standard clock, $\xd_1(\t)$.
+\item
+Invert it, to find the transformation $\gv=\xd_1^{(-1)}(\xd)$.
+\item
+Finally, evaluate the rate of change of the transformation of the process at the unknown growth rate, 
+\be
+\g=\frac{\xd_1^{(-1)}[\xd(\t+\Dt)]-\xd_1^{(-1)}[\xd(\t)]}{\Dt}
+\elabel{g_inv}
+\ee
+\ei
+
+The key conceptual message from this section is this: any growth process defines an appropriate functional 
+form of a growth rate. If we measure a process with the wrong form of growth rate, we obtain something 
+that's not stable in time. Measurements will be irreproducible or inconsistent, depending on arbitrary 
+circumstances: the time of measurement or how long we measured for. 
+
+The key formal result is this: \eref{gen_rate} tells us there is a specific transformation of wealth that is
+required to state meaningfully how fast wealth grows. \Eref{g_inv} tells us what that transformation is.
+
+The transformation is a linearisation. At the moment we could call it the stationarity transformation 
+because it appropriately removes time dependence. Later -- when we generalise to random growth 
+processes -- we will call it the ergodicity mapping. In the economics literature, the closest thing to this
+transformation is called the utility function -- a term we will mostly avoid because it comes with unhelpful 
+connotations.
+
+%In the previous lecture we introduced the concept of a growth rate, $\g$, which 
+%is the rate of change of a monotonically increasing function of wealth, $\gv(\x(\t))$:
+%\be
+%\g(\t,\Dt) \equiv \frac{\D \gv(\x(\t))}{\Dt}.
+%\elabel{g_def}
+%\ee
+%The function, $\gv$, is chosen such that the increments, $\D \gv(\x(\t))$, over 
+%the period $\Dt$,\footnote{Note that we use a general time period, $\Dt$, here 
+%and not the period of the gamble, $\dt$.} are independent instances of a random variable. The growth rate is, therefore, ergodic\footnote{The increments don't necessarily need to be independent, and examples can be constructed where they are drawn from different distributions at different times, but in our case we have independence and a fixed distribution, and that's a sufficient condition for the growth rate to be ergodic.}. We consider $\g$ a function of $\t$ only 
+%inasmuch as this labels a particular realisation of the randomness at a particular point in time.
+%
+%The statistical irrelevance of the time of measurement is 
+%important because we want the distribution of the random growth rate 
+%to convey robust information about the underlying process, rather than 
+%mere happenstance about when it was sampled. 
+%
+%%Therefore, the increments in any function $\gv(\x)$ will also be stationary. We want $\gv(\x)$ to be increasing in $\x$.
+%Under additive repetition, we know from \eref{DW_add} that $\D\x$ is already ergodic, so we know immediately that the correct mapping is the identity: $\gv(\x)=\x$.\footnote{In fact, any linear function $\gv(\x)=\alpha\x+\beta$ has stationary increments and is monotonically increasing provided $\alpha>0$. However, there is nothing gained by choosing anything more complicated than $\gv(\x)=\x$.} The ergodic growth rate for an additive process (denoted by the subscript `a') is therefore:
+%\be
+%\gad(\t,\Dt) = \frac{\D\x(\t)}{\Dt}.
+%\elabel{g_add}
+%\ee
+%
+%For a multiplicative dynamic, however, using $\D\x$ in the numerator 
+%of the rate will not do, as we know from \eref{DW_mult_short} that 
+%changes in $\x(\t)$ depend on $\x(\t)$. Instead we must find the 
+%mapping $\gv(\x)$ whose increments are independent instances of a random variable. 
+%The correct mapping now is the logarithm, since the increment over a single round is
+%\bea
+%\d\ln \x(\t) &=& \ln \x(\t) - \ln \x(\t-\d\t)\\
+%&=& \ln \gr(\t)\x(\t-\d\t) - \ln \x(\t-\d\t)\\
+%&=& \ln \gr(\t),
+%\eea
+%where \eref{R_def} has been used in the second line. This inherits its 
+%ergodicity from $\gr$. Thus the appropriate growth rate for a multiplicative 
+%process (denoted by the subscript `m') over an arbitrary time period is
+%\be
+%\gm(\t,\Dt) = \frac{\D\ln \x(\t)}{\Dt}.
+%\elabel{g_mult}
+%\ee
+%
+%The distribution of the random variable 
+%$\g(\t,\Dt)$ does not depend on $\t$ but it does depend on $\Dt$. Subject to certain conditions on $\D \gv(\x(\t))$, 
+%the distribution of $\g(\t,\Dt)$ narrows as $\Dt$ increases, converging to a 
+%scalar (just a number, no longer a random variable) in the limit $\Dt\to\infty$. 
+%In other words, as the effect of the gamble manifests itself over an increasingly 
+%long time, the noise is eliminated to reveal a growth rate reflecting the gamble's underlying tendency.
+%
+%We define this time-average growth rate, $\gt$, as
+%\be
+%\gt \equiv \lim_{\Dt\to\infty}\{\g(\t,\Dt)\}.
+%\ee
+%This is the growth rate that an individual will experience almost surely 
+%(\ie with probability approaching one) as the number of rounds of the 
+%gamble diverges. Indeed, we can express $\gt$ in precisely these terms,
+%\be
+%\gt = \lim_{\T\to\infty} \left\{ \frac{ \gv(\x(\t+\T\dt)) - \gv(\x(\t)) }{\T\dt } \right\},
+%\ee
+%where $\T$ is the number of rounds. Expanding the numerator as a sum 
+%of increments due to individual rounds of the gamble gives
+%\bea
+%\gt &=& \lim_{\T\to\infty} \left\{ \frac{1}{\T} \sum_{\gtau=1}^\T \frac{ \D \gv(\x(\t+\gtau\dt)) }{ \dt } \right\} \\
+%&=& \lim_{\T\to\infty} \left\{ \frac{1}{\T} \sum_{\gtau=1}^\T \g(\t+\gtau\dt,\dt) \right\} \\
+%&=& \ave{\g(\t,\dt)},
+%\eea
+%where the final line follows from the stationarity and independence of the successive 
+%per-round growth rates. 
+%
+%This is a restatement of the ergodic property: the time-average growth rate can be expressed equivalently as 
+%the long-time limit and as the ensemble average of the properly chosen ergodic 
+%growth rate. 
+%
+%For additive and multiplicative dynamics, we obtain the following 
+%equivalences:
+%\begin{align}
+%\gt_\text{a} &= \lim_{\Dt\to\infty}\left\{\frac{\D\x(\t)}{\Dt}\right\} = \ave{\frac{\D\x(\t)}{\Dt}}; \elabel{g_bar_a}\\
+%\gt_\text{m} &= \lim_{\Dt\to\infty}\left\{\frac{\D\ln \x(\t)}{\Dt}\right\} = \ave{\frac{\D\ln \x(\t)}{\Dt}}. \elabel{g_bar_m}
+%\end{align}
+%These follow the form of the general expression,
+%\be
+%\gt = \lim_{\Dt\to\infty}\left\{\frac{\D \gv(\x(\t))}{\Dt}\right\} = \ave{\frac{\D \gv(\x(\t))}{\Dt}}. \elabel{g_bar_gen}
+%\ee 
+%The value of $\Dt$ in the ensemble averages is immaterial. In calculations, 
+%it is often set to the period, $\dt$, of a single round of the gamble.
+%
+%Where we are interested in the value of $\gt$, knowing that it is equal 
+%to the value of $\ave{\g}$ may provide a convenient method of calculating it. 
+%However, we will attach no special interpretation to the fact that $\ave{\g}$ is 
+%an expectation value. It is simply a quantity whose value happens to 
+%coincide with that of the quantity we're interested in, \ie the time-average 
+%growth rate.
+%
+%Let's take a step back and remark more generally on what we have done so far. We 
+%started with a high-dimensional mathematical object, namely the 
+%probability distribution of the payout, $\Q$, of the gamble. To this we 
+%added two model components: the time period, $\dt$, over which the 
+%gamble unfolds; and a dynamic, in essence a set of instructions, specifying 
+%how the repeated gamble causes your wealth to evolve. We 
+%then collapsed all of this information into a single number, 
+%$\gt$, which characterises the effect of the gamble. The collapse from 
+%distribution to single number (or, equivalently, from uncertain to certain 
+%quantity) allows different gambles to be compared and, in particular, 
+%ranked. This permits an unequivocal decision criterion, which would be 
+%much harder to formulate for higher-dimensional objects, such as the 
+%two distributions shown in \fref{dec_dist}.
+%\begin{figure}
+%\centering
+%\includegraphics[width=\textwidth]{./chapter_riskless/figs/two_dists.pdf}
+%\caption{Two possible probability density functions for the per-round 
+%multiplier, $\gr$, defined in \eref{R_def}. The distribution denoted by 
+%the blue line has a higher mean and a higher variance than the one 
+%in red. How are we to decide which represents the more favourable 
+%gamble?\flabel{dec_dist}}
+%\end{figure}
+
+
+
+\section{Decisions in a deterministic world}
+\seclabel{Decisions_in_a_deterministic}
+Having clarified what a growth rate is, we can now apply our decision axiom to different situations: 
+act so as to maximize the growth rate of your wealth. In other words, we can explore the world 
+generated by this axiom. We will build from the ground up. First, in \secref{Different_magnitudes}, 
+we will look at comparing two simultaneous payments of different magnitude -- which one will the 
+model human choose who obeys our axiom? This is a sanity check: does the model human 
+choose the bigger payment? Next, in \secref{Different_magnitudes_and} we add time -- what if 
+the model human chooses between two payments of different magnitudes that will occur at different 
+times? This is already a far more complex situation, where the decision criterion requires knowledge 
+of the dynamic. It will shed light on what's called ``discounting.'' 
+
+In the next chapter, \cref{Risky}, we will add fluctuations, noise, uncertainty: what if the 
+model human doesn't know the magnitude (or time) of the payments with certainty? But for now, 
+everything will be perfectly known.
+
+\subsection{Different magnitudes\seclabel{Different_magnitudes}}
+I'm off to the bank to withdraw some money for you. I offer to give you either
+\bi
+\item[(1)] \$10 when I 
+get back or 
+\item[(2)] \$25 when I get back. You tell me what you prefer.
+\ei
+Let's see what our decision axiom says you'll do. Remember there's no uncertainty, I'm not lying to 
+you, no one will rob me on my way from the bank \etc
+
+I haven't told you how long it will take me to get to the bank, so we have to keep that general. We'll 
+call that time interval $\Dt$. Because we know that $\Dt$ is the same under options (1) and (2) we 
+don't actually need to know its value to compare the growth rates for the two options. Nor do we 
+have to know the functional form of the growth rate. In this simple case, we can work with a general 
+$\gv(\xd)$ in \eref{gen_rate}, and any growth rate will give the same answer. Let's see. Under 
+option (1) we have
+\be
+\g^{(1)} =\frac{\gv(\xd+\$10)-\gv(\xd)}{\Dt},
+\ee
+and under option (2) we have
+\be
+\g^{(2)} =\frac{\gv(\xd+\$25)-\gv(\xd)}{\Dt}.
+\ee
+To find out which growth rate is larger, we subtract $\g^{(1)}$ from $\g^{(2)}$ 
+\bea
+\g^{(2)}-\g^{(1)} &=&\frac{\gv(\xd+\$25)-\gv(\xd)(-\gv(\xd+\$10)-\gv(\xd))}{\Dt}\\
+ &=&\frac{\gv(\xd+\$25)-\gv(\xd+\$10)}{\Dt}.
+\eea
+Because $\gv(\xd)$ is monotonically increasing, any proper growth rate will be greater under option (2), and 
+our model humans will always go for option (2). That's good -- because we would have chosen option (2) if we were you, and 
+our model reproduces this intuitive result.
+
+More generally, our model says: of two certain payments of different sizes at the same time, choose the bigger one.
+
+\subsection{Different magnitudes and times: discounting}
+\seclabel{Different_magnitudes_and}
+Let's make the decision a little harder: what if we offer you the same amounts as before, but now at different times:
+\bi
+\item[(1)] \$10 in a month or 
+\item[(2)] \$25 in two months?
+\ei
+Again, we will compute the two growth rates corresponding to options (1) and (2), and then choose the bigger one -- that's how we have been programmed to behave in the world that our axiom is creating. But unlike in the previous case, the functional form of the growth rate will now be important. 
+
+\subsubsection{Discounting under additive dynamics}
+
+Let's start with the additive growth rate, \eref{add_rate}, which is nothing but using the identity function in the general growth rate, $\gv(\xd)=\x$ in \eref{gen_rate}. Which payment do the model humans choose according to this rate? We've got all the parameters, so this is just a matter of substitution
+\be
+\gad^{(1)} =\frac{\xd+\$10-\xd}{1 \text{ month}} = \$120 \text{ p.a.},
+\ee
+and
+\be
+\gad^{(2)} =\frac{\xd+\$25-\xd}{2 \text{ months}} = \$150 \text{ p.a.}.
+\ee
+The result is clear: the decision axiom, using this growth rate, produces model humans that prefer payment (2).
+The additive growth rate has a unique feature: initial wealth, $\xd$ cancels out. I didn't need to know your initial wealth to compute the rate! Only under additive dynamics does initial wealth not enter into the computation of the growth rate, and growth rates can be computed with knowledge of only the payouts and waiting times.
+
+But perhaps the setup is more interesting than it seems at first glance.
+In the economics literature, decision-making based on additive growth rates is called ``hyperbolic discounting'' because this case is mathematically equivalent to discounting payments in the future with the hyperbolic function $\frac{1}{\Dt}$.
+
+An interesting feature of optimizing additive growth rates is what's called ``preference reversal:'' let's keep our example as it is, except we now let time march forward, holding fixed the moments in time when the payments are to be made. Under these conditions, there comes a time, precisely after a third of a month, when option (2) is no longer preferred, see \fref{hyp_disc}.
+
+\begin{figure}
+\centering
+\begin{picture}(200,80)(0,0)
+ \put(-80,0){\includegraphics[width=.33\textwidth]{./chapter_riskless/figs/disc_1.pdf}}
+ \put(40,0){\includegraphics[width=.33\textwidth, angle=0]{./chapter_riskless/figs/disc_2.pdf}}
+ \put(160,0){\includegraphics[width=.33\textwidth, angle=0]{./chapter_riskless/figs/disc_3.pdf}}
+\put(-60,60){A}
+\put(60,60){B}
+\put(180,60){C}
+\end{picture}
+\caption{\small  Slopes with linear vertical scales are {\it additive} growth rates. (A) At the beginning option (2) yields the highest additive growth rate; (B) after $1/3$ of a month, the options are equally good; (C) after $2/3$ of a month, preference reversal has taken place, and option (1) now yields the highest growth rate. As the first payment approaches, the associated growth rate diverges.}
+\flabel{hyp_disc}
+\end{figure}
+
+You may wonder why someone might model wealth as an additive process. Here is one possibility: if wealth is mostly affected by income and expenses then it will be described by an additive dynamic. Imagine you have a monthly salary of $\$1,000$, and you spend $\$900$ every month on all your expenses. So long as any investment income, like interest payments \etc, is negligible, your wealth will follow \eref{linx} with $\gamma=\$100$ per month.
+
+\subsubsection{Discounting under multiplicative dynamics}
+
+What about the exponential growth rate, with $\gv(\xd)=\ln \xd$ in \eref{gen_rate}?
+We now have growth rates
+\be
+\gm^{(1)} =\frac{\ln(\xd+\$10)-\ln(\xd)}{1 \text{ month}},
+\ee
+and
+\be
+\gm^{(2)} =\frac{\ln(\xd+\$25)-\ln(\xd)}{2 \text{ months}}.
+\ee
+Curiously, which is greater depends on your initial wealth in our model world. If your wealth is \$100, then $\gm^{(1)}\approx 114\%$ p.a., and 
+$\gm^{(2)}\approx 134\%$ p.a., wherefore you will choose option (2).
+
+But if your initial wealth is \$1, then $\gm^{(1)}\approx 2,877\%$ p.a. and $\gm^{(2)}\approx 1,955\%$ p.a., and you'll choose option (1).
+
+\begin{figure}
+\centering
+\begin{picture}(200,80)(0,0)
+ \put(-75,0){\includegraphics[width=.45\textwidth]{./chapter_riskless/figs/exp_disc_2.pdf}}
+ \put(120,0){\includegraphics[width=.45\textwidth, angle=0]{./chapter_riskless/figs/exp_disc_1.pdf}}
+ \put(-35,80){A}
+ \put(155,80){B}
+\end{picture}
+\caption{\small Slopes with logarithmic vertical scales. (A) If you have a lot of money (here \$100), exponential growth-rate optimization tells you to be patient and choose the later, larger, payment of \$25. (B) If you have little money (here \$1), the same criterion -- exponential growth-rate optimization -- tells you to get the cash as fast as possible, and choose the earlier, smaller, payment of \$10.}
+\flabel{hyp_disc}
+\end{figure}
+
+Notice how the poorer decision maker seems to be more impatient, despite his use of the exact same decision axiom. 
+Using $\gv(\xd)=\ln(\xd)$ in \eref{gen_rate} is related to what's called ``exponential discounting'' in the economics literature \cite{MavroyiannisETAL2019}. The word ``exponential'' is there because we're discounting under multiplicative dynamics (which means exponential growth), and the logarithm is the inverse function of the exponential, which we need to define the appropriate growth rate, see \eref{g_inv}.
+
+Again, let's ask why one might want to model wealth as a multiplicative process. Multiplicative processes have the property that how much you gain tomorrow is proportional to how much you currently have. Increases in wealth are proportional to wealth -- this multiplicative property is virtually ubiquitous in Nature. You can imagine many reasons why it applies to wealth. For instance, wealth can be invested in interest-paying bonds. Or it can be invested in oneself: I may pay for a roof over my head, which transforms my life and earning potential from that of someone living on the streets to that of someone with a home address. Similarly, I can invest in my health and education. 
+In Nature, multiplicativity and exponential growth occurs whenever something lives. That's because the most successful definition we have of life is ``that which self-reproduces,'' and self-reproduction implies multiplicative growth.
+
+We learn: in this slightly more complex though still fully deterministic case, which option is 
+preferable does not only depend on the options available but also on the personal 
+circumstances of the decision maker. Both the way the decision maker thinks about wealth as a dynamical process, and his wealth influence his preferences.
+
+Perhaps the most significant message is the richness of this problem. We're applying nothing but our simple axiom, but it forces us to choose how we think about the dynamics of our wealth, and in reality that may depend strongly on many difficult to specify circumstances. In real life payments are not just offered at some point in time, but usually in return for something -- an asset or work. Depending on the specific exchange, an additive, multiplicative, or more general model will be appropriate. Such models are explored in even greater detail in \cite{MavroyiannisETAL2019}. 
+
+Importantly, we need not resort to psychology to generate a host of behaviours, such as impatience of poorer individuals or preference reversal as time ticks on.
+
+

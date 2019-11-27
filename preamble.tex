@@ -1,24 +1,37 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{report}
+%\usepackage[margin=1in]{geometry}
 \usepackage{graphicx,placeins}
 \usepackage{epsfig}
 \usepackage{tcolorbox}
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{comment}
+\usepackage{mathtools}
 \usepackage{amsmath,amsthm}
+\usepackage{amssymb}
 \usepackage{accents}
 \usepackage{xspace}
+\usepackage{wasysym}
 \definecolor{col3}{rgb}{0,.27,.4375} % lml blue
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=col3]{hyperref}
 \usepackage[nogroupskip,nonumberlist,acronym,toc,section=section]{glossaries}
-%\usepackage{showlabels}
+\usepackage{showlabels}
 \usepackage{lmodern}% http://ctan.org/pkg/lm
 \usepackage[yyyymmdd,hhmmss]{datetime}
+\usepackage{tikz}
+\usepackage{sidecap}
+
+\sidecaptionvpos{figure}{c}
+\usetikzlibrary{snakes}
+\usetikzlibrary{patterns}
+
 \newcommand{\etal}{{\it et~al.}\ }
 \newcommand{\ie}{{\it i.e.}\ }
 \newcommand{\eg}{{\it e.g.}\ }
 \newcommand{\etc}{{\it etc.}\ }
 \newcommand{\cf}{{\it cf.}\ }
 \newcommand{\Ito}{It\^{o}\xspace}
+\newcommand{\pa}{{\it p.a.}\xspace}
+\newcommand{\psa}{\ensuremath{{\text{year}}^{-1/2}}\xspace}
 
 %List of symbols shortcuts
 % For command names that already exist, prepend a "G" (for "Glossary")
@@ -34,33 +47,46 @@
 %\let\.\undefined
 \let\gm\undefined
 \let\t\undefined
+
 %\newcommand{\v}{{\gls{a}}}
 \newcommand{\ga}{{\gls{a}}}
 \newcommand{\A}{{\gls{A}}\xspace}
 \newcommand{\Abar}{{\gls{Abar}}}
+\newcommand{\ax}{{\gls{ax}}}
+\newcommand{\av}{{\gls{av}}}
+\newcommand{\bx}{{\gls{bx}}}
+\newcommand{\bv}{{\gls{bv}}}
 \newcommand{\C}{{\gls{C}}} 
 \renewcommand{\d}{{\gls{delta}}}
 \newcommand{\gd}{{\gls{d}}}
 \newcommand{\D}{{\gls{Delta}}}
+\newcommand{\DAX}{{\gls{DAX}}\xspace}
 \newcommand{\gD}{{\gls{D}}}
 \newcommand{\gdelta}{{\gls{delta}}}% Kronecker, Dirac, difference
+\newcommand{\eps}{\epsilon}
 \newcommand{\geta}{{\gls{eta}}}
 \newcommand{\gex}{{\gls{gex}}}
 \newcommand{\gf}{{\gls{f}}}
 \newcommand{\F}{{\gls{F}}}
+\newcommand{\Fmax}{{\gls{Fmax}}}
 \newcommand{\NF}{{\gls{NF}}}
 \newcommand{\g}{{\gls{g}}}
 \newcommand{\G}{{\gls{G}}}
+\newcommand{\gad}{{\gls{ga}}}
+\newcommand{\gat}{{\gls{gat}}}
+\newcommand{\gexp}{{\gls{gexp}}}
 \newcommand{\gm}{{\gls{gm}}}
 \newcommand{\gt}{{\gls{gt}}}
 \newcommand{\gi}{{\gls{i}}}  % label of realization
 \newcommand{\gj}{{\gls{j}}}	 %label of outcome, lile outcome 1
+\newcommand{\ggamma}{\gls{gamma}}
 \newcommand{\Dt}{{\gls{Dt}}}
 \newcommand{\dt}{{\gls{delta_t}}} %delta t
 \newcommand{\gdt}{{\gd\t}} %dt
 \newcommand{\Dxp}{{\gls{Dxp}}} %Delta x ^+
 \newcommand{\J}{{\gls{J}}} 
 \newcommand{\gk}{{\gls{k}}} 
+\newcommand{\K}{{\gls{K}}} 
 \newcommand{\gL}{{\gls{L}}} 
 \newcommand{\m}{{\gls{m}}} 
 \newcommand{\gmu}{{\gls{mu}}} 
@@ -70,22 +96,38 @@
 \newcommand{\mN}{{\gls{mN}}} %mathcal N -- normal dist
 \newcommand{\go}{{\gls{o}}}
 \newcommand{\p}{{\gls{p}}}
+\newcommand{\gphi}{{\gls{phi}}}
+\newcommand{\pim}{{\gls{pim}}}
+\newcommand{\Q}{{\gls{Q}}}
+\newcommand{\q}{{\gls{q}}}
 \newcommand{\gr}{{\gls{r}}}
 \newcommand{\rex}{{\gls{rex}}}
 \newcommand{\rt}{{\gls{rt}}}
 \newcommand{\gs}{{\gls{s}}} %dummy variable
 \newcommand{\gsigma}{{\gls{sigma}}}
 \newcommand{\t}{{\gls{t}}}
+\newcommand{\tmax}{{\gls{tmax}}}
 \newcommand{\tn}{{\gls{t0}}}
 \newcommand{\gS}{{\gls{S}}}
 \newcommand{\T}{{\gls{T}}}
 \newcommand{\gtau}{{\gls{tau}}}
 \newcommand{\gu}{{\gls{u}}} %utility function
+\newcommand{\du}{\d\gu} %utility function
 \newcommand{\gv}{{\gls{v}}} %ergodicity mapping
 \newcommand{\gW}{{\gls{W}}}
 \newcommand{\x}{{\gls{x}}}
+\newcommand{\xd}{{\gls{xd}}}
+\newcommand{\X}{\gls{X}}
+\newcommand{\xbar}{\gls{xbar}}
 \newcommand{\Nx}{{\gls{Nx}}}
 \newcommand{\gxi}{{\gls{xi}}}
+\newcommand{\Y}{\gls{Y}}
+\newcommand{\z}{\gls{z}}
+\newcommand{\Z}{\gls{Z}}
+\newcommand{\greff}{\gls{reff}}
+\newcommand{\grtime}{\gls{rtime}}
+\newcommand{\ggave}{\gls{gave}}
+\newcommand{\ggtime}{\gls{gtime}}
 
 % Glossary macros for Chapter 4 (Markets)
 \newcommand{\mur}{{\gls{mur}}}
@@ -94,29 +136,37 @@
 \newcommand{\mue}{{\gls{mue}}}
 \renewcommand{\l}{{\gls{l}}}
 \newcommand{\lopt}{{\gls{lopt}}}
-\newcommand{\lopts}{{\gls{lopts}}}
+\newcommand{\loptc}{{\gls{loptc}}}
 \newcommand{\lm}{{\gls{lm}}}
 \newcommand{\lp}{{\gls{lp}}}
 \newcommand{\lpm}{{\gls{lpm}}}
 \newcommand{\xzero}{{\gls{x0}}}
 \newcommand{\xone}{{\gls{x1}}}
 \newcommand{\xl}{{\gls{xl}}}
+\newcommand{\rs}{{\gls{rs}}}
+\newcommand{\rr}{{\gls{rr}}}
 \newcommand{\Sharpe}{{\gls{Sharpe}}}
+\newcommand{\SPT}{\gls{SPT}\xspace}
 \newcommand{\gtm}{{\gls{gtm}}}
 
 %Acronym shortcuts
 \newcommand{\BM}{\gls{BM}\xspace}
 \newcommand{\GBM}{\gls{GBM}\xspace}
+\newcommand{\RGBM}{\gls{RGBM}\xspace}
 \newcommand{\GDP}{\gls{GDP}\xspace}
 \newcommand{\LHS}{\gls{LHS}\xspace}
 \newcommand{\LML}{\gls{LML}\xspace}
 \newcommand{\RHS}{\gls{RHS}\xspace}
 \newcommand{\SDE}{\gls{SDE}\xspace}
+\newcommand{\SDEs}{\glspl{SDE}\xspace}
+\newcommand{\SEC}{\gls{SEC}\xspace}
 
-\newcommand{\ave}[1]{\left\langle#1 \right\rangle}
+\newcommand{\ave}[1]{\left\langle#1\right\rangle}
+\newcommand{\eval}[1]{\text{E}\left[#1\right]}
 \newcommand{\tave}[1]{\overline{#1}}
 \newcommand{\latinword}[1]{\textsf{\itshape #1}}
-\newcommand{\person}[1]{{\sc{#1}}}
+%\newcommand{\person}[1]{{\sc{#1}}}
+\newcommand{\person}[1]{#1} % switched off because not used consistently
 %\newcommand{\quote}[1]{{\it ``#1''}}
 
 \newcommand{\elabel}[1]{\label{eq:#1}}
@@ -140,7 +190,7 @@
 \newcommand{\cref}[1]{Chap.~\ref{chapter:#1}}
 \newcommand{\Cref}[1]{Chapter~\ref{chapter:#1}}
 
-
+\newcommand{\boldhead}[1]{\mbox{}\newline\textbf{#1}\newline}
 
 \newcommand{\OP}[1]{{\bf @@@OP: #1 @@@}}
 \renewcommand{\AA}[1]{{\bf ===AA: #1 ===}}
@@ -153,14 +203,19 @@
 \newcommand{\eea}{\end{eqnarray}}
 \newcommand{\bc}{\begin{center}}
 \newcommand{\ec}{\end{center}}
-\newcommand{\prob}[1]{\mathcal{P}\left(#1\right)}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\prob}[1]{\mathrm{P}\left[#1\right]}
 \newcommand{\DW}{{\Delta W}}
-\newcommand{\Du}{{\Delta u}}
+\newcommand{\Du}{{\D\gu}}
+\newcommand{\Dv}{{\D\gv}}
 \newcommand{\dW}{{\delta W}}
 \newcommand{\gbar}{\bar{g}}
 \newcommand{\nn}{\nonumber}
 
 \newcommand{\definition}[1]{\vspace{.2cm} {\bf \underline{Definition} #1} \vspace{.2cm}}
+
+
 
 % Example environment
 \definecolor{col1}{rgb}{0.96, 0.94, 0.93} % isabelline

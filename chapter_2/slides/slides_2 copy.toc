@@ -1,9 +1,0 @@
-\beamer@endinputifotherversion {3.33pt}
-\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {2}{Gambles}{7}{0}{2}
-\beamer@sectionintoc {3}{Repetition}{17}{0}{3}
-\beamer@sectionintoc {4}{Growth rates}{28}{0}{4}
-\beamer@sectionintoc {5}{Decision axiom}{38}{0}{5}
-\beamer@sectionintoc {6}{Classical theory}{55}{0}{6}
-\beamer@sectionintoc {7}{St Petersburg paradox}{64}{0}{7}
-\beamer@sectionintoc {8}{Insurance}{80}{0}{8}

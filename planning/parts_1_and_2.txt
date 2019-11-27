@@ -1,0 +1,33 @@
+1. Why
+Manifesto (later)
+Coin game
+
+Part 1 - TOOLS
+
+2. Tools
+Random variable
+Stochastic process
+Ensemble average
+Time average
+Birkhoff equality - density function given by process
+SDE/Ito/BM/CLT
+
+Part 2 - MICRO
+
+3. Decisions in a riskless world
+Growth rates
+Dynamics/mapping
+Discounting
+
+4. Decisions in a risky world
+Introduce noise - GBM
+Dynamics/mapping
+Utility (including history, e.g. SPP)
+
+5. Decisions in the real world
+Copenhagen
+Insurance
+
+Do as much as possible in CONTINUOUS time.
+
+Part 3 - MACRO

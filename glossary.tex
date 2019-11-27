@@ -1,19 +1,35 @@
-\newacronym{BM}{BM}{Brownian Motion}
-\newacronym{GBM}{GBM}{Geometric Brownian motion}
-\newacronym{GDP}{GDP}{Gross domestic product}
-\newacronym{LHS}{LHS}{Left-hand side}
+\newacronym{BM}{BM}{Brownian motion}
+\newacronym{DAX}{DAX}{Deutscher Aktienindex (German stock index)}
+\newacronym{GBM}{GBM}{geometric Brownian motion}
+\newacronym{RGBM}{RGBM}{reallocating geometric Brownian motion}
+\newacronym{GDP}{GDP}{gross domestic product}
+\newacronym{LHS}{LHS}{left-hand side}
 \newacronym{LML}{LML}{London Mathematical Laboratory}
-\newacronym{PDFa}{PDF}{Probability density function}
-\newacronym{RHS}{RHS}{Right-hand side}
-\newacronym{SDE}{SDE}{Stochastic differential equation}
+\newacronym{PDFa}{PDF}{probability density function}
+\newacronym{RHS}{RHS}{right-hand side}
+\newacronym{SDE}{SDE}{stochastic differential equation}
+\newacronym{SEC}{SEC}{Securities and Exchange Commission}
+\newacronym{SPT}{S\&P500TR}{S\&P500 total return index}
 
 %==========
 
 \newglossaryentry{gest}{
  type={symbols}, 
  name={\ensuremath{g_{\text{est}}}},
- description={Growth rate estimator for finite time and finite ensemble size},
+ description={Parameter value for time-average growth rate in a general stochastic growth process},
  sort={g_est}}
+
+\newglossaryentry{gamma}{
+ type={symbols}, 
+ name={\ensuremath{\gamma}},
+ description={Parameter specifying the value of a time-average growth rate. This enables statements like $\g_time=\ggamma$, \ie the time average growth rate take the value $\ggamma$},
+ sort={gamma}}
+
+\newglossaryentry{gexp}{
+ type={symbols}, 
+ name={\ensuremath{g_{\text{e}}}},
+ description={Ergodic growth rate for exponential growth},
+ sort={g_exp}}
 
 \newglossaryentry{mut}{
  type={symbols}, 
@@ -67,27 +83,55 @@
  description={Time average of observable $A$},
  sort=A_bar}
 
+%ax
+\newglossaryentry{ax}{
+ type={symbols}, 
+ name={\ensuremath{a_x}},
+ description={\Ito coefficient function for wealth process $\x$},
+ sort=a_x}
+
+%av
+\newglossaryentry{av}{
+ type={symbols}, 
+ name={\ensuremath{a_v}},
+ description={\Ito coefficient function for ergodicity mapping $\gv(\x)$},
+ sort=a_v}
+
+%bx
+\newglossaryentry{bx}{
+ type={symbols}, 
+ name={\ensuremath{b_x}},
+ description={\Ito coefficient function for wealth process $\x$},
+ sort=b_x}
+
+%bv
+\newglossaryentry{bv}{
+ type={symbols}, 
+ name={\ensuremath{b_v}},
+ description={\Ito coefficient function for ergodicity mapping $\gv(\x)$},
+ sort=b_v}
+
 %GC
 \newglossaryentry{C}{
  type={symbols}, 
  name={\ensuremath{C}},
- description={Cost to participate in a gamble},
+ description={Replacement cost of a ship},
  sort=C}
  
 %Gd
 \newglossaryentry{d}{
  type={symbols}, 
  name={\ensuremath{d}},
- description={Differential operator in Leibnitz notation, infinitesimal },
+ description={Differential operator in Leibniz notation, infinitesimal },
  sort=d}
 
  %Gdelta
 \newglossaryentry{delta}{
  type={symbols}, 
  name={\ensuremath{\delta}},
- description={$\delta$ is most frequently used to express a difference, for instance $\delta x$ is 
+ description={Most frequently used to express a difference, for instance $\delta x$ is 
  a difference between two wealths $x$. It can be the Kronecker delta function, a function of two 
- arguments with properties $\delta(i,j)=1$ if $i=1$ and $\delta(i,j)=0$ otherwise. It can also be 
+ arguments with properties $\delta(i,j)=1$ if $i=j$ and $\delta(i,j)=0$ otherwise. It can also be 
  the Dirac delta function of one argument, $\int f(x)\delta(x-x_0)dx=f(x_0)$},
  sort=delta}
 
@@ -95,7 +139,7 @@
 \newglossaryentry{delta_t}{
  type={symbols}, 
  name={\ensuremath{\delta t}},
- description={Duration of one round of a gamble},
+ description={A time interval corresponding to the duration of one round of a gamble or, mathematically, the period over which a single realisation of the constituent random variable of a discrete-time stochastic process is generated.},
  sort=delta}
 
 %\geta
@@ -104,13 +148,6 @@
  name={\ensuremath{\eta}},
  description={Langevin noise with the properties $\ave{\geta}=0$ and $\ave{\geta(\t_1) \geta(\t_2)}=\gdelta(\t_1-\t_2)$},
  sort=eta}
-
- %\gex
-\newglossaryentry{gex}{
- type={symbols}, 
- name={\ensuremath{g_{\ave{}}}},
- description={Exponential growth rate of the expectation value},
- sort=gex}
 
  %\NF
 \newglossaryentry{NF}{
@@ -123,8 +160,15 @@
 \newglossaryentry{f}{
  type={symbols}, 
  name={\ensuremath{{f}}},
- description={Arbitrary function},
+ description={Generic function},
  sort=f}
+
+ %\gphi
+\newglossaryentry{phi}{
+ type={symbols}, 
+ name={\ensuremath{{\varphi}}},
+ description={Reallocation rate in \RGBM},
+ sort=phi}
 
  %\Gg
 \newglossaryentry{g}{
@@ -133,19 +177,40 @@
  description={Growth rate},
  sort=g}
 
+ %\ga
+\newglossaryentry{ga}{
+ type={symbols}, 
+ name={\ensuremath{{g_\text{a}}}},
+ description={Ergodic growth rate under additive dynamics, \ie rate of change, $\gad(\x; \t,\Dt)=\frac{\D\x(\t)}{\Dt}$},
+ sort=ga}
+
+ %\ga
+\newglossaryentry{gat}{
+ type={symbols}, 
+ name={\ensuremath{\overline{{g_\text{a}}}}},
+ description={Time-average ergodic growth rate under additive dynamics, \ie long-term rate of change, $\gat(\x)=\lim_{\Dt\to\infty}\frac{\D\x(\t)}{\Dt}$},
+ sort=gat}
+
+ %\gex
+\newglossaryentry{gex}{
+ type={symbols}, 
+ name={\ensuremath{g_{\ave{}}}},
+ description={Exponential growth rate of the expectation value},
+ sort=gex}
+
  %\gm
 \newglossaryentry{gm}{
  type={symbols}, 
  name={\ensuremath{{g_\text{m}}}},
- description={Multiplicative growth rate},
+ description={Ergodic growth rate for multiplicative dynamics, \ie exponential growth rate, $\gm(\x;\t,\Dt)=\frac{\D \ln \x}{\Dt}$},
  sort=gm}
 
 %\gt
 \newglossaryentry{gt}{
  type={symbols}, 
 % name={\ensuremath{\stackrel{\text{\tiny{time}}}{g}}}, % AA: this is quite clunky
- name={\ensuremath{\bar{g}}}, % AA: cleaner notation?
- description={Time-average exponential growth rate},
+ name={\ensuremath{\overline{g}}}, % AA: cleaner notation?
+ description={Time-average ergodic growth rate},
  sort=gtime}
 
 %Gi
@@ -181,14 +246,14 @@
 \newglossaryentry{Dt}{
  type={symbols}, 
  name={\ensuremath{\Delta t}},
- description={A time interval},
+ description={A general time interval.},
  sort=Dt}
  
 %delta t
 \newglossaryentry{dt}{
  type={symbols}, 
  name={\ensuremath{\delta t}},
- description={A time interval},
+ description={A time interval corresponding to the duration of one round of a gamble or, mathematically, the period over which a single realisation of the constituent random variable of a discrete-time stochastic process is generated.},
  sort=dt}
  
  %Dxp
@@ -211,6 +276,13 @@
  name={\ensuremath{k}},
  description={dummy},
  sort=k}
+
+%K
+\newglossaryentry{K}{
+ type={symbols}, 
+ name={\ensuremath{K}},
+ description={Number of possible values of a random variable},
+ sort=K}
 
 %Gm
 \newglossaryentry{m}{
@@ -251,7 +323,7 @@
 \newglossaryentry{mN}{
  type={symbols}, 
  name={\ensuremath{\mathcal{N}}},
- description={Normal distribution, $\x \sim \mN(\ave{\p},\var(\p))$ means that the variable $\p$ is normally distributed with mean $\ave{\p}$ and variance $\var(\p)$.},
+ description={Normal distribution, $\x \sim \mN(\ave{\p},\var(\p))$ means that the variable $\p$ is normally distributed with mean $\ave{\p}$ and variance $\var(\p)$},
  sort=N}
  
  %Go
@@ -265,8 +337,15 @@
 \newglossaryentry{p}{
  type={symbols}, 
  name={\ensuremath{p}},
- description={Probability, $\p_i$ is the probability of observing event $i$ in a realization of a random variable},
+ description={Probability, $\p_\gj$ is the probability of observing event $\gj$ in a realization of a random variable},
  sort=p}
+ 
+%\pim
+\newglossaryentry{pim}{
+ type={symbols}, 
+ name={\ensuremath{\pi^{m}}},
+ description={Equity premium in our model},
+ sort=pi^m}
  
 %Gr
 \newglossaryentry{r}{
@@ -275,17 +354,59 @@
  description={Random factor whereby wealth changes in one round of a gamble},
  sort=r}
 
+%Gr
+\newglossaryentry{reff}{
+ type={symbols}, 
+ name={\ensuremath{r_\text{eff}}},
+ description={Effective per round factor by which wealth is multiplied over many rounds of a gamble},
+ sort=r}
+
+%Gr
+\newglossaryentry{rtime}{
+ type={symbols}, 
+ name={\ensuremath{r_\text{time}}},
+ description={Effective per round factor by which wealth is multiplied as the number of rounds of a gamble diverges},
+ sort=r}
+
+%Gr
+\newglossaryentry{gave}{
+ type={symbols}, 
+ name={\ensuremath{g_{\ave{}}}},
+ description={Exponential growth rate of ensemble average wealth in a gamble},
+ sort=r}
+
+%Gr
+\newglossaryentry{gtime}{
+ type={symbols}, 
+ name={\ensuremath{g_\text{time}}},
+ description={Exponential growth rate of individual wealth in a gamble as the number of rounds diverges},
+ sort=r}
+
+%Gr
+\newglossaryentry{rs}{
+ type={symbols}, 
+ name={\ensuremath{r_s}},
+ description={Factor whereby wealth invested in stock changes},
+ sort=r_s}
+
+%Gr
+\newglossaryentry{rr}{
+ type={symbols}, 
+ name={\ensuremath{r_r}},
+ description={Factor whereby wealth deposited in a bank changes},
+ sort=r_r}
+
 %rex
 \newglossaryentry{rex}{
  type={symbols}, 
  name={\ensuremath{r_{\ave{}}}},
- description={Exctation value of growth factor $\gr$},
+ description={Expectation value of growth factor $\gr$},
  sort=rex}
 
 %rt
 \newglossaryentry{rt}{
  type={symbols}, 
- name={\ensuremath{r_{\text{time}}}},
+ name={\ensuremath{\overline{r}}},
  description={Average growth factor over a long time},
  sort=rtime}
 
@@ -316,6 +437,30 @@
  name={\ensuremath{t_0}},
  description={Specific value of time $t$, usually the starting time of a gamble.},
  sort=t0}
+
+%tmax
+\newglossaryentry{tmax}{
+ type={symbols}, 
+ name={\ensuremath{t_\text{max}}},
+ description={Final time in a sequence of repeated gambles},
+ sort=t_max}
+
+ 
+%\GS
+\newglossaryentry{Q}{
+ type={symbols}, 
+ name={\ensuremath{Q}},
+ description={Random variable defining a gamble through additive wealth changes},
+ sort=Q}
+ 
+%\GS
+\newglossaryentry{q}{
+ type={symbols}, 
+ name={\ensuremath{q}},
+ description={Possible values of $\Q$. We denote by $\q_{\gi}$ the value $\Q$ takes in 
+ the $\gi^{\text{th}}$ realization, and by $\q_{\gj}$ the $\gj^{\text{th}}$-smallest possible value},
+ sort=q}
+
  
 %\GS
 \newglossaryentry{S}{
@@ -356,7 +501,7 @@
 \newglossaryentry{W}{
  type={symbols}, 
  name={\ensuremath{W}},
- description={Wiener process, $\gW(\t)=\int_0^\t dW$ is continuous and $\gW(\t)\sim\mN(0,\gt)$},
+ description={Wiener process, $\gW(\t)=\int_0^\t \gd W$ is continuous and $\gW(\t)\sim\mN(0,\t)$},
  sort=W}
  
 %Gx
@@ -364,6 +509,20 @@
  type={symbols}, 
  name={\ensuremath{x}},
  description={Wealth},
+ sort=x}
+
+%Gxd
+\newglossaryentry{xd}{
+ type={symbols}, 
+ name={\ensuremath{\mathsf{x}}},
+ description={Deterministic wealth},
+ sort=xd}
+
+%xbar
+\newglossaryentry{xbar}{
+ type={symbols}, 
+ name={\ensuremath{\overline{x}}},
+ description={Time-average of \x. With subscript $\Dt$, this is a finite-time average, without the subscript it refers to the infinite-time average},
  sort=x}
 
 %Nx
@@ -668,9 +827,18 @@
 {
   type={symbols}, 
   name={\ensuremath{F}},
-  description={Insurance fee},
+  description={Fee to be paid},
   sort=F
 }
+
+\newglossaryentry{Fmax}
+{
+  type={symbols}, 
+  name={\ensuremath{F^{\text{max}}}},
+  description={Maximum fee a player is willing to pay},
+  sort=Fmax
+}
+
 
 \newglossaryentry{G}
 {
@@ -740,12 +908,12 @@
   sort=lopt
 }
 
-\newglossaryentry{lopts}
+\newglossaryentry{loptc}
 {
   type={symbols}, 
-  name={\ensuremath{\gls{l}_\text{opt,s}}},
-  description={Simulated optimal leverage},
-  sort=lopts
+  name={\ensuremath{\gls{l}_\text{opt}^\text{est}}},
+  description={Estimate of optimal leverage from data},
+  sort=lopt_est
 }
 
 \newglossaryentry{lm}
@@ -796,6 +964,31 @@
   sort=xl
 }
 
+\newglossaryentry{z}
+{
+  type={symbols}, 
+  name={\ensuremath{z}},
+  description={Generic value of a random variable},
+  sort=z
+}
+
+\newglossaryentry{Y}
+{
+  type={symbols}, 
+  name={\ensuremath{Y}},
+  description={Random variable that is a function of another random variable, $\Z$},
+  sort=Y
+}
+
+\newglossaryentry{Z}
+{
+  type={symbols}, 
+  name={\ensuremath{Z}},
+  description={Generic random variable},
+  sort=Z
+}
+
+
 \newglossaryentry{Sharpe}
 {
   type={symbols}, 
@@ -808,6 +1001,6 @@
 {
   type={symbols}, 
   name={\ensuremath{\gls{gt}_\text{m}}},
-  description={time-average multiplicative growth rate},
+  description={Time-average ergodic growth rate for multiplicative dynamics, $\gtm(\x)=\lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}$},
   sort=gtm
 }
