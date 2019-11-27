@@ -2,19 +2,15 @@
 
 %\section{Summary}
 %\seclabel{Summary}
-{\it In this chapter we motivate and introduce the basic mathematical tools we will use. In \secref{The_game} we play a simple coin-toss game and analyze it 
-numerically, by Monte Carlo simulation, and analytically, with pen and paper. The game motivates the 
-introduction of the expectation value and the time average, which in turn 
-lead to a discussion of ergodic properties. As we have seen, the ergodicity question  -- whether time averages are identical to expectation values -- is the key to our redevelopment of formal economics. This is because ergodicity hadn't been established as a concept when the original formalism was developed. The scientific search for stable structures leads to constants in deterministic settings. When randomness is introduced, the role previously played by constants is taken on by ergodic observables.
-We also introduce the concepts of a random variable, a stochastic process, scalars as representations of transitive preferences, logarithms and exponentials, and dimensional analysis.
+{\it
+The ergodicity question  -- whether time averages are identical to expectation values -- is the key to our redevelopment of formal economics. This is because ergodicity hadn't been established as a concept when the original formalism was developed. The scientific search for stable structures leads to constants in deterministic settings. When randomness is introduced, the role previously played by constants is taken on by ergodic observables. We also introduce the concepts of a random variable, a stochastic process, scalars as representations of transitive preferences, logarithms and exponentials, and dimensional analysis.
 
 In \secref{Brownian_motion} we notice that wealth on logarithmic scales follows a random walk in our game, and we relate this to Brownian motion, as the continuous-time limit of the random walk. This allows us to introduce Brownian motion and its scaling properties that are robust enough to yield insights into more complicated models.
 
 Finally, we ask in \secref{Geometric_Brownian} what wealth in our game is doing in the continuum limit but on linear scales. This takes us to geometric Brownian motion, which will be our starting point for much of the rest of these lectures. We derive ensemble-average and time-average growth rates for geometric Brownian motion, by explicitly taking the continuous-time limit, and then state the key result of \Ito calculus, \eref{Ito_process} and \eref{Ito}, which allows an easier derivation of these growth rates and will be relied on in later chapters.
 
-Some historical perspective is provided to understand the prevalence or
-absence of key concepts in modern economic theory and other fields.
-The emphasis is on introducing concepts and useful machinery, with applications in later chapters.}
+Some historical perspective is provided to understand the prevalence or absence of key concepts in modern economic theory and other fields. The emphasis is on introducing concepts and useful machinery, with applications in later chapters.
+}
 \newpage
 
 \section{Random variable}
@@ -800,7 +796,7 @@ where we have written $\gr_\gtau = \gr(\t+\gtau\dt)$ to make clear the equivalen
 The same argument holds for $\d \ln \x$.
 \end{proof}
 
-Whether we consider \eref{t_r} an average over time or over an ensemble is only a matter of our choice of words \textbf{or of interpretation}. 
+Whether we consider \eref{t_r} an average over time or over an ensemble is only a matter of our interpretation. The mathematics are the same.
 
 The expectation value $\ave{\d \ln \x}$ is important, historically. \person{Daniel Bernoulli} noticed in 1738 \cite{Bernoulli1738} that people tend to optimize $\ave{\d \ln \x}$, whereas it had been assumed that they should optimize $\ave{\d \x}$. Unaware of the issue of ergodicity (200 years before the concept was discovered and the word was coined), \person{Bernoulli} had no good explanation for this empirical fact and simply stated that people tend to behave as though they valued money non-linearly. We now know what is actually going on: multiplicative dynamics are a fairly realistic model for real wealth, and under those dynamics $\d \x$ is not ergodic, and $\ave{\d \x}$ is of no interest -- it doesn't tell us what happens over time. However, $\d \ln \x$ {\it is} ergodic, and $\ave{\d \ln \x}$ does tell us what happens to $\x$ over time, wherefore seeing people optimise $\ave{\d \ln \x}$ just means seeing them optimise wealth over the one trajectory that describes a financial life, rather than across the ensemble of possibilities.
 
@@ -817,7 +813,7 @@ Ergodicity is not the same concept as stationarity. As an illustration of the di
 
 \section{Changes and stability}
 \seclabel{Rates}
-Material now appears in the next chapter.
+Coming soon. Most material now appears in the next chapter.
 %In this section we discuss the role of changes and stability in science in general and then say a few words about the coin toss in particular. 
 %If the latter part is hard to understand right now -- don't worry, we'll get back to it in much more detail in \cref{decisions}.
 %The ergodic observable $\d \ln \x$, identified in the previous section, is almost a rate.
@@ -1288,7 +1284,7 @@ This difference is sometimes called the ``spurious drift'', but at the \LML we c
 it is the difference between the many worlds of our dreams and fantasies, and the one cruel reality that 
 the passage of time imposes on us.
 
-\section*{Summary of \cref{Coins}}
+\section*{Summary of \cref{Tools}}
 Coming soon.
 %In this chapter we have introduced the following key concepts:
 %\bi
