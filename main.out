@@ -49,6 +49,54 @@
 \BOOKMARK [1][-]{section.5.4}{Setup: a shipping insurance contract}{chapter.5}% 49
 \BOOKMARK [2][-]{subsection.5.4.1}{Ergodicity economics solution}{section.5.4}% 50
 \BOOKMARK [2][-]{subsection.5.4.2}{The classical solution of the insurance puzzle}{section.5.4}% 51
-\BOOKMARK [1][-]{section*.13}{Acronyms}{chapter.5}% 52
-\BOOKMARK [1][-]{section*.15}{List of Symbols}{chapter.5}% 53
-\BOOKMARK [1][-]{section*.16}{References}{chapter.5}% 54
+\BOOKMARK [-1][-]{part.3}{III Macroeconomics}{}% 52
+\BOOKMARK [0][-]{chapter.6}{People}{part.3}% 53
+\BOOKMARK [1][-]{section.6.1}{Every man for himself}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.1.1}{Log-normal distribution}{section.6.1}% 55
+\BOOKMARK [2][-]{subsection.6.1.2}{Two growth rates}{section.6.1}% 56
+\BOOKMARK [2][-]{subsection.6.1.3}{Measuring inequality}{section.6.1}% 57
+\BOOKMARK [2][-]{subsection.6.1.4}{Wealth condensation}{section.6.1}% 58
+\BOOKMARK [2][-]{subsection.6.1.5}{Rescaled wealth}{section.6.1}% 59
+\BOOKMARK [2][-]{subsection.6.1.6}{u-normal distributions and Jensen's inequality}{section.6.1}% 60
+\BOOKMARK [2][-]{subsection.6.1.7}{power-law resemblance}{section.6.1}% 61
+\BOOKMARK [1][-]{section.6.2}{Finite populations}{chapter.6}% 62
+\BOOKMARK [2][-]{subsection.6.2.1}{Sums of log-normals}{section.6.2}% 63
+\BOOKMARK [2][-]{subsection.6.2.2}{The random energy model}{section.6.2}% 64
+\BOOKMARK [0][-]{chapter.7}{Interactions}{part.3}% 65
+\BOOKMARK [1][-]{section.7.1}{Cooperation}{chapter.7}% 66
+\BOOKMARK [1][-]{section.7.2}{Reallocation}{chapter.7}% 67
+\BOOKMARK [2][-]{subsection.7.2.1}{Introduction}{section.7.2}% 68
+\BOOKMARK [2][-]{subsection.7.2.2}{The ergodic hypothesis in economics}{section.7.2}% 69
+\BOOKMARK [2][-]{subsection.7.2.3}{Reallocating geometric Brownian motion}{section.7.2}% 70
+\BOOKMARK [2][-]{subsection.7.2.4}{Model behaviour}{section.7.2}% 71
+\BOOKMARK [2][-]{subsection.7.2.5}{Derivation of the stable distribution}{section.7.2}% 72
+\BOOKMARK [2][-]{subsection.7.2.6}{Moments and convergence times}{section.7.2}% 73
+\BOOKMARK [2][-]{subsection.7.2.7}{Fitting United States wealth data}{section.7.2}% 74
+\BOOKMARK [0][-]{chapter.8}{Markets}{part.3}% 75
+\BOOKMARK [1][-]{section.8.1}{Optimal leverage}{chapter.8}% 76
+\BOOKMARK [2][-]{subsection.8.1.1}{A model market}{section.8.1}% 77
+\BOOKMARK [2][-]{subsection.8.1.2}{Leverage}{section.8.1}% 78
+\BOOKMARK [2][-]{subsection.8.1.3}{Portfolio theory}{section.8.1}% 79
+\BOOKMARK [2][-]{subsection.8.1.4}{Sharpe ratio}{section.8.1}% 80
+\BOOKMARK [2][-]{subsection.8.1.5}{Expected return}{section.8.1}% 81
+\BOOKMARK [2][-]{subsection.8.1.6}{Growth rate maximisation}{section.8.1}% 82
+\BOOKMARK [1][-]{section.8.2}{Stochastic market efficiency}{chapter.8}% 83
+\BOOKMARK [2][-]{subsection.8.2.1}{A fundamental measure}{section.8.2}% 84
+\BOOKMARK [2][-]{subsection.8.2.2}{Relaxing the model}{section.8.2}% 85
+\BOOKMARK [2][-]{subsection.8.2.3}{Efficiency}{section.8.2}% 86
+\BOOKMARK [2][-]{subsection.8.2.4}{Stability}{section.8.2}% 87
+\BOOKMARK [2][-]{subsection.8.2.5}{Prediction accuracy}{section.8.2}% 88
+\BOOKMARK [1][-]{section.8.3}{Applications of stochastic market efficiency}{chapter.8}% 89
+\BOOKMARK [2][-]{subsection.8.3.1}{A theory of noise \205 Sisyphus discovers prices}{section.8.3}% 90
+\BOOKMARK [2][-]{subsection.8.3.2}{Solution of the equity premium puzzle}{section.8.3}% 91
+\BOOKMARK [2][-]{subsection.8.3.3}{Central-bank interest rates}{section.8.3}% 92
+\BOOKMARK [2][-]{subsection.8.3.4}{Fraud detection}{section.8.3}% 93
+\BOOKMARK [1][-]{section.8.4}{Real markets \205 stochastic market efficiency in action}{chapter.8}% 94
+\BOOKMARK [2][-]{subsection.8.4.1}{Backtests of constant-leverage investments}{section.8.4}% 95
+\BOOKMARK [2][-]{subsection.8.4.2}{Data sets}{section.8.4}% 96
+\BOOKMARK [2][-]{subsection.8.4.3}{Full time series}{section.8.4}% 97
+\BOOKMARK [2][-]{subsection.8.4.4}{Shorter time scales}{section.8.4}% 98
+\BOOKMARK [1][-]{section.8.5}{Discussion}{chapter.8}% 99
+\BOOKMARK [1][-]{section*.17}{Acronyms}{chapter.8}% 100
+\BOOKMARK [1][-]{section*.19}{List of Symbols}{chapter.8}% 101
+\BOOKMARK [1][-]{section*.20}{References}{chapter.8}% 102
