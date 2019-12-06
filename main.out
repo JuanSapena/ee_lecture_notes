@@ -11,43 +11,90 @@
 \BOOKMARK [1][-]{section.2.5}{Time average}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.6}{The game, revisited}{chapter.2}% 12
 \BOOKMARK [1][-]{section.2.7}{Ergodicity}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.8}{Changes and stability}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.9}{Brownian motion}{chapter.2}% 15
-\BOOKMARK [1][-]{section.2.10}{Geometric Brownian motion}{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.11}{It\364 calculus}{chapter.2}% 17
-\BOOKMARK [-1][-]{part.2}{II Microeconomics}{}% 18
-\BOOKMARK [0][-]{chapter.3}{Decisions in a riskless world}{part.2}% 19
-\BOOKMARK [1][-]{section.3.1}{Models and science fiction}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.2}{The decision axiom}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.3}{Growth rates}{chapter.3}% 22
-\BOOKMARK [2][-]{subsection.3.3.1}{Additive growth rate}{section.3.3}% 23
-\BOOKMARK [2][-]{subsection.3.3.2}{Exponential growth rate}{section.3.3}% 24
-\BOOKMARK [2][-]{subsection.3.3.3}{General growth rate}{section.3.3}% 25
-\BOOKMARK [1][-]{section.3.4}{Decisions in a deterministic world}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.4.1}{Different magnitudes}{section.3.4}% 27
-\BOOKMARK [2][-]{subsection.3.4.2}{Different magnitudes and times: discounting}{section.3.4}% 28
-\BOOKMARK [0][-]{chapter.4}{Decisions in a risky world}{part.2}% 29
-\BOOKMARK [1][-]{section.4.1}{Perturbing the process }{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.1.1}{Perturbed additive dynamics}{section.4.1}% 31
-\BOOKMARK [2][-]{subsection.4.1.2}{Perturbed multiplicative dynamics}{section.4.1}% 32
-\BOOKMARK [2][-]{subsection.4.1.3}{Perturbed general dynamics}{section.4.1}% 33
-\BOOKMARK [1][-]{section.4.2}{The appropriate growth rate is ergodic}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.3}{Ergodicity economics decision algorithm}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.4}{Relation to earlier economic theories }{chapter.4}% 36
-\BOOKMARK [2][-]{subsection.4.4.1}{Gamble: random number and duration}{section.4.4}% 37
-\BOOKMARK [2][-]{subsection.4.4.2}{Repeated gamble: towards a wealth process}{section.4.4}% 38
-\BOOKMARK [2][-]{subsection.4.4.3}{Expected wealth and expected utility}{section.4.4}% 39
-\BOOKMARK [1][-]{section.4.5}{From ergodicity transformation to dynamic and back \205 It\364}{chapter.4}% 40
-\BOOKMARK [2][-]{subsection.4.5.1}{It\364 setup}{section.4.5}% 41
-\BOOKMARK [2][-]{subsection.4.5.2}{From ergodicity transformation to wealth process}{section.4.5}% 42
-\BOOKMARK [2][-]{subsection.4.5.3}{From wealth process to ergodicity transformation}{section.4.5}% 43
-\BOOKMARK [0][-]{chapter.5}{Decisions in the real world}{part.2}% 44
-\BOOKMARK [1][-]{section.5.1}{The St. Petersburg paradox}{chapter.5}% 45
-\BOOKMARK [1][-]{section.5.2}{The Copenhagen experiment}{chapter.5}% 46
-\BOOKMARK [1][-]{section.5.3}{Insurance}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.4}{Setup: a shipping insurance contract}{chapter.5}% 48
-\BOOKMARK [2][-]{subsection.5.4.1}{Ergodicity economics solution}{section.5.4}% 49
-\BOOKMARK [2][-]{subsection.5.4.2}{The classical solution of the insurance puzzle}{section.5.4}% 50
-\BOOKMARK [1][-]{section*.13}{Acronyms}{chapter.5}% 51
-\BOOKMARK [1][-]{section*.15}{List of Symbols}{chapter.5}% 52
-\BOOKMARK [1][-]{section*.16}{References}{chapter.5}% 53
+\BOOKMARK [1][-]{section.2.8}{Brownian motion}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.9}{Geometric Brownian motion}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.10}{It\364 calculus}{chapter.2}% 16
+\BOOKMARK [-1][-]{part.2}{II Microeconomics}{}% 17
+\BOOKMARK [0][-]{chapter.3}{Decisions in a riskless world}{part.2}% 18
+\BOOKMARK [1][-]{section.3.1}{Models and science fiction}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.2}{The decision axiom}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.3}{Growth rates}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.1}{Additive growth rate}{section.3.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.2}{Exponential growth rate}{section.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.3}{General growth rate}{section.3.3}% 24
+\BOOKMARK [1][-]{section.3.4}{Decisions in a deterministic world}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.4.1}{Different magnitudes}{section.3.4}% 26
+\BOOKMARK [2][-]{subsection.3.4.2}{Different magnitudes and times: discounting}{section.3.4}% 27
+\BOOKMARK [0][-]{chapter.4}{Decisions in a risky world}{part.2}% 28
+\BOOKMARK [1][-]{section.4.1}{Perturbing the process }{chapter.4}% 29
+\BOOKMARK [2][-]{subsection.4.1.1}{Perturbed additive dynamics}{section.4.1}% 30
+\BOOKMARK [2][-]{subsection.4.1.2}{Perturbed multiplicative dynamics}{section.4.1}% 31
+\BOOKMARK [2][-]{subsection.4.1.3}{Perturbed general dynamics}{section.4.1}% 32
+\BOOKMARK [1][-]{section.4.2}{The appropriate growth rate is ergodic}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Ergodicity economics decision algorithm}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Relation to earlier economic theories }{chapter.4}% 35
+\BOOKMARK [2][-]{subsection.4.4.1}{Gamble: random number and duration}{section.4.4}% 36
+\BOOKMARK [2][-]{subsection.4.4.2}{Repeated gamble: towards a wealth process}{section.4.4}% 37
+\BOOKMARK [2][-]{subsection.4.4.3}{Expected wealth and expected utility}{section.4.4}% 38
+\BOOKMARK [1][-]{section.4.5}{From ergodicity transformation to dynamic and back \205 It\364}{chapter.4}% 39
+\BOOKMARK [2][-]{subsection.4.5.1}{It\364 setup}{section.4.5}% 40
+\BOOKMARK [2][-]{subsection.4.5.2}{From ergodicity transformation to wealth process}{section.4.5}% 41
+\BOOKMARK [2][-]{subsection.4.5.3}{From wealth process to ergodicity transformation}{section.4.5}% 42
+\BOOKMARK [0][-]{chapter.5}{Decisions in the real world}{part.2}% 43
+\BOOKMARK [1][-]{section.5.1}{The St. Petersburg paradox}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.2}{The Copenhagen experiment}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.3}{Insurance}{chapter.5}% 46
+\BOOKMARK [1][-]{section.5.4}{Setup: a shipping insurance contract}{chapter.5}% 47
+\BOOKMARK [2][-]{subsection.5.4.1}{Ergodicity economics solution}{section.5.4}% 48
+\BOOKMARK [2][-]{subsection.5.4.2}{The classical solution of the insurance puzzle}{section.5.4}% 49
+\BOOKMARK [-1][-]{part.3}{III Macroeconomics}{}% 50
+\BOOKMARK [0][-]{chapter.6}{People}{part.3}% 51
+\BOOKMARK [1][-]{section.6.1}{Every man for himself}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.6.1.1}{Log-normal distribution}{section.6.1}% 53
+\BOOKMARK [2][-]{subsection.6.1.2}{Two growth rates}{section.6.1}% 54
+\BOOKMARK [2][-]{subsection.6.1.3}{Measuring inequality}{section.6.1}% 55
+\BOOKMARK [2][-]{subsection.6.1.4}{Wealth condensation}{section.6.1}% 56
+\BOOKMARK [2][-]{subsection.6.1.5}{Rescaled wealth}{section.6.1}% 57
+\BOOKMARK [2][-]{subsection.6.1.6}{u-normal distributions and Jensen's inequality}{section.6.1}% 58
+\BOOKMARK [2][-]{subsection.6.1.7}{power-law resemblance}{section.6.1}% 59
+\BOOKMARK [1][-]{section.6.2}{Finite populations}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.2.1}{Sums of log-normals}{section.6.2}% 61
+\BOOKMARK [2][-]{subsection.6.2.2}{The random energy model}{section.6.2}% 62
+\BOOKMARK [0][-]{chapter.7}{Interactions}{part.3}% 63
+\BOOKMARK [1][-]{section.7.1}{Cooperation}{chapter.7}% 64
+\BOOKMARK [1][-]{section.7.2}{Reallocation}{chapter.7}% 65
+\BOOKMARK [2][-]{subsection.7.2.1}{Introduction}{section.7.2}% 66
+\BOOKMARK [2][-]{subsection.7.2.2}{The ergodic hypothesis in economics}{section.7.2}% 67
+\BOOKMARK [2][-]{subsection.7.2.3}{Reallocating geometric Brownian motion}{section.7.2}% 68
+\BOOKMARK [2][-]{subsection.7.2.4}{Model behaviour}{section.7.2}% 69
+\BOOKMARK [2][-]{subsection.7.2.5}{Derivation of the stable distribution}{section.7.2}% 70
+\BOOKMARK [2][-]{subsection.7.2.6}{Moments and convergence times}{section.7.2}% 71
+\BOOKMARK [2][-]{subsection.7.2.7}{Fitting United States wealth data}{section.7.2}% 72
+\BOOKMARK [0][-]{chapter.8}{Markets}{part.3}% 73
+\BOOKMARK [1][-]{section.8.1}{Optimal leverage}{chapter.8}% 74
+\BOOKMARK [2][-]{subsection.8.1.1}{A model market}{section.8.1}% 75
+\BOOKMARK [2][-]{subsection.8.1.2}{Leverage}{section.8.1}% 76
+\BOOKMARK [2][-]{subsection.8.1.3}{Portfolio theory}{section.8.1}% 77
+\BOOKMARK [2][-]{subsection.8.1.4}{Sharpe ratio}{section.8.1}% 78
+\BOOKMARK [2][-]{subsection.8.1.5}{Expected return}{section.8.1}% 79
+\BOOKMARK [2][-]{subsection.8.1.6}{Growth rate maximisation}{section.8.1}% 80
+\BOOKMARK [1][-]{section.8.2}{Stochastic market efficiency}{chapter.8}% 81
+\BOOKMARK [2][-]{subsection.8.2.1}{A fundamental measure}{section.8.2}% 82
+\BOOKMARK [2][-]{subsection.8.2.2}{Relaxing the model}{section.8.2}% 83
+\BOOKMARK [2][-]{subsection.8.2.3}{Efficiency}{section.8.2}% 84
+\BOOKMARK [2][-]{subsection.8.2.4}{Stability}{section.8.2}% 85
+\BOOKMARK [2][-]{subsection.8.2.5}{Prediction accuracy}{section.8.2}% 86
+\BOOKMARK [1][-]{section.8.3}{Applications of stochastic market efficiency}{chapter.8}% 87
+\BOOKMARK [2][-]{subsection.8.3.1}{A theory of noise \205 Sisyphus discovers prices}{section.8.3}% 88
+\BOOKMARK [2][-]{subsection.8.3.2}{Solution of the equity premium puzzle}{section.8.3}% 89
+\BOOKMARK [2][-]{subsection.8.3.3}{Central-bank interest rates}{section.8.3}% 90
+\BOOKMARK [2][-]{subsection.8.3.4}{Fraud detection}{section.8.3}% 91
+\BOOKMARK [1][-]{section.8.4}{Real markets \205 stochastic market efficiency in action}{chapter.8}% 92
+\BOOKMARK [2][-]{subsection.8.4.1}{Backtests of constant-leverage investments}{section.8.4}% 93
+\BOOKMARK [2][-]{subsection.8.4.2}{Data sets}{section.8.4}% 94
+\BOOKMARK [2][-]{subsection.8.4.3}{Full time series}{section.8.4}% 95
+\BOOKMARK [2][-]{subsection.8.4.4}{Shorter time scales}{section.8.4}% 96
+\BOOKMARK [1][-]{section.8.5}{Discussion}{chapter.8}% 97
+\BOOKMARK [1][-]{section*.17}{Acronyms}{chapter.8}% 98
+\BOOKMARK [1][-]{section*.19}{List of Symbols}{chapter.8}% 99
+\BOOKMARK [1][-]{section*.20}{References}{chapter.8}% 100
