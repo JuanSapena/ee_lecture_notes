@@ -355,6 +355,7 @@ The two types of average possible in a stochastic process are illustrated in \fr
 \end{figure}
 
 \section{The game, revisited}
+\seclabel{game_revisited}
 We have introduced some essential tools for studying models such as that of the coin game, where outcomes are uncertain and vary over time. It makes sense, therefore, to apply these tools to the game to see how they deepen our understanding of it.
 
 We pretended to be mathematically clueless when we ran the simulations in \secref{The_game}, hoping to understand the game simply by looking at many possible outcomes. We can now compute exactly the ensemble average of the stochastic process for wealth, $\x(\t)$, instead of approximating it numerically by a finite-ensemble average. We start by taking the ensemble average of the wealth updating equation, \eref{x_update},
@@ -704,7 +705,7 @@ Coming soon.
 
 \section{Ergodicity}
 \seclabel{Ergodic_observables}
-We have encountered two types of averaging -- the ensemble average and the time average. In our case -- assessing whether it will be good for you to play our  game, the time average is the interesting quantity because it tells you what happens to your wealth as time passes. The ensemble average is irrelevant because you do not live your life as an ensemble of many yous who can average over their wealths. Whether you like it or not, you will experience yourself owning your own wealth at future times; whether you like it not, you will never experience yourself owning the wealth of a different realization of yourself. The different realizations, and therefore the expectation value, are fiction, fantasy, imagined.
+We have encountered two types of averaging -- the ensemble average and the time average. In our case -- assessing whether it will be good for you to play our game, the time average is the interesting quantity because it tells you what happens to your wealth as time passes. The ensemble average is irrelevant because you do not live your life as an ensemble of many yous who can average over their wealths. Whether you like it or not, you will experience yourself owning your own wealth at future times; whether you like it not, you will never experience yourself owning the wealth of a different realization of yourself. The different realizations, and therefore the expectation value, are fiction, fantasy, imagined.
 
 We are fully aware that it can be counter-intuitive that with probability one, a different rate is observed for the expectation value than for any trajectory over time. It sounds strange that the expectation value is completely irrelevant to the problem. A reason for the intuitive discomfort is history: since the 1650s we have been trained to compute expectation values, with the implicit belief that they will reflect what happens over time. It may be helpful to point out that all of this trouble has a name that's well-known to certain people, and that an entire field of mathematics is devoted to dealing with precisely this problem. The field of mathematics is called ``ergodic theory.'' It emerged from the question under what circumstances the expectation value is informative 
 of what happens over time, first raised in the development of statistical mechanics by Maxwell and Boltzmann starting in the 1850s. These lecture notes are our attempt to use precisely the insights of these physicists to re-develop economic theory from the foundations up.
@@ -811,9 +812,8 @@ The expectation value $\ave{\d \ln \x}$ is important, historically. \person{Dani
 
 Ergodicity is not the same concept as stationarity. As an illustration of the difference, consider the following process: $\gf(\t)=\z_{\gi}$, where $\z_{\gi}$ is an instance of a random variable $\Z$. Explicitly, this means a realisation of the stochastic process $\gf(\t)$ is generated as follows: we generate the random instance $\z_{\gi}$ once, and then fix $\gf(\t)$ at that value for all time. The distribution of $\gf(\t)$ is independent of $\t$ and in that sense $\gf(\t)$ is stationary. But it is not ergodic: averaging over the ensemble, we obtain $\ave{\gf(\t)}=\ave{\z}$, whereas averaging over time in the $\gi^{\text{th}}$ trajectory gives $\overline{\gf}=\z_{\gi}$. Thus the process is stationary but not ergodic.
 
-\section{Changes and stability}
-\seclabel{Rates}
-Coming soon. Most material now appears in the next chapter.
+%\section{Changes and stability}
+%\seclabel{Rates}
 %In this section we discuss the role of changes and stability in science in general and then say a few words about the coin toss in particular. 
 %If the latter part is hard to understand right now -- don't worry, we'll get back to it in much more detail in \cref{decisions}.
 %The ergodic observable $\d \ln \x$, identified in the previous section, is almost a rate.
@@ -892,215 +892,199 @@ Coming soon. Most material now appears in the next chapter.
 %The mathematics of this procedure is discussed in detail in \cref{Rates}, and an
 %experiment testing whether people behave as predicted is described in \secref{Copenhagen}.
 
-\section{Normal distribution}
-\seclabel{Normal_distribution}
-Coming soon.
+%\section{Normal distribution}
+%\seclabel{Normal_distribution}
+%Coming soon.
 
 \section{Brownian motion}
 \seclabel{Brownian_motion}
-We motivate the model called \BM as a limiting process, the continuous-time limit, that arises from random walks.
-In the previous section we established that the discrete increments of the logarithm of 
-$\x$, which we called $\gv$, are instances of a time-independent random variable in our game. A quantity 
-making such random steps over time is said to perform a ``random walk.'' 
-Indeed, the blue line for a single system in \fref{1_2} (B) shows 52 steps of a random walk trajectory.
-Random walks come in many forms -- in all of them $\gv$ changes discontinuously by an amount 
-$\d \gv$ drawn from a time-independent distribution, over time intervals which may be regular or which may be drawn from a time-independent distribution themselves.
+\boldhead{Random walks}
+We motivate the model called \BM as the continuous-time limit of a random walk. In \secref{game_revisited}, we established that the discrete increments of the logarithm of wealth, $\x$, are instances of a time-independent random variable in our game. A quantity, call it $\gv$, making such random steps over time is said to perform a \textit{random walk}. Indeed, the blue line for a single system in \fref{1_2} (B) shows a 52-step trajectory of a random walk.
 
-We are interested only in the simple case where $\gv$ changes at regular intervals, $\dt, 2\dt, \dots$. For 
-the distribution of increments we only insist on the existence of the variance, meaning we insist that 
-$\var(\d \gv)=\ave{\d \gv^2}-\ave{\d \gv}^2$ be finite. Increments whose distributions are heavier-tailed do 
-not lead to \BM (\BM has continuous paths, and that continuity 
-is broken by such increments).
+Random walks come in many forms. In all of them, $\gv$ changes discontinuously by an amount, $\d\gv$, which is the realisation of a random variable with a stationary (\ie time-independent) distribution. Each change takes places over a time interval, $\dt$, which may be regular or which may itself be drawn from a stationary distribution.
 
-The change in $\gv$ after a long time is the sum 
-of many independent increments, 
+We are interested in the simple case where $\gv$ changes at regular intervals, \ie at times $t+\dt$, $t+2\dt$, and so on. For the distribution of increments, $\d\gv$, we insist only on the existence of the variance, \ie that 
 \be
-\gv(\t+\T\dt)-\gv(\t)=\sum_\gi^\T \d \gv_\gi.
+\var[\d \gv]=\ave{\d \gv^2}-\ave{\d \gv}^2
 \ee
-The Gaussian central limit theorem tells us that such a sum will become 
-Gaussian-distributed as we add more terms to the sum and re-scale it appropriately, namely so as to keep the width of the distribution finite and  remove any systematic drift,
+be finite. Note that this means the expectation value, $\ave{\d\gv}$, must also be finite. Increments with heavier-tailed distributions not produce \BM in the continuous-time limit. (\BM has continuous paths and that continuity is broken by such increments.)
+
+The change in $\gv$ after a long time is the sum of many independent increments, 
 \be
-\lim_{\T\to\infty} \overbrace{\frac{1}{\sqrt{\T}}}^{\mathclap{\text{keep width finite}}}\sum_\gi^\T ( \d \gv_\gi \underbrace{-\ave{\d \gv}}_{\mathclap{\text{remove systematic drift}}}) \sim \mathcal{\N}(0 , \var(\d \gv)),
+\gv(\t+\T\dt)-\gv(\t)=\sum_{\gtau=1}^\T \d\gv_\gtau.
+\ee
+The \CLT (strictly speaking, the Lindeberg-L\'{e}vy version of it) tells us that this sum, a random variable, will become normally distributed as we add more terms and rescale appropriately. Specifically, the rescaling keeps the width of the distribution finite and removes systematic drift in the mean:
+\be
+\lim_{\T\to\infty} \overbrace{\frac{1}{\sqrt{\T}}}^{\mathclap{\text{keep width finite}}}\sum_{\gtau=1}^\T ( \d \gv_\gtau \underbrace{-\ave{\d \gv}}_{\mathclap{\text{remove systematic drift}}}) \sim \mathcal{\N}(0 , \var[\d \gv]).
 \elabel{CLT}
 \ee
-where we call $\frac{\ave{\d \gv}}{\dt}$ the ``drift term.'' The notation $\sim \mathcal{N}(0, \var(\d \gv))$ is short-hand for ``is Gaussian distributed, with mean $0$ and variance $\var(\d \gv)$.''
-The logarithmic change in the 
-long-time limit that was of interest to us in the analysis of the coin toss game is thus 
-Gaussian distributed. 
+%where we call $\frac{\ave{\d \gv}}{\dt}$ the ``drift term.'' 
+The notation $\sim \mathcal{N}(0, \var[\d \gv])$ is shorthand for ``follows a normal distribution with mean $0$ and variance $\var[\d \gv]$.'' The logarithmic change in the long-time limit that was of interest to us in the analysis of the coin game is, therefore, normally distributed. 
 
-Let's also ask about the re-scaling that was applied in \eref{CLT}. 
-Scaling properties are very robust, and especially the scaling  
-of random walks for long times will be useful to us. 
-
-We work with the
-simplest setup: at time zero we start at zero, $\gv(0)=0$, and in each time step, we either increase or 
-decrease $\gv$ by 1, with probability 1/2. To avoid notation clutter, we'll set the duration of a time step to $\dt=1$, so that $\T$ is both the number of steps and the time.
-
-We are interested in the variance of the distribution of $\gv$ as $\T$ increases, which we obtain by
-computing the first and second moments of the distribution. 
-
-The first moment (the expectation value) of $\gv$ is $\ave{\gv}(\T)=0$, by symmetry for all times. 
-
-We obtain the second moment by induction\footnote{The argument is nicely illustrated in \cite[Volume 1, Chapter 6-4]{Feynman1963}, 
-where we first came across it.}:
-Whatever the second moment, $\ave{\gv(\T)^2}$, is at time $\T$, we can write down its value at
-time $\T+1$ as 
+We can gain a partial intuition for this result from the mean,
+\be
+\ave{\sum_{\gtau=1}^\T \d\gv_\gtau} = \sum_{\gtau=1}^\T \ave{\d\gv_\gtau} = \T \ave{\d\gv},
+\ee
+and variance,
+\be
+\var\left[\sum_{\gtau=1}^\T \d\gv_\gtau\right] = \sum_{\gtau=1}^\T \var\left[\d\gv_\gtau\right] = \T \var[\d\gv],
+\ee
+of the sum of the $\T$ independent random increments. These are easily derived and are a worthwhile exercise. They tell us the scaling of the mean and variance of the sum: both grow linearly with the number of terms, $\T$. One way of writing the sum, then, is
 \bea
-\ave{\gv(\T+1)^2}&=&\frac{1}{2}\left[\ave{(\gv(\T)+1)^2}+\ave{(\gv(\T)-1)^2}\right]\\
-&=&\frac{1}{2}\left[\ave{\gv(\T)^2+1+2\gv(\T)}+\ave{(\gv(\T)^2+1-2\gv(\T))}\right]\\
-&=&\ave{\gv(\T)^2}+1.
+\sum_{\gtau=1}^\T \ave{\d\gv_\gtau} &=& \mathcal{D}(\T \ave{\d\gv},\T \var[\d\gv]) \\
+&=& \T \ave{\d\gv} + \sqrt{T} \mathcal{D}(0,\var[\d\gv]),
 \eea
-In addition, we know the initial value of $\gv(0)=0$. By induction it follows that the second moment is
-\be
-\ave{\gv(\T)^2}=T
-\ee
-and, since the first moment is zero, the variance is
-\be
-\var(\gv(\T))=T.
-\elabel{BM_var}
-\ee
-The standard deviation -- the width of the distribution -- of changes in a quantity 
-following a random walk thus scales as the square-root of the number of steps 
-that have been taken, $\sqrt{\T}$. 
+where $\mathcal{D}$ represents some unknown distribution with the mean and variance shown. We can rearrange this to get an identical expression for the finite sum to that in \eref{CLT}, except that the distribution unspecified.
 
-This square-root behaviour leads to many interesting
-results. It can make averages stable (because $\sqrt{\T}/\T$ converges to zero for large $\T$), 
-and sums unstable (because $\sqrt{\T}$ diverges for large $\T$). Consequently, we may expect that as the size of some system increases, some properties become stable and others unstable.
+So, it's fairly simple to deduce the rescaling used in \eref{CLT}. The magic of the \CLT is that, in the limit $\T\to\infty$, the distribution converges to a normal, \ie $\mathcal{D}$ becomes $\mathcal{N}$. This is regardless of the distribution of the individual increments: we need only know that their mean and variance exist. We won't spoil the magic here, as our main interest is in using the result, but deriving the \CLT (and there are many ways to do it) is another illuminating exercise for the reader.
 
-Imagine simulating a single long trajectory of $\gv$ and plotting it on paper\footnote{This argument is
-inspired by a colloquium presented by Wendelin Werner in the mathematics department of Imperial 
-College London in January 2012. 
-Werner started the colloquium with a slide that showed a straight horizontal line and asked: what is this? 
-Then answered that it was the trajectory of a random walk, with the vertical and horizontal axes scaled equally.}. 
-The amount of 
-time that has to be represented by a fixed length of paper increases linearly with the simulated time
-because the paper has a finite width to accommodate the horizontal axis. 
-If $\ave{\d \gv} \neq 0$ then the amount of variation in $\gv$ that has to be represented by a fixed
-amount of paper also increases linearly with the simulated time. However, the departures of $\D\gv$ from
-its expectation value $\T \ave{\d \gv}$ only increase as the square-root of $\T$. Thus, the 
-amount of paper-space given to these departures scales as $\T^{-1/2}$, and for very long simulated
-times the trajectory will look like a straight line on paper.
+%We work with the simplest setup: at time zero we start at zero, $\gv(0)=0$, and in each time step, we either increase or decrease $\gv$ by 1, with probability 1/2. To avoid notation clutter, we'll set the duration of a time step to $\dt=1$, so that $\T$ is both the number of steps and the time.
+%
+%We are interested in the variance of the distribution of $\gv$ as $\T$ increases, which we obtain by computing the first and second moments of the distribution. 
+%
+%The first moment (the expectation value) of $\gv$ is $\ave{\gv}(\T)=0$, by symmetry for all times. 
+%
+%We obtain the second moment by induction\footnote{The argument is nicely illustrated in \cite[Volume 1, Chapter 6-4]{Feynman1963}, where we first came across it.}:
+%Whatever the second moment, $\ave{\gv(\T)^2}$, is at time $\T$, we can write down its value at time $\T+1$ as 
+%\bea
+%\ave{\gv(\T+1)^2}&=&\frac{1}{2}\left[\ave{(\gv(\T)+1)^2}+\ave{(\gv(\T)-1)^2}\right]\\
+%&=&\frac{1}{2}\left[\ave{\gv(\T)^2+1+2\gv(\T)}+\ave{(\gv(\T)^2+1-2\gv(\T))}\right]\\
+%&=&\ave{\gv(\T)^2}+1.
+%\eea
+%In addition, we know the initial value of $\gv(0)=0$. By induction it follows that the second moment is
+%\be
+%\ave{\gv(\T)^2}=T
+%\ee
+%and, since the first moment is zero, the variance is
+%\be
+%\var(\gv(\T))=T.
+%\elabel{BM_var}
+%\ee
 
-In an intermediate regime, fluctuations will still be visible but they will also be approximately 
-Gaussian distributed. In this regime it is often easier to replace the random walk model 
-with the corresponding continuous process. That process -- finally -- is \BM. 
+The standard deviation -- the width of the distribution -- of changes in a quantity following a random walk thus scales as the square-root of the number of steps that have been taken, $\sqrt{\T}$. This square-root scaling leads to many interesting results. It can make averages stable, because $\sqrt{\T}/\T$ converges to zero for large $\T$, and sums unstable, because $\sqrt{\T}$ diverges for large $\T$. Consequently, we may expect that, as the size of some system or the length of some time interval increase, some properties become stable and others unstable.
 
-We think of \BM
-as the limit of a random walk where we shorten the duration of a step $\dt \to 0$, and 
-scale the width of an individual step so as to maintain the random-walk scaling of the variance, meaning
-$|\d\gv|=\sqrt{\dt}$. In the limit $\dt\to0$, this implies that the local slope of a \BM trajectory diverges, 
-$\frac{\d\gv}{\dt}\to\infty$. This means that \BM trajectories 
-are infinitely jagged, or -- in mathematical terms -- they are not differentiable. However, the way in
-which they become non-differentiable, through the $\sqrt{\dt}$ factor, just leaves the 
-trajectories continuous (this isn't the case for $|\d\gv|=\dt^\alpha$, where $\alpha$ is less than 0.5). 
+Imagine simulating a single long trajectory of $\gv$ and plotting it on paper.\footnote{This argument is inspired by a colloquium presented by Wendelin Werner in the mathematics department of Imperial College London in January 2012. Werner started the colloquium with a slide that showed a straight horizontal line and asked: what is this? Then answered that it was the trajectory of a random walk, with the vertical and horizontal axes scaled equally.} The amount of time that has to be represented by a fixed length of paper increases linearly with the simulated time because the paper has a finite width to accommodate the horizontal axis. If $\ave{\d \gv} \neq 0$ then the amount of variation in $\gv$ that has to be represented by a fixed amount of paper also increases linearly with the simulated time. However, the departures of $\D\gv$ from its expectation value $\T \ave{\d \gv}$ only increase as the square-root of $\T$. Thus, the amount of paper-space given to these departures scales as $\T^{-1/2}$, and for very long simulated times the trajectory will look like a straight line on paper.
 
-Continuity of $\gv$ 
-means that it is possible to make the difference $|\gv(\t)-\gv(\t+\epsilon)|$ arbitrarily small by choosing
-$\epsilon$ sufficiently small. Trajectories (of non-\BM processes) that don't have this property contain what 
-are appropriately called ``jumps.'' Continuity therefore means that there are no jumps. These subtleties make \BM 
-a topic of great mathematical interest, and many books have been written about it. We will pick from 
-these books only what is immediately useful to us. To convey the universality of \BM we define it formally as follows:
+In an intermediate regime, fluctuations will still be visible and they will be approximately normally distributed. In this regime it is often easier to replace the discrete random walk model with the corresponding continuous process. That process -- finally -- is \BM. 
 
+\boldhead{Brownian motion}
+We think of \BM as the limit of a random walk where we shorten the duration of a step, $\dt \to 0$, so that changes happen continuously in time and not just at discrete times. As we will see, this creates a model which is more tractable than the random walk, and this will allow us to focus on economics. However, we issue a caveat here. We do not measure real-world observables, such as individual wealth, in continuous time. We only ever get to glimpse them between discrete time intervals and, if we are lucky, we will collect enough glimpses to do some science. So, we are replacing the discrete-time model with a continuous-time model, only to use the latter to describe discrete-time processes in the real world. If this seems upside-down to you, we don't blame you! The value in this approach is in the powerful analytical tools it will put at our disposal.
+
+We know from our treatment of the random walk that the net change in $\gv$ over $\T$ steps scales like $\sqrt{\T}$. If the intervals are regular, \ie their duration is fixed, then this means the net change scales like the square-root of the time spent walking. In \BM we maintain this scaling \textit{over all time intervals} and, in particular, over small intervals, $\dt \to 0$. This requires $\d\gv = O(\sqrt{\dt})$. In the limit $\dt\to0$, the local slope of a trajectory diverges, $\d\gv/\dt\to\infty$. Thus, trajectories of \BM are infinitely jagged, or -- in mathematical terms -- they are not differentiable. The way in which they become non-differentiable, through the $\sqrt{\dt}$ factor, just leaves the trajectories continuous. (This isn't the case for $\d\gv = O(\dt^\alpha)$, where $\alpha < 0.5$.) 
+
+Continuity of $\gv$ means that it is possible to make the difference $|\gv(\t)-\gv(\t+\epsilon)|$ as small as we like by choosing $\epsilon$ small enough. Trajectories without this property contain what are appropriately called ``jumps.'' Therefore, continuity means that there are no jumps. These subtleties make \BM a topic of great mathematical interest, and many books have been written about it. We will pick from these books only what is immediately useful to us. To convey the universality of \BM, we define it formally as follows:
 \begin{defn}{Brownian motion i}
-If a stochastic process has continuous paths, stationary independent increments, and is distributed according to 
-$\mathcal{\N}(\gmu \t, \gsigma^2 \t)$ then it is a Brownian motion.
+If a stochastic process has continuous paths, stationary independent increments, and is distributed according to $\mathcal{\N}(\gmu \t, \gsigma^2 \t)$ then it is a Brownian motion.
 \end{defn}
-
-The process can be defined in different ways. Another illuminating definition is this:
-
+The process can be defined in different ways. A particularly compact definition is this:
 \begin{defn}{Brownian motion ii}
-If a stochastic process is continuous, with stationary independent increments, then the process is a Brownian 
-motion.
+If a stochastic process is continuous, with stationary independent increments, then the process is a Brownian motion.
 \end{defn}
+We quote from \cite{Harrison2013}: {\it ``This beautiful theorem shows that Brownian motion can actually be defined by stationary independent increments and path continuity alone, with normality following as a consequence of these assumptions. This may do more than any other characterization to explain the significance of Brownian motion for probabilistic modeling.''}
 
-We quote from \cite{Harrison2013}: {\it ``This beautiful theorem shows that Brownian motion can actually be defined
-by stationary independent increments and path continuity alone, with normality following as a consequence 
-of these assumptions. This may do more than any other characterization to explain the significance of 
-Brownian motion for probabilistic modeling.''}
+Indeed, \BM is not just a mathematically rich model but also -- due to its emergence through the \CLT -- a model that represents a large universality class, \ie it is a good description of what happens over long times in many other models that produce random trajectories. 
 
-Indeed, \BM is not just a mathematically rich model but also -- due to its emergence through the Gaussian 
-central limit theorem -- a model that represents a large universality class, 
-\ie it is a good description of what happens over long times 
-in many other models that produce random trajectories. 
-
-The power of \BM lies in its simplicity and analytic tractability, involving only two parameters, $\gmu$ and $\gsigma$.
-We will often work with its representation as a \SDE
+\boldhead{Stochastic differential equation}
+The power of \BM lies in its simplicity and analytic tractability, involving only two parameters, $\gmu$ and $\gsigma$. We will often work with its representation as a \SDE:
 \be
-\gd\gv=\gmu \gd\t + \gsigma \gd\gW
+\gd\gv=\gmu \gd\t + \gsigma \gd\gW.
 \elabel{BM_dx}
 \ee
-where $\gd\gW$ is the so-called ``Wiener increment,'' the beating heart of many \SDEs. The Wiener increment can be defined by two properties: its distribution and its auto-correlation, 
+We had better say what this means. Firstly, it should have quotation marks around it because all of the terms in it are infinitesimal. Really it is a shorthand for the more formal integral equation,
+\be
+\gv(\t) = \gv(\t_0) + \gmu\int_{t_0}^t\gd\gs + \gsigma\int_{t_0}^t \gd\gW(\gs),
+\ee
+where each term is either a scalar quantity or a random variable. The formal study of such equations, often called ``stochastic calculus'', is a huge field in its own right. We will not examine it in detail, although we will borrow some useful results from it in \secref{Ito}. Instead, we will work with the informal version, \eref{BM_dx}, and we will interpret the terms in very simple ways:
+\bi
+\item $\gd\gv$ is a small (infinitesimal) increment in $\gv$;
+\item $\gmu$ is a constant parameter, known as the ``drift'';
+\item $\gd\t$ is a small increment in time, $\t$;
+\item $\gsigma$ is a constant parameter, known as the ``volatility''; and
+\item $\gd\gW$ is the so-called ``Wiener increment'', a random variable whose properties we describe below.
+\ei
+The name ``Brownian motion'' is sometimes reserved for the stochastic process generated by \eref{BM_dx} when $\gmu=0$, with ``Brownian motion with drift'' used for the case when $\gmu\neq0$. When $\gmu=0$ and $\gsigma=1$, then it is sometimes called ``standard Brownian motion'' or the ``Wiener process''.
+
+\boldhead{Wiener process}
+Let's look at the random Wiener increment, $\gd\gW$. This is where all the action is: without it, \eref{BM_dx} would be a \ODE with easy-to-find deterministic solutions, perfectly inadequate for modelling uncertainty across systems and over time. $\gd\gW$ is the beating heart of many \SDEs. The Wiener increment can be defined by two properties, its distribution and its auto-correlation,\footnote{Physicists often write $\gd\gW=\geta \gd\t$, where $\ave{\geta}=0$ and $\ave{\geta(\t) \geta(\t')}=\gdelta(\t-\t')$, in which case $\gdelta(\t-\t')$ is the Dirac delta function, defined by the integral $\int_{-\infty}^{\infty} \gf(\t) \gdelta(\t-\t') \gd\t=\gf(\t')$. Because of its singular nature -- $\geta(t)$ does not exist, only its integral exists -- it can be difficult to develop an intuition for this object, and we prefer the $dW$ notation.}
 \bea
 \gd\gW &\sim& \mathcal{\N}(0,\gd\t)\\
-\ave{\gd\gW(\t) \gd\gW(\t')}&=&\gd\t~ \gdelta(\t,\t'),
+\ave{\gd\gW_\t \gd\gW_\gs}&=& \gdelta(\t,\gs)\gd\t,
 \eea
-where $\gdelta(\t,\t')$ is the Kronecker delta -- zero if its two arguments differ ($\t\neq \t'$), and one if 
-they are identical ($\t=\t'$).\footnote{Physicists often write $\gd\gW=\geta \gd\t$, where $\ave{\geta}=0$ and 
-$\ave{\geta(\t) \geta(\t')}=\gdelta(\t-\t')$, in which case $\gdelta(\t-\t')$ is the Dirac 
-delta function, defined by the integral $\int_{-\infty}^{\infty} \gf(\t) \gdelta(\t-\t') \gd\t=\gf(\t')$. Because of its singular
-nature ($\geta(t)$ does not exist (``is infinite''), only its integral exists) it can be difficult to develop
-an intuition for this object, and we prefer the $dW$ notation.} 
-In simulations \BM paths can be constructed from a discretized version of \eref{BM_dx}
+where the subscripts denote the starting time of each increment, \ie $\gd\gW_\t$ is modelled as occurring at the end of the interval from $\t$ to $t+\gd\t$. $\gdelta(\t,\gs)$ is the Kronecker delta,
+\be
+\gdelta(\t,\gs) = \begin{cases}
+1 & \text{if } \t=\gs\\
+0 & \text{otherwise.}
+\end{cases}
+\ee
+Put very simply, the $\{\gd\gW_\t\}$ are independent and identically distributed normal random variable with mean zero and variance $\gd\t$. That's all we really need to know.
+
+\boldhead{Solution}
+Rather like an \ODE, we can integrate \eref{BM_dx}, say from time $0$ to $\t$, to express its solution as
+\bea
+\gv(\t) &=& \gv(0) + \gmu\t + \gsigma\int_0^\t \gd\gW_\gs \\
+&=& \gv(0) + \gmu\t + \gsigma\gW(\t),
+\elabel{BM_v}
+\eea
+where $\gW(\t) = \int_0^\t \gd\gW_\gs$ is the Wiener process with $\gW(0)=0$. Since the integral is the limiting case of a sum over normally distributed Wiener increments, $\gW(\t)$ is itself normally distributed with mean zero and variance $\t$, \ie $\gW(\t)\sim\mathcal{N}(0,\t)$. In other words, its width has the same $\sqrt{\t}$ scaling as the random walk.
+
+$\gW(\t)$ is stochastic process which, for fixed time, generates a time-dependent normal random variable. However, this does not mean we can generate a trajectory by drawing successive independent realisations from $\mathcal{N}(0,\t)$. While the Wiener increments, $\gd\gW_\t$, are independent, the Wiener process is autocorrelated. In simple terms, this is because its value at the end of time period depends on where it started, because it must take a continuous path to travel from there. It's a standard result in stochastic calculus that the autocorrelation of the values of a Wiener process at two different times simply the earlier time, \ie for $t<s$, $\ave{W(t)W(s)} = t$. This is because 
+\bea
+\ave{W(t)W(s)} &=& \ave{W(t)[W(t)+W(s)-W(t)]}\\
+&=& \ave{W(t)^2} + \ave{W(t)[W(s)-W(t)]}\\
+&=& t + 0,
+\eea
+where the final term follows by independence of increments over non-overlapping time intervals.
+
+Let's return to the stochastic process, $\gv(\t)$, in \eref{BM_v}. If we fix the time, $\t$, this is a time-dependent normal random variable,
+\be
+\gv(\t) \sim \mathcal{N}(\gv(0)+\gmu\t, \gsigma^2\t),
+\ee
+whose location moves linearly in time and whose width grows like the square-root of time. 
+
+\boldhead{Numerics} 
+In simulations, \BM paths can be constructed from a discretised version of \eref{BM_dx}
 \be
 \gv(\t+\dt)=\gv(\t)+ \gmu \dt + \gsigma \sqrt{\dt} \gxi_\t,
 \elabel{BM_d}
 \ee
-where $\gxi_\t$ are instances of a standard normal distribution ($\mathcal{\N}(0,1)$).
+where $\gxi_\t$ are iid standard normal variates, $\gxi_\t\sim\mathcal{\N}(0,1)$.
 
-\BM itself is not a time-independent random variable -- it is a non-ergodic stochastic process. This is easily seen
-by comparing expectation value and time average. We start with the expressions (stated without proof here) for the finite-ensemble average and the finite-time average of \BM. The finite-ensemble average (easy to derive) is distributed as
+\boldhead{Non-ergodicity of Brownian motion}
+\BM is a non-ergodic stochastic process. This is easily seen by comparing expectation value and time average. We start with the expressions (stated without proof here) for the finite-ensemble average and the finite-time average of \BM. The finite-ensemble average (easy to derive) is distributed as
 \be
-\ave{\gv}_\N \sim \gmu \t+\mN(0, \t/\N),
+\ave{\gv(\t)}_\N \sim \gmu \t+\mN(0, \t/\N),
 \elabel{fin_ens_BM}
 \ee
-and the finite-time average (a little harder to derive) of a single \BM trajectory is distributed as
+and the finite-time average (harder to derive) of a single \BM trajectory is distributed as
 \be
 \bar{\gv}_\t \sim \gmu \t/2 + \gsigma \mN(0, \t/3).
 \elabel{fin_tim_BM}
 \ee
 
-The expectation value, \ie the limit $\N\to\infty$ of \eref{fin_ens_BM}, converges to $\gmu \t$ with probability 
-one, so it depends on time, and it's unclear how to compare that to a time average (which cannot depend on time). Its limit $\t\to\infty$ does not exist.
+The expectation value, \ie the limit $\N\to\infty$ of \eref{fin_ens_BM}, converges to $\gmu \t$ with probability  one, so it depends on time. It's unclear how to compare that to a time average, which cannot depend on time. Its limit $\t\to\infty$ does not exist.
 
-The time average, the limit $\t\to\infty $ of \eref{fin_tim_BM} diverges unless $\gmu=0$, but even with 
-$\gmu=0$ the limit is a random variable with diverging variance -- something whose density 
-is zero everywhere. In no meaningful sense do the two expressions converge to the same 
-scalar in the relevant limits.
+The time average, the limit $\t\to\infty $ of \eref{fin_tim_BM} diverges unless $\gmu=0$, but even with $\gmu=0$ the limit is a random variable with diverging variance -- something whose density 
+is zero everywhere. In no meaningful sense do the two expressions converge to the same scalar in the relevant limits.
 
-Clearly, \BM, whose increments are ergodic, is itself not ergodic. However, that doesn't make it
-unmanageable or unpredictable -- we know the distribution of \BM at any moment in time. But the non-ergodicity
-has surprising consequences of which we mention one now. We already mentioned
-that if we plot a Brownian trajectory with non-zero drift on a piece of paper it will turn into a straight line for long enough
-simulation times. This suggests that the randomness of a Brownian trajectory becomes irrelevant
-under a very natural rescaling. Inspired by this insight let's hazard a guess as to what 
-the time-average of zero-drift \BM might be. 
+Clearly, \BM, whose increments are ergodic, is itself not ergodic. However, that doesn't make it unmanageable or unpredictable -- we know the distribution of \BM at any moment in time. But the non-ergodicity has surprising consequences of which we mention one now. We already mentioned that if we plot a Brownian trajectory with non-zero drift on a piece of paper it will turn into a straight line for long enough simulation times. This suggests that the randomness of a Brownian trajectory becomes irrelevant under a very natural rescaling. Inspired by this insight let's hazard a guess as to what the time-average of zero-drift \BM might be. 
 
-The simplest form of zero-drift \BM starts at zero, $\gv(0)=0$
-and has variance $\var(\gv(\t))=\t$ (this process is also known as the ``Wiener process''). The process is 
-known to be recurrent -- it returns to zero, arbitrarily many times, with probability one in the 
-long-time limit. We would not be mad to guess that the time average of zero-drift \BM,
+The simplest form of zero-drift \BM is the Wiener process. It starts at zero, $\gW(0)=0$ and has variance $\var[\gW(\t)]=\t$. The process is known to be recurrent: it returns to zero, arbitrarily many times, with probability one in the long-time limit. We might guess that the time average of the Wiener process,
 \be
-\bar{\gv}=\lim_{\t\to\infty} \frac{1}{\t}\int_0^\t \gd\t' \gv(\t'),
+\bar{\gv}=\lim_{\t\to\infty} \frac{1}{\t}\int_0^\t \gd\gs \gv(\gs),
 \ee
-will converge to zero with probability one. But we would be wrong. Yes, the process has no drift, and
-yes it returns to zero infinitely many times, but its time average is not a delta function at zero.
+will converge to zero with probability one. We would be wrong. Yes, the process has no drift, and yes it returns to zero infinitely many times, but its time average is not a delta function at zero.
 It is, instead normally distributed with infinite variance according to the following limit
 \be
 \bar{\gv}\sim \lim_{\t\to\infty} \mN(0,\t/3).
 \ee
-Averaging over time, in this case, does not remove the randomness. A sample 
-trajectory of the finite-time average (not of \BM but of the average over a \BM) is shown in \fref{1_6}. In the literature this process, 
-$\frac{1}{\t}\int_0^\t \gd\t' \gv(\t')$, is known as the ``random acceleration process'' \cite{Burkhardt2007}.
-
+Averaging over time, in this case, does not remove the randomness. A sample trajectory of the finite-time average (not of \BM but of the average over a \BM) is shown in \fref{1_6}. In the literature this process, $\frac{1}{\t}\int_0^\t \gd\t' \gv(\t')$, is known as the ``random acceleration process'' \cite{Burkhardt2007}.
 \begin{figure}[h!]
 \begin{picture}(200,200)(0,0)
     \put(0,0){\includegraphics[width=\textwidth]{./chapter_tools/figs/BM_time_ave.pdf}}
 \end{picture}
-\caption{Trajectory of the finite-time average of a zero-drift \BM. The process is not ergodic: the time average 
-does not converge to a number, but is instead distributed according to 
-$\mN(0,\t/3)$ for all times, while the expectation value is zero. It is the result of integrating a \BM; 
-integration is a smoothing operation, and as a consequence the trajectories are smoother than \BM (unlike a 
-\BM trajectory, they are differentiable).}
+\caption{Trajectory of the finite-time average of a zero-drift \BM. The process is not ergodic: the time average does not converge to a number, but is instead distributed according to 
+$\mN(0,\t/3)$ for all times, while the expectation value is zero. It is the result of integrating a \BM; integration is a smoothing operation, and as a consequence the trajectories are smoother than \BM (unlike a \BM trajectory, they are differentiable).}
 \flabel{1_6}
 \end{figure}
 \FloatBarrier
@@ -1108,65 +1092,51 @@ integration is a smoothing operation, and as a consequence the trajectories are 
 \section{Geometric Brownian motion}
 \seclabel{Geometric_Brownian}
 \begin{defn}{Geometric Brownian motion}
-If the logarithm of a quantity performs Brownian motion, the quantity itself performs ``geometric Brownian 
-motion.''
+If the logarithm of an observable performs \BM, then the observable itself performs ``\GBM''.
 \end{defn}
-
-While in \secref{Brownian_motion} $\gv(\x)=\ln(\x)$ performed \BM, $\x$ 
-itself performed \GBM. The change of variable from $\x$ 
-to $\gv(\x)=\ln(\x)$ is trivial in a sense but it has interesting consequences. 
-It implies, for instance, that 
+In \secref{Brownian_motion}, the observable $\gv$ performs \BM. If we imagine $\gv$ as a function of another observable, $\x$, specifically if $\gv(\x)=\ln\x$, then $\x$ performs \GBM. The change of variable from $\x$ to $\gv(\x)=\ln(\x)$ is trivial to state, but it has interesting consequences. It implies, for instance, that 
 \begin{itemize}
-\item $\x(\t)$ is log-normally distributed
-\item increments in $\x$ are neither stationary nor independent
-\item $\x(\t)$ cannot become negative 
-\item the most likely value of $\x$ (the mode) does not coincide with the 
-expectation value of $\x$. 
+\item $\x(\t)$ is lognormally distributed;
+\item increments in $\x$ are neither stationary nor independent;
+\item $\x(\t)$ cannot change sign;
+\item the most likely value of $\x$ (the mode) does not coincide with the expectation value of $\x$. 
 \end{itemize}
-These and other properties of the log-normal distribution will be discussed in detail in \secref{Log-normal_wealth}.
+These and other properties of the lognormal distribution will be discussed in detail in \secref{Log-normal_wealth}.
 
-Again, it is informative to write \GBM as a stochastic differential equation. 
+\boldhead{\SDE}
+Again, it is informative to write \GBM as a stochastic differential equation. Our definition suggests we should do this as follows,
+\be
+\gd\ln\x = \tilde{\gmu}\gd\t + \tilde{\gsigma}\gd\gW.
+\ee
+However, it's somewhat unintuitive to start by examining the changes of an already-transformed variable. Let's start by modelling the real phenomenon instead. We are looking for the continuous-time version of the coin game, where the change in our wealth at the end of each round is a random multiple of our wealth at the start of the round. This suggests we want an \SDE like
 \be
 \gd\x=\x(\gmu \gd\t+ \gsigma \gd\gW).
 \elabel{GBM_c}
 \ee
-Similarly to \BM, trajectories for \GBM can be simulated using the discretized form (\cf \eref{BM_d})
+We will show in \secref{Ito} that these two \SDEs define the same stochastic process, subject to a mapping between the drift and volatility parameters.
+
+\boldhead{Discrete time}
+Similarly to \BM, trajectories for \GBM can be simulated using the discretised form (\cf \eref{BM_d})
 \be
 \d \x=\x(\gmu \dt+ \gsigma \sqrt{\dt} \gxi_\t),
 \elabel{GBM_d}
 \ee
-where $\gxi_\t \sim \mN(0,1)$ are instances of a standard normal variable. In such simulations
-we must pay attention that the discretization does not lead to negative values of $\x$. This 
-happens if the expression in brackets in \eref{GBM_d} is smaller than $-1$ (in which case $\x$ changes negatively by more than itself).
-To avoid negative values we must have $\gmu \dt + \gsigma \sqrt{\dt} \gxi_\t>-1$, or 
-$\gxi_\t <\frac{1+\gmu\dt}{\gsigma \sqrt{\dt}}$. As $\dt$ becomes large it becomes more likely for
-$\gxi_\t$ to exceed this value, in which case the simulation fails. But $\gxi_\t$ is Gaussian distributed, meaning
-it has thin tails, and choosing a sufficiently small value of $\dt$ makes these failures essentially impossible.
+where $\gxi_\t \sim \mN(0,1)$ are instances of a standard normal variable. In such simulations we must pay attention that the discretization does not lead to negative values of $\x$. This 
+happens if the expression in brackets in \eref{GBM_d} is smaller than $-1$ (in which case $\x$ changes negatively by more than itself). To avoid negative values we must have $\gmu \dt + \gsigma \sqrt{\dt} \gxi_\t>-1$, or  $\gxi_\t <\frac{1+\gmu\dt}{\gsigma \sqrt{\dt}}$. As $\dt$ becomes large it becomes more likely for $\gxi_\t$ to exceed this value, in which case the simulation fails. But $\gxi_\t$ is Gaussian distributed, meaning it has thin tails, and choosing a sufficiently small value of $\dt$ makes these failures essentially impossible.
 
- \GBM on logarithmic vertical scales looks like \BM on linear vertical scales. \Fref{1_2} is, in fact, and example of a very coarse discretisation of \GBM. 
-But it's useful to look at a more finely discretised trajectory of \GBM on linear scales to develop an intuition for this important process.
+\GBM on logarithmic vertical scales looks like \BM on linear vertical scales. \Fref{1_2} is, in fact, an example of a very coarse discretisation of \GBM. But it's useful to look at a more finely discretised trajectory of \GBM on linear scales to develop an intuition for this important process.
 \begin{figure}[h!]
 \begin{picture}(200,230)(0,0)
     \put(0,-5){\includegraphics[width=\textwidth]{./chapter_tools/figs/GBM_trajectory.pdf}}
 \end{picture}
-\caption{Trajectory of a \GBM. What happens to the trajectory tomorrow depends strongly on where it is today -- for 
-instance, unlike for \BM, it is difficult to recover
-from a low value of $\x$, and trajectories are likely to get stuck near zero. Occasional excursions are characterised
-by large fluctuations. Parameters are $\gmu=0.05$ per time unit and $\gsigma=\sqrt{2 \gmu}$, corresponding to zero 
-growth rate in the long run. It would be easy to invent a story to go with this (completely random) trajectory --
-perhaps something like  ``things were going well
-in the beginning but then a massive crash occurred that destroyed morale.''}
+\caption{Trajectory of a \GBM. What happens to the trajectory tomorrow depends strongly on where it is today. For instance, unlike for \BM, it is difficult to recover from a low value of $\x$, and trajectories are likely to get stuck near zero (indeed, certain in the long run when $\gmu-\gsigma^2/2<0$). Occasional excursions are characterised by large fluctuations. Parameters are $\gmu=0.05$ per time unit and $\gsigma=\sqrt{2 \gmu}$, corresponding to zero growth rate in the long run. It would be easy to invent a story to go with this (completely random) trajectory, something like  ``things were going well in the beginning but then a massive crash occurred that destroyed morale.''}
 \flabel{1_7}
 \end{figure}
 
-The basic message of the game from \secref{The_game} is that we may obtain different values for growth rates, depending on
-how we average -- an expectation value is one average, a time average is quite another. The game 
-itself is sometimes called the multiplicative binomial process \cite{Redner1990}, we thank \person{S. Redner} for 
-pointing this out to us. \GBM is the continuous version of the multiplicative binomial process, and it shares the
-basic feature of a difference between the growth rate of the expectation value and time-average growth.
+The basic message of the game from \secref{The_game} is that we may obtain different values for growth rates, depending on how we average: an expectation value is one average; a time average is quite another. The game itself is sometimes called the multiplicative binomial process \cite{Redner1990}, we thank \person{S. Redner} for pointing this out to us. \GBM is the continuous version of the multiplicative binomial process, and it shares the basic feature of a difference between the growth rate of the expectation value and time-average growth.
 
-The expectation value is easily computed -- the process is not ergodic, but that does not mean we cannot
-compute its expectation value. We simply take the expectations values of both sides of \eref{GBM_c} to get
+\boldhead{Ensemble average}
+The expectation value is easily computed -- the process is not ergodic, but that does not mean we cannot compute its expectation value. We simply take the expectations values of both sides of \eref{GBM_c} to get
 \bea
 \ave{\gd\x}&=&\ave{\x(\gmu \gd\t+ \gsigma \gd\gW)}\\
 =\gd\ave{\x}&=&\ave{\x} \gmu \gd\t.
@@ -1181,13 +1151,8 @@ which determines the growth rate of the expectation value as
 \elabel{expectation_g}
 \ee
 
-As we know, this growth rate is different from the growth rate that materializes with probability 1 in the long run. 
-Computing the time-average growth rate is only slightly more complicated, and it will get even simpler once we've introduced \Ito calculus in \secref{Ito}. 
-But for now we will follow this plan: consider the discrete process \eref{GBM_d} and compute the changes in the logarithm of $\x$, 
-then we will let
-$\dt$ become infinitesimal and arrive at the result for the continuous process. We know $\d \ln(\x(\t))$
-to be ergodic and reflective of performance over time, wherefore we will proceed to take its expectation value to compute the time average 
-of the exponential growth rate of the process. 
+\boldhead{Time average}
+As we know, this growth rate is different from the growth rate that materializes with probability one in the long run. Computing the time-average growth rate is only slightly more complicated, and it will get even simpler once we've introduced \Ito calculus in \secref{Ito}. But for now we will follow this plan: consider the discrete process \eref{GBM_d} and compute the changes in the logarithm of $\x$, then we will let $\dt$ become infinitesimal and arrive at the result for the continuous process. We know $\d \ln(\x(\t))$ to be ergodic and reflective of performance over time, wherefore we will proceed to take its expectation value to compute the time average of the exponential growth rate of the process. 
 
 The change in the logarithm of $\x$ in a time interval $\dt$ is
 \bea
@@ -1195,16 +1160,13 @@ The change in the logarithm of $\x$ in a time interval $\dt$ is
 &=&\ln \x + \ln (1+\gmu \dt+ \gsigma \sqrt{\dt} \gxi_\t) - \ln \x(\t)\\
 &=&\ln (1+\gmu \dt+ \gsigma \sqrt{\dt} \gxi_\t),
 \eea
-which we Taylor-expand as $\ln(1+ \text{something small})$ because we will let $\dt$ become small.
-Expanding to second order,
+which we Taylor-expand as $\ln(1+ \text{something small})$ because we will let $\dt$ become small. Expanding to second order,
 \be
 \ln \x(\t+\dt) - \ln \x(\t) =\gmu \dt+ \gsigma \sqrt{\dt} \gxi_\t - \frac{1}{2} \left(\gmu \gsigma \dt^{3/2}\gxi_\t+
 \gsigma^2\dt 
 \gxi_\t^2\right)+\go(\dt^2),
 \ee
-using ``little-o notation'' to denote terms that are of order $\dt^2$ or smaller. Finally, because
-$\d \ln \x(\t)$ is ergodic, by taking the expectation value of this equation we find the
-time average of $\d \ln \x(\t)$
+using ``little-o notation'' to denote terms that are of order $\dt^2$ or smaller. Finally, because $\d \ln \x(\t)$ is ergodic, by taking the expectation value of this equation we find the time average of $\d \ln \x(\t)$
 \be
 \ave{\ln \x(\t+\dt) - \ln \x(\t)} =\gmu \dt- \frac{1}{2} \left(\gmu^2\dt^2+\gsigma^2\dt \right)+o(\dt^2).
 \ee
@@ -1214,75 +1176,94 @@ Letting $\dt$ become infinitesimal the higher-order terms in $\dt$ vanish, and w
 \ee
 so that the time-average growth rate is
 \be
-\gt=\frac{\gd \ave{\ln \x}}{\gd\t}=\gmu - \frac{1}{2} \gsigma^2.
+\gt=\frac{\gd \ave{\ln \x}}{\gd\t}=\gmu - \frac{\gsigma^2}{2}.
 \elabel{time_g}
 \ee
-The non-ergodicity of \GBM leads to a difference between the behaviour of the expectation value (which grows at $\gm(\ave{\x})$) 
-and the long-time behaviour of any given trajectory (which grows at $\gt$). Because people experience their wealth over time (which may be described by \GBM) and have not access to the ensemble of other possible trajectories, they quite reasonably behave closer to optimising $\gm(\ave{\x})$ than to $\gt$.
+The non-ergodicity of \GBM leads to a difference between the behaviour of the expectation value (which grows at $\gm(\ave{\x})$) and the long-time behaviour of any given trajectory (which grows at $\gt$). Because people experience their wealth over time (which may be described by \GBM) and have not access to the ensemble of other possible trajectories, they quite reasonably behave closer to optimising $\gm(\ave{\x})$ than to $\gt$.
 
-We could have guessed the result by combining Whitworth's argument on the disadvantage of
-gambling with the scaling of \BM. Let's re-write the factor $1-\epsilon$ in \eref{Whitworth} as
-$1-\gsigma \sqrt{\dt}$. According to the scaling of the variance in a random walk, \eref{BM_var}, 
-this would be a good coarse-graining of some faster
-process (with shorter time step) underlying Whitworth's game.
-To find out what happens over one single time step we take the square root of \eref{Whitworth},
-\be
-[(1+\gsigma \sqrt{\dt})(1-\gsigma \sqrt{\dt})]^{1/2}=[1-\gsigma^2 \dt]^{1/2}.
-\ee 
-Letting $\dt$ become infinitesimally small, we replace $\dt$ by $\gd \t$, and the first-order
-term of a Taylor-expansion becomes exact,
-\be
-[(1+\gsigma \sqrt{\dt})(1-\gsigma \sqrt{\dt})]^{1/2}\to 1-\frac{\gsigma^2}{2} \gd\t,
-\ee 
-in agreement with \eref{time_g} if the drift term $\mu=0$, as assumed by Whitworth.
+%We could have guessed the result by combining Whitworth's argument on the disadvantage of gambling with the scaling of \BM. Let's re-write the factor $1-\epsilon$ in \eref{Whitworth} as
+%$1-\gsigma \sqrt{\dt}$. According to the scaling of the variance in a random walk, \eref{BM_var}, this would be a good coarse-graining of some faster process (with shorter time step) underlying Whitworth's game. To find out what happens over one single time step we take the square root of \eref{Whitworth},
+%\be
+%[(1+\gsigma \sqrt{\dt})(1-\gsigma \sqrt{\dt})]^{1/2}=[1-\gsigma^2 \dt]^{1/2}.
+%\ee 
+%Letting $\dt$ become infinitesimally small, we replace $\dt$ by $\gd \t$, and the first-order term of a Taylor-expansion becomes exact,
+%\be
+%[(1+\gsigma \sqrt{\dt})(1-\gsigma \sqrt{\dt})]^{1/2}\to 1-\frac{\gsigma^2}{2} \gd\t,
+%\ee 
+%in agreement with \eref{time_g} if the drift term $\mu=0$, as assumed by Whitworth.
 
 \section{\Ito calculus}
 \seclabel{Ito}
-We have chosen to work with the discrete process here and have arrived at a result that is more
-commonly shown using \Ito's formula. We will not discuss \Ito calculus in depth 
-but we will use some of its results. The key insight of \Ito was that the non-differentiability
-of so-called \Ito processes leads to a new form of calculus, where in particular the chain rule of
-ordinary calculus is replaced.
-An \Ito process is a \SDE of the following form
+The results we obtained by analysing the discrete difference equation for \GBM, \eref{GBM_d}, are more commonly shown by applying \Ito's formula directly to the \SDE in \eref{GBM_c}. We will not discuss \Ito calculus in depth here, but we will use some of its results. The key insight of \Ito was that the non-differentiability of so-called \Ito processes leads to a new form of calculus. In particular, a new chain rule is needed. An \Ito process is a \SDE of the following form,
 \be
-d\x = a(\x, \t) d\t + b(\x, \t) \gd\gW.
+\gd\x = a(\x, \t) \gd\t + b(\x, \t) \gd\gW.
 \elabel{Ito_process}
 \ee
-If we are interested in the behaviour of some other quantity that is a 
-function of $\x$, let's say $\gv(\x)$, then \Ito's formula tells us how to derive
-the relevant \SDE as follows:
+If we are interested in the behaviour of some other quantity that is a function of $\x$, let's say $\gv(\x)$, then \Ito's formula says that $\gv$ obeys the \SDE,
 \be
-d\gv =  \left(\frac{\partial \gv}{\partial\t} +a(\x, \t)\frac{\partial \gv}{\partial\x} + \frac{b(\x,\t)^2}{2} \frac{\partial^2 \gv}{\partial\x^2}\right) d\t + b(\x, \t) \frac{\partial \gv}{\partial\x} \gd\gW.
+\gd\gv =  \left(\frac{\partial \gv}{\partial\t} +a(\x, \t)\frac{\partial \gv}{\partial\x} + \frac{b(\x,\t)^2}{2} \frac{\partial^2 \gv}{\partial\x^2}\right) \gd\t + b(\x, \t) \frac{\partial \gv}{\partial\x} \gd\gW.
 \elabel{Ito}
 \ee
-Derivations of this formula can be found on Wikipedia. Intuitive derivations, such as \cite{Hull2006}, use the 
-scaling of the variance, \eref{BM_var}, and more formal 
-derivations, along the lines of \cite{Harrison2013}, rely on integrals.
-We simply accept \eref{Ito} as given. It makes it very easy to re-derive \eref{time_g}, which we leave as an exercise:
-use \eref{Ito} to find the \SDE for $\ln(\x)$, take its expectation value and differentiate with respect to $\t$. 
-We will use \eref{Ito} in \secref{rescaled}. The above computations are intended to 
-give the reader intuitive confidence that \Ito calculus can be 
-trusted\footnote{\Ito calculus is one way of interpreting the non-differentiability of \gd\gW. Another interpretation
-is due to Stratonovich, which is not strictly equivalent. However, the key property of \GBM that we make
-extensive use of is the difference between the growth rate of the expectation value, $\gm(\ave{\x})$, and the
-time-average growth rate, $\gt$. This difference is the same in the Stratonovich and the \Ito interpretation, and all our results hold in both cases.}. 
-We find that, though phrased in different words, our key insight -- that {\it the growth rate of the expectation value is not the time-average
-growth rate} -- has appeared in the literature not only in 1870 but also in 1944.
-And in 1956 \cite{Kelly1956}, and in 1966 \cite{Thorp1966}, and in 1991 \cite{CoverThomas1991}, and at many other times. 
-Yet the depth of this insight remained unprobed.
 
-\Eref{time_g}, which agrees with \Ito calculus, may be surprising.
-Consider the case of no noise $\gd\x=\x \gmu \gd\t$. Here we can identify $\gmu=\frac{1}{\x}\frac{\gd\x}{\gd\t}$ 
-as the infinitesimal increment in the logarithm, $\frac{\gd \ln(\x)}{\gd\t}$, using the chain rule of ordinary calculus. 
-A na\"ive application of the chain rule to \eref{GBM_c} would therefore also yield $\frac{\gd \ave{\ln(\x)}}{\gd\x}=\gmu$, 
-but the fluctuations in \GBM have a non-linear effect, and it turns out that the usual chain rule does not apply. \Ito
-calculus is a modified chain rule, \eref{Ito}, which leads to the difference $-\frac{\gsigma^2}{2}$ between the 
-expectation-value growth rate and the time-average
-growth rate. 
+Many derivations of this formula can be found online. Intuitive derivations, such as \cite{Hull2006}, use the scaling of the variance of the Wiener process. More formal derivations, along the lines of \cite{Harrison2013}, rely on integrals. We provide an informal derivation here, with three basic steps, which we find easier to remember than \elabel{Ito}. The steps are:
+\bi
+\item Taylor expand the total derivative, $\gd\gv$, in terms of $\gd\t$ and $\gd\x$;
+\item substitute for $\gd\x$ using the known \SDE for $\x$;
+\item replace $\gd\gW^2=\gd\t$ and keep only $O(\gd\gW$) and $O(\gd\t)$ terms.
+\ei
+The key insight remains that the variance of the Wiener increment has linear (\ie random walk) scaling in time. Replacing $\gd\gW^2$ by $\gd\t$ in the final step incorporates this insight. \Ito showed how to do this formally for integral equations, for which our \SDEs are shorthand.
 
-This difference is sometimes called the ``spurious drift'', but at the \LML we call it the ``Weltschmerz'' because 
-it is the difference between the many worlds of our dreams and fantasies, and the one cruel reality that 
-the passage of time imposes on us.
+Let's follow these steps for general $\gv(\x)$ and then specifically for $\gv(\x)=\ln\x$. Firstly, the general case. Taylor expanding for $\gd\gv$, we get
+\be
+\gd\gv =  \frac{\partial \gv}{\partial\t} \gd\t + \frac{\partial \gv}{\partial\x} \gd\x + \frac{1}{2} \frac{\partial^2 \gv}{\partial\x^2} \gd\x^2 + O(\gd\t^2).
+\ee
+Substituting \eref{Ito_process} for $\gd\x$ gives us
+\be
+\gd\gv =  \frac{\partial \gv}{\partial\t} \gd\t + \frac{\partial \gv}{\partial\x} (a\,\gd\t + b\,\gd\gW) + \frac{1}{2} \frac{\partial^2\gv}{\partial\x^2} (a^2 \gd\t^2 + 2ab\,\gd\t\,\gd\gW + b^2\gd\gW^2) + O(\gd\t^2),
+\ee
+where we have supressed the $\x$ and $\t$ dependence of $a(\x, \t)$ and $b(\x, \t)$ for compactness. Finally, we replace $\gd\gW^2$ by $\gd\t$ and throw away terms which tend to zero faster than $\gd\t$. This gives
+\bea
+\gd\gv &=&  \frac{\partial \gv}{\partial\t} \gd\t + \frac{\partial \gv}{\partial\x} (a\,\gd\t + b\,\gd\gW) + \frac{1}{2} \frac{\partial^2 \gv}{\partial\x^2} (a^2 \cancel{\gd\t^2} + 2ab\,\cancel{\gd\t\,\gd\gW} + b^2\gd\t) + \cancel{O(\gd\t^2)} \nn\\
+&=&  \left( \frac{\partial \gv}{\partial\t} + a \frac{\partial \gv}{\partial\x} + \frac{b^2}{2} \frac{\partial^2 \gv}{\partial\x^2} \right) + b \frac{\partial \gv}{\partial\x} \gd\gW,
+\eea
+which is \Ito's formula in \eref{Ito}.
+
+For the specific case $\gv(\x)=\ln\x$, and setting $a(\x,\t)=\gmu\x$ and $b(\x,\t)=\gsigma\x$, we find that the \SDE for \GBM
+\be
+\gd\x = \x(\gmu\gd\t+\gsigma\gd\gW)
+\ee
+is transformed to
+\be
+\gd\ln\x = \left(\gmu-\frac{\gsigma^2}{2}\right)\gd\t + \gsigma\gd\gW,
+\ee
+which is a \BM in $\ln\x$. Indeed, this is how we defined \GBM at the start of \secref{Geometric_Brownian}.
+
+Once we have the \SDE for $\ln(\x)$, we can integrate it, say from time $0$ to $\t$, as we did for \BM in \eref{BM_v}. This gives a stochastic process,
+\be
+\ln\x(\t) = \ln\x(0) + \left(\gmu-\frac{\gsigma^2}{2}\right)\t + \gsigma\gW(\t),
+\elabel{GBM_ln}
+\ee
+which, for fixed $\t$, is a normally distributed random variable,
+\be
+\ln\x(\t) \sim \mathcal{N}\left(\ln\x(0) + (\gmu-\gsigma^2/2)\t, \gsigma^2\t\right).
+\ee
+Thus $\x(\t)$ is lognormally distributed.
+
+We can rewrite \eref{GBM_ln} as a solution for $\x(\t)$,
+\be
+\x(\t) = \x(0)\exp\left[\left(\gmu-\frac{\gsigma^2}{2}\right)\t + \gsigma\gW(\t)\right].
+\ee
+which shows neatly that $\x(\t)$ follows noisy exponential growth. If we write $\x(\t)=\x(0)\exp(g(t)t)$, we can express the noise as a random growth rate,
+\be
+\g(t) = \gmu-\frac{\gsigma^2}{2} + \frac{\gsigma\gW(\t)}{\t}.
+\ee
+Since $\gW(\t)/\t \sim 1/\sqrt{t}$, it's easy to see that the long time limit of this noisy growth rate is $\gt=\gmu-\gsigma^2/2$, which is also its expectation value, $\ave{g}$.
+
+The above computations are intended to give the reader intuitive confidence that \Ito calculus can be trusted.\footnote{\Ito calculus is one way of interpreting the non-differentiability of \gd\gW. Another interpretation is due to Stratonovich, which is not strictly equivalent. However, the key property of \GBM that we make extensive use of is the difference between the growth rate of the expectation value, $\gm(\ave{\x})$, and the time-average growth rate, $\gt$. This difference is the same in the Stratonovich and the \Ito interpretation, and all our results hold in both cases.} We find that, though phrased in different words, our key insight -- that {\it the growth rate of the expectation value is not the time-average growth rate} -- has appeared in the literature not only in 1870 \cite{Whitworth1867} but also in 1944 \cite{Ito1944}. And in 1956 \cite{Kelly1956}, and in 1966 \cite{Thorp1966}, and in 1991 \cite{CoverThomas1991}, and at many other times! And yet the depth of this insight remained unprobed.
+
+\Eref{time_g}, which agrees with \Ito calculus, may be surprising. Consider the case of no noise $\gd\x=\x \gmu \gd\t$. Here we can identify $\gmu=\frac{1}{\x}\frac{\gd\x}{\gd\t}$ as the infinitesimal increment in the logarithm, $\frac{\gd \ln(\x)}{\gd\t}$, using the chain rule of ordinary calculus. A na\"ive application of the chain rule to \eref{GBM_c} would therefore also yield $\frac{\gd \ave{\ln(\x)}}{\gd\x}=\gmu$, but the fluctuations in \GBM have a non-linear effect, and it turns out that the usual chain rule does not apply. \Ito calculus is a modified chain rule, \eref{Ito}, which leads to the difference $-\frac{\gsigma^2}{2}$ between the expectation-value growth rate and the time-average growth rate. 
+
+This difference is sometimes called the ``spurious drift'', but at the \LML we call it the ``Weltschmerz'' because it is the difference between the many worlds of our dreams and fantasies, and the one cruel reality that the passage of time imposes on us.
 
 \section*{Summary of \cref{Tools}}
 Coming soon.
