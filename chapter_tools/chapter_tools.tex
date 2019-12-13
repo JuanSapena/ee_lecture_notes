@@ -939,8 +939,8 @@ and variance,
 \ee
 of the sum of the $\T$ independent random increments. These are easily derived and are a worthwhile exercise. They tell us the scaling of the mean and variance of the sum: both grow linearly with the number of terms, $\T$. One way of writing the sum, then, is
 \bea
-\sum_{\gtau=1}^\T \ave{\d\gv_\gtau} &=& \mathcal{D}(\T \ave{\d\gv},\T \var[\d\gv]) \\
-&=& \T \ave{\d\gv} + \sqrt{T} \mathcal{D}(0,\var[\d\gv]),
+\sum_{\gtau=1}^\T \d\gv_\gtau &\sim& \mathcal{D}(\T \ave{\d\gv},\T \var[\d\gv]) \\
+&\sim& \T \ave{\d\gv} + \sqrt{T}\,\mathcal{D}(0,\var[\d\gv]),
 \eea
 where $\mathcal{D}$ represents some unknown distribution with the mean and variance shown. We can rearrange this to get an identical expression for the finite sum to that in \eref{CLT}, except that the distribution unspecified.
 
