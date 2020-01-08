@@ -356,16 +356,24 @@ conditions that allow the mapping, so that the two models are no longer equivale
 will be better at describing observed behaviour?
 
 Without our knowledge, a group of neuroscientists at the Danish Research Center for Magnetic 
-Resonance in Copenhagen was asking precisely this question.
+Resonance in Copenhagen was asking precisely this question, and found an astonishingly clear
+signal favouring ergodicity economics. The experiment they put together is
+carefully designed and well thought through. Nonetheless, as with any experiment, the result will 
+present us with an interpretation task: do we take the findings literally, or do we think they are 
+the unfortunate result of weaknesses in the setup? We'll present the experiment and its results, 
+and then mention a few potential problems to keep in mind.
 
-They followed very closely the discussion in \cite{PetersGell-Mann2016}, where we had worked 
-out in detail the correspondences between linear utility and additive dynamics; and between 
+The Copenhagen group followed very closely the discussion in \cite{PetersGell-Mann2016}, where 
+we had worked out in detail the correspondences between linear utility and additive dynamics; and between 
 logarithmic utility and multiplicative dynamics. These correspondences provide the basis for 
 the experiment: what if the dynamics of wealth could be controlled? With two artificial 
 environments -- one additive,  one multiplicative -- do people adjust their behaviour to be 
-growth-optimal in each? That's the basic idea: observe the choices that people make under
-different wealth dynamics, and infer from those choices the ergodic growth rate (or utility 
-function) that is being optimised.
+growth-optimal in each? At least in principle this question can be answered: for each dynamic
+derive the ergodic growth rate analytically; then observe the 
+real choices that people make under each dynamic, and infer from those choices 
+the growth rate (or utility function) whose expected change people really do optimise. Compare: is the 
+known ergodic growth rate for a given environment predictive of the real observed choices people make 
+in that environment?
 
 A positive result -- people changing their utility functions in response to the dynamics -- would falsify 
 expected utility theory (insofar as experiments falsify models). In the worldview of expected 
@@ -373,16 +381,18 @@ utility theory, the utility function encodes a personality. Supposedly, it's a p
 even neurological property of a human being, and not something that can change over the 
 course of a few hours (the duration of the experiment). 
 
-A negative result -- people not changing utility functions -- would get ergodicity economics into trouble 
-(at least in this experiment). In the worldview of ergodicity economics, the term ``utility function'' 
+A negative result -- people not changing utility functions -- could get ergodicity economics into trouble. 
+In the worldview of ergodicity economics, the term ``utility function'' 
 is a poorly chosen label for what's really the ergodicity transformation that sits in the functional 
 form of the relevant growth rate. This transformation is different for these two dynamics, as we've 
 seen. And the postulate of ergodicity economics is that people behave so as to optimise the 
 rate of change of the ergodicity transformation (\ie the ergodic growth rate). If they keep using the 
 same transformation, irrespective of dynamics, then this postulate would 
-not describe real behaviour.
+not describe real behaviour. Ergodicity economics may still be more powerful than expected-utility 
+theory because ergodicity economics predicts the form of the utility function, whereas 
+expected-utility theory doesn't. We will come back to this later.
 
-As we discuss the experiment below, we have to keep its limitations in mind. Of course, 
+As we discuss the experiment, we have to keep its limitations in mind. Of course, 
 we could set up a flawed experiment. We could have a bug in the code to analyse the 
 observations and accidentally introduce spurious differences between the inferred utility functions. 
 Or we could set up an experiment that doesn't achieve statistical significance to fish out 
@@ -390,13 +400,18 @@ of the noise the relevant differences in the ergodicity mappings that people opt
 Such experiments would not falsify anything; they would just be invalid. 
 
 The experiment is described in detail in \cite{MederETAL2019}. Here we will only outline the setup. 
-In the additive environment the subject was given a starting wealth of about \$150 and then 
-made 312 choices of the (additive) form ``would you rather toss a coin for winning \$40 or losing 
-\$30; or for winning \$30 or losing \$20?'' 
+18 subjects participated, and each one of them attended two sessions on successive days.
+We'll describe the protocol for a single individual, whom we'll call Bob. On the first day, Bob 
+is exposed to an additive wealth environment. That mean, he is given a starting wealth of 
+about \$150 and then makes 312 choices of the {\it additive} form ``would you rather toss a fair 
+coin for winning \$40 or losing \$30; or for winning \$30 or losing \$20?'' 
 
-In the multiplicative environment, the same subject was also given about \$150, and then made 
-312 choices of the (multiplicative) form ``would you rather toss a coin for a 100\% gain in wealth 
-or a 70\% loss; or for a 30\% gain or a 20\% loss?''
+Bob's choices are recorded, and from them the utility function is inferred that best describes them. 
+
+The next day, Bob comes in again. This time, he is exposed to a multiplicative environment. That means, again, 
+he is given about \$150, and again he makes 
+312 choices -- but this time of the {\it multiplicative} form ``would you rather toss a fair coin for a 
+100\% gain in wealth or a 70\% loss; or for a 30\% gain or a 20\% loss?''
 
 The choices were consequential: a single decision could lead to winning or losing several 
 hundred real dollars. 
@@ -404,16 +419,15 @@ hundred real dollars.
 
 We won't go into the details of the data analysis, which is rather sophisticated in this case. Instead, 
 we will only explain the logic behind what was done with the observations. 
-Let's work through a single observation -- a single choice made by a subject. 
-Let's say the wealth of the 
-subject is \$200). Imagine we observe the subject rejecting
-a proposed 50/50 gamble of winning \$100 or losing \$70 (for terminal wealth \$300 or \$130), 
-and instead accepts a gamble of winning \$20 or losing \$10 (for terminal  wealth \$220 or \$190). 
-What does this tell us about the subject's beliefs about the ergodicity transformation?
+Let's work through a single observation -- a single choice made by Bob. 
+Let's say Bob's wealth is \$200). Imagine we observe him rejecting
+the proposed 50/50 gamble of winning \$100 or losing \$70 (for terminal wealth \$300 or \$130), 
+and instead choosing the gamble of winning \$20 or losing \$10 (for terminal  wealth \$220 or \$190). 
+What does this tell us about Bob's beliefs about the ergodicity transformation?
 
 We're testing ergodicity economics and expected utility theory. In both theories, the decision criterion
 is the expectation value of a change in some function of wealth. So the question is really:
-for what kind of $\gv(\x)$ would the subject make the observed choice, assuming that the
+for what kind of $\gv(\x)$ would Bob make the observed choice, assuming that the
 the time-average ergodic growth rate is being optimised?
 
 The time-average ergodic growth rate (or rate of change of expected utility) is
@@ -421,22 +435,22 @@ The time-average ergodic growth rate (or rate of change of expected utility) is
 \g=\frac{\ave{\D \gv(\x)}}{\D\t}.
 \elabel{CPH_criterion}
 \ee
-We have to restrict the space of $\gv(\x)$ in order to see roughly where 
-in that space the subject sits. The restriction has to allow the two cases
+We have to restrict the space of $\gv(\x)$ in an intelligent way for the observations
+to tell us something meaningful. The restriction has to allow the two cases
 predicted by ergodicity economics: linear ergodicity transformation (utility function) 
-for additive dynamics and logarithmic for multiplicative.
+for additive dynamics and logarithmic ergodicity transformations for multiplicative dynamics.
 The Copenhagen team chose to restrict $\gv(\x)$ to
-a family of functions known in economics as auto-elastic utility functions, and in 
+a family of functions known in economics as iso-elastic utility functions, and in 
 physics as q-logarithms, namely to
 \be
-\gv(\x;\eta)=\frac{\x^{1-\eta}-1}{1-\eta}.
+\gv(\x;\gbeta)=\frac{\x^{1-\gbeta}-1}{1-\gbeta}.
 \elabel{auto}
 \ee
-The parameter $\eta$ controls the concavity of $\gv(\x; \eta)$, with the special value
-$\eta=0$ corresponding to linear $\gv(\x)$, and $\eta=1$ corresponding to logarithmic $\gv(\x)$.
+The parameter $\gbeta$ (called $\eta$ in the original paper) controls the concavity of $\gv(\x; \gbeta)$, with the special value
+$\gbeta=0$ corresponding to linear $\gv(\x)$, and $\gbeta=1$ corresponding to logarithmic $\gv(\x)$.
 
 With the restriction to this family of ergodicity mappings, we can phrase the decision 
-made by the subject in terms of beliefs about $\eta$. For instance, in the example choice we have
+made by Bob in terms of beliefs about $\gbeta$. For instance, in the example choice above we have
 \be
 \frac{\frac{1}{2}[\gv(\$300)+\gv(\$130)]-\gv(\$200)}{\D\t}<\frac{\frac{1}{2}[\gv(\$220)+\gv(\$190)]-\gv(\$200)}{\D\t}.
 \ee
@@ -445,33 +459,33 @@ the condition
 \be
 \gv(\$300)+\gv(\$130)-[\gv(\$220)+\gv(\$190)]< 0 \elabel{magnitude}.
 \ee
-\Fref{eta_constraint} shows the \LHS of \eref{magnitude}, plotted as a function of $\eta$.
-We see that for any $\eta>0.589$ the inequality is satisfied. Assuming that the subject is 
+\Fref{eta_constraint} shows the \LHS of \eref{magnitude}, plotted as a function of $\gbeta$.
+We see that for any $\gbeta>0.589$ the inequality is satisfied. Assuming that Bob is 
 maximising \eref{CPH_criterion}, we conclude from this one observation
-that the subject believes $\eta>0.589$. For example, the subject may believe that the 
-dynamics are multiplicative ($\eta=1$).
+that he believes $\gbeta>0.589$. For example, this is consistent with Bob believing that the 
+dynamics are multiplicative ($\gbeta=1$).
 \begin{SCfigure}
     \includegraphics[width=.5\textwidth]{./chapter_real/figs/eta_constraint.pdf}
     \caption{\LHS of \eref{magnitude}. The inequality in \eref{magnitude} is 
-    satisfied for any $\eta>0.589$, wherefore the choice that the subject made
-    indicates that an ergodicity transformation with $\eta>.589$ is being optimised.
-    For instance, this observation is consistent with a logarithmic ergodicity transformation ($\eta=1$).}
+    satisfied for any $\gbeta>0.589$, wherefore Bob's choice indicates that an 
+    ergodicity transformation with $\gbeta>.589$ is being optimised.
+    For instance, this observation is consistent with a logarithmic ergodicity transformation ($\gbeta=1$).}
     \flabel{eta_constraint}
 \end{SCfigure}
 
 Each subject made 312 observed gambling choices. Each choice produces a similar statement -- some
-constraint on $\eta$. 
-Perhaps the next observation would show that the subject believes $\eta<1.2$, which would 
-bracket the subject's belief about the value of $\eta $ into $0.589<\eta<1.2$. 
+constraint on $\gbeta$. 
+Perhaps the next observation would show that Bob believes $\gbeta<1.2$, which would 
+bracket his belief about the value of $\gbeta $ into $0.589<\gbeta<1.2$. 
 
 Like we said, the fitting techniques that were used to analyse the data from the experiment 
 are quite sophisticated. Where inconsistencies in a subject's behaviours are observed, 
-\eg of the type $\eta>0.589$ and $\eta<0.5$, this is interpreted 
-as inaccuracy in the subject's estimate for $\eta$, in effect an inability of the subject to 
+\eg of the type $\gbeta>0.589$ and $\gbeta<0.5$, this is implicitly interpreted 
+as inaccuracy in the subject's estimate for $\gbeta$, in effect an inability of the subject to 
 distinguish dynamics at this level of accuracy. The end result, after much computing, is a 
 Bayesian posterior probability density function specifying the likelihood of a subject's beliefs
-about $\eta$. Roughly, for each person in each environment this tells us how likely it is that the 
-subject was optimizing expected changes in \eref{auto} with different values for $\eta$, \fref{HulmeETAL}.
+about $\gbeta$. Roughly, for each person in each environment this tells us how likely it is that the 
+subject was optimizing expected changes in \eref{auto} with different values for $\gbeta$, \fref{HulmeETAL}.
 
 For details, see \cite{MederETAL2019}. The statistical techniques used in the experiment
 are described in \cite{LeeWagenmakers2013}.
@@ -481,8 +495,8 @@ are described in \cite{LeeWagenmakers2013}.
 %\end{picture}
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{./chapter_real/singleSubjects.pdf}
-    \caption{Posterior probability density functions for the parameter $\eta$ in the Copenhagen 
+    \includegraphics[width=\textwidth]{./chapter_real/figs/CPH_eta.pdf}
+    \caption{Posterior probability density functions for the parameter $\gbeta$ in the Copenhagen 
     experiment. Each panel is one individual, blue for the additive environment, red for 
     multiplicative. Dashed lines are the null-model predictions of 0 and 1. All tested individuals 
     changed behaviour noticeably in response to the wealth dynamic, in all cases the 
@@ -493,7 +507,7 @@ are described in \cite{LeeWagenmakers2013}.
 
 Expected-utility theory predicts that people are insensitive to changes in the dynamics. 
 People may have wildly different utility functions, which would be reflected in wildly 
-different best-fit values of $\eta$, but the dynamic setting should make no difference. 
+different best-fit values of $\gbeta$, but the dynamic setting should make no difference. 
 
 Ergodicity economics predicts something quite different. First of all, it predicts that the 
 dynamic setting significantly changes the best-fit ``utility function,'' which is really the 
@@ -503,11 +517,11 @@ multiplicative dynamics.
 
 According to ergodicity economics, the direction of the change should go towards 
 greater ``risk aversion'' for multiplicative dynamics -- the ergodicity mapping is more 
-concave there. The magnitude of the change in $\eta$ should be about 1. And finally, 
+concave there. The magnitude of the change in $\gbeta$ should be about 1. And finally, 
 if we take seriously the absolute null models of additive and multiplicative dynamics, 
 the distributions should be centred near 0 for the additive setting and near 1 for the 
 multiplicative setting. 
-%This final prediction is unlikely to be borne out perfectly: what neuroscientists call ``bracketing'' -- the mental process of considering only the experiment, the game in front of us, and not our real-world situation -- is never quite perfect. This would suggest an overall shift towards greater risk aversion: real life is far more multiplicative than additive. Also, any uncertainty or doubt people may have about the setup are likely to translate into more cautious behaviour, another effect that would increase $\eta$ a little away from the null-model prediction.
+%This final prediction is unlikely to be borne out perfectly: what neuroscientists call ``bracketing'' -- the mental process of considering only the experiment, the game in front of us, and not our real-world situation -- is never quite perfect. This would suggest an overall shift towards greater risk aversion: real life is far more multiplicative than additive. Also, any uncertainty or doubt people may have about the setup are likely to translate into more cautious behaviour, another effect that would increase $\gbeta$ a little away from the null-model prediction.
 
 Given the limitations of the experiment -- for instance people only had a one-hour 
 training phase to get used to a given dynamic environment -- these predictions don't look 
