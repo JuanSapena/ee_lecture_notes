@@ -15,7 +15,7 @@ Some historical perspective is provided to understand the prevalence or absence 
 
 \section{Random variable}
 \seclabel{random_variable}
-In economics, as elsewhere, we are often interested in `experiments' whose outcomes we don't yet know. Examples are each coin toss in the game in \secref{The_game} and the result of a football match. We might know something about the experiment, such as the possible outcomes and that some are more plausible than others, but we are ignorant of the actual outcome. Luckily, we can use probability theory, a branch of mathematics, to build models of our ignorance.
+In economics, as elsewhere, we are often interested in `experiments' whose outcomes we don't yet know. Examples are each coin toss in the game in \secref{The_game} or the result of a football match. We might know something about the experiment, such as the possible outcomes and that some are more plausible than others, but we are ignorant of the actual outcome. Luckily, we can use probability theory, a branch of mathematics, to build models of our ignorance.
 
 Often the experimental outcomes have, or can be mapped to, numerical values. For example, each coin toss in the game has possible outcomes heads and tails, which correspond to wealth multipliers 1.5 and 0.6. In such cases, we model the uncertain numerical value as a \textit{random variable}. We assume you have seen random variables before and we will not give a lengthy technical account. Instead, we recommend the two-page discussion in \cite[p.~2]{vanKampen1992}, whose key points we reproduce here.
 
@@ -25,9 +25,9 @@ A random variable, $\Z$, is defined by:
 \item a probability distribution, $\prob{}$, over this set.
 \ei
 The set of possible values of $\Z$ may be continuous, like the interval $(3,12)$ or the real numbers, 
-$\mathbb{R}$; discrete, like $\{4, 7.8, 29\}$ or the integers, $\mathbb{Z}$; or a combination 
+$\Rreal$; discrete, like $\{4, 7.8, 29\}$ or the integers, $\Zint$; or a combination 
 of the two. The probability distribution is a function which maps values to probabilities. We define an 
-event as $\Z$ taking the value $\z$, which we write as $\Z=\z$. This is strictly an abuse
+event as ``$\Z$ taking the value $\z$,'' which we write as $\Z=\z$. This is strictly an abuse
 of notation because $\Z$ is a random variable, and $\z$ is a scalar (so they can't be identical as 
 the ``$=$'' sign suggests). But this is common notation, and we will use it here. Similarly, we may write $\Z<a$
 to denote the union of all events where $\Z$ takes a value $\z<a$ \etc
@@ -81,7 +81,7 @@ the certain outcome, \ie the integral over all possible outcomes, is one:
 \ee
 Note the difference between subscript and argument: $\PDF_{\Z}(\z)$ is the probability density of 
 the random variable $\Z$ at value $\z$. You might find it helpful to think of $\PDF_{\Z}(\z)\delta\z$ 
-as the approximate probability of $\Z$ being in the small interval $(\z,\z+\delta\z)$ close to $\z$. 
+as the approximate probability of $\Z$ being in the small interval $(\z,\z+\d\z)$ close to $\z$. 
 
 \boldhead{Interpretation}
 So far we have said nothing about the meaning of probabilities: formally, they are simply numbers 
@@ -90,11 +90,11 @@ assigned to outcomes of random variables. Giving these numbers meaning is a sepa
 In these notes, we will use a frequentist interpretation of probabilities, by which we mean the following. 
 Imagine many separate experiments. For example, suppose we toss a coin $\N$ times, 
 and record the number of times, $n$, that a particular outcome occurs. Under the frequentist 
-interpretation, the probability associated with this outcome is its relative frequency, $n/\N$, in the limit 
+interpretation, the probability associated with this outcome is its relative frequency, $\gn/\N$, in the limit 
 $\N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were 
 unbiased; if biased, it would be some other number between 0 and 1.
-Formally, in terms of a random variable, the frequentist interpretation means that $n/\N$ will approach
-the probability of $n$ when we generate $\N$ instances of the random variable.
+Formally, in terms of a random variable, the frequentist interpretation means that $\gn/\N$ will approach
+the probability of $\gn$ when we generate $\N$ instances of the random variable.
 
 Note also that time does not appear in the formal definition of a random variable. The moment we
 try to illustrate what a random variable might model, we introduce time. For instance by saying ``we toss
@@ -108,7 +108,7 @@ week or the country we are in. Such parameterisations of the random variable do 
 fundamentally its mathematical structure: a set of outcomes and associated probabilities. When we 
 consider probability distributions of random variables that do depend on time, as we do for wealth, $\x(\t)$, 
 in the coin tossing game, we will make the time dependence explicit. By default we assume random 
-variables are time-independent
+variables are time-independent.
 
 \section{Expectation value}
 The \textit{expectation value}\footnote{Also known as expected value, mathematical expectation, 
@@ -129,7 +129,7 @@ realisations weighted by the probability density:
 \ee 
 \end{defn}
 The sum or the integral may not exist, in which case the random variable does not have an 
-expectation value. One examples of this are the payout of the St Petersburg lottery, which 
+expectation value. One example of this is the payout of the St Petersburg lottery, which 
 we will encounter in \secref{SPP}. Another example is any fat-tailed random variable with 
 \PDFa of the form:
 \be
@@ -177,9 +177,17 @@ $\ave{\Z}_\N$ will grow systematically with $\N$. If $\ave{\Z}$ represents an av
 taken over $\N$ successive measurements (a time series), then a fat-tailed $\Z$ is often
 as good a model as a non-stationary (time-dependent) $\Z$.
 
-Note that, unlike the expectation value, the ensemble average of a random variable is not defined in terms of probabilities. It is the quantity to which averages over realisations converge as the number of realisations grows. Recall that we followed this procedure when analysing the coin game. At each round of the gamble, we found finite-ensemble averages of simulated wealth for increasingly large samples, from one to one million, plotted against time in \fref{1_2}.
+Note that, unlike the expectation value, the ensemble average of a random variable is not defined directly 
+in terms of probabilities. It is the quantity to which averages over realisations converge as the number of 
+realisations grows -- the connection to probabilities hides in the procedure of generating realisations. 
 
-It is laborious to compute averages of ever larger finite ensembles, in the hope of discerning their convergence to a limit. Fortunately, we can show, under the frequentist interpretation of probability introduced in \secref{random_variable}, that the ensemble average of a random variable is equal to its expectation value. We do this here for the discrete case, noting that a similar proof can be offered for the continuous case.
+Recall how we analysed the coin game. At each round of the gamble, we found finite-ensemble averages of 
+simulated wealth for increasingly large samples, from one to one million, plotted against time in \fref{1_2}.
+It is laborious to compute averages of ever larger finite ensembles, in the hope of discerning their 
+convergence to a limit. Fortunately, we can show, under the frequentist interpretation of probability 
+introduced in \secref{random_variable}, that the ensemble average of a random variable is equal 
+to its expectation value. We do this here for the discrete case, noting that a similar proof can be 
+offered for the continuous case.
 \begin{proof}
 Denote by  $\gn_\gj$ the number of times $\z_\gj$ is observed in $\N$ realisations of $\Z$. The finite-ensemble average can be written as
 \be
@@ -257,7 +265,7 @@ sequences of connected observations, about whose values we are uncertain. To mod
 phenomena, we need a new type of mathematical object, the \textit{stochastic process}, 
 denoted $\Y(\t)$. We define this analogously to the random variable, as:
 \bi
-\item a set of possible trajectories, $\{y(\t)\}$; and
+\item a set of possible trajectories, $\{\y(\t)\}$; and
 \item a probability distribution over this set.
 \ei
 More technical presentations are available and, again, we point you to \cite[p.~52]{vanKampen1992} 
@@ -283,16 +291,16 @@ This might seem like lot to take in, but conceptually it's fairly simple. A stoc
 \put(120,220){$y_1(\t^*)$}
 \put(130,215){\vector(1,-1){13}}
 \end{picture}
-\caption{Realisations of a stochastic process, $\Y(\t)$. Each trajectory, $y_\gi(\t)$ is a function of time, which runs horizontally across the page. Fixing time, $\t=\t^*$, results in a random variable, $\Y(\t^*)$, one realisation of which, $y_1(\t^*)$, is shown.}
+\caption{Realisations of a stochastic process, $\Y(\t)$. Each trajectory, $\y_\gi(\t)$ is a function of time, which runs horizontally across the page. Fixing time, $\t=\t^*$, results in a random variable, $\Y(\t^*)$, one realisation of which, $y_1(\t^*)$, is shown.}
 \flabel{sp_grid}
 \end{figure}
 
-This picture suggests another way of viewing the stochastic process: if we choose a time, $\t=\t^*$, then $\Y(\t^*)$ is a random variable, whose possible realisations form the set of possible function values, $\{y(\t^*)\}$. So, if you prefer, you can think of a stochastic process as a family of random variables, with probability distributions parametrised by time.
+This picture suggests another way of viewing the stochastic process: if we choose a time, $\t=\t^*$, then $\Y(\t^*)$ is a random variable, whose possible realisations form the set of possible function values, $\{\y(\t^*)\}$. So, if you prefer, you can think of a stochastic process as a family of random variables, with probability distributions parametrised by time.
 
 \boldhead{Generating stochastic processes}
 Switching to practical considerations, there are two main ways of generating a trajectory of a stochastic processes, say on a computer. The first is consistent with our conceptualisation of selecting one from a family of trajectories. For example, if the possible trajectories were finitely many and equally probable, then we could label them with integers and draw one from a discrete uniform distribution. All the uncertainty is resolved at the start, in a single realisation of a random variable.
 
-The other approach is to generate a trajectory sequentially, by successive application of the rule that tells us which possible values of $y_\gi(\t+\dt)$ are compatible with a known value of $y_\gi(\t)$. This is how we generate wealth trajectories in the coin game, where the rule is to multiply current wealth by the realisation of a random variable. Realising a random variable at every time step sounds laborious. However, in many models of natural phenomena, it is easier to write down a realistic updating rule than an expression for all possible trajectories. This is because it is often about the changes of quantities that we can reason `physically'. Moreover, many stochastic processes have uncountably many trajectories, making the single realisation approach difficult, because it requires high numerical precision, \ie very long numbers, to be useful.
+The other approach is to generate a trajectory sequentially, by successive application of the rule that tells us which possible values of $\y_\gi(\t+\dt)$ are compatible with a known value of $\y_\gi(\t)$. This is how we generate wealth trajectories in the coin game, where the rule is to multiply current wealth by the realisation of a random variable. Realising a random variable at every time step sounds laborious. However, in many models of natural phenomena, it is easier to write down a realistic updating rule than an expression for all possible trajectories. This is because it is often about the changes of quantities that we can reason `physically'. Moreover, many stochastic processes have uncountably many trajectories, making the single realisation approach difficult, because it requires high numerical precision, \ie very long numbers, to be useful.
 
 Therefore, typically we generate trajectories sequentially, using updating rules which we call the \textit{dynamics} of the stochastic process. Usually, where it creates no ambiguity, we don't distinguish between the stochastic process and a single realisation of it, using lower case to denote both, \eg $\x(\t)$ for wealth. When it's important to identify different trajectories, we include an index, \eg $\x_\gi(\t)$. Sometimes we refer to these different realisations as \textit{systems} and to the index as the system number.
 
@@ -301,18 +309,18 @@ Stochastic processes are models of uncertain quantities which vary across system
 One example is the wealth of a player of the coin game; another example is the total goals 
 scored in a football match. If we fix time in a stochastic process, then we can take the ensemble average of the resulting random variable,
 \be
-\ave{\Y(\t^*)} = \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^{\N} y_\gi(\t^*).
+\ave{\Y(\t^*)} = \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^{\N} \y_\gi(\t^*).
 \ee
 The introduction of time in the stochastic process makes another type of average possible, conceptually different from the ensemble average. Instead of choosing a time and averaging across  systems, we can choose a system and average over time. Let's start by doing this for a finite time period, $\Dt$, to generate a \textit{finite-time average}.
 \begin{defn}{Finite-time average}
-The finite-time average of the trajectory $y(\t)$ is the average value of the function from $\t$ to $\t+\Dt$,
+The finite-time average of the trajectory $\y(\t)$ is the average value of the function from $\t$ to $\t+\Dt$,
 \be
-\bar{y}_{\Dt}(\t) \equiv \frac{1}{\Dt} \int_{\t}^{\t+\Dt} y(\gs) \gd\gs.
+\bar{\y}_{\Dt}(\t) \equiv \frac{1}{\Dt} \int_{\t}^{\t+\Dt} \y(\gs) \gd\gs.
 \elabel{t_ave_f}
 \ee
-If $y(\t)$ changes only at discrete times, $\{\t+\dt,\dots,\t+\T\dt\}$, where $\Dt=\T\dt$, then the finite-time average can be written as 
+If $\y(\t)$ changes only at discrete times, $\{\t+\dt,\dots,\t+\T\dt\}$, where $\Dt=\T\dt$, then the finite-time average can be written as 
 \be
-\bar{y}_{\Dt}(\t)  = \frac{1}{\T\dt} \sum_{\gtau=1}^{\T} y(\t+\gtau\dt).
+\bar{\y}_{\Dt}(\t)  = \frac{1}{\T\dt} \sum_{\gtau=1}^{\T} \y(\t+\gtau\dt).
 \elabel{t_ave_f_disc}
 \ee
 \end{defn}
@@ -321,7 +329,7 @@ In the same way that the ensemble average is the many-systems limit of the finit
 \begin{defn}{Time average}
 The time average is the long-time limit of the finite-time average,
 \be
-\bar{y}(\t) \equiv \lim_{\Dt\to\infty} \bar{y}_{\Dt}(\t),
+\bar{\y}(\t) \equiv \lim_{\Dt\to\infty} \bar{\y}_{\Dt}(\t),
 \elabel{t_ave}
 \ee
 where this limit exists.
@@ -329,28 +337,28 @@ where this limit exists.
 Note that both the finite-time average and the time average are strictly functions of the time, 
 $\t$, at which the averaging starts. In many of the models we consider, dependence on the 
 initial condition vanishes in the limit of long averaging time. If so, we remove it from the 
-notation and write $\bar{y}$.
+notation and write $\bar{\y}$.
 
 The two types of average possible in a stochastic process are illustrated in \fref{ergodic_grid}.
 \begin{figure}[h]
 \begin{picture}(200,260)(0,0)
 \put(-40,-30){\includegraphics[width=1.2\textwidth]{./chapter_tools/figs/ergodic_grid.pdf}}
-\put(13,190){$y_1(\t)$}
-\put(13,159){$y_2(\t)$}
-\put(13,128){$y_3(\t)$}
-\put(13,97){$y_4(\t)$}
-\put(13,66){$y_5(\t)$}
+\put(13,190){$\y_1(\t)$}
+\put(13,159){$\y_2(\t)$}
+\put(13,128){$\y_3(\t)$}
+\put(13,97){$\y_4(\t)$}
+\put(13,66){$\y_5(\t)$}
 \put(-25,22){realisation, $\gi$}  
 \put(162,242){$\t=\t^*$}  
 \put(344,235){time, $\t$}  
-\put(188,207){$y_1(\t^*)$}
+\put(188,207){$\y_1(\t^*)$}
 \put(187,208){\vector(-1,-1){15}}
 \put(-27,125){$\gi=3$}
-\put(362,127){$\bar{y_3} =$}
-\put(340,114){$\lim_{\Dt\to\infty} \frac{1}{\Dt} \int_0^{\Dt} y_3(\gs) \gd\gs$}
-\put(100,10){$\ave{\Y(\t^*)} = \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^\N y_\gi(\t^*)$}  
+\put(362,127){$\bar{\y_3} =$}
+\put(340,114){$\lim_{\Dt\to\infty} \frac{1}{\Dt} \int_0^{\Dt} \y_3(\gs) \gd\gs$}
+\put(100,10){$\ave{\Y(\t^*)} = \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^\N \y_\gi(\t^*)$}  
 \end{picture}
-\caption{Realisations of a stochastic process, $\Y(\t)$, \cf \fref{sp_grid}. The ensemble average, $\ave{\Y(\t^*)}$, is obtained by choosing a time, $\t=\t^*$, and averaging over trajectories (red box). The time average is obtained by choosing a trajectory, $\gi=3$, and averaging over time (green box).}
+\caption{Realisations of a stochastic process, $\Y(\t)$, \cf \fref{sp_grid}. The ensemble average, $\ave{\Y(\t^*)}$, is obtained by choosing a time, $\t=\t^*$, and averaging over realisations (red box). The time average is obtained by choosing a trajectory, $\gi=3$, and averaging over time (green box).}
 \flabel{ergodic_grid}
 \end{figure}
 
@@ -428,17 +436,17 @@ What happens to $\g_\T$ in the long run? There are two ways of evaluating the $\
 %(\greff)^\T =  \prod_{\gtau=1}^\T \gr_\gtau \quad \Rightarrow \quad
 \greff = \left(\prod_{\gtau=1}^\T \gr_\gtau\right)^\frac{1}{\T}.
 \ee
-This is known as the \textit{geometric mean} of $\{\gr_\gtau\}$. Suppose heads appear $m$ times and tails $n$ times. Then
+This is known as the \textit{geometric mean} of $\{\gr_\gtau\}$. Suppose heads appear $\gn_H$ times and tails $\gn_T$ times. Then
 \be
-\greff = (1.5)^\frac{m}{\T} (0.6)^\frac{n}{\T},
+\greff = (1.5)^\frac{\gn_H}{\T} (0.6)^\frac{\gn_T}{\T},
 \ee
-which is simply the product of possible realisations of the wealth multiplier raised to their relative frequencies. We know already what happens to relative frequencies the number of rounds grows large: they converge almost surely to their corresponding probabilities, in this case both $1/2$. So, over many rounds, the effective per-round multiplier of wealth converges to
+which is simply the product of possible realisations of the wealth multiplier raised to their relative frequencies. We know already what happens to relative frequencies as the number of rounds grows large: they converge almost surely to their corresponding probabilities, in this case both $1/2$. So, over many rounds, the effective per-round multiplier of wealth converges to
 \be
 \grtime = \lim_{\T\to\infty} \greff = (1.5)^\frac{1}{2} (0.6)^\frac{1}{2} = (0.9)^\frac{1}{2}  \approx 0.95.
 \ee
 This tells a strikingly different story from that told by ensemble average wealth. Instead of growing exponentially by a factor 1.05 per round, a single wealth trajectory over long time decays exponentially by an effective factor of 0.95 per round. The corresponding exponential growth rate, from \eref{g_x_T}, is
 \be
-\ggtime = \frac{\ln\grtime}{\dt} \approx -5.3\% \text{ per round}.
+\ggtime = \frac{\ln\grtime}{\dt} \approx -5.1\% \text{ per round}.
 \ee
 
 The alternative route to this result is to take the $\T\to\infty$ limit of the sum in \eref{g_x_T}. Something rather interesting -- and central to ergodicity economics -- happens when we do this:
@@ -458,7 +466,7 @@ There are two deep reasons why this works. The first is that the operation we pe
 
 Observables whose time and ensemble averages are equivalent are very special, and we will say much more about them in the next section.
 
-Our computations of $\ggtime$ are consistent with the simulations in \secref{The_game}. \Fref{ens_v_time} (B) compares the single trajectory generated in \fref{1_3} to exponential decay at rate $\ggtime$. The trajectory in \fref{1_3} was no fluke: {\it every} trajectory will decay in the long run, with a growth rate approaching $-5.3\%$ per round. 
+Our computations of $\ggtime$ are consistent with the simulations in \secref{The_game}. \Fref{ens_v_time} (B) compares the single trajectory generated in \fref{1_3} to exponential decay at rate $\ggtime$. The trajectory in \fref{1_3} was no fluke: {\it every} trajectory will decay in the long run, with a growth rate approaching $-5.1\%$ per round. 
 \begin{figure}[h]
 \begin{picture}(200,200)(0,0)
 \put(-100,0){\includegraphics[width=0.77\textwidth]{./chapter_tools/figs/x_of_t_N1M.pdf}}
@@ -466,7 +474,7 @@ Our computations of $\ggtime$ are consistent with the simulations in \secref{The
 \put(-30,120){(A)}
 \put(250,120){(B)}  
 \end{picture}
-\caption{(A) Finite-ensemble average for $N=10^6$ and 52 time steps, the light blue line is 
+\caption{(A) Finite-ensemble average for $\N=10^6$ and 52 time steps, the light blue line is 
 the expectation value. (B) A single system simulated for 10,000 time steps, the light blue 
 line decays exponentially with factor $\grtime$ in each time step.}
 \flabel{ens_v_time}
@@ -491,7 +499,7 @@ where the $\D$ in the numerator corresponds to the change over the period, $\Dt$
 \be
 \ggave = \lim_{\N\to\infty} \g(\ave{\x(\t)}_\N, \Dt),
 \ee
-which is also $\ln \ave{\gr}/\dt$. The exponential growth rate followed by any single trajectory ($N=1$) when observed for a long time is 
+which is also $\ln \ave{\gr}/\dt$. The exponential growth rate followed by any single trajectory ($\N=1$) when observed for a long time is 
 \be
 \ggtime = \lim_{\Dt\to\infty} \g(\x(\t), \Dt),
 \elabel{gt}
@@ -705,10 +713,10 @@ Coming soon.
 
 \section{Ergodicity}
 \seclabel{Ergodic_observables}
-We have encountered two types of averaging -- the ensemble average and the time average. In our case -- assessing whether it will be good for you to play our game, the time average is the interesting quantity because it tells you what happens to your wealth as time passes. The ensemble average is irrelevant because you do not live your life as an ensemble of many yous who can average over their wealths. Whether you like it or not, you will experience yourself owning your own wealth at future times; whether you like it not, you will never experience yourself owning the wealth of a different realization of yourself. The different realizations, and therefore the expectation value, are fiction, fantasy, imagined.
+We have encountered two types of averaging -- the ensemble average and the time average. In our case -- assessing whether it will be good for you to play our game, the time average is the interesting quantity because it tells you what happens to your wealth as time passes. The ensemble average is irrelevant because you do not live your life as an ensemble of many yous who can average over their wealths. Whether you like it or not, you will experience yourself owning your own wealth at future times; whether you like it or not, you will never experience yourself owning the wealth of a different realization of yourself. The different realizations, and therefore the expectation value, are fiction, fantasy, imagined.
 
 We are fully aware that it can be counter-intuitive that with probability one, a different rate is observed for the expectation value than for any trajectory over time. It sounds strange that the expectation value is completely irrelevant to the problem. A reason for the intuitive discomfort is history: since the 1650s we have been trained to compute expectation values, with the implicit belief that they will reflect what happens over time. It may be helpful to point out that all of this trouble has a name that's well-known to certain people, and that an entire field of mathematics is devoted to dealing with precisely this problem. The field of mathematics is called ``ergodic theory.'' It emerged from the question under what circumstances the expectation value is informative 
-of what happens over time, first raised in the development of statistical mechanics by Maxwell and Boltzmann starting in the 1850s. These lecture notes are our attempt to use precisely the insights of these physicists to re-develop economic theory from the foundations up.
+of what happens over time, first raised in the 1870s by Boltzmann, early in the development of statistical mechanics which began with Maxwell in the 1850s. These lecture notes are our attempt to use precisely the insights of these physicists to re-develop economic theory from the foundations up.
 
 \begin{history}{Randomness and ergodicity in physics}
 Coming soon.
@@ -771,7 +779,7 @@ and its time average converges to this value with probability one\footnote{Some 
 \end{defn}
 The \RHS of \eref{def_ergodic} is evaluated at time $\t$, and unlike the \LHS could be a function of time. For now, we restrict our definition of ergodicity to a setup where that is not the case, \ie where the ergodic property holds at all times. In \secref{RGBM_moments} we will discuss transient behavior, where the distribution of $\A$ is time dependent. We then also consider an observable ``ergodic'' if its expectation value only converges to the time-average in the $\t\to\infty$ limit.
 
-In terms of random variables, $\Z$, and stochastic processes, $\Y_{\Z}(\t)$, the ergodic property can be visualized as in \fref{ergodic_grid}. Averaging a stochastic process over time or over the ensemble are completely different operations, and only under very rare circumstances (namely under ergodicity) can the two operations be interchanged. In our coin-tossing game the operations are clearly not interchangeable. An implicit assumption of interchangeability in the early days is the Original Sin of economic theory.
+In terms of random variables, $\Z$, and stochastic processes, $\Y(\t)$, the ergodic property can be visualized as in \fref{ergodic_grid}. Averaging a stochastic process over time or over the ensemble are completely different operations, and only under very rare circumstances (namely under ergodicity) can the two operations be interchanged. In our coin-tossing game the operations are clearly not interchangeable. An implicit assumption of interchangeability in the early days is the Original Sin of economic theory.
 
 We stress that in a given setup, some observables may have the ergodic property even if others do not. Language therefore must be used carefully. Saying our game is non-ergodic really means that some key observables of interest, most notably wealth $\x$, are not ergodic. Wealth $\x(\t)$, defined by \eref{law}, is clearly not ergodic -- with $\A=\x$ the \LHS of \eref{def_ergodic} is zero, and the \RHS is not constant in time but grows. The expectation value $\ave{\x}(\t)$ simply doesn't give us the relevant information about the temporal behavior of $\x(\t)$.
  
@@ -797,7 +805,7 @@ where we have written $\gr_\gtau = \gr(\t+\gtau\dt)$ to make clear the equivalen
 The same argument holds for $\d \ln \x$.
 \end{proof}
 
-Whether we consider \eref{t_r} an average over time or over an ensemble is only a matter of our interpretation. The mathematics are the same.
+Whether we consider \eref{t_r} an average over time or over an ensemble is only a matter of our interpretation. The mathematics is unchanged.
 
 The expectation value $\ave{\d \ln \x}$ is important, historically. \person{Daniel Bernoulli} noticed in 1738 \cite{Bernoulli1738} that people tend to optimize $\ave{\d \ln \x}$, whereas it had been assumed that they should optimize $\ave{\d \x}$. Unaware of the issue of ergodicity (200 years before the concept was discovered and the word was coined), \person{Bernoulli} had no good explanation for this empirical fact and simply stated that people tend to behave as though they valued money non-linearly. We now know what is actually going on: multiplicative dynamics are a fairly realistic model for real wealth, and under those dynamics $\d \x$ is not ergodic, and $\ave{\d \x}$ is of no interest -- it doesn't tell us what happens over time. However, $\d \ln \x$ {\it is} ergodic, and $\ave{\d \ln \x}$ does tell us what happens to $\x$ over time, wherefore seeing people optimise $\ave{\d \ln \x}$ just means seeing them optimise wealth over the one trajectory that describes a financial life, rather than across the ensemble of possibilities.
 
@@ -907,7 +915,7 @@ We are interested in the simple case where $\gv$ changes at regular intervals, \
 \be
 \var[\d \gv]=\ave{\d \gv^2}-\ave{\d \gv}^2
 \ee
-be finite. Note that this means the expectation value, $\ave{\d\gv}$, must also be finite. Increments with heavier-tailed distributions not produce \BM in the continuous-time limit. (\BM has continuous paths and that continuity is broken by such increments.)
+be finite. Note that this means the expectation value, $\ave{\d\gv}$, must also be finite. Increments with heavier-tailed distributions do not produce \BM in the continuous-time limit. (\BM has continuous paths and that continuity is broken by such increments.)
 
 The change in $\gv$ after a long time is the sum of many independent increments, 
 \be
@@ -915,11 +923,11 @@ The change in $\gv$ after a long time is the sum of many independent increments,
 \ee
 The \CLT (strictly speaking, the Lindeberg-L\'{e}vy version of it) tells us that this sum, a random variable, will become normally distributed as we add more terms and rescale appropriately. Specifically, the rescaling keeps the width of the distribution finite and removes systematic drift in the mean:
 \be
-\lim_{\T\to\infty} \overbrace{\frac{1}{\sqrt{\T}}}^{\mathclap{\text{keep width finite}}}\sum_{\gtau=1}^\T ( \d \gv_\gtau \underbrace{-\ave{\d \gv}}_{\mathclap{\text{remove systematic drift}}}) \sim \mathcal{\N}(0 , \var[\d \gv]).
+\lim_{\T\to\infty} \overbrace{\frac{1}{\sqrt{\T}}}^{\mathclap{\text{keep width finite}}}\sum_{\gtau=1}^\T ( \d \gv_\gtau \underbrace{-\ave{\d \gv}}_{\mathclap{\text{remove systematic drift}}}) \sim \mN(0 , \var[\d \gv]).
 \elabel{CLT}
 \ee
 %where we call $\frac{\ave{\d \gv}}{\dt}$ the ``drift term.'' 
-The notation $\sim \mathcal{N}(0, \var[\d \gv])$ is shorthand for ``follows a normal distribution with mean $0$ and variance $\var[\d \gv]$.'' The logarithmic change in the long-time limit that was of interest to us in the analysis of the coin game is, therefore, normally distributed. 
+The notation $\sim \mN(0, \var[\d \gv])$ is shorthand for ``follows a normal distribution with mean $0$ and variance $\var[\d \gv]$.'' The logarithmic change in the long-time limit that was of interest to us in the analysis of the coin game is, therefore, normally distributed. 
 
 We can gain a partial intuition for this result from the mean,
 \be
@@ -931,12 +939,12 @@ and variance,
 \ee
 of the sum of the $\T$ independent random increments. These are easily derived and are a worthwhile exercise. They tell us the scaling of the mean and variance of the sum: both grow linearly with the number of terms, $\T$. One way of writing the sum, then, is
 \bea
-\sum_{\gtau=1}^\T \ave{\d\gv_\gtau} &=& \mathcal{D}(\T \ave{\d\gv},\T \var[\d\gv]) \\
-&=& \T \ave{\d\gv} + \sqrt{T} \mathcal{D}(0,\var[\d\gv]),
+\sum_{\gtau=1}^\T \d\gv_\gtau &\sim& \mathcal{D}(\T \ave{\d\gv},\T \var[\d\gv]) \\
+&\sim& \T \ave{\d\gv} + \sqrt{T}\,\mathcal{D}(0,\var[\d\gv]),
 \eea
 where $\mathcal{D}$ represents some unknown distribution with the mean and variance shown. We can rearrange this to get an identical expression for the finite sum to that in \eref{CLT}, except that the distribution unspecified.
 
-So, it's fairly simple to deduce the rescaling used in \eref{CLT}. The magic of the \CLT is that, in the limit $\T\to\infty$, the distribution converges to a normal, \ie $\mathcal{D}$ becomes $\mathcal{N}$. This is regardless of the distribution of the individual increments: we need only know that their mean and variance exist. We won't spoil the magic here, as our main interest is in using the result, but deriving the \CLT (and there are many ways to do it) is another illuminating exercise for the reader.
+So, it's fairly simple to deduce the rescaling used in \eref{CLT}. The magic of the \CLT is that, in the limit $\T\to\infty$, the distribution converges to a normal, \ie $\mathcal{D}$ becomes $\mN$. This is regardless of the distribution of the individual increments: we need only know that their mean and variance exist. We won't spoil the magic here, as our main interest is in using the result, but deriving the \CLT (and there are many ways to do it) is another illuminating exercise for the reader.
 
 %We work with the simplest setup: at time zero we start at zero, $\gv(0)=0$, and in each time step, we either increase or decrease $\gv$ by 1, with probability 1/2. To avoid notation clutter, we'll set the duration of a time step to $\dt=1$, so that $\T$ is both the number of steps and the time.
 %
@@ -968,13 +976,13 @@ Imagine simulating a single long trajectory of $\gv$ and plotting it on paper.\f
 In an intermediate regime, fluctuations will still be visible and they will be approximately normally distributed. In this regime it is often easier to replace the discrete random walk model with the corresponding continuous process. That process -- finally -- is \BM. 
 
 \boldhead{Brownian motion}
-We think of \BM as the limit of a random walk where we shorten the duration of a step, $\dt \to 0$, so that changes happen continuously in time and not just at discrete times. As we will see, this creates a model which is more tractable than the random walk, and this will allow us to focus on economics. However, we issue a caveat here. We do not measure real-world observables, such as individual wealth, in continuous time. We only ever get to glimpse them between discrete time intervals and, if we are lucky, we will collect enough glimpses to do some science. So, we are replacing the discrete-time model with a continuous-time model, only to use the latter to describe discrete-time processes in the real world. If this seems upside-down to you, we don't blame you! The value in this approach is in the powerful analytical tools it will put at our disposal.
+We think of \BM as the limit of a random walk where we shorten the duration of a step, $\dt \to 0$, so that changes happen continuously in time and not just at discrete times. As we will see, this creates a model which is more tractable than the random walk, and this will allow us to focus on economics. How realistic it is to think of wealth changing continuously is debatable. We certainly do not measure real-world observables, such as individual wealth, in continuous time. We only ever get to glimpse them between discrete time intervals and, if we are lucky, we will collect enough glimpses to do some science. So, we are replacing the discrete-time model with a continuous-time model to use the latter to describe discrete-time glimpses in the real world. If continuity seems an unnecessary assumption to you, we don't blame you! The value in this approach is in the powerful analytical tools it will put at our disposal.
 
-We know from our treatment of the random walk that the net change in $\gv$ over $\T$ steps scales like $\sqrt{\T}$. If the intervals are regular, \ie their duration is fixed, then this means the net change scales like the square-root of the time spent walking. In \BM we maintain this scaling \textit{over all time intervals} and, in particular, over small intervals, $\dt \to 0$. This requires $\d\gv = O(\sqrt{\dt})$. In the limit $\dt\to0$, the local slope of a trajectory diverges, $\d\gv/\dt\to\infty$. Thus, trajectories of \BM are infinitely jagged, or -- in mathematical terms -- they are not differentiable. The way in which they become non-differentiable, through the $\sqrt{\dt}$ factor, just leaves the trajectories continuous. (This isn't the case for $\d\gv = O(\dt^\alpha)$, where $\alpha < 0.5$.) 
+Subtracting any drift, or assuming zero drift, we know from our treatment of the random walk that the net change in $\gv$ over $\T$ steps scales like $\sqrt{\T}$. If the intervals are regular, \ie their duration is fixed, then this means the net change scales like the square-root of the time spent walking. In \BM we maintain this scaling \textit{over all time intervals} and, in particular, over small intervals, $\dt \to 0$. This requires $\d\gv = O(\sqrt{\dt})$. In the limit $\dt\to0$, the local slope of a trajectory diverges, $\d\gv/\dt\to\infty$. Thus, trajectories of \BM are infinitely jagged, or -- in mathematical terms -- they are not differentiable. The way in which they become non-differentiable, through the $\sqrt{\dt}$ factor, just leaves the trajectories continuous. (This isn't the case for $\d\gv = O(\dt^\alpha)$, where $\alpha < 0.5$.) 
 
 Continuity of $\gv$ means that it is possible to make the difference $|\gv(\t)-\gv(\t+\epsilon)|$ as small as we like by choosing $\epsilon$ small enough. Trajectories without this property contain what are appropriately called ``jumps.'' Therefore, continuity means that there are no jumps. These subtleties make \BM a topic of great mathematical interest, and many books have been written about it. We will pick from these books only what is immediately useful to us. To convey the universality of \BM, we define it formally as follows:
 \begin{defn}{Brownian motion i}
-If a stochastic process has continuous paths, stationary independent increments, and is distributed according to $\mathcal{\N}(\gmu \t, \gsigma^2 \t)$ then it is a Brownian motion.
+If a stochastic process has continuous paths, stationary independent increments, and is distributed according to $\mN(\gmu \t, \gsigma^2 \t)$ then it is a Brownian motion.
 \end{defn}
 The process can be defined in different ways. A particularly compact definition is this:
 \begin{defn}{Brownian motion ii}
@@ -1005,19 +1013,19 @@ where each term is either a scalar quantity or a random variable. The formal stu
 The name ``Brownian motion'' is sometimes reserved for the stochastic process generated by \eref{BM_dx} when $\gmu=0$, with ``Brownian motion with drift'' used for the case when $\gmu\neq0$. When $\gmu=0$ and $\gsigma=1$, then it is sometimes called ``standard Brownian motion'' or the ``Wiener process''.
 
 \boldhead{Wiener process}
-Let's look at the random Wiener increment, $\gd\gW$. This is where all the action is: without it, \eref{BM_dx} would be a \ODE with easy-to-find deterministic solutions, perfectly inadequate for modelling uncertainty across systems and over time. $\gd\gW$ is the beating heart of many \SDEs. The Wiener increment can be defined by two properties, its distribution and its auto-correlation,\footnote{Physicists often write $\gd\gW=\geta \gd\t$, where $\ave{\geta}=0$ and $\ave{\geta(\t) \geta(\t')}=\gdelta(\t-\t')$, in which case $\gdelta(\t-\t')$ is the Dirac delta function, defined by the integral $\int_{-\infty}^{\infty} \gf(\t) \gdelta(\t-\t') \gd\t=\gf(\t')$. Because of its singular nature -- $\geta(t)$ does not exist, only its integral exists -- it can be difficult to develop an intuition for this object, and we prefer the $dW$ notation.}
+Let's look at the random Wiener increment, $\gd\gW$. This is where all the action is: without it, \eref{BM_dx} would be an \ODE with easy-to-find deterministic solutions, perfectly inadequate for modelling uncertainty across systems and over time. $\gd\gW$ is the beating heart of many \SDEs. The Wiener increment can be defined by two properties, its distribution and its auto-covariance,\footnote{Physicists often write $\gd\gW=\geta \gd\t$, where $\ave{\geta}=0$ and $\ave{\geta(\t) \geta(\t')}=\gdelta(\t-\t')$, in which case $\gdelta(\t-\t')$ is the Dirac delta function, defined by the integral $\int_{-\infty}^{\infty} \gf(\t) \gdelta(\t-\t') \gd\t=\gf(\t')$. Because of its singular nature -- $\geta(\t)$ does not exist, only its integral exists -- it can be difficult to develop an intuition for this object, and we prefer the $dW$ notation.}
 \bea
-\gd\gW &\sim& \mathcal{\N}(0,\gd\t)\\
+\gd\gW &\sim& \mN(0,\gd\t)\\
 \ave{\gd\gW_\t \gd\gW_\gs}&=& \gdelta(\t,\gs)\gd\t,
 \eea
-where the subscripts denote the starting time of each increment, \ie $\gd\gW_\t$ is modelled as occurring at the end of the interval from $\t$ to $t+\gd\t$. $\gdelta(\t,\gs)$ is the Kronecker delta,
+where the subscripts denote the starting time of each increment, \ie $\gd\gW_\t$ is modelled as occurring at the end of the interval from $\t$ to $\t+\gd\t$. $\gdelta(\t,\gs)$ is the Kronecker delta,
 \be
 \gdelta(\t,\gs) = \begin{cases}
 1 & \text{if } \t=\gs\\
 0 & \text{otherwise.}
 \end{cases}
 \ee
-Put very simply, the $\{\gd\gW_\t\}$ are independent and identically distributed normal random variable with mean zero and variance $\gd\t$. That's all we really need to know.
+Put very simply, the $\{\gd\gW_\t\}$ are independent and identically distributed normal random variables with mean zero and variance $\gd\t$. That's all we really need to know.
 
 \boldhead{Solution}
 Rather like an \ODE, we can integrate \eref{BM_dx}, say from time $0$ to $\t$, to express its solution as
@@ -1026,19 +1034,19 @@ Rather like an \ODE, we can integrate \eref{BM_dx}, say from time $0$ to $\t$, t
 &=& \gv(0) + \gmu\t + \gsigma\gW(\t),
 \elabel{BM_v}
 \eea
-where $\gW(\t) = \int_0^\t \gd\gW_\gs$ is the Wiener process with $\gW(0)=0$. Since the integral is the limiting case of a sum over normally distributed Wiener increments, $\gW(\t)$ is itself normally distributed with mean zero and variance $\t$, \ie $\gW(\t)\sim\mathcal{N}(0,\t)$. In other words, its width has the same $\sqrt{\t}$ scaling as the random walk.
+where $\gW(\t) = \int_0^\t \gd\gW_\gs$ is the Wiener process with $\gW(0)=0$. Since the integral is the limiting case of a sum over normally distributed Wiener increments, $\gW(\t)$ is itself normally distributed with mean zero and variance $\t$, \ie $\gW(\t)\sim\N(0,\t)$. In other words, its width has the same $\sqrt{\t}$ scaling as the random walk.
 
-$\gW(\t)$ is stochastic process which, for fixed time, generates a time-dependent normal random variable. However, this does not mean we can generate a trajectory by drawing successive independent realisations from $\mathcal{N}(0,\t)$. While the Wiener increments, $\gd\gW_\t$, are independent, the Wiener process is autocorrelated. In simple terms, this is because its value at the end of time period depends on where it started, because it must take a continuous path to travel from there. It's a standard result in stochastic calculus that the autocorrelation of the values of a Wiener process at two different times simply the earlier time, \ie for $t<s$, $\ave{W(t)W(s)} = t$. This is because 
+$\gW(\t)$ is a stochastic process which, for fixed time, generates a time-dependent normal random variable. However, this does not mean we can generate a trajectory by drawing successive independent realisations from $\mN(0,\t)$. While the Wiener increments, $\gd\gW_\t$, are independent, the Wiener process is autocorrelated. In simple terms, this is because its value at the end of time period depends on where it started, because it must take a continuous path to travel from there. It's a standard result in stochastic calculus that the autocorrelation of the values of a Wiener process at two different times simply the earlier time, \ie for $\t<\t'$, $\ave{\gW(\t)\gW(\t')} = \t$. This is because 
 \bea
-\ave{W(t)W(s)} &=& \ave{W(t)[W(t)+W(s)-W(t)]}\\
-&=& \ave{W(t)^2} + \ave{W(t)[W(s)-W(t)]}\\
-&=& t + 0,
+\ave{\gW(\t)\gW(\t')} &=& \ave{\gW(\t)[\gW(\t)+\gW(\t')-\gW(\t)]}\\
+&=& \ave{\gW(\t)^2} + \ave{\gW(\t)[\gW(\t')-\gW(\t)]}\\
+&=& \t + 0,
 \eea
 where the final term follows by independence of increments over non-overlapping time intervals.
 
 Let's return to the stochastic process, $\gv(\t)$, in \eref{BM_v}. If we fix the time, $\t$, this is a time-dependent normal random variable,
 \be
-\gv(\t) \sim \mathcal{N}(\gv(0)+\gmu\t, \gsigma^2\t),
+\gv(\t) \sim \mN(\gv(0)+\gmu\t, \gsigma^2\t),
 \ee
 whose location moves linearly in time and whose width grows like the square-root of time. 
 
@@ -1048,7 +1056,7 @@ In simulations, \BM paths can be constructed from a discretised version of \eref
 \gv(\t+\dt)=\gv(\t)+ \gmu \dt + \gsigma \sqrt{\dt} \gxi_\t,
 \elabel{BM_d}
 \ee
-where $\gxi_\t$ are iid standard normal variates, $\gxi_\t\sim\mathcal{\N}(0,1)$.
+where $\gxi_\t$ are iid standard normal variates, $\gxi_\t\sim\mN(0,1)$.
 
 \boldhead{Non-ergodicity of Brownian motion}
 \BM is a non-ergodic stochastic process. This is easily seen by comparing expectation value and time average. We start with the expressions (stated without proof here) for the finite-ensemble average and the finite-time average of \BM. The finite-ensemble average (easy to derive) is distributed as
@@ -1058,7 +1066,7 @@ where $\gxi_\t$ are iid standard normal variates, $\gxi_\t\sim\mathcal{\N}(0,1)$
 \ee
 and the finite-time average (harder to derive) of a single \BM trajectory is distributed as
 \be
-\bar{\gv}_\t \sim \gmu \t/2 + \gsigma \mN(0, \t/3).
+\bar{\gv}_\t \sim \gmu \t + \gsigma \mN(0, \t/3).
 \elabel{fin_tim_BM}
 \ee
 
@@ -1074,7 +1082,7 @@ The simplest form of zero-drift \BM is the Wiener process. It starts at zero, $\
 \bar{\gv}=\lim_{\t\to\infty} \frac{1}{\t}\int_0^\t \gd\gs \gv(\gs),
 \ee
 will converge to zero with probability one. We would be wrong. Yes, the process has no drift, and yes it returns to zero infinitely many times, but its time average is not a delta function at zero.
-It is, instead normally distributed with infinite variance according to the following limit
+It is, instead normally distributed with infinite variance according to the following limit (the limit of \eref{fin_tim_BM} with \gmu=0)
 \be
 \bar{\gv}\sim \lim_{\t\to\infty} \mN(0,\t/3).
 \ee
@@ -1136,7 +1144,7 @@ happens if the expression in brackets in \eref{GBM_d} is smaller than $-1$ (in w
 The basic message of the game from \secref{The_game} is that we may obtain different values for growth rates, depending on how we average: an expectation value is one average; a time average is quite another. The game itself is sometimes called the multiplicative binomial process \cite{Redner1990}, we thank \person{S. Redner} for pointing this out to us. \GBM is the continuous version of the multiplicative binomial process, and it shares the basic feature of a difference between the growth rate of the expectation value and time-average growth.
 
 \boldhead{Ensemble average}
-The expectation value is easily computed -- the process is not ergodic, but that does not mean we cannot compute its expectation value. We simply take the expectations values of both sides of \eref{GBM_c} to get
+The expectation value is easily computed -- the process is not ergodic, but that does not mean we cannot compute its expectation value. We simply take the expectation values of both sides of \eref{GBM_c} to get
 \bea
 \ave{\gd\x}&=&\ave{\x(\gmu \gd\t+ \gsigma \gd\gW)}\\
 =\gd\ave{\x}&=&\ave{\x} \gmu \gd\t.
@@ -1179,7 +1187,7 @@ so that the time-average growth rate is
 \gt=\frac{\gd \ave{\ln \x}}{\gd\t}=\gmu - \frac{\gsigma^2}{2}.
 \elabel{time_g}
 \ee
-The non-ergodicity of \GBM leads to a difference between the behaviour of the expectation value (which grows at $\gm(\ave{\x})$) and the long-time behaviour of any given trajectory (which grows at $\gt$). Because people experience their wealth over time (which may be described by \GBM) and have not access to the ensemble of other possible trajectories, they quite reasonably behave closer to optimising $\gm(\ave{\x})$ than to $\gt$.
+The non-ergodicity of \GBM leads to a difference between the behaviour of the expectation value (which grows at $\gm(\ave{\x})$) and the long-time behaviour of any given trajectory (which grows at $\gt$). Because people experience their wealth over time (which may be described by \GBM) and have no access to the ensemble of other possible trajectories, they quite reasonably behave closer to optimising $\gt$ than to $\gm(\ave{\x})$.
 
 %We could have guessed the result by combining Whitworth's argument on the disadvantage of gambling with the scaling of \BM. Let's re-write the factor $1-\epsilon$ in \eref{Whitworth} as
 %$1-\gsigma \sqrt{\dt}$. According to the scaling of the variance in a random walk, \eref{BM_var}, this would be a good coarse-graining of some faster process (with shorter time step) underlying Whitworth's game. To find out what happens over one single time step we take the square root of \eref{Whitworth},
@@ -1194,7 +1202,7 @@ The non-ergodicity of \GBM leads to a difference between the behaviour of the ex
 
 \section{\Ito calculus}
 \seclabel{Ito}
-The results we obtained by analysing the discrete difference equation for \GBM, \eref{GBM_d}, are more commonly shown by applying \Ito's formula directly to the \SDE in \eref{GBM_c}. We will not discuss \Ito calculus in depth here, but we will use some of its results. The key insight of \Ito was that the non-differentiability of so-called \Ito processes leads to a new form of calculus. In particular, a new chain rule is needed. An \Ito process is a \SDE of the following form,
+The results we obtained by analysing the discrete difference equation for \GBM, \eref{GBM_d}, are more commonly shown by applying \Ito's formula directly to the \SDE in \eref{GBM_c}. We will not discuss \Ito calculus in depth here, but we will use some of its results. The key insight of \Ito was that the non-differentiability of so-called \Ito processes leads to a new form of calculus. In particular, a new chain rule is needed. An \Ito process is an \SDE of the following form,
 \be
 \gd\x = a(\x, \t) \gd\t + b(\x, \t) \gd\gW.
 \elabel{Ito_process}
@@ -1245,7 +1253,7 @@ Once we have the \SDE for $\ln(\x)$, we can integrate it, say from time $0$ to $
 \ee
 which, for fixed $\t$, is a normally distributed random variable,
 \be
-\ln\x(\t) \sim \mathcal{N}\left(\ln\x(0) + (\gmu-\gsigma^2/2)\t, \gsigma^2\t\right).
+\ln\x(\t) \sim \mN\left(\ln\x(0) + (\gmu-\gsigma^2/2)\t, \gsigma^2\t\right).
 \ee
 Thus $\x(\t)$ is lognormally distributed.
 
@@ -1291,7 +1299,7 @@ Coming soon.
 %Start with initial value \$1 and multiply it in each round with an instance of the random variable $[(0.6,1/2),(1.5,1/2)].$
 %
 %\item[\bf Brownian motion]
-%Brownian motion can be defined as a stochastic process with continuous paths (no jumps) whose distribution is Gaussian $\mathcal{N}(\mu t, \sigma^2 t)$. 
+%Brownian motion can be defined as a stochastic process with continuous paths (no jumps) whose distribution is Gaussian $\mN(\mu t, \sigma^2 t)$. 
 %
 %\item[\bf Geometric Brownian motion]
 %If the logarithm of a quantity is a Brownian motion, the quantity itself is geometric Brownian motion. Wealth in the coin-toss game is a discrete form of geometric Brownian motion.

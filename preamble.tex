@@ -13,7 +13,8 @@
 \usepackage{wasysym}
 \definecolor{col3}{rgb}{0,.27,.4375} % lml blue
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=col3]{hyperref}
-\usepackage[nogroupskip,nonumberlist,acronym,toc,section=section]{glossaries}
+%\usepackage[nogroupskip,nonumberlist,acronym,toc,section=section]{glossaries}
+\usepackage[nogroupskip,acronym,toc,section=section]{glossaries}
 \usepackage{showlabels}
 \usepackage{lmodern}% http://ctan.org/pkg/lm
 \usepackage[yyyymmdd,hhmmss]{datetime}
@@ -86,6 +87,7 @@
 \newcommand{\dt}{{\gls{delta_t}}} %delta t
 \newcommand{\gdt}{{\gd\t}} %dt
 \newcommand{\Dxp}{{\gls{Dxp}}} %Delta x ^+
+\newcommand{\E}{{\gls{eval}}} %Delta x ^+
 \newcommand{\J}{{\gls{J}}} 
 \newcommand{\gk}{{\gls{k}}} 
 \newcommand{\K}{{\gls{K}}} 
@@ -123,9 +125,11 @@
 \newcommand{\xbar}{\gls{xbar}}
 \newcommand{\Nx}{{\gls{Nx}}}
 \newcommand{\gxi}{{\gls{xi}}}
+\newcommand{\y}{\gls{y}}
 \newcommand{\Y}{\gls{Y}}
 \newcommand{\z}{\gls{z}}
 \newcommand{\Z}{\gls{Z}}
+\newcommand{\Zint}{\gls{Zint}}
 \newcommand{\greff}{\gls{reff}}
 \newcommand{\grtime}{\gls{rtime}}
 \newcommand{\ggave}{\gls{gave}}
@@ -147,6 +151,7 @@
 \newcommand{\xl}{{\gls{xl}}}
 \newcommand{\rs}{{\gls{rs}}}
 \newcommand{\rr}{{\gls{rr}}}
+\newcommand{\Rreal}{{\gls{Rreal}}}
 \newcommand{\Sharpe}{{\gls{Sharpe}}}
 \newcommand{\SPT}{\gls{SPT}\xspace}
 \newcommand{\gtm}{{\gls{gtm}}}
@@ -166,7 +171,7 @@
 \newcommand{\ODE}{\gls{ODE}\xspace}
 
 \newcommand{\ave}[1]{\left\langle#1\right\rangle}
-\newcommand{\eval}[1]{\text{E}\left[#1\right]}
+\newcommand{\eval}[1]{\E\left[#1\right]}
 \newcommand{\tave}[1]{\overline{#1}}
 \newcommand{\latinword}[1]{\textsf{\itshape #1}}
 %\newcommand{\person}[1]{{\sc{#1}}}
@@ -209,7 +214,7 @@
 \newcommand{\ec}{\end{center}}
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\ei}{\end{itemize}}
-\newcommand{\prob}[1]{\mathrm{P}\left[#1\right]}
+\newcommand{\prob}[1]{\gls{PD}\left[#1\right]}
 \newcommand{\DW}{{\Delta W}}
 \newcommand{\Du}{{\D\gu}}
 \newcommand{\Dv}{{\D\gv}}
