@@ -212,76 +212,76 @@ One of the conditions is that inequality measures should not change when $\x$ is
 \definition{
 The rescaled wealth, 
 \be
-y_\gi(\t) = \frac{\x(\t)}{\ave{\x(\t)}_\N},
+\gw_\gi(\t) = \frac{\x(\t)}{\ave{\x(\t)}_\N},
 \elabel{rescaled}
 \ee
 is the proportion of the sample mean wealth -- \ie the wealth averaged over the finite population -- owned by an individual.}
 
 This quantity is useful because its numerical value does not 
 depend on the currency used: it is a dimensionless number. 
-Thus if my rescaled wealth is $y_\gi(\t) = 1/2$, it means that my wealth is half the 
+Thus if my rescaled wealth is $\gw_\gi(\t) = 1/2$, it means that my wealth is half the 
 average wealth, irrespective of whether I measure it in Kazakhstani Tenge 
 or in Swiss Francs. The sample mean rescaled wealth is easily calculated:
 \be
-\ave{y_\gi(\t)}_\N = \ave{\frac{\x(\t)}{\ave{\x(\t)}_\N}}_\N = 1.
+\ave{\gw_\gi(\t)}_\N = \ave{\frac{\x(\t)}{\ave{\x(\t)}_\N}}_\N = 1.
 \ee
 
 If the population size, $\N$, is large enough, then we might expect the sample mean wealth, $\ave{\x(\t)}_\N$, to be close to the ensemble average, $\ave{\x(\t)}$, which is simply its $\N\to\infty$ limit. We will discuss more carefully when this approximation holds for wealths following \GBM in \secref{finite_populations}. Let's assume for now that it does. The rescaled wealth is then well approximated as
 \be
-y_\gi(\t) = \frac{\x_\gi(\t)}{\ave{\x(\t)}} = \x_\gi(\t)\exp(-\gmu \t).
+\gw_\gi(\t) = \frac{\x_\gi(\t)}{\ave{\x(\t)}} = \x_\gi(\t)\exp(-\gmu \t).
 \ee
 
-Now that we have an expression for $y$ in terms of $\x$ and $\t$, we can derive the dynamic for rescaled wealth using \Ito's formula (just as we did to find the wealth dynamic for a general utility function in \secref{dyn_from_u}). We start with
+Now that we have an expression for $\gw$ in terms of $\x$ and $\t$, we can derive the dynamic for rescaled wealth using \Ito's formula (just as we did to find the wealth dynamic for a general utility function in \secref{dyn_from_u}). We start with
 \bea
-\gd y &=& \frac{\partial y}{\partial \t}\gd\t + \frac{\partial y}{\partial \x}\gd\x + \frac{1}{2} \frac{\partial^2 y}{\partial \x^2} \gd\x^2 \\
-&=& -\gmu y\gd\t + \frac{y}{\x}\gd\x \elabel{ysde},
+\gd \gw &=& \frac{\partial \gw}{\partial \t}\gd\t + \frac{\partial \gw}{\partial \x}\gd\x + \frac{1}{2} \frac{\partial^2 \gw}{\partial \x^2} \gd\x^2 \\
+&=& -\gmu \gw\gd\t + \frac{\gw}{\x}\gd\x \elabel{ysde},
 \eea
 and then substitute \eref{GBM} for $\gd\x$ to get
 \be
-\gd y = y \gsigma \gd\gW.
+\gd \gw = \gw \gsigma \gd\gW.
 \elabel{GBM_y}
 \ee
-So $y(\t)$ follows a very simple \GBM with zero drift and volatility $\gsigma$. This means that rescaled wealth, like wealth, has an ever-broadening log-normal distribution:
+So $\gw(\t)$ follows a very simple \GBM with zero drift and volatility $\gsigma$. This means that rescaled wealth, like wealth, has an ever-broadening log-normal distribution:
 \be
-\ln y(\t) \sim \mathcal{\N}\left(-\frac{\gsigma^2}{2}\t, \gsigma^2 \t\right).
+\ln \gw(\t) \sim \mathcal{\N}\left(-\frac{\gsigma^2}{2}\t, \gsigma^2 \t\right).
 \elabel{log-normal_y}
 \ee
 
-Finally, noting that $\ave{\ln y}=\ave{\ln \x}-\ln\ave{\x}$ gives us a simple expression for our inequality measure in \eref{J_x} in terms of the rescaled wealth:
+Finally, noting that $\ave{\ln \gw}=\ave{\ln \x}-\ln\ave{\x}$ gives us a simple expression for our inequality measure in \eref{J_x} in terms of the rescaled wealth:
 \be
-J(\t)=-\ave{\ln y}.
+\J(\t)=-\ave{\ln \gw}.
 \ee
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{$u$-normal distributions and Jensen's inequality}
+\subsection{$\gv$-normal distributions and Jensen's inequality}
 \seclabel{jensen}
-So far we have confined our analysis to \GBM, where wealths follow the dynamic specific by \eref{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible. In particular, we explored the dynamics corresponding to invertible utility functions, where utility executes a \BM with drift as in \eref{bm_u}:
+So far we have confined our analysis to \GBM, where wealths follow the dynamic specified by \eref{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible. In particular, we explored the dynamics corresponding to ergodicity transformations that execute a \BM with drift as in \eref{dv_gen}:
 \be
-\gd\gu = a_\gu \gd\t + b_\gu \gd\gW.
+\gd\gv = a_\gv \gd\t + b_\gv \gd\gW.
 \ee
-Under this dynamic, utility is normally distributed,
+Under this dynamic, $\gv$ is normally distributed,
 \be
-u(\x(\t)) \sim \mathcal{\N}\left(a_u\t, {b_u}^2 \t\right),
+\gv(\x(\t)) \sim \mathcal{\N}\left(a_u\t, {b_u}^2 \t\right),
 \ee
-and we can say that wealth has a ``$\gu$-normal'' distribution. For \GBM, the corresponding utility function is, as we know, $u(\x)=\ln \x$, and $\gu$-normal becomes log-normal.
+and we can say that wealth has a ``$\gv$-normal'' distribution. For \GBM, the ergodicity transformatoin, as we know, is $\gv(\x)=\ln \x$, and $\gv$-normal becomes log-normal.
 
 Replacing the logarithm in \eref{J_x} by the general utility function gives a general expression for our wealth inequality measure,
 \be
-J_\gu(\t)=\gu(\ave{\x(\t)}) - \ave{\gu(\x(\t))}.
+\J_\gv(\t)=\gv(\ave{\x(\t)}) - \ave{\gv(\x(\t))}.
 \elabel{J_u}
 \ee
-It's not easy to write a general expression for $J_\gu(\t)$ in only $\t$ and the model parameters $a_\gu$ and $b_\gu$, because it would involve the solution of the general wealth dynamic in \eref{dx}. However, we can still say something about how inequality evolves. Let's see what happens if we start with perfect equality, $\x_\gi(0)=\x_0$ with $\x_0$ fixed, and then let wealths evolve a little to $\x(\D \t)=\x_0+\D \x$, where $\D \x$ is a random wealth increment generated by the wealth dynamic. The change in inequality would be
+It's not easy to write a general expression for $\J_\gv(\t)$ in only $\t$ and the model parameters $a_\gv$ and $b_\gv$, because it would involve the solution of the general wealth dynamic in \eref{dx}. However, we can still say something about how inequality evolves. Let's see what happens if we start with perfect equality, $\x_\gi(0)=\x_0$ with $\x_0$ fixed, and then let wealths evolve a little to $\x(\D \t)=\x_0+\D \x$, where $\D \x$ is a random wealth increment generated by the wealth dynamic. The change in inequality would be
 \be
-\D J_\gu = \gu(\ave{\x_0+\D \x}) - \ave{\gu(\x_0+\D \x)},
+\D \J_\gv = \gv(\ave{\x_0+\D \x}) - \ave{\gv(\x_0+\D \x)},
 \ee
-since $\gu(\ave{\x_0})=\ave{\gu(\x_0)}=\gu(\x_0)$.
+since $\gv(\ave{\x_0})=\ave{\gv(\x_0)}=\gv(\x_0)$.
 
-We can now appeal to Jensen's inequality: if $\gu$ is a concave function, like the logarithm, then $\D J_\gu \geq 0$; while if $\gu$ is convex, like the curious exponential in \eref{test_dyn_u}, then $\D J_\gu \leq 0$. The only cases for which $\D J_\gu=0$ are if $\D \x$ is non-random or if $\gu$ is linear. Thus, it is both randomness and the nonlinearity of the utility function -- or ergodicity transformation, if we make that equivalence -- that creates a difference in growth rates and generates inequality.
+We can now appeal to Jensen's inequality: if $\gv$ is a concave function, like the logarithm, then $\D \J_\gv \geq 0$; while if $\gv$ is convex, like the curious exponential in \eref{test_dyn_u}, then $\D \J_\gv \leq 0$. The only cases for which $\D \J_\gv=0$ are if $\D \x$ is non-random or if $\gv$ is linear. Thus, it is both randomness and the nonlinearity of the ergodicity transformation -- or ``utility function'' if we make that equivalence -- that creates a difference in growth rates and generates inequality.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{power-law resemblance}
+\subsection{Power-law resemblance}
 \seclabel{power_law}
 It is an established empirical observation \cite{Newman2005} that the upper tails of 
 real wealth distributions look more like a power-law than a log-normal. Our trivial model does not
