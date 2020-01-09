@@ -9,7 +9,7 @@ assumed dynamic imposed on wealth. If we know the stochastic process that descri
 individual wealth, then we also know what happens at population level -- each individual
 is represented by a realisation of the process, and we can compute 
 the dynamics of wealth distributions. We answer questions about inequality and poverty in
-a model economy which, for the moment, contains no interactions between individuals. We also gain an understanding of when and how results for finite populations differ from those for the infinite ensemble.}
+a model economy which, for the moment, contains no interactions between individuals. We also gain an understanding of when and how results for finite populations differ from those for the infinite ensemble. We will use multiplicative wealth dynamics to present the thinking and techniques. More detailed models can be treated similarly.}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,11 +32,11 @@ from the set of trajectories we can judge what is likely to happen to an individ
 \eg by following a single trajectory for a long time; while the \PDFa of the random 
 variable $\x(\t^*)$ at some fixed value of $\t^*$ tells us how wealth is distributed in our model. 
 
-We use the term wealth distribution to refer to the density function, $\PDF_\x(\x)$, and not the process of distributing wealth among people. This can be interpreted as follows. Imagine a population of $\N$ individuals. If I select a random individual, each having uniform probability $\frac{1}{\N}$, then the probability of the selected individual having wealth greater than $\x$ is given by the CDF, $F_\x(\x)=\int_\x^\infty \PDF_\x(s)\gd s$. If $\N$ is large, then $\D \x \PDF_\x(\x)\N$ is the approximate number of individuals who have wealth between $\x$ and $\x+\D \x$. Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
+We use the term wealth distribution to refer to the density function, $\PDF_\x(\x)$, and not the process of distributing wealth among people. This can be interpreted as follows. Imagine a population of $\N$ individuals. If I select a random individual, each having uniform probability $\frac{1}{\N}$, then the probability of the selected individual having wealth greater than $\x$ is given by the \CDF, $F_\x(\x)=\int_\x^\infty \PDF_\x(s)\gd s$. If $\N$ is large, then $\D \x \PDF_\x(\x)\N$ is the approximate number of individuals who have wealth between $\x$ and $\x+\D \x$. Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
 
 \underline{Examples:}
 \begin{itemize}
-\item Under perfect equality everyone would have the same, meaning that the wealth
+\item Under maximum equality everyone would have the same, meaning that the wealth
 distribution would be a Dirac delta function centred at the sample mean of $\x$, that is
 \be
 \PDF_\x(\x)=\delta(\x-\ave{\x}_\N);
@@ -136,25 +136,25 @@ coefficient is a particularly well-known scalar of this type, the 80/20 ratio an
 
 In this context the expectation value is an important quantity. 
 For instance, if everyone has the same wealth, then everyone will own the average, $\x_\gi=\ave{\x}_\N$, which converges to the expectation value for large $\N$. Also, whatever the distribution 
-of wealth, the total wealth is $\N\ave{\x}_\N$ which converges to $\N\ave{\x}$ as $\N$ grows large. The growth 
+of wealth, the total wealth is $\N\ave{\x}_\N$ whose relative difference from $\N\ave{\x}$ vanishes as $\N$ grows large. The growth 
 rate of the expectation value, $\gex$, thus tells us how fast the average wealth and the 
 total population wealth grow with probability one in a large ensemble. The time-average growth rate, $\gt$, on the other hand, tells us how fast an individual's wealth grows almost surely in 
 the long run. If the typical individual's wealth grows more slowly than the 
-expectation value of wealth, then there must be atypical individuals with very large 
-wealths to account for the difference. This insight suggests the following measure of 
+expectation value of wealth, then there must be very atypically-wealthy individuals 
+to account for the difference. This insight suggests the following measure of 
 inequality.
 
 \definition{
-Inequality, $J$, is the quantity whose growth rate is the 
+Inequality, $\J$, is the quantity whose growth rate is the 
 difference between expectation-value and time-average growth rates,
 \be
-\frac{\gd J}{\gd\t}=\gex-\gt.
+\frac{\gd \J}{\gd\t}=\gex-\gt.
 \elabel{dJ}
 \ee
 \Eref{dJ} defines the dynamic of inequality, and inequality itself is found by 
 integrating over time:
 \be
-J(\t)=\int_0^\t \gd s [\gex(s)-\gt(s)].
+\J(\t)=\int_0^\t \gd s [\gex(s)-\gt(s)].
 \elabel{J}
 \ee
 }
@@ -163,12 +163,12 @@ This definition may be used for dynamics other than
 \GBM, as we shall discuss in \secref{jensen}. Whatever the wealth dynamic, typical minus average growth rates are informative of the
 dynamic of inequality. Within the \GBM framework we can write the difference in growth rates as 
 \be
-\frac{\gd J}{\gd\t}=\frac{\gd \ln \ave{\x}}{\gd\t}-\frac{\gd \ave{\ln \x}}{\gd\t}
+\frac{\gd \J}{\gd\t}=\frac{\gd \ln \ave{\x}}{\gd\t}-\frac{\gd \ave{\ln \x}}{\gd\t}
 \elabel{J_dyn}
 \ee
 and integrate over time to get
 \be
-J(\t)=\ln \ave{\x(\t)}-\ave{\ln \x(\t)}.
+\J(\t)=\ln \ave{\x(\t)}-\ave{\ln \x(\t)}.
 \elabel{J_x}
 \ee
 This quantity is known as the mean logarithmic deviation (MLD) or Theil's second index of inequality \cite{Theil1967}. 
@@ -180,7 +180,7 @@ Theil used the \GBM model implicitly.\footnote{Like Kelly's ideas about gambling
 
 Substituting the known values of the two growth rates into \eref{dJ} and integrating, we can evaluate the Theil inequality as a function of time:
 \be
-J(\t)=\frac{\gsigma^2}{2} \t.
+\J(\t)=\frac{\gsigma^2}{2} \t.
 \elabel{J_t}
 \ee
 Thus we see that, in \GBM, our measure of inequality increases indefinitely.
@@ -189,7 +189,7 @@ Thus we see that, in \GBM, our measure of inequality increases indefinitely.
 
 \subsection{Wealth condensation}
 \seclabel{condensation}
-The log-normal distribution generated by \GBM broadens indefinitely, \eref{var_x}. Likewise, the inequality present in the distribution -- measured as the time-integrated difference between ensemble and time average growth rates -- grows without bound. A related property of \GBM is the evolution towards wealth condensation. Wealth condensation means that a single individual will own a non-zero fraction of the total wealth in the population in the limit of large $\N$, see \eg \cite{BouchaudMezard2000}. In the present case an arbitrarily large share ofthe  total wealth will be owned by an arbitrarily small share of the population.
+The log-normal distribution generated by \GBM broadens indefinitely, \eref{var_x}. Likewise, the inequality present in the distribution -- measured as the time-integrated difference between ensemble and time average growth rates -- grows without bound. A related property of \GBM is the evolution towards wealth condensation. Wealth condensation means that a single individual will own a non-zero fraction of the total wealth in the population in the limit of large $\N$, see \eg \cite{BouchaudMezard2000}. In the present case an arbitrarily large share of the  total wealth will be owned by an arbitrarily small share of the population.
 
 One simple way of seeing this is to calculate the fraction of the population whose wealths are less than the expected wealth, \ie $\x(\t)<\exp(\gmu \t)$. To do this, we define a new random variable, $z(\t)$, whose distribution is the standard normal:
 \be
@@ -197,15 +197,15 @@ z(\t) \equiv \frac{\ln \x(\t) - (\gmu-\gsigma^2/2)\t}{\gsigma \t^{1/2}} \sim \ma
 \ee
 We want to know the mass of the distribution with $\ln \x(\t)<\gmu \t$. This is equivalent to $z<\gsigma \t^{1/2}/2$, so the fraction below the expected wealth is
 \be
-\Phi\left(\frac{\gsigma \t^{1/2}}{2}\right),
+\gPhi\left(\frac{\gsigma \t^{1/2}}{2}\right),
 \ee
-where $\Phi$ is the CDF of the standard normal distribution. This increases over time, tending to one as $\t\to\infty$.
+where $\gPhi$ is the \CDF of the standard normal distribution. This increases over time, tending to one as $\t\to\infty$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Rescaled wealth}
 \seclabel{rescaled}
-Economists have arrived at many inequality measures, and have drawn up a list of conditions that particularly useful measures of inequality satisfy. Such measures are called ``relative measures'' \cite[Appendix 4]{Sen1997} and $J$ is one of them.
+Economists have arrived at many inequality measures, and have drawn up a list of conditions that particularly useful measures of inequality satisfy. Such measures are called ``relative measures'' \cite[Appendix 4]{Sen1997} and $\J$ is one of them.
 
 One of the conditions is that inequality measures should not change when $\x$ is divided by the same factor for everyone. Since we are primarily interested in inequality in this section, we can remove absolute wealth levels from the analysis and study an object called the rescaled wealth.
 
