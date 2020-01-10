@@ -1,4 +1,5 @@
 \newacronym{BM}{BM}{Brownian motion}
+\newacronym{CDF}{CDF}{cumulative distribution function}
 \newacronym{DAX}{DAX}{Deutscher Aktienindex (German stock index)}
 \newacronym{GBM}{GBM}{geometric Brownian motion}
 \newacronym{RGBM}{RGBM}{reallocating geometric Brownian motion}
@@ -185,6 +186,13 @@
  description={Reallocation rate in \RGBM},
  sort=phi}
 
+ %\gphi
+\newglossaryentry{Phi}{
+ type={symbols}, 
+ name={\ensuremath{{\Phi}}},
+ description={\CDF of the standard normal distribution},
+ sort=Phi}
+
  %\Gg
 \newglossaryentry{g}{
  type={symbols}, 
@@ -285,11 +293,18 @@
  description={Expectation value},
  sort=E}
 
-%GJ
+%B
+\newglossaryentry{B}{
+ type={symbols}, 
+ name={\ensuremath{B}},
+ description={Size of the jackpot},
+ sort=B}
+ 
+%J
 \newglossaryentry{J}{
  type={symbols}, 
  name={\ensuremath{J}},
- description={Size of the jackpot},
+ description={Fundamental inequality measure, which grows at the difference between the expectation value growth rate and the typical growth rate},
  sort=J}
  
 %Gk
@@ -376,7 +391,7 @@
  description={Random factor whereby wealth changes in one round of a gamble},
  sort=r}
 
-%Gr
+%Rreal
 \newglossaryentry{Rreal}{
  type={symbols}, 
  name={\ensuremath{\mathbb{R}}},
@@ -397,28 +412,28 @@
  type={symbols}, 
  name={\ensuremath{r_\text{eff}}},
  description={Effective per round factor by which wealth is multiplied over many rounds of a gamble},
- sort=r}
+ sort=r_eff}
 
 %Gr
 \newglossaryentry{rtime}{
  type={symbols}, 
  name={\ensuremath{r_\text{time}}},
  description={Effective per round factor by which wealth is multiplied as the number of rounds of a gamble diverges},
- sort=r}
+ sort=r_time}
 
-%Gr
+%gave
 \newglossaryentry{gave}{
  type={symbols}, 
  name={\ensuremath{g_{\ave{}}}},
  description={Exponential growth rate of ensemble average wealth in a gamble},
- sort=r}
+ sort=g_ave}
 
-%Gr
+%gtime
 \newglossaryentry{gtime}{
  type={symbols}, 
  name={\ensuremath{g_\text{time}}},
  description={Exponential growth rate of individual wealth in a gamble as the number of rounds diverges},
- sort=r}
+ sort=g_time}
 
 %Gr
 \newglossaryentry{rs}{
@@ -439,14 +454,14 @@
  type={symbols}, 
  name={\ensuremath{r_{\ave{}}}},
  description={Expectation value of growth factor $\gr$},
- sort=rex}
+ sort=r_ex}
 
 %rt
 \newglossaryentry{rt}{
  type={symbols}, 
  name={\ensuremath{\overline{r}}},
  description={Average growth factor over a long time},
- sort=rtime}
+ sort=r_time}
 
 %Gs
 \newglossaryentry{s}{
@@ -532,14 +547,21 @@
 \newglossaryentry{v}{
  type={symbols}, 
  name={\ensuremath{v}},
- description={Stationarity mapping function, so that $v(x)$ has stationary increments},
+ description={Stationarity mapping function, so that $\gv(\x)$ has stationary increments},
  sort=v}
  
-%GW
+%gW
 \newglossaryentry{W}{
  type={symbols}, 
  name={\ensuremath{W}},
  description={Wiener process, $\gW(\t)=\int_0^\t \gd W$ is continuous and $\gW(\t)\sim\mN(0,\t)$},
+ sort=W}
+
+%gw
+\newglossaryentry{w}{
+ type={symbols}, 
+ name={\ensuremath{w}},
+ description={Rescaled wealth, $\gw_\gi=\frac{\x_\gi}{\ave{\x}}$},
  sort=W}
  
 %Gx
