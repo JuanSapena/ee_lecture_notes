@@ -9,7 +9,7 @@ assumed dynamic imposed on wealth. If we know the stochastic process that descri
 individual wealth, then we also know what happens at population level -- each individual
 is represented by a realisation of the process, and we can compute 
 the dynamics of wealth distributions. We answer questions about inequality and poverty in
-a model economy which, for the moment, contains no interactions between individuals. We also gain an understanding of when and how results for finite populations differ from those for the infinite ensemble.}
+a model economy which, for the moment, contains no interactions between individuals. We also gain an understanding of when and how results for finite populations differ from those for the infinite ensemble. We will use multiplicative wealth dynamics to present the thinking and techniques. More detailed models can be treated similarly.}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,11 +32,11 @@ from the set of trajectories we can judge what is likely to happen to an individ
 \eg by following a single trajectory for a long time; while the \PDFa of the random 
 variable $\x(\t^*)$ at some fixed value of $\t^*$ tells us how wealth is distributed in our model. 
 
-We use the term wealth distribution to refer to the density function, $\PDF_\x(\x)$, and not the process of distributing wealth among people. This can be interpreted as follows. Imagine a population of $\N$ individuals. If I select a random individual, each having uniform probability $\frac{1}{\N}$, then the probability of the selected individual having wealth greater than $\x$ is given by the CDF, $F_\x(\x)=\int_\x^\infty \PDF_\x(s)\gd s$. If $\N$ is large, then $\D \x \PDF_\x(\x)\N$ is the approximate number of individuals who have wealth between $\x$ and $\x+\D \x$. Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
+We use the term wealth distribution to refer to the density function, $\PDF_\x(\x)$, and not the process of distributing wealth among people. This can be interpreted as follows. Imagine a population of $\N$ individuals. If I select a random individual, each having uniform probability $\frac{1}{\N}$, then the probability of the selected individual having wealth greater than $\x$ is given by the \CDF, $F_\x(\x)=\int_\x^\infty \PDF_\x(s)\gd s$. If $\N$ is large, then $\D \x \PDF_\x(\x)\N$ is the approximate number of individuals who have wealth between $\x$ and $\x+\D \x$. Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
 
 \underline{Examples:}
 \begin{itemize}
-\item Under perfect equality everyone would have the same, meaning that the wealth
+\item Under maximum equality everyone would have the same, meaning that the wealth
 distribution would be a Dirac delta function centred at the sample mean of $\x$, that is
 \be
 \PDF_\x(\x)=\delta(\x-\ave{\x}_\N);
@@ -136,25 +136,25 @@ coefficient is a particularly well-known scalar of this type, the 80/20 ratio an
 
 In this context the expectation value is an important quantity. 
 For instance, if everyone has the same wealth, then everyone will own the average, $\x_\gi=\ave{\x}_\N$, which converges to the expectation value for large $\N$. Also, whatever the distribution 
-of wealth, the total wealth is $\N\ave{\x}_\N$ which converges to $\N\ave{\x}$ as $\N$ grows large. The growth 
+of wealth, the total wealth is $\N\ave{\x}_\N$ whose relative difference from $\N\ave{\x}$ vanishes as $\N$ grows large. The growth 
 rate of the expectation value, $\gex$, thus tells us how fast the average wealth and the 
 total population wealth grow with probability one in a large ensemble. The time-average growth rate, $\gt$, on the other hand, tells us how fast an individual's wealth grows almost surely in 
 the long run. If the typical individual's wealth grows more slowly than the 
-expectation value of wealth, then there must be atypical individuals with very large 
-wealths to account for the difference. This insight suggests the following measure of 
+expectation value of wealth, then there must be very atypically-wealthy individuals 
+to account for the difference. This insight suggests the following measure of 
 inequality.
 
 \definition{
-Inequality, $J$, is the quantity whose growth rate is the 
+Inequality, $\J$, is the quantity whose growth rate is the 
 difference between expectation-value and time-average growth rates,
 \be
-\frac{\gd J}{\gd\t}=\gex-\gt.
+\frac{\gd \J}{\gd\t}=\gex-\gt.
 \elabel{dJ}
 \ee
 \Eref{dJ} defines the dynamic of inequality, and inequality itself is found by 
 integrating over time:
 \be
-J(\t)=\int_0^\t \gd s [\gex(s)-\gt(s)].
+\J(\t)=\int_0^\t \gd s [\gex(s)-\gt(s)].
 \elabel{J}
 \ee
 }
@@ -163,12 +163,12 @@ This definition may be used for dynamics other than
 \GBM, as we shall discuss in \secref{jensen}. Whatever the wealth dynamic, typical minus average growth rates are informative of the
 dynamic of inequality. Within the \GBM framework we can write the difference in growth rates as 
 \be
-\frac{\gd J}{\gd\t}=\frac{\gd \ln \ave{\x}}{\gd\t}-\frac{\gd \ave{\ln \x}}{\gd\t}
+\frac{\gd \J}{\gd\t}=\frac{\gd \ln \ave{\x}}{\gd\t}-\frac{\gd \ave{\ln \x}}{\gd\t}
 \elabel{J_dyn}
 \ee
 and integrate over time to get
 \be
-J(\t)=\ln \ave{\x(\t)}-\ave{\ln \x(\t)}.
+\J(\t)=\ln \ave{\x(\t)}-\ave{\ln \x(\t)}.
 \elabel{J_x}
 \ee
 This quantity is known as the mean logarithmic deviation (MLD) or Theil's second index of inequality \cite{Theil1967}. 
@@ -180,7 +180,7 @@ Theil used the \GBM model implicitly.\footnote{Like Kelly's ideas about gambling
 
 Substituting the known values of the two growth rates into \eref{dJ} and integrating, we can evaluate the Theil inequality as a function of time:
 \be
-J(\t)=\frac{\gsigma^2}{2} \t.
+\J(\t)=\frac{\gsigma^2}{2} \t.
 \elabel{J_t}
 \ee
 Thus we see that, in \GBM, our measure of inequality increases indefinitely.
@@ -189,7 +189,7 @@ Thus we see that, in \GBM, our measure of inequality increases indefinitely.
 
 \subsection{Wealth condensation}
 \seclabel{condensation}
-The log-normal distribution generated by \GBM broadens indefinitely, \eref{var_x}. Likewise, the inequality present in the distribution -- measured as the time-integrated difference between ensemble and time average growth rates -- grows without bound. A related property of \GBM is the evolution towards wealth condensation. Wealth condensation means that a single individual will own a non-zero fraction of the total wealth in the population in the limit of large $\N$, see \eg \cite{BouchaudMezard2000}. In the present case an arbitrarily large share ofthe  total wealth will be owned by an arbitrarily small share of the population.
+The log-normal distribution generated by \GBM broadens indefinitely, \eref{var_x}. Likewise, the inequality present in the distribution -- measured as the time-integrated difference between ensemble and time average growth rates -- grows without bound. A related property of \GBM is the evolution towards wealth condensation. Wealth condensation means that a single individual will own a non-zero fraction of the total wealth in the population in the limit of large $\N$, see \eg \cite{BouchaudMezard2000}. In the present case an arbitrarily large share of the  total wealth will be owned by an arbitrarily small share of the population.
 
 One simple way of seeing this is to calculate the fraction of the population whose wealths are less than the expected wealth, \ie $\x(\t)<\exp(\gmu \t)$. To do this, we define a new random variable, $z(\t)$, whose distribution is the standard normal:
 \be
@@ -197,91 +197,91 @@ z(\t) \equiv \frac{\ln \x(\t) - (\gmu-\gsigma^2/2)\t}{\gsigma \t^{1/2}} \sim \ma
 \ee
 We want to know the mass of the distribution with $\ln \x(\t)<\gmu \t$. This is equivalent to $z<\gsigma \t^{1/2}/2$, so the fraction below the expected wealth is
 \be
-\Phi\left(\frac{\gsigma \t^{1/2}}{2}\right),
+\gPhi\left(\frac{\gsigma \t^{1/2}}{2}\right),
 \ee
-where $\Phi$ is the CDF of the standard normal distribution. This increases over time, tending to one as $\t\to\infty$.
+where $\gPhi$ is the \CDF of the standard normal distribution. This increases over time, tending to one as $\t\to\infty$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Rescaled wealth}
 \seclabel{rescaled}
-Economists have arrived at many inequality measures, and have drawn up a list of conditions that particularly useful measures of inequality satisfy. Such measures are called ``relative measures'' \cite[Appendix 4]{Sen1997} and $J$ is one of them.
+Economists have arrived at many inequality measures, and have drawn up a list of conditions that particularly useful measures of inequality satisfy. Such measures are called ``relative measures'' \cite[Appendix 4]{Sen1997} and $\J$ is one of them.
 
 One of the conditions is that inequality measures should not change when $\x$ is divided by the same factor for everyone. Since we are primarily interested in inequality in this section, we can remove absolute wealth levels from the analysis and study an object called the rescaled wealth.
 
 \definition{
 The rescaled wealth, 
 \be
-y_\gi(\t) = \frac{\x(\t)}{\ave{\x(\t)}_\N},
+\gw_\gi(\t) = \frac{\x(\t)}{\ave{\x(\t)}_\N},
 \elabel{rescaled}
 \ee
 is the proportion of the sample mean wealth -- \ie the wealth averaged over the finite population -- owned by an individual.}
 
 This quantity is useful because its numerical value does not 
 depend on the currency used: it is a dimensionless number. 
-Thus if my rescaled wealth is $y_\gi(\t) = 1/2$, it means that my wealth is half the 
+Thus if my rescaled wealth is $\gw_\gi(\t) = 1/2$, it means that my wealth is half the 
 average wealth, irrespective of whether I measure it in Kazakhstani Tenge 
 or in Swiss Francs. The sample mean rescaled wealth is easily calculated:
 \be
-\ave{y_\gi(\t)}_\N = \ave{\frac{\x(\t)}{\ave{\x(\t)}_\N}}_\N = 1.
+\ave{\gw_\gi(\t)}_\N = \ave{\frac{\x(\t)}{\ave{\x(\t)}_\N}}_\N = 1.
 \ee
 
 If the population size, $\N$, is large enough, then we might expect the sample mean wealth, $\ave{\x(\t)}_\N$, to be close to the ensemble average, $\ave{\x(\t)}$, which is simply its $\N\to\infty$ limit. We will discuss more carefully when this approximation holds for wealths following \GBM in \secref{finite_populations}. Let's assume for now that it does. The rescaled wealth is then well approximated as
 \be
-y_\gi(\t) = \frac{\x_\gi(\t)}{\ave{\x(\t)}} = \x_\gi(\t)\exp(-\gmu \t).
+\gw_\gi(\t) = \frac{\x_\gi(\t)}{\ave{\x(\t)}} = \x_\gi(\t)\exp(-\gmu \t).
 \ee
 
-Now that we have an expression for $y$ in terms of $\x$ and $\t$, we can derive the dynamic for rescaled wealth using \Ito's formula (just as we did to find the wealth dynamic for a general utility function in \secref{dyn_from_u}). We start with
+Now that we have an expression for $\gw$ in terms of $\x$ and $\t$, we can derive the dynamic for rescaled wealth using \Ito's formula (just as we did to find the wealth dynamic for a general utility function in \secref{dyn_from_u}). We start with
 \bea
-\gd y &=& \frac{\partial y}{\partial \t}\gd\t + \frac{\partial y}{\partial \x}\gd\x + \frac{1}{2} \frac{\partial^2 y}{\partial \x^2} \gd\x^2 \\
-&=& -\gmu y\gd\t + \frac{y}{\x}\gd\x \elabel{ysde},
+\gd \gw &=& \frac{\partial \gw}{\partial \t}\gd\t + \frac{\partial \gw}{\partial \x}\gd\x + \frac{1}{2} \frac{\partial^2 \gw}{\partial \x^2} \gd\x^2 \\
+&=& -\gmu \gw\gd\t + \frac{\gw}{\x}\gd\x \elabel{ysde},
 \eea
 and then substitute \eref{GBM} for $\gd\x$ to get
 \be
-\gd y = y \gsigma \gd\gW.
+\gd \gw = \gw \gsigma \gd\gW.
 \elabel{GBM_y}
 \ee
-So $y(\t)$ follows a very simple \GBM with zero drift and volatility $\gsigma$. This means that rescaled wealth, like wealth, has an ever-broadening log-normal distribution:
+So $\gw(\t)$ follows a very simple \GBM with zero drift and volatility $\gsigma$. This means that rescaled wealth, like wealth, has an ever-broadening log-normal distribution:
 \be
-\ln y(\t) \sim \mathcal{\N}\left(-\frac{\gsigma^2}{2}\t, \gsigma^2 \t\right).
+\ln \gw(\t) \sim \mathcal{\N}\left(-\frac{\gsigma^2}{2}\t, \gsigma^2 \t\right).
 \elabel{log-normal_y}
 \ee
 
-Finally, noting that $\ave{\ln y}=\ave{\ln \x}-\ln\ave{\x}$ gives us a simple expression for our inequality measure in \eref{J_x} in terms of the rescaled wealth:
+Finally, noting that $\ave{\ln \gw}=\ave{\ln \x}-\ln\ave{\x}$ gives us a simple expression for our inequality measure in \eref{J_x} in terms of the rescaled wealth:
 \be
-J(\t)=-\ave{\ln y}.
+\J(\t)=-\ave{\ln \gw}.
 \ee
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{$u$-normal distributions and Jensen's inequality}
+\subsection{$\gv$-normal distributions and Jensen's inequality}
 \seclabel{jensen}
-So far we have confined our analysis to \GBM, where wealths follow the dynamic specific by \eref{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible. In particular, we explored the dynamics corresponding to invertible utility functions, where utility executes a \BM with drift as in \eref{bm_u}:
+So far we have confined our analysis to \GBM, where wealths follow the dynamic specified by \eref{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible. In particular, we explored the dynamics corresponding to ergodicity transformations that execute a \BM with drift as in \eref{dv_gen}:
 \be
-\gd\gu = a_\gu \gd\t + b_\gu \gd\gW.
+\gd\gv = a_\gv \gd\t + b_\gv \gd\gW.
 \ee
-Under this dynamic, utility is normally distributed,
+Under this dynamic, $\gv$ is normally distributed,
 \be
-u(\x(\t)) \sim \mathcal{\N}\left(a_u\t, {b_u}^2 \t\right),
+\gv(\x(\t)) \sim \mathcal{\N}\left(a_u\t, {b_u}^2 \t\right),
 \ee
-and we can say that wealth has a ``$\gu$-normal'' distribution. For \GBM, the corresponding utility function is, as we know, $u(\x)=\ln \x$, and $\gu$-normal becomes log-normal.
+and we can say that wealth has a ``$\gv$-normal'' distribution. For \GBM, the ergodicity transformatoin, as we know, is $\gv(\x)=\ln \x$, and $\gv$-normal becomes log-normal.
 
-Replacing the logarithm in \eref{J_x} by the general utility function gives a general expression for our wealth inequality measure,
+Replacing the logarithm in \eref{J_x} by the general ergodicity transformation gives a general expression for our wealth inequality measure,
 \be
-J_\gu(\t)=\gu(\ave{\x(\t)}) - \ave{\gu(\x(\t))}.
+\J_\gv(\t)=\gv(\ave{\x(\t)}) - \ave{\gv(\x(\t))}.
 \elabel{J_u}
 \ee
-It's not easy to write a general expression for $J_\gu(\t)$ in only $\t$ and the model parameters $a_\gu$ and $b_\gu$, because it would involve the solution of the general wealth dynamic in \eref{dx}. However, we can still say something about how inequality evolves. Let's see what happens if we start with perfect equality, $\x_\gi(0)=\x_0$ with $\x_0$ fixed, and then let wealths evolve a little to $\x(\D \t)=\x_0+\D \x$, where $\D \x$ is a random wealth increment generated by the wealth dynamic. The change in inequality would be
+It's not easy to write a general expression for $\J_\gv(\t)$ in only $\t$ and the model parameters $a_\gv$ and $b_\gv$, because it would involve the solution of the general wealth dynamic in \eref{dx}. However, we can still say something about how inequality evolves. Let's see what happens if we start with perfect equality, $\x_\gi(0)=\x_0$ with $\x_0$ fixed, and then let wealths evolve a little to $\x(\D \t)=\x_0+\D \x$, where $\D \x$ is a random wealth increment generated by the wealth dynamic. The change in inequality would be
 \be
-\D J_\gu = \gu(\ave{\x_0+\D \x}) - \ave{\gu(\x_0+\D \x)},
+\D \J_\gv = \gv(\ave{\x_0+\D \x}) - \ave{\gv(\x_0+\D \x)},
 \ee
-since $\gu(\ave{\x_0})=\ave{\gu(\x_0)}=\gu(\x_0)$.
+since $\gv(\ave{\x_0})=\ave{\gv(\x_0)}=\gv(\x_0)$.
 
-We can now appeal to Jensen's inequality: if $\gu$ is a concave function, like the logarithm, then $\D J_\gu \geq 0$; while if $\gu$ is convex, like the curious exponential in \eref{test_dyn_u}, then $\D J_\gu \leq 0$. The only cases for which $\D J_\gu=0$ are if $\D \x$ is non-random or if $\gu$ is linear. Thus, it is both randomness and the nonlinearity of the utility function -- or ergodicity transformation, if we make that equivalence -- that creates a difference in growth rates and generates inequality.
+We can now appeal to Jensen's inequality: if $\gv$ is a concave function, like the logarithm, then $\D \J_\gv \geq 0$; while if $\gv$ is convex, like the curious exponential in \eref{test_dyn_u}, then $\D \J_\gv \leq 0$. The only cases for which $\D \J_\gv=0$ are if $\D \x$ is non-random or if $\gv$ is linear. Thus, it is both randomness and the nonlinearity of the ergodicity transformation -- or ``utility function'' if we make that equivalence -- that creates a difference in growth rates and generates inequality.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{power-law resemblance}
+\subsection{Power-law resemblance}
 \seclabel{power_law}
 It is an established empirical observation \cite{Newman2005} that the upper tails of 
 real wealth distributions look more like a power-law than a log-normal. Our trivial model does not
@@ -319,7 +319,7 @@ with local slope, \ie apparent exponent,
 \be
 \frac{\gd\ln \PDF(\x)}{\gd \ln \x} = - \frac{\ln \x}{\gsigma^2 \t}  + \frac{\gmu}{\gsigma^2} - \frac{3}{2}.
 \ee
-Near $\ave{\x}$, $\ln \x \sim \gmu \t$ so that the first two terms cancel approximately. Here the distribution will resemble a power-law with exponent $-3/2$ when plotted on doubly logarithmic scales. (The distribution will also look like a power-law where the first term is much smaller than the others, \eg where $\ln \x \ll \gsigma^2 \t$.) We don't believe that such empirically observed power-laws are merely a manifestation of this mathematical feature. Important real-world  mechanisms that broaden real wealth distributions, \ie concentrate wealth, are missing from the null model. However, it is interesting that the trivial model of \GBM reproduces so many qualitative features of empirical observations. 
+Near $\ave{\x}$, $\ln \x \sim \gmu \t$ so that the first two terms cancel approximately. Here the distribution will resemble a power-law with exponent $-3/2$ when plotted on doubly logarithmic scales. (The distribution will also look like a power law where the first term is much smaller than the others, \eg where $\ln \x \ll \gsigma^2 \t$.) We don't believe that empirically observed power laws are merely a manifestation of this mathematical feature. Important real-world  mechanisms that broaden real wealth distributions, \ie concentrate wealth, are missing from the null model, and we will see that including interactions among individuals produces a proper power-law tail in the distribution whose exponent is closer to observations than the $-3/2$ the log-normal can fool us into seeing. However, it is interesting that the trivial model of \GBM reproduces so many qualitative features of empirical observations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
