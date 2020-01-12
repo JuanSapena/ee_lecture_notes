@@ -70,7 +70,7 @@
 \contentsline {subsection}{\numberline {6.2.1}Sums of log-normals}{97}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}The random energy model}{101}{subsection.6.2.2}
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Short time}}\mathsurround \z@ $\relax }{102}{section*.13}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Long time}}\mathsurround \z@ $\relax }{102}{section*.14}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Long time}}\mathsurround \z@ $\relax }{103}{section*.14}
 \contentsline {chapter}{\numberline {7}Interactions}{105}{chapter.7}
 \contentsline {section}{\numberline {7.1}Cooperation}{106}{section.7.1}
 \contentsline {section}{\numberline {7.2}Reallocation}{110}{section.7.2}
