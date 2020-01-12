@@ -334,21 +334,21 @@ as the sample size, $\N$, grows large. In reality, human populations can be very
 
 \subsection{Sums of log-normals}
 \seclabel{sketch}
-In \cite{PetersKlein2013} we studied the sample mean of \GBM, which we termed the ``partial ensemble average'' (PEA). This is the average of $\N$ independent realisations of the random variable $\x(\t)$, \eref{sample}. Here we sketch out some simple arguments about how this object depends on $\N$ and $\t$.
+In \cite{PetersKlein2013} we studied the sample mean of \GBM, which we termed the \PEA. This is the average of $\N$ independent realisations of the random variable $\x(\t)$, \eref{sample}. Here we sketch out some simple arguments about how this object depends on $\N$ and $\t$.
 
 Considering the two growth rates in \secref{two_rates}, we anticipate the following tension:
 \begin{enumerate}
-\item[A)] for large $\N$, the PEA should resemble the expectation value, $\exp(\gmu \t)$;
+\item[A)] for large $\N$, the \PEA should resemble the expectation value, $\exp(\gmu \t)$;
 \item[B)] for long $\t$, all trajectories in the sample -- and, therefore, the sample mean itself -- should grow like $\exp[(\gmu-\gsigma^2/2)\t]$.
 \end{enumerate}
-Situation A -- when a sample mean resembles the corresponding expectation value -- is known in statistical physics as ``self-averaging.'' A simple strategy for estimating when this occurs is to look at the relative variance of the PEA,
+Situation A -- when a sample mean resembles the corresponding expectation value -- is known in statistical physics as ``self-averaging.'' A simple strategy for estimating when this occurs is to look at the relative variance of the \PEA,
 \be
 R \equiv \frac{\var[\ave{\x(\t)}_\N]}{\ave{\ave{\x(\t)}_\N}^2}.
 \elabel{rel_var}
 \ee
 To be explicit, here the $\ave{\cdot}$ and $\text{var}(\cdot)$ operators, 
 without $\N$ as a subscript, 
-refer to the mean and variance over all possible PEAs. The PEAs themselves, taken over finite samples of size $\N$, are denoted $\ave{\cdot}_\N$. \Eref{rel_var} simplifies to
+refer to the mean and variance over all possible \PEAs. The \PEAs themselves, taken over finite samples of size $\N$, are denoted $\ave{\cdot}_\N$. \Eref{rel_var} simplifies to
 \be
 R = \frac{\frac{1}{\N}\var[\x(\t)]}{\ave{\x(\t)}^2},
 \ee
@@ -357,15 +357,15 @@ into which we insert \eref{exp_x} and \eref{var_x} to get an expression in terms
 R = \frac{e^{\gsigma^2 \t}-1}{\N}.
 \elabel{rel_var_N}
 \ee
-If $R \ll 1$, then the PEA will likely be close to its own expectation value, which is equal to the expectation value of the \GBM. Therefore, $\ave{\x(\t)}_\N\approx\ave{\x(\t)}$ when
+If $R \ll 1$, then the \PEA will likely be close to its own expectation value, which is equal to the expectation value of the \GBM. Therefore, $\ave{\x(\t)}_\N\approx\ave{\x(\t)}$ when
 \be
 \t < \frac{\ln \N}{\gsigma^2}.
 \elabel{short_t}
 \ee
 This hand-waving tells us roughly when the large-sample -- or, as we see from \eref{short_t}, short-time or low-volatility -- self-averaging regime holds. A more careful estimate of the cross-over time in \eref{t_c} is a factor of 2 larger, as we shall see in \secref{REM}, but the scaling is identical.
 
-For $\t>\ln \N/\gsigma^2$, the growth rate of the PEA transitions from $\gmu$ to its $\t\to\infty$ limit of $\gmu-\gsigma^2/2$ (Situation B). 
-Another way of viewing this is to think about what dominates the average. For early times in the process, all trajectories are close together and none dominate the PEA. However, as time goes by the distribution broadens exponentially. Since each trajectory contributes with the same weight to the PEA, after some time the PEA will be dominated by the maximum in the sample,
+For $\t>\ln \N/\gsigma^2$, the growth rate of the \PEA transitions from $\gmu$ to its $\t\to\infty$ limit of $\gmu-\gsigma^2/2$ (Situation B). 
+Another way of viewing this is to think about what dominates the average. For early times in the process, all trajectories are close together and none dominate the \PEA. However, as time goes by the distribution broadens exponentially. Since each trajectory contributes with the same weight to the \PEA, after some time the \PEA will be dominated by the maximum in the sample,
 \be
 \ave{\x(\t)}_\N \approx \frac{1}{\N}\max_{\gi=1}^\N \{\x_\gi(\t)\}.
 \ee
@@ -376,18 +376,18 @@ Self-averaging stops when even the ``luckiest'' trajectory is no longer close to
 \begin{figure}
 \centering
 \includegraphics[height=9.3cm]{./chapter_people/figs/trajectories.pdf}
-\caption{PEA and maximum in a finite ensemble of size $\N=256$. {\bf \underline{Red line:}} expectation value $\ave{\x(\t)}$. 
+\caption{\PEA and maximum in a finite ensemble of size $\N=256$. {\bf \underline{Red line:}} expectation value $\ave{\x(\t)}$. 
 {\bf \underline{Green line:}} exponential growth at the time-average growth rate. In the $\t\to\infty$ limit all trajectories grow at this rate. 
-{\bf \underline{Yellow line:}} contribution of the maximum value of any trajectory at time $\t$ to the PEA.  
-{\bf \underline{Blue line:}} PEA $\ave{\x(\t)}_\N$.
-{\bf \underline{Vertical line:}} Crossover -- for $\t>\t_c=\frac{2\ln \N}{\gsigma^2}$ the maximum begins to dominate the PEA (the yellow line approaches the blue line).
+{\bf \underline{Yellow line:}} contribution of the maximum value of any trajectory at time $\t$ to the \PEA.  
+{\bf \underline{Blue line:}} \PEA $\ave{\x(\t)}_\N$.
+{\bf \underline{Vertical line:}} Crossover -- for $\t>\t_c=\frac{2\ln \N}{\gsigma^2}$ the maximum begins to dominate the \PEA (the yellow line approaches the blue line).
 {\bf \underline{Grey lines:}} randomly chosen trajectories -- any typical trajectory soon grows at the time-average growth rate.  
 {\bf \underline{Parameters:}} $\N=256$, $\gmu=0.05$, $\gsigma=\sqrt{0.2}$.}
 \flabel{trajectories}
 \end{figure}
 \FloatBarrier
 
-In \cite{PetersKlein2013} we analysed PEAs of \GBM analytically and numerically. Using \eref{GBM_sol} the PEA can be written as
+In \cite{PetersKlein2013} we analysed \PEAs of \GBM analytically and numerically. Using \eref{GBM_sol} the \PEA can be written as
 \be
 \ave{\x}_\N=\frac{1}{\N} \sum_{i=1}^\N \exp\left[ \left(\gmu-\frac{\gsigma^2}{2}\right) \t + \gsigma \gW_i(\t) \right],
 \elabel{PEA}
@@ -399,14 +399,14 @@ where $\left\{\gW_i(\t)\right\}_{i=1\dots \N}$ are $\N$ independent realisations
 \ee
 where $\left\{\xi_i\right\}_{i=1\dots \N}$ are $\N$ independent standard normal variates.
 
-We found that typical trajectories of PEAs grow at $\gex$ up to a time $t_c$ 
+We found that typical trajectories of \PEAs grow at $\gex$ up to a time $t_c$ 
 that is logarithmic in $\N$, meaning $\t_c\propto \ln \N$. This is consistent with our analytical sketch. After this time, typical 
-PEA trajectories begin to deviate from expectation-value behaviour, and eventually 
-their growth rate converges to $g_t$. While the two limiting behaviours $\N\to\infty$
+\PEA trajectories begin to deviate from expectation-value behaviour, and eventually 
+their growth rate converges to $\gt$. While the two limiting behaviours $\N\to\infty$
 and $\t\to \infty$ can be computed exactly, what happens in between
-is less straightforward. The PEA is a random object outside these limits. 
+is less straightforward. The \PEA is a random object outside these limits. 
 
-A quantity of crucial interest to us is the exponential growth rate experienced by the PEA, 
+A quantity of crucial interest to us is the exponential growth rate experienced by the \PEA, 
 \be
 \gest(\t,\N) \equiv \frac{\ln(\ave{\x(\t)}_\N)- \ln(\x(0))}{\t-0} = \frac{1}{\t}\ln(\ave{\x(\t)}_\N).
 \elabel{g_est}
@@ -425,8 +425,8 @@ for all $\N\geq1$. Substituting \eref{PEA_2} in \eref{g_est} produces
 \eea
 
 We didn't look in \cite{PetersKlein2013} at the expectation value of $\gest(\t,\N)$ for finite time and finite samples, but it's an interesting object that depends on $\N$ and $\t$ but is not stochastic. Note that this is not $\gest$ of the expectation value, 
-which would be the $\N\to\infty$ limit of \eref{g_est}. Instead it is the 
-$S\to\infty$ limit,
+which would be the $\N\to\infty$ limit of \eref{g_est}. Instead it is the limit of the a diverging superverse
+$\S\to\infty$. The superverse consists of $\S$ samples of $\N$ trajectories each.
 \be
 \ave{\gest(\t,\N)} = \frac{1}{\t}\ave{\ln(\ave{\x(\t)}_\N)} = f(\N,\t),
 \elabel{gest_3}
