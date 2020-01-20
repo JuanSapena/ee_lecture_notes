@@ -32,7 +32,25 @@ from the set of trajectories we can judge what is likely to happen to an individ
 \eg by following a single trajectory for a long time; while the \PDFa of the random 
 variable $\x(\t^*)$ at some fixed value of $\t^*$ tells us how wealth is distributed in our model. 
 
-We use the term wealth distribution to refer to the density function, $\PDF_\x(\x)$, and not the process of distributing wealth among people. This can be interpreted as follows. Imagine a population of $\N$ individuals. If I select a random individual, each having uniform probability $\frac{1}{\N}$, then the probability of the selected individual having wealth greater than $\x$ is given by the \CDF, $F_\x(\x)=\int_\x^\infty \PDF_\x(s)\gd s$. If $\N$ is large, then $\D \x \PDF_\x(\x)\N$ is the approximate number of individuals who have wealth between $\x$ and $\x+\D \x$. Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
+We use the term wealth distribution to refer to the density function, $\PDF_\x(\x)$, and not the process of distributing wealth among people. This can be interpreted as follows. Imagine a population of $\N$ individuals. If I select a random individual, each having uniform probability $\frac{1}{\N}$, then the probability of the selected individual having wealth greater than $\x$ is given by the \CDF, $F_\x(\x)=\int_\x^\infty \PDF_\x(s)\gd s$, shaded pink in panel A) of \fref{wealth_dist_def} . If $\N$ is large, then $\D \x \PDF_\x(\x)\N$ is the approximate number of individuals who have wealth between $\x$ and $\x+\D \x$, that's $\N$ times the pink area in panel B) of \fref{wealth_dist_def} . Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
+
+\begin{figure}[h]
+\begin{picture}(200,170)(20,30)
+\put(0,30){\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_def_2.pdf}}
+\put(190,30){\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_def_1.pdf}}
+\put(0,160){A)}
+\put(190,160){B)}
+%\put(18,133){$y_3(\t)$}
+%\put(18,102){$y_4(\t)$}
+%\put(18,71){$y_5(\t)$}
+%\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
+%\put(200,235){time, $\t$}  
+%\put(120,220){$y_1(\t^*)$}
+%\put(130,215){\vector(1,-1){13}}
+\end{picture}
+\caption{Example of a wealth distribution. The probability that a uniformly randomly selected person has wealth greater than $\x$ is the shaded area on the left (panel A). The number of people with wealth between $\x$ and $\x+\D\x$ is roughly $\N$ times the shaded area on the right (panel B).}
+\flabel{wealth_dist_def}
+\end{figure}
 
 \underline{Examples:}
 \begin{itemize}

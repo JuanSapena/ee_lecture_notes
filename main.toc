@@ -59,18 +59,18 @@
 \contentsline {part}{III\hspace {1em}Macroeconomics}{88}{part.3}
 \contentsline {chapter}{\numberline {6}People}{89}{chapter.6}
 \contentsline {section}{\numberline {6.1}Every man for himself}{90}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Log-normal distribution}{90}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Two growth rates}{91}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.1}Log-normal distribution}{91}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Two growth rates}{92}{subsection.6.1.2}
 \contentsline {subsection}{\numberline {6.1.3}Measuring inequality}{92}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Wealth condensation}{93}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.4}Wealth condensation}{94}{subsection.6.1.4}
 \contentsline {subsection}{\numberline {6.1.5}Rescaled wealth}{94}{subsection.6.1.5}
 \contentsline {subsection}{\numberline {6.1.6}${\gls {v}}$-normal distributions and Jensen's inequality}{95}{subsection.6.1.6}
 \contentsline {subsection}{\numberline {6.1.7}Power-law resemblance}{96}{subsection.6.1.7}
 \contentsline {section}{\numberline {6.2}Finite populations}{97}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Sums of log-normals}{97}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}The random energy model}{101}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.1}Sums of log-normals}{98}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}The random energy model}{100}{subsection.6.2.2}
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Short time}}\mathsurround \z@ $\relax }{102}{section*.13}
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Long time}}\mathsurround \z@ $\relax }{103}{section*.14}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Long time}}\mathsurround \z@ $\relax }{102}{section*.14}
 \contentsline {chapter}{\numberline {7}Interactions}{105}{chapter.7}
 \contentsline {section}{\numberline {7.1}Cooperation}{106}{section.7.1}
 \contentsline {section}{\numberline {7.2}Reallocation}{110}{section.7.2}
