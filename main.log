@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.6)  20 JAN 2020 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.6)  21 JAN 2020 10:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2027,91 +2027,118 @@ h_dist_def_1.pdf
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_people/figs/wealth
 _dist_def_1.pdf): PDF inclusion: multiple pdfs with page group included in a si
 ngle page
->] [91] [92] [93] [94]
+>] [91]
+<./chapter_people/figs/wealth_dist_equal.pdf, id=6231, 403.5828pt x 266.96938pt
+>
+File: ./chapter_people/figs/wealth_dist_equal.pdf Graphic file (type pdf)
+ <use ./chapter_people/figs/wealth_dist_equal.pdf>
+Package pdftex.def Info: ./chapter_people/figs/wealth_dist_equal.pdf used on in
+put line 196.
+(pdftex.def)             Requested size: 172.5pt x 114.10614pt.
+
+<./chapter_people/figs/wealth_dist_unequal.pdf, id=6232, 409.72112pt x 266.9693
+8pt>
+File: ./chapter_people/figs/wealth_dist_unequal.pdf Graphic file (type pdf)
+ <use ./chapter_people/figs/wealth_dist_unequal.pdf>
+Package pdftex.def Info: ./chapter_people/figs/wealth_dist_unequal.pdf used on 
+input line 197.
+(pdftex.def)             Requested size: 172.5pt x 112.39929pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[92] [93 <./chapter_people/figs/wealth_dist_equal.pdf> <./chapter_people/figs/w
+ealth_dist_unequal.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_people/figs/wealth
+_dist_unequal.pdf): PDF inclusion: multiple pdfs with page group included in a 
+single page
+>] [94]
 
 LaTeX Warning: Reference `section:dyn_from_u' on page 95 undefined on input lin
-e 252.
+e 323.
+
+[95]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 346.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 275.
+(hyperref)                removing `\gls' on input line 346.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gls' on input line 275.
+(hyperref)                removing `math shift' on input line 346.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 275.
-
-[95] [96] [97] [98]
-<./chapter_people/figs/trajectories.pdf, id=6765, 391.2678pt x 267.6446pt>
+[96] [97] [98]
+<./chapter_people/figs/trajectories.pdf, id=6853, 391.2678pt x 267.6446pt>
 File: ./chapter_people/figs/trajectories.pdf Graphic file (type pdf)
 
 <use ./chapter_people/figs/trajectories.pdf>
 Package pdftex.def Info: ./chapter_people/figs/trajectories.pdf used on input l
-ine 396.
+ine 467.
 (pdftex.def)             Requested size: 386.85481pt x 264.6107pt.
 
-Overfull \hbox (41.85481pt too wide) in paragraph at lines 396--403
+Overfull \hbox (41.85481pt too wide) in paragraph at lines 467--474
  [][] 
  []
 
-
-Overfull \hbox (6.5588pt too wide) in paragraph at lines 408--409
+[99] [100 <./chapter_people/figs/trajectories.pdf>]
+Overfull \hbox (6.5588pt too wide) in paragraph at lines 479--480
 []\OT1/lmr/m/n/10 In [[]] we anal-ysed [][][]PEAs[][]of [][][]GBM[][] an-a-lyt-
-i-cally and nu-mer-i-cally. Us-ing (Eq. [][]6.4[][])
+i-cally and nu-mer-i-cally. Us-ing (Eq. [][]6.2[][])
  []
 
-[99 <./chapter_people/figs/trajectories.pdf>] [100] [101] [102]
-<./chapter_people/figs/PEA.pdf, id=7120, 404.92374pt x 266.68005pt>
+[101] [102] [103]
+<./chapter_people/figs/PEA.pdf, id=7214, 404.92374pt x 266.68005pt>
 File: ./chapter_people/figs/PEA.pdf Graphic file (type pdf)
 
 <use ./chapter_people/figs/PEA.pdf>
-Package pdftex.def Info: ./chapter_people/figs/PEA.pdf used on input line 589.
+Package pdftex.def Info: ./chapter_people/figs/PEA.pdf used on input line 660.
 (pdftex.def)             Requested size: 401.81488pt x 264.6107pt.
 
-Overfull \hbox (56.81488pt too wide) in paragraph at lines 589--598
+Overfull \hbox (56.81488pt too wide) in paragraph at lines 660--669
  [][] 
  []
 
-[103] [104 <./chapter_people/figs/PEA.pdf>])
+[104] [105 <./chapter_people/figs/PEA.pdf>])
 (./chapter_interactions/chapter_interactions.tex
 Chapter 7.
-[105
+[106
 
 ]
-<./chapter_interactions/figs/blobs.pdf, id=7313, 596.66095pt x 262.50914pt>
+<./chapter_interactions/figs/blobs.pdf, id=7408, 596.66095pt x 262.50914pt>
 File: ./chapter_interactions/figs/blobs.pdf Graphic file (type pdf)
 
 <use ./chapter_interactions/figs/blobs.pdf>
 Package pdftex.def Info: ./chapter_interactions/figs/blobs.pdf used on input li
 ne 61.
 (pdftex.def)             Requested size: 470.0pt x 206.78311pt.
- [106] [107 <./chapter_interactions/figs/blobs.pdf>]
-<./chapter_interactions/figs/cooperate.pdf, id=7440, 614.295pt x 794.97pt>
+ [107] [108 <./chapter_interactions/figs/blobs.pdf>]
+<./chapter_interactions/figs/cooperate.pdf, id=7536, 614.295pt x 794.97pt>
 File: ./chapter_interactions/figs/cooperate.pdf Graphic file (type pdf)
 
 <use ./chapter_interactions/figs/cooperate.pdf>
 Package pdftex.def Info: ./chapter_interactions/figs/cooperate.pdf used on inpu
 t line 155.
 (pdftex.def)             Requested size: 440.0pt x 569.41818pt.
- [108] [109 <./chapter_interactions/figs/cooperate.pdf>] [110] [111]
+ [109] [110 <./chapter_interactions/figs/cooperate.pdf>] [111] [112]
 
-LaTeX Warning: Citation `BermanPetersAdamou2017' on page 112 undefined on input
+LaTeX Warning: Citation `BermanPetersAdamou2017' on page 113 undefined on input
  line 282.
 
 
-LaTeX Warning: Citation `BermanPetersAdamou2017' on page 112 undefined on input
+LaTeX Warning: Citation `BermanPetersAdamou2017' on page 113 undefined on input
  line 285.
 
-[112] [113]
+[113] [114]
 
-LaTeX Warning: Citation `BermanPetersAdamou2017' on page 114 undefined on input
+LaTeX Warning: Citation `BermanPetersAdamou2017' on page 115 undefined on input
  line 339.
 
 
-LaTeX Warning: Citation `BermanPetersAdamou2017' on page 114 undefined on input
+LaTeX Warning: Citation `BermanPetersAdamou2017' on page 115 undefined on input
  line 339.
 
 Package epstopdf Info: Source file: <./chapter_interactions/figs/dists.eps>
@@ -2126,7 +2153,7 @@ erted-to.pdf>
 (epstopdf)             \includegraphics on input line 343.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_interactions/figs/dists-eps-converted-to.pdf, id=7717, 461.725pt x 4
+<./chapter_interactions/figs/dists-eps-converted-to.pdf, id=7814, 461.725pt x 4
 56.70625pt>
 File: ./chapter_interactions/figs/dists-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -2148,7 +2175,7 @@ ps-converted-to.pdf>
 (epstopdf)             \includegraphics on input line 392.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_interactions/figs/trajectories-eps-converted-to.pdf, id=7739, 464.73
+<./chapter_interactions/figs/trajectories-eps-converted-to.pdf, id=7836, 464.73
 625pt x 409.53pt>
 File: ./chapter_interactions/figs/trajectories-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -2162,31 +2189,31 @@ Overfull \hbox (85.43726pt too wide) in paragraph at lines 406--407
  [][] 
  []
 
-[114]
+[115]
 Overfull \hbox (2.76237pt too wide) in paragraph at lines 417--418
 []\OT1/lmr/m/n/10 We pre-sented ar-gu-ments in Sec. [][]6.2.1[][] for why wealt
 h in [][][]GBM[][] is self-averaging,
  []
 
-[115 <./chapter_interactions/figs/dists-eps-converted-to.pdf>] [116 <./chapter_
-interactions/figs/trajectories-eps-converted-to.pdf>] [117]
+[116 <./chapter_interactions/figs/dists-eps-converted-to.pdf>] [117 <./chapter_
+interactions/figs/trajectories-eps-converted-to.pdf>] [118]
 Overfull \hbox (0.33435pt too wide) in paragraph at lines 502--505
 $\OML/lmm/m/it/10 V$ \OT1/lmr/m/n/10 con-verges in time to the asymp-tote, $\OM
 L/lmm/m/it/10 V[]$\OT1/lmr/m/n/10 , pro-vided the ex-po-nen-tial in (Eq. [][]7.
 31[][])
  []
 
-[118]
+[119]
 
-LaTeX Warning: Citation `BermanPetersAdamou2017' on page 119 undefined on input
+LaTeX Warning: Citation `BermanPetersAdamou2017' on page 120 undefined on input
  line 522.
 
 
-LaTeX Warning: Citation `SaezZucman2014' on page 119 undefined on input line 52
+LaTeX Warning: Citation `SaezZucman2014' on page 120 undefined on input line 52
 4.
 
 
-LaTeX Warning: Citation `SaezZucman2014' on page 119 undefined on input line 53
+LaTeX Warning: Citation `SaezZucman2014' on page 120 undefined on input line 53
 3.
 
 Package epstopdf Info: Source file: <./chapter_interactions/figs/tau_top1.eps>
@@ -2201,7 +2228,7 @@ onverted-to.pdf>
 (epstopdf)             \includegraphics on input line 537.
 Package epstopdf Info: Output file is already uptodate.
 
-<./chapter_interactions/figs/tau_top1-eps-converted-to.pdf, id=8029, 461.725pt 
+<./chapter_interactions/figs/tau_top1-eps-converted-to.pdf, id=8125, 461.725pt 
 x 459.7175pt>
 File: ./chapter_interactions/figs/tau_top1-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -2210,17 +2237,17 @@ Package pdftex.def Info: ./chapter_interactions/figs/tau_top1-eps-converted-to.
 pdf used on input line 537.
 (pdftex.def)             Requested size: 345.0pt x 343.50357pt.
 
-[119] [120 <./chapter_interactions/figs/tau_top1-eps-converted-to.pdf>]
+[120] [121 <./chapter_interactions/figs/tau_top1-eps-converted-to.pdf>]
 
-LaTeX Warning: Citation `Rios20162013' on page 121 undefined on input line 548.
+LaTeX Warning: Citation `Rios20162013' on page 122 undefined on input line 548.
 
 
-) (./chapter_markets/chapter_markets.tex [121]
+) (./chapter_markets/chapter_markets.tex [122]
 Chapter 8.
-[122
+[123
 
-] [123]
-<./chapter_markets/figs/rebalance.pdf, id=8315, 357.53577pt x 239.73564pt>
+] [124]
+<./chapter_markets/figs/rebalance.pdf, id=8410, 357.53577pt x 239.73564pt>
 File: ./chapter_markets/figs/rebalance.pdf Graphic file (type pdf)
 
 <use ./chapter_markets/figs/rebalance.pdf>
@@ -2233,37 +2260,37 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 97.
- [124] [125 <./chapter_markets/figs/rebalance.pdf>]
-<./chapter_markets/figs/markowitz.pdf, id=8405, 421.575pt x 316.18124pt>
+ [125] [126 <./chapter_markets/figs/rebalance.pdf>]
+<./chapter_markets/figs/markowitz.pdf, id=8502, 421.575pt x 316.18124pt>
 File: ./chapter_markets/figs/markowitz.pdf Graphic file (type pdf)
 
 <use ./chapter_markets/figs/markowitz.pdf>
 Package pdftex.def Info: ./chapter_markets/figs/markowitz.pdf used on input lin
 e 120.
 (pdftex.def)             Requested size: 345.0pt x 258.75406pt.
- [126 <./chapter_markets/figs/markowitz.pdf>] [127] [128]
-<./chapter_markets/figs/markowitz_peters.png, id=8591, 904.1278pt x 563.85657pt
+ [127 <./chapter_markets/figs/markowitz.pdf>] [128] [129]
+<./chapter_markets/figs/markowitz_peters.png, id=8687, 904.1278pt x 563.85657pt
 >
 File: ./chapter_markets/figs/markowitz_peters.png Graphic file (type png)
  <use ./chapter_markets/figs/markowitz_peters.png>
 Package pdftex.def Info: ./chapter_markets/figs/markowitz_peters.png used on in
 put line 188.
 (pdftex.def)             Requested size: 345.0pt x 215.1539pt.
- [129 <./chapter_markets/figs/markowitz_peters.png>]
+ [130 <./chapter_markets/figs/markowitz_peters.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 212.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 214.
- [130]
+ [131]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 232.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 236.
- [131]
+ [132]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 240.
@@ -2276,28 +2303,28 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 262.
- [132]
+ [133]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 266.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 268.
- [133] [134] [135]
-<./chapter_markets/figs/cartoon.pdf, id=8897, 597.50786pt x 845.04686pt>
+ [134] [135] [136]
+<./chapter_markets/figs/cartoon.pdf, id=8992, 597.50786pt x 845.04686pt>
 File: ./chapter_markets/figs/cartoon.pdf Graphic file (type pdf)
 
 <use ./chapter_markets/figs/cartoon.pdf>
 Package pdftex.def Info: ./chapter_markets/figs/cartoon.pdf used on input line 
 364.
 (pdftex.def)             Requested size: 276.00105pt x 390.33807pt.
- [136] [137 <./chapter_markets/figs/cartoon.pdf>] [138]
+ [137] [138 <./chapter_markets/figs/cartoon.pdf>] [139]
 Underfull \hbox (badness 10000) in paragraph at lines 403--405
 
  []
 
 
-<./chapter_markets/figs/STR-FET-1_equity.pdf, id=9040, 448.13988pt x 253.2549pt
+<./chapter_markets/figs/STR-FET-1_equity.pdf, id=9135, 448.13988pt x 253.2549pt
 >
 File: ./chapter_markets/figs/STR-FET-1_equity.pdf Graphic file (type pdf)
  <use ./chapter_markets/figs/STR-FET-1_equity.pdf>
@@ -2305,29 +2332,29 @@ Package pdftex.def Info: ./chapter_markets/figs/STR-FET-1_equity.pdf used on in
 put line 417.
 (pdftex.def)             Requested size: 377.77542pt x 213.49393pt.
 
-<./chapter_markets/figs/STR-FET_final_equity.pdf, id=9041, 387.53848pt x 266.68
+<./chapter_markets/figs/STR-FET_final_equity.pdf, id=9136, 387.53848pt x 266.68
 005pt>
 File: ./chapter_markets/figs/STR-FET_final_equity.pdf Graphic file (type pdf)
  <use ./chapter_markets/figs/STR-FET_final_equity.pdf>
 Package pdftex.def Info: ./chapter_markets/figs/STR-FET_final_equity.pdf used o
 n input line 418.
 (pdftex.def)             Requested size: 327.74895pt x 225.53973pt.
- [139] [140 <./chapter_markets/figs/STR-FET-1_equity.pdf> <./chapter_markets/fi
+ [140] [141 <./chapter_markets/figs/STR-FET-1_equity.pdf> <./chapter_markets/fi
 gs/STR-FET_final_equity.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./chapter_markets/figs/STR-F
 ET_final_equity.pdf): PDF inclusion: multiple pdfs with page group included in 
 a single page
->] [141]
-<./chapter_markets/figs/all_final_equity.pdf, id=9181, 440.18831pt x 267.6446pt
+>] [142]
+<./chapter_markets/figs/all_final_equity.pdf, id=9276, 440.18831pt x 267.6446pt
 >
 File: ./chapter_markets/figs/all_final_equity.pdf Graphic file (type pdf)
  <use ./chapter_markets/figs/all_final_equity.pdf>
 Package pdftex.def Info: ./chapter_markets/figs/all_final_equity.pdf used on in
 put line 459.
 (pdftex.def)             Requested size: 345.0pt x 209.77884pt.
- [142 <./chapter_markets/figs/all_final_equity.pdf>]
-<./chapter_markets/figs/all_MAD_final_equity.pdf, id=9257, 402.87703pt x 266.68
+ [143 <./chapter_markets/figs/all_final_equity.pdf>]
+<./chapter_markets/figs/all_MAD_final_equity.pdf, id=9353, 402.87703pt x 266.68
 005pt>
 File: ./chapter_markets/figs/all_MAD_final_equity.pdf Graphic file (type pdf)
  <use ./chapter_markets/figs/all_MAD_final_equity.pdf>
@@ -2335,27 +2362,27 @@ Package pdftex.def Info: ./chapter_markets/figs/all_MAD_final_equity.pdf used o
 n input line 478.
 (pdftex.def)             Requested size: 345.0pt x 228.36783pt.
 
-<./chapter_markets/figs/STR-FED_lopt_var.pdf, id=9274, 398.86203pt x 268.9777pt
+<./chapter_markets/figs/STR-FED_lopt_var.pdf, id=9370, 398.86203pt x 268.9777pt
 >
 File: ./chapter_markets/figs/STR-FED_lopt_var.pdf Graphic file (type pdf)
  <use ./chapter_markets/figs/STR-FED_lopt_var.pdf>
 Package pdftex.def Info: ./chapter_markets/figs/STR-FED_lopt_var.pdf used on in
 put line 544.
 (pdftex.def)             Requested size: 345.0pt x 232.6625pt.
- [143] [144 <./chapter_markets/figs/all_MAD_final_equity.pdf>])
+ [144] [145 <./chapter_markets/figs/all_MAD_final_equity.pdf>])
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
 . Rerun may be required (or you may have forgotten to use commands like \gls) o
 n input line 34.
 
-[145 <./chapter_markets/figs/STR-FED_lopt_var.pdf>] [146]
+[146 <./chapter_markets/figs/STR-FED_lopt_var.pdf>] [147]
 Overfull \hbox (6.7242pt too wide) in paragraph at lines 34--34
 []\OT1/lmr/m/n/10 Ergodic growth rate un-der ad-di-tive dy-nam-ics, \OT1/lmr/m/
 it/10 i.e. \OT1/lmr/m/n/10 rate of change, $[]([]; []\OML/lmm/m/it/10 ; []\OT1/
 lmr/m/n/10 ) =
  []
 
-[147] [148] [149] (./main.bbl [150]
+[148] [149] [150] (./main.bbl [151]
 LaTeX Font Info:    Try loading font information for OML+lmr on input line 36.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmr.fd
@@ -2363,15 +2390,15 @@ File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
 (Font)              Font shape `OML/lmm/m/it' tried instead on input line 36.
- [151
+ [152
 
-] [152]
+] [153]
 Underfull \hbox (badness 1436) in paragraph at lines 256--259
 []\OT1/lmr/m/n/10 O. Pe-ters and A. Adamou.  In-sur-ance makes wealth grow fast
 er.
  []
 
-[153]) [154]
+[154]) [155]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
  (./main.aux)
@@ -2391,10 +2418,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 38971 strings out of 492995
- 729814 string characters out of 6132704
- 1205650 words of memory out of 5000000
- 40963 multiletter control sequences out of 15000+600000
+ 38984 strings out of 492995
+ 730292 string characters out of 6132704
+ 1206157 words of memory out of 5000000
+ 40972 multiletter control sequences out of 15000+600000
  113889 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,16n,78p,10432b,1031s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2437,10 +2464,10 @@ xlive/2017/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/texlive/2017/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
 017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/wasy2-ps/wasy10.pfb>
-Output written on main.pdf (155 pages, 4610463 bytes).
+Output written on main.pdf (156 pages, 4630983 bytes).
 PDF statistics:
- 10921 PDF objects out of 12825 (max. 8388607)
- 9348 compressed objects within 94 object streams
- 858 named destinations out of 1000 (max. 500000)
- 1051 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11017 PDF objects out of 12825 (max. 8388607)
+ 9381 compressed objects within 94 object streams
+ 860 named destinations out of 1000 (max. 500000)
+ 1061 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -48,25 +48,25 @@ We use the term wealth distribution to refer to the density function, $\PDF_\x(\
 %\put(120,220){$y_1(\t^*)$}
 %\put(130,215){\vector(1,-1){13}}
 \end{picture}
-\caption{Example of a wealth distribution. The probability that a uniformly randomly selected person has wealth greater than $\x$ is the shaded area on the left (panel A). The number of people with wealth between $\x$ and $\x+\D\x$ is roughly $\N$ times the shaded area on the right (panel B).}
+\caption{Example of a wealth distribution. A) The probability that a uniformly randomly selected person has wealth greater than $\x$ is the shaded area on the left. B) The number of people with wealth between $\x$ and $\x+\D\x$ is roughly $\N$ times the shaded area on the right.}
 \flabel{wealth_dist_def}
 \end{figure}
 
-\underline{Examples:}
-\begin{itemize}
-\item Under maximum equality everyone would have the same, meaning that the wealth
-distribution would be a Dirac delta function centred at the sample mean of $\x$, that is
-\be
-\PDF_\x(\x)=\delta(\x-\ave{\x}_\N);
-\ee
-\item
-Maximum inequality would mean that one individual owns everything
-and everyone else owns nothing, that is
-\be 
-\PDF_\x(\x)=\frac{\N-1}{\N}\delta(\x-0)+\frac{1}{\N}\delta(\x-\N\ave{\x}_\N).
-\ee
-\end{itemize}
-
+%\underline{Extreme distributions:}
+%\begin{itemize}
+%\item Under maximum equality everyone would have the same, meaning that the wealth
+%distribution would be a Dirac delta function centred at the sample mean of $\x$, that is
+%\be
+%\PDF_\x(\x)=\delta(\x-\ave{\x}_\N);
+%\ee
+%\item
+%Maximum inequality would mean that one individual owns everything
+%and everyone else owns nothing, that is
+%\be 
+%\PDF_\x(\x)=\frac{\N-1}{\N}\delta(\x-0)+\frac{1}{\N}\delta(\x-\N\ave{\x}_\N),
+%\ee
+%see \fref{wealth_dist_unequal}
+%\FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Log-normal distribution}
@@ -138,9 +138,80 @@ compute the exact full wealth distribution, $\PDF_\x(\x)$. This is interesting b
 Clearly, to answer these questions, we must quantify ``inequality''. In this section, and also in \cite{AdamouPeters2016}, we develop a natural way of measuring it, which makes use of the two growth rates we identified for the non-ergodic process. We will see that a particular inequality measure, known to economists as Theil's second index of inequality \cite{Theil1967}, is the difference between typical wealth (growing at the time-average growth rate) and average wealth (growing at the ensemble-average growth rate) in our model. Thus, the difference between the time average and ensemble average, the essence of ergodicity breaking, is the fundamental driver of the dynamics of inequality.
 
 The two limits of inequality are easily identified: minimum inequality means that everyone 
-has the same wealth, and maximum inequality means that one individual has all the 
-wealth and everyone else has nothing. (This assumes that wealth cannot become 
-negative.) Quantifying inequality in any other distribution is reminiscent of the gamble 
+has the same wealth, so that the wealth
+distribution is a Dirac delta function centred at the sample mean of $\x$, that is
+\be
+\PDF_\x(\x)=\delta(\x-\ave{\x}_\N);
+\ee
+and maximum inequality means that one individual has all the 
+wealth and everyone else has nothing (this assumes that wealth cannot become 
+negative), that is
+\be 
+\PDF_\x(\x)=\frac{\N-1}{\N}\delta(\x-0)+\frac{1}{\N}\delta(\x-\N\ave{\x}_\N),
+\ee
+see \fref{wealth_dist_extreme}.
+
+%\begin{figure}
+%\begin{picture}(140,140)(20,30)
+%\put(0,30)
+%\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_equal.pdf}
+%\put(190,30){\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_def_1.pdf}}
+%%\put(0,160){A)}
+%%\put(190,160){B)}
+%%\put(18,133){$y_3(\t)$}
+%%\put(18,102){$y_4(\t)$}
+%%\put(18,71){$y_5(\t)$}
+%%\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
+%%\put(200,235){time, $\t$}  
+%%\put(120,220){$y_1(\t^*)$}
+%%\put(130,215){\vector(1,-1){13}}
+%%\end{picture}
+%\caption{Maximally equal wealth distribution: everyone owns $\$100,000$.}
+%\flabel{wealth_dist_equal}
+%\end{SCfigure}
+%
+%\begin{SCfigure}
+%%\begin{picture}(200,140)(20,30)
+%%\put(0,30)
+%\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_unequal.pdf}
+%%\put(190,30){\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_def_1.pdf}}
+%%\put(0,160){A)}
+%%\put(190,160){B)}
+%%\put(18,133){$y_3(\t)$}
+%%\put(18,102){$y_4(\t)$}
+%%\put(18,71){$y_5(\t)$}
+%%\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
+%%\put(200,235){time, $\t$}  
+%%\put(120,220){$y_1(\t^*)$}
+%%\put(130,215){\vector(1,-1){13}}
+%%\end{picture}
+%\caption{Maximally unequal wealth distribution: one person owns $\$100$ billion, all others own nothing.}
+%\flabel{wealth_dist_unequal}
+%\end{SCfigure}
+%\end{itemize}
+%\FloatBarrier
+
+\begin{figure}[h]
+\begin{picture}(200,170)(20,30)
+\put(0,30){\includegraphics[width=.5\textwidth]{./chapter_people/figs/wealth_dist_equal.pdf}}
+\put(190,30){\includegraphics[width=.5\textwidth]{./chapter_people/figs/wealth_dist_unequal.pdf}}
+\put(0,160){A)}
+\put(190,160){B)}
+%\put(18,133){$y_3(\t)$}
+%\put(18,102){$y_4(\t)$}
+%\put(18,71){$y_5(\t)$}
+%\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
+%\put(200,235){time, $\t$}  
+%\put(120,220){$y_1(\t^*)$}
+%\put(130,215){\vector(1,-1){13}}
+\end{picture}
+\caption{Extreme wealth distributions. A) The maximally equal distribution means that everyone owns the same amount (here \$100,000, as an example). B) The maximally unequal distribution (assuming no one has negative wealth) means that one person owns everything (here \$100 billion), and everyone else nothing.}
+\flabel{wealth_dist_extreme}
+\end{figure}
+
+
+
+Quantifying inequality in any other distribution is reminiscent of the gamble 
 problem. Recall that for gambles we wanted make statements of the type ``this gamble 
 is more desirable than that gamble''. We did this by collapsing a distribution to a 
 scalar. Depending on the question that was being asked, 
