@@ -454,13 +454,22 @@ If $R \ll 1$, then the \PEA will likely be close to its own expectation value, w
 This hand-waving tells us roughly when the large-sample -- or, as we see from \eref{short_t}, short-time or low-volatility -- self-averaging regime holds. A more careful estimate of the cross-over time in \eref{t_c} is a factor of 2 larger, as we shall see in \secref{REM}, but the scaling is identical.
 
 For $\t>\ln \N/\gsigma^2$, the growth rate of the \PEA transitions from $\gmu$ to its $\t\to\infty$ limit of $\gmu-\gsigma^2/2$ (Situation B). 
-Another way of viewing this is to think about what dominates the average. For early times in the process, all trajectories are close together and none dominate the \PEA. However, as time goes by the distribution broadens exponentially. Since each trajectory contributes with the same weight to the \PEA, after some time the \PEA will be dominated by the maximum in the sample,
+Another way of viewing this is to think about what dominates the average. For early times in the process, all trajectories are close together and none dominate the \PEA. However, as time goes by the distribution broadens exponentially. Since each trajectory contributes with the same weight to the \PEA, we can speculate that after some time that the \PEA will come to be dominated by the maximum in the sample,
 \be
 \ave{\x(\t)}_\N \approx \frac{1}{\N}\max_{\gi=1}^\N \{\x_\gi(\t)\}.
+\elabel{max_N}
 \ee
-All of these features are illustrated in \fref{trajectories}.
+These features are consistent with the numerical simulations shown in \fref{trajectories}.
 
-\textbf{We can say more about this maximum for large $\N$ using extreme value theory...}
+Suppose we made a good guess in \eref{max_N}. We can say more about the maximum of the sample using extreme value theory. To leading order, the maximum of a sample of $\N$ iid standard normal variates scales like
+\be
+\max_{\gi=1}^\N \{\xi_\gi\} \sim \sqrt{2\ln\N}
+\ee
+in the limit $\N\to\infty$. Since $\x_\gi(\t)$ increases monotonically with $\xi_\gi$, it achieves its maximum for the largest value of $\xi_\gi$ in the sample. Therefore, for large samples we anticipate
+\be
+\ave{\x(\t)}_\N \sim \frac{1}{N} \exp\left[\left(\gmu-\frac{\gsigma^2}{2}\right)\t + \sqrt{2\ln\N} \gsigma\t^{1/2}\right]
+\ee
+in the long-time regime, $\t>\ln\N/\gsigma^2$.
 
 Self-averaging stops when even the ``luckiest'' trajectory is no longer close to the expectation value $\exp(\gmu \t)$. This is guaranteed to happen eventually because the probability for a trajectory to reach $\exp(\gmu \t)$ decreases towards zero as $\t$ grows, as we saw in \secref{condensation}. Naturally, this takes longer for larger samples, which have more chances to contain a lucky trajectory. 
 
@@ -471,7 +480,7 @@ Self-averaging stops when even the ``luckiest'' trajectory is no longer close to
 {\bf \underline{Green line:}} exponential growth at the time-average growth rate. In the $\t\to\infty$ limit all trajectories grow at this rate. 
 {\bf \underline{Yellow line:}} contribution of the maximum value of any trajectory at time $\t$ to the \PEA.  
 {\bf \underline{Blue line:}} \PEA $\ave{\x(\t)}_\N$.
-{\bf \underline{Vertical line:}} Crossover -- for $\t>\t_c=\frac{2\ln \N}{\gsigma^2}$ the maximum begins to dominate the \PEA (the yellow line approaches the blue line).
+{\bf \underline{Vertical line:}} Crossover -- for $\t>\tc=\frac{2\ln \N}{\gsigma^2}$ the maximum begins to dominate the \PEA (the yellow line approaches the blue line).
 {\bf \underline{Grey lines:}} randomly chosen trajectories -- any typical trajectory soon grows at the time-average growth rate.  
 {\bf \underline{Parameters:}} $\N=256$, $\gmu=0.05$, $\gsigma=\sqrt{0.2}$.}
 \flabel{trajectories}
@@ -480,22 +489,22 @@ Self-averaging stops when even the ``luckiest'' trajectory is no longer close to
 
 In \cite{PetersKlein2013} we analysed \PEAs of \GBM analytically and numerically. Using \eref{GBM_sol} and assuming $\x_\gi(0)=1$ for all $\gi$, the \PEA can be written as
 \be
-\ave{\x}_\N=\frac{1}{\N} \sum_{i=1}^\N \exp\left[ \left(\gmu-\frac{\gsigma^2}{2}\right) \t + \gsigma \gW_i(\t) \right],
+\ave{\x(\t)}_\N=\frac{1}{\N} \sum_{i=1}^\N \exp\left[ \left(\gmu-\frac{\gsigma^2}{2}\right) \t + \gsigma \gW_i(\t) \right],
 \elabel{PEA}
 \ee
 where $\left\{\gW_i(\t)\right\}_{i=1\dots \N}$ are $\N$ independent realisations of the Wiener process. Taking the deterministic part out of the sum, we can write
 \be
-\ave{\x}_\N = \frac{1}{\N} \exp\left[ \left(\gmu-\frac{\gsigma^2}{2}\right) \t \right] \sum_{i=1}^\N \exp\left(\gsigma \t^{1/2} \xi_i\right),
+\ave{\x(\t)}_\N = \frac{1}{\N} \exp\left[ \left(\gmu-\frac{\gsigma^2}{2}\right) \t \right] \sum_{i=1}^\N \exp\left(\gsigma \t^{1/2} \xi_i\right),
 \elabel{PEA_2}
 \ee
 where $\left\{\xi_i\right\}_{i=1\dots \N}$ are $\N$ independent standard normal variates. All of the uncertainty in the value of the \PEA is now contained in the sum of lognormal variates, which we denote by 
 \be
-Z(\N,t) = \sum_{i=1}^\N \exp\left(\gsigma \t^{1/2} \xi_i\right),
+Z(\N,\t) = \sum_{i=1}^\N \exp\left(\gsigma \t^{1/2} \xi_i\right),
 \elabel{PEA_Z}
 \ee
 so that $\ave{\x}_\N = \left(1/N\right) \exp\left[ \left(\gmu-\gsigma^2/2\right) \t \right] Z(\N,t)$.
 
-We found that typical trajectories of \PEAs grow at $\gex$ up to a time $\t_c\propto \ln \N$. After this time, typical \PEA trajectories deviate from expectation-value behaviour, and eventually their growth rate converges to $\gt$. While the two limiting behaviours as $\N\to\infty$ and $\t\to \infty$ can be computed exactly, what happens in between is less straightforward. The \PEA is a random object outside these limits. 
+We found that typical trajectories of \PEAs grow at $\gex$ up to a time $\tc\propto \ln \N$. After this time, typical \PEA trajectories deviate from expectation-value behaviour, and eventually their growth rate converges to $\gt$. While the two limiting behaviours as $\N\to\infty$ and $\t\to \infty$ can be computed exactly, what happens in between is less straightforward. The \PEA is a random object outside these limits. 
 
 %A quantity of crucial interest to us is the exponential growth rate experienced by the \PEA, 
 %\be
@@ -523,11 +532,11 @@ We found that typical trajectories of \PEAs grow at $\gex$ up to a time $\t_c\pr
 
 \subsection{The random energy model}
 \seclabel{REM}
-Since the publication of \cite{PetersKlein2013} we have learned, thanks to discussions with J.-P.~Bouchaud, that the key object in \eref{PEA_2} -- the sum of lognormal random variates -- has been of interest to the mathematical physics community since the 1980s. The reason for this is Derrida's random energy model \cite{Derrida1980,Derrida1981}, which we will describe here.
+Since the publication of \cite{PetersKlein2013} we have learned, thanks to discussions with J.-P.~Bouchaud, that $Z(\N,\t)$ in \eref{PEA_Z} -- the sum of lognormal random variates -- has been of interest to the mathematical physics community since the 1980s. The reason for this is Derrida's random energy model \cite{Derrida1980,Derrida1981}, which we will describe here.
 %This section is somewhat ``physicsy'' and the key results are in \eref{gest_7} and \eref{gest_8}. It's safe to skip to them, if you like.
 
 %The model is defined as follows.
-Imagine a system of $K$ spins, whose $\N=2^K$ energy levels are iid normal random energies, $E\xi_\gi$. This is a very simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated that we ``give up'' and model its energy levels as realisations of a random variable.
+Imagine a system of $K$ spins, whose $\N=2^K$ energy levels are iid normal random energies, $E\xi_\gi$, for some constant, $E$. This is a very simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated that we ``give up'' and model its energy levels as realisations of a random variable.
 %(We denote the number of spins by $K$ and the number of resulting energy levels by $\N$, while Derrida uses $\N$ for the number of spins).
 
 The partition function is a sum of lognormal variates,
@@ -535,7 +544,7 @@ The partition function is a sum of lognormal variates,
 \mZ(\N,T) = \sum_{\gi=1}^{\N} \exp\left(\frac{E\xi_\gi}{T}\right),
 \elabel{Z}
 \ee
-where $T$ is the temperature and $E$ is the energy scale parameter. $E \propto K^{1/2}$ to ensure an extensive thermodynamic limit \cite[p.~79]{Derrida1980}. 
+where $T$ is the temperature and the energy parameter depends on the number of spins like $E \propto K^{1/2}$ to ensure an extensive thermodynamic limit \cite[p.~79]{Derrida1980}. 
 
 The free energy is
 \be
@@ -547,25 +556,21 @@ Derrida studied the expectation value of the free energy,
 \be
 \ave{\mF} = -T\ave{\ln\mZ},
 \ee
-which is the ensemble average over all possible realisations of the partition function, \ie over all possible sets of $\N$ lognormal variates. He found a critical temperature, $T_c$, and expressions for $\ave{\mF}$ valid in the high ($T>T_c$) and low ($T<T_c$) temperature regimes of the model.
+which is the ensemble average over all possible realisations of the partition function, \ie over all possible samples of $\N$ lognormal variates. He found a critical temperature, $T_c$, and expressions for $\ave{\mF}$ valid in the high ($T>T_c$) and low ($T<T_c$) temperature regimes of the model.
 
-Although we won't write them down here, nor go through their derivation, these expressions for $\ave{\mF}$ are useful to us.\footnote{If you are interested in the derivation, Derrida's original papers \cite{Derrida1980,Derrida1981} are less impenetrable than most. If you are still stuck, the random energy model appears in many statistical physics courses and good notes can be found by searching online.} We doubt it escaped your attention that the partition function, $\mZ(\N,T)$, is the same type of mathematical object as $Z(\N,t)$ in \eref{PEA_Z}, \ie a sum of lognormal variates. Therefore, Derrida's results about $\mZ$ provide analogous results about $Z$. All we need to do is map from the parameters of the random energy model to those of \GBM. This a slightly tedious algebraic exercise which we won't reproduce. Instead we will just write down the results for $Z$,
-\be
-\ave{\ln Z(\N,t)} =
-\begin{cases}
-\ln\N + \frac{\gsigma^2 t}{2}, & 0 < t < t_c, \\
-\sqrt{2 \ln\N \gsigma^2 t}, & t > t_c,
-\end{cases}
-\elabel{ln_Z}
-\ee
+Although we won't derive them here, these expressions for $\ave{\mF}$ (which are, in effect, expressions for $\ave{\ln\mZ}$) are useful for us.\footnote{If you are interested in the derivation, Derrida's original papers \cite{Derrida1980,Derrida1981} are more penetrable than most. If you are still stuck, the random energy model is taught in many statistical physics courses and good notes can be found by searching online.} $\mZ(\N,T)$, is the same type of mathematical object as $Z(\N,\t)$ in \eref{PEA_Z}, namely a sum of lognormal variates. Therefore, Derrida's results about $\mZ$ provide analogous results about $Z$. All we need to do is map from the parameters of the random energy model to those of \GBM, a therapeutic algebraic exercise which results in
+\bea
+\ave{\ln Z(\N,\t)} = \ln\N + \frac{\gsigma^2 \t}{2} &\text{ if }& 0 < \t < \tc, \elabel{ln_Z_short}\\
+\ave{\ln Z(\N,\t)} = \sqrt{2 \ln\N} \gsigma \t^{1/2} &\text{ if }& \t > \tc, \elabel{ln_Z_long}
+\eea
 where
 \be
-t_c = \frac{2\ln\N}{\gsigma^2}
+\tc = \frac{2\ln\N}{\gsigma^2}
 \elabel{t_c}
 \ee
-is the critical time scale delineating the short-time ($t<t_c$) and long-time ($t>t_c$) regimes of the model. These correspond respectively to the high-temperature ($T>T_c$) and low-temperature ($T<T_c$) phases of Derrida's model.
+is the critical time scale, delineating the short-time ($\t<\tc$) and long-time ($\t>\tc$) regimes of the model. These correspond respectively to the high-temperature ($T>T_c$) and low-temperature ($T<T_c$) phases of Derrida's model.
 
-Note that $t_c$ in \eref{t_c} scales identically with $\N$ and $\gsigma$ as the transition time in \eref{short_t}. So the simple, hand-waving arguments we made earlier about finite populations in \GBM were consistent with a careful analysis from statistical physics. That's always nice.
+Note that $\tc$ in \eref{t_c} scales identically with $\N$ and $\gsigma$ as the transition time in \eref{short_t}. So the simple, hand-waving arguments we made earlier about finite populations in \GBM were consistent with a careful analysis from statistical physics. That's always nice.
 
 \textbf{Simplify next parts...}
 
@@ -606,10 +611,10 @@ Note that $t_c$ in \eref{t_c} scales identically with $\N$ and $\gsigma$ as the 
 %\ee
 %above and below which the expected free energy scales differently with $T$ and $K$. This maps to a critical time scale in \GBM,
 %\be
-%\t_c = \frac{2\ln \N}{\gsigma^2},
+%\tc = \frac{2\ln \N}{\gsigma^2},
 %\elabel{t_c}
 %\ee
-%with high temperature ($T>T_c$) corresponding to short time ($\t<\t_c$) and low temperature ($T<T_c$) corresponding to long time ($\t>\t_c$).
+%with high temperature ($T>T_c$) corresponding to short time ($\t<\tc$) and low temperature ($T<T_c$) corresponding to long time ($\t>\tc$).
 
 %In \cite{Derrida1980}, $\ave{F}$ is computed for $T>T_c$ as
 %\be
@@ -690,7 +695,7 @@ Next, we turn to the expression for the long-time regime (low $T$, \eref{F_3}). 
 %{\bf \underline{Green line:}} median in a super-ensemble of $S$ samples of $\gest$, each estimated in sub-ensembles of size $\N$. 
 %{\bf \underline{Yellow line:}} An exact expression for $d\ave{\ln\ave{\x}_\N}$, derived using \Ito calculus, see \cite{PetersAdamou2018b}. We evaluate the expression by Monte Carlo, and integrate, $\ave{\ln\ave{\x}_\N}=\int_{0}^{\t} d\ave{\ln\ave{\x}_\N}$. Exponentiation yields the yellow line. 
 %{\bf \underline{Red line:}} short-time behavior, based on the random energy model, \eref{gest_7}.
-%{\bf \underline{Purple line:}} long-time behavior, based on the random energy model, \eref{gest_8}. {\bf \underline{Vertical line:}} Crossover between the regimes at $t_c=\frac{2\ln \N}{\gsigma^2}$, corresponding to $\beta_c=\frac{2(\ln 2)^{1/2}}{J}$.
+%{\bf \underline{Purple line:}} long-time behavior, based on the random energy model, \eref{gest_8}. {\bf \underline{Vertical line:}} Crossover between the regimes at $\tc=\frac{2\ln \N}{\gsigma^2}$, corresponding to $\beta_c=\frac{2(\ln 2)^{1/2}}{J}$.
 %{\bf \underline{Parameters:}} $\N=256$, $S=10,000$, $\gmu=0.05$, $\gsigma=\sqrt{0.2}$.}
 %\flabel{1}
 %\end{figure}
