@@ -117,7 +117,7 @@ time-translation invariant structure, for something ``timeless.''
  \put(-80,0){\includegraphics[width=.5\textwidth]{./chapter_riskless/figs/x_of_t_lin.pdf}}
 %\put(-60,60){A}
 \end{picture}
-\caption{\small Wealth in an additive growth process: the additive growth rate, $\D \x/\D\t$, always takes the same value, $\ggamma$, irrespective of when we measure it.}
+\caption{\small Wealth in an additive growth process: the additive growth rate, $\D \xd/\D\t$, always takes the same value, $\ggamma$, irrespective of when we measure it.}
 \flabel{x_of_t_lin}
 \end{SCfigure}
 
@@ -162,11 +162,22 @@ it's not time-translation invariant if $\xd$ is growing linearly in time, \eref{
 \elabel{exp_lin}
 \eea
 This depends on $\xd(\t)$ and, therefore, on $\t$, the time at which we started 
-measuring. It also depends on $\Dt$, how long we measured. If we used \eref{exp_lin} to characterise 
-the growth in described by \eref{linx}, we would find lots of contradictions. Some people 
+measuring, see \fref{ge_x_lin}. It also depends on $\Dt$, how long we measured. If we used \eref{exp_lin} to characterise 
+the growth described by \eref{linx}, we would find lots of contradictions. Some people 
 would say the growth is faster, others slower, simply because they measured it at different times or 
 for different periods. Thus the exponential growth rate does not extract the clock speed, $\ggamma$, from 
 linear growth: there's a mismatch between the process and the form of the rate.  
+
+\begin{SCfigure}
+\centering
+\begin{picture}(100,100)(0,0)
+ \put(-80,-15){\includegraphics[width=.5\textwidth]{./chapter_riskless/figs/ge_x_lin.pdf}}
+%\put(-60,60){A}
+\end{picture}
+\caption{\small Wealth in the same additive growth process as in \fref{x_of_t_lin}  but on logarithmic vertical scales. The exponential growth rate, $\D \ln\xd/\D\t$, depends on when we measure it. It is not an invariant quantity for this process.}
+\flabel{ge_x_lin}
+\end{SCfigure}
+
 
 But the exponential growth rate is commonly used, and for good reasons. Let's assume it's useful and then work backwards to find the process for which it's useful (we expect to find exponential growth). We require that \eref{exp_rate} yield a constant, let's call that $\ggamma$ again, irrespective of when we measure it.
 \be
