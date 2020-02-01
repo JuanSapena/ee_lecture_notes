@@ -1278,8 +1278,8 @@ This tells us one restriction: $\gv$ has to be invertible. In this section, we w
 do the mapping again, but using \Ito calculus, which will allows us to say more about
 the restrictions on $\gv$ and $\x$.
 
-We will also revisit the inequality \eref{exp_x_gen} and discover ageing -- a dependence 
-on $\t$ in its magnitude.
+We will also revisit the inequality between expected wealth and the corresponding unperturbed wealth, \eref{exp_x_gen}, and discover ageing -- a dependence 
+on $\t$ of the magnitude of this inequality.
 
 We start with the self-imposed restriction that wealth dynamics are an \Ito process, 
 which you may remember from \eref{Ito_process} in \secref{Ito}. We will further restrict 
@@ -1330,7 +1330,7 @@ We have thus shown that
 For any invertible ergodicity transformation $\gv(\x)$ a class of corresponding
 wealth processes $\gd\x$ can be obtained such that the rate of
 change (\ie the additive growth rate) in the expectation value of net changes 
-in utility is the time-average growth rate of wealth.
+in transformed wealth is the time-average growth rate of wealth.
 \end{keypts}
 Optimising the expected changes of the ergodicity transformation, $\ave{\D\gv}$,
 is equivalent to optimising time-average wealth growth for the
@@ -1344,8 +1344,8 @@ and such processes are likely to be pathological.
 
 In the language of utility theory, every invertible utility 
 function is an encoding of a wealth dynamic. Under that dynamic, behaving according to the
-corresponding utility function is optimal over time. The dynamic arises as utility -- or rather: $\gv$ -- performs
-Brownian motion, and wealth is the transformation $\gv^{(-1)}(\gv(\t))$. 
+corresponding utility function is optimal over time. The dynamic arises as utility -- or rather: transformed wealth, $\gv$ -- performs
+Brownian motion, and wealth itself is obtained from the inverse ergodicity transformation, $\gv^{(-1)}(\gv(\t))$. 
 
 \Eref{dx}, creates the now familiar pairs of ergodicity transformations (utility functions) $\gv(\x)$ and dynamics
 $\gd\x$. Below we state the two familiar examples and work out a third one to illustrate the generality and
@@ -1372,7 +1372,7 @@ function $\gu(\x)=\x^{1/2}$, by Cramer in a 1728 letter to Daniel Bernoulli,
 partially reproduced in \cite{Bernoulli1738}. What would be the dynamic 
 under which it is optimal to behave according to this utility function? In 
 other words, what $\gd\x$ corresponds to the ergodicity transformation $\gv(\x)=\x^{1/2}$?
-This case will display ageing -- a new phenomenon that we haven't encountered yet. So we'll got through it slowly.
+This case will display ageing -- a new phenomenon that we haven't encountered yet. So we'll go through it slowly.
 
 The square-root function is invertible, namely $\x(\gv)=\gv^2$, and this inverse is twice-differentiable.
 So we can use \eref{dx}. 
