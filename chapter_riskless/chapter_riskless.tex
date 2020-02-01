@@ -57,7 +57,7 @@ People optimize the growth rate of their wealth.
 
 Without discussing why people might do this, let's step into the world created by this axiom. To do that, we need to be crystal clear about what a growth rate is, so we'll discuss that first, in \secref{Growth_rates}. Traditionally, decision theory deals with an uncertain future: we have to decide on
 a course of action now although we don't know with certainty what will happen to us in the future under any
-of our choices. We will systematically work our way towards this setup, beginning with trivial decisions where neither time nor uncertainty matters \secref{Different_magnitudes}, next introducing time \secref{Different_magnitudes_and} (where we will shed light on what's called ``discounting''). In the next chapter we will introduce uncertainty, see \secref{Decisions_in_an} (where we will shed light on what's called ``expected utility theory'').
+of our choices. We will systematically work our way towards this setup, beginning with trivial decisions where neither time nor uncertainty matters \secref{Different_magnitudes}, next introducing time \secref{Different_magnitudes_and} (where we will shed light on what's called ``discounting''). In the next chapter we will introduce uncertainty, see \cref{Risky} (where we will shed light on what's called ``expected utility theory'').
 
 %
 \section{Growth rates\seclabel{Growth_rates}}
@@ -106,10 +106,20 @@ then this is a very informative quantity. We'll now state carefully why it is in
 
 The additive growth rate \eref{add_rate} is informative of how fast $\xd$ grows under additive 
 dynamics \eref{linx} because in this case the $\t$-dependence drops out: we can measure 
-$\gad$ whenever we want, and we'll always get the same value, $\gad=\ggamma$. Not to get 
+$\gad$ whenever we want, and we'll always get the same value, $\gad=\ggamma$, \fref{x_of_t_lin}. Not to get 
 too philosophical about it, but this kind of time-translation invariance (fancy word) is a key 
 concept in science: the search for laws is the search for universal structure -- especially for 
 time-translation invariant structure, for something ``timeless.''
+
+\begin{SCfigure}
+\centering
+\begin{picture}(100,80)(0,0)
+ \put(-80,0){\includegraphics[width=.5\textwidth]{./chapter_riskless/figs/x_of_t_lin.pdf}}
+%\put(-60,60){A}
+\end{picture}
+\caption{\small Wealth in an additive growth process: the additive growth rate, $\D \x/\D\t$, always takes the same value, $\ggamma$, irrespective of when we measure it. That's because in any time interval, $\D\x$, the increase in $\xd$, namely $\D\xd$ is identical.}
+\flabel{x_of_t_lin}
+\end{SCfigure}
 
 Let's re-write the linear dynamic \eref{linx} in differential form
 \be
@@ -142,7 +152,7 @@ growth we have to be quite careful before we can use them as clocks, i.e. before
 their growth rates.
 
 \subsection{Exponential growth rate\seclabel{exp_rate}}
-Now what about the exponential growth rate, \eref{exp_rate}? This first thing to notice is that 
+Now what about the exponential growth rate, \eref{exp_rate}? The first thing to notice is that 
 it's not time-translation invariant if $\xd$ is growing linearly in time, \eref{linx}. Substituting \eref{linx} in 
 \eref{exp_rate} gives
 \bea
@@ -152,13 +162,24 @@ it's not time-translation invariant if $\xd$ is growing linearly in time, \eref{
 \elabel{exp_lin}
 \eea
 This depends on $\xd(\t)$ and, therefore, on $\t$, the time at which we started 
-measuring. It also depends on $\Dt$, how long we measured. If we used \eref{exp_lin} to characterise 
-the growth in described by \eref{linx}, we would find lots of contradictions. Some people 
+measuring, see \fref{ge_x_lin}. It also depends on $\Dt$, how long we measured. If we used \eref{exp_lin} to characterise 
+the growth described by \eref{linx}, we would find lots of contradictions. Some people 
 would say the growth is faster, others slower, simply because they measured it at different times or 
 for different periods. Thus the exponential growth rate does not extract the clock speed, $\ggamma$, from 
 linear growth: there's a mismatch between the process and the form of the rate.  
 
-The exponential growth rate is commonly used here, and for good reasons. Let's assume it's useful and then work backwards to find the process for which it's useful (we expect to find exponential growth). We require that \eref{exp_rate} yield a constant, let's call that $\ggamma$ again, irrespective of when we measure it.
+\begin{SCfigure}
+\centering
+\begin{picture}(100,100)(0,0)
+ \put(-80,-15){\includegraphics[width=.5\textwidth]{./chapter_riskless/figs/ge_x_lin.pdf}}
+%\put(-60,60){A}
+\end{picture}
+\caption{\small Wealth in the same additive growth process as in \fref{x_of_t_lin}  but on logarithmic vertical scales. The exponential growth rate, $\D \ln\xd/\D\t$, depends on when we measure it. It is not an invariant quantity for this process.}
+\flabel{ge_x_lin}
+\end{SCfigure}
+
+
+But the exponential growth rate is commonly used, and for good reasons. Let's assume it's useful and then work backwards to find the process for which it's useful (we expect to find exponential growth). We require that \eref{exp_rate} yield a constant, let's call that $\ggamma$ again, irrespective of when we measure it.
 \be
  \gexp=\frac{\D \ln \xd}{\Dt}=\ggamma,
 \ee
@@ -194,14 +215,14 @@ every time interval (measured on the standard clock, of course -- Earth or caesi
 
 \subsection{General growth rate\seclabel{gen_rate}}
 
-Finally let's be more ambitious and posit a general process, $\xd(\t)$, of which we assume only that it grows according to a dynamic that can be written down as a separable differential equation. We could be even more general, but this is bad enough.
+Finally let's be more ambitious and posit a general process, $\xd(\t)$, of which we assume only that it grows according to a dynamic that can be written down as a separable differential equation. 
 
 How do we define a growth rate now?
 
 Well, as in \secref{exp_rate}, we insist that the thing we're measuring will be a clock speed, \ie a 
 time-independent rescaling of time. We enforce this by writing down the dynamic in differential 
 form, containing the growth rate, $\g$, as a time rescaling factor. Then we'll work backwards and solve 
-for $\g$.
+for the functional form of $\g$.
 
 \be
 \gd\xd=\gf(\xd) \gd(\g \t)
@@ -238,7 +259,7 @@ This doesn't quite look like our stated aim: the general expression for a growth
 %We want to know how fast the non-linear monotonic function $\x(\t)$ grows, and we want our answer to be independent of $\t$.... hmmm... If $\x(\t)$ grows monotonically in time, then so will any monotonically increasing function $\gv(\x)$. This allows us more freedom: perhaps we can find a $\gv(\x)$ such that $\frac{\D\gv(\x)}{\Dt}$ is constant.
 
 
-But there's a simpler way of finding the transformation $\gv(\xd)$ that doesn't involve integrals and differential equations. Let $\xd(\t)$ be whatever function it wants, provided it is invertible. In other words, each value of $\t$ corresponds to a unique value of $\xd$ and \textit{vice versa}. In economics, we often think about quantities which grow over time, so we will treat $\xd(\t)$ and its inverse as monotonically increasing functions. (When we want to model a decaying quantity, we can use a negative rate parameter, \ie make the clock go backwards.)
+But there's a simpler way of finding the transformation $\gv(\xd)$ that doesn't involve integrals and differential equations. Let $\xd(\t)$ be whatever function it wants, provided it is invertible. In other words, each value of $\t$ corresponds to a unique value of $\xd$ and \textit{vice versa}. In economics, we often think about quantities which grow over time, so we will treat $\xd(\t)$ and its inverse as monotonically increasing functions (when we want to model a decaying quantity, we can use a negative rate parameter).
 
 We know one transformation of $\xd(\t)$ that's linear in time, namely the inverse function of $\xd(\t)$, which we denote 
 \be
@@ -412,8 +433,7 @@ times? This is already a far more complex situation, where the decision criterio
 of the dynamic. It will shed light on what's called ``discounting.'' 
 
 In the next chapter, \cref{Risky}, we will add fluctuations, noise, uncertainty: what if the 
-model human doesn't know the magnitude (or time) of the payments with certainty? But for now, 
-everything will be perfectly known.
+model human doesn't know the magnitude (or time) of the payments with certainty? But for now, though, everything will be perfectly known.
 
 \subsection{Different magnitudes\seclabel{Different_magnitudes}}
 I'm off to the bank to withdraw some money for you. I offer to give you either
@@ -486,7 +506,7 @@ An interesting feature of optimizing additive growth rates is what's called ``pr
 \flabel{hyp_disc}
 \end{figure}
 
-You may wonder why someone might model wealth as an additive process. Here is one possibility: if wealth is mostly affected by income and expenses then it will be described by an additive dynamic. Imagine you have a monthly salary of $\$1,000$, and you spend $\$900$ every month on all your expenses. So long as any investment income, like interest payments \etc, is negligible, your wealth will follow \eref{linx} with $\gamma=\$100$ per month.
+You may wonder why someone might model wealth as an additive process. Here is one possibility: if wealth is mostly affected by income and expenses then an additive dynamic may be a good description. Imagine you have a monthly salary of $\$1,000$, and you spend $\$900$ every month on all your expenses. So long as any investment income, like interest payments \etc, is negligible, your wealth will follow \eref{linx} with $\gamma=\$100$ per month.
 
 \subsubsection{Discounting under multiplicative dynamics}
 
@@ -515,7 +535,7 @@ But if your initial wealth is \$1, then $\gm^{(1)}\approx 2,877\%$ p.a., $\gm^{(
 \flabel{hyp_disc}
 \end{figure}
 
-Notice how the poorer decision maker seems to be more impatient, despite his use of the exact same decision axiom. Using $\gv(\xd)=\ln(\xd)$ in \eref{gen_rate} is related to what's called ``exponential discounting'' in the economics literature \cite{AdamouETAL2019}. The word ``exponential'' is there because we're discounting under multiplicative dynamics (which means exponential growth), and the logarithm is the inverse function of the exponential, which we need to define the appropriate growth rate, see \eref{g_inv}.
+Notice how the poorer decision maker seems to be less patient, despite his use of the exact same decision axiom. Using $\gv(\xd)=\ln(\xd)$ in \eref{gen_rate} is related to what's called ``exponential discounting'' in the economics literature \cite{AdamouETAL2019}. The word ``exponential'' is there because we're discounting under multiplicative dynamics (which means exponential growth), and the logarithm is the inverse function of the exponential, which we need to define the appropriate growth rate, see \eref{g_inv}.
 
 Again, let's ask why one might want to model wealth as a multiplicative process. Multiplicative processes have the property that how much you gain tomorrow is proportional to how much you currently have. Increases in wealth are proportional to wealth -- this multiplicative property is virtually ubiquitous in Nature. You can imagine many reasons why it applies to wealth. For instance, wealth can be invested in interest-paying bonds. Or it can be invested in oneself: I may pay for a roof over my head, which transforms my life and earning potential from that of someone living on the streets to that of someone with a home address. Similarly, I can invest in my health and education. 
 In Nature, multiplicativity and exponential growth occurs whenever something lives. That's because the most successful definition we have of life is ``that which self-reproduces,'' and self-reproduction implies multiplicative growth.

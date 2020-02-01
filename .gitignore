@@ -11,3 +11,5 @@
 *.log
 *.gz(busy)
 *.out
+main.aux
+main.aux
