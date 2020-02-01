@@ -5,10 +5,9 @@ Created on Fri Apr 13 10:54:25 2018
 
 @author: obp48
 """
-import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
-import math 
+import scipy
+import matplotlib.pyplot as plt
 from datetime import datetime
 
 
@@ -47,16 +46,16 @@ plt.plot(t,x,'b', label=r'')
 
 plt.plot([1.5,3.5],[wealth(1.5),wealth(1.5)],color='k',linestyle='--',linewidth=2)
 plt.plot([3.5,3.5],[wealth(1.5),wealth(3.5)],color='k',linestyle='--',linewidth=2)
-plt.annotate(s=r'$\Delta t$',xy=(0.,.2),xytext=(1.5+1,wealth(1.5)-1*17))
-plt.annotate(s=r'$\Delta x$',xy=(0.,.2),xytext=(3.5+.2,wealth(3.5)-1*17))
+plt.annotate(s=r'$\Delta t$',xy=(0.,20),xytext=(1.5+.9,wealth(1.5)-.5*17))
+plt.annotate(s=r'$\Delta \ln x$',xy=(0.,20),xytext=(3.5+.1,wealth(3.5)-1.5*17))
 
 plt.plot([5.5,7.5],[wealth(5.5),wealth(5.5)],color='k',linestyle='--',linewidth=2)
 plt.plot([7.5,7.5],[wealth(5.5),wealth(7.5)],color='k',linestyle='--',linewidth=2)
-plt.annotate(s=r'$\Delta t$',xy=(0.,.2),xytext=(5.5+1,wealth(5.5)-1*17))
-plt.annotate(s=r'$\Delta x$',xy=(0.,.2),xytext=(7.5+.2,wealth(7.5)-1*17))
+plt.annotate(s=r'$\Delta t$',xy=(0.,2),xytext=(5.5+.9,wealth(5.5)-1.5*17))
+plt.annotate(s=r'$\Delta \ln x$',xy=(0.,2),xytext=(7.5+.2,wealth(7.5)-1.8*17))
 
-plt.annotate(s='',xy=(4.,wealth(4)-17*.5),xytext=(5.5,wealth(5.5)-17*.5),\
-             arrowprops=dict(facecolor='black',arrowstyle='<->'))
+plt.annotate(s='',xy=(1.7,wealth(1.57)),xytext=(5.3,wealth(5.4)*.93),\
+             arrowprops=dict(facecolor='red',arrowstyle='<-',color='red'))
 
 
 #plt.plot([2,2],[0,1.7],color='#0000FF',linewidth=2)
@@ -91,9 +90,9 @@ plt.annotate(s='',xy=(4.,wealth(4)-17*.5),xytext=(5.5,wealth(5.5)-17*.5),\
 
 plt.gca().spines['right'].set_color('none')
 plt.gca().spines['top'].set_color('none')
-plt.gca().spines['bottom'].set_position('zero')
+#plt.gca().spines['bottom'].set_position('zero')
 
-#plt.yscale('log')
+plt.yscale('log')
 #plt.legend()
 plt.xlabel('time $t$')
 plt.ylabel('wealth $x$')
@@ -106,5 +105,5 @@ plt.ylabel('wealth $x$')
 #           ['1',r'$10^{10}$',r'$10^{20}$',r'$10^{30}$',\
 #            r'$10^{40}$'], rotation=0)
 
-plt.savefig("./../x_of_t_lin.pdf", bbox_inches='tight')
+plt.savefig("./../ge_x_lin.pdf", bbox_inches='tight')
 plt.show()
