@@ -22,9 +22,9 @@
 \contentsline {subsection}{\numberline {3.3.1}Additive growth rate}{44}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Exponential growth rate}{45}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}General growth rate}{47}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Decisions in a deterministic world}{48}{section.3.4}
+\contentsline {section}{\numberline {3.4}Decisions in a deterministic world}{49}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Different magnitudes}{49}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Different magnitudes and times: discounting}{49}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Different magnitudes and times: discounting}{50}{subsection.3.4.2}
 \contentsline {subsubsection}{Discounting under additive dynamics}{50}{section*.4}
 \contentsline {subsubsection}{Discounting under multiplicative dynamics}{51}{section*.5}
 \contentsline {chapter}{\numberline {4}Decisions in a risky world}{53}{chapter.4}
@@ -39,15 +39,15 @@
 \contentsline {subsection}{\numberline {4.4.2}Repeated gamble: towards a wealth process}{62}{subsection.4.4.2}
 \contentsline {subsubsection}{Additive repetition}{62}{section*.6}
 \contentsline {subsubsection}{Multiplicative repetition}{63}{section*.7}
-\contentsline {subsection}{\numberline {4.4.3}Expected wealth and expected utility}{64}{subsection.4.4.3}
-\contentsline {subsubsection}{Expected wealth}{64}{section*.8}
+\contentsline {subsection}{\numberline {4.4.3}Expected wealth and expected utility}{65}{subsection.4.4.3}
+\contentsline {subsubsection}{Expected wealth}{65}{section*.8}
 \contentsline {subsubsection}{Expected utility}{66}{section*.9}
 \contentsline {section}{\numberline {4.5}From ergodicity transformation to dynamic and back -- It\^{o}\xspace }{68}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}It\^{o}\xspace setup}{68}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}From ergodicity transformation to wealth process}{68}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.2}From ergodicity transformation to wealth process}{69}{subsection.4.5.2}
 \contentsline {subsubsection}{Examples}{69}{section*.10}
 \contentsline {subsection}{\numberline {4.5.3}From wealth process to ergodicity transformation}{71}{subsection.4.5.3}
-\contentsline {subsubsection}{Example: a curious-looking dynamic}{72}{section*.11}
+\contentsline {subsubsection}{Example: a curious-looking dynamic}{73}{section*.11}
 \contentsline {chapter}{\numberline {5}Decisions in the real world}{75}{chapter.5}
 \contentsline {section}{\numberline {5.1}The St. Petersburg paradox}{75}{section.5.1}
 \contentsline {section}{\numberline {5.2}The Copenhagen experiment}{78}{section.5.2}

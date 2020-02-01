@@ -71,5 +71,5 @@ plt.ylabel('wealth')
 #            r'$10^{40}$'], rotation=0)
 
 
-plt.savefig("./../add_noise_exp_growth_b.pdf", bbox_inches='tight')
+#plt.savefig("./../add_noise_exp_growth_b.pdf", bbox_inches='tight')
 plt.show()
