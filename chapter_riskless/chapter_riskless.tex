@@ -69,7 +69,7 @@ You may have wondered why both
 \ee
  and 
 \be
-\gexp= \frac{\ln \xd(\t+\Dt)-\ln \xd(\t)}{\Dt}
+\gm= \frac{\ln \xd(\t+\Dt)-\ln \xd(\t)}{\Dt}
 \elabel{exp_rate}
 \ee
 are sometimes called a growth rate -- they're different objects, why the same name? By the end of this section, the answer to this question should be clear.
@@ -156,7 +156,7 @@ Now what about the exponential growth rate, \eref{exp_rate}? The first thing to 
 it's not time-translation invariant if $\xd$ is growing linearly in time, \eref{linx}. Substituting \eref{linx} in 
 \eref{exp_rate} gives
 \bea
-\gexp&=& \frac{\ln \xd(\t+\Dt)-\ln \xd(\t)}{\Dt}\\
+\gm&=& \frac{\ln \xd(\t+\Dt)-\ln \xd(\t)}{\Dt}\\
 &=&\frac{\ln \left[\xd(\t)+\ggamma \Dt\right]-\ln \xd(\t)}{\Dt}\\
 &=&\frac{\ln \left(1+\frac{\ggamma \Dt}{\xd(\t)}\right)}{\Dt}.
 \elabel{exp_lin}
@@ -181,7 +181,7 @@ linear growth: there's a mismatch between the process and the form of the rate.
 
 But the exponential growth rate is commonly used, and for good reasons. Let's assume it's useful and then work backwards to find the process for which it's useful (we expect to find exponential growth). We require that \eref{exp_rate} yield a constant, let's call that $\ggamma$ again, irrespective of when we measure it.
 \be
- \gexp=\frac{\D \ln \xd}{\Dt}=\ggamma,
+ \gm=\frac{\D \ln \xd}{\Dt}=\ggamma,
 \ee
 or
 \be
