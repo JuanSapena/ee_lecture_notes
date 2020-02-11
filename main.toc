@@ -33,11 +33,11 @@
 \contentsline {subsection}{\numberline {4.1.2}Perturbed multiplicative dynamics}{55}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}Perturbed general dynamics}{56}{subsection.4.1.3}
 \contentsline {section}{\numberline {4.2}The appropriate growth rate is ergodic}{57}{section.4.2}
-\contentsline {section}{\numberline {4.3}Ergodicity economics decision algorithm}{58}{section.4.3}
+\contentsline {section}{\numberline {4.3}Ergodicity economics decision algorithm}{59}{section.4.3}
 \contentsline {section}{\numberline {4.4}Relation to earlier economic theories }{59}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Gamble: random number and duration}{59}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}Gamble: random number and duration}{60}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Repeated gamble: towards a wealth process}{62}{subsection.4.4.2}
-\contentsline {subsubsection}{Additive repetition}{62}{section*.6}
+\contentsline {subsubsection}{Additive repetition}{63}{section*.6}
 \contentsline {subsubsection}{Multiplicative repetition}{63}{section*.7}
 \contentsline {subsection}{\numberline {4.4.3}Expected wealth and expected utility}{65}{subsection.4.4.3}
 \contentsline {subsubsection}{Expected wealth}{65}{section*.8}

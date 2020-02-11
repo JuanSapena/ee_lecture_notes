@@ -246,6 +246,19 @@ Because the expectation value is misleadingly large, it makes perfect sense to b
 in the long run, the risk-free process -- by Jensen's inequality above -- is guaranteed to outperform 
 the risky one.
 
+\begin{figure}
+\centering
+\begin{picture}(200,200)(0,0)
+ \put(-80,120){\includegraphics[width=.47\textwidth]{./chapter_risky/figs/concave_v1.pdf}}
+ \put(110,120){\includegraphics[width=.47\textwidth]{./chapter_risky/figs/concave_v05.pdf}}
+ \put(-80,0){\includegraphics[width=.47\textwidth]{./chapter_risky/figs/concave_v025.pdf}}
+ \put(110,0){\includegraphics[width=.47\textwidth]{./chapter_risky/figs/concave_v0125.pdf}}
+\end{picture}
+\caption{\small Zero-noise trajectories (blue) and ensemble averages (yellow) for dynamics with increasingly concave $\gv(\x)=\x^{\alpha}$ (with $\alpha$ decreasing from 1 to 0.125, from top left clockwise). As the concavity of $\gv(\x)$ increases, the ensemble average becomes increasingly misleading: it is greater than the noiseless growth rate, which explains what economists call ``risk aversion.''}
+\flabel{concave_v}
+\end{figure}
+
+
 \section{The appropriate growth rate is ergodic}
 
 \Eref{gen_rate} defines deterministic dynamics by specifying a growth rate. Knowledge of the growth 
@@ -1624,8 +1637,8 @@ plotted in \fref{u_of_x}.
 \begin{figure}
 \centering
 \begin{picture}(200,110)(0,0)
- \put(-80,0){\includegraphics[width=.47\textwidth]{./chapter_riskless/figs/u_of_x.pdf}}
- \put(110,0){\includegraphics[width=.47\textwidth]{./chapter_riskless/figs/x_of_u.pdf}}
+ \put(-80,0){\includegraphics[width=.47\textwidth]{./chapter_risky/figs/u_of_x.pdf}}
+ \put(110,0){\includegraphics[width=.47\textwidth]{./chapter_risky/figs/x_of_u.pdf}}
 \end{picture}
 \caption{\small The exponential ergodicity transformation (or utility) $\gv(\x)$, \eref{test_dyn_u} with $\bv=1$ and $C=1$, is monotonic and unbounded and therefore invertible.
 Left panel: $\gv(\x)$. Right panel: inverse $\x(\gv)$.}
