@@ -782,7 +782,7 @@ correspond to different dynamics.}
 \subsubsection{Additive repetition}
 \begin{defn}{Additive repetition}
 If a gamble is repeated additively, then a newly generated realization of the random 
-payout, $\q$, is added to $\x(\t)$ in each round. We define the change in wealth 
+payout, $\q$, is {\it added} to $\x(\t)$ in each round. We define the change in wealth 
 occurring over a single round as
 \be
 \d \x(\t) \equiv \x(\t+\dt)-\x(\t).
@@ -793,7 +793,7 @@ In the additive case, we have
 \d\x(\t) = \q.
 \elabel{DW_add}
 \ee
-In other words, under additive repetition, $\d \x$ is a stationary 
+Under additive repetition, $\d \x$ is a stationary 
 random variable, meaning the ergodicity transformation is the identity, 
 $\gv(\x)=\x$, and we're in the case of additive dynamics.
 %\footnote{This seemingly mundane corollary stems 
@@ -810,6 +810,12 @@ after $\T$ rounds is
 where $\q(\gtau)$ is the realisation of the random variable in round $\gtau$. 
 This is an evolution equation for wealth following a noisy additive dynamic. 
 Note that $\x(\tn+\T\dt)$ is itself a random variable.
+
+The additive growth rate is ergodic, and its expectation value
+\be
+\frac{\ave{\d\x}}{\dt}
+\ee
+is the time-average growth rate under this mode of repetition.
 \end{defn}
 
 
@@ -840,8 +846,8 @@ in general, will be a different monetary amount.
 The formalism is as follows. 
 \begin{defn}{Mulitplicative repetition}
 
-The payout, $\q_{\gj}$, in the first round is 
-expressed as a random wealth multiplier,
+If a gamble is repeated multiplicatively, then the payout, $\q_{\gj}$, is 
+expressed as a random wealth multiplier in the first round,
 \be
 \gr_{\gj} \equiv \frac{\x(\tn)+\q_{\gj}}{\x(\tn)}.
 \elabel{R_def}
@@ -858,7 +864,11 @@ $\x(\t)$ accordingly.
 %\x(\t+\dt) = \gr(\t)\x(\t).
 %\ee
 %In each round of the gamble, 
-Wealth after $\T$ rounds of the multiplicatively repeated gamble is
+Under multiplicative repetition, $\d \ln \x$ is a stationary random variable, 
+the ergodicity transformation is $\gv(\x)=\ln \x$, and we're in the case 
+of multiplicative dynamics.
+
+Starting at time $\tn$, wealth after $\T$ rounds is
 \be
 \x(\tn+\T\dt) = \x(\tn)\prod_{\gtau=1}^\T \gr(\gtau),
 \ee
@@ -872,8 +882,7 @@ where $\gr(\gtau)$ is the realisation of the random multiplier in round $\gtau$.
 %\elabel{DW_mult_short}
 %\ee
 %are not time-independent, as they depend on $\t$ through $\x(\t)$. 
-The ergodicity transformation is now $\gv(\x)=\ln\x$, by which we mean that logarithmic wealth 
-changes, $\d\ln\x$, are stationary. The exponential growth rate is ergodic, and its expectation value
+The exponential growth rate is ergodic, and its expectation value
 \be
 \frac{\ave{\d\ln\x}}{\dt}
 \ee
@@ -1324,7 +1333,7 @@ as $\x=\gv^{(-1)}(\ggamma \t+\gsigma \gW(\t))$.
 \Ito's formula allows us to write $\gd\x$ in terms of the coefficient functions 
 of $\gd \gv$ in \eref{dv} as follows
 \be
-\gd\x = \underbrace{\left(\frac{\partial \x}{\partial \t}+\av \frac{\partial \x}{\partial \gv} + \frac{1}{2}\bv^2\frac{\partial^2 \x}{\partial \gv^2}\right)}_{\ax(\x)}\gd\t + \underbrace{\bv \frac{\partial \x}{\partial \gv}}_{\bx(\x)} \gd\gW
+\gd\x = \underbrace{\left(\av \frac{\partial \x}{\partial \gv} + \frac{1}{2}\bv^2\frac{\partial^2 \x}{\partial \gv^2}\right)}_{\ax(\x)}\gd\t + \underbrace{\bv \frac{\partial \x}{\partial \gv}}_{\bx(\x)} \gd\gW
 \elabel{dx}
 \ee
 This expression involves partial derivatives of $\x(\gv)$, \ie of the inverse function of $\gv$ 
