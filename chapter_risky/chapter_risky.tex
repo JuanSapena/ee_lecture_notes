@@ -1327,7 +1327,7 @@ a Brownian motion with drift, which is another \Ito process, namely
 \eea
 
 
-\subsection{From ergodicity transformation to wealth process}
+\subsection{From ergodicity transformation to wealth process \seclabel{from_ergo}}
 Previously, we wrote $\x$ in terms of the inverse function of $\gv$
 as $\x=\gv^{(-1)}(\ggamma \t+\gsigma \gW(\t))$.
 \Ito's formula allows us to write $\gd\x$ in terms of the coefficient functions 
@@ -1435,17 +1435,17 @@ To compare this to the growth rate of the expectation value, we compute
 $\ave{\x}$ as follows. Take the expectation value of \eref{dx_in_v}
 \bea
 \ave{\gd\x}&=&(2\ggamma \ave{\gv} + \gsigma^2) \gd\t \\
-&=& (2\ggamma \t + \gsigma^2) \gd\t
+&=& (2\ggamma^2 \t + \gsigma^2) \gd\t
 \eea
 This can be integrated to yield
 \be
-\ave{\x}=\ggamma \t^2 + \gsigma^2 \t + \ave{\x(0)}
+\ave{\x}=\ggamma^2 \t^2 + \gsigma^2 \t + \ave{\x(0)}
 \ee
 and we find its growth rate by differentiating, 
 \bea
-\frac{\gd\gv\ave{\x}}{\gd\t}&=&\frac{\partial \gv(\ave{\x})}{\partial \ave{ \x}} \times \frac{\gd{\ave{\x}}}{\gd\t}\\
+\frac{\gd\gv(\ave{\x})}{\gd\t}&=&\frac{\partial \gv(\ave{\x})}{\partial \ave{ \x}} \times \frac{\gd{\ave{\x}}}{\gd\t}\\
 &=&\frac{1}{2}\ave{\x}^{-1/2}(2\ggamma \t + \gsigma^2)\\
-&=&\frac{(\ggamma^2 \t + \frac{1}{2} \gsigma^2)}{(\ggamma^2\t^2+\gsigma^2\t)^{1/2}}
+&=&\frac{(\ggamma^2 \t + \frac{1}{2} \gsigma^2)}{(\ggamma^2\t^2+\gsigma^2\t+\ave{\x(0)})^{1/2}}
 \eea
 The first thing to notice here is that the expectation-value growth rate, appropriately defined, is not constant
 but depends on when we measure it! This is what is meant by ``ageing:'' the system, the dynamic itself,
@@ -1684,9 +1684,9 @@ in this space, but we'd like to get on to real-world applications. Before we do 
 can't help ourselves but to hint at another instructive example, which we invite the 
 reader to explore. Auto-elastic ergodicity transformations of the form
 \be
-\gv(\x)=\frac{x^{1-\eta}-1}{1-\eta}.
+\gv(\x)=\frac{\x^{1-\gbeta}-1}{1-\gbeta}.
 \ee
-These can be concave or convex, depending on the parameter $\eta$. For $\eta>1$
+These can be concave or convex, depending on the parameter $\gbeta$. For $\gbeta>1$
 they are bounded, and that leads to curious problems. Because $\gv(\x)$ is bounded, 
 no matter how large $\x$ becomes, some values of $\gv(\x)$ cannot occur. 
 At the same time, our framework assumes that $\gv(\t)$
