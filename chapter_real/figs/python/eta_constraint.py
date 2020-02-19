@@ -21,7 +21,7 @@ def v(eta,x):
     return v
 
 def mag(eta):
-    mag=v(eta,300)+v(eta,130)-v(eta,220)-v(eta,190)
+    mag=(v(eta,220)+v(eta,190))-(v(eta,300)+v(eta,130))
     return mag
 
 eta=np.arange(.401,1.1,.01)
@@ -51,7 +51,7 @@ plt.gca().spines['bottom'].set_position('zero')
 
 #plt.yscale('log')
 #plt.legend()
-plt.xlabel('concavity parameter $\eta$')
+plt.xlabel(r'concavity parameter $\beta$')
 plt.ylabel('inequality magnitude')
 #
 #plt.yticks([1,10.**10.,10.**20.,10.**30.,10.**40.],\

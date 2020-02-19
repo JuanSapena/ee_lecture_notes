@@ -48,8 +48,7 @@ That's not observed, and the prediction is {\it quantitatively wrong}. Second, o
 level, the entire expected-wealth paradigm fails because it produces no prediction for 
 the maximum fee. This quantity diverges under this paradigm -- a good place to remember
 that an infinity as a model output is an error message. We will consider the paradox to be
-the non-existence of a maximum fee. As we address this core issue, it will turn out that the
-quantitative values for this fee are realistic.
+the non-existence of a maximum fee. We use ergodicity economics to address this non-existence. As a bonus, we find that the ergodicity-economics paradigm predicts more than the existence of such a fee: even the quantitative values it predicts for the maximum fee are realistic.
 
 In some sense it is a pity that this deliberately provocative and unrealistic lottery has played 
 such an important role in the development of classical decision theory.  As we've seen, it is 
@@ -356,7 +355,7 @@ conditions that allow the mapping, so that the two models are no longer equivale
 will be better at describing observed behaviour?
 
 Without our knowledge, a group of neuroscientists at the Danish Research Center for Magnetic 
-Resonance in Copenhagen was asking precisely this question, and found an astonishingly clear
+Resonance in Copenhagen asked precisely this question, and found an astonishingly clear
 signal favouring ergodicity economics. The experiment they put together is
 carefully designed and well thought through. Nonetheless, as with any experiment, the result will 
 present us with an interpretation task: do we take the findings literally, or do we think they are 
@@ -402,7 +401,7 @@ Such experiments would not falsify anything; they would just be invalid.
 The experiment is described in detail in \cite{MederETAL2019}. Here we will only outline the setup. 
 18 subjects participated, and each one of them attended two sessions on successive days.
 We'll describe the protocol for a single individual, whom we'll call Bob. On the first day, Bob 
-is exposed to an additive wealth environment. That mean, he is given a starting wealth of 
+is exposed to an additive wealth environment. That means, he is given a starting wealth of 
 about \$150 and then makes 312 choices of the {\it additive} form ``would you rather toss a fair 
 coin for winning \$40 or losing \$30; or for winning \$30 or losing \$20?'' 
 
@@ -420,14 +419,13 @@ hundred real dollars.
 We won't go into the details of the data analysis, which is rather sophisticated in this case. Instead, 
 we will only explain the logic behind what was done with the observations. 
 Let's work through a single observation -- a single choice made by Bob. 
-Let's say Bob's wealth is \$200). Imagine we observe him rejecting
-the proposed 50/50 gamble of winning \$100 or losing \$70 (for terminal wealth \$300 or \$130), 
-and instead choosing the gamble of winning \$20 or losing \$10 (for terminal  wealth \$220 or \$190). 
+Let's say Bob's wealth is \$200. Imagine we observe that Bob chooses 
+the 50/50 gamble of winning \$20 or losing \$10 (for terminal  wealth \$220 or \$190); and rejects the alternative gamble of winning \$100 or losing \$70 (for terminal wealth \$300 or \$130). 
 What does this tell us about Bob's beliefs about the ergodicity transformation?
 
 We're testing ergodicity economics and expected utility theory. In both theories, the decision criterion
 is the expectation value of a change in some function of wealth. So the question is really:
-for what kind of $\gv(\x)$ would Bob make the observed choice, assuming that the
+for what kind of $\gv(\x)$ would Bob make the observed choice, assuming that
 the time-average ergodic growth rate is being optimised?
 
 The time-average ergodic growth rate (or rate of change of expected utility) is
@@ -438,7 +436,7 @@ The time-average ergodic growth rate (or rate of change of expected utility) is
 We have to restrict the space of $\gv(\x)$ in an intelligent way for the observations
 to tell us something meaningful. The restriction has to allow the two cases
 predicted by ergodicity economics: linear ergodicity transformation (utility function) 
-for additive dynamics and logarithmic ergodicity transformations for multiplicative dynamics.
+for additive dynamics and logarithmic ergodicity transformation for multiplicative dynamics.
 The Copenhagen team chose to restrict $\gv(\x)$ to
 a family of functions known in economics as iso-elastic utility functions, and in 
 physics as q-logarithms, namely to
@@ -446,18 +444,18 @@ physics as q-logarithms, namely to
 \gv(\x;\gbeta)=\frac{\x^{1-\gbeta}-1}{1-\gbeta}.
 \elabel{auto}
 \ee
-The parameter $\gbeta$ (called $\eta$ in the original paper) controls the concavity of $\gv(\x; \gbeta)$, with the special value
+The parameter $\gbeta$ controls the concavity of $\gv(\x; \gbeta)$, with the special value
 $\gbeta=0$ corresponding to linear $\gv(\x)$, and $\gbeta=1$ corresponding to logarithmic $\gv(\x)$.
 
 With the restriction to this family of ergodicity mappings, we can phrase the decision 
-made by Bob in terms of beliefs about $\gbeta$. For instance, in the example choice above we have
+made by Bob in terms of beliefs about $\gbeta$. In the example choice above we have
 \be
-\frac{\frac{1}{2}[\gv(\$300)+\gv(\$130)]-\gv(\$200)}{\D\t}<\frac{\frac{1}{2}[\gv(\$220)+\gv(\$190)]-\gv(\$200)}{\D\t}.
+\frac{\frac{1}{2}[\gv(\$220)+\gv(\$190)]-\gv(\$200)}{\D\t}>\frac{\frac{1}{2}[\gv(\$300)+\gv(\$130)]-\gv(\$200)}{\D\t}.
 \ee
 To check when this inequality is satisfied, we subtract the \RHS and simplify, to arrive at
 the condition
 \be
-\gv(\$300)+\gv(\$130)-[\gv(\$220)+\gv(\$190)]< 0 \elabel{magnitude}.
+[\gv(\$220)+\gv(\$190)]-[\gv(\$300)+\gv(\$130)]> 0 \elabel{magnitude}.
 \ee
 \Fref{eta_constraint} shows the \LHS of \eref{magnitude}, plotted as a function of $\gbeta$.
 We see that for any $\gbeta>0.589$ the inequality is satisfied. Assuming that Bob is 
