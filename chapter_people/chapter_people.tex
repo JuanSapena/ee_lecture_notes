@@ -7,7 +7,7 @@
 The previous chapter developed a model of individual behaviour based on an
 assumed dynamic imposed on wealth. If we know the stochastic process that describes
 individual wealth, then we also know what happens at population level -- each individual
-is represented by a realisation of the process, and we can compute 
+is represented by a trajectory of the process, and we can compute 
 the dynamics of wealth distributions. We answer questions about inequality and poverty in
 a model economy which, for the moment, contains no interactions between individuals. We also gain an understanding of when and how results for finite populations differ from those for the infinite ensemble. We will use multiplicative wealth dynamics to present the thinking and techniques. More detailed models can be treated similarly.}
 \newpage
@@ -21,9 +21,8 @@ We have seen that risk aversion constitutes optimal behaviour under the assumpti
 of multiplicative wealth growth and over time scales that are long enough for systematic 
 trends to be significant. In this chapter we will continue to explore our null model, 
 \GBM. By ``explore'' we mean that we will let the model generate its world -- if 
-individual wealth was to follow \GBM, what kind of features of an economy would emerge? 
-We will see that cooperation and the formation of social structure also constitute 
-optimal behaviour.
+individual wealth follows \GBM, then what kind of economy emerges? 
+We will see later, in \cref{Interactions}, that cooperation and the formation of social structure also constitute optimal behaviour.
 
 \GBM is more than a random variable. It's a stochastic process, either a set of trajectories 
 or a family of time-dependent random variables, depending on how we 
@@ -40,38 +39,16 @@ We use the term wealth distribution to refer to the density function, $\PDF_\x(\
 \put(190,30){\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_def_1.pdf}}
 \put(0,160){A)}
 \put(190,160){B)}
-%\put(18,133){$y_3(\t)$}
-%\put(18,102){$y_4(\t)$}
-%\put(18,71){$y_5(\t)$}
-%\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
-%\put(200,235){time, $\t$}  
-%\put(120,220){$y_1(\t^*)$}
-%\put(130,215){\vector(1,-1){13}}
 \end{picture}
 \caption{Example of a wealth distribution. A) The probability that a uniformly randomly selected person has wealth greater than $\x$ is the shaded area on the left. B) The number of people with wealth between $\x$ and $\x+\D\x$ is roughly $\N$ times the shaded area on the right.}
 \flabel{wealth_dist_def}
 \end{figure}
 
-%\underline{Extreme distributions:}
-%\begin{itemize}
-%\item Under maximum equality everyone would have the same, meaning that the wealth
-%distribution would be a Dirac delta function centred at the sample mean of $\x$, that is
-%\be
-%\PDF_\x(\x)=\delta(\x-\ave{\x}_\N);
-%\ee
-%\item
-%Maximum inequality would mean that one individual owns everything
-%and everyone else owns nothing, that is
-%\be 
-%\PDF_\x(\x)=\frac{\N-1}{\N}\delta(\x-0)+\frac{1}{\N}\delta(\x-\N\ave{\x}_\N),
-%\ee
-%see \fref{wealth_dist_unequal}
-%\FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Log-normal distribution}
-\seclabel{Log-normal_wealth}
-At a given time, $\t$, \GBM produces a random variable, $\x(\t)$, with a log-normal distribution whose parameters depend on $\t$. (A log-normally distributed random variable is one whose logarithm is a normally distributed random variable.) If each individual's wealth follows \GBM,
+\subsection{Lognormal distribution}
+\seclabel{Lognormal_wealth}
+At a given time, $\t$, \GBM produces a random variable, $\x(\t)$, with a lognormal distribution whose parameters depend on $\t$. A lognormally distributed random variable is one whose logarithm is a normally distributed random variable. If each individual's wealth follows \GBM,
 \be
 \gd\x=\x(\gmu \gd\t + \gsigma \gd\gW),
 \elabel{GBM}
@@ -81,33 +58,35 @@ with solution
 \x(\t) = \x(0) \exp\left[\left(\gmu-\frac{\gsigma^2}{2}\right)\t + \gsigma \gW(\t)\right],
 \elabel{GBM_sol}
 \ee
-then we will observe a log-normal distribution of wealth at each moment in time:
+then we will observe a lognormal distribution of wealth at each moment in time:
 \be
 \ln \x(\t) \sim \mathcal{\N}\left(\ln \x(0) + \left(\gmu - \frac{\gsigma^2}{2}\right)\t, \gsigma^2 \t\right).
-\elabel{log-normal}
+\elabel{lognormal}
 \ee
 It will be convenient hereafter to assume the initial condition $\x(0)=1$ (and, therefore, $\ln \x(0)=0$) unless otherwise stated.
 
-Note that the variance of $\ln \x(\t)$ increases linearly in time. We will develop an understanding of this shortly. As we will see, it indicates that any meaningful measure of inequality will grow over time in our simple model. To see what kind of a wealth distribution \eref{log-normal} is, it is worth spelling out the log-normal \PDFa:
+Note that the variance of $\ln \x(\t)$ increases linearly in time. We will develop an understanding of this shortly. As we will see, it indicates that any meaningful measure of inequality will grow over time in our simple model. To see what kind of a wealth distribution \eref{lognormal} is, it is worth spelling out the lognormal \PDFa:
 \be
 \PDF_x(\x)=\frac{1}{\x\sqrt{2\pi \gsigma^2t}}\exp\left(-\frac{[\ln \x-(\gmu-\frac{\gsigma^2}{2})\t]^2}{2\gsigma^2 \t} \right).
 \elabel{PDFx}
 \ee
 
-This distribution is the subject of a wonderful book \cite{AitchisonBrown1957}, sadly out-of-print now. It will be useful to know some of its basic properties. Of particular importance is the expected wealth under this distribution. This is
+This distribution is the subject of a wonderful book \cite{AitchisonBrown1957}, sadly out-of-print now but worth reading if you can find a copy. It will be useful to know some of its basic properties. Of particular importance is the expected wealth under this distribution. This is
 \be
 \ave{\x(\t)}=\exp(\gmu \t)
 \elabel{exp_x}
 \ee
-or, equivalently, $\ln\ave{\x(\t)}=\gmu \t$. We could confirm this result by calculating $\ave{\x(\t)}=\int_0^\infty s\PDF_\x(s) ds$, but this would be laborious. Instead we use a neat trick, courtesy of \cite[Chapter 4.2]{KloedenPlaten1992}, which will come in handy again in \secref{RGBM_moments}. The idea is to derive from the stochastic differential equation for $\x$, like \eref{GBM}, a solvable ordinary differential equation in the $k^\text{th}$ moment, $\ave{\x^k}$. For the first moment we do this simply by taking expectations of both sides of \eref{GBM}. The noise term vanishes to turn the SDE for $\x$ into an ODE for $\ave{\x}$:
+or, equivalently, $\ln\ave{\x(\t)}=\gmu \t$.
+
+We could confirm this result by calculating $\ave{\x(\t)}=\int_0^\infty s\PDF_\x(s) ds$, but that is laborious. Instead, we use a neat trick, courtesy of \cite[Chapter 4.2]{KloedenPlaten1992}, which will come in handy again in \secref{RGBM_moments}. The idea is to turn a stochastic differential equation for $\x$, like \eref{GBM}, into an ordinary differential equation for its $k^\text{th}$ moment, $\ave{\x^k}$. For the first moment, $k=1$, we do this simply by taking expectations of both sides of \eref{GBM}. The stochastic term vanishes to leave an ODE for the expected wealth, $\ave{\x}$:
 \bea
 \ave{\gd\x}&=&\ave{\x(\gmu \gd\t + \gsigma \gd\gW)}\\
 d\ave{\x}&=&\ave{\x} \gmu \gd\t + \gsigma \overbrace{\ave{\gd\gW}}^{=0}\\
 &=&\ave{\x} \gmu \gd\t.
 \eea
-This is a very simple first-order linear differential equation, whose solution with initial condition $\x(0)=1$ is given by \eref{exp_x}.
+This is a very simple first-order linear differential equation, whose solution with initial condition $\ave{\x(0)}=1$ is \eref{exp_x}.
 
-For $\gmu>0$ the expected wealth grows exponentially over time, as do its median and variance:
+For $\gmu>0$, the expected wealth grows exponentially over time, as do its median and variance:
 \bea
 \text{median}[\x(\t)] &=& \exp[(\gmu-\gsigma^2/2)\t]; \elabel{median_x} \\
 \var[\x(\t)] &=& \exp(2\gmu \t)[\exp(\gsigma^2 \t)-1]. \elabel{var_x}
@@ -133,9 +112,9 @@ and from \eref{time_g} that the time-average growth rate of wealth is
 \subsection{Measuring inequality}
 \seclabel{Inequality_measure}
 In the case of \GBM we have just seen how to 
-compute the exact full wealth distribution, $\PDF_\x(\x)$. This is interesting but often we want only summary measures of the distribution. One summary measure of particular interest to economists is inequality. How much inequality is there in a distribution like \eref{log-normal}? And how does this quantity increase over time under \GBM, as we have suggested?
+compute the exact full wealth distribution, $\PDF_\x(\x)$. This is interesting but often we want only summary measures of the distribution. One summary measure of particular interest to economists is inequality. How much inequality is there in a distribution like \eref{lognormal}? And how does this quantity increase over time under \GBM, as we have suggested?
 
-Clearly, to answer these questions, we must quantify ``inequality''. In this section, and also in \cite{AdamouPeters2016}, we develop a natural way of measuring it, which makes use of the two growth rates we identified for the non-ergodic process. We will see that a particular inequality measure, known to economists as Theil's second index of inequality \cite{Theil1967}, is the difference between typical wealth (growing at the time-average growth rate) and average wealth (growing at the ensemble-average growth rate) in our model. Thus, the difference between the time average and ensemble average, the essence of ergodicity breaking, is the fundamental driver of the dynamics of inequality.
+Clearly, to answer these questions, we must quantify ``inequality''. In this section, and also in \cite{AdamouPeters2016}, we develop a natural way of measuring it, which makes use of the two growth rates we identified for the non-ergodic process. We will see that a particular inequality measure, known to economists as Theil's second index \cite{Theil1967}, is a quantity which grows at the difference between the growth rates of average wealth (growing at the ensemble-average growth rate) and typical wealth (growing at the time-average growth rate) in the \GBM model. Thus, the difference between ensemble and time averages, the essence of ergodicity breaking, is the fundamental driver of the dynamics of inequality.
 
 The two limits of inequality are easily identified: minimum inequality means that everyone 
 has the same wealth, so that the wealth
@@ -151,85 +130,34 @@ negative), that is
 \ee
 see \fref{wealth_dist_extreme}.
 
-%\begin{figure}
-%\begin{picture}(140,140)(20,30)
-%\put(0,30)
-%\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_equal.pdf}
-%\put(190,30){\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_def_1.pdf}}
-%%\put(0,160){A)}
-%%\put(190,160){B)}
-%%\put(18,133){$y_3(\t)$}
-%%\put(18,102){$y_4(\t)$}
-%%\put(18,71){$y_5(\t)$}
-%%\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
-%%\put(200,235){time, $\t$}  
-%%\put(120,220){$y_1(\t^*)$}
-%%\put(130,215){\vector(1,-1){13}}
-%%\end{picture}
-%\caption{Maximally equal wealth distribution: everyone owns $\$100,000$.}
-%\flabel{wealth_dist_equal}
-%\end{SCfigure}
-%
-%\begin{SCfigure}
-%%\begin{picture}(200,140)(20,30)
-%%\put(0,30)
-%\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_unequal.pdf}
-%%\put(190,30){\includegraphics[width=.55\textwidth]{./chapter_people/figs/wealth_dist_def_1.pdf}}
-%%\put(0,160){A)}
-%%\put(190,160){B)}
-%%\put(18,133){$y_3(\t)$}
-%%\put(18,102){$y_4(\t)$}
-%%\put(18,71){$y_5(\t)$}
-%%\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
-%%\put(200,235){time, $\t$}  
-%%\put(120,220){$y_1(\t^*)$}
-%%\put(130,215){\vector(1,-1){13}}
-%%\end{picture}
-%\caption{Maximally unequal wealth distribution: one person owns $\$100$ billion, all others own nothing.}
-%\flabel{wealth_dist_unequal}
-%\end{SCfigure}
-%\end{itemize}
-%\FloatBarrier
-
 \begin{figure}[h]
 \begin{picture}(200,170)(20,30)
 \put(0,30){\includegraphics[width=.5\textwidth]{./chapter_people/figs/wealth_dist_equal.pdf}}
 \put(190,30){\includegraphics[width=.5\textwidth]{./chapter_people/figs/wealth_dist_unequal.pdf}}
 \put(0,160){A)}
 \put(190,160){B)}
-%\put(18,133){$y_3(\t)$}
-%\put(18,102){$y_4(\t)$}
-%\put(18,71){$y_5(\t)$}
-%\put(-10,159){\rotatebox{-90}{realisation, $\gi$}}  
-%\put(200,235){time, $\t$}  
-%\put(120,220){$y_1(\t^*)$}
-%\put(130,215){\vector(1,-1){13}}
 \end{picture}
 \caption{Extreme wealth distributions. A) The maximally equal distribution means that everyone owns the same amount (here \$100,000, as an example). B) The maximally unequal distribution (assuming no one has negative wealth) means that one person owns everything (here \$100 billion), and everyone else nothing.}
 \flabel{wealth_dist_extreme}
 \end{figure}
 
-
-
 Quantifying inequality in any other distribution is reminiscent of the gamble 
 problem. Recall that for gambles we wanted make statements of the type ``this gamble 
-is more desirable than that gamble''. We did this by collapsing a distribution to a 
-scalar. Depending on the question that was being asked, 
-the appropriate way of collapsing the distribution and the resulting scalar can be different 
-(the scalar relevant to an insurance company may not be relevant to an individual). 
+is more desirable than that gamble''. We did this by collapsing distributions, in this case of wealth changes in gambles, to scalars, which we could rank.
+Depending on the question that was being asked, the appropriate way of collapsing the distribution and the resulting scalar can be different (the scalar relevant to an insurance company may not be relevant to an individual).
 In the case of inequality we also have a distribution -- the wealth distribution -- and we 
 want to make statements of the type ``this distribution is more unequal than that 
 distribution''. Again, this is done by collapsing the distribution to a scalar, and again 
 many different choices of collapse and resulting scalar are possible. The Gini 
-coefficient is a particularly well-known scalar of this type, the 80/20 ratio another. Indeed, there is a whole menagerie of inequality measures.
+coefficient is a particularly well-known scalar of this type, the 80/20 ratio another. Indeed, there is a whole menagerie of inequality measures in economics.
 
 In this context the expectation value is an important quantity. 
 For instance, if everyone has the same wealth, then everyone will own the average, $\x_\gi=\ave{\x}_\N$, which converges to the expectation value for large $\N$. Also, whatever the distribution 
 of wealth, the total wealth is $\N\ave{\x}_\N$ whose relative difference from $\N\ave{\x}$ vanishes as $\N$ grows large. The growth 
 rate of the expectation value, $\gex$, thus tells us how fast the average wealth and the 
-total population wealth grow with probability one in a large ensemble. The time-average growth rate, $\gt$, on the other hand, tells us how fast an individual's wealth grows almost surely in 
+total population wealth grow almost surely in a large ensemble. The time-average growth rate, $\gt$, on the other hand, tells us how fast an individual's wealth grows almost surely in 
 the long run. If the typical individual's wealth grows more slowly than the 
-expectation value of wealth, then there must be very atypically-wealthy individuals 
+expectation value of wealth, then there must be atypically wealthy individuals 
 to account for the difference. This insight suggests the following measure of 
 inequality.
 
@@ -243,7 +171,7 @@ difference between expectation-value and time-average growth rates,
 \Eref{dJ} defines the dynamic of inequality, and inequality itself is found by 
 integrating over time:
 \be
-\J(\t)=\int_0^\t \gd s [\gex(s)-\gt(s)].
+\J(\t)=\int_0^\t [\gex(s)-\gt(s)] \gd s
 \elabel{J}
 \ee
 }
@@ -276,9 +204,15 @@ Thus we see that, in \GBM, our measure of inequality increases indefinitely.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{Democratic domestic product}
+\seclabel{DDP}
+
+\AA{Include a section on GDP and DDP growth rates (defined for finite $\N$) here, or else include in the section above.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Wealth condensation}
 \seclabel{condensation}
-The log-normal distribution generated by \GBM broadens indefinitely, \eref{var_x}. Likewise, the inequality present in the distribution -- measured as the time-integrated difference between ensemble and time average growth rates -- grows without bound. A related property of \GBM is the evolution towards wealth condensation. Wealth condensation means that a single individual will own a non-zero fraction of the total wealth in the population in the limit of large $\N$, see \eg \cite{BouchaudMezard2000}. In the present case an arbitrarily large share of the  total wealth will be owned by an arbitrarily small share of the population.
+The lognormal distribution generated by \GBM broadens indefinitely, \eref{var_x}. Likewise, the inequality present in the distribution -- measured as the time-integrated difference between ensemble and time average growth rates -- grows without bound. A related property of \GBM is the evolution towards wealth condensation. Wealth condensation means that a single individual owns a non-zero fraction of the total wealth of the population in the $\N\to\infty$ limit, see \eg \cite{BouchaudMezard2000}. In the present case, an arbitrarily large share of the  total wealth will be owned by an arbitrarily small share of the population.
 
 One simple way of seeing this is to calculate the fraction of the population whose wealths are less than the expected wealth, \ie $\x(\t)<\exp(\gmu \t)$. To do this, we define a new random variable, $z(\t)$, whose distribution is the standard normal:
 \be
@@ -288,7 +222,7 @@ We want to know the mass of the distribution with $\ln \x(\t)<\gmu \t$. This is 
 \be
 \gPhi\left(\frac{\gsigma \t^{1/2}}{2}\right),
 \ee
-where $\gPhi$ is the \CDF of the standard normal distribution. This increases over time, tending to one as $\t\to\infty$.
+where $\gPhi$ is the \CDF of the standard normal distribution. This increases over time, tending to one as $\t\to\infty$. \AA{Plot this?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -315,7 +249,7 @@ or in Swiss Francs. The sample mean rescaled wealth is easily calculated:
 \ave{\gw_\gi(\t)}_\N = \ave{\frac{\x(\t)}{\ave{\x(\t)}_\N}}_\N = 1.
 \ee
 
-If the population size, $\N$, is large enough, then we might expect the sample mean wealth, $\ave{\x(\t)}_\N$, to be close to the ensemble average, $\ave{\x(\t)}$, which is simply its $\N\to\infty$ limit. We will discuss more carefully when this approximation holds for wealths following \GBM in \secref{finite_populations}. Let's assume for now that it does. The rescaled wealth is then well approximated as
+If the population size, $\N$, is large enough, then we might expect the sample mean wealth, $\ave{\x(\t)}_\N$, to be close to the ensemble average, $\ave{\x(\t)}$, which is simply its $\N\to\infty$ limit. We will discuss more carefully when this approximation holds in the \GBM model in \secref{finite_populations}. Let's assume for now that it does. The rescaled wealth is then well approximated as
 \be
 \gw_\gi(\t) = \frac{\x_\gi(\t)}{\ave{\x(\t)}} = \x_\gi(\t)\exp(-\gmu \t).
 \ee
@@ -330,10 +264,10 @@ and then substitute \eref{GBM} for $\gd\x$ to get
 \gd \gw = \gw \gsigma \gd\gW.
 \elabel{GBM_y}
 \ee
-So $\gw(\t)$ follows a very simple \GBM with zero drift and volatility $\gsigma$. This means that rescaled wealth, like wealth, has an ever-broadening log-normal distribution:
+So $\gw(\t)$ follows a very simple \GBM with zero drift and volatility $\gsigma$. This means that rescaled wealth, like wealth, has an ever-broadening lognormal distribution:
 \be
 \ln \gw(\t) \sim \mathcal{\N}\left(-\frac{\gsigma^2}{2}\t, \gsigma^2 \t\right).
-\elabel{log-normal_y}
+\elabel{lognormal_y}
 \ee
 
 Finally, noting that $\ave{\ln \gw}=\ave{\ln \x}-\ln\ave{\x}$ gives us a simple expression for our inequality measure in \eref{J_x} in terms of the rescaled wealth:
@@ -351,16 +285,16 @@ So far we have confined our analysis to \GBM, where wealths follow the dynamic s
 \ee
 Under this dynamic, $\gv$ is normally distributed,
 \be
-\gv(\x(\t)) \sim \mathcal{\N}\left(a_u\t, {b_u}^2 \t\right),
+\gv(\x(\t)) \sim \mathcal{\N}\left(a_\gv\t, {b_\gv}^2 \t\right),
 \ee
-and we can say that wealth has a ``$\gv$-normal'' distribution. For \GBM, the ergodicity transformatoin, as we know, is $\gv(\x)=\ln \x$, and $\gv$-normal becomes log-normal.
+and we can say that wealth has a ``$\gv$-normal'' distribution. For \GBM, the ergodicity transformatoin, as we know, is $\gv(\x)=\ln \x$, and $\gv$-normal becomes lognormal.
 
 Replacing the logarithm in \eref{J_x} by the general ergodicity transformation gives a general expression for our wealth inequality measure,
 \be
 \J_\gv(\t)=\gv(\ave{\x(\t)}) - \ave{\gv(\x(\t))}.
 \elabel{J_u}
 \ee
-It's not easy to write a general expression for $\J_\gv(\t)$ in only $\t$ and the model parameters $a_\gv$ and $b_\gv$, because it would involve the solution of the general wealth dynamic in \eref{dx}. However, we can still say something about how inequality evolves. Let's see what happens if we start with perfect equality, $\x_\gi(0)=\x_0$ with $\x_0$ fixed, and then let wealths evolve a little to $\x(\D \t)=\x_0+\D \x$, where $\D \x$ is a random wealth increment generated by the wealth dynamic. The change in inequality would be
+It's not easy to write a general expression for $\J_\gv(\t)$ in only $\t$ and the model parameters $a_\gv$ and $b_\gv$, because it would involve the solution of the general wealth dynamic in \eref{dx}. \AA{Is this true?} However, we can still say something about how inequality evolves. Let's see what happens if we start with perfect equality, $\x_\gi(0)=\x_0$ with $\x_0$ fixed, and then let wealths evolve a little to $\x(\D \t)=\x_0+\D \x$, where $\D \x$ is a random wealth increment generated by the wealth dynamic. The change in inequality would be
 \be
 \D \J_\gv = \gv(\ave{\x_0+\D \x}) - \ave{\gv(\x_0+\D \x)},
 \ee
@@ -373,8 +307,8 @@ We can now appeal to Jensen's inequality: if $\gv$ is a concave function, like t
 \subsection{Power-law resemblance}
 \seclabel{power_law}
 It is an established empirical observation \cite{Newman2005} that the upper tails of 
-real wealth distributions look more like a power-law than a log-normal. Our trivial model does not
-strictly reproduce this feature, but it is instructive to compare the log-normal distribution
+real wealth distributions look more like a power-law than a lognormal. Our trivial model does not
+strictly reproduce this feature, but it is instructive to compare the lognormal distribution
 to a power-law distribution. A power-law \PDFa has the asymptotic form 
 \be
 \PDF_\x(\x)= \x^{-\alpha},
@@ -393,7 +327,7 @@ type of scales results in some line. It may not be a straight line but it will h
 everywhere. For a known distribution (power-law or not) we can interpret this slope 
 as a local apparent power-law exponent. 
 
-What is the local apparent power-law exponent of a log-normal wealth distribution near the 
+What is the local apparent power-law exponent of a lognormal wealth distribution near the 
 expectation value $\ave{\x}=\exp(\gmu \t)$, \ie in the upper tail where approximate power-law behaviour
 has been observed empirically? The logarithm of \eref{PDFx} is
 \bea
@@ -408,7 +342,7 @@ with local slope, \ie apparent exponent,
 \be
 \frac{\gd\ln \PDF(\x)}{\gd \ln \x} = - \frac{\ln \x}{\gsigma^2 \t}  + \frac{\gmu}{\gsigma^2} - \frac{3}{2}.
 \ee
-Near $\ave{\x}$, $\ln \x \sim \gmu \t$ so that the first two terms cancel approximately. Here the distribution will resemble a power-law with exponent $-3/2$ when plotted on doubly logarithmic scales. (The distribution will also look like a power law where the first term is much smaller than the others, \eg where $\ln \x \ll \gsigma^2 \t$.) We don't believe that empirically observed power laws are merely a manifestation of this mathematical feature. Important real-world  mechanisms that broaden real wealth distributions, \ie concentrate wealth, are missing from the null model, and we will see that including interactions among individuals produces a proper power-law tail in the distribution whose exponent is closer to observations than the $-3/2$ the log-normal can fool us into seeing. However, it is interesting that the trivial model of \GBM reproduces so many qualitative features of empirical observations. 
+Near $\ave{\x}$, $\ln \x \sim \gmu \t$ so that the first two terms cancel approximately. Here the distribution will resemble a power-law with exponent $-3/2$ when plotted on doubly logarithmic scales. (The distribution will also look like a power law where the first term is much smaller than the others, \eg where $\ln \x \ll \gsigma^2 \t$.) We don't believe that empirically observed power laws are merely a manifestation of this mathematical feature. Important real-world  mechanisms that broaden real wealth distributions, \ie concentrate wealth, are missing from the null model, and we will see that including interactions among individuals produces a proper power-law tail in the distribution whose exponent is closer to observations than $-3/2$. However, it is interesting that the trivial model of \GBM reproduces so many qualitative features of empirical observations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -419,25 +353,25 @@ So far we have considered the properties of the random variable, $\x(\t)$, gener
 \ave{\x(\t)}_\N \equiv \frac{1}{\N}\sum_{i=1}^\N \x_\gi(\t),
 \elabel{sample}
 \ee
-as the sample size, $\N$, grows large. In reality, human populations can be very large, say $\N\sim10^7$ for a nation state, but they are most certainly finite. Therefore, we need to be diligent and ask what the effects of this finiteness are. In particular, we will focus on the sample mean wealth under \GBM. For what values of $\gmu$, $\gsigma$, $\t$, and $\N$ is this well approximated by the expectation value? And when it is not, what does it resemble?
+as the sample size, $\N$, grows large. In reality, human populations can be very large, say $\N\sim10^7$ for a nation state, but they are most certainly finite. Therefore, we need to be diligent and ask under what conditions the results we have derived in the large-$N$ limit are valid for finite populations. In particular, we will focus on the sample mean wealth under \GBM. For what values of $\gmu$, $\gsigma$, $\t$, and $\N$ is this well approximated by the expectation value? And when it is not, what does it resemble?
 
-\subsection{Sums of log-normals}
+\subsection{Sums of lognormals}
 \seclabel{sketch}
 In \cite{PetersKlein2013} we studied the sample mean of \GBM, \eref{sample}, which we termed the \PEA. Here we sketch out some simple arguments about how this object depends on $\N$ and $\t$.
 
 Considering the two growth rates in \secref{two_rates}, we anticipate the following tension:
 \begin{enumerate}
 \item[A)] for large $\N$, the \PEA should resemble the expectation value, $\exp(\gmu \t)$;
-\item[B)] for long $\t$, all trajectories in the sample -- and, therefore, the sample mean itself -- should grow like $\exp[(\gmu-\gsigma^2/2)\t]$.
+\item[B)] for large $\t$, all trajectories in the sample -- and, therefore, the sample mean itself -- should grow like $\exp[(\gmu-\gsigma^2/2)\t]$.
 \end{enumerate}
 Situation A -- when a sample mean resembles the corresponding expectation value -- is known in statistical physics as ``self-averaging.'' A simple strategy for estimating when this occurs is to look at the relative variance of the \PEA,
 \be
 R \equiv \frac{\var[\ave{\x(\t)}_\N]}{\ave{\ave{\x(\t)}_\N}^2}.
 \elabel{rel_var}
 \ee
-To be explicit, here the $\ave{\cdot}$ and $\text{var}(\cdot)$ operators, 
-without $\N$ as a subscript, 
-refer to the mean and variance over all possible \PEAs. The \PEAs themselves, taken over finite samples of size $\N$, are denoted $\ave{\cdot}_\N$. \Eref{rel_var} simplifies to
+To be explicit, the $\text{var}[\cdot]$ and $\ave{\cdot}$ operators, without subscript $\N$, refer to the mean and variance over all possible realisations of the random variables enclosed, which in \eref{rel_var} are \PEAs. The \PEAs themselves, taken over finite samples of wealth realisations, are denoted by the $\ave{\cdot}_\N$ operator, with subscript $N$ indicating the sample size.
+
+\Eref{rel_var} simplifies to
 \be
 R = \frac{\frac{1}{\N}\var[\x(\t)]}{\ave{\x(\t)}^2},
 \ee
@@ -453,14 +387,14 @@ If $R \ll 1$, then the \PEA will likely be close to its own expectation value, w
 \ee
 This hand-waving tells us roughly when the self-averaging regime holds: yes, for large enough samples, as we anticipated above, but equivalently for short enough time or low enough volatility. A more careful estimate of the critical time, shown later in in \eref{t_c}, is a factor of 2 larger, but its scaling with sample size and volatility is identical.
 
-For $\t>\ln \N/\gsigma^2$, the growth rate of the \PEA transitions from $\gmu$ to its $\t\to\infty$ limit of $\gmu-\gsigma^2/2$ (Situation B). 
+For $\t>\ln \N/\gsigma^2$, the growth rate of the \PEA transitions from $\gmu$ to its $\t\to\infty$ limit of $\gmu-\gsigma^2/2$. 
 Another way of viewing this is to think about what dominates the average. For early times in the process, all trajectories are close together and none dominate the \PEA. However, as time goes by the distribution broadens exponentially. Since each trajectory contributes with the same weight to the \PEA, we speculate that after some time the \PEA comes to be dominated by the maximum in the sample,
 \be
 \ave{\x(\t)}_\N \approx \frac{1}{\N}\max_{\gi=1}^\N \{\x_\gi(\t)\}.
 \elabel{max_N}
 \ee
 
-These features are consistent with the numerical simulations shown in \fref{trajectories}, whose generation we recommend highly as an exercise. With our intuition thus corroborated, it is worth the effort to say something more about \eref{max_N} using extreme value theory. The maximum of a sample of $\N$ iid standard normal variates, $\xi_\gi\sim\mN(0,1)$ for $\gi=1\dots\N$, is distributed around a mean which scales like
+These features are consistent with the numerical simulations shown in \fref{trajectories}, whose generation we suggest as an exercise. With our intuition thus corroborated, it is worth the effort to say something more about \eref{max_N} using extreme value theory. The maximum of a sample of $\N$ iid standard normal variates, $\xi_\gi\sim\mN(0,1)$ for $\gi=1\dots\N$, is distributed around a mean which scales like
 \be
 \ave{\max_{\gi=1}^\N \{\xi_\gi\}} \approx \sqrt{2\ln\N}
 \ee
@@ -479,7 +413,7 @@ increases monotonically with $\xi_\gi$, the largest $\x_\gi(\t)$ is that corresp
 \ee
 after self-averaging breaks down, $\t>\ln\N/\gsigma^2$. Note that the first term in the exponent dominates as $\t\to\infty$ so that the growth rate tends in this limit to that of a single trajectory, $\gmu-\gsigma^2/2$, as we know it must.
 
-Self-averaging stops when even the ``luckiest'' trajectory is no longer close to the expectation value $\exp(\gmu \t)$. This is guaranteed to happen eventually because the probability for a trajectory to reach $\exp(\gmu \t)$ decreases towards zero as $\t$ grows, as we saw in \secref{condensation}. Naturally, this takes longer for larger samples, which have more chances to contain a lucky trajectory. 
+\AA{Write growth rates here to allow direct comparison with results of REM.}
 
 \begin{figure}
 \centering
@@ -494,6 +428,8 @@ Self-averaging stops when even the ``luckiest'' trajectory is no longer close to
 \flabel{trajectories}
 \end{figure}
 \FloatBarrier
+
+Self-averaging stops when even the ``luckiest'' trajectory is no longer close to the expectation value $\exp(\gmu \t)$. This is guaranteed to happen eventually because the probability for a trajectory to reach $\exp(\gmu \t)$ decreases towards zero as $\t$ grows, as we saw in \secref{condensation}. Naturally, this takes longer for larger samples, which have more chances to contain a lucky trajectory.
 
 In \cite{PetersKlein2013} we analysed \PEAs of \GBM analytically and numerically. Using \eref{GBM_sol} and assuming $\x_\gi(0)=1$ for all $\gi$, the \PEA can be written as
 \be
@@ -512,35 +448,12 @@ Z(\N,\t) = \sum_{i=1}^\N \exp\left(\gsigma \t^{1/2} \xi_i\right),
 \ee
 such that $\ave{\x}_\N = \left(1/N\right) \exp\left[ \left(\gmu-\gsigma^2/2\right) \t \right] Z(\N,t)$.
 
-%We found that typical trajectories of \PEAs grow at $\gex$ up to a time $\tc\propto\ln\N$. After this time, typical \PEA trajectories deviate from expectation-value behaviour, and eventually their growth rate converges to $\gt$. While the two limiting behaviours as $\N\to\infty$ and $\t\to \infty$ can be computed exactly, what happens in between is less straightforward. The \PEA is a random object outside these limits. 
-%
-%In \cite{PetersKlein2013} we proved that the $\t\to\infty$ limit for any finite $\N$ is the same as for the case $\N=1$, 
-%\be
-%\lim_{\t\to\infty}\gest(\t,\N)=\gmu-\frac{\gsigma^2}{2}
-%\elabel{gest_2}
-%\ee
-%for all $\N\geq1$. Substituting \eref{PEA_2} in \eref{g_N} produces
-%\bea
-%\gest(\t,\N)&=&\gmu-\frac{\gsigma^2}{2}+\frac{1}{\t} \ln\left(\frac{1}{\N} \sum_{i=1}^\N \exp( \t^{1/2} \gsigma \xi_i)\right)\\
-%&=&\gmu-\frac{\gsigma^2}{2}-\frac{\ln \N}{\t}+\frac{1}{\t} \ln\left(\sum_{i=1}^\N \exp( \t^{1/2} \gsigma \xi_i)\right).
-%\elabel{gest_4}
-%\eea
-%
-%We didn't look in \cite{PetersKlein2013} at the expectation value of $\gest(\t,\N)$ for finite time and finite samples, but it's an interesting object that depends on $\N$ and $\t$ but is not stochastic. Note that this is not $\gest$ of the expectation value, which would be the $\N\to\infty$ limit of \eref{g_N}. Instead it is the limit of what we might call a diverging ``superverse,'' $\Su\to\infty$, if we want to use the language of ``universes.'' The superverse then consists of $\Su$ multiverses of $\N$ universes (trajectories) each.
-%\be
-%\ave{\gest(\t,\N)} = \frac{1}{\t}\ave{\ln(\ave{\x(\t)}_\N)} = f(\N,\t),
-%\elabel{gest_3}
-%\ee
-%where, as previously, $\ave{\cdot}$ without subscript refers to the average over all possible samples (one sample now being a multiverse of $\N$ universes each), \ie we're computing $\lim_{\Su\to\infty}\ave{\cdot}_{\Su}$. The last two terms in \eref{gest_4} suggest an exponential relationship between ensemble size and time. The final term is a tricky stochastic object on which the properties of the expectation value in \eref{gest_3} will hinge. This term will be the focus of our attention: the sum of exponentials of normal random variates or, equivalently, log-normal variates.
-
 \subsection{The random energy model}
 \seclabel{REM}
 Since the publication of \cite{PetersKlein2013} we have learned, thanks to discussions with J.-P.~Bouchaud, that $Z(\N,\t)$ in \eref{PEA_Z} -- the sum of lognormal random variates -- has been of interest to the mathematical physics community since the 1980s. The reason for this is Derrida's random energy model \cite{Derrida1980,Derrida1981}, which we will describe here.
 %This section is somewhat ``physicsy'' and the key results are in \eref{gest_7} and \eref{gest_8}. It's safe to skip to them, if you like.
 
-%The model is defined as follows.
-Imagine a system of $K$ spins, whose $\N=2^K$ energy levels are iid normal random energies, $E\xi_\gi$, with standard deviation, $E$. This is a very simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated that we ``give up'' and model its energy levels as realisations of a random variable.
-%(We denote the number of spins by $K$ and the number of resulting energy levels by $\N$, while Derrida uses $\N$ for the number of spins).
+Imagine a physical system with $K$ spins, whose $\N=2^K$ energy levels are iid normal random energies, $E\xi_\gi$, with standard deviation, $E$. This is a simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated that we ``give up'' trying to model it deterministically and instead model its energy levels as realisations of a random variable. (If this doesn't mean much to you, don't worry. All we really care about is that there are $\N$ random variables, which happen to be energies.)
 
 The partition function is a sum of lognormal variates,
 \be
@@ -552,7 +465,6 @@ where $T$ is the temperature and the energy parameter scales like $E \propto K^{
 The Helmholtz free energy is
 \be
 \mF = -T\ln\mZ.
-% = -T  \ln\left[\sum_{\gi=1}^{\N} \exp\left(\frac{E_\gi}{T}\right)\right].
 \elabel{F}
 \ee
 Derrida studied the expectation value of the free energy,
@@ -561,7 +473,7 @@ Derrida studied the expectation value of the free energy,
 \ee
 which is the ensemble average over all possible realisations of the partition function, \ie over all possible samples of $\N$ lognormal variates. He found a critical temperature, $T_c$, and expressions for $\ave{\mF}$ valid in the high ($T>T_c$) and low ($T<T_c$) temperature regimes of the model.
 
-Although we won't derive them here, these expressions for $\ave{\mF}$ are useful for us.\footnote{If you are interested in the derivation, Derrida's original papers \cite{Derrida1980,Derrida1981} are more penetrable than most. Otherwise, the random energy model is taught in many statistical physics courses and good notes can be found by searching online.} $\mZ(\N,T)$, is the same type of mathematical object as $Z(\N,\t)$ in \eref{PEA_Z}, namely a sum of lognormal variates. Therefore, Derrida's results about $\mZ$ provide analogous results about $Z$. All we need to do is map from the parameters of the random energy model to those of \GBM, a slightly tedious algebraic exercise which results in
+Although we won't derive them here, these expressions for $\ave{\mF}$ are useful for us.\footnote{If you are interested in the derivation, Derrida's original papers \cite{Derrida1980,Derrida1981} are more penetrable than most. Otherwise, the random energy model is taught in many university statistical physics courses.} $\mZ(\N,T)$, is the same type of mathematical object as $Z(\N,\t)$ in \eref{PEA_Z}, namely a sum of lognormal variates. Therefore, Derrida's results about $\mZ$ provide analogous results about $Z$. All we need to do is map from the parameters of the random energy model to those of \GBM, a slightly tedious algebraic exercise which results in
 \be
 \ave{\ln Z(\N,\t)} =
 \begin{cases}
@@ -597,69 +509,6 @@ This is a random variable, with all the randomness contained in $\ln Z$ in the f
 \ee
 Both expressions are consistent with our sketched analysis in \secref{sketch}.
 
-%\paragraph{\underline{Short time}}
-%\mbox{}
-%
-%We look at the short-time behaviour first (high $T$, \eref{F_2}). Taking the expectation value of \eref{gest_5} and substituting for $\ave{F}$ from \eref{F_2}, we find
-%\be
-%\ave{\gest}^{\text{short}} = \gmu - \frac{\gsigma^2}{2} - \frac{\ln N}{t} + \frac{K\ln2}{\t}+ \frac{K J^2}{4T^2\t}.
-%\elabel{gest_6}
-%\ee
-%We can use $K=\ln N/\ln2$, $T^2=K/t$, and $J^2=2\gsigma^2$ to express all of this in terms of \GBM parameters. Very neatly, we get
-%\be
-%\ave{\gest}^{\text{short}} = \gmu,
-%\elabel{gest_7}
-%\ee
-%which we know to be the correct self-averaging behaviour in the short-time regime.
-%
-%\paragraph{\underline{Long time}}
-%\mbox{}
-%
-%Next, we turn to the expression for the long-time regime (low $T$, \eref{F_3}). Taking expectation values of \eref{gest_5} and substituting from \eref{F_3}, we find
-%\bea
-%\ave{\gest}^{\text{long}} &=& \gmu - \frac{\gsigma^2}{2} - \frac{\ln{\N}}{\t} + \frac{KJ\sqrt{\ln 2}}{Tt} \nn\\
-%&=& \gmu - \frac{\gsigma^2}{2} - \frac{\ln{\N}}{\t} + \sqrt{\frac{2\gsigma^2\ln N}{t}}.
-%\elabel{gest_8}
-%\eea
-%
-%which has the correct long-time asymptotic behavior. The form of the correction to the time-average growth rate
-%in \eref{gest_8} is consistent with \cite{PetersKlein2013} and \cite{Redner1990}, where
-%it was found that approximately $\N=\exp(\t)$ systems are required for ensemble-average
-%behavior to be observed for a time $\t$, so that the parameter $\ln \N/\t$ controls
-%which regime dominates. If the parameter is small, then \eref{gest_8} indicates that the
-%long-time regime is relevant.
-%
-%\Fref{1} is a direct comparison between the results derived
-%here, based on \cite{Derrida1980}, and numerical results using the same parameter 
-%values as in \cite{PetersKlein2013}, namely $\gmu=0.05, \gsigma=\sqrt{0.2}, \N=256$ and $S=10^5$.
-%
-%Notice that $\ave{\gest}$ is not the (local)
-%time derivative $\frac{\partial}{\partial \t}\ave{\ln(\ave{\x}_\N)}$, but a time-average growth rate, $\ave{\frac{1}{\t}\ln\left( \frac{\ave{\x(\t)}_\N}{\ave{\x(0)}_\N}\right)}$. It is remarkable that the expectation value $\ave{\gest(\N,\t)}$ so closely reflects the
-%median, $q_{0.5}$, of $\ave{\x}_\N$, \ie
-%\be
-%q_{0.5}(\ave{\x(\t)}_\N) \approx \exp \left(\ave{\gest(\N,\t)}\t\right).
-%\elabel{quant_ave}
-%\ee
-%In \cite{PetersGell-Mann2016} it was discussed in detail that 
-%$\gest(1,\t)$ is an ergodic observable for \eref{GBM}, in the sense that 
-%$\ave{\gest(1,\t)}=\lim_{\t\to\infty} \gest$. The relationship in \eref{quant_ave}
-%is far more subtle.
 The typical behavior of \GBM PEAs 
 is complicated outside the limits $\N\to\infty$ or $\t\to\infty$, where growth rates are time-dependent. This complicated behaviour is well represented by an 
 approximation that uses physical insights into spin glasses.
-
-%\begin{figure}
-%\centering
-%\includegraphics[height=9.3cm]{./chapter_people/figs/PEA.pdf}
-%\caption{Lines are obtained by exponentiating the various exponential 
-%growth rates. {\bf \underline{Blue line:}} $\ave{\ave{\gest}_{256}}_{10,000}$ is the numerical mean 
-%(approximation of the expectation value) 
-%over a super-ensemble of $S=10,000$ samples of $\gest$ estimated in sub-ensembles of $\N=256$ GBMs each. 
-%{\bf \underline{Green line:}} median in a super-ensemble of $S$ samples of $\gest$, each estimated in sub-ensembles of size $\N$. 
-%{\bf \underline{Yellow line:}} An exact expression for $d\ave{\ln\ave{\x}_\N}$, derived using \Ito calculus, see \cite{PetersAdamou2018b}. We evaluate the expression by Monte Carlo, and integrate, $\ave{\ln\ave{\x}_\N}=\int_{0}^{\t} d\ave{\ln\ave{\x}_\N}$. Exponentiation yields the yellow line. 
-%{\bf \underline{Red line:}} short-time behavior, based on the random energy model, \eref{gest_7}.
-%{\bf \underline{Purple line:}} long-time behavior, based on the random energy model, \eref{gest_8}. {\bf \underline{Vertical line:}} Crossover between the regimes at $\tc=\frac{2\ln \N}{\gsigma^2}$, corresponding to $\beta_c=\frac{2(\ln 2)^{1/2}}{J}$.
-%{\bf \underline{Parameters:}} $\N=256$, $S=10,000$, $\gmu=0.05$, $\gsigma=\sqrt{0.2}$.}
-%\flabel{1}
-%\end{figure}
-%\FloatBarrier
