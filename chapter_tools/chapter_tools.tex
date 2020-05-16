@@ -141,13 +141,12 @@ we will encounter in \secref{SPP}. Another example is any fat-tailed random vari
 for $\tau \leq 2$
 
 \section{Ensemble average}
-The \textit{ensemble average} is conceptually different from the expectation value, although we
-will see that it always is identical in value. Instead of weighting the average of the possible 
+\seclabel{ensemble_average}
+The \textit{ensemble average} is conceptually different from the expectation value, although we will see that it always is identical in value. Instead of weighting the average of the possible 
 realisations of $\Z$ by their probabilities, we take an unweighted average of a collection of 
-generated realisations. For a finite number of realisations, we call this the \textit{finite-ensemble 
-average} and denote it by $\ave{\Z}_\N$. 
-\begin{defn}{Finite-ensemble average}
-The finite-ensemble average of a random variable, $\Z$, is the average over a finite number, 
+generated realisations. For a finite number of realisations, we call this the \textit{\FEA} and denote it by $\ave{\Z}_\N$. 
+\begin{defn}{Finite ensemble average}
+The \FEA of a random variable, $\Z$, is the average over a finite number, 
 $\N$, of generated realisations,
 \be
 \ave{\Z}_{\N} \equiv \frac{1}{\N}\sum_{\gi=1}^{\N} \z_{\gi},
@@ -159,17 +158,17 @@ You may know this as the sample average or sample mean. Note that it is an addit
 meaning that $\ave{\Z}_{\N}$ is the value by which each of the $\N$ realisations of $\Z$ must 
 be replaced if we want them all to be equal without altering their \textit{sum}.
 
-The finite-ensemble average is itself a random variable: each finite ensemble of size $\N$ can contain different realisations of $\Z$ which sum to a different total. As $\N\to\infty$, this random average may converge with probability one to a unique constant. If it does, we call this limiting value the ensemble average and denote it by $\ave{\Z}$.
+The \FEA is itself a random variable. Each finite ensemble of size $\N$ can contain different realisations of $\Z$ which sum to a different total. As $\N\to\infty$, this random average may converge with probability one to a unique constant. If it does, we call this limiting value the ensemble average and denote it by $\ave{\Z}$.
 \begin{defn}{Ensemble average}
-The ensemble average of a random variable, $\Z$, is the $\N\to\infty$ limit of the finite-ensemble average,
+The ensemble average of a random variable, $\Z$, is the $\N\to\infty$ limit of the \FEA,
 \be
 \ave{\Z} \equiv \lim_{\N\to\infty}\ave{\Z}_{\N} =  \lim_{\N\to\infty} \frac{1}{\N} \sum_{\gi=1}^\N \z_\gi,
 \elabel{ens}
 \ee
 where $\z_\gi$ denotes the $\gi^\text{th}$ realisation of $\Z$.
 \end{defn}
-The limit is not guaranteed to exist, in which case $\Z$ has no ensemble average, although 
-finite-ensemble averages can always be computed. We will sometimes refer to the imagined 
+The limit is not guaranteed to exist (in which case $\Z$ has no ensemble average) but 
+\FEAs can always be computed. We will sometimes refer to the imagined 
 infinite collection of realisations as the ``ensemble'' of $\Z$.
 
 Incidentally, if $\ave{\Z}$ is divergent, then 
@@ -179,9 +178,9 @@ as good a model as a non-stationary (time-dependent) $\Z$.
 
 Note that, unlike the expectation value, the ensemble average of a random variable is not defined directly 
 in terms of probabilities. It is the quantity to which averages over realisations converge as the number of 
-realisations grows -- the connection to probabilities hides in the procedure of generating realisations. 
+realisations grows. The connection to probabilities hides in the procedure of generating realisations. 
 
-Recall how we analysed the coin game. At each round of the gamble, we found finite-ensemble averages of 
+Recall how we analysed the coin game. At each round of the gamble, we found \FEAs of 
 simulated wealth for increasingly large samples, from one to one million, plotted against time in \fref{1_2}.
 It is laborious to compute averages of ever larger finite ensembles, in the hope of discerning their 
 convergence to a limit. Fortunately, we can show, under the frequentist interpretation of probability 
@@ -189,7 +188,7 @@ introduced in \secref{random_variable}, that the ensemble average of a random va
 to its expectation value. We do this here for the discrete case, noting that a similar proof can be 
 offered for the continuous case.
 \begin{proof}
-Denote by  $\gn_\gj$ the number of times $\z_\gj$ is observed in $\N$ realisations of $\Z$. The finite-ensemble average can be written as
+Denote by  $\gn_\gj$ the number of times $\z_\gj$ is observed in $\N$ realisations of $\Z$. The \FEA can be written as
 \be
 \ave{\Z}_\N =\frac{1}{\N}\sum_{\gi=1}^{\N}  \z_\gi = \sum_\gj \frac{\gn_\gj}{\N} \z_\gj,
 \ee
@@ -325,7 +324,7 @@ If $\y(\t)$ changes only at discrete times, $\{\t+\dt,\dots,\t+\T\dt\}$, where $
 \ee
 \end{defn}
 
-In the same way that the ensemble average is the many-systems limit of the finite-ensemble average, so the \textit{time average} is the long-time limit of the finite-time average.
+In the same way that the ensemble average is the many-systems limit of the \FEA, so the \textit{time average} is the long-time limit of the finite-time average.
 \begin{defn}{Time average}
 The time average is the long-time limit of the finite-time average,
 \be
@@ -366,7 +365,7 @@ The two types of average possible in a stochastic process are illustrated in \fr
 \seclabel{game_revisited}
 We have introduced some essential tools for studying models such as that of the coin game, where outcomes are uncertain and vary over time. It makes sense, therefore, to apply these tools to the game to see how they deepen our understanding of it.
 
-We pretended to be mathematically clueless when we ran the simulations in \secref{The_game}, hoping to understand the game simply by looking at many possible outcomes. We can now compute exactly the ensemble average of the stochastic process for wealth, $\x(\t)$, instead of approximating it numerically by a finite-ensemble average. We start by taking the ensemble average of the wealth updating equation, \eref{x_update},
+We pretended to be mathematically clueless when we ran the simulations in \secref{The_game}, hoping to understand the game simply by looking at many possible outcomes. We can now compute exactly the ensemble average of the stochastic process for wealth, $\x(\t)$, instead of approximating it numerically by a \FEA. We start by taking the ensemble average of the wealth updating equation, \eref{x_update},
 \be
 \ave{\x(\t+\dt)} = \ave{\x(\t)\gr}.
 \elabel{step_1}
@@ -409,7 +408,7 @@ The positive growth rate of ensemble average wealth is what might have led us to
 \put(35,160){(A)}
 \put(315,160){(B)}  
 \end{picture}
-\caption{Expectation value (thick light blue line) and finite-ensemble averages on (A) linear scales and  (B) logarithmic scales.}
+\caption{Expectation value (thick light blue line) and \FEAs on (A) linear scales and  (B) logarithmic scales.}
 \flabel{cf_exp}
 \end{figure}
 %In this section we validate \fref{1_3} and compute analytically what happens in the long-time limit. The blue line in \fref{1_3} is not completely smooth, there's still some noise (see panel B). It has some average slope, but that slope will vary from realisation to realisation. The longer we observe the system, \ie the more time is represented in a figure like \fref{1_3}, the smoother the line will be. In the long-time limit, $\Dt\to\infty$, the line will be completely smooth, and the average slope will be a deterministic number -- in any realisation of the process it will come out identical. 
@@ -474,7 +473,7 @@ Our computations of $\ggtime$ are consistent with the simulations in \secref{The
 \put(-30,120){(A)}
 \put(250,120){(B)}  
 \end{picture}
-\caption{(A) Finite-ensemble average for $\N=10^6$ and 52 time steps, the light blue line is 
+\caption{(A) \FEA for $\N=10^6$ and 52 time steps, the light blue line is 
 the expectation value. (B) A single system simulated for 10,000 time steps, the light blue 
 line decays exponentially with factor $\grtime$ in each time step.}
 \flabel{ens_v_time}
@@ -485,7 +484,7 @@ There are two average wealth multipliers -- $\ave{\gr}$ and $\grtime$ -- and cor
 %Expectation values are not what you expect.
 
 \boldhead{Finite time and finite ensembles}
-So far we have analysed how wealth evolution differs in the many-systems and long-time limits of the game. An observable that neatly captures these two aspects of multiplicative growth is the exponential growth rate, $\g(\ave{\x(\t)}_\N, \Dt)$, observed over finite time, $\Dt$, in a finite ensemble of $\N$ players. Here we make the growth rate an explicit function of the growing quantity and the period over which the growth is measured, because it is a random variable whose distribution depends on both. In this notation, the evolution equation for the finite-ensemble average wealth is
+So far we have analysed how wealth evolution differs in the many-systems and long-time limits of the game. An observable that neatly captures these two aspects of multiplicative growth is the exponential growth rate, $\g(\ave{\x(\t)}_\N, \Dt)$, observed over finite time, $\Dt$, in a finite ensemble of $\N$ players. Here we make the growth rate an explicit function of the growing quantity and the period over which the growth is measured, because it is a random variable whose distribution depends on both. In this notation, the evolution equation for the \FEA wealth is
 \be
 \ave{\x(\t+\Dt)}_\N = \ave{\x(\t)}_\N \exp \left[ \g(\ave{\x(\t)}_\N, \Dt) \Dt \right].
 \ee
@@ -516,11 +515,11 @@ For a single trajectory, $\N=1$, in the $\Dt\to\infty$ limit, we recover the rem
 %&=&\lim_{\T\to\infty}\frac{1}{\T\dt} \sum_\t^\T \D \ln \x(\t).
 %\eea
 %According to this definition, $\ggtime$ is the time average of the observable $\d \ln \x/\dt$.
-It can be shown \cite{PetersKlein2013} that the time-average growth rate of a single trajectory is the same as that of a finite-ensemble average of trajectories, \ie 
+It can be shown \cite{PetersKlein2013} that the time-average growth rate of a single trajectory is the same as that of a \FEA of trajectories, \ie 
 \be
 \lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}=\lim_{\Dt\to\infty}\frac{\D \ln \ave{\x}_N}{\Dt}.
 \ee
-In \secref{finite_populations}, we will derive this result as well as growth rates in finite ensembles and finite time.
+In \secref{finite_populations}, we will derive this result as well as growth rates of finite ensembles and over finite time.
 
 \begin{excursion}{Scalars}
 Coming soon.
@@ -1059,7 +1058,7 @@ In simulations, \BM paths can be constructed from a discretised version of \eref
 where $\gxi_\t$ are iid standard normal variates, $\gxi_\t\sim\mN(0,1)$.
 
 \boldhead{Non-ergodicity of Brownian motion}
-\BM is a non-ergodic stochastic process. This is easily seen by comparing expectation value and time average. We start with the expressions (stated without proof here) for the finite-ensemble average and the finite-time average of \BM. The finite-ensemble average (easy to derive) is distributed as
+\BM is a non-ergodic stochastic process. This is easily seen by comparing expectation value and time average. We start with the expressions (stated without proof here) for the \FEA and the finite-time average of \BM. The \FEA (easy to derive) is distributed as
 \be
 \ave{\gv(\t)}_\N \sim \gmu \t+\mN(0, \t/\N),
 \elabel{fin_ens_BM}

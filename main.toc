@@ -12,7 +12,7 @@
 \contentsline {section}{\numberline {2.6}The game, revisited}{20}{section.2.6}% 
 \contentsline {section}{\numberline {2.7}Ergodicity}{26}{section.2.7}% 
 \contentsline {section}{\numberline {2.8}Brownian motion}{28}{section.2.8}% 
-\contentsline {section}{\numberline {2.9}Geometric Brownian motion}{35}{section.2.9}% 
+\contentsline {section}{\numberline {2.9}Geometric Brownian motion}{34}{section.2.9}% 
 \contentsline {section}{\numberline {2.10}It\^{o}\xspace calculus}{38}{section.2.10}% 
 \contentsline {part}{II\hspace {1em}Microeconomics}{41}{part.2}% 
 \contentsline {chapter}{\numberline {3}Decisions in a riskless world}{42}{chapter.3}% 
