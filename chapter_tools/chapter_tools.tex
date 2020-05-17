@@ -1242,23 +1242,26 @@ For the specific case $\gv(\x)=\ln\x$, and setting $a(\x,\t)=\gmu\x$ and $b(\x,\
 is transformed to
 \be
 \gd\ln\x = \left(\gmu-\frac{\gsigma^2}{2}\right)\gd\t + \gsigma\gd\gW,
+\elabel{GBM_SDE_log}
 \ee
 which is a \BM in $\ln\x$. Indeed, this is how we defined \GBM at the start of \secref{Geometric_Brownian}.
 
 Once we have the \SDE for $\ln(\x)$, we can integrate it, say from time $0$ to $\t$, as we did for \BM in \eref{BM_v}. This gives a stochastic process,
 \be
 \ln\x(\t) = \ln\x(0) + \left(\gmu-\frac{\gsigma^2}{2}\right)\t + \gsigma\gW(\t),
-\elabel{GBM_ln}
+\elabel{GBM_sol_log}
 \ee
 which, for fixed $\t$, is a normally distributed random variable,
 \be
-\ln\x(\t) \sim \mN\left(\ln\x(0) + (\gmu-\gsigma^2/2)\t, \gsigma^2\t\right).
+\ln\x(\t) \sim \mN\left(\ln\x(0) + \left(\gmu-\frac{\gsigma^2}{2}\right)\t, \gsigma^2\t\right).
+\elabel{GBM_dist}
 \ee
 Thus $\x(\t)$ is lognormally distributed.
 
-We can rewrite \eref{GBM_ln} as a solution for $\x(\t)$,
+We can rewrite \eref{GBM_sol_log} as a solution for $\x(\t)$,
 \be
 \x(\t) = \x(0)\exp\left[\left(\gmu-\frac{\gsigma^2}{2}\right)\t + \gsigma\gW(\t)\right].
+\elabel{GBM_sol}
 \ee
 which shows neatly that $\x(\t)$ follows noisy exponential growth. If we write $\x(\t)=\x(0)\exp(g(t)t)$, we can express the noise as a random growth rate,
 \be

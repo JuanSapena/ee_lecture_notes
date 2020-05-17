@@ -20,18 +20,18 @@ a model economy which, for the moment, contains no interactions between individu
 We have seen that risk aversion constitutes optimal behaviour under the assumption 
 of multiplicative wealth growth and over time scales that are long enough for systematic 
 trends to be significant. In this chapter we will continue to explore our null model, 
-\GBM. By ``explore'' we mean that we will let the model generate its world -- if 
+\GBM. By ``explore'' we mean that we will let the model generate its world: if 
 individual wealth follows \GBM, then what kind of economy emerges? 
 We will see later, in \cref{Interactions}, that cooperation and the formation of social structure also constitute optimal behaviour.
 
 \GBM is more than a random variable. It's a stochastic process, either a set of trajectories 
 or a family of time-dependent random variables, depending on how we 
-prefer to look at it.  Both perspectives are informative in the context of economic modelling:
-from the set of trajectories we can judge what is likely to happen to an individual, 
-\eg by following a single trajectory for a long time; while the \PDFa of the random 
+prefer to look at it.  Both perspectives are informative in the context of economic modelling.
+From the set of trajectories we can judge what is likely to happen to an individual, 
+\eg by following a single trajectory for a long time. While the \PDFa of the random 
 variable $\x(\t^*)$ at some fixed value of $\t^*$ tells us how wealth is distributed in our model. 
 
-We use the term wealth distribution to refer to the density function, $\PDF_\x(\x)$, and not the process of distributing wealth among people. This can be interpreted as follows. Imagine a population of $\N$ individuals. If I select a random individual, each having uniform probability $\frac{1}{\N}$, then the probability of the selected individual having wealth greater than $\x$ is given by the \CDF, $F_\x(\x)=\int_\x^\infty \PDF_\x(s)\gd s$, shaded pink in panel A) of \fref{wealth_dist_def} . If $\N$ is large, then $\D \x \PDF_\x(\x)\N$ is the approximate number of individuals who have wealth between $\x$ and $\x+\D \x$, that's $\N$ times the pink area in panel B) of \fref{wealth_dist_def} . Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
+We use the term wealth distribution to refer to the density function, $\PDF_\x(\x)$, and not the activity of distributing wealth among people. We interpret the density function as follows. Imagine a population of $\N$ individuals. If I select a random individual, each having uniform probability $1/\N$, then the probability of the selected individual having wealth greater than $\x$ is given by the \CDF, $F_\x(\x)=\int_\x^\infty \PDF_\x(s)\gd s$, the shaded area in panel A of \fref{wealth_dist_def}. If $\N$ is large, then $\N\PDF_\x(\x)\D\x$ is the approximate number of individuals who have wealth between $\x$ and $\x+\D \x$, which is $\N$ times the area of the shaded strip in panel B of \fref{wealth_dist_def}. Put another way, $\PDF_\x(\x)\D\x$ is the approximate fraction of a large population with wealth between $\x$ and $\x+\D \x$. Thus, a broad wealth distribution with heavy tails indicates greater wealth inequality.
 
 \begin{figure}[h]
 \begin{picture}(200,170)(20,30)
@@ -48,22 +48,25 @@ We use the term wealth distribution to refer to the density function, $\PDF_\x(\
 
 \subsection{Lognormal distribution}
 \seclabel{Lognormal_wealth}
-At a given time, $\t$, \GBM produces a random variable, $\x(\t)$, with a lognormal distribution whose parameters depend on $\t$. A lognormally distributed random variable is one whose logarithm is a normally distributed random variable. If each individual's wealth follows \GBM,
+At a fixed time, $\t^\ast$, \GBM produces a random variable, $\x(\t^\ast)$, with a lognormal distribution whose parameters depend on $\t^\ast$. A lognormally distributed random variable is one whose logarithm is a normally distributed random variable. Suppose each individual's wealth follows \GBM,
 \be
-\gd\x=\x(\gmu \gd\t + \gsigma \gd\gW),
-\elabel{GBM}
+\gd\x=\x(\gmu \gd\t + \gsigma \gd\gW).
+\elabel{GBM_SDE_ch6}
 \ee
-with solution 
+The solution of this \SDE, which we derived in \secref{Ito}, is
 \be
 \x(\t) = \x(0) \exp\left[\left(\gmu-\frac{\gsigma^2}{2}\right)\t + \gsigma \gW(\t)\right],
-\elabel{GBM_sol}
 \ee
-then we will observe a lognormal distribution of wealth at each moment in time:
+or, after taking logarithms,
 \be
-\ln \x(\t) \sim \mathcal{\N}\left(\ln \x(0) + \left(\gmu - \frac{\gsigma^2}{2}\right)\t, \gsigma^2 \t\right).
+\ln\x(\t) = \ln\x(0) + \left(\gmu-\frac{\gsigma^2}{2}\right)\t + \gsigma \gW(\t).
+\ee
+From this we see that we will observe a lognormal distribution of wealth at each moment in time,
+\be
+\ln \x(\t) \sim  \mathcal{\N}\left(\ln \x(0) + \left(\gmu - \frac{\gsigma^2}{2}\right)\t, \gsigma^2 \t\right),
 \elabel{lognormal}
 \ee
-It will be convenient hereafter to assume the initial condition $\x(0)=1$ (and, therefore, $\ln \x(0)=0$) unless otherwise stated.
+as we showed in \eref{GBM_dist}. From now on we will assume the initial condition $\x(0)=1$ and, therefore, that $\ln \x(0)=0$) unless otherwise stated.
 
 Note that the variance of $\ln \x(\t)$ increases linearly in time. We will develop an understanding of this shortly. As we will see, it indicates that any meaningful measure of inequality will grow over time in our simple model. To see what kind of a wealth distribution \eref{lognormal} is, it is worth spelling out the lognormal \PDFa:
 \be
@@ -78,7 +81,7 @@ This distribution is the subject of a wonderful book \cite{AitchisonBrown1957}, 
 \ee
 or, equivalently, $\ln\ave{\x(\t)}=\gmu \t$.
 
-We could confirm this result by calculating $\ave{\x(\t)}=\int_0^\infty s\PDF_\x(s) ds$, but that is laborious. Instead, we use a neat trick, courtesy of \cite[Chapter 4.2]{KloedenPlaten1992}, which will come in handy again in \secref{RGBM_moments}. The idea is to turn a stochastic differential equation for $\x$, like \eref{GBM}, into an ordinary differential equation for its $k^\text{th}$ moment, $\ave{\x^k}$. For the first moment, $k=1$, we do this simply by taking expectations of both sides of \eref{GBM}. The stochastic term vanishes to leave an ODE for the expected wealth, $\ave{\x}$:
+We could confirm this result by calculating $\ave{\x(\t)}=\int_0^\infty s\PDF_\x(s) ds$, but that is laborious. Instead, we use a neat trick, courtesy of \cite[Chapter 4.2]{KloedenPlaten1992}, which will come in handy again in \secref{RGBM_moments}. The idea is to turn a stochastic differential equation for $\x$, like \eref{GBM_SDE_ch6}, into an ordinary differential equation for its $k^\text{th}$ moment, $\ave{\x^k}$. For the first moment, $k=1$, we do this simply by taking expectations of both sides of \eref{GBM_SDE_ch6}. The stochastic term vanishes to leave an ODE for the expected wealth, $\ave{\x}$:
 \bea
 \ave{\gd\x}&=&\ave{\x(\gmu \gd\t + \gsigma \gd\gW)}\\
 d\ave{\x}&=&\ave{\x} \gmu \gd\t + \gsigma \overbrace{\ave{\gd\gW}}^{=0}\\
@@ -96,9 +99,9 @@ For $\gmu>0$, the expected wealth grows exponentially over time, as do its media
 
 \subsection{Two growth rates}
 \seclabel{two_rates}
-We will recap briefly here one of our key ideas, covered in detail in \secref{Geometric_Brownian}, that the ensemble average of all possible trajectories of \GBM grows at a different (faster) rate from that achieved by a single trajectory almost surely in the long-time limit. Understanding this difference was the key to developing a coherent theory of individual decision-making. We will see here that it is also crucial in understanding how wealth becomes distributed in a population of individuals whose wealths follow \eref{GBM} and, furthermore, how we can measure the inequality in such a distribution.
+We will recap briefly here one of our key ideas, covered in detail in \secref{Geometric_Brownian}, that the ensemble average of all possible trajectories of \GBM grows at a different (faster) rate from that achieved by a single trajectory almost surely in the long-time limit. Understanding this difference was the key to developing a coherent theory of individual decision-making. We will see here that it is also crucial in understanding how wealth becomes distributed in a population of individuals whose wealths follow \eref{GBM_SDE_ch6} and, furthermore, how we can measure the inequality in such a distribution.
 
-We recall from \eref{expectation_g} that the growth rate of the expected wealth is
+We recall from \eref{expectation_g} that the growth rate of the ensemble-average wealth is
 \be
 \gex = \frac{\gd\ln\ave{\x}}{\gd\t} = \gmu,
 \ee
@@ -112,7 +115,7 @@ and from \eref{time_g} that the time-average growth rate of wealth is
 \subsection{Measuring inequality}
 \seclabel{Inequality_measure}
 In the case of \GBM we have just seen how to 
-compute the exact full wealth distribution, $\PDF_\x(\x)$. This is interesting but often we want only summary measures of the distribution. One summary measure of particular interest to economists is inequality. How much inequality is there in a distribution like \eref{lognormal}? And how does this quantity increase over time under \GBM, as we have suggested?
+compute the exact full wealth distribution, $\PDF_\x(\x)$. This is interesting but often we want only summary measures of the distribution. One summary measure of particular interest to economists is inequality. How much inequality is there in a distribution like \eref{lognormal}? And how does this quantity increase over time under \GBM, as we have suggested it does?
 
 Clearly, to answer these questions, we must quantify ``inequality''. In this section, and also in \cite{AdamouPeters2016}, we develop a natural way of measuring it, which makes use of the two growth rates we identified for the non-ergodic process. We will see that a particular inequality measure, known to economists as Theil's second index \cite{Theil1967}, is a quantity which grows at the difference between the growth rates of average wealth (growing at the ensemble-average growth rate) and typical wealth (growing at the time-average growth rate) in the \GBM model. Thus, the difference between ensemble and time averages, the essence of ergodicity breaking, is the fundamental driver of the dynamics of inequality.
 
@@ -142,7 +145,7 @@ as shown in \fref{wealth_dist_extreme}.
 Quantifying inequality in any other distribution is reminiscent of the gamble 
 problem. Recall that for gambles we wanted make statements of the type ``this gamble 
 is more desirable than that gamble''. We did this by collapsing distributions, in this case of wealth changes in gambles, to scalars, which we could rank.
-Depending on the question that was being asked, the appropriate way of collapsing the distribution and the resulting scalar can be different (the scalar relevant to an insurance company may not be relevant to an individual).
+Depending on the question that was being asked, the appropriate way of collapsing the distribution and the resulting scalar can be different. (For example, the scalar relevant to an insurance company may not be relevant to an individual.)
 In the case of inequality we also have a distribution -- the wealth distribution -- and we 
 want to make statements of the type ``this distribution is more unequal than that 
 distribution''. Again, this is done by collapsing the distribution to a scalar, and again 
@@ -150,33 +153,29 @@ many different choices of collapse and resulting scalar are possible. The Gini
 coefficient is a particularly well-known scalar of this type, the 80/20 ratio another. Indeed, there is a whole menagerie of inequality measures in economics.
 
 In this context the expectation value is an important quantity. 
-For instance, if everyone has the same wealth, then everyone will own the average, $\x_\gi=\ave{\x}_\N$, which converges to the expectation value for large $\N$. Also, whatever the distribution 
-of wealth, the total wealth is $\N\ave{\x}_\N$ whose relative difference from $\N\ave{\x}$ vanishes as $\N$ grows large. The growth 
-rate of the expectation value, $\gex$, thus tells us how fast the average wealth and the 
-total population wealth grow almost surely in a large ensemble. The time-average growth rate, $\gt$, on the other hand, tells us how fast an individual's wealth grows almost surely in 
-the long run. If the typical individual's wealth grows more slowly than the 
-expectation value of wealth, then there must be atypically wealthy individuals 
-to account for the difference. This insight suggests the following measure of 
-inequality.
+For instance, if everyone has the same wealth, then everyone will own the \FEA, $\x_\gi=\ave{\x}_\N$, which converges to the expectation value, $\ave{x}$, for large $\N$.
+Furthermore, whatever the distribution of wealth, the total wealth is $\N\ave{\x}_\N$, whose relative difference from $\N\ave{\x}$ vanishes as $\N$ grows large.
+The growth rate of the expectation value, $\gex$, thus tells us how fast the average wealth and the total wealth grow almost surely in a large population.
+
+The time-average growth rate, $\gt$, on the other hand, tells us how fast an individual's wealth (indeed, \textit{every} individual's wealth) will grow almost surely in the $\t\to\infty$ limit.
+So, over sufficiently long tome scales, $\gt$ will be the growth rate experienced by almost all members of a population.
+If this typical growth rate is less than that of the expectation value of wealth, then there must be atypically wealthy individuals to account for the difference. This insight suggests the following measure of wealth inequality.
 
 \definition{
-Inequality, $\J$, is the quantity whose growth rate is the 
-difference between expectation-value and time-average growth rates,
+Inequality, $\J$, is the quantity which grows at the difference between the growth rate of the ensemble average and the time-average growth rate,
 \be
 \frac{\gd \J}{\gd\t}=\gex-\gt.
 \elabel{dJ}
 \ee
 \Eref{dJ} defines the dynamic of inequality, and inequality itself is found by 
-integrating over time:
+integrating it over time:
 \be
 \J(\t)=\int_0^\t [\gex(s)-\gt(s)] \gd s
 \elabel{J}
 \ee
 }
 
-This definition may be used for dynamics other than
-\GBM, as we shall discuss in \secref{jensen}. Whatever the wealth dynamic, typical minus average growth rates are informative of the
-dynamic of inequality. Within the \GBM framework we can write the difference in growth rates as 
+This definition may be used for dynamics other than \GBM, as we shall discuss in \secref{jensen}. Whatever the wealth dynamic, aggregate minus typical growth rates are informative of the dynamic of inequality. Within the \GBM framework we can write the difference in growth rates as 
 \be
 \frac{\gd \J}{\gd\t}=\frac{\gd \ln \ave{\x}}{\gd\t}-\frac{\gd \ave{\ln \x}}{\gd\t}
 \elabel{J_dyn}
@@ -186,12 +185,7 @@ and integrate over time to get
 \J(\t)=\ln \ave{\x(\t)}-\ave{\ln \x(\t)}.
 \elabel{J_x}
 \ee
-This quantity is known as the mean logarithmic deviation (MLD) or Theil's second index of inequality \cite{Theil1967}. 
-This is rather remarkable. Our general inequality measure, \eref{J}, evaluated 
-for the specific case of \GBM, turns out to be a well-known measure of inequality that 
-economists have identified independently, without considering non-ergodicity and ensemble 
-average and time average growth rates. Merely by insisting on measuring inequality well,
-Theil used the \GBM model implicitly.\footnote{Like Kelly's ideas about gambling \cite{Kelly1956}, Theil's inequality measures were developed using information theory.}
+This quantity is known as the mean logarithmic deviation (MLD) or Theil's second index of inequality \cite{Theil1967}. This is rather remarkable. Our general inequality measure, \eref{J}, evaluated for the specific case of \GBM, turns out to be a well-known measure of inequality that economists have identified independently, without considering the ergodicity problem. Merely by insisting on measuring inequality well, Theil used the \GBM model implicitly.\footnote{Like Kelly's ideas about gambling \cite{Kelly1956}, Theil's inequality measures emerged from information theory.}
 
 Substituting the known values of the two growth rates into \eref{dJ} and integrating, we can evaluate the Theil inequality as a function of time:
 \be
@@ -257,7 +251,7 @@ Now that we have an expression for $\gw$ in terms of $\x$ and $\t$, we can deriv
 \gd \gw &=& \frac{\partial \gw}{\partial \t}\gd\t + \frac{\partial \gw}{\partial \x}\gd\x + \frac{1}{2} \frac{\partial^2 \gw}{\partial \x^2} \gd\x^2 \\
 &=& -\gmu \gw\gd\t + \frac{\gw}{\x}\gd\x \elabel{ysde},
 \eea
-and then substitute \eref{GBM} for $\gd\x$ to get
+and then substitute \eref{GBM_SDE_ch6} for $\gd\x$ to get
 \be
 \gd \gw = \gw \gsigma \gd\gW.
 \elabel{GBM_y}
@@ -275,9 +269,9 @@ Finally, noting that $\ave{\ln \gw}=\ave{\ln \x}-\ln\ave{\x}$ gives us a simple 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{$\gv$-normal distributions and Jensen's inequality}
+\subsection{Jensen's inequality and $\gv$-normal distributions}
 \seclabel{jensen}
-So far we have confined our analysis to \GBM, where wealths follow the dynamic specified by \eref{GBM}. However, as we discussed in the context of gambles, other wealth dynamics are possible. In particular, we explored the dynamics corresponding to ergodicity transformations that execute a \BM with drift as in \eref{dv_gen}:
+So far we have confined our analysis to \GBM, where wealths follow the dynamic specified by \eref{GBM_SDE_ch6}. However, as we discussed in the context of gambles, other wealth dynamics are possible. In particular, we explored the dynamics corresponding to ergodicity transformations that execute a \BM with drift as in \eref{dv_gen}:
 \be
 \gd\gv = a_\gv \gd\t + b_\gv \gd\gW.
 \ee
