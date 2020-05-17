@@ -53,50 +53,49 @@
 \BOOKMARK [2][-]{subsection.6.1.1}{Lognormal distribution}{section.6.1}% 53
 \BOOKMARK [2][-]{subsection.6.1.2}{Two growth rates}{section.6.1}% 54
 \BOOKMARK [2][-]{subsection.6.1.3}{Measuring inequality}{section.6.1}% 55
-\BOOKMARK [2][-]{subsection.6.1.4}{Democratic domestic product}{section.6.1}% 56
-\BOOKMARK [2][-]{subsection.6.1.5}{Wealth condensation}{section.6.1}% 57
-\BOOKMARK [2][-]{subsection.6.1.6}{Rescaled wealth}{section.6.1}% 58
-\BOOKMARK [2][-]{subsection.6.1.7}{Jensen's inequality and v-normal distributions}{section.6.1}% 59
-\BOOKMARK [2][-]{subsection.6.1.8}{Power-law resemblance}{section.6.1}% 60
-\BOOKMARK [1][-]{section.6.2}{Finite populations}{chapter.6}% 61
-\BOOKMARK [2][-]{subsection.6.2.1}{Sums of lognormals}{section.6.2}% 62
-\BOOKMARK [2][-]{subsection.6.2.2}{The random energy model}{section.6.2}% 63
-\BOOKMARK [0][-]{chapter.7}{Interactions}{part.3}% 64
-\BOOKMARK [1][-]{section.7.1}{Cooperation}{chapter.7}% 65
-\BOOKMARK [1][-]{section.7.2}{Reallocation}{chapter.7}% 66
-\BOOKMARK [2][-]{subsection.7.2.1}{Introduction}{section.7.2}% 67
-\BOOKMARK [2][-]{subsection.7.2.2}{The ergodic hypothesis in economics}{section.7.2}% 68
-\BOOKMARK [2][-]{subsection.7.2.3}{Reallocating geometric Brownian motion}{section.7.2}% 69
-\BOOKMARK [2][-]{subsection.7.2.4}{Model behaviour}{section.7.2}% 70
-\BOOKMARK [2][-]{subsection.7.2.5}{Derivation of the stable distribution}{section.7.2}% 71
-\BOOKMARK [2][-]{subsection.7.2.6}{Moments and convergence times}{section.7.2}% 72
-\BOOKMARK [2][-]{subsection.7.2.7}{Fitting United States wealth data}{section.7.2}% 73
-\BOOKMARK [0][-]{chapter.8}{Markets}{part.3}% 74
-\BOOKMARK [1][-]{section.8.1}{Optimal leverage}{chapter.8}% 75
-\BOOKMARK [2][-]{subsection.8.1.1}{A model market}{section.8.1}% 76
-\BOOKMARK [2][-]{subsection.8.1.2}{Leverage}{section.8.1}% 77
-\BOOKMARK [2][-]{subsection.8.1.3}{Portfolio theory}{section.8.1}% 78
-\BOOKMARK [2][-]{subsection.8.1.4}{Markowitz's efficient frontier}{section.8.1}% 79
-\BOOKMARK [2][-]{subsection.8.1.5}{Sharpe ratio}{section.8.1}% 80
-\BOOKMARK [2][-]{subsection.8.1.6}{Expected return}{section.8.1}% 81
-\BOOKMARK [2][-]{subsection.8.1.7}{Growth rate maximisation}{section.8.1}% 82
-\BOOKMARK [1][-]{section.8.2}{Stochastic market efficiency}{chapter.8}% 83
-\BOOKMARK [2][-]{subsection.8.2.1}{A fundamental measure}{section.8.2}% 84
-\BOOKMARK [2][-]{subsection.8.2.2}{Relaxing the model}{section.8.2}% 85
-\BOOKMARK [2][-]{subsection.8.2.3}{Efficiency}{section.8.2}% 86
-\BOOKMARK [2][-]{subsection.8.2.4}{Stability}{section.8.2}% 87
-\BOOKMARK [2][-]{subsection.8.2.5}{Prediction accuracy}{section.8.2}% 88
-\BOOKMARK [1][-]{section.8.3}{Applications of stochastic market efficiency}{chapter.8}% 89
-\BOOKMARK [2][-]{subsection.8.3.1}{A theory of noise \205 Sisyphus discovers prices}{section.8.3}% 90
-\BOOKMARK [2][-]{subsection.8.3.2}{Solution of the equity premium puzzle}{section.8.3}% 91
-\BOOKMARK [2][-]{subsection.8.3.3}{Central-bank interest rates}{section.8.3}% 92
-\BOOKMARK [2][-]{subsection.8.3.4}{Fraud detection}{section.8.3}% 93
-\BOOKMARK [1][-]{section.8.4}{Real markets \205 stochastic market efficiency in action}{chapter.8}% 94
-\BOOKMARK [2][-]{subsection.8.4.1}{Backtests of constant-leverage investments}{section.8.4}% 95
-\BOOKMARK [2][-]{subsection.8.4.2}{Data sets}{section.8.4}% 96
-\BOOKMARK [2][-]{subsection.8.4.3}{Full time series}{section.8.4}% 97
-\BOOKMARK [2][-]{subsection.8.4.4}{Shorter time scales}{section.8.4}% 98
-\BOOKMARK [1][-]{section.8.5}{Discussion}{chapter.8}% 99
-\BOOKMARK [1][-]{section*.15}{Acronyms}{chapter.8}% 100
-\BOOKMARK [1][-]{section*.17}{List of Symbols}{chapter.8}% 101
-\BOOKMARK [1][-]{section*.18}{References}{chapter.8}% 102
+\BOOKMARK [2][-]{subsection.6.1.4}{Wealth condensation}{section.6.1}% 56
+\BOOKMARK [2][-]{subsection.6.1.5}{Rescaled wealth}{section.6.1}% 57
+\BOOKMARK [2][-]{subsection.6.1.6}{Jensen's inequality and v-normal distributions}{section.6.1}% 58
+\BOOKMARK [2][-]{subsection.6.1.7}{Power-law resemblance}{section.6.1}% 59
+\BOOKMARK [1][-]{section.6.2}{Finite populations}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.2.1}{Sums of lognormals}{section.6.2}% 61
+\BOOKMARK [2][-]{subsection.6.2.2}{The random energy model}{section.6.2}% 62
+\BOOKMARK [0][-]{chapter.7}{Interactions}{part.3}% 63
+\BOOKMARK [1][-]{section.7.1}{Cooperation}{chapter.7}% 64
+\BOOKMARK [1][-]{section.7.2}{Reallocation}{chapter.7}% 65
+\BOOKMARK [2][-]{subsection.7.2.1}{Introduction}{section.7.2}% 66
+\BOOKMARK [2][-]{subsection.7.2.2}{The ergodic hypothesis in economics}{section.7.2}% 67
+\BOOKMARK [2][-]{subsection.7.2.3}{Reallocating geometric Brownian motion}{section.7.2}% 68
+\BOOKMARK [2][-]{subsection.7.2.4}{Model behaviour}{section.7.2}% 69
+\BOOKMARK [2][-]{subsection.7.2.5}{Derivation of the stable distribution}{section.7.2}% 70
+\BOOKMARK [2][-]{subsection.7.2.6}{Moments and convergence times}{section.7.2}% 71
+\BOOKMARK [2][-]{subsection.7.2.7}{Fitting United States wealth data}{section.7.2}% 72
+\BOOKMARK [0][-]{chapter.8}{Markets}{part.3}% 73
+\BOOKMARK [1][-]{section.8.1}{Optimal leverage}{chapter.8}% 74
+\BOOKMARK [2][-]{subsection.8.1.1}{A model market}{section.8.1}% 75
+\BOOKMARK [2][-]{subsection.8.1.2}{Leverage}{section.8.1}% 76
+\BOOKMARK [2][-]{subsection.8.1.3}{Portfolio theory}{section.8.1}% 77
+\BOOKMARK [2][-]{subsection.8.1.4}{Markowitz's efficient frontier}{section.8.1}% 78
+\BOOKMARK [2][-]{subsection.8.1.5}{Sharpe ratio}{section.8.1}% 79
+\BOOKMARK [2][-]{subsection.8.1.6}{Expected return}{section.8.1}% 80
+\BOOKMARK [2][-]{subsection.8.1.7}{Growth rate maximisation}{section.8.1}% 81
+\BOOKMARK [1][-]{section.8.2}{Stochastic market efficiency}{chapter.8}% 82
+\BOOKMARK [2][-]{subsection.8.2.1}{A fundamental measure}{section.8.2}% 83
+\BOOKMARK [2][-]{subsection.8.2.2}{Relaxing the model}{section.8.2}% 84
+\BOOKMARK [2][-]{subsection.8.2.3}{Efficiency}{section.8.2}% 85
+\BOOKMARK [2][-]{subsection.8.2.4}{Stability}{section.8.2}% 86
+\BOOKMARK [2][-]{subsection.8.2.5}{Prediction accuracy}{section.8.2}% 87
+\BOOKMARK [1][-]{section.8.3}{Applications of stochastic market efficiency}{chapter.8}% 88
+\BOOKMARK [2][-]{subsection.8.3.1}{A theory of noise \205 Sisyphus discovers prices}{section.8.3}% 89
+\BOOKMARK [2][-]{subsection.8.3.2}{Solution of the equity premium puzzle}{section.8.3}% 90
+\BOOKMARK [2][-]{subsection.8.3.3}{Central-bank interest rates}{section.8.3}% 91
+\BOOKMARK [2][-]{subsection.8.3.4}{Fraud detection}{section.8.3}% 92
+\BOOKMARK [1][-]{section.8.4}{Real markets \205 stochastic market efficiency in action}{chapter.8}% 93
+\BOOKMARK [2][-]{subsection.8.4.1}{Backtests of constant-leverage investments}{section.8.4}% 94
+\BOOKMARK [2][-]{subsection.8.4.2}{Data sets}{section.8.4}% 95
+\BOOKMARK [2][-]{subsection.8.4.3}{Full time series}{section.8.4}% 96
+\BOOKMARK [2][-]{subsection.8.4.4}{Shorter time scales}{section.8.4}% 97
+\BOOKMARK [1][-]{section.8.5}{Discussion}{chapter.8}% 98
+\BOOKMARK [1][-]{section*.17}{Acronyms}{chapter.8}% 99
+\BOOKMARK [1][-]{section*.19}{List of Symbols}{chapter.8}% 100
+\BOOKMARK [1][-]{section*.20}{References}{chapter.8}% 101
