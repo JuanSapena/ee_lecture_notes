@@ -374,14 +374,16 @@ Our observations are also relevant to the issue of setting a central bank's lend
 \be
 \mur=\mus-(\sigmas)^2.
 \ee
-Using values for $\mus$ and $\sigmas$ estimated in section~\secref{real}, the optimal interest rate between 1988 and 2018 for the US comes out as 9\% {\it p.a.}, suggesting that actual interest rates over the analysed period have been in a region where they can inflate leverage bubbles (the geometric average on 10-year maturity Treasury bills was about 4.7\% \pa lower than this value). The effect is mitigated by trading costs, meaning that 9\% is an overestimate of the optimal interest rate, nonetheless it is hard to deny that asset bubbles were inflated over this period. The task of the central banker can be seen as the task of estimating $\mur$ and $\sigmas$ in the relevant way. This will involve choices about data and timescales which are far from trivial. For instance, in our data analyses at any given time there is an estimate for $\mus$ and one for $\sigmas$ for each possible length of lookback window. Operational matters aside, stability with respect to leverage is an important consideration for any central bank. Leverage efficiency provides a simple quantitative basis for a rate setting protocol and may frame qualitative discussions about interest rates in a useful way.
+Using values for $\mus$ and $\sigmas$ estimated in section~\secref{real}, we can determine the corresponding optimal interest rate, which depends on the assets we choose to represent riskless and risky, of course. For example, using interest rates for ten-year maturity Treasury bills as the return for the riskless asset, and the S\&P500 total return index for the risky, between 1988 and 2020 the optimal interest rate comes out as 8.2\% {\it p.a.}, suggesting that actual interest rates over the analysed period have been in a region where they can inflate leverage bubbles (the geometric average on 10-year maturity Treasury bills was about 4.6\% \pa, meaning lower than this value). The effect is mitigated by trading costs, and our estimate of its magnitude depends on what we think are good assets to use in the analysis. So these numbers should be thought of as a proof of principle -- choose your own assets, and build more realistic models to come to a comprehensive understanding of where we are. It is hard to deny, of course, that asset bubbles were inflated over this period. 
+
+The task of the central banker can be seen as the task of estimating $\mur$ and $\sigmas$ in the relevant way. This will involve choices about data and timescales which are far from trivial. For instance, in our data analyses at any given time there is an estimate for $\mus$ and one for $\sigmas$ for each possible length of lookback window. Operational matters aside, stability with respect to leverage is an important consideration for any central bank. Leverage efficiency provides a simple quantitative basis for a rate setting protocol and may frame qualitative discussions about interest rates in a useful way.
 
 
 \subsection{Fraud detection\seclabel{fraud}}
 We will see in the next section that stochastic market efficiency is real. Prices of real traded assets more or less obey the constraints dictated by systemic stability. Of course, over short time scales fluctuations will be large, there are all manner of difficult-to-model effects in real trading environments. These include transaction costs and other operational costs. Still -- a realistic asset should more or less satisfy stochastic market efficiency.
 
 But what if it doesn't? What if there is an asset that consistently, and at low volatility outperforms bank deposits? 
-First of all, we now know that such behavior is a challenge to systemic stability. Because of this, we don't expect it to survive for long. Where it does survive for long, one possible explanation is fraud. A common type of fraud is the so-called Ponzi scheme: the fraudster invents an attractive-looking past performance of a portfolio or asset value and entices new investors to give him their money. Instead of investing the money in the non-existent asset, it is passed on to pay off earlier investors and the fraudster siphons off and handy profit. Since the performance of the asset price is invented, there is no strong reason for it to obey stochastic market efficiency. Below we will test the Bernie-Madoff ponzi scheme and ask: was it too good to be true from the perspective of stochastic market efficiency? We will ask the same question about bitcoin: is it too good to be true from this perspective?
+First of all, we now know that such behavior is a challenge to systemic stability. Because of this, we don't expect it to survive for long. Where it does survive for long, one possible explanation is fraud. A common type of fraud is the so-called Ponzi scheme: the fraudster invents an attractive-looking past performance of a portfolio or asset value and entices new investors to give him their money. Instead of investing the money in the non-existent asset, it is passed on to pay off earlier investors and the fraudster siphons off a handy profit. Since the performance of the asset price is invented, there is no strong reason for it to obey stochastic market efficiency. Below we will test the Bernie-Madoff ponzi scheme and ask: was it too good to be true from the perspective of stochastic market efficiency? We will ask the same question about bitcoin: is it too good to be true from this perspective?
 
 \section{Real markets -- stochastic market efficiency in action\seclabel{real}}
 In \secref{applications} we went through some earth-shattering consequences of leverage efficiency. Of course we wouldn't have done that if there wasn't strong evidence of this organizing principle actually working in practice. Let's get some data and try it out. 
@@ -405,7 +407,7 @@ An investment of constant leverage is backtested using two time series, $\rs(\t)
 \item The portfolio is then rebalanced, \ie some risky holdings are ``bought'' or ``sold''  (swapped for cash) so that the ratio between risky holdings and equity remains $\l$.\\ 
 %In this step transaction costs can be introduced.\footnote{On non-trading days the return of the market is zero, while deposits continue to accrue interest. This leads to an unrealistic but negligible rebalancing on those days.}
 \end{enumerate}
-In step 1, we could include extra fees for borrowing cash or stock, and in step 2 we could include transaction costs. For the sake of simplicity we leave out these effects and refer the reader to \cite{PetersAdamou2011}. The result of such extra complexity is two-fold: portfolios with leverage $\l<0$ or $\l>1$ are penalized by borrowing costs, and any portfolios except those with $\l=0$ or $\l=1$ are penalized by trading costs. Both effects reinforce stochastic market efficiency, in the sense that they bring $\lopt \to 1$. 
+In step 1, we could include extra fees for borrowing cash or stock, and in step 3 we could include transaction costs. For the sake of simplicity we leave out these effects and refer the reader to \cite{PetersAdamou2011}. The result of such extra complexity is two-fold: portfolios with leverage $\l<0$ or $\l>1$ are penalized by borrowing costs, and any portfolios except those with $\l=0$ or $\l=1$ are penalized by trading costs. Both effects reinforce stochastic market efficiency, in the sense that they bring $\lopt$ closer to the interval $[0,1]$ and usually closer to $1$. 
 
 But in the simplest instance, steps 1--3 result in the following protocol, which is a discretized version of \eref{sde_l}
 \be
@@ -416,8 +418,8 @@ which we repeat until the final day of the backtest, $\tmax$, when the final equ
 
 \begin{figure}
 \begin{picture}(300,400)
-\put(-5,225){\includegraphics[width=1.095\textwidth]{./chapter_markets/figs/STR-FET-1_equity.pdf}}
-\put(0,0){\includegraphics[width=.95\textwidth]{./chapter_markets/figs/STR-FET_final_equity.pdf}}
+\put(-5,225){\includegraphics[width=.95\textwidth]{./chapter_markets/figs/SP500-FED_equity_trajectories}}
+\put(0,0){\includegraphics[width=.95\textwidth]{./chapter_markets/figs/SP500-FED_final_equity.pdf}}
 \end{picture}
 \caption{{\bf Top:} equity $\xl(\t)$ as it evolves over time, in investments of initially \$1 in the \SPT at different constant leverages, rebalanced daily as in \fref{rebalance}. For riskless returns we use interest rates of 10-year T-bills. Initially, as leverage increases $\l=0\to1\to2$ the benefits of investing in the \SPT manifest themselves. But eventually, as $\l=3\to4\to5$, harmful fluctuations become so large that returns diminish. Each leverage produces one value for the final equity.
 {\bf Bottom:} Final equity, $\xl(\tmax)$, for 500 different leverages (where $\tmax$ is 1 March 2018 in this case). Each leverage produces a ragged time series of equity (top panel). But the final equity as a function of leverage is a smooth curve. The vertical dotted lines indicate our prediction of the position of the optimum at $\l=1$, and the range up to 2 standard errors away.
@@ -458,7 +460,7 @@ We could try to correct for this bias, and we have done that in \cite{PetersAdam
 The bottom panel of \fref{STR_trajectories} shows the leverage-return curve for the \SPT. The optimal leverage is a little greater than 1, but still within 2 standard errors from the prediction. Without further ado, let's add to this figure the same curves for the \DAX and Bitcoin, this time on logarithmic vertical scales to see a bit more structure, \fref{STR_final_all}.  
 \begin{figure}
 \begin{picture}(200,200)(0,0)
-    \put(0,0){\includegraphics[width=\textwidth]{./chapter_markets/figs/all_final_equity.pdf}}
+    \put(0,0){\includegraphics[width=\textwidth]{./chapter_markets/figs/growth_vs_leverage_all.pdf}}
 \end{picture}
 \caption{Final equity $\xl(\tn; \l)$ for investments of initially \$1 in the \SPT (blue), the \DAX (yellow), and Bitcoin (red, scale on the right). The maxima of all three curves are near the predicted optimum of $\lopt=1$, where by ``near'' we mean that they are all within 2 standard errors of the prediction, without any correction for the biases introduced by neglecting trading costs.
 \flabel{STR_final_all}}
@@ -477,7 +479,7 @@ Of course, Madoff could have chosen the invented returns of his fund in a way th
 That stochastic market efficiency really doesn't apply to Madoff's returns is a good sign -- showing that a theory fails to predict things it shouldn't be able to predict is important. A theory about asset price fluctuations that applies even to fictitious prices like Madoff's would be suspicious -- it would probably not say much about prices at all but just be a statement that's generally true for a much broader class of phenomena. Having said this, introducing realistic transaction costs, leveraging something by a factor of 100 or 200 is extremely expensive, and the Madoff optimal leverage comes down significantly in a more realistic setup. Nonetheless, in \fref{STR_final_all_MAD} Madoff's returns have a statistical signature that is unequivocally different from prices arising through trading that we have investigated.
 \begin{figure}
 \begin{picture}(200,200)(0,0)
-    \put(0,0){\includegraphics[width=\textwidth]{./chapter_markets/figs/all_MAD_final_equity.pdf}}
+    \put(0,0){\includegraphics[width=\textwidth]{./chapter_markets/figs/compare_assets.pdf}}
 \end{picture}
 \caption{Final equity for investments of initially \$1 in the \SPT (blue), the DAX (yellow), Bitcoin (red), and Bernie Madoff's ponzi scheme. 
 The maxima for the real assets cluster near the predicted value $\lopt=1$. Madoff's freely invented performance had such low volatility that a leverage of 100 would have been optimal, even if rebalancing could have only occurred once per month. At higher rebalancing frequencies (had the asset actually existed) the green curve would be seen to be the left end of a parabola whose maximum may well be at 200 or 300.
@@ -543,7 +545,7 @@ But we can use \eref{variance} as a prediction in itself: is the sample variance
 %We can also test the validity of the relationship in \eref{lopt_finite} by simulating investments of different window lengths in the market data and compiling histograms of the resulting $\loptc(\Dt)$. \fref{loglog} shows, on double-logarithmic scales, the standard deviation of $\loptc(\Dt)$ as a function of $\Dt$ for the simple simulation.
 \begin{figure}
 \begin{picture}(200,230)(0,0)
-    \put(0,0){\includegraphics[width=\textwidth]{./chapter_markets/figs/STR-FED_lopt_var.pdf}}
+    \put(0,0){\includegraphics[width=\textwidth]{./chapter_markets/figs/lopt_var.pdf}}
 \end{picture}
 \caption{The red dots show the standard deviation of samples of $\loptc(\Dt)$ as a function of window length measured in days. The blue dashed line shows the prediction of \eref{variance} using the estimate of $\sigmas$ obtained by fitting a parabola to the \SPT curve in \fref{STR_final_all}.\flabel{loglog}}
 \end{figure}
