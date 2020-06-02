@@ -432,15 +432,16 @@ If at any time the equity falls below zero, the investment is declared bankrupt 
 
 \FloatBarrier 
 \subsection{Data sets}
-We want to compare the true performance of one asset to that of another, and therefore it's important to find time series that really resemble changes in equity over time that an investment would have experienced. A stock market index would be nice because it will give a broad overall impression. It won't depend too much on the specific fortunes of any given company.
+We want to compare the performance of a riskless asset to that of a risky. Ideally, the value of the riskless asset would grow at a fixed exponential rate, and the value of the risky asset would fluctuates as it grows. But reality doesn't provide us with such assets. Something close to a riskless asset is US Treasury bonds: the US government is unlikely to default on its loans (famous last words), not least because the Federal Reserve can always create money to buy such bonds. Without getting too deep into this hypothetical scenario, the dollar value of a bond is not riskless: when the Fed's interest rates change, not only do coupon payments change but also the price of previously issued bonds with different coupon payments. A realistic bond portfolio would have bonds bought at different times, with different maturities, and its value would change over time by quite a bit more than the compounding interest payments that it generates. For a risky asset, we want something like a stock market index. It will fluctuate as it grows and give a broad overall impression of similar assets. It won't depend too much on the specific fortunes of any given company. But such assets, too, come with conceptual problems: not all indexes can actually be bought and sold; some of them are closer to a statistic than to an asset. Many indexes disregard dividend payments, and if they don't -- how should those payments be treated? Dividends are taxed differently from a (paper) profits derived from some position.
 
-Strangely, most stock indexes are simply weighted averages of (free-float) market capitalization of a bunch of listed companies, but when one of those companies pays a dividend of \$10, say, and its shares correspondingly drop by \$10, the index drops too. We don't want that, so we'll have to find an index that properly accounts for dividends. 
+We caution readers to think carefully about the issues involved when interpreting our results or when analyzing other assets. All codes for our analyses are available at XXX, and we encourage readers to try out their own favorite asset pairs. Without further ado, we choose the following assets:
 
 \begin{itemize}
-\item[\bf \SPT]
-The \SPT includes dividends as desired, so we'll use it as the risky asset and play it against 10-year T-bills as the riskfree asset.
-\item[\bf \DAX]
-Another index that includes dividends is the German \DAX, and we'll try that out too. In this case we will use German overnight deposits for the riskfree asset.
+\item[\bf \FED]
+\item[\bf \SP]
+The \SP does not include dividends. This understates the performance of its constituents; but we will compare it to 10-year maturity US Treasury Bills, whereof we only take into account the yield, disregarding changes in price.
+\item[\bf \BRK]
+\BRK was selected with hindsight as an example of a very successful stock-picking fund.  
 \item[\bf Bitcoin]
 As any scientific model, stochastic market efficiency applies within some range of conditions. We will use Bitcoin to discover the limits of this range. We developed our hypothesis using our knowledge and intuition of economies, stock markets, and central banks. Let's take it outside of this context and see what happens if we use Bitcoin as the risky asset. It doesn't pay any dividends, so we don't have to worry about that, but its performance has been very different from that of a stock market, so it will be informative to see what will happen to our hypothesis. 
 \item[\bf Madoff]
