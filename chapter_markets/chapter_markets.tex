@@ -437,55 +437,59 @@ We want to compare the performance of a riskless asset to that of a risky. Ideal
 We caution readers to think carefully about the issues involved when interpreting our results or when analyzing other assets. All codes for our analyses are available at XXX, and we encourage readers to try out their own favorite asset pairs. Without further ado, we choose the following assets:
 
 \begin{itemize}
-\item[\bf \FED]
-\item[\bf \SP]
-The \SP does not include dividends. This understates the performance of its constituents; but we will compare it to 10-year maturity US Treasury Bills, whereof we only take into account the yield, disregarding changes in price.
-\item[\bf \BRK]
+\item[\bf Riskless] 
+We use \FED overnight US interest rates as the return for the riskless asset.
+This is an underestimate of a realistic portfolio of (low-risk) bonds because such a portfolio would generally contain longer-dated bonds. It also ignores the effect of price changes in bonds, which would contribute to the return of such a portfolio.\\
+Data from  01-July-1927 until 01-July-1954, reported monthly, are downloaded from \url{https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_Factors_daily_CSV.zip}\\ 
+Data from 01-July-1954 until 01-March-2020 are downloaded from \url{https://fred.stlouisfed.org/series/FEDFUNDS}
+\item[\bf Stock index]
+The \SP does not include dividends. This underestimates the return for an investment in its constituents. Derivatives written on the value of the \SP make it a tradable asset.
+\item[\bf Successful fund]
 \BRK was selected with hindsight as an example of a very successful stock-picking fund.  
 \item[\bf Bitcoin]
-As any scientific model, stochastic market efficiency applies within some range of conditions. We will use Bitcoin to discover the limits of this range. We developed our hypothesis using our knowledge and intuition of economies, stock markets, and central banks. Let's take it outside of this context and see what happens if we use Bitcoin as the risky asset. It doesn't pay any dividends, so we don't have to worry about that, but its performance has been very different from that of a stock market, so it will be informative to see what will happen to our hypothesis. 
-\item[\bf Madoff]
-We take the idea of finding the limits of the range of applicability one step further, by using an asset that has officially been declared bullshit: investments in Bernie Madoff's Ponzi scheme. Monthly returns were included in a now famous complaint filed to the \SEC by Harry Markopolos in 2005 \cite{Markopolos2005}. The complaint was ignored by the \SEC, and Madoff happily continued his scheme until the turbulent financial events of 2008 brought to light what he'd been up to. We digitized the returns in Markopolos's complaint and ran the same backtests for Madoff as for the other assets.
+As any scientific model, leverage efficiency applies within some range of conditions. \BTC is an extremely volatile asset and it will be interesting to see to what extent our model applies to it.  
+\item[\bf Fraudulent fund]
+We take the idea of finding the limits of the range of applicability one step further. Bernie \MAD has officially been declared bullshit. Monthly returns were included in a now famous complaint filed to the \SEC by Harry Markopolos in 2005 \cite{Markopolos2005}. The complaint was ignored by the \SEC, and Madoff happily continued his scheme until the turbulent financial events of 2008 brought to light what he'd been up to. We digitized the returns in Markopolos's complaint and ran the same backtests for Madoff as for the other assets.
 \end{itemize}
 
-For all assets, we will overestimate real optimal leverage in the most straight-forward backtest. Here are some reasons: 
+Here are some reasons why real optimal leverage in the most straight-forward backtest will be overestimated: 
 \begin{enumerate}
 \item Whenever trading occurs to rebalance the portfolio, trading costs would be incurred in reality. 
-\item Money borrowed for leveraging up (and shares borrowed for shorting) come at a premium that the investor has to pay. 
+\item Money borrowed for leveraging up (and shares borrowed for shorting) comes at a premium that the investor has to pay. 
 \item Stock indexes reflect well diversified portfolios of successful companies -- they are affected by survivorship bias because unsuccessful companies leave the index. 
 \end{enumerate}
-We could try to correct for this bias, and we have done that in \cite{PetersAdamou2011}. The necessary assumptions make the results more realistic but also more dependent on subjective guesses, so we'll just stick to the simplest case here and note that it will produce an over-estimate of $\lopt$.
+We could try to correct for this bias, and we have done that in \cite{PetersAdamou2011}. The necessary assumptions make the results more realistic but also more dependent on subjective guesses, so we'll just stick to the simplest case here and note that it will produce an over-estimate of $\lopt$. Codes are publicly available at XXX, including for more complex models. You can change assumptions as you like there.
 \FloatBarrier
 
 \subsection{Full time series}
-The bottom panel of \fref{STR_trajectories} shows the leverage-return curve for the \SPT. The optimal leverage is a little greater than 1, but still within 2 standard errors from the prediction. Without further ado, let's add to this figure the same curves for the \DAX and Bitcoin, this time on logarithmic vertical scales to see a bit more structure, \fref{STR_final_all}.  
+The bottom panel of \fref{STR_trajectories} shows the leverage-return curve for the \SP. The optimal leverage is a little greater than 1, but close and well within 2 standard errors from the prediction. Without further ado, let's add to this figure the same curves for \BTC and \BRK, this time on logarithmic vertical scales to see a bit more structure, \fref{STR_final_all}.  
 \begin{figure}
 \begin{picture}(200,200)(0,0)
     \put(0,0){\includegraphics[width=\textwidth]{./chapter_markets/figs/growth_vs_leverage_all.pdf}}
 \end{picture}
-\caption{Final equity $\xl(\tn; \l)$ for investments of initially \$1 in the \SPT (blue), the \DAX (yellow), and Bitcoin (red, scale on the right). The maxima of all three curves are near the predicted optimum of $\lopt=1$, where by ``near'' we mean that they are all within 2 standard errors of the prediction, without any correction for the biases introduced by neglecting trading costs.
+\caption{Final equity $\xl(\tn; \l)$ for investments of initially \$1 in the \SP (blue), \BRK (yellow), and \BTC (red). The maximum for the much more volatile \BTC is also near the predicted optimum of $\lopt=1$ -- within 2 standard errors of the prediction, without any correction for the biases introduced by neglecting trading costs. For \BRK the picture is a little different: for this extremely successfully managed fund it would have been optimal to leverage up over the course of its existence (disregarding transaction costs \etc).
 \flabel{STR_final_all}}
 \end{figure}
 
-The overall impression that emerges is this: leverage efficiency is reasonably satisfied for these assets. The shaded areas in \fref{STR_final_all} show the predicted ranges, 2 statistical standard errors to the left and right from $\lopt=1$, and all observed maxima of the curves are within these bands. We also see a convincing bias: all estimates are greater than 1, as expected given the bias in the estimate that we mentioned earlier.
+The overall impression that emerges is this: leverage efficiency is reasonably satisfied. The shaded areas in \fref{STR_final_all} show the predicted ranges, 2 statistical standard errors to the left and right from $\lopt=1$, and only \BRK lies outside its range. We also see a convincing bias: all estimates are greater than 1, as expected given the bias in the estimate that we mentioned earlier.
 
-From a scientific point of view it's not very interesting to show lots of cases where a theory gives good predictions. We want to know the limits of the theory. When does it not apply? Where does it break down? Before we looked at the data we thought that Bitcoin might be an example of an asset that doesn't obey stochastic market efficiency. But it looks just as predicted -- unspectacular. We didn't have a specific reason to suspect that the theory wouldn't apply to Bitcoin, it just seemed like an extreme asset, unlike the assets we had in mind when we developed the theory. 
+But from a scientific point of view, we want to know the limits of the theory. When does it not apply? Where does it break down? Before we looked at the data we thought that Bitcoin might be an example of an asset that doesn't obey stochastic market efficiency. But it looks just as predicted -- unspectacular. We didn't have a specific reason to suspect that the theory wouldn't apply to Bitcoin, it just seemed like an extreme asset, unlike the assets we had in mind when we developed the theory. 
 
-But let's see what happens where the theory really doesn't apply. In \fref{STR_final_all_MAD} we add to the curves of \fref{STR_final_all} the return-vs.-leverage curve for Bernie Madoff's fund. This is instructive because it shows just how different the results could have been. If it weren't for leverage efficiency optimal leverage for the \SPT, for example, could be miles away from our prediction. We have to show the Madoff data in a separate figure 
-because the scales are so different that the differences between Bitcoin, \SPT, and the \DAX become barely visible, and we thought they may be of interest.
-Apart from showing the limits of the range of applicability of our theory, the Madoff data suggest that leverage-return curves can help detect investments that are too good to be true, \ie fraud. 
-
-Of course, Madoff could have chosen the invented returns of his fund in a way that's consistent with stochastic market efficiency, just to have something credible to show to prospective victims of his fraud. But apparently he didn't bother to do that, and people believed that he'd really found a way to print money. As a former CEO of Nasdaq he himself had sufficient credibility, never mind the data.
-
-That stochastic market efficiency really doesn't apply to Madoff's returns is a good sign -- showing that a theory fails to predict things it shouldn't be able to predict is important. A theory about asset price fluctuations that applies even to fictitious prices like Madoff's would be suspicious -- it would probably not say much about prices at all but just be a statement that's generally true for a much broader class of phenomena. Having said this, introducing realistic transaction costs, leveraging something by a factor of 100 or 200 is extremely expensive, and the Madoff optimal leverage comes down significantly in a more realistic setup. Nonetheless, in \fref{STR_final_all_MAD} Madoff's returns have a statistical signature that is unequivocally different from prices arising through trading that we have investigated.
+But let's see what happens where the theory really doesn't apply. In \fref{STR_final_all_MAD} we add to the curves of \fref{STR_final_all} the return-vs.-leverage curve for \MAD. This is instructive because it shows just how different the results could have been. If it weren't for leverage efficiency, optimal leverage for the \SP, for example, could be miles away from our prediction. We have to show the Madoff data in a separate figure 
+because the scales are so different that the differences between \BTC, \SP, and the \BRK become barely visible, and we thought they may be of interest.
+Apart from showing the limits of the range of applicability of our theory, the \MAD data suggest that leverage-return curves can help detect investments that are too good to be true, \ie fraud. 
 \begin{figure}
 \begin{picture}(200,200)(0,0)
     \put(0,0){\includegraphics[width=\textwidth]{./chapter_markets/figs/compare_assets.pdf}}
 \end{picture}
-\caption{Final equity for investments of initially \$1 in the \SPT (blue), the DAX (yellow), Bitcoin (red), and Bernie Madoff's ponzi scheme. 
+\caption{Final equity for investments of initially \$1 in the \SP (blue), the \BRK (yellow), \BTC (red), and Bernie Madoff's ponzi scheme (green). 
 The maxima for the real assets cluster near the predicted value $\lopt=1$. Madoff's freely invented performance had such low volatility that a leverage of 100 would have been optimal, even if rebalancing could have only occurred once per month. At higher rebalancing frequencies (had the asset actually existed) the green curve would be seen to be the left end of a parabola whose maximum may well be at 200 or 300.
 \flabel{STR_final_all_MAD}}
 \end{figure}
+
+Of course, Madoff could have chosen the invented returns of his fund in a way that's consistent with stochastic market efficiency, just to have something credible to show to prospective victims of his fraud. But apparently he didn't bother to do that, and people believed that he'd really found a way to print money. As a former CEO of Nasdaq he himself had sufficient credibility, never mind the data.
+
+That leverage efficiency really doesn't apply to Madoff's returns is a good sign -- showing that a theory fails to predict things it shouldn't be able to predict is important. A theory about asset price fluctuations that applies even to fictitious prices like Madoff's would be suspicious -- it would probably not say much about prices at all but just be a statement that's generally true for a much broader class of phenomena. Having said this, introducing realistic transaction costs, leveraging something by a factor of 100 or 200 is extremely expensive, and the Madoff optimal leverage comes down significantly in a more realistic setup. Nonetheless, in \fref{STR_final_all_MAD} Madoff's returns have a statistical signature that is unequivocally different from prices arising through trading that we have investigated.
 
 \subsection{Shorter time scales}
 In \secref{Prediction_accuracy} we derived an expression, \eref{variance}, for the variance of optimal leverage that we expect to observe in a finite time series, and we used this to arrive at a statistical error estimate, a scale on which to judge whether leverage efficiency holds or not.
@@ -548,7 +552,7 @@ But we can use \eref{variance} as a prediction in itself: is the sample variance
 \begin{picture}(200,230)(0,0)
     \put(0,0){\includegraphics[width=\textwidth]{./chapter_markets/figs/lopt_var.pdf}}
 \end{picture}
-\caption{The red dots show the standard deviation of samples of $\loptc(\Dt)$ as a function of window length measured in days. The blue dashed line shows the prediction of \eref{variance} using the estimate of $\sigmas$ obtained by fitting a parabola to the \SPT curve in \fref{STR_final_all}.\flabel{loglog}}
+\caption{Dots show the standard deviation of samples of $\loptc(\Dt)$ as a function of window length measured in days. Dashed line shows the prediction of \eref{variance} using the estimate of $\sigmas$ obtained by fitting a parabola to curves like in \fref{STR_final_all} (blue for \SP, yellow for \BTC).\flabel{loglog}}
 \end{figure}
 
 The structure we have identified -- leverage efficiency -- operates on all time scales from weeks to decades. This broad range of applicability supports our theory of noise in \secref{a_theory}: it is a requirement of stability that asset prices fluctuate, and the shorter the time scales the less significant any economic information becomes. Thinking of price changes as a reflection of new information may be relevant on time scales of years or decades, where the real economic fortunes of companies become apparent. On time scales of days or minutes, let alone milliseconds, price movements usually have nothing to do with economic information.
@@ -578,6 +582,6 @@ The structure we have identified -- leverage efficiency -- operates on all time 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
-The primary aim of this final lecture was to demonstrate that the mathematical formalism we have developed to conceptualise randomness in economics, which started with a simple model of wealth evolution by repetition of a gamble, is very powerful. It does more than simply create a rigorous and plausible foundation for economic theory. In particular, because the framework is epistemologically sound, we can make testable predictions, which we can corroborate empirically using real economic data. We could not have guessed from our simple coin-tossing game that we would end up making a prediction about the fluctuations of stock markets or those of bitcoin. The simple but deep conceptual insight that the ergodicity question has been overlooked ultimately shed a good deal of light on the equity premium puzzle, informed the debate of how to set central-bank interest rates, and provided a new way of thinking about noise and the stabilizing role of price fluctuations. What other surprising predictions can we make in this formalism? That, dear reader, is a question for you.
+The primary aim of this final lecture was to demonstrate that the mathematical formalism we have developed to conceptualise randomness in economics, which started with a simple model of wealth evolution by repetition of a gamble, is very powerful. It does more than simply create a rigorous and plausible foundation for economic theory. In particular, because the framework is epistemologically sound, we can make testable predictions, which we can corroborate empirically using real economic data. We could not have guessed from our simple coin-tossing game that we would end up making a prediction about the fluctuations of stock markets or those of Bitcoin. The simple but deep conceptual insight that the ergodicity question has been overlooked ultimately shed a good deal of light on the equity premium puzzle, informed the debate of how to set central-bank interest rates, and provided a new way of thinking about noise and the stabilizing role of price fluctuations. What other surprising predictions can we make in this formalism? That, dear reader, is a question for you.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
