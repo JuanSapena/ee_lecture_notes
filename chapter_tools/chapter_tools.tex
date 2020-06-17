@@ -89,12 +89,10 @@ assigned to outcomes of random variables. Giving these numbers meaning is a sepa
 
 In these notes, we will use a frequentist interpretation of probabilities, by which we mean the following. 
 Imagine many separate experiments. For example, suppose we toss a coin $\N$ times, 
-and record the number of times, $n$, that a particular outcome occurs. Under the frequentist 
+and record the number of times, $\gn$, that a particular outcome occurs. Under the frequentist 
 interpretation, the probability associated with this outcome is its relative frequency, $\gn/\N$, in the limit 
 $\N\to\infty$. In the coin toss example, the probability assigned to heads would be 0.5 if the coin were 
 unbiased; if biased, it would be some other number between 0 and 1.
-Formally, in terms of a random variable, the frequentist interpretation means that $\gn/\N$ will approach
-the probability of $\gn$ when we generate $\N$ instances of the random variable.
 
 Note also that time does not appear in the formal definition of a random variable. The moment we
 try to illustrate what a random variable might model, we introduce time. For instance by saying ``we toss
@@ -415,15 +413,17 @@ The positive growth rate of ensemble average wealth is what might have led us to
 
 However, we now know that there are two ways in which we can say ``on average'': we have shown how wealth averaged over many systems evolves; let's now consider a single wealth trajectory over long time. Starting from $\x(\t_0)$ and playing for $\T$ rounds leads to wealth,
 \be
-\x(\t_0+\T\Dt) = \x(\t_0) \prod_{\gtau=1}^\T \gr_\gtau,
+\x(\t_0+\T\dt) = \x(\t_0) \prod_{\gtau=1}^\T \gr_\gtau,
+\elabel{x_prod}
 \ee
-where $\{\gr_\gtau\}$ are random wealth multipliers, all distributed like $r$, and $\gtau$ is the index for the round of the game. We have taken no kind of average yet and $\x(\t_0+\T\Dt)$ remains a random variable (it is, after all, the outcome of a stochastic process at a specified time).
+where $\{\gr_\gtau\}$ are random wealth multipliers, all distributed like $\gr$, and $\gtau$ is the index for the round of the game. We have taken no kind of average yet and $\x(\t_0+\T\dt)$ remains a random variable (it is, after all, the outcome of a stochastic process at a specified time).
 
 We follow our previous strategy of expressing this as exponential growth
 \be
 \x(\t_0+\Dt) = \x(\t_0) \exp(\g_\T\Dt),
+\elabel{x_exp}
 \ee
-where we have labelled the growth rate as $\g_\T$ to indicate that it is measured after $\T$ rounds of the gamble. Equating the two expressions and rearranging for the growth rate, we get
+where we have labelled the growth rate as $\g_\T$ to indicate that it is measured after $\T$ rounds of the gamble. Equating \eref{x_prod} and \eref{x_exp} and rearranging for the growth rate, we get
 \be
 \g_\T = \frac{1}{\Dt} \ln\left(\prod_{\gtau=1}^\T \gr_\gtau\right) = \frac{1}{\dt} \left(\frac{1}{\T} \sum_{\gtau=1}^\T \ln\gr_\gtau\right),
 \elabel{g_x_T}
@@ -443,7 +443,7 @@ which is simply the product of possible realisations of the wealth multiplier ra
 \be
 \grtime = \lim_{\T\to\infty} \greff = (1.5)^\frac{1}{2} (0.6)^\frac{1}{2} = (0.9)^\frac{1}{2}  \approx 0.95.
 \ee
-This tells a strikingly different story from that told by ensemble average wealth. Instead of growing exponentially by a factor 1.05 per round, a single wealth trajectory over long time decays exponentially by an effective factor of 0.95 per round. The corresponding exponential growth rate, from \eref{g_x_T}, is
+This tells a strikingly different story from that told by ensemble-average wealth. Instead of growing exponentially by a factor 1.05 per round, a single wealth trajectory over long time decays exponentially by an effective factor of 0.95 per round. The corresponding exponential growth rate, from \eref{g_x_T}, is
 \be
 \ggtime = \frac{\ln\grtime}{\dt} \approx -5.1\% \text{ per round}.
 \ee
@@ -515,7 +515,7 @@ For a single trajectory, $\N=1$, in the $\Dt\to\infty$ limit, we recover the rem
 %&=&\lim_{\T\to\infty}\frac{1}{\T\dt} \sum_\t^\T \D \ln \x(\t).
 %\eea
 %According to this definition, $\ggtime$ is the time average of the observable $\d \ln \x/\dt$.
-It can be shown \cite{PetersKlein2013} that the time-average growth rate of a single trajectory is the same as that of a \FEA of trajectories, \ie 
+It can be shown \cite{PetersKlein2013} that the time-average growth rate of a single trajectory is the same as that of a \FEA of trajectories, \ie for any finite \N 
 \be
 \lim_{\Dt\to\infty}\frac{\D \ln \x}{\Dt}=\lim_{\Dt\to\infty}\frac{\D \ln \ave{\x}_N}{\Dt}.
 \ee
@@ -806,7 +806,7 @@ The same argument holds for $\d \ln \x$.
 
 Whether we consider \eref{t_r} an average over time or over an ensemble is only a matter of our interpretation. The mathematics is unchanged.
 
-The expectation value $\ave{\d \ln \x}$ is important, historically. \person{Daniel Bernoulli} noticed in 1738 \cite{Bernoulli1738} that people tend to optimize $\ave{\d \ln \x}$, whereas it had been assumed that they should optimize $\ave{\d \x}$. Unaware of the issue of ergodicity (200 years before the concept was discovered and the word was coined), \person{Bernoulli} had no good explanation for this empirical fact and simply stated that people tend to behave as though they valued money non-linearly. We now know what is actually going on: multiplicative dynamics are a fairly realistic model for real wealth, and under those dynamics $\d \x$ is not ergodic, and $\ave{\d \x}$ is of no interest -- it doesn't tell us what happens over time. However, $\d \ln \x$ {\it is} ergodic, and $\ave{\d \ln \x}$ does tell us what happens to $\x$ over time, wherefore seeing people optimise $\ave{\d \ln \x}$ just means seeing them optimise wealth over the one trajectory that describes a financial life, rather than across the ensemble of possibilities.
+The expectation value $\ave{\d \ln \x}$ is important, historically. \person{Daniel Bernoulli} noticed in 1738 \cite{Bernoulli1738} that people tend to optimize $\ave{\d \ln \x}$, whereas it had been assumed that they should optimize $\ave{\d \x}$. Unaware of the issue of ergodicity (150 years before the concept was discovered and the word was coined), \person{Bernoulli} had no good explanation for this empirical fact and simply stated that people tend to behave as though they valued money non-linearly. We now know what is actually going on: multiplicative dynamics are a fairly realistic model for real wealth, and under those dynamics $\d \x$ is not ergodic, and $\ave{\d \x}$ is of no interest -- it doesn't tell us what happens over time. However, $\d \ln \x$ {\it is} ergodic, and $\ave{\d \ln \x}$ does tell us what happens to $\x$ over time, wherefore seeing people optimise $\ave{\d \ln \x}$ just means seeing them optimise wealth over the one trajectory that describes a financial life, rather than across the ensemble of possibilities.
 
 % repetition
 %When the foundations of economic theory were laid, specifically in \person{Bernoulli}'s 
@@ -939,7 +939,7 @@ and variance,
 of the sum of the $\T$ independent random increments. These are easily derived and are a worthwhile exercise. They tell us the scaling of the mean and variance of the sum: both grow linearly with the number of terms, $\T$. One way of writing the sum, then, is
 \bea
 \sum_{\gtau=1}^\T \d\gv_\gtau &\sim& \mathcal{D}(\T \ave{\d\gv},\T \var[\d\gv]) \\
-&\sim& \T \ave{\d\gv} + \sqrt{T}\,\mathcal{D}(0,\var[\d\gv]),
+&\sim& \T \ave{\d\gv} + \sqrt{\T}\,\mathcal{D}(0,\var[\d\gv]),
 \eea
 where $\mathcal{D}$ represents some unknown distribution with the mean and variance shown. We can rearrange this to get an identical expression for the finite sum to that in \eref{CLT}, except that the distribution unspecified.
 
@@ -1033,9 +1033,9 @@ Rather like an \ODE, we can integrate \eref{BM_dx}, say from time $0$ to $\t$, t
 &=& \gv(0) + \gmu\t + \gsigma\gW(\t),
 \elabel{BM_v}
 \eea
-where $\gW(\t) = \int_0^\t \gd\gW_\gs$ is the Wiener process with $\gW(0)=0$. Since the integral is the limiting case of a sum over normally distributed Wiener increments, $\gW(\t)$ is itself normally distributed with mean zero and variance $\t$, \ie $\gW(\t)\sim\N(0,\t)$. In other words, its width has the same $\sqrt{\t}$ scaling as the random walk.
+where $\gW(\t) = \int_0^\t \gd\gW_\gs$ is the Wiener process with $\gW(0)=0$. Since the integral is the limiting case of a sum over normally distributed Wiener increments, $\gW(\t)$ is itself normally distributed with mean zero and variance $\t$, \ie $\gW(\t)\sim\mN(0,\t)$. In other words, its width has the same $\sqrt{\t}$ scaling as the random walk.
 
-$\gW(\t)$ is a stochastic process which, for fixed time, generates a time-dependent normal random variable. However, this does not mean we can generate a trajectory by drawing successive independent realisations from $\mN(0,\t)$. While the Wiener increments, $\gd\gW_\t$, are independent, the Wiener process is autocorrelated. In simple terms, this is because its value at the end of time period depends on where it started, because it must take a continuous path to travel from there. It's a standard result in stochastic calculus that the autocorrelation of the values of a Wiener process at two different times simply the earlier time, \ie for $\t<\t'$, $\ave{\gW(\t)\gW(\t')} = \t$. This is because 
+$\gW(\t)$ is a stochastic process which, for fixed time, generates a time-dependent normal random variable. However, this does not mean we can generate a trajectory by drawing successive independent realisations from $\mN(0,\t)$. While the Wiener increments, $\gd\gW_\t$, are independent, the Wiener process is autocorrelated. In simple terms, this is because its value at the end of a time period depends on where it started, because it must take a continuous path to travel from there. It's a standard result in stochastic calculus that the autocovariance of the values of a Wiener process at two different times is simply the earlier time, \ie for $\t<\t'$, $\ave{\gW(\t)\gW(\t')} = \t$. This is because 
 \bea
 \ave{\gW(\t)\gW(\t')} &=& \ave{\gW(\t)[\gW(\t)+\gW(\t')-\gW(\t)]}\\
 &=& \ave{\gW(\t)^2} + \ave{\gW(\t)[\gW(\t')-\gW(\t)]}\\
@@ -1074,7 +1074,7 @@ The expectation value, \ie the limit $\N\to\infty$ of \eref{fin_ens_BM}, converg
 The time average, the limit $\t\to\infty $ of \eref{fin_tim_BM} diverges unless $\gmu=0$, but even with $\gmu=0$ the limit is a random variable with diverging variance -- something whose density 
 is zero everywhere. In no meaningful sense do the two expressions converge to the same scalar in the relevant limits.
 
-Clearly, \BM, whose increments are ergodic, is itself not ergodic. However, that doesn't make it unmanageable or unpredictable -- we know the distribution of \BM at any moment in time. But the non-ergodicity has surprising consequences of which we mention one now. We already mentioned that if we plot a Brownian trajectory with non-zero drift on a piece of paper it will turn into a straight line for long enough simulation times. This suggests that the randomness of a Brownian trajectory becomes irrelevant under a very natural rescaling. Inspired by this insight let's hazard a guess as to what the time-average of zero-drift \BM might be. 
+Clearly, \BM, whose increments are ergodic, is itself not ergodic. However, that doesn't make it unmanageable or unpredictable -- we know the distribution of \BM at any moment in time. But the non-ergodicity has surprising consequences of which we mention one now. We already mentioned that if we plot a Brownian trajectory with non-zero drift on a piece of paper it will turn into a straight line for long enough simulation times. This suggests that the randomness of a Brownian trajectory becomes irrelevant under a very natural rescaling. Inspired by this insight let's hazard a guess as to what the time average of zero-drift \BM might be. 
 
 The simplest form of zero-drift \BM is the Wiener process. It starts at zero, $\gW(0)=0$ and has variance $\var[\gW(\t)]=\t$. The process is known to be recurrent: it returns to zero, arbitrarily many times, with probability one in the long-time limit. We might guess that the time average of the Wiener process,
 \be
@@ -1087,7 +1087,7 @@ It is, instead normally distributed with infinite variance according to the foll
 \ee
 Averaging over time, in this case, does not remove the randomness. A sample trajectory of the finite-time average (not of \BM but of the average over a \BM) is shown in \fref{1_6}. In the literature this process, $\frac{1}{\t}\int_0^\t \gd\t' \gv(\t')$, is known as the ``random acceleration process'' \cite{Burkhardt2007}.
 \begin{figure}[h!]
-\begin{picture}(200,200)(0,0)
+\begin{picture}(200,220)(0,0)
     \put(0,0){\includegraphics[width=\textwidth]{./chapter_tools/figs/BM_time_ave.pdf}}
 \end{picture}
 \caption{Trajectory of the finite-time average of a zero-drift \BM. The process is not ergodic: the time average does not converge to a number, but is instead distributed according to 
@@ -1108,7 +1108,7 @@ In \secref{Brownian_motion}, the observable $\gv$ performs \BM. If we imagine $\
 \item $\x(\t)$ cannot change sign;
 \item the most likely value of $\x$ (the mode) does not coincide with the expectation value of $\x$. 
 \end{itemize}
-These and other properties of the lognormal distribution will be discussed in detail in \secref{Log-normal_wealth}.
+These and other properties of the lognormal distribution will be discussed in detail in \cref{People}.
 
 \boldhead{\SDE}
 Again, it is informative to write \GBM as a stochastic differential equation. Our definition suggests we should do this as follows,
@@ -1169,9 +1169,9 @@ The change in the logarithm of $\x$ in a time interval $\dt$ is
 \eea
 which we Taylor-expand as $\ln(1+ \text{something small})$ because we will let $\dt$ become small. Expanding to second order,
 \be
-\ln \x(\t+\dt) - \ln \x(\t) =\gmu \dt+ \gsigma \sqrt{\dt} \gxi_\t - \frac{1}{2} \left(\gmu \gsigma \dt^{3/2}\gxi_\t+
+\ln \x(\t+\dt) - \ln \x(\t) =\gmu \dt+ \gsigma \sqrt{\dt} \gxi_\t - \frac{1}{2} \left(
 \gsigma^2\dt 
-\gxi_\t^2\right)+\go(\dt^2),
+\gxi_\t^2+2\gmu \gsigma \dt^{3/2}\gxi_\t \right)+\go(\dt^2),
 \ee
 using ``little-o notation'' to denote terms that are of order $\dt^2$ or smaller. Finally, because $\d \ln \x(\t)$ is ergodic, by taking the expectation value of this equation we find the time average of $\d \ln \x(\t)$
 \be
