@@ -61,11 +61,11 @@
 \contentsline {section}{\numberline {6.1}Every man for himself}{91}{section.6.1}% 
 \contentsline {subsection}{\numberline {6.1.1}Lognormal distribution}{92}{subsection.6.1.1}% 
 \contentsline {subsection}{\numberline {6.1.2}Two growth rates}{93}{subsection.6.1.2}% 
-\contentsline {subsubsection}{Democratic growth rate}{94}{section*.13}% 
-\contentsline {subsubsection}{Plutocratic growth rate}{94}{section*.14}% 
+\contentsline {subsubsection}{Plutocratic growth rate}{94}{section*.13}% 
+\contentsline {subsubsection}{Democratic growth rate}{94}{section*.14}% 
 \contentsline {subsection}{\numberline {6.1.3}Measuring inequality}{95}{subsection.6.1.3}% 
 \contentsline {subsection}{\numberline {6.1.4}Wealth condensation}{97}{subsection.6.1.4}% 
-\contentsline {subsection}{\numberline {6.1.5}Rescaled wealth}{97}{subsection.6.1.5}% 
+\contentsline {subsection}{\numberline {6.1.5}Rescaled wealth}{98}{subsection.6.1.5}% 
 \contentsline {subsection}{\numberline {6.1.6}Jensen's inequality and ${\gls {v}}$-normal distributions}{99}{subsection.6.1.6}% 
 \contentsline {subsection}{\numberline {6.1.7}Power-law resemblance}{99}{subsection.6.1.7}% 
 \contentsline {section}{\numberline {6.2}Finite populations}{100}{section.6.2}% 

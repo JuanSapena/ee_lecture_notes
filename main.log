@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.1)  15 JUN 2020 17:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.1)  23 JUN 2020 20:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2082,19 +2082,19 @@ h_dist_def_1.pdf
 pdfTeX warning: pdflatex.exe (file ./chapter_people/figs/wealth_dist_def_1.pdf)
 : PDF inclusion: multiple pdfs with page group included in a single page
 >] [92] [93] [94]
-<./chapter_people/figs/wealth_dist_equal.pdf, id=6696, 403.5828pt x 266.96938pt
+<./chapter_people/figs/wealth_dist_equal.pdf, id=6684, 403.5828pt x 266.96938pt
 >
 File: ./chapter_people/figs/wealth_dist_equal.pdf Graphic file (type pdf)
 <use ./chapter_people/figs/wealth_dist_equal.pdf>
 Package pdftex.def Info: ./chapter_people/figs/wealth_dist_equal.pdf  used on i
-nput line 201.
+nput line 188.
 (pdftex.def)             Requested size: 172.5pt x 114.10614pt.
-<./chapter_people/figs/wealth_dist_unequal.pdf, id=6697, 409.72112pt x 266.9693
+<./chapter_people/figs/wealth_dist_unequal.pdf, id=6685, 409.72112pt x 266.9693
 8pt>
 File: ./chapter_people/figs/wealth_dist_unequal.pdf Graphic file (type pdf)
 <use ./chapter_people/figs/wealth_dist_unequal.pdf>
 Package pdftex.def Info: ./chapter_people/figs/wealth_dist_unequal.pdf  used on
- input line 202.
+ input line 189.
 (pdftex.def)             Requested size: 172.5pt x 112.39929pt.
 
 
@@ -2105,28 +2105,28 @@ ealth_dist_unequal.pdf
 
 pdfTeX warning: pdflatex.exe (file ./chapter_people/figs/wealth_dist_unequal.pd
 f): PDF inclusion: multiple pdfs with page group included in a single page
->] [97]
+>] [97] [98]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 331.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gls' on input line 331.
+(hyperref)                removing `math shift' on input line 318.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 331.
+(hyperref)                removing `\gls' on input line 318.
 
-[98] [99] [100] [101]
-<./chapter_people/figs/trajectories.pdf, id=7388, 391.2678pt x 267.6446pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 318.
+
+[99] [100] [101]
+<./chapter_people/figs/trajectories.pdf, id=7375, 391.2678pt x 267.6446pt>
 File: ./chapter_people/figs/trajectories.pdf Graphic file (type pdf)
 <use ./chapter_people/figs/trajectories.pdf>
 Package pdftex.def Info: ./chapter_people/figs/trajectories.pdf  used on input 
-line 477.
+line 464.
 (pdftex.def)             Requested size: 386.85481pt x 264.6107pt.
 
-Overfull \hbox (41.85481pt too wide) in paragraph at lines 477--484
+Overfull \hbox (41.85481pt too wide) in paragraph at lines 464--471
  [][] 
  []
 
@@ -2145,7 +2145,7 @@ LaTeX Warning: Reference `eq:GBM' on page 107 undefined on input line 35.
 
 LaTeX Warning: Reference `eq:GBM' on page 107 undefined on input line 47.
 
-<./chapter_interactions/figs/blobs.pdf, id=7779, 596.66095pt x 262.50914pt>
+<./chapter_interactions/figs/blobs.pdf, id=7767, 596.66095pt x 262.50914pt>
 File: ./chapter_interactions/figs/blobs.pdf Graphic file (type pdf)
 <use ./chapter_interactions/figs/blobs.pdf>
 Package pdftex.def Info: ./chapter_interactions/figs/blobs.pdf  used on input l
@@ -2155,7 +2155,7 @@ ine 61.
 LaTeX Warning: Reference `eq:GBM' on page 107 undefined on input line 119.
 
 [107] [108 <./chapter_interactions/figs/blobs.pdf>]
-<./chapter_interactions/figs/cooperate.pdf, id=7906, 614.295pt x 794.97pt>
+<./chapter_interactions/figs/cooperate.pdf, id=7894, 614.295pt x 794.97pt>
 File: ./chapter_interactions/figs/cooperate.pdf Graphic file (type pdf)
 <use ./chapter_interactions/figs/cooperate.pdf>
 Package pdftex.def Info: ./chapter_interactions/figs/cooperate.pdf  used on inp
@@ -2178,7 +2178,7 @@ erted-to.pdf>
 s/dists-eps-converted-to.pdf ./chapter_interactions/figs/dists.eps>
 (epstopdf)             \includegraphics on input line 343.
 Package epstopdf Info: Output file is already uptodate.
-<./chapter_interactions/figs/dists-eps-converted-to.pdf, id=8187, 461.725pt x 4
+<./chapter_interactions/figs/dists-eps-converted-to.pdf, id=8175, 461.725pt x 4
 56.70625pt>
 File: ./chapter_interactions/figs/dists-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -2199,7 +2199,7 @@ s/trajectories-eps-converted-to.pdf ./chapter_interactions/figs/trajectories.ep
 s>
 (epstopdf)             \includegraphics on input line 392.
 Package epstopdf Info: Output file is already uptodate.
-<./chapter_interactions/figs/trajectories-eps-converted-to.pdf, id=8209, 464.73
+<./chapter_interactions/figs/trajectories-eps-converted-to.pdf, id=8197, 464.73
 625pt x 409.53pt>
 File: ./chapter_interactions/figs/trajectories-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -2238,7 +2238,7 @@ onverted-to.pdf>
 s/tau_top1-eps-converted-to.pdf ./chapter_interactions/figs/tau_top1.eps>
 (epstopdf)             \includegraphics on input line 537.
 Package epstopdf Info: Output file is already uptodate.
-<./chapter_interactions/figs/tau_top1-eps-converted-to.pdf, id=8501, 461.725pt 
+<./chapter_interactions/figs/tau_top1-eps-converted-to.pdf, id=8489, 461.725pt 
 x 459.7175pt>
 File: ./chapter_interactions/figs/tau_top1-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -2252,7 +2252,7 @@ Chapter 8.
 [123
 
 ] [124]
-<./chapter_markets/figs/rebalance.pdf, id=8790, 354.02264pt x 236.22252pt>
+<./chapter_markets/figs/rebalance.pdf, id=8777, 354.02264pt x 236.22252pt>
 File: ./chapter_markets/figs/rebalance.pdf Graphic file (type pdf)
 <use ./chapter_markets/figs/rebalance.pdf>
 Package pdftex.def Info: ./chapter_markets/figs/rebalance.pdf  used on input li
@@ -2265,14 +2265,14 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 97.
  [125] [126 <./chapter_markets/figs/rebalance.pdf>]
-<./chapter_markets/figs/markowitz.pdf, id=8881, 421.575pt x 316.18124pt>
+<./chapter_markets/figs/markowitz.pdf, id=8869, 421.575pt x 316.18124pt>
 File: ./chapter_markets/figs/markowitz.pdf Graphic file (type pdf)
 <use ./chapter_markets/figs/markowitz.pdf>
 Package pdftex.def Info: ./chapter_markets/figs/markowitz.pdf  used on input li
 ne 122.
 (pdftex.def)             Requested size: 345.0pt x 258.75406pt.
  [127 <./chapter_markets/figs/markowitz.pdf>] [128] [129]
-<./chapter_markets/figs/markowitz_peters.png, id=9063, 904.1278pt x 563.85657pt
+<./chapter_markets/figs/markowitz_peters.png, id=9051, 904.1278pt x 563.85657pt
 >
 File: ./chapter_markets/figs/markowitz_peters.png Graphic file (type png)
 <use ./chapter_markets/figs/markowitz_peters.png>
@@ -2314,7 +2314,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 270.
  [134] [135] [136] [137]
-<./chapter_markets/figs/cartoon.pdf, id=9373, 597.50786pt x 845.04686pt>
+<./chapter_markets/figs/cartoon.pdf, id=9361, 597.50786pt x 845.04686pt>
 File: ./chapter_markets/figs/cartoon.pdf Graphic file (type pdf)
 <use ./chapter_markets/figs/cartoon.pdf>
 Package pdftex.def Info: ./chapter_markets/figs/cartoon.pdf  used on input line
@@ -2326,7 +2326,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 407--409
  []
 
 [140]
-<./chapter_markets/figs/SP500-FED_equity_trajectories.pdf, id=9515, 424.29366pt
+<./chapter_markets/figs/SP500-FED_equity_trajectories.pdf, id=9503, 424.29366pt
  x 249.44379pt>
 File: ./chapter_markets/figs/SP500-FED_equity_trajectories.pdf Graphic file (ty
 pe pdf)
@@ -2334,7 +2334,7 @@ pe pdf)
 Package pdftex.def Info: ./chapter_markets/figs/SP500-FED_equity_trajectories.p
 df  used on input line 421.
 (pdftex.def)             Requested size: 327.74895pt x 192.6889pt.
-<./chapter_markets/figs/SP500-FED_final_equity.pdf, id=9516, 393.60019pt x 264.
+<./chapter_markets/figs/SP500-FED_final_equity.pdf, id=9504, 393.60019pt x 264.
 86325pt>
 File: ./chapter_markets/figs/SP500-FED_final_equity.pdf Graphic file (type pdf)
 
@@ -2354,7 +2354,7 @@ mouth . edu / pages / faculty / ken . french /
  []
 
 [143]
-<./chapter_markets/figs/growth_vs_leverage_all.pdf, id=9656, 398.54051pt x 267.
+<./chapter_markets/figs/growth_vs_leverage_all.pdf, id=9643, 398.54051pt x 267.
 6446pt>
 File: ./chapter_markets/figs/growth_vs_leverage_all.pdf Graphic file (type pdf)
 
@@ -2362,7 +2362,7 @@ File: ./chapter_markets/figs/growth_vs_leverage_all.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./chapter_markets/figs/growth_vs_leverage_all.pdf  use
 d on input line 468.
 (pdftex.def)             Requested size: 345.0pt x 231.69318pt.
-<./chapter_markets/figs/compare_assets.pdf, id=9693, 425.68098pt x 266.97804pt>
+<./chapter_markets/figs/compare_assets.pdf, id=9680, 425.68098pt x 266.97804pt>
 
 File: ./chapter_markets/figs/compare_assets.pdf Graphic file (type pdf)
 <use ./chapter_markets/figs/compare_assets.pdf>
@@ -2370,7 +2370,7 @@ Package pdftex.def Info: ./chapter_markets/figs/compare_assets.pdf  used on inp
 ut line 483.
 (pdftex.def)             Requested size: 345.0pt x 216.38545pt.
  [144]
-<./chapter_markets/figs/lopt_var.pdf, id=9727, 404.38266pt x 268.9777pt>
+<./chapter_markets/figs/lopt_var.pdf, id=9715, 404.38266pt x 268.9777pt>
 File: ./chapter_markets/figs/lopt_var.pdf Graphic file (type pdf)
 <use ./chapter_markets/figs/lopt_var.pdf>
 Package pdftex.def Info: ./chapter_markets/figs/lopt_var.pdf  used on input lin
@@ -2429,10 +2429,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41736 strings out of 492616
- 776695 string characters out of 6132769
- 1268436 words of memory out of 5000000
- 44043 multiletter control sequences out of 15000+600000
+ 41734 strings out of 492616
+ 776671 string characters out of 6132769
+ 1267277 words of memory out of 5000000
+ 44042 multiletter control sequences out of 15000+600000
  642587 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,16n,78p,2011b,1093s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2471,10 +2471,10 @@ xmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2018/texmf-dist/fonts/typ
 e1/public/lm/lmtt9.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/wasy2-ps/wasy
 10.pfb>
-Output written on main.pdf (159 pages, 4705290 bytes).
+Output written on main.pdf (159 pages, 4704230 bytes).
 PDF statistics:
- 11453 PDF objects out of 12825 (max. 8388607)
- 9657 compressed objects within 97 object streams
- 886 named destinations out of 1000 (max. 500000)
+ 11447 PDF objects out of 12825 (max. 8388607)
+ 9651 compressed objects within 97 object streams
+ 885 named destinations out of 1000 (max. 500000)
  1099 words of extra memory for PDF output out of 10000 (max. 10000000)
 
