@@ -82,7 +82,7 @@ This distribution is the subject of a wonderful book \cite{AitchisonBrown1957}, 
 \ee
 or, equivalently, $\ln\ave{\x(\t)}=\gmu \t$.
 
-We could confirm this result by calculating $\ave{\x(\t)}=\int_0^\infty s\PDF_\x(s) ds$, but that is laborious. Instead, we use a neat trick, courtesy of \cite[Chapter 4.2]{KloedenPlaten1992}, which will come in handy again in \secref{RGBM_moments}. The idea is to turn a stochastic differential equation for $\x$, like \eref{GBM_SDE_ch6}, into an ordinary differential equation for its $k^\text{th}$ moment, $\ave{\x^k}$. For the first moment, $k=1$, we do this simply by taking expectations of both sides of \eref{GBM_SDE_ch6}. The stochastic term vanishes to leave an ODE for the expected wealth, $\ave{\x}$:
+We could confirm this result by calculating $\ave{\x(\t)}=\int_0^\infty s\PDF_\x(s) ds$, but that is laborious. Instead, we use a neat trick, courtesy of \cite[Chapter 4.2]{KloedenPlaten1992}, which will come in handy again in \secref{RGBM_moments}. The idea is to turn a stochastic differential equation for $\x$, like \eref{GBM_SDE_ch6}, into an ordinary differential equation for its $k^\text{th}$ moment, $\ave{\x^k}$. For the first moment, $k=1$, we do this simply by taking expectations of both sides of \eref{GBM_SDE_ch6}. The stochastic term vanishes to leave an \ODE for the expected wealth, $\ave{\x}$:
 \bea
 \ave{\gd\x}&=&\ave{\x(\gmu \gd\t + \gsigma \gd\gW)}\\
 d\ave{\x}&=&\ave{\x} \gmu \gd\t + \gsigma \overbrace{\ave{\gd\gW}}^{=0}\\
@@ -132,14 +132,14 @@ The growth rate of the ensemble-average wealth, $\gex$, is found by computing th
 \be
 \gex = \frac{\D\ln\ave{\x}}{\Dt} = \gmu.
 \ee
-We can call this the \textit{plutocratic growth rate} because, when the average is taken over all wealths, each wealth has equal $1/\N$ weight,
+We can call this the \textit{plutocratic growth rate} because, when the average is taken over all wealths, each dollar has weight,
 \be
 \ave{x} = \lim_{\N\to\infty} \sum_{\gi=1}^\N \frac{\x_\gi}{\N}.
 \ee
  
-Put simply, $\gex$ is the growth rate of the average wealth. We can think of it as a ``one dollar, one vote'' measure. It does not matter who owns the dollars, only how quickly their total number grows.
+Put simply, $\gex$ is the growth rate of the average wealth. We can think of it as a ``one dollar, one vote'' measure of economic performance. It does not matter who owns the dollars, only how quickly their total number grows.
 
-$\gex$ is a fundamental growth rate of the economy. It tells us how quickly the mean income and, multiplying by $N$, the aggregate income (or, in the terms of public discussion, the ``size of the economy'') are growing. It is an important statistic for central planners, who value being able to monitor and predict the total resources available to them for public spending.
+$\gex$ is a fundamental growth rate of the economy. It tells us how quickly the mean wealth and, multiplying by $N$, the aggregate wealth are growing. While we focus on wealth here, the averaging arguments apply unchanged to income (or any other quantity we wish to average). In the terms of public discussion, aggregate income is something like the ``size of the economy.'' It is an important statistic for central planners, who value being able to monitor and predict the total resources available to them for public spending.
 
 \subsubsection{Democratic growth rate}
 The time-average growth rate is the growth rate achieved by a single wealth trajectory in the long-limit. It is the $\Dt\to\infty$ limit of \eref{g_normal}. An easy way to compute it is to note that the variance of the normal distribution in \eref{g_normal} vanishes in this limit. Therefore, whichever trajectory we pick, the growth rate converges almost surely to same finite value. This growth rate, experienced eventually by all individuals, is
@@ -152,15 +152,15 @@ However, we also know that $\g=\D\ln\x/\Dt$ is an ergodic growth rate. This mean
 \gt = \ave{\g} = \ave{\frac{\D\ln \x}{\Dt}}.
 \elabel{gt_equiv}
 \ee
-We call this the \textit{democratic growth rate} and \eref{gt_equiv} shows why. Although we wanted the growth rate achieved by an individual over long time, we found, by the magic of  ergodicity, that we can interpret this also as the average growth rate across many individuals. In this average, each person's growth rate has equal $1/\N$ weight,
+We call this the \textit{democratic growth rate} and \eref{gt_equiv} shows why. Although we wanted the growth rate achieved by an individual over long time, we found, by the magic of  ergodicity, that we can interpret this also as the average growth rate across many individuals. In this average, each person has equal weight,
 \be
 \gt = \lim_{\N\to\infty} \sum_{\gi=1}^\N \frac{\g_\gi}{\N},
 \ee
 which seems democratic to us.
 
-Thus, $\gt$ is the average of the growth rates, in direct contrast with $\gex$, which is the growth rate of the average. We can think of $\gt$ as a ``one person, one vote'' measure. It does not matter how many dollars each person has, because their growth rates contribute equally.
+Thus, $\gt$ is the average of the growth rates, in direct contrast with $\gex$, which is the growth rate of the average. We can think of $\gt$ as a ``one person, one vote'' measure of economic performance. Each person's growth rate is equally important, whether that person is rich or poor.
 
-Under GBM, $\gt$ is smaller than $\gex$ by the fluctuation dependent term $\gsigma^2/2$. More generally, in a large population, where individual incomes follow noisy multiplicative growth, the plutocratic growth rate is higher than the democratic growth rate experienced by individuals. Thus, using the the plutocratic growth rate as the principle measure of economic growth creates an impression that may be misleading.
+Under GBM, $\gt$ is smaller than $\gex$ by the fluctuation dependent term $\gsigma^2/2$. More generally, in a large population, where individual incomes follow noisy multiplicative growth, the plutocratic growth rate is higher than the democratic growth rate experienced by individuals. Thus, using the the plutocratic growth rate as the principal measure of economic growth creates an impression that may be misleading.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -205,12 +205,12 @@ many different choices of collapse and resulting scalar are possible. The Gini
 coefficient is a particularly well-known scalar of this type, the 80/20 ratio another. Indeed, there is a whole menagerie of inequality measures in economics.
 
 In this context the expectation value is an important quantity. 
-For instance, if everyone has the same wealth, then everyone will own the \FEA, $\x_\gi=\ave{\x}_\N$, which converges to the expectation value, $\ave{x}$, for large $\N$.
+For instance, if everyone has the same wealth, then everyone will own the \FEA, $\x_\gi=\ave{\x}_\N$, which converges to the expectation value, $\ave{\x}$, for large $\N$.
 Furthermore, whatever the distribution of wealth, the total wealth is $\N\ave{\x}_\N$, whose relative difference from $\N\ave{\x}$ vanishes as $\N$ grows large.
 The growth rate of the expectation value, $\gex$, thus tells us how fast the average wealth and the total wealth grow almost surely in a large population.
 
 The time-average growth rate, $\gt$, on the other hand, tells us how fast an individual's wealth (indeed, \textit{every} individual's wealth) will grow almost surely in the $\t\to\infty$ limit.
-So, over sufficiently long tome scales, $\gt$ will be the growth rate experienced by almost all members of a population.
+So, over sufficiently long time scales, $\gt$ will be the growth rate experienced by almost all members of a population.
 If this typical growth rate is less than that of the expectation value of wealth, then there must be atypically wealthy individuals to account for the difference. This insight suggests the following measure of wealth inequality.
 
 \definition{
@@ -252,11 +252,11 @@ Thus we see that, in \GBM, our measure of inequality increases indefinitely.
 \seclabel{condensation}
 The lognormal distribution generated by \GBM broadens indefinitely, \eref{var_x}. Likewise, the inequality present in the distribution -- measured as the time-integrated difference between ensemble and time average growth rates -- grows without bound. A related property of \GBM is the evolution towards wealth condensation. Wealth condensation means that a single individual owns a non-zero fraction of the total wealth of the population in the $\N\to\infty$ limit, see \eg \cite{BouchaudMezard2000}. In the present case, an arbitrarily large share of the  total wealth will be owned by an arbitrarily small share of the population.
 
-One simple way of seeing this is to calculate the fraction of the population whose wealths are less than the expected wealth, \ie $\x(\t)<\exp(\gmu \t)$. To do this, we define a new random variable, $z(\t)$, whose distribution is the standard normal:
+One simple way of seeing this is to compute the proportion of individual wealths that are smaller than the expected wealth, \ie $\x(\t)<\exp(\gmu \t)$. To do this, we define a new random variable, $z(\t)$,  cleverly chosen so that its distribution is the standard normal:
 \be
 z(\t) \equiv \frac{\ln \x(\t) - (\gmu-\gsigma^2/2)\t}{\gsigma \t^{1/2}} \sim \mathcal{\N}(0,1).
 \ee
-We want to know the mass of the distribution with $\ln \x(\t)<\gmu \t$. This is equivalent to $z<\gsigma \t^{1/2}/2$, so the fraction below the expected wealth is
+We want to know the mass of the distribution with $\ln \x(\t)<\gmu \t$. This is equivalent to $z<\gsigma \t^{1/2}/2$, so the proportion below the expected wealth is
 \be
 \gPhi\left(\frac{\gsigma \t^{1/2}}{2}\right),
 \ee
@@ -276,7 +276,7 @@ The rescaled wealth of an individual,
 \gw_\gi(\t) = \frac{\x(\t)}{\ave{\x(\t)}_\N},
 \elabel{rescaled}
 \ee
-is the fraction of the average wealth of the population (\ie the \FEA) owned by that individual.}
+is the individual's wealth expressed in units  of the average wealth of the population (\ie the \FEA).}
 
 This quantity is useful because its numerical value does not 
 depend on the currency used: it is a dimensionless number. 
@@ -345,7 +345,7 @@ We can now appeal to Jensen's inequality: if $\gv$ is a concave function, like t
 \subsection{Power-law resemblance}
 \seclabel{power_law}
 It is an established empirical observation \cite{Newman2005} that the upper tails of 
-real wealth distributions look more like a power-law than a lognormal. Our trivial model does not
+real wealth distributions look more like a power law than a lognormal. Our trivial model does not
 strictly reproduce this feature, but it is instructive to compare the lognormal distribution
 to a power-law distribution. A power-law \PDFa has the asymptotic form 
 \be
@@ -380,7 +380,11 @@ with local slope, \ie apparent exponent,
 \be
 \frac{\gd\ln \PDF(\x)}{\gd \ln \x} = - \frac{\ln \x}{\gsigma^2 \t}  + \frac{\gmu}{\gsigma^2} - \frac{3}{2}.
 \ee
-Near $\ave{\x}$, $\ln \x \sim \gmu \t$ so that the first two terms cancel approximately. Here the distribution will resemble a power-law with exponent $-3/2$ when plotted on doubly logarithmic scales. (The distribution will also look like a power law where the first term is much smaller than the others, \eg where $\ln \x \ll \gsigma^2 \t$.) We don't believe that empirically observed power laws are merely a manifestation of this mathematical feature. Important real-world  mechanisms that broaden real wealth distributions, \ie concentrate wealth, are missing from the null model, and we will see that including interactions among individuals produces a proper power-law tail in the distribution whose exponent is closer to observations than $-3/2$. However, it is interesting that the trivial model of \GBM reproduces so many qualitative features of empirical observations. 
+Near $\ave{\x}$, $\ln \x \sim \gmu \t$ so that the first two terms cancel approximately. Here the distribution will resemble a power law with exponent $-3/2$ when plotted on doubly logarithmic scales. (The distribution will also look like a power law where the first term is much smaller than the others, \eg where $\ln \x \ll \gsigma^2 \t$.) 
+
+\OP{insert figure with log-normal/ power law}
+
+We don't believe that empirically observed power laws are merely a manifestation of this mathematical feature. Important real-world  mechanisms that broaden real wealth distributions, \ie concentrate wealth, are missing from the null model, and we will see that including interactions among individuals produces a proper power-law tail in the distribution whose exponent is closer to observations than $-3/2$. However, it is interesting that the trivial model of \GBM reproduces so many qualitative features of empirical observations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -430,7 +434,7 @@ when
 \t < \frac{\ln \N}{\gsigma^2}.
 \elabel{short_t}
 \ee
-This hand-waving argument tells us roughly when the self-averaging regime holds: yes, for large enough samples, as we anticipated above, but equivalently for short enough time or low enough volatility. A more careful estimate of the critical time, shown later in in \eref{t_c}, is a factor of 2 larger, but its scaling with sample size and volatility is identical.
+This hand-waving argument tells us roughly when the self-averaging regime holds: yes, for large enough samples, as we anticipated above, but equivalently for short enough time or low enough volatility. A more careful estimate of the critical time, shown later in \eref{t_c}, is a factor of 2 larger, but its scaling with sample size and volatility is identical.
 
 Self-averaging stops when even the ``luckiest'' trajectory is no longer close to the expectation value $\exp(\gmu \t)$. This is guaranteed to happen eventually because the probability for a trajectory to reach $\exp(\gmu \t)$ decreases towards zero as $\t$ grows, as we saw in \secref{condensation}. Naturally, this takes longer for larger samples, which have more chances to contain a lucky trajectory.
 
@@ -472,7 +476,7 @@ after self-averaging breaks down, $\t>\ln\N/\gsigma^2$. Note that the first term
 \flabel{trajectories}
 \end{figure}
 
-We now have two approximations, \eref{self_ave} and \eref{long_t_EVT}, for the \FEA in and out of the self-averaging regime. We can express these as approximations to the growth rate, $\g_\N(\t)$, of a \FEA of size $\N$ after time $\t$:
+We now have two approximations, \eref{self_ave} and \eref{long_t_EVT}, for the \FEA in and out of the self-averaging regime. We can express these as approximations to the growth rate, $\g_\N(\t)$, of an \FEA of size $\N$ after time $\t$:
 \bea
 \g_\N(\t) &=&  \frac{\ln\ave{\x(\t)}_N - \ln\ave{\x(0)}_N}{\t-0} \\
 &\approx&
@@ -502,21 +506,29 @@ Z(\N,\t) = \sum_{\gi=1}^\N \exp\left(\gsigma \t^{1/2} \xi_\gi\right),
 \ee
 such that $\ave{\x}_\N = \left(1/N\right) \exp\left[ \left(\gmu-\gsigma^2/2\right) \t \right] Z(\N,t)$.
 
-Since the publication of \cite{PetersKlein2013} we learned, thanks to discussions with J.-P.~Bouchaud, that $Z(\N,\t)$, the sum of lognormal random variates, has been of interest to the mathematical physics community since the 1980s. The reason for this is B.~Derrida's random energy model \cite{Derrida1980,Derrida1981}, which we will describe here.
+Since the publication of \cite{PetersKlein2013} we learned, thanks to discussions with J.-P.~Bouchaud, that $Z(\N,\t)$, the sum of lognormal random variates, has been of interest to the mathematical physics community since the 1980s. The reason for this is B.~Derrida's random energy model \cite{Derrida1980,Derrida1981}, which we will describe here. We will use standard terminology of statistical physics, which we will not discuss here. If some of the words are unfamiliar, ignore them and just follow the mathematics.
 
-Imagine a physical system with $K$ spins, whose $\N=2^K$ energy levels are normally distributed random energies, $E\xi_\gi$, with standard deviation, $E$. This is a simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated that we ``give up'' trying to model it deterministically and instead model its energy levels as realisations of a random variable. (If this doesn't mean much to you, don't worry. All we really care about is that there are $\N$ random variables, which happen to be energies.)
+\subsubsection{Statistical mechanics of the random energy model}
+Imagine a physical system which can be in $\N$ different states. Derrida analysed the situation where the energies of these states are realisations of a normal random variable $E\xi_\gi$, with standard deviation, $E$.
+%with $K$ spins, whose $\N=2^K$ energy levels are normally distributed random energies, $E\xi_\gi$, with standard deviation, $E$. 
+This is a simple model of a disordered system, such as a spin glass, the idea being that the system is so complicated that we give up on deterministic modelling even of its energy {\bf levels} (not only of its movement among those levels, which is the usual procedure in statistical mechanics).
+% and instead model its energy levels as realisations of a random variable. 
+We repeat: if this doesn't mean much to you, don't worry. All we really care about is that there are $\N$ random variables. In Derrida's case, they happen to be energies.
 
-The partition function is a sum of lognormal variates,
+The partition function is then a sum of lognormal variates,
 \be
 \mZ(\N,T) = \sum_{\gi=1}^{\N} \exp\left(\frac{E\xi_\gi}{T}\right),
 \elabel{Z}
 \ee
-where $T$ is the temperature and the energy parameter scales like $E \propto K^{1/2}$ to ensure an extensive thermodynamic limit \cite[p.~79]{Derrida1980}. The Helmholtz free energy is
+where $T$ is the temperature and the energy parameter scales like 
+%$E \propto K^{1/2}$ 
+$E \propto (\ln N)^{1/2}$ 
+to ensure an extensive thermodynamic limit \cite[p.~79]{Derrida1980}. The Helmholtz free energy is
 \be
 \mF = -T\ln\mZ,
 \elabel{F}
 \ee
-and Derrida studied the expectation value of the free energy,
+and Derrida studied its expectation value,
 \be
 \ave{\mF} = -T\ave{\ln\mZ},
 \ee
@@ -540,6 +552,7 @@ $\tc$ the critical time scale, delineating the short-time ($\t<\tc$) and long-ti
 
 Note that $\tc$ in \eref{t_c} scales with $\N$ and $\gsigma$ identically to the self-averaging time we found in \secref{sketch}, using only the simple argument that the relative variance of the \FEA be small. The only difference is a factor of 2. It is pleasing that our intuition there was consistent with a careful analysis from statistical physics.
 
+\subsubsection{Translating back to \FEA growth rates}
 Armed with \eref{ln_Z_exp}, what can we say about the properties of the \FEA in \GBM? Let's write down growth rate experienced by a \FEA of size $\N$ after time $\t$: 
 \bea
 \g_\N(\t) &=& \frac{1}{\t} \left[ \ln \ave{\x(\t)}_\N - \ln \x(0) \right] \\
