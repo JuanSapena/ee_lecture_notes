@@ -1,0 +1,6 @@
+--- #  Config file for EE lecture note figures
+  
+
+# This section specifies the folder structure
+data folder: './data/1-source/'
+figures folder: './data/2-figures/'
