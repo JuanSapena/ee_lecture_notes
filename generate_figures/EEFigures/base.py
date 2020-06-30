@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import os
 import yaml
+import matplotlib
+import matplotlib.pyplot as plt
 
 def read_config(argv):
     # Determine the name of the config file to be used
@@ -24,3 +26,17 @@ def read_config(argv):
 
     return config
 
+def set_style(config):
+    matplotlib.rc('image', cmap='gray')
+    matplotlib.style.use('seaborn-colorblind')
+    font = {'family' : 'normal',
+                  'weight' : 'normal',
+                  'size'   : 20}
+    plt.rc('font', **font)
+    return
+
+def apply_tweaks(config, fig, ax):
+    print(type(ax))
+    ax.spines['right'].set_color('none')
+    ax.spines['top'].set_color('none')
+    return fig, ax
