@@ -29,14 +29,24 @@ def read_config(argv):
 def set_style(config):
     matplotlib.rc('image', cmap='gray')
     matplotlib.style.use('seaborn-colorblind')
-    font = {'family' : 'normal',
-                  'weight' : 'normal',
-                  'size'   : 20}
-    plt.rc('font', **font)
+    plt.rcParams['font.family'] = 'sans-serif'
+    plt.rcParams['font.sans-serif'] = ['Arial']
+    plt.rcParams['font.weight'] = 'normal'
+    plt.rcParams['font.size'] = 12
+
+    xdim = config['figure size']['x']
+    ydim = config['figure size']['y']
+    plt.rcParams['figure.figsize'] = (xdim, ydim)
+
     return
 
 def apply_tweaks(config, fig, ax):
-    print(type(ax))
     ax.spines['right'].set_color('none')
     ax.spines['top'].set_color('none')
+
+    # Set the display aspect ratio
+    ratio = config['aspect ratio']
+    xleft, xright = ax.get_xlim()
+    ybottom, ytop = ax.get_ylim()
+    ax.set_aspect(abs((xright-xleft)/(ybottom-ytop))*ratio)
     return fig, ax
