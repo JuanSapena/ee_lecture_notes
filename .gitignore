@@ -18,3 +18,4 @@ main.log
 main.out
 main.toc
 *.pyc
+*.ipynb
