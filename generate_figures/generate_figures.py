@@ -14,6 +14,8 @@ def main():
     # Figures for the riskless chapter
     EEFigures.riskless.figure1(config)
     EEFigures.riskless.figure2(config)
+    EEFigures.riskless.figure3(config)
+    EEFigures.riskless.figure4(config)
 
 # Execute the main() function
 
