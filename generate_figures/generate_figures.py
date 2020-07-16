@@ -5,11 +5,17 @@
 
 import sys
 import EEFigures.base
+import EEFigures.why
 import EEFigures.riskless
 
 def main():
     # Get the name of the config file and read it in
     config = EEFigures.base.read_config(sys.argv)
+
+    # Figures for the why chapter
+    if config['why']['regenerate data']:
+        EEFigures.why.figure1_generate_data(config)
+    EEFigures.why.figure1(config)
 
     # Figures for the riskless chapter
     EEFigures.riskless.figure1(config)

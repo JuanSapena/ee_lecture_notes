@@ -19,3 +19,4 @@ main.out
 main.toc
 *.pyc
 *.ipynb
+*.pkl

@@ -9,5 +9,11 @@ figure size:
   y: 6.0
 aspect ratio: 1.0
 
+why:
+  regenerate data: False
+  output folder: 'chapter_why/figs/'
+  data folder: 'chapter_why/data/'
+tools:
+  output folder: 'chapter_tools/figs/'
 riskless:
   output folder: 'chapter_riskless/figs/'
