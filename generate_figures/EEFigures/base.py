@@ -56,13 +56,14 @@ def apply_tweaks(config, fig, ax):
 def calculate_axis_ticks(z, cz, mode='log'):
     minval = np.min(z)
     maxval = np.max(z)
+    #print([minval, maxval])
     eps = 0.1*(maxval-minval)
     if mode == 'log':
         # This is for a log scale
         ticks = [ int(round(v)) for v in np.arange(minval, maxval+eps, 1)]
         # If rounding results in ticks not spanning the data range, add extra ticks
         if ticks[0] > minval:
-            ticks.prepend(ticks[0]-1)
+            ticks.insert(0,ticks[0]-1)
         if ticks[-1] < maxval:
             ticks.append(ticks[-1]+1)
         # Generate the labels as strings

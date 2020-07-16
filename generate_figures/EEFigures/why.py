@@ -58,3 +58,75 @@ def figure1(config):
     plt.savefig(target_folder+filename, bbox_inches='tight')
 
     return 0
+
+
+def figure2(config):
+
+    target_folder = config['figures folder']+config['why']['output folder']
+    data_folder = config['figures folder']+config['why']['data folder']
+
+    base.set_style(config)
+    # Read in data that has been generated previously
+    ensemble=pd.read_pickle(data_folder+"coin_ensemble.pkl")
+    T = len(ensemble.iloc[1,:])
+    x = np.arange(T)
+    # Perform averages over increasing numbers of realisations
+    w1 = ensemble.iloc[45,:]
+    w100 = np.mean(ensemble.iloc[0:100,:])
+    w10K = np.mean(ensemble.iloc[0:10000,:])
+    w1M = np.mean(ensemble)
+
+
+    # Generate first subpanel: linear scale
+    filename = 'x_of_t_lin.pdf'
+    print("Plotting chapter 1, figure 2 (A)", filename)
+    fig, ax = plt.subplots(1,1)
+
+    # Add lines to axis
+    ax.plot(x, w1, label='$N=1$')
+    ax.plot(x, w100, label='$N=100$')
+    ax.plot(x, w10K, label='$N=10,000$')
+    ax.plot(x, w1M, 'k', label='$N=1,000,000$')
+
+    # Customise axes etc
+    ax.set_xlim((0,max(ensemble.columns)))
+    ax.legend()
+    ax.set_xlabel('$t$')
+    ax.set_ylabel('$x(t)$')
+
+    # Final tweaks and save
+    fig, ax =  base.apply_tweaks(config, fig, ax)
+    plt.savefig(target_folder+filename, bbox_inches='tight')
+
+    # Generate second subpanel: log scale
+    filename = 'x_of_t_log.pdf'
+    print("Plotting chapter 1, figure 2 (B)", filename)
+    fig, ax = plt.subplots(1,1)
+
+
+    # Add lines to axis
+    # We will use the custom tplot() function to transform the axes to semilog.
+    # First define the transformations to be applied to each axis
+    def cx(x):
+        return x
+
+    def cy(x):
+        return np.log10(x)
+
+    ax = base.tplot(x, w1, cx, cy, ax, yticks='log', label = '$N = 1')
+    ax = base.tplot(x, w100,  cx, cy, ax, yticks='log', label = '$N = 100')
+    ax = base.tplot(x, w10K, cx, cy, ax, yticks='log', label = '$N = 10,000')
+    ax = base.tplot(x, w1M, cx, cy, ax, yticks='log', label = '$N = 1,000,000')
+
+
+    # Customise axes etc
+    #ax.set_xlim((0,cy(max(ensemble.columns))))
+    ax.legend()
+    ax.set_xlabel('$t$')
+    ax.set_ylabel('$x(t)$')
+
+    # Final tweaks and save
+    fig, ax =  base.apply_tweaks(config, fig, ax)
+    plt.savefig(target_folder+filename, bbox_inches='tight')
+
+    return 0
