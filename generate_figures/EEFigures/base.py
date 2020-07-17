@@ -53,9 +53,8 @@ def apply_tweaks(config, fig, ax):
     return fig, ax
 
 
-def calculate_axis_ticks(z, cz, mode='log'):
-    minval = np.min(z)
-    maxval = np.max(z)
+def calculate_axis_ticks(ax, cz, mode='log'):
+    minval, maxval = ax.get_ylim()
     #print([minval, maxval])
     eps = 0.1*(maxval-minval)
     if mode == 'log':
@@ -67,7 +66,7 @@ def calculate_axis_ticks(z, cz, mode='log'):
         if ticks[-1] < maxval:
             ticks.append(ticks[-1]+1)
         # Generate the labels as strings
-        ticklabels = [r"$10^{}$".format(tick) for tick in ticks]
+        ticklabels = [r"$10^{{{0}}}$".format(tick) for tick in ticks]
         # Replace 10^0 and 10^1 by 1 and 10 respectively
         ticklabels = [label.replace('10^0', '1') for label in ticklabels]
         ticklabels = [label.replace('10^1', '10') for label in ticklabels]
@@ -95,7 +94,7 @@ def tplot(x, y, cx, cy, ax, label=None, xticks='linear', yticks='log'):
     ax.plot(xt, yt, label=label)
 
     # Set the ticks for the y axis
-    ticks, ticklabels, minor_ticks = calculate_axis_ticks(yt, cy, mode=yticks)
+    ticks, ticklabels, minor_ticks = calculate_axis_ticks(ax, cy, mode=yticks)
     ax.set_yticks(ticks)
     ax.set_yticks(minor_ticks, minor = True)
     ax.set_yticklabels(ticklabels)
