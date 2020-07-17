@@ -6,6 +6,7 @@
 import sys
 import EEFigures.base
 import EEFigures.why
+import EEFigures.tools
 import EEFigures.riskless
 
 def main():
@@ -20,6 +21,11 @@ def main():
     if config['why']['regenerate data']:
         EEFigures.why.figure3_generate_data(config)
     EEFigures.why.figure3(config)
+
+    # Figures for the why chapter
+    if config['tools']['regenerate data']:
+        EEFigures.tools.figure1_generate_data(config)
+    EEFigures.tools.figure1(config)
 
     # Figures for the riskless chapter
     EEFigures.riskless.figure1(config)
