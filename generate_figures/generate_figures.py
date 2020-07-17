@@ -17,6 +17,9 @@ def main():
         EEFigures.why.figure1_generate_data(config)
     EEFigures.why.figure1(config)
     EEFigures.why.figure2(config)
+    if config['why']['regenerate data']:
+        EEFigures.why.figure3_generate_data(config)
+    EEFigures.why.figure3(config)
 
     # Figures for the riskless chapter
     EEFigures.riskless.figure1(config)
