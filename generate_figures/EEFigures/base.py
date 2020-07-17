@@ -59,12 +59,14 @@ def calculate_axis_ticks(ax, cz, mode='log'):
     eps = 0.1*(maxval-minval)
     if mode == 'log':
         # This is for a log scale
-        ticks = [ int(round(v)) for v in np.arange(minval, maxval+eps, 1)]
+        data_range = int(round(maxval-minval))
+        step = max([1,int((data_range - (data_range%6))/6)])
+        ticks = [ int(round(v)) for v in np.arange(minval, maxval+eps, step)]
         # If rounding results in ticks not spanning the data range, add extra ticks
         if ticks[0] > minval:
-            ticks.insert(0,ticks[0]-1)
+            ticks.insert(0,ticks[0]-step)
         if ticks[-1] < maxval:
-            ticks.append(ticks[-1]+1)
+            ticks.append(ticks[-1]+step)
         # Generate the labels as strings
         ticklabels = [r"$10^{{{0}}}$".format(tick) for tick in ticks]
         # Replace 10^0 and 10^1 by 1 and 10 respectively
@@ -87,7 +89,7 @@ def calculate_axis_ticks(ax, cz, mode='log'):
 
     return ticks, ticklabels, minor_ticks
 
-def tplot(x, y, cx, cy, ax, label=None, xticks='linear', yticks='log'):
+def tplot(x, y, cx, cy, ax, label=None, xticks='linear', yticks='log', minorticks=True):
     # Transform the data and add it to the axis
     xt = list(map(cx, x))
     yt = list(map(cy, y))
@@ -96,7 +98,7 @@ def tplot(x, y, cx, cy, ax, label=None, xticks='linear', yticks='log'):
     # Set the ticks for the y axis
     ticks, ticklabels, minor_ticks = calculate_axis_ticks(ax, cy, mode=yticks)
     ax.set_yticks(ticks)
-    ax.set_yticks(minor_ticks, minor = True)
     ax.set_yticklabels(ticklabels)
-
+    if minorticks:
+        ax.set_yticks(minor_ticks, minor = True)
     return ax

@@ -189,12 +189,13 @@ def figure3(config):
     def cy(x):
         return np.log10(x)
 
-    ax = base.tplot(x, ensemble.iloc[0,:], cx, cy, ax, yticks='log', label = '$N = 1')
+    ax = base.tplot(x, ensemble.iloc[0,:], cx, cy, ax, yticks='log', label = '$N = 1', minorticks=False)
 
     # Customise axes etc
     ax.legend()
     ax.set_xlabel('$t$')
     ax.set_ylabel('$x(t)$')
+    ax.set_ylim((cy(1.0E-34), cy(1.0E2)))
 
     # Final tweaks and save
     fig, ax =  base.apply_tweaks(config, fig, ax)
