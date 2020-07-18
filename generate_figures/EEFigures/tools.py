@@ -45,13 +45,35 @@ def figure1(config):
 
     fig, ax = plt.subplots(1,1)
     base.set_style(config)
+    colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
+    c1 = colors[0]
+    c2 = colors[1]
+    c3 = colors[2]
 
     # Add lines to the plot
-    ax=x.iloc[1,:].plot(linestyle='-',color='blue')
-    ax.plot(t,x.iloc[2,:]-10,linestyle='-',color='blue')
-    ax.plot(t,x.iloc[3,:]-20,linestyle='-',color='blue')
-    ax.plot(t,x.iloc[4,:]-30,linestyle='-',color='blue')
-    ax.plot(t,x.iloc[0,:]-40,linestyle='-',color='blue')
+    for i in [0,1, 2, 3, 4 ]:
+        offset = i*10
+        ax.plot(x.iloc[i,:] + offset, linestyle='-', color=c1)
+        label = '$y_'+str(i+1)+'(t)$'
+        ax.annotate(s=r"{}".format(label),xy=(0,offset),xytext=(-11, offset))
+    ax.annotate(s=r'$y_1(t^*)$',xy=(20, 0),xytext=(13.5, 5),\
+        arrowprops=dict(arrowstyle='->',color='black'))
+    # Draw x axis line
+    #ax.annotate(s=r' ',xy=(T, -2.5),xytext=(0, -3.5),\
+    #    arrowprops=dict(arrowstyle='->',color=c2, linewidth=2))
+    ax.arrow(0, -3.5, T, 0, head_width=1, head_length=2, linewidth=2, color=c2, clip_on=False)
+    # Draw y axis line
+    ax.arrow(-13.5, 0, 0, 42.5, head_width=2, head_length=1, linewidth=2, color=c3, clip_on=False)
+
+
+    ax.set_xlabel('time, t')
+    ax.set_ylabel('realisation, i')
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.yaxis.set_label_coords(-0.1, 0.5)
+
+    ax.spines['left'].set_color('none')
+    ax.spines['bottom'].set_color('none')
 
     # Final tweaks and save
     fig, ax =  base.apply_tweaks(config, fig, ax)
