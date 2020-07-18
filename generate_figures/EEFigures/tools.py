@@ -5,6 +5,7 @@ import pandas as pd
 
 import random
 import pickle
+from matplotlib.patches import Rectangle
 
 from . import base
 
@@ -32,7 +33,6 @@ def figure1_generate_data(config):
 
 
 def figure1(config):
-
     target_folder = config['figures folder']+config['tools']['output folder']
     data_folder = config['figures folder']+config['tools']['data folder']
     filename = 'sp_grid.pdf'
@@ -43,6 +43,7 @@ def figure1(config):
     T = len(x.iloc[1,:])
     t = np.arange(T)
 
+    # Create plot
     fig, ax = plt.subplots(1,1)
     base.set_style(config)
     colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
@@ -56,11 +57,9 @@ def figure1(config):
         ax.plot(x.iloc[i,:] + offset, linestyle='-', color=c1)
         label = '$y_'+str(i+1)+'(t)$'
         ax.annotate(s=r"{}".format(label),xy=(0,offset),xytext=(-11, offset))
-    ax.annotate(s=r'$y_1(t^*)$',xy=(20, 0),xytext=(13.5, 5),\
+    ax.annotate(s=r'$y_1(t^*)$',xy=(50, 0),xytext=(43.5, 5),\
         arrowprops=dict(arrowstyle='->',color='black'))
     # Draw x axis line
-    #ax.annotate(s=r' ',xy=(T, -2.5),xytext=(0, -3.5),\
-    #    arrowprops=dict(arrowstyle='->',color=c2, linewidth=2))
     ax.arrow(0, -3.5, T, 0, head_width=1, head_length=2, linewidth=2, color=c2, clip_on=False)
     # Draw y axis line
     ax.arrow(-13.5, 0, 0, 42.5, head_width=2, head_length=1, linewidth=2, color=c3, clip_on=False)
@@ -79,4 +78,42 @@ def figure1(config):
     fig, ax =  base.apply_tweaks(config, fig, ax)
     plt.savefig(target_folder+filename, bbox_inches='tight')
 
+    return fig, ax
+
+def figure2(config):
+    target_folder = config['figures folder']+config['tools']['output folder']
+    data_folder = config['figures folder']+config['tools']['data folder']
+    filename = 'ergodic_grid.pdf'
+    print("Plotting chapter 2, figure 2", filename)
+
+    # Get colors from the current style
+    colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
+    c1 = colors[0]
+    c2 = colors[1]
+    c3 = colors[2]
+
+    # Read in data that has been generated previously
+    x=pd.read_pickle(data_folder+"noise_realisations.pkl")
+    T = len(x.iloc[1,:])
+    t = np.arange(T)
+
+    # Create plot. We call the previous function that generates figure 1 since
+    # we want to add additional features to that plot.
+    fig, ax = figure1(config)
+
+    ax.add_patch( Rectangle((0.0, 17),
+                        T, 6,
+                        fc =c2,
+                        ec ='none',
+                        alpha=0.25) )
+    ax.add_patch( Rectangle((43, -3),
+                        13, 53,
+                        fc =c3,
+                        ec ='none',
+                        alpha=0.25) )
+
+
+    # Final tweaks and save
+    fig, ax =  base.apply_tweaks(config, fig, ax)
+    plt.savefig(target_folder+filename, bbox_inches='tight')
     return 0

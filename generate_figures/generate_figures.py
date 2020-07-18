@@ -26,6 +26,7 @@ def main():
     if config['tools']['regenerate data']:
         EEFigures.tools.figure1_generate_data(config)
     EEFigures.tools.figure1(config)
+    EEFigures.tools.figure2(config)
 
     # Figures for the riskless chapter
     EEFigures.riskless.figure1(config)
